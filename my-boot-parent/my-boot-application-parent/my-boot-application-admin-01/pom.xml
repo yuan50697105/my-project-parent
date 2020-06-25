@@ -12,10 +12,11 @@
     <artifactId>my-boot-application-admin-01</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>my-boot-application-admin-01-db</module>
+        <module>my-boot-application-admin-01-db-base-pagehelper</module>
         <module>my-boot-application-admin-01-cxf</module>
         <module>my-boot-application-admin-01-webmvc</module>
         <module>my-boot-application-admin-01-jersey</module>
+        <module>my-boot-application-admin-01-db-base-sqlhelper</module>
     </modules>
     <dependencies>
     </dependencies>
