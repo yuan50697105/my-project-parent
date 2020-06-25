@@ -89,6 +89,11 @@ public class SysUserServiceImpl implements SysUserService {
     public List<String> selectUsernameByEnabled(String enabled) {
         return sysUserMapper.selectUsernameByEnabled(enabled);
     }
+
+    @Override
+    public List<SysUser> selectByQuery(SysUserQuery query) {
+        return selectByExample(query.toExample());
+    }
 }
 
 
