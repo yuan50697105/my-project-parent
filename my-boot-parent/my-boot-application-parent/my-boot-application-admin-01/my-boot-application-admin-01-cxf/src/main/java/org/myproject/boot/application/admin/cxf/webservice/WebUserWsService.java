@@ -1,6 +1,10 @@
 package org.myproject.boot.application.admin.cxf.webservice;
 
+import ai.yue.library.base.view.Result;
+import org.myproject.boot.application.admin.db.pojo.SysUser;
+
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
 /**
@@ -18,4 +22,7 @@ public interface WebUserWsService {
 
     @WebMethod
     String user();
+
+    @WebMethod
+    Result<?> save(@WebParam SysUser sysUser);
 }

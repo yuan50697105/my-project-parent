@@ -21,11 +21,11 @@
             <artifactId>my-boot-commons-webmvc</artifactId>
             <version>1.0.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.myproject</groupId>-->
-<!--            <artifactId>my-boot-application-admin-01-db</artifactId>-->
-<!--            <version>1.0.0</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-01-db</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-commons-webservice-cxf</artifactId>

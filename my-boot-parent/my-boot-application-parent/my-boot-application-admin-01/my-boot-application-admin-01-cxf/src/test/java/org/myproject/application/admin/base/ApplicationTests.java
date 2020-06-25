@@ -1,5 +1,7 @@
 package org.myproject.application.admin.base;
 
+import ai.yue.library.base.view.Result;
+import cn.hutool.json.JSONUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
@@ -8,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.myproject.boot.application.admin.cxf.Application;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserRsService;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserWsService;
+import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
@@ -33,6 +36,9 @@ public class ApplicationTests {
         WebUserWsService webUserWsService = (WebUserWsService) factoryBean.create();
         String user = webUserWsService.user();
         log.info(user);
+        SysUser sysUser = new SysUser();
+        Result<?> result = webUserWsService.save(sysUser);
+        System.out.println("JSONUtil.toJsonPrettyStr(result) = " + JSONUtil.toJsonPrettyStr(result));
     }
 
     @Test

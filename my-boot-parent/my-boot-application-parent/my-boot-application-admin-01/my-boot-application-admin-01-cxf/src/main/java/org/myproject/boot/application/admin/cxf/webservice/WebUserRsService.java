@@ -1,6 +1,10 @@
 package org.myproject.boot.application.admin.cxf.webservice;
 
+import ai.yue.library.base.view.Result;
+import org.myproject.boot.application.admin.db.pojo.SysUser;
+
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 /**
@@ -16,4 +20,8 @@ public interface WebUserRsService {
     @GET
     @Path("aa")
     String aa();
+
+    @POST
+    @Path("save")
+    Result<?> save(SysUser sysUser);
 }
