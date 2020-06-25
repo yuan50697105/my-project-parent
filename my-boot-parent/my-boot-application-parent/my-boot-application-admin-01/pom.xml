@@ -14,7 +14,7 @@
     <modules>
         <module>my-boot-application-admin-01-db</module>
         <module>my-boot-application-admin-01-cxf</module>
-        <module>my-boot-application-admin-01-mvc</module>
+        <module>my-boot-application-admin-01-webmvc</module>
         <module>my-boot-application-admin-01-jersey</module>
     </modules>
     <dependencies>

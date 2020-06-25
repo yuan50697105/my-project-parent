@@ -9,21 +9,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-commons-webservice-jersey</artifactId>
+    <artifactId>my-boot-commons-webflux</artifactId>
     <dependencies>
         <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-webservice</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-webmvc</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jersey</artifactId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.minbox.framework</groupId>
+            <artifactId>api-boot-starter-http-converter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ai.ylyue</groupId>
+            <artifactId>yue-library-base</artifactId>
+            <version>Finchley.SR4.1</version>
         </dependency>
     </dependencies>
 

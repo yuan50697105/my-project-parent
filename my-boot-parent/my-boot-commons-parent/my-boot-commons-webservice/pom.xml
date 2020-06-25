@@ -12,8 +12,8 @@
     <artifactId>my-boot-commons-webservice</artifactId>
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jersey</artifactId>
+            <groupId></groupId>
+            <artifactId>spring-boot-starter-webservice</artifactId>
         </dependency>
     </dependencies>
 
