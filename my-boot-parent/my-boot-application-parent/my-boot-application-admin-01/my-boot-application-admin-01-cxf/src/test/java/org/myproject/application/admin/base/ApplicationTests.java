@@ -2,22 +2,11 @@ package org.myproject.application.admin.base;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.cxf.endpoint.Client;
-import org.apache.cxf.jaxws.JaxWsClientFactoryBean;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
-import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
-import org.apache.cxf.staxutils.StaxUtils;
 import org.junit.jupiter.api.Test;
-import org.myproject.application.admin.cxf.Application;
-import org.myproject.application.admin.cxf.webservice.WebUserService;
+import org.myproject.boot.application.admin.cxf.Application;
+import org.myproject.boot.application.admin.cxf.webservice.WebUserWsService;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import javax.xml.namespace.QName;
-import javax.xml.transform.Source;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.ws.Dispatch;
-import javax.xml.ws.Service;
-import java.net.URL;
 
 /**
  * @program: my-project-parent
@@ -38,9 +27,9 @@ public class ApplicationTests {
 //        client.invoke("")
         JaxWsProxyFactoryBean factoryBean = new JaxWsProxyFactoryBean();
         factoryBean.setAddress(address);
-        factoryBean.setServiceClass(WebUserService.class);
-        WebUserService webUserService = (WebUserService) factoryBean.create();
-        String user = webUserService.user();
+        factoryBean.setServiceClass(WebUserWsService.class);
+        WebUserWsService webUserWsService = (WebUserWsService) factoryBean.create();
+        String user = webUserWsService.user();
         log.info(user);
     }
 }

@@ -1,5 +1,5 @@
 mybatis:
   type-handlers-package: org.myproject.application.admin.db.typehander
-  type-aliases-package: org.myproject.application.admin.db.pojo
+  type-aliases-package: org.myproject.boot.application.admin.db.pojo
   type-aliases-super-type: org.myproject.mybatis.pagehelper.pojo.BaseEntity
   mapper-locations: classpath*:mappers/*.xml
