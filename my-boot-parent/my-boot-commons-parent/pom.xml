@@ -25,6 +25,8 @@
         <module>my-boot-commons-webservice-cxf</module>
         <module>my-boot-commons-webservice-jersey</module>
         <module>my-boot-commons-webflux</module>
+        <module>my-boot-mybatis-mapper-pagehelper</module>
+        <module>my-boot-mybatis-mapper-sqlhelper</module>
     </modules>
     <build>
         <plugins>

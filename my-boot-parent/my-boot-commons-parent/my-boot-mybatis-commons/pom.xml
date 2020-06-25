@@ -46,6 +46,11 @@
             <artifactId>hutool-all</artifactId>
             <version>5.3.8</version>
         </dependency>
+        <dependency>
+            <groupId>com.gitee.denger</groupId>
+            <artifactId>mybatis-example-ext</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
 
 </project>
