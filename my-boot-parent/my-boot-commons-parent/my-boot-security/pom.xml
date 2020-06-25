@@ -19,10 +19,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.minbox.framework</groupId>
-            <artifactId>api-boot-starter-security-oauth-jwt</artifactId>
-        </dependency>
     </dependencies>
 
 </project>
