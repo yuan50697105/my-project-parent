@@ -22,6 +22,8 @@
         <module>my-boot-mybatis-plus-sqlhelper</module>
         <module>my-boot-mybatis-commons</module>
         <module>my-boot-security</module>
+        <module>my-boot-commons-webservice-cxf</module>
+        <module>my-boot-commons-webservice-jersey</module>
     </modules>
     <build>
         <plugins>

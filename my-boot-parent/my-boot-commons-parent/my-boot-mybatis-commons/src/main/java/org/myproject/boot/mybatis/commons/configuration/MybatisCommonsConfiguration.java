@@ -1,6 +1,7 @@
 package org.myproject.boot.mybatis.commons.configuration;
 
 import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author: yuane
  * @create: 2020-06-25 00:11
  */
-@SpringBootApplication
+@SpringBootConfiguration
 @AutoConfigureAfter(MybatisAutoConfiguration.class)
 public class MybatisCommonsConfiguration {
 }

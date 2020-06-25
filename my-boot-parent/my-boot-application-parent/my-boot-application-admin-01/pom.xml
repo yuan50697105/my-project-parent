@@ -16,16 +16,6 @@
         <module>my-boot-application-admin-01-base</module>
     </modules>
     <dependencies>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-mvc</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-mybatis-pagehelper</artifactId>
-            <version>1.0.0</version>
-        </dependency>
     </dependencies>
 
 </project>
