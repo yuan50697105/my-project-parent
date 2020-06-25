@@ -1,4 +1,4 @@
-package org.myproject.application.admin.base.pojo;
+package org.myproject.application.admin.cxf.pojo;
 
 import lombok.Data;
 

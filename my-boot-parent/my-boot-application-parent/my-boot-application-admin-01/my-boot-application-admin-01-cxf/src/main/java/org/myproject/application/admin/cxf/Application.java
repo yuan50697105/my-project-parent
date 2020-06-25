@@ -1,4 +1,4 @@
-package org.myproject.application.admin.base;
+package org.myproject.application.admin.cxf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

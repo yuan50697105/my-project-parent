@@ -1,4 +1,4 @@
-package org.myproject.application.admin.base.webservice;
+package org.myproject.application.admin.cxf.webservice;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;

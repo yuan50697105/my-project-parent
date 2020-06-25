@@ -3,16 +3,13 @@ package org.myproject.application.admin.base;
 import lombok.SneakyThrows;
 import org.apache.cxf.staxutils.StaxUtils;
 import org.junit.jupiter.api.Test;
-import org.myproject.application.admin.base.webservice.WebUserService;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.myproject.application.admin.cxf.webservice.WebUserService;
 
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.Dispatch;
 import javax.xml.ws.Service;
-import java.io.StringReader;
 import java.net.URL;
 
 /**

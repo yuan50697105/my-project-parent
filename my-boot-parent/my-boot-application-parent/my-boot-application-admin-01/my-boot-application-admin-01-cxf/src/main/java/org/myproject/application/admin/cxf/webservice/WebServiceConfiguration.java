@@ -1,8 +1,7 @@
-package org.myproject.application.admin.base.webservice;
+package org.myproject.application.admin.cxf.webservice;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.jaxws.EndpointImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
 
