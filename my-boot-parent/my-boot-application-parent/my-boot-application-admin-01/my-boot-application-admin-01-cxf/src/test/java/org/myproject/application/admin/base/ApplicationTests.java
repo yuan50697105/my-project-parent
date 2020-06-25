@@ -5,6 +5,9 @@ import cn.hutool.json.JSONUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
+import org.apache.cxf.jaxrs.client.WebClient;
+import org.apache.cxf.jaxrs.client.spring.EnableJaxRsProxyClient;
+import org.apache.cxf.jaxrs.client.spring.EnableJaxRsWebClient;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.jupiter.api.Test;
 import org.myproject.boot.application.admin.cxf.Application;
@@ -21,6 +24,8 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest(classes = Application.class)
 @Slf4j
+//@EnableJaxRsProxyClient
+//@EnableJaxRsWebClient
 public class ApplicationTests {
     @SneakyThrows
     @Test
@@ -46,5 +51,8 @@ public class ApplicationTests {
         WebUserRsService webUserRsService = JAXRSClientFactory.create("http://localhost:8080/services/user", WebUserRsService.class);
         String aa = webUserRsService.aa();
         log.info(aa);
+        Result<?> result = webUserRsService.save(new SysUser());
+        System.out.println("JSONUtil.toJsonPrettyStr(result) = " + JSONUtil.toJsonPrettyStr(result));
+//        WebClient.create("http://localhost:8080").path("/services/user")
     }
 }

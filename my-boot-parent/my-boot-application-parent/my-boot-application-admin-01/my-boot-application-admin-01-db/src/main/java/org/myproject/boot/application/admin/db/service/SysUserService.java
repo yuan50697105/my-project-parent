@@ -37,3 +37,5 @@ public interface SysUserService {
     PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysUserQuery query);
 }
 
+
+

@@ -108,17 +108,20 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser" useGeneratedKeys="true">
+  <insert id="insert" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser">
     <!--@mbg.generated-->
-    insert into sys_user (username, `name`, `password`, 
-      enabled)
-    values (#{username,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{enabled,jdbcType=VARCHAR})
+    insert into sys_user (id, username, `name`, 
+      `password`, enabled)
+    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{enabled,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser" useGeneratedKeys="true">
+  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser">
     <!--@mbg.generated-->
     insert into sys_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
       <if test="username != null">
         username,
       </if>
@@ -133,6 +136,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
       </if>
