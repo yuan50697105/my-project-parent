@@ -26,6 +26,11 @@
             <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
             <version>3.3.6</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-service-description-swagger</artifactId>
+            <version>3.3.6</version>
+        </dependency>
     </dependencies>
 
 </project>

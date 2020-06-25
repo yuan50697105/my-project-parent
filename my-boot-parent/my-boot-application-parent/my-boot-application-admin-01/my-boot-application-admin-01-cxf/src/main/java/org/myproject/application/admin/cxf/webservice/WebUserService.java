@@ -18,6 +18,5 @@ public interface WebUserService {
     String SERVICE_NAME_URL = "/" + SERVICE_NAME;
 
     @WebMethod
-    @GET
     String user();
 }

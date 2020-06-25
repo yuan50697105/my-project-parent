@@ -31,5 +31,6 @@
             <artifactId>my-boot-commons-webservice-cxf</artifactId>
             <version>1.0.0</version>
         </dependency>
+
     </dependencies>
 </project>

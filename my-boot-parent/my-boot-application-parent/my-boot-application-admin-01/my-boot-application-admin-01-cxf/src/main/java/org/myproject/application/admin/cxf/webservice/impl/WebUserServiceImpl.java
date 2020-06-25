@@ -18,6 +18,9 @@ import javax.jws.WebService;
 public class WebUserServiceImpl implements WebUserService {
     @Override
     public String user() {
-        return JSONUtil.toJsonPrettyStr(new User());
+        User user = new User();
+        user.setId(1L);
+        user.setName("aaa");
+        return JSONUtil.toJsonPrettyStr(user);
     }
 }
