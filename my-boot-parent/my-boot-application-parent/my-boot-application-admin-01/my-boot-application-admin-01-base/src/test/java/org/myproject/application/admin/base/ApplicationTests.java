@@ -8,9 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.Dispatch;
 import javax.xml.ws.Service;
+import java.io.StringReader;
 import java.net.URL;
 
 /**
@@ -19,15 +21,19 @@ import java.net.URL;
  * @author: yuane
  * @create: 2020-06-25 16:22
  */
-@SpringBootTest(classes = Application.class)
+//@SpringBootTest(classes = Application.class)
 public class ApplicationTests {
     @SneakyThrows
     @Test
     void name() {
-        Service service = Service.create(new URL("http://localhost:8080/services/WebUserService?wsdl"), new QName(WebUserService.HTTP_WEB_USER_SERVICE));
-        Dispatch<Source> dispatch = service.createDispatch(new QName(WebUserService.HTTP_WEB_USER_SERVICE), Source.class, Service.Mode.PAYLOAD);
-        Source source = dispatch.invoke(new StreamSource("aaaaa"));
-        String string = StaxUtils.toString(source);
-        System.out.println("string = " + string);
+        String address = "http://localhost:8080/services/WebUserService?wsdl";
+
+        Service service = Service.create(new URL(address),
+                new QName(WebUserService.NAMESPACE, WebUserService.SERVICE_NAME));
+        Dispatch<Source> disp = service.createDispatch(new QName(WebUserService.NAMESPACE , WebUserService.SERVICE_NAME),
+                Source.class, Service.Mode.PAYLOAD);
+        Source result = disp.invoke(new DOMSource());
+        String resultAsString = StaxUtils.toString(result);
+        System.out.println(resultAsString);
     }
 }

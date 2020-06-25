@@ -13,7 +13,7 @@ import javax.jws.WebService;
  * @author: yuane
  * @create: 2020-06-25 15:47
  */
-@WebService(targetNamespace = WebUserService.HTTP_WEB_USER_SERVICE, serviceName = WebUserService.SERVICE_NAME, endpointInterface = "org.myproject.application.admin.base.webservice.WebUserService")
+@WebService(targetNamespace = WebUserService.NAMESPACE, serviceName = WebUserService.SERVICE_NAME,portName = WebUserService.SERVICE_NAME, endpointInterface = "org.myproject.application.admin.base.webservice.WebUserService")
 @Component
 public class WebUserServiceImpl implements WebUserService {
     @Override

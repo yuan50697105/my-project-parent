@@ -2,6 +2,7 @@ package org.myproject.application.admin.base.webservice;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.ws.rs.GET;
 
 /**
  * @program: my-project-parent
@@ -9,13 +10,14 @@ import javax.jws.WebService;
  * @author: yuane
  * @create: 2020-06-25 15:47
  */
-@WebService(targetNamespace = WebUserService.HTTP_WEB_USER_SERVICE)
+@WebService(targetNamespace = WebUserService.NAMESPACE, name = WebUserService.SERVICE_NAME)
 public interface WebUserService {
 
-    String HTTP_WEB_USER_SERVICE = "http://web,ser.service";
+    String NAMESPACE = "http://web.ser.service";
     String SERVICE_NAME = "WebUserService";
     String SERVICE_NAME_URL = "/" + SERVICE_NAME;
 
     @WebMethod
+    @GET
     String user();
 }
