@@ -2,9 +2,11 @@ package org.myproject.application.admin.base;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.jupiter.api.Test;
 import org.myproject.boot.application.admin.cxf.Application;
+import org.myproject.boot.application.admin.cxf.webservice.WebUserRsService;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserWsService;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -31,5 +33,12 @@ public class ApplicationTests {
         WebUserWsService webUserWsService = (WebUserWsService) factoryBean.create();
         String user = webUserWsService.user();
         log.info(user);
+    }
+
+    @Test
+    void name2() {
+        WebUserRsService webUserRsService = JAXRSClientFactory.create("http://localhost:8080/services/user", WebUserRsService.class);
+        String aa = webUserRsService.aa();
+        log.info(aa);
     }
 }
