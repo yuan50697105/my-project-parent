@@ -3,23 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>my-boot-application-admin-01</artifactId>
+        <artifactId>my-boot-commons-parent</artifactId>
         <groupId>org.myproject</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-admin-01-webmvc</artifactId>
+    <artifactId>my-boot-security-session-redis</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-webmvc</artifactId>
+            <artifactId>my-boot-security</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-db-base-pagehelper</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 

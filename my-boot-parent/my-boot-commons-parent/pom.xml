@@ -27,6 +27,7 @@
         <module>my-boot-commons-webflux</module>
         <module>my-boot-mybatis-mapper-pagehelper</module>
         <module>my-boot-mybatis-mapper-sqlhelper</module>
+        <module>my-boot-security-session-redis</module>
     </modules>
     <build>
         <plugins>

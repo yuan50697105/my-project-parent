@@ -1,14 +1,19 @@
 package org.myproject.boot.application.admin.db.base.sqlhelper.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser;
-import java.util.List;
-import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserExample;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.base.sqlhelper.mapper.SysUserMapper;
+import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.base.sqlhelper.service.SysUserService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class SysUserServiceImpl implements SysUserService{
+public class SysUserServiceImpl implements SysUserService {
 
     @Resource
     private SysUserMapper sysUserMapper;
@@ -44,18 +49,23 @@ public class SysUserServiceImpl implements SysUserService{
     }
 
     @Override
+    public List<SysUser> selectByQuery(SysUserQuery query) {
+        return sysUserMapper.selectByExample(query.toExample());
+    }
+
+    @Override
     public SysUser selectByPrimaryKey(Long id) {
         return sysUserMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public int updateByExampleSelective(SysUser record,SysUserExample example) {
-        return sysUserMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysUser record, SysUserExample example) {
+        return sysUserMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(SysUser record,SysUserExample example) {
-        return sysUserMapper.updateByExample(record,example);
+    public int updateByExample(SysUser record, SysUserExample example) {
+        return sysUserMapper.updateByExample(record, example);
     }
 
     @Override
@@ -68,4 +78,14 @@ public class SysUserServiceImpl implements SysUserService{
         return sysUserMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example) {
+        PageHelper.startPage(page, pageSize);
+        return new PageInfo<>(sysUserMapper.selectByExample(example));
+    }
+
+    @Override
+    public PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysUserQuery query) {
+        return selectByExampleWithPage(page, pageSize, query.toExample());
+    }
 }

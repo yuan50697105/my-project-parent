@@ -1,10 +1,11 @@
 package org.myproject.boot.application.admin.db.base.pagehelper.mapper;
 
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserExample;
+
+import java.util.List;
 
 @Mapper
 public interface SysUserMapper {
@@ -65,4 +66,10 @@ public interface SysUserMapper {
      * @return update count
      */
     int updateByPrimaryKey(SysUser record);
+
+    List<SysUser> selectAllByEnabled(@Param("enabled") String enabled);
+
+    List<String> selectUsernameByEnabled(@Param("enabled") String enabled);
+
+
 }

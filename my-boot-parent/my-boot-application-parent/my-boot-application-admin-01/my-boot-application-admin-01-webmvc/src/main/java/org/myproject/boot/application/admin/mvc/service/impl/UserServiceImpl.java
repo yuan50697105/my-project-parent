@@ -1,6 +1,8 @@
 package org.myproject.boot.application.admin.mvc.service.impl;
 
+import org.myproject.boot.application.admin.db.base.pagehelper.service.SysUserService;
 import org.myproject.boot.application.admin.mvc.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,4 +13,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl implements UserService {
+    @Autowired
+    private SysUserService sysUserService;
+
+
 }

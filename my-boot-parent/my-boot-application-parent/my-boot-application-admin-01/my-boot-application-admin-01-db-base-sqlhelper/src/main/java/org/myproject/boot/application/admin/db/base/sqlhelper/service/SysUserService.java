@@ -1,8 +1,11 @@
 package org.myproject.boot.application.admin.db.base.sqlhelper.service;
 
+import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser;
 import java.util.List;
 import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserQuery;
+
 public interface SysUserService{
 
 
@@ -18,6 +21,8 @@ public interface SysUserService{
 
     List<SysUser> selectByExample(SysUserExample example);
 
+    List<SysUser> selectByQuery(SysUserQuery query);
+
     SysUser selectByPrimaryKey(Long id);
 
     int updateByExampleSelective(SysUser record,SysUserExample example);
@@ -28,4 +33,7 @@ public interface SysUserService{
 
     int updateByPrimaryKey(SysUser record);
 
+    PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example);
+
+    PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysUserQuery query);
 }

@@ -84,6 +84,11 @@ public class SysUserServiceImpl implements SysUserService {
     public PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysUserQuery query) {
         return selectByExampleWithPage(page, pageSize, query.toExample());
     }
+
+    @Override
+    public List<String> selectUsernameByEnabled(String enabled) {
+        return sysUserMapper.selectUsernameByEnabled(enabled);
+    }
 }
 
 

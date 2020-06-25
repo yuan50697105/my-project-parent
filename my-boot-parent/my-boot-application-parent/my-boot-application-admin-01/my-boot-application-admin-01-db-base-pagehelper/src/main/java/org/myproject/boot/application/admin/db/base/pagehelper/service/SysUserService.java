@@ -35,6 +35,8 @@ public interface SysUserService {
     PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example);
 
     PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysUserQuery query);
+
+    List<String> selectUsernameByEnabled(String enabled);
 }
 
 
