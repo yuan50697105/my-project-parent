@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-application-parent/my-boot-application-admin-01/my-boot-application-admin-01.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-application-parent/my-boot-application-admin-01/my-boot-application-admin-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-application-parent/my-boot-application-admin-01/my-boot-application-admin-db/my-boot-application-admin-db.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-application-parent/my-boot-application-admin-01/my-boot-application-admin-db/my-boot-application-admin-db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-application-parent/my-boot-application-parent.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-application-parent/my-boot-application-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-commons-mvc/my-boot-commons-mvc.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-commons-mvc/my-boot-commons-mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-commons-parent.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-commons-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-commons-utils/my-boot-commons-utils.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-commons-utils/my-boot-commons-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-commons-webservice/my-boot-commons-webservice.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-commons-webservice/my-boot-commons-webservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-document-utils/my-boot-document-utils.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-document-utils/my-boot-document-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-commons/my-boot-mybatis-commons.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-commons/my-boot-mybatis-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-pagehelper/my-boot-mybatis-pagehelper.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-pagehelper/my-boot-mybatis-pagehelper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-plus-pagehelper/my-boot-mybatis-plus-pagehelper.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-plus-pagehelper/my-boot-mybatis-plus-pagehelper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-plus-sqlhelper/my-boot-mybatis-plus-sqlhelper.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-plus-sqlhelper/my-boot-mybatis-plus-sqlhelper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-sqlhelper/my-boot-mybatis-sqlhelper.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-mybatis-sqlhelper/my-boot-mybatis-sqlhelper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-parent.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-security/my-boot-security.iml" filepath="$PROJECT_DIR$/my-boot-parent/my-boot-commons-parent/my-boot-security/my-boot-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-cloud-parent/my-cloud-parent.iml" filepath="$PROJECT_DIR$/my-cloud-parent/my-cloud-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/my-project-parent.iml" filepath="$PROJECT_DIR$/.idea/my-project-parent.iml" />
+    </modules>
+  </component>
+</project>

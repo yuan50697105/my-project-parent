@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="my-boot-commons-mvc" />
+        <module name="my-boot-security" />
+        <module name="my-boot-mybatis-pagehelper" />
+        <module name="my-cloud-parent" />
+        <module name="my-boot-mybatis-commons" />
+        <module name="my-boot-mybatis-plus-pagehelper" />
+        <module name="my-boot-mybatis-sqlhelper" />
+        <module name="my-boot-application-admin-db" />
+        <module name="my-boot-document-utils" />
+        <module name="my-boot-commons-utils" />
+        <module name="my-boot-commons-webservice" />
+        <module name="my-boot-mybatis-plus-sqlhelper" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="my-boot-application-admin-01" target="1.8" />
+      <module name="my-boot-application-admin-db" target="1.8" />
+      <module name="my-boot-application-parent" target="1.8" />
+      <module name="my-boot-commons-mvc" target="1.8" />
+      <module name="my-boot-commons-parent" target="1.8" />
+      <module name="my-boot-commons-utils" target="1.8" />
+      <module name="my-boot-commons-webservice" target="1.8" />
+      <module name="my-boot-document-utils" target="1.8" />
+      <module name="my-boot-mybatis-commons" target="1.8" />
+      <module name="my-boot-mybatis-pagehelper" target="1.8" />
+      <module name="my-boot-mybatis-plus-pagehelper" target="1.8" />
+      <module name="my-boot-mybatis-plus-sqlhelper" target="1.8" />
+      <module name="my-boot-mybatis-sqlhelper" target="1.8" />
+      <module name="my-boot-parent" target="1.8" />
+      <module name="my-boot-security" target="1.8" />
+      <module name="my-cloud-parent" target="1.8" />
+      <module name="my-project-parent" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="my-boot-application-admin-01" options="-parameters" />
+      <module name="my-boot-application-admin-db" options="-parameters" />
+      <module name="my-boot-application-parent" options="-parameters" />
+      <module name="my-boot-commons-mvc" options="-parameters" />
+      <module name="my-boot-commons-parent" options="-parameters" />
+      <module name="my-boot-commons-utils" options="-parameters" />
+      <module name="my-boot-commons-webservice" options="-parameters" />
+      <module name="my-boot-document-utils" options="-parameters" />
+      <module name="my-boot-mybatis-commons" options="-parameters" />
+      <module name="my-boot-mybatis-pagehelper" options="-parameters" />
+      <module name="my-boot-mybatis-plus-pagehelper" options="-parameters" />
+      <module name="my-boot-mybatis-plus-sqlhelper" options="-parameters" />
+      <module name="my-boot-mybatis-sqlhelper" options="-parameters" />
+      <module name="my-boot-parent" options="-parameters" />
+      <module name="my-boot-security" options="-parameters" />
+      <module name="my-cloud-parent" options="-parameters" />
+      <module name="my-project-parent" options="-parameters" />
+    </option>
+  </component>
+</project>

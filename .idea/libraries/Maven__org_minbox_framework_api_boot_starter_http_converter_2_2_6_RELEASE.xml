@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.minbox.framework:api-boot-starter-http-converter:2.2.6.RELEASE">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/minbox/framework/api-boot-starter-http-converter/2.2.6.RELEASE/api-boot-starter-http-converter-2.2.6.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/minbox/framework/api-boot-starter-http-converter/2.2.6.RELEASE/api-boot-starter-http-converter-2.2.6.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/minbox/framework/api-boot-starter-http-converter/2.2.6.RELEASE/api-boot-starter-http-converter-2.2.6.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

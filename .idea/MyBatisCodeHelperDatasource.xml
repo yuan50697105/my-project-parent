@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="genSqlFilePath" value="$PROJECT_DIR$/my-boot-parent/my-boot-application-parent/my-boot-application-admin-01/my-boot-application-admin-db/src/main/java/org/myproject/application/admin/db/pojo" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>
