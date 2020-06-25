@@ -42,6 +42,14 @@
             <entry key="my_project:sys_user">
               <value>
                 <TableGenerateConfig>
+                  <option name="columnOverrideList">
+                    <list>
+                      <MyColumnOverride>
+                        <option name="columnName" value="enabled" />
+                        <option name="javaType" value="" />
+                      </MyColumnOverride>
+                    </list>
+                  </option>
                   <option name="generatedKey" value="id" />
                   <option name="javaModelName" value="SysUser" />
                   <option name="moduleName" value="my-boot-application-admin-db" />
