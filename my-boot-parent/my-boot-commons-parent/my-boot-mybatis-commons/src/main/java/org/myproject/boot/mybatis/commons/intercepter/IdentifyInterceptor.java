@@ -1,5 +1,6 @@
 package org.myproject.boot.mybatis.commons.intercepter;
 
+import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.ReflectUtil;
 import org.apache.ibatis.executor.Executor;
@@ -9,7 +10,6 @@ import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.plugin.Intercepts;
 import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Signature;
-import org.minbox.framework.api.boot.plugin.sequence.Sequence;
 import org.myproject.boot.mybatis.commons.annotation.Identify;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -30,7 +30,7 @@ import java.lang.reflect.Field;
 })
 public class IdentifyInterceptor implements Interceptor {
     @Autowired
-    private Sequence sequence;
+    private Snowflake snowflake;
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
@@ -47,7 +47,7 @@ public class IdentifyInterceptor implements Interceptor {
         for (Field field : fields) {
             field.setAccessible(true);
             if (ObjectUtil.isEmpty(field.get(object)) && field.isAnnotationPresent(Identify.class)) {
-                field.setLong(object, sequence.nextId());
+                field.set(object, snowflake.nextId());
             }
         }
     }

@@ -13,19 +13,11 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-application-admin-01-db</module>
-        <module>my-boot-application-admin-01-base</module>
+        <module>my-boot-application-admin-01-cxf</module>
+        <module>my-boot-application-admin-01-webmvc</module>
+        <module>my-boot-application-admin-01-jersey</module>
     </modules>
     <dependencies>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-mvc</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-mybatis-pagehelper</artifactId>
-            <version>1.0.0</version>
-        </dependency>
     </dependencies>
 
 </project>

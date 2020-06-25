@@ -1,5 +1,7 @@
 package org.myproject.mybatisplus.pagehelper.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import org.myproject.boot.mybatis.commons.annotation.Identify;
 
@@ -12,5 +14,6 @@ import org.myproject.boot.mybatis.commons.annotation.Identify;
 @Data
 public class BaseEntity {
     @Identify
+    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 }
