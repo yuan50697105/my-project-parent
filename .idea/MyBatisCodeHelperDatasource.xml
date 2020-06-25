@@ -12,6 +12,8 @@
         <option name="javaModelPackage" value="org.myproject.application.admin.db.pojo" />
         <option name="javaModelPath" value="$PROJECT_DIR$/my-boot-parent/my-boot-application-parent/my-boot-application-admin-01/my-boot-application-admin-db/src/main/java" />
         <option name="lastDatabaseCrudChooseModuleName" value="my-boot-application-admin-db" />
+        <option name="lombokAllArgConstructor" value="true" />
+        <option name="lombokBuilderAnnotation" value="true" />
         <option name="lombokDataAnnotation" value="true" />
         <option name="lombokNoArgsConstructor" value="true" />
         <option name="mapperAnnotaion" value="true" />
@@ -42,16 +44,13 @@
             <entry key="my_project:sys_user">
               <value>
                 <TableGenerateConfig>
-                  <option name="columnOverrideList">
-                    <list>
-                      <MyColumnOverride>
-                        <option name="columnName" value="enabled" />
-                        <option name="javaType" value="" />
-                      </MyColumnOverride>
-                    </list>
-                  </option>
                   <option name="generatedKey" value="id" />
                   <option name="javaModelName" value="SysUser" />
+                  <option name="methodNameList">
+                    <list>
+                      <option value="" />
+                    </list>
+                  </option>
                   <option name="moduleName" value="my-boot-application-admin-db" />
                   <option name="sequenceColumn" value="" />
                   <option name="sequenceId" value="" />
