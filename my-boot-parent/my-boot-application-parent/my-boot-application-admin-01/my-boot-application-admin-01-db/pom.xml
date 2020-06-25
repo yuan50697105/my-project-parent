@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-admin-db</artifactId>
+    <artifactId>my-boot-application-admin-01-db</artifactId>
     <build>
         <plugins>
             <plugin>
