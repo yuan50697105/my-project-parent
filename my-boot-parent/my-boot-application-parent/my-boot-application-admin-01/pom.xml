@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-application-admin-db</module>
+        <module>my-boot-application-admin-base</module>
     </modules>
     <dependencies>
         <dependency>
