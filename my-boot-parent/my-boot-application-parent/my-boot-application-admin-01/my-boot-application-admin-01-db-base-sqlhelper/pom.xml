@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-mybatis-sqlhelper</artifactId>
+            <artifactId>my-boot-mybatis-base-sqlhelper</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
