@@ -22,14 +22,14 @@ import java.util.List;
 @SpringBootConfiguration
 public class WebServiceConfiguration {
     @Bean(WebUserService.SERVICE_NAME)
-    public Endpoint webUserServicePoint(Bus bus,WebUserService webUserService){
+    public Endpoint webUserServiceWs(Bus bus, WebUserService webUserService){
         EndpointImpl endpoint = new EndpointImpl(bus,webUserService);
         endpoint.publish(WebUserService.SERVICE_NAME_URL);
         return endpoint;
     }
 
     @Bean
-    public Server restfullServer(Bus bus, WebUserRsService userServiceRS) {
+    public Server webUserServiceRs(Bus bus, WebUserRsService userServiceRS) {
         JAXRSServerFactoryBean endpoint = new JAXRSServerFactoryBean();
         endpoint.setBus(bus);
         endpoint.setAddress("/user");
