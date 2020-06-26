@@ -15,13 +15,13 @@
         <module>my-boot-application-admin-01-db-01</module>
         <module>my-boot-application-admin-01-db-02</module>
         <module>my-boot-application-admin-01-db-03</module>
-        <module>my-boot-application-admin-01-cxf</module>
-        <module>my-boot-application-admin-01-jersey</module>
+        <module>my-boot-application-admin-01-db-04</module>
         <module>my-boot-application-admin-01-webmvc-01</module>
         <module>my-boot-application-admin-01-webmvc-02</module>
         <module>my-boot-application-admin-01-webmvc-03</module>
-        <module>my-boot-application-admin-01-db-04</module>
         <module>my-boot-application-admin-01-webmvc-04</module>
+        <module>my-boot-application-admin-01-cxf</module>
+        <module>my-boot-application-admin-01-jersey</module>
     </modules>
     <dependencies>
     </dependencies>
