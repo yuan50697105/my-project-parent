@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.myproject.mybatisplus.pagehelper.pojo.BaseEntity;
+import org.myproject.mybatisplus.sqlhelper.pojo.BaseEntity;
 
 /**
     * sys_user

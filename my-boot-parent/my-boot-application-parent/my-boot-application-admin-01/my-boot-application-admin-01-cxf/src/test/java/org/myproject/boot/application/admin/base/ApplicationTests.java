@@ -1,4 +1,4 @@
-package org.myproject.application.admin.base;
+package org.myproject.boot.application.admin.base;
 
 import ai.yue.library.base.view.Result;
 import cn.hutool.json.JSONUtil;
