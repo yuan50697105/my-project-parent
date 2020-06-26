@@ -11,6 +11,7 @@ import org.myproject.boot.application.admin.cxf.Application;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserRsService;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserWsService;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserVo;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
@@ -39,7 +40,7 @@ public class ApplicationTests {
         WebUserWsService webUserWsService = (WebUserWsService) factoryBean.create();
         String user = webUserWsService.user();
         log.info(user);
-        SysUser sysUser = new SysUser();
+        SysUserVo sysUser = new SysUserVo();
         Result<?> result = webUserWsService.save(sysUser);
         System.out.println("JSONUtil.toJsonPrettyStr(result) = " + JSONUtil.toJsonPrettyStr(result));
     }
