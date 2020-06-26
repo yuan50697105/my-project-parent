@@ -1,5 +1,6 @@
 package org.myproject.boot.security.redis;
 
+import org.myproject.boot.security.SecurityConfiguration;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -18,5 +19,5 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableRedisHttpSession
 @EnableGlobalMethodSecurity(prePostEnabled = true, jsr250Enabled = true, securedEnabled = true)
 @ComponentScan(basePackageClasses = RedisSecurityConfiguration.class)
-public class RedisSecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class RedisSecurityConfiguration extends SecurityConfiguration {
 }
