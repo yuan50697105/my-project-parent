@@ -20,6 +20,6 @@ public class Page<T> extends AbstractPage<T> {
     }
 
     public Page(IPage<T> iPage) {
-        super(iPage.getCurrent(),iPage.getSize(),iPage.getTotal(),iPage.getPages(),iPage.getRecords());
+        super(iPage.getCurrent(), iPage.getSize(), iPage.getTotal(), iPage.getPages(), iPage.getRecords());
     }
 }

@@ -2,17 +2,16 @@ package org.myproject.boot.application.admin.db.base.pagehelper.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.base.pagehelper.mapper.SysUserMapper;
+import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.base.pagehelper.service.SysUserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
-
-import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserExample;
-import org.myproject.boot.application.admin.db.base.pagehelper.mapper.SysUserMapper;
-import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.base.pagehelper.service.SysUserService;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional

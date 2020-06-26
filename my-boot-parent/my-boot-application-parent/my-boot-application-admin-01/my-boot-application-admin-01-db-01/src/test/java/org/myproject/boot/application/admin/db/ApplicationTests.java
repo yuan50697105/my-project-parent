@@ -1,7 +1,6 @@
 package org.myproject.boot.application.admin.db;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
 import org.myproject.boot.application.admin.db.base.pagehelper.Application;
 import org.myproject.boot.application.admin.db.base.pagehelper.mapper.SysUserMapper;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
@@ -20,7 +19,6 @@ public class ApplicationTests {
     @Autowired
     private SysUserMapper sysUserMapper;
 
-    @Test
     void name() {
         sysUserMapper.insert(new SysUser());
     }

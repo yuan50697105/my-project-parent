@@ -1,11 +1,11 @@
 package org.myproject.boot.application.admin.db.plus.sqlhelper.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUser;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserExample;
+
+import java.util.List;
 
 @Mapper
 public interface SysUserMapper extends BaseMapper<SysUser> {

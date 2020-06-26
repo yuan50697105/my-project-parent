@@ -1,11 +1,11 @@
 package org.myproject.boot.application.admin.db.base.pagehelper.service;
 
-import java.util.List;
-
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserQuery;
+
+import java.util.List;
 
 public interface SysUserService {
 

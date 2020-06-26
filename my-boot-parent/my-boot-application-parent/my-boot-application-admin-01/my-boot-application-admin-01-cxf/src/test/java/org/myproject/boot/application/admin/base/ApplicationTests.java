@@ -4,14 +4,12 @@ import ai.yue.library.base.view.Result;
 import cn.hutool.json.JSONUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
 import org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.jupiter.api.Test;
 import org.myproject.boot.application.admin.cxf.Application;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserRsService;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserWsService;
-import org.myproject.boot.application.admin.cxf.webservice.impl.WebUserRsServiceImpl;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
 import org.springframework.boot.test.context.SpringBootTest;
 

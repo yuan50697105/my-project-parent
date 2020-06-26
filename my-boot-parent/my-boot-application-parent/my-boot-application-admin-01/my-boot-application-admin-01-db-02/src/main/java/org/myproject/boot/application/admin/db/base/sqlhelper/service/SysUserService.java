@@ -2,11 +2,12 @@ package org.myproject.boot.application.admin.db.base.sqlhelper.service;
 
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser;
-import java.util.List;
 import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserQuery;
 
-public interface SysUserService{
+import java.util.List;
+
+public interface SysUserService {
 
 
     long countByExample(SysUserExample example);
@@ -25,9 +26,9 @@ public interface SysUserService{
 
     SysUser selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysUser record,SysUserExample example);
+    int updateByExampleSelective(SysUser record, SysUserExample example);
 
-    int updateByExample(SysUser record,SysUserExample example);
+    int updateByExample(SysUser record, SysUserExample example);
 
     int updateByPrimaryKeySelective(SysUser record);
 

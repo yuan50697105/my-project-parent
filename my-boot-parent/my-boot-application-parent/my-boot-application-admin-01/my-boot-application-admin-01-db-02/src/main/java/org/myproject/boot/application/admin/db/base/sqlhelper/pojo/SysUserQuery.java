@@ -9,30 +9,28 @@ import org.myproject.mybatis.sqlhelper.pojo.BaseEntity;
 import java.io.Serializable;
 
 /**
-    * sys_user
-    */
+ * sys_user
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class SysUserQuery extends BaseEntity implements Serializable, MybatisExample<SysUserExample> {
+    private static final long serialVersionUID = 1L;
     /**
-    * 用户名
-    */
+     * 用户名
+     */
     @AndLike
     private String username;
-
     /**
-    * 姓名
-    */
+     * 姓名
+     */
     @AndLike
     private String name;
     /**
-    * 启用状态
-    */
+     * 启用状态
+     */
     @AndEqualTo
     private String enabled;
-
-    private static final long serialVersionUID = 1L;
 }

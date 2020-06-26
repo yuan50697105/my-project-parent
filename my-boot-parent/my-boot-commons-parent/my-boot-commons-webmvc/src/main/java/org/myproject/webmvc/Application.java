@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.cxf;
+package org.myproject.webmvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @program: my-project-parent
  * @description:
  * @author: yuane
- * @create: 2020-06-25 15:53
+ * @create: 2020-06-26 17:38
  */
 @SpringBootApplication
 public class Application {

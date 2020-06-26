@@ -4,7 +4,6 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.converter.SysUserConverter;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserVo;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.service.SysUserService;
