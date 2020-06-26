@@ -9,6 +9,8 @@ import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserVo;
 import org.myproject.boot.application.admin.db.base.sqlhelper.service.SysUserService;
 import org.myproject.mybatis.sqlhelper.pojo.Page;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +26,6 @@ import java.util.List;
 public class SysUserController {
     @Autowired
     private SysUserService sysUserService;
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private SysUserConverter sysUserConverter;
 

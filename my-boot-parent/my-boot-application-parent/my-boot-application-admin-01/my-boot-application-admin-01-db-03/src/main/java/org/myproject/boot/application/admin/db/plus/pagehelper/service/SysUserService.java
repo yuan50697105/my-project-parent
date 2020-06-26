@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.plus.sqlhelper.service;
+package org.myproject.boot.application.admin.db.plus.pagehelper.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;

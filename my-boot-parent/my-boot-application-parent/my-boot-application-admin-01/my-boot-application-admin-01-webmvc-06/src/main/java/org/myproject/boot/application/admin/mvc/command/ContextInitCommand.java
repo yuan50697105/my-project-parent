@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Map;
 
@@ -25,5 +26,7 @@ public class ContextInitCommand implements CommandLineRunner {
         for (Map.Entry<String, Object> entry : beans.entrySet()) {
             System.out.println("entry = " + entry);
         }
+        Map<String, Object> request = context.getBeansWithAnnotation(RequestMapping.class);
+
     }
 }

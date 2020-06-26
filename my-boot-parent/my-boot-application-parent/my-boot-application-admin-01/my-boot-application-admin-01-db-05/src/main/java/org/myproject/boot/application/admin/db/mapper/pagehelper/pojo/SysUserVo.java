@@ -1,17 +1,17 @@
 package org.myproject.boot.application.admin.db.mapper.pagehelper.pojo;
 
-import lombok.*;
-import org.myproject.mybatis.mapper.pagehelper.pojo.BaseEntity;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
-import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
     * sys_user
     */
 @Data
-@EqualsAndHashCode(callSuper=true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
