@@ -20,6 +20,8 @@
         <module>my-boot-application-admin-01-webmvc-01</module>
         <module>my-boot-application-admin-01-webmvc-02</module>
         <module>my-boot-application-admin-01-webmvc-03</module>
+        <module>my-boot-application-admin-01-db-04</module>
+        <module>my-boot-application-admin-01-webmvc-04</module>
     </modules>
     <dependencies>
     </dependencies>
