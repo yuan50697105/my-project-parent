@@ -4,9 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-
-import java.util.Map;
 
 /**
  * @program: my-project-parent
@@ -21,9 +18,6 @@ public class ContextInitCommand implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Map<String, Object> beans = context.getBeansWithAnnotation(Controller.class);
-        for (Map.Entry<String, Object> entry : beans.entrySet()) {
-            System.out.println("entry = " + entry);
-        }
+
     }
 }

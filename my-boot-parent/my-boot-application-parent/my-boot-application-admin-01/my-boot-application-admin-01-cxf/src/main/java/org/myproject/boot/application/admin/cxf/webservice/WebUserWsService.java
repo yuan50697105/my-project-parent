@@ -1,7 +1,9 @@
 package org.myproject.boot.application.admin.cxf.webservice;
 
 import ai.yue.library.base.view.Result;
-import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserVo;
+import org.springframework.validation.annotation.Validated;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -24,5 +26,12 @@ public interface WebUserWsService {
     String user();
 
     @WebMethod
-    Result<?> save(@WebParam SysUser sysUser);
+    Result<?> save(@WebParam @Validated SysUserVo sysUser);
+
+    @WebMethod
+    Result<?> update(@WebParam @Validated SysUserVo sysUserVo);
+
+    @WebMethod
+    Result<?> list(@WebParam SysUserQuery query);
+
 }
