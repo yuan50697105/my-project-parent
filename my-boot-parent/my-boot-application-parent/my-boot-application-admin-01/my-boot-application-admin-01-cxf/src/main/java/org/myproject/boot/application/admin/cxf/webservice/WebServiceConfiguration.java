@@ -21,7 +21,7 @@ import java.util.Collections;
 @SpringBootConfiguration
 public class WebServiceConfiguration {
     @Bean(WebUserWsService.SERVICE_NAME)
-    public Endpoint webUserServiceWs(Bus bus, WebUserWsService webUserWsService){
+    public Endpoint webUserServiceWs(Bus bus, WebUserWsService webUserWsService) {
         EndpointImpl endpoint = new EndpointImpl(bus, webUserWsService);
         endpoint.publish(WebUserWsService.SERVICE_NAME_URL);
         return endpoint;

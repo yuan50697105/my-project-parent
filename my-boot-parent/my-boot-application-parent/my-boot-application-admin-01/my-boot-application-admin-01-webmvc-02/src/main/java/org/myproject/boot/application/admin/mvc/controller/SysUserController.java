@@ -26,7 +26,6 @@ import java.util.List;
 public class SysUserController {
     @Autowired
     private SysUserService sysUserService;
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private SysUserConverter sysUserConverter;
 

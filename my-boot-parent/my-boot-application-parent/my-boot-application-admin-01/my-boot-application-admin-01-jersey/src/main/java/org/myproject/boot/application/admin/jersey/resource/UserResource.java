@@ -21,7 +21,7 @@ public class UserResource {
 
     @GET
     @Path("hello")
-    public String hello(){
+    public String hello() {
         return userService.hello();
     }
 

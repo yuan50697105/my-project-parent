@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>my-boot-application-parent</artifactId>
@@ -12,12 +12,20 @@
     <artifactId>my-boot-application-admin-01</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>my-boot-application-admin-01-db-base-pagehelper</module>
-        <module>my-boot-application-admin-01-cxf</module>
-        <module>my-boot-application-admin-01-webmvc</module>
-        <module>my-boot-application-admin-01-jersey</module>
-        <module>my-boot-application-admin-01-db-base-sqlhelper</module>
+        <module>my-boot-application-admin-01-db-01</module>
+        <module>my-boot-application-admin-01-db-02</module>
+        <module>my-boot-application-admin-01-db-03</module>
+        <module>my-boot-application-admin-01-db-04</module>
+        <module>my-boot-application-admin-01-db-05</module>
+        <module>my-boot-application-admin-01-db-06</module>
+        <module>my-boot-application-admin-01-webmvc-01</module>
         <module>my-boot-application-admin-01-webmvc-02</module>
+        <module>my-boot-application-admin-01-webmvc-03</module>
+        <module>my-boot-application-admin-01-webmvc-04</module>
+        <module>my-boot-application-admin-01-webmvc-05</module>
+        <module>my-boot-application-admin-01-cxf</module>
+        <module>my-boot-application-admin-01-jersey</module>
+        <module>my-boot-application-admin-01-webmvc-06</module>
     </modules>
     <dependencies>
     </dependencies>

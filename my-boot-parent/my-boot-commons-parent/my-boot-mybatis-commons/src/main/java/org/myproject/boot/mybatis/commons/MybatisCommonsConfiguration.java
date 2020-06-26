@@ -20,7 +20,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class MybatisCommonsConfiguration {
 
     @Bean
-    public Snowflake snowflake(){
+    public Snowflake snowflake() {
         return IdUtil.createSnowflake(1, 1);
     }
 }
