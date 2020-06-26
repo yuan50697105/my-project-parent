@@ -22,6 +22,7 @@
         <module>my-boot-application-admin-01-webmvc-04</module>
         <module>my-boot-application-admin-01-cxf</module>
         <module>my-boot-application-admin-01-jersey</module>
+        <module>my-boot-application-admin-01-db-05</module>
     </modules>
     <dependencies>
     </dependencies>
