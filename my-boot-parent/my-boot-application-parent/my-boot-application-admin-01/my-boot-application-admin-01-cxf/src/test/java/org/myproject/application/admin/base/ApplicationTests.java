@@ -5,11 +5,13 @@ import cn.hutool.json.JSONUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
+import org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.jupiter.api.Test;
 import org.myproject.boot.application.admin.cxf.Application;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserRsService;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserWsService;
+import org.myproject.boot.application.admin.cxf.webservice.impl.WebUserRsServiceImpl;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -32,6 +34,7 @@ public class ApplicationTests {
 //        JaxWsDynamicClientFactory clientFactory = JaxWsDynamicClientFactory.newInstance();
 //        Client client = clientFactory.createClient(address);
 //        client.invoke("")
+
         JaxWsProxyFactoryBean factoryBean = new JaxWsProxyFactoryBean();
         factoryBean.setAddress(address);
         factoryBean.setServiceClass(WebUserWsService.class);
@@ -43,13 +46,21 @@ public class ApplicationTests {
         System.out.println("JSONUtil.toJsonPrettyStr(result) = " + JSONUtil.toJsonPrettyStr(result));
     }
 
+    /**
+     * 未通过
+     */
     @Test
     void name2() {
-        WebUserRsService webUserRsService = JAXRSClientFactory.create("http://localhost:8080/services/user", WebUserRsService.class);
-        String aa = webUserRsService.aa();
-        log.info(aa);
-        Result<?> result = webUserRsService.save(new SysUser());
-        System.out.println("JSONUtil.toJsonPrettyStr(result) = " + JSONUtil.toJsonPrettyStr(result));
+        JAXRSClientFactoryBean factoryBean = new JAXRSClientFactoryBean();
+        factoryBean.setAddress("http://localhost:8080/services/user");
+        factoryBean.setServiceClass(WebUserRsService.class);
+        WebUserRsService userRsService = factoryBean.create(WebUserRsService.class);
+        userRsService.save(new SysUser());
+//        WebUserRsService webUserRsService = JAXRSClientFactory.create("http://localhost:8080/services/user", WebUserRsService.class);
+//        String aa = webUserRsService.aa();
+//        log.info(aa);
+//        Result<?> result = webUserRsService.save(new SysUser());
+//        System.out.println("JSONUtil.toJsonPrettyStr(result) = " + JSONUtil.toJsonPrettyStr(result));
 //        WebClient.create("http://localhost:8080").path("/services/user")
     }
 }

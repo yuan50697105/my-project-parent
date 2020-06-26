@@ -12,8 +12,10 @@ import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserExamp
 import org.myproject.boot.application.admin.db.base.pagehelper.mapper.SysUserMapper;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
 import org.myproject.boot.application.admin.db.base.pagehelper.service.SysUserService;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class SysUserServiceImpl implements SysUserService {
 
     @Resource
@@ -88,6 +90,11 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public List<String> selectUsernameByEnabled(String enabled) {
         return sysUserMapper.selectUsernameByEnabled(enabled);
+    }
+
+    @Override
+    public List<SysUser> selectByQuery(SysUserQuery query) {
+        return selectByExample(query.toExample());
     }
 }
 

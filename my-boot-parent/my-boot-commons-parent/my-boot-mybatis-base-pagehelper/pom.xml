@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-mybatis-pagehelper</artifactId>
+    <artifactId>my-boot-mybatis-base-pagehelper</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

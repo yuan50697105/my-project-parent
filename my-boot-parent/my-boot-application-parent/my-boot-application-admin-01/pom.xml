@@ -17,6 +17,7 @@
         <module>my-boot-application-admin-01-webmvc</module>
         <module>my-boot-application-admin-01-jersey</module>
         <module>my-boot-application-admin-01-db-base-sqlhelper</module>
+        <module>my-boot-application-admin-01-webmvc-02</module>
     </modules>
     <dependencies>
     </dependencies>

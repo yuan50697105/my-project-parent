@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-mybatis-sqlhelper</artifactId>
+    <artifactId>my-boot-mybatis-base-sqlhelper</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.github.fangjinuo.sqlhelper</groupId>

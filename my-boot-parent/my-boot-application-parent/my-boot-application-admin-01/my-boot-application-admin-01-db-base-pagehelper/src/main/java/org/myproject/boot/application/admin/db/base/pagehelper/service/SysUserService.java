@@ -37,6 +37,8 @@ public interface SysUserService {
     PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysUserQuery query);
 
     List<String> selectUsernameByEnabled(String enabled);
+
+    List<SysUser> selectByQuery(SysUserQuery query);
 }
 
 
