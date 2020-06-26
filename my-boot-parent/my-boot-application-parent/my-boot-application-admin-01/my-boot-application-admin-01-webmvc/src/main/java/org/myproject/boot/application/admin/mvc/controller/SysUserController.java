@@ -3,6 +3,7 @@ package org.myproject.boot.application.admin.mvc.controller;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserVo;
 import org.myproject.boot.application.admin.db.base.pagehelper.service.SysUserService;
@@ -47,6 +48,33 @@ public class SysUserController {
     public Result<?> save(@RequestBody @Validated SysUserVo sysUserVo) {
         SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
         sysUserService.insert(sysUser);
+        return ResultInfo.success();
+    }
+
+    @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT})
+    public Result<?> update(@RequestBody @Validated SysUserVo sysUserVo) {
+        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
+        sysUserService.updateByPrimaryKeySelective(sysUser);
+        return ResultInfo.success();
+    }
+
+    @GetMapping(value = "delete", params = "ids")
+    public Result<?> delete(List<Long> ids) {
+        SysUserExample example = new SysUserExample();
+        example.or().andIdIn(ids);
+        sysUserService.deleteByExample(example);
+        return ResultInfo.success();
+    }
+
+    @GetMapping(value = "delete", params = "id")
+    public Result<?> delete(Long id) {
+        sysUserService.deleteByPrimaryKey(id);
+        return ResultInfo.success();
+    }
+
+    @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
+    public Result<?> deleteRs(@PathVariable("id") Long id) {
+        sysUserService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
 }
