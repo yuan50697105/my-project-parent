@@ -66,10 +66,4 @@ public interface SysUserMapper {
      * @return update count
      */
     int updateByPrimaryKey(SysUser record);
-
-    List<SysUser> selectAllByEnabled(@Param("enabled") String enabled);
-
-    List<String> selectUsernameByEnabled(@Param("enabled") String enabled);
-
-
 }

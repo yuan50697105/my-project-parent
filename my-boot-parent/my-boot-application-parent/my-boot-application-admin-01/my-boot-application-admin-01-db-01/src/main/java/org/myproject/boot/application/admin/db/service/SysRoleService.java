@@ -7,7 +7,7 @@ import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
 
 import java.util.List;
 
-public interface SysRoleService{
+public interface SysRoleService {
 
 
     long countByExample(SysRoleExample example);
@@ -24,9 +24,9 @@ public interface SysRoleService{
 
     SysRole selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysRole record,SysRoleExample example);
+    int updateByExampleSelective(SysRole record, SysRoleExample example);
 
-    int updateByExample(SysRole record,SysRoleExample example);
+    int updateByExample(SysRole record, SysRoleExample example);
 
     int updateByPrimaryKeySelective(SysRole record);
 
@@ -38,3 +38,4 @@ public interface SysRoleService{
 
     PageInfo<SysRole> selectByExampleWithPage(int page, int pageSize, SysRoleExample example);
 }
+

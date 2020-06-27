@@ -15,6 +15,7 @@ public interface SysRoleMapper {
 
     /**
      * delete by primary key
+     *
      * @param id primaryKey
      * @return deleteCount
      */
@@ -22,6 +23,7 @@ public interface SysRoleMapper {
 
     /**
      * insert record to table
+     *
      * @param record the record
      * @return insert count
      */
@@ -29,6 +31,7 @@ public interface SysRoleMapper {
 
     /**
      * insert record to table selective
+     *
      * @param record the record
      * @return insert count
      */
@@ -38,6 +41,7 @@ public interface SysRoleMapper {
 
     /**
      * select by primary key
+     *
      * @param id primary key
      * @return object by primary key
      */
@@ -49,6 +53,7 @@ public interface SysRoleMapper {
 
     /**
      * update record selective
+     *
      * @param record the updated record
      * @return update count
      */
@@ -56,6 +61,7 @@ public interface SysRoleMapper {
 
     /**
      * update record
+     *
      * @param record the updated record
      * @return update count
      */

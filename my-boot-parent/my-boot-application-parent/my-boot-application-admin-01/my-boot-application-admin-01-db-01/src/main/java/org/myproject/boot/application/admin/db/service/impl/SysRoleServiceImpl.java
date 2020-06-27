@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+
 @Service
-public class SysRoleServiceImpl implements SysRoleService{
+public class SysRoleServiceImpl implements SysRoleService {
 
     @Resource
     private SysRoleMapper sysRoleMapper;
@@ -53,13 +54,13 @@ public class SysRoleServiceImpl implements SysRoleService{
     }
 
     @Override
-    public int updateByExampleSelective(SysRole record,SysRoleExample example) {
-        return sysRoleMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysRole record, SysRoleExample example) {
+        return sysRoleMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(SysRole record,SysRoleExample example) {
-        return sysRoleMapper.updateByExample(record,example);
+    public int updateByExample(SysRole record, SysRoleExample example) {
+        return sysRoleMapper.updateByExample(record, example);
     }
 
     @Override
@@ -74,7 +75,7 @@ public class SysRoleServiceImpl implements SysRoleService{
 
     @Override
     public PageInfo<SysRole> selectByQueryWithPage(int page, int size, SysRoleQuery query) {
-        return selectByExampleWithPage(page,size,query.toExample());
+        return selectByExampleWithPage(page, size, query.toExample());
     }
 
     @Override
@@ -88,3 +89,4 @@ public class SysRoleServiceImpl implements SysRoleService{
         return new PageInfo<>(sysRoleMapper.selectByExample(example));
     }
 }
+
