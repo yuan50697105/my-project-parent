@@ -1,6 +1,10 @@
 package org.myproject.boot.application.admin.db.service;
 
 import java.util.List;
+
+import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.pojo.SysUser;
+import org.myproject.boot.application.admin.db.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserRole;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -28,4 +32,6 @@ public interface SysUserRoleService extends IService<SysUserRole>{
     int updateByPrimaryKeySelective(SysUserRole record);
 
     int updateByPrimaryKey(SysUserRole record);
+
+    PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example);
 }

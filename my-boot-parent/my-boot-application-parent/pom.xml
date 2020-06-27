@@ -13,5 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-application-admin-01</module>
+        <module>my-boot-application-admin-02</module>
     </modules>
 </project>

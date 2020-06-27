@@ -1,25 +1,17 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.mapper.SysUserMapper;
-import org.myproject.boot.application.admin.db.mapper.SysUserRoleMapper;
-import org.myproject.boot.application.admin.db.pojo.*;
-import org.myproject.boot.application.admin.db.service.SysUserRoleService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.util.List;
-
+import org.myproject.boot.application.admin.db.mapper.SysUserRoleMapper;
+import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;
+import org.myproject.boot.application.admin.db.pojo.SysUserRole;
+import org.myproject.boot.application.admin.db.service.SysUserRoleService;
 @Service
-public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole> implements SysUserRoleService {
+public class SysUserRoleServiceImpl implements SysUserRoleService{
 
     @Resource
     private SysUserRoleMapper sysUserRoleMapper;
-    @Autowired
-    private SysUserMapper sysUserMapper;
 
     @Override
     public long countByExample(SysUserRoleExample example) {
@@ -57,13 +49,13 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
     }
 
     @Override
-    public int updateByExampleSelective(SysUserRole record, SysUserRoleExample example) {
-        return sysUserRoleMapper.updateByExampleSelective(record, example);
+    public int updateByExampleSelective(SysUserRole record,SysUserRoleExample example) {
+        return sysUserRoleMapper.updateByExampleSelective(record,example);
     }
 
     @Override
-    public int updateByExample(SysUserRole record, SysUserRoleExample example) {
-        return sysUserRoleMapper.updateByExample(record, example);
+    public int updateByExample(SysUserRole record,SysUserRoleExample example) {
+        return sysUserRoleMapper.updateByExample(record,example);
     }
 
     @Override
@@ -76,17 +68,4 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
         return sysUserRoleMapper.updateByPrimaryKey(record);
     }
 
-    @Override
-    public PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example) {
-        PageHelper.startPage(page, pageSize);
-        return new PageInfo<>(sysUserMapper.selectByExample(example));
-    }
-
-    @Override
-    public PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysRoleQuery query) {
-        PageHelper.startPage(page, pageSize);
-        return new PageInfo<>(sysUserMapper.selectByExample(query.toExample()));
-    }
 }
-
-
