@@ -2,13 +2,13 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.base.sqlhelper.converter.SysUserConverter;
-import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserExample;
-import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.base.sqlhelper.service.SysUserService;
-import org.myproject.mybatis.sqlhelper.pojo.PageResult;
+import org.myproject.boot.application.admin.db.converter.SysUserConverter;
+import org.myproject.boot.application.admin.db.pojo.SysUser;
+import org.myproject.boot.application.admin.db.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.pojo.SysUserVo;
+import org.myproject.boot.application.admin.db.service.SysUserService;
+import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +26,7 @@ import java.util.List;
 public class SysUserController {
     @Autowired
     private SysUserService sysUserService;
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private SysUserConverter sysUserConverter;
 

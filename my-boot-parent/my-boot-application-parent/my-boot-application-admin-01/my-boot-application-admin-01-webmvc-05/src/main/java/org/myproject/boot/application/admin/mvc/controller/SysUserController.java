@@ -2,17 +2,16 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.mapper.pagehelper.converter.SysUserConverter;
-import org.myproject.boot.application.admin.db.mapper.pagehelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.mapper.pagehelper.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.mapper.pagehelper.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.mapper.pagehelper.service.SysUserService;
-import org.myproject.mybatis.mapper.pagehelper.pojo.PageResult;
+import org.myproject.boot.application.admin.db.converter.SysUserConverter;
+import org.myproject.boot.application.admin.db.pojo.SysUser;
+import org.myproject.boot.application.admin.db.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.pojo.SysUserVo;
+import org.myproject.boot.application.admin.db.service.SysUserService;
+import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import tk.mybatis.mapper.entity.Example;
-import tk.mybatis.mapper.util.Sqls;
 
 import java.util.List;
 
@@ -67,8 +66,9 @@ public class SysUserController {
 
     @GetMapping(value = "delete", params = "ids")
     public Result<?> delete(List<Long> ids) {
-        Example.Builder where = Example.builder(SysUser.class).where(Sqls.custom().andIn("id", ids));
-        sysUserService.deleteByExample(where.build());
+        SysUserExample example = new SysUserExample();
+        example.or().andIdIn(ids);
+        sysUserService.deleteByExample(example);
         return ResultInfo.success();
     }
 

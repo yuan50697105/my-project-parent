@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.boot.application.admin.db.mapper.plus.pagehelper.DbConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.boot.application.admin.db.DbConfiguration

@@ -2,17 +2,16 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.converter.SysUserConverter;
-import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.service.SysUserService;
-import org.myproject.mybatisplus.mapper.sqlhelper.pojo.PageResult;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.myproject.boot.application.admin.db.converter.SysUserConverter;
+import org.myproject.boot.application.admin.db.pojo.SysUser;
+import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.pojo.SysUserVo;
+import org.myproject.boot.application.admin.db.service.SysUserService;
+import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import tk.mybatis.mapper.entity.Example;
-import tk.mybatis.mapper.util.Sqls;
 
 import java.util.List;
 
@@ -43,8 +42,8 @@ public class SysUserController {
     public Result<?> data2(SysUserQuery query,
                            @RequestParam(defaultValue = "1") int page,
                            @RequestParam(defaultValue = "20") int size) {
-        PageResult<SysUser> userPageResult = new PageResult<>(sysUserService.pageByQuery(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(page, size), query));
-        return ResultInfo.success(userPageResult.getData(), userPageResult.getTotalRows());
+        PageResult<SysUser> result = new PageResult<>(sysUserService.pageByQuery(new Page<>(page, size), query));
+        return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
     @GetMapping("list")
@@ -81,7 +80,6 @@ public class SysUserController {
 
     @GetMapping(value = "delete", params = "ids")
     public Result<?> delete(List<Long> ids) {
-        Example.Builder where = Example.builder(SysUser.class).where(Sqls.custom().andIn("id", ids));
         sysUserService.removeByIds(ids);
         return ResultInfo.success();
     }

@@ -30,6 +30,7 @@
         <module>my-boot-commons-webservice-jersey</module>
         <module>my-boot-commons-webflux</module>
         <module>my-boot-security-session-redis</module>
+        <module>my-boot-mybatis-commons-dynamic-datasource</module>
     </modules>
     <build>
         <plugins>
