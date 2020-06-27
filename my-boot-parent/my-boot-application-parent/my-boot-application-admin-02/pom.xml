@@ -14,12 +14,24 @@
     <modules>
         <module>my-boot-application-admin-02-db-01</module>
         <module>my-boot-application-admin-02-db-02</module>
+        <module>my-boot-application-admin-02-db-03</module>
+        <module>my-boot-application-admin-02-db-04</module>
+        <module>my-boot-application-admin-02-db-05</module>
+        <module>my-boot-application-admin-02-db-06</module>
+        <module>my-boot-application-admin-02-db-07</module>
+        <module>my-boot-application-admin-02-db-08</module>
         <module>my-boot-application-admin-02-webmvc-01</module>
         <module>my-boot-application-admin-02-webmvc-02</module>
         <module>my-boot-application-admin-02-cxf-01</module>
         <module>my-boot-application-admin-02-cxf-02</module>
         <module>my-boot-application-admin-02-jersey-01</module>
         <module>my-boot-application-admin-02-jersey-02</module>
+        <module>my-boot-application-admin-02-webmvc-03</module>
+        <module>my-boot-application-admin-02-webmvc-04</module>
+        <module>my-boot-application-admin-02-webmvc-05</module>
+        <module>my-boot-application-admin-02-webmvc-06</module>
+        <module>my-boot-application-admin-02-webmvc-07</module>
+        <module>my-boot-application-admin-02-webmvc-08</module>
     </modules>
 
 
