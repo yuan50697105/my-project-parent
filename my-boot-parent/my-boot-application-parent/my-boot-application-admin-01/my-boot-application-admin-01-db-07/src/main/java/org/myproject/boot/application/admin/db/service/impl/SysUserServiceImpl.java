@@ -58,15 +58,14 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     }
 
     @Override
-    public List<SysUser> listByQuery(SysUserQuery query) {
+    public IPage<SysUser> pageByQuery(Page<SysUser> page, SysUserQuery query) {
         QueryWrapper<SysUser> queryWrapper = queryWrapper(query);
-        return list(queryWrapper);
+        return page(page, queryWrapper);
     }
 
     @Override
-    public IPage<SysUser> pageByQuery(Page<SysUser> page, SysUserQuery query) {
-        QueryWrapper<SysUser> queryWrapper = queryWrapper(query);
-        return page(page,queryWrapper);
+    public List<SysUser> listByQuery(SysUserQuery query) {
+        return list(queryWrapper(query));
     }
 
     private QueryWrapper<SysUser> queryWrapper(SysUserQuery query) {
@@ -77,4 +76,35 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         return queryWrapper;
     }
 
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return sysUserMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int insert(SysUser record) {
+        return sysUserMapper.insert(record);
+    }
+
+    @Override
+    public int insertSelective(SysUser record) {
+        return sysUserMapper.insertSelective(record);
+    }
+
+    @Override
+    public SysUser selectByPrimaryKey(Long id) {
+        return sysUserMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(SysUser record) {
+        return sysUserMapper.updateByPrimaryKeySelective(record);
+    }
+
+    @Override
+    public int updateByPrimaryKey(SysUser record) {
+        return sysUserMapper.updateByPrimaryKey(record);
+    }
 }
+
+

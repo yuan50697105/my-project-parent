@@ -13,32 +13,26 @@ import lombok.NoArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 /**
- * sys_user
- */
+    * sys_role
+    */
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper=true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "sys_user")
-public class SysUser extends BaseEntity implements Serializable {
+@TableName(value = "sys_role")
+public class SysRole extends BaseEntity implements Serializable {
     /**
-     * 用户名
-     */
-    @TableField(value = "username")
-    private String username;
-
-    /**
-     * 姓名
+     * 角色名称
      */
     @TableField(value = "name")
     private String name;
 
     /**
-     * 密码
+     * 角色描述
      */
-    @TableField(value = "password")
-    private String password;
+    @TableField(value = "description")
+    private String description;
 
     /**
      * 启用状态
@@ -50,11 +44,9 @@ public class SysUser extends BaseEntity implements Serializable {
 
     public static final String COL_ID = "id";
 
-    public static final String COL_USERNAME = "username";
-
     public static final String COL_NAME = "name";
 
-    public static final String COL_PASSWORD = "password";
+    public static final String COL_DESCRIPTION = "description";
 
     public static final String COL_ENABLED = "enabled";
 }

@@ -2,12 +2,12 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.converter.SysUserConverter;
-import org.myproject.boot.application.admin.db.pojo.SysUser;
-import org.myproject.boot.application.admin.db.pojo.SysUserExample;
-import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.service.SysUserService;
+import org.myproject.boot.application.admin.db.converter.SysRoleConverter;
+import org.myproject.boot.application.admin.db.pojo.SysRole;
+import org.myproject.boot.application.admin.db.pojo.SysRoleExample;
+import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
+import org.myproject.boot.application.admin.db.pojo.SysRoleVo;
+import org.myproject.boot.application.admin.db.service.SysRoleService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -23,64 +23,64 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("sys/user")
-public class SysUserController {
+public class SysRoleController {
     @Autowired
-    private SysUserService sysUserService;
+    private SysRoleService sysRoleService;
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
-    private SysUserConverter sysUserConverter;
+    private SysRoleConverter sysRoleConverter;
 
     @GetMapping("data")
-    public Result<?> data(SysUserQuery query,
+    public Result<?> data(SysRoleQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<SysUser> result = new PageResult<>(sysUserService.selectByQueryWithPage(page, size, query));
+        PageResult<SysRole> result = new PageResult<>(sysRoleService.selectByQueryWithPage(page, size, query));
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
     @GetMapping("list")
-    public Result<?> list(SysUserQuery query) {
-        List<SysUser> list = sysUserService.selectByQuery(query);
+    public Result<?> list(SysRoleQuery query) {
+        List<SysRole> list = sysRoleService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
     @GetMapping("get")
     public Result<?> get(Long id) {
-        SysUser sysUser = sysUserService.selectByPrimaryKey(id);
-        return ResultInfo.success(sysUser);
+        SysRole sysRole = sysRoleService.selectByPrimaryKey(id);
+        return ResultInfo.success(sysRole);
     }
 
     @PostMapping("save")
-    public Result<?> save(@RequestBody @Validated SysUserVo sysUserVo) {
-        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
-        sysUserService.insert(sysUser);
+    public Result<?> save(@RequestBody @Validated SysRoleVo sysRoleVo) {
+        SysRole sysRole = sysRoleConverter.voToPo(sysRoleVo);
+        sysRoleService.insert(sysRole);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT})
-    public Result<?> update(@RequestBody @Validated SysUserVo sysUserVo) {
-        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
-        sysUserService.updateByPrimaryKeySelective(sysUser);
+    public Result<?> update(@RequestBody @Validated SysRoleVo sysRoleVo) {
+        SysRole sysRole = sysRoleConverter.voToPo(sysRoleVo);
+        sysRoleService.updateByPrimaryKeySelective(sysRole);
         return ResultInfo.success();
     }
 
     @GetMapping(value = "delete", params = "ids")
     public Result<?> delete(List<Long> ids) {
-        SysUserExample example = new SysUserExample();
+        SysRoleExample example = new SysRoleExample();
         example.or().andIdIn(ids);
-        sysUserService.deleteByExample(example);
+        sysRoleService.deleteByExample(example);
         return ResultInfo.success();
     }
 
     @GetMapping(value = "delete", params = "id")
     public Result<?> delete(Long id) {
-        sysUserService.deleteByPrimaryKey(id);
+        sysRoleService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteRs(@PathVariable("id") Long id) {
-        sysUserService.deleteByPrimaryKey(id);
+        sysRoleService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
 }

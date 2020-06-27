@@ -1,11 +1,10 @@
-package org.myproject.boot.application.admin.db.service.impl;
+package org.myproject.boot.application.admin.db.service;
 
 import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserRole;
 import com.baomidou.mybatisplus.extension.service.IService;
-
-public interface SysUserRoleService extends IService<SysUserRole> {
+public interface SysUserRoleService extends IService<SysUserRole>{
 
 
     long countByExample(SysUserRoleExample example);
@@ -14,9 +13,8 @@ public interface SysUserRoleService extends IService<SysUserRole> {
 
     List<SysUserRole> selectByExample(SysUserRoleExample example);
 
-    int updateByExampleSelective(SysUserRole record, SysUserRoleExample example);
+    int updateByExampleSelective(SysUserRole record,SysUserRoleExample example);
 
-    int updateByExample(SysUserRole record, SysUserRoleExample example);
+    int updateByExample(SysUserRole record,SysUserRoleExample example);
 
 }
-
