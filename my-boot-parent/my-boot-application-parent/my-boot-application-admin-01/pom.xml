@@ -37,6 +37,13 @@
         <module>my-boot-application-admin-01-cxf-07</module>
         <module>my-boot-application-admin-01-cxf-08</module>
         <module>my-boot-application-admin-01-jersey-01</module>
+        <module>my-boot-application-admin-01-jersey-02</module>
+        <module>my-boot-application-admin-01-jersey-03</module>
+        <module>my-boot-application-admin-01-jersey-04</module>
+        <module>my-boot-application-admin-01-jersey-05</module>
+        <module>my-boot-application-admin-01-jersey-06</module>
+        <module>my-boot-application-admin-01-jersey-07</module>
+        <module>my-boot-application-admin-01-jersey-08</module>
     </modules>
     <dependencies>
     </dependencies>
