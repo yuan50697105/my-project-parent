@@ -1,8 +1,8 @@
 package org.myproject.boot.application.admin.cxf.webservice;
 
 import ai.yue.library.base.view.Result;
-import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserVo;
+import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.pojo.SysUserVo;
 import org.springframework.validation.annotation.Validated;
 
 import javax.jws.WebMethod;

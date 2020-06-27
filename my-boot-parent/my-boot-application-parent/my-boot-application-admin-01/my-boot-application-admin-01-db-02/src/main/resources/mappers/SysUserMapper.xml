@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.boot.application.admin.db.base.sqlhelper.mapper.SysUserMapper">
-  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser">
+<mapper namespace="org.myproject.boot.application.admin.db.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.SysUser">
     <!--@mbg.generated-->
     <!--@Table sys_user-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -74,7 +74,7 @@
     <!--@mbg.generated-->
     id, username, `name`, `password`, enabled
   </sql>
-  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.SysUserExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -101,21 +101,21 @@
     delete from sys_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserExample">
+  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.db.pojo.SysUserExample">
     <!--@mbg.generated-->
     delete from sys_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into sys_user (username, `name`, `password`, 
       enabled)
     values (#{username,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{enabled,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into sys_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -147,7 +147,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="org.myproject.boot.application.admin.db.pojo.SysUserExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from sys_user
     <if test="_parameter != null">
@@ -190,7 +190,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser">
+  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser">
     <!--@mbg.generated-->
     update sys_user
     <set>
@@ -209,7 +209,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="org.myproject.boot.application.admin.db.base.sqlhelper.pojo.SysUser">
+  <update id="updateByPrimaryKey" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser">
     <!--@mbg.generated-->
     update sys_user
     set username = #{username,jdbcType=VARCHAR},
