@@ -1,5 +1,7 @@
 package org.myproject.boot.application.admin.db.plus.pagehelper.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUser;
@@ -24,4 +26,8 @@ public interface SysUserService extends IService<SysUser> {
     PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query);
 
     List<SysUser> selectByQuery(SysUserQuery query);
+
+    IPage<SysUser> pageByQuery(Page<SysUser> page, SysUserQuery query);
+
+    List<SysUser> listByQuery(SysUserQuery query);
 }

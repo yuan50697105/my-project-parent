@@ -2,11 +2,12 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.myproject.boot.application.admin.db.plus.pagehelper.converter.SysUserConverter;
 import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUser;
 import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserVo;
 import org.myproject.boot.application.admin.db.plus.pagehelper.service.SysUserService;
-import org.myproject.boot.application.admin.db.plus.pagehelper.converter.SysUserConverter;
 import org.myproject.mybatisplus.base.pagehelper.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -37,9 +38,23 @@ public class SysUserController {
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
+    @GetMapping("data2")
+    public Result<?> data2(SysUserQuery query,
+                           @RequestParam(defaultValue = "1") int page,
+                           @RequestParam(defaultValue = "20") int size) {
+        PageResult<SysUser> result = new PageResult<>(sysUserService.pageByQuery(new Page<>(page, size), query));
+        return ResultInfo.success(result.getData(), result.getTotalRows());
+    }
+
     @GetMapping("list")
     public Result<?> list(SysUserQuery query) {
         List<SysUser> list = sysUserService.selectByQuery(query);
+        return ResultInfo.success(list, (long) list.size());
+    }
+
+    @GetMapping("list2")
+    public Result<?> list2(SysUserQuery query) {
+        List<SysUser> list = sysUserService.listByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
