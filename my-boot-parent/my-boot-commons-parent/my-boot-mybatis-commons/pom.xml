@@ -58,6 +58,11 @@
             <artifactId>mybatis-example-ext</artifactId>
             <version>1.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.fangjinuo.easyjson</groupId>
+            <artifactId>easyjson-jackson</artifactId>
+            <version>3.0.0</version>
+        </dependency>
     </dependencies>
 
 </project>
