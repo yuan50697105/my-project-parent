@@ -16,6 +16,11 @@
             <artifactId>my-boot-mybatis-base-sqlhelper</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-mybatis-commons-dynamic-datasource</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
 </project>
