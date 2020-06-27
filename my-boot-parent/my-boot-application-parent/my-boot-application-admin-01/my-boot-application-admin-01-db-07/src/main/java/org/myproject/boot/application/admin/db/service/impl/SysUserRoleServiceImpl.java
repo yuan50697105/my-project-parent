@@ -1,15 +1,17 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.myproject.boot.application.admin.db.mapper.SysUserRoleMapper;
+import org.myproject.boot.application.admin.db.pojo.SysUserRole;
+import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;
+import org.myproject.boot.application.admin.db.service.SysUserRoleService;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import java.util.List;
-import org.myproject.boot.application.admin.db.mapper.SysUserRoleMapper;
-import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;
-import org.myproject.boot.application.admin.db.pojo.SysUserRole;
-import org.myproject.boot.application.admin.db.service.SysUserRoleService;
 
 @Service
-public class SysUserRoleServiceImpl implements SysUserRoleService {
+public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper,SysUserRole> implements SysUserRoleService {
 
     @Resource
     private SysUserRoleMapper sysUserRoleMapper;

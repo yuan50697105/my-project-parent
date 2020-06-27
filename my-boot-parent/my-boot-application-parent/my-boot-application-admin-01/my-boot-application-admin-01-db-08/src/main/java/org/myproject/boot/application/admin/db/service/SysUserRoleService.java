@@ -7,14 +7,25 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface SysUserRoleService extends IService<SysUserRole>{
 
 
-    long countByExample(SysUserRoleExample example);
+    abstract long countByExample(SysUserRoleExample example);
 
-    int deleteByExample(SysUserRoleExample example);
+    abstract int deleteByExample(SysUserRoleExample example);
 
-    List<SysUserRole> selectByExample(SysUserRoleExample example);
+    abstract int deleteByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysUserRole record,SysUserRoleExample example);
+    int insert(SysUserRole record);
 
-    int updateByExample(SysUserRole record,SysUserRoleExample example);
+    int insertSelective(SysUserRole record);
 
+    abstract List<SysUserRole> selectByExample(SysUserRoleExample example);
+
+    SysUserRole selectByPrimaryKey(Long id);
+
+    abstract int updateByExampleSelective(SysUserRole record, SysUserRoleExample example);
+
+    abstract int updateByExample(SysUserRole record, SysUserRoleExample example);
+
+    int updateByPrimaryKeySelective(SysUserRole record);
+
+    int updateByPrimaryKey(SysUserRole record);
 }
