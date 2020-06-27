@@ -6,6 +6,7 @@ import org.myproject.boot.application.admin.db.mapper.SysRoleMapper;
 import org.myproject.boot.application.admin.db.pojo.SysRole;
 import org.myproject.boot.application.admin.db.pojo.SysRoleExample;
 import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
+import org.myproject.boot.application.admin.db.service.SysRoleService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -48,11 +49,6 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
-    public List<SysRole> selectByQuery(SysRoleQuery query) {
-        return sysRoleMapper.selectByExample(query.toExample());
-    }
-
-    @Override
     public SysRole selectByPrimaryKey(Long id) {
         return sysRoleMapper.selectByPrimaryKey(id);
     }
@@ -78,13 +74,19 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
+    public PageInfo<SysRole> selectByQueryWithPage(int page, int size, SysRoleQuery query) {
+        return selectByExampleWithPage(page, size, query.toExample());
+    }
+
+    @Override
+    public List<SysRole> selectByQuery(SysRoleQuery query) {
+        return selectByExample(query.toExample());
+    }
+
+    @Override
     public PageInfo<SysRole> selectByExampleWithPage(int page, int pageSize, SysRoleExample example) {
         PageHelper.startPage(page, pageSize);
         return new PageInfo<>(sysRoleMapper.selectByExample(example));
     }
-
-    @Override
-    public PageInfo<SysRole> selectByQueryWithPage(int page, int pageSize, SysRoleQuery query) {
-        return selectByExampleWithPage(page, pageSize, query.toExample());
-    }
 }
+

@@ -6,8 +6,7 @@ import org.myproject.boot.application.admin.db.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
 
 import java.util.List;
-
-public interface SysUserService {
+public interface SysUserService{
 
 
     long countByExample(SysUserExample example);
@@ -22,13 +21,11 @@ public interface SysUserService {
 
     List<SysUser> selectByExample(SysUserExample example);
 
-    List<SysUser> selectByQuery(SysUserQuery query);
-
     SysUser selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysUser record, SysUserExample example);
+    int updateByExampleSelective(SysUser record,SysUserExample example);
 
-    int updateByExample(SysUser record, SysUserExample example);
+    int updateByExample(SysUser record,SysUserExample example);
 
     int updateByPrimaryKeySelective(SysUser record);
 
@@ -36,5 +33,7 @@ public interface SysUserService {
 
     PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example);
 
-    PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysUserQuery query);
+    PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query);
+
+    List<SysUser> selectByQuery(SysUserQuery query);
 }

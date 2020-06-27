@@ -59,7 +59,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public IPage<SysUser> pageByQuery(Page<SysUser> page, SysUserQuery query) {
-        return page(page, queryWrapper(query));
+        QueryWrapper<SysUser> queryWrapper = queryWrapper(query);
+        return page(page, queryWrapper);
     }
 
     @Override

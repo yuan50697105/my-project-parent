@@ -49,11 +49,6 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public List<SysUser> selectByQuery(SysUserQuery query) {
-        return sysUserMapper.selectByExample(query.toExample());
-    }
-
-    @Override
     public SysUser selectByPrimaryKey(Long id) {
         return sysUserMapper.selectByPrimaryKey(id);
     }
@@ -85,7 +80,12 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysUserQuery query) {
-        return selectByExampleWithPage(page, pageSize, query.toExample());
+    public PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query) {
+        return selectByExampleWithPage(page, size, query.toExample());
+    }
+
+    @Override
+    public List<SysUser> selectByQuery(SysUserQuery query) {
+        return selectByExample(query.toExample());
     }
 }

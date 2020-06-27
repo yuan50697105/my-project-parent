@@ -1,43 +1,94 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.mapper.SysUserMapper;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
+import org.myproject.boot.application.admin.db.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.service.SysUserService;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class SysUserServiceImpl implements SysUserService {
+@Transactional
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
-    @Resource
-    private SysUserMapper sysUserMapper;
+    @Override
+    public long countByExample(SysUserExample example) {
+        return baseMapper.countByExample(example);
+    }
+
+    @Override
+    public int deleteByExample(SysUserExample example) {
+        return baseMapper.deleteByExample(example);
+    }
+
+    @Override
+    public List<SysUser> selectByExample(SysUserExample example) {
+        return baseMapper.selectByExample(example);
+    }
+
+    @Override
+    public int updateByExampleSelective(SysUser record, SysUserExample example) {
+        return baseMapper.updateByExampleSelective(record, example);
+    }
+
+    @Override
+    public int updateByExample(SysUser record, SysUserExample example) {
+        return baseMapper.updateByExample(record, example);
+    }
 
     @Override
     public PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query) {
         PageHelper.startPage(page, size);
-        return new PageInfo<>(sysUserMapper.selectByExample(query.toExample()));
-    }
-
-    @Override
-    public PageInfo<SysUser> selectByExampleWithPage(int page, int size, Example example) {
-        PageHelper.startPage(page, size);
-        return new PageInfo<>(sysUserMapper.selectByExample(example));
+        return new PageInfo<>(baseMapper.selectByExample(query.toExample()));
     }
 
     @Override
     public List<SysUser> selectByQuery(SysUserQuery query) {
-        return sysUserMapper.selectByExample(query.toExample());
+        return baseMapper.selectByExample(query.toExample());
     }
 
     @Override
-    public List<SysUser> selectByExample(Example example) {
-        return sysUserMapper.selectByExample(example);
+    public IPage<SysUser> pageByQuery(Page<SysUser> page, SysUserQuery query) {
+        QueryWrapper<SysUser> queryWrapper = queryWrapper(query);
+        return page(page, queryWrapper);
+    }
+
+    @Override
+    public List<SysUser> listByQuery(SysUserQuery query) {
+        return list(queryWrapper(query));
+    }
+
+    private QueryWrapper<SysUser> queryWrapper(SysUserQuery query) {
+        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
+        if (ObjectUtil.isNotEmpty(query)) {
+            queryWrapper.like(ObjectUtil.isNotEmpty(query.getUsername()), SysUser.COL_USERNAME, query.getUsername());
+        }
+        return queryWrapper;
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return sysUserMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int insert(SysUser record) {
+        return sysUserMapper.insert(record);
+    }
+
+    @Override
+    public int insertSelective(SysUser record) {
+        return sysUserMapper.insertSelective(record);
     }
 
     @Override
@@ -46,22 +97,13 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public int insert(SysUser sysUser) {
-        return sysUserMapper.insert(sysUser);
+    public int updateByPrimaryKeySelective(SysUser record) {
+        return sysUserMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(SysUser sysUser) {
-        return sysUserMapper.updateByPrimaryKeySelective(sysUser);
-    }
-
-    @Override
-    public int deleteByExample(Example example) {
-        return sysUserMapper.deleteByExample(example);
-    }
-
-    @Override
-    public int deleteByPrimaryKey(Long id) {
-        return sysUserMapper.deleteByPrimaryKey(id);
+    public int updateByPrimaryKey(SysUser record) {
+        return sysUserMapper.updateByPrimaryKey(record);
     }
 }
+

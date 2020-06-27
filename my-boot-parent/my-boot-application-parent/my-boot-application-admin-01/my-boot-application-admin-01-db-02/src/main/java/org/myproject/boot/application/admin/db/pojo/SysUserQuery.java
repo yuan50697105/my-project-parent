@@ -13,9 +13,9 @@ import java.io.Serializable;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class SysUserQuery extends BaseEntity implements Serializable, MybatisExample<SysUserExample> {
     private static final long serialVersionUID = 1L;
     /**
