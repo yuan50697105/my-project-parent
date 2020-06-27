@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.mapperplus.sqlhelper;
+package org.myproject.boot.application.admin.db.mapper.plus.sqlhelper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

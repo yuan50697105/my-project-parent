@@ -1,11 +1,11 @@
-package org.myproject.boot.application.admin.db.mapperplus.sqlhelper.mapper;
+package org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.mapstruct.Mapper;
-import org.myproject.boot.application.admin.db.mapperplus.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.mapperplus.sqlhelper.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.pojo.SysUserExample;
 
 import java.util.List;
 

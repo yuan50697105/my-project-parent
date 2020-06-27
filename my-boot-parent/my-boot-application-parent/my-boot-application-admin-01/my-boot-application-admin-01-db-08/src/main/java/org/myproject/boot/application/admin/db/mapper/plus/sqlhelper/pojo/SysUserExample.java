@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.mapperplus.sqlhelper.pojo;
+package org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.pojo;
 
 import java.util.ArrayList;
 import java.util.List;

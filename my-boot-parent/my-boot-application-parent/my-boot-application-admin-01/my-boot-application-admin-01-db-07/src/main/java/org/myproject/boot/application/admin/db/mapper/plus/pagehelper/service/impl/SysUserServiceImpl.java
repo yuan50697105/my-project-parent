@@ -59,20 +59,22 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 
     @Override
     public List<SysUser> listByQuery(SysUserQuery query) {
-        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
-        if (ObjectUtil.isNotEmpty(query)) {
-            queryWrapper.like(ObjectUtil.isNotEmpty(query.getUsername()), SysUser.COL_USERNAME, query.getUsername());
-        }
+        QueryWrapper<SysUser> queryWrapper = queryWrapper(query);
         return list(queryWrapper);
     }
 
     @Override
     public IPage<SysUser> pageByQuery(Page<SysUser> page, SysUserQuery query) {
+        QueryWrapper<SysUser> queryWrapper = queryWrapper(query);
+        return page(page,queryWrapper);
+    }
+
+    private QueryWrapper<SysUser> queryWrapper(SysUserQuery query) {
         QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
         if (ObjectUtil.isNotEmpty(query)) {
             queryWrapper.like(ObjectUtil.isNotEmpty(query.getUsername()), SysUser.COL_USERNAME, query.getUsername());
         }
-        return page(page,queryWrapper);
+        return queryWrapper;
     }
 
 }

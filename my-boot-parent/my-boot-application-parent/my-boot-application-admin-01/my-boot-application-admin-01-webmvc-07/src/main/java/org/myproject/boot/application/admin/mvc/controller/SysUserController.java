@@ -2,6 +2,7 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.myproject.boot.application.admin.db.mapper.plus.pagehelper.converter.SysUserConverter;
 import org.myproject.boot.application.admin.db.mapper.plus.pagehelper.pojo.SysUser;
 import org.myproject.boot.application.admin.db.mapper.plus.pagehelper.pojo.SysUserQuery;
@@ -27,7 +28,6 @@ import java.util.List;
 public class SysUserController {
     @Autowired
     private SysUserService sysUserService;
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private SysUserConverter sysUserConverter;
 
@@ -43,7 +43,7 @@ public class SysUserController {
     public Result<?> data2(SysUserQuery query,
                            @RequestParam(defaultValue = "1") int page,
                            @RequestParam(defaultValue = "20") int size) {
-        PageResult<SysUser> userPageResult = new PageResult<>(sysUserService.pageByQuery(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(page, size), query));
+        PageResult<SysUser> userPageResult = new PageResult<>(sysUserService.pageByQuery(new Page<>(page, size), query));
         return ResultInfo.success(userPageResult.getData(), userPageResult.getTotalRows());
     }
 

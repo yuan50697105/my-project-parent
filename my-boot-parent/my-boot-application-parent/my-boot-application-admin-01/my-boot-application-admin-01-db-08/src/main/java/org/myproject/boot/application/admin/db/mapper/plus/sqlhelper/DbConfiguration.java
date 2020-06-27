@@ -1,9 +1,9 @@
-package org.myproject.boot.application.admin.db.mapperplus.sqlhelper;
+package org.myproject.boot.application.admin.db.mapper.plus.sqlhelper;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.myproject.boot.application.admin.db.mapperplus.pagehelper.mapper.BaseMapper;
+import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.mapper.BaseMapper;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @program: my-project-parent

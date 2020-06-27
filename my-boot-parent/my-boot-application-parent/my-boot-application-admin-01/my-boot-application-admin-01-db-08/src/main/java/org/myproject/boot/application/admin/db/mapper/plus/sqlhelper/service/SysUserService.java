@@ -1,10 +1,12 @@
-package org.myproject.boot.application.admin.db.mapperplus.sqlhelper.service;
+package org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.mapperplus.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.mapperplus.sqlhelper.pojo.SysUserExample;
-import org.myproject.boot.application.admin.db.mapperplus.sqlhelper.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.pojo.SysUser;
 
 import java.util.List;
 
@@ -24,4 +26,8 @@ public interface SysUserService extends IService<SysUser> {
     PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query);
 
     List<SysUser> selectByQuery(SysUserQuery query);
+
+    IPage<SysUser> pageByQuery(Page<SysUser> page, SysUserQuery query);
+
+    List<SysUser> listByQuery(SysUserQuery query);
 }

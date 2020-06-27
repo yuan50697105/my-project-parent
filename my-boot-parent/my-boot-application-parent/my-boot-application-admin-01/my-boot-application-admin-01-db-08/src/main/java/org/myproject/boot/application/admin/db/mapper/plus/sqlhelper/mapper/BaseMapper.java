@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.mapperplus.pagehelper.mapper;
+package org.myproject.boot.application.admin.db.mapper.plus.sqlhelper.mapper;
 
 /**
  * @program: my-project-parent
