@@ -2,29 +2,40 @@ package org.myproject.boot.application.admin.db.service;
 
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
+import org.myproject.boot.application.admin.db.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
-import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
-public interface SysUserService{
+public interface SysUserService {
 
 
-    PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query);
+    long countByExample(SysUserExample example);
 
-    PageInfo<SysUser> selectByExampleWithPage(int page, int size, Example example);
+    int deleteByExample(SysUserExample example);
 
-    List<SysUser> selectByQuery(SysUserQuery query);
+    int deleteByPrimaryKey(Long id);
 
-    List<SysUser> selectByExample(Example example);
+    int insert(SysUser record);
+
+    int insertSelective(SysUser record);
+
+    List<SysUser> selectByExample(SysUserExample example);
 
     SysUser selectByPrimaryKey(Long id);
 
-    int insert(SysUser sysUser);
+    int updateByExampleSelective(SysUser record, SysUserExample example);
 
-    int updateByPrimaryKeySelective(SysUser sysUser);
+    int updateByExample(SysUser record, SysUserExample example);
 
-    int deleteByExample(Example example);
+    int updateByPrimaryKeySelective(SysUser record);
 
-    int deleteByPrimaryKey(Long id);
+    int updateByPrimaryKey(SysUser record);
+
+    PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query);
+
+    List<SysUser> selectByQuery(SysUserQuery query);
+
+    PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example);
 }
+

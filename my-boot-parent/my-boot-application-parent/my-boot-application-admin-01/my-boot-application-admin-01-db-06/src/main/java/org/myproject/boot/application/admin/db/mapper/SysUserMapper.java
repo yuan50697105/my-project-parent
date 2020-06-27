@@ -1,13 +1,10 @@
 package org.myproject.boot.application.admin.db.mapper;
 
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.myproject.boot.application.admin.db.pojo.SysUser;
-import org.myproject.boot.application.admin.db.pojo.SysUserExample;
+import org.apache.ibatis.annotations.Param;import org.myproject.boot.application.admin.db.pojo.SysUser;import org.myproject.boot.application.admin.db.pojo.SysUserExample;import java.util.List;
 
 @Mapper
-public interface SysUserMapper {
+public interface SysUserMapper extends tk.mybatis.mapper.common.Mapper<SysUser> {
     long countByExample(SysUserExample example);
 
     int deleteByExample(SysUserExample example);
