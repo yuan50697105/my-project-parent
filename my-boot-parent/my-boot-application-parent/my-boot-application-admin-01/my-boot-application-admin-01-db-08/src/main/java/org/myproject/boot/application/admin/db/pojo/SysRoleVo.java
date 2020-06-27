@@ -8,15 +8,15 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 import java.io.Serializable;
 
 /**
- * sys_role
- */
+    * sys_role
+    */
 @Data
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper=true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "sys_role")
-public class SysRole extends BaseEntity implements Serializable {
+public class SysRoleVo extends BaseEntity implements Serializable {
     /**
      * 角色名称
      */

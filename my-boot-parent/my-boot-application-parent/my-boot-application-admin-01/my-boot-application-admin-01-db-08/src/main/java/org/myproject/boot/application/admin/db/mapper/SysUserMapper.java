@@ -2,23 +2,13 @@ package org.myproject.boot.application.admin.db.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.myproject.boot.application.admin.db.pojo.SysUser;
-import org.myproject.boot.application.admin.db.pojo.SysUserExample;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Param;import org.myproject.boot.application.admin.db.pojo.SysUser;import org.myproject.boot.application.admin.db.pojo.SysUserExample;import java.util.List;
 
 @Mapper
 public interface SysUserMapper extends BaseMapper<SysUser>, tk.mybatis.mapper.common.Mapper<SysUser> {
     long countByExample(SysUserExample example);
 
     int deleteByExample(SysUserExample example);
-
-    List<SysUser> selectByExample(SysUserExample example);
-
-    int updateByExampleSelective(@Param("record") SysUser record, @Param("example") SysUserExample example);
-
-    int updateByExample(@Param("record") SysUser record, @Param("example") SysUserExample example);
 
     /**
      * delete by primary key
@@ -44,6 +34,8 @@ public interface SysUserMapper extends BaseMapper<SysUser>, tk.mybatis.mapper.co
      */
     int insertSelective(SysUser record);
 
+    List<SysUser> selectByExample(SysUserExample example);
+
     /**
      * select by primary key
      *
@@ -51,6 +43,10 @@ public interface SysUserMapper extends BaseMapper<SysUser>, tk.mybatis.mapper.co
      * @return object by primary key
      */
     SysUser selectByPrimaryKey(Long id);
+
+    int updateByExampleSelective(@Param("record") SysUser record, @Param("example") SysUserExample example);
+
+    int updateByExample(@Param("record") SysUser record, @Param("example") SysUserExample example);
 
     /**
      * update record selective
