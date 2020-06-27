@@ -1,6 +1,7 @@
 package org.myproject.boot.application.admin.mvc;
 
 import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @program: my-project-parent
@@ -9,5 +10,6 @@ import org.springframework.boot.SpringBootConfiguration;
  * @create: 2020-06-27 12:57
  */
 @SpringBootConfiguration
+@ComponentScan(basePackageClasses = Mvc01Configuration.class)
 public class Mvc01Configuration {
 }

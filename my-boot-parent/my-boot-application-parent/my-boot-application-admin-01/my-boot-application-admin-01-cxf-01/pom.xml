@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-admin-01-cxf</artifactId>
+    <artifactId>my-boot-application-admin-01-cxf-01</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
@@ -31,6 +31,10 @@
             <artifactId>my-boot-commons-webservice-cxf</artifactId>
             <version>1.0.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-01-webmvc-01</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 </project>

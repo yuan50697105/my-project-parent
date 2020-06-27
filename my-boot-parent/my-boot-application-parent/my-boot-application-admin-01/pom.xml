@@ -28,8 +28,9 @@
         <module>my-boot-application-admin-01-webmvc-06</module>
         <module>my-boot-application-admin-01-webmvc-07</module>
         <module>my-boot-application-admin-01-webmvc-08</module>
-        <module>my-boot-application-admin-01-cxf</module>
-        <module>my-boot-application-admin-01-jersey</module>
+        <module>my-boot-application-admin-01-cxf-01</module>
+        <module>my-boot-application-admin-01-jersey-01</module>
+        <module>my-boot-application-admin-01-cxf-02</module>
     </modules>
     <dependencies>
     </dependencies>
