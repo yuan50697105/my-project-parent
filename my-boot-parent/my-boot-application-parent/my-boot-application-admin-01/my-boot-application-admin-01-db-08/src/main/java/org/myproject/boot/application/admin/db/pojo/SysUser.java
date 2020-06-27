@@ -3,7 +3,7 @@ package org.myproject.boot.application.admin.db.pojo;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
-import org.myproject.boot.mybatisplus.mapper.sqlhelper.pojo.BaseEntity;
+import org.myproject.boot.mybatisplus.mapper.pojo.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Table;

@@ -1,7 +1,7 @@
 package org.myproject.boot.application.admin.db.pojo;
 
 import lombok.*;
-import org.myproject.boot.mybatis.mapper.sqlhelper.pojo.BaseEntity;
+import org.myproject.boot.mybatis.mapper.pojo.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Table;

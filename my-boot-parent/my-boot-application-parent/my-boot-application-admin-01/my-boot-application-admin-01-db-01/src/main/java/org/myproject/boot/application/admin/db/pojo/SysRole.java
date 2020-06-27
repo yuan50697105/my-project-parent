@@ -1,7 +1,7 @@
 package org.myproject.boot.application.admin.db.pojo;
 
 import lombok.*;
-import org.myproject.boot.mybatis.pagehelper.pojo.BaseEntity;
+import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
 
