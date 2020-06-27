@@ -23,7 +23,10 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-06-25 15:47
  */
-@WebService(targetNamespace = WebUserWsService.NAMESPACE, serviceName = WebUserWsService.SERVICE_NAME, portName = WebUserWsService.SERVICE_NAME, endpointInterface = "org.myproject.boot.application.admin.cxf.webservice.WebUserWsService")
+@WebService(targetNamespace = WebUserWsService.NAMESPACE,
+        serviceName = WebUserWsService.SERVICE_NAME,
+        portName = WebUserWsService.SERVICE_NAME,
+        endpointInterface = "org.myproject.boot.application.admin.cxf.webservice.WebUserWsService")
 @Component
 public class WebUserWsServiceImpl implements WebUserWsService {
     @Autowired
