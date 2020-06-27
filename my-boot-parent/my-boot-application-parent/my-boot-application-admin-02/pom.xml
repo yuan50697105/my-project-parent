@@ -13,12 +13,13 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-application-admin-02-db-01</module>
-        <module>my-boot-application-admin-02-webmvc-01</module>
-        <module>my-boot-application-admin-02-cxf-01</module>
-        <module>my-boot-application-admin-02-jersey-01</module>
         <module>my-boot-application-admin-02-db-02</module>
+        <module>my-boot-application-admin-02-webmvc-01</module>
         <module>my-boot-application-admin-02-webmvc-02</module>
+        <module>my-boot-application-admin-02-cxf-01</module>
         <module>my-boot-application-admin-02-cxf-02</module>
+        <module>my-boot-application-admin-02-jersey-01</module>
+        <module>my-boot-application-admin-02-jersey-02</module>
     </modules>
 
 
