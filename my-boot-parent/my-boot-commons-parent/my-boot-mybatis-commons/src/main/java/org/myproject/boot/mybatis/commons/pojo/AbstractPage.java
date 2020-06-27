@@ -1,6 +1,10 @@
 package org.myproject.boot.mybatis.commons.pojo;
 
 import lombok.Data;
+import lombok.experimental.Delegate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @program: my-project-parent
@@ -14,9 +18,13 @@ public class AbstractPage<T> implements IPage<T> {
     private long size;
     private long totalRows;
     private long totalPages;
-    private Iterable<T> data;
+    @Delegate
+    private List<T> data = new ArrayList<>();
 
-    public AbstractPage(long page, long size, long totalRows, long totalPages, Iterable<T> data) {
+    public AbstractPage() {
+    }
+
+    public AbstractPage(long page, long size, long totalRows, long totalPages, List<T> data) {
         this.page = page;
         this.size = size;
         this.totalRows = totalRows;
@@ -45,7 +53,7 @@ public class AbstractPage<T> implements IPage<T> {
     }
 
     @Override
-    public Iterable<T> getData() {
+    public List<T> getData() {
         return data;
     }
 }

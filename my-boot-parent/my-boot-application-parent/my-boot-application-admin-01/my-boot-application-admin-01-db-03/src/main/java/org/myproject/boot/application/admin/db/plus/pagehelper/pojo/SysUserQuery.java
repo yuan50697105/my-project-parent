@@ -1,10 +1,10 @@
-package org.myproject.boot.application.admin.db.plus.sqlhelper.pojo;
+package org.myproject.boot.application.admin.db.plus.pagehelper.pojo;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExample;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.*;
-import org.myproject.mybatisplus.pagehelper.pojo.BaseEntity;
+import org.myproject.mybatisplus.base.pagehelper.pojo.BaseEntity;
 
 import java.io.Serializable;
 

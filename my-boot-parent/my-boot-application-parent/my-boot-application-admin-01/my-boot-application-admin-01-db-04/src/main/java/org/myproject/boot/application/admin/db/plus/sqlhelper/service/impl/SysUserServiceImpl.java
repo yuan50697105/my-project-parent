@@ -1,13 +1,17 @@
-package org.myproject.boot.application.admin.db.plus.sqlhelper.service.impl;
+package org.myproject.boot.application.admin.db.plus.pagehelper.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.mapper.SysUserMapper;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserExample;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.service.SysUserService;
+import org.myproject.boot.application.admin.db.plus.pagehelper.mapper.SysUserMapper;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.plus.pagehelper.service.SysUserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -51,5 +55,23 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public List<SysUser> selectByQuery(SysUserQuery query) {
         return baseMapper.selectByExample(query.toExample());
+    }
+
+    @Override
+    public IPage<SysUser> pageByQuery(Page<SysUser> page, SysUserQuery query) {
+        return page(page, queryWrapper(query));
+    }
+
+    @Override
+    public List<SysUser> listByQuery(SysUserQuery query) {
+        return list(queryWrapper(query));
+    }
+
+    private QueryWrapper<SysUser> queryWrapper(SysUserQuery query) {
+        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
+        if (ObjectUtil.isNotEmpty(query)) {
+            queryWrapper.like(ObjectUtil.isNotEmpty(query.getUsername()), SysUser.COL_USERNAME, query.getUsername());
+        }
+        return queryWrapper;
     }
 }

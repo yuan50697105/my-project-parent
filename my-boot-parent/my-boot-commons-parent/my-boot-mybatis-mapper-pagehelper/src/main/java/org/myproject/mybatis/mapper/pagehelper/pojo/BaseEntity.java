@@ -4,6 +4,7 @@ import lombok.Data;
 import org.myproject.boot.mybatis.commons.annotation.Identify;
 import tk.mybatis.mapper.annotation.KeySql;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
@@ -19,5 +20,6 @@ public class BaseEntity {
     @Id
     @Identify
     @KeySql(genId = IdentifyGenId.class)
+    @Column(name = "id")
     private Long id;
 }

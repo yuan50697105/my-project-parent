@@ -1,5 +1,7 @@
 package org.myproject.boot.mybatis.commons.pojo;
 
+import java.util.List;
+
 /**
  * @program: my-project-parent
  * @description:
@@ -15,5 +17,5 @@ public interface IPage<T> {
 
     long getTotalPages();
 
-    Iterable<T> getData();
+    List<T> getData();
 }
