@@ -22,8 +22,6 @@
         <module>my-boot-application-admin-02-db-08</module>
         <module>my-boot-application-admin-02-webmvc-01</module>
         <module>my-boot-application-admin-02-webmvc-02</module>
-        <module>my-boot-application-admin-02-jersey-01</module>
-        <module>my-boot-application-admin-02-jersey-02</module>
         <module>my-boot-application-admin-02-webmvc-03</module>
         <module>my-boot-application-admin-02-webmvc-04</module>
         <module>my-boot-application-admin-02-webmvc-05</module>
@@ -38,6 +36,14 @@
         <module>my-boot-application-admin-02-cxf-06</module>
         <module>my-boot-application-admin-02-cxf-07</module>
         <module>my-boot-application-admin-02-cxf-08</module>
+        <module>my-boot-application-admin-02-jersey-01</module>
+        <module>my-boot-application-admin-02-jersey-02</module>
+        <module>my-boot-application-admin-02-jersey-03</module>
+        <module>my-boot-application-admin-02-jersey-04</module>
+        <module>my-boot-application-admin-02-jersey-05</module>
+        <module>my-boot-application-admin-02-jersey-06</module>
+        <module>my-boot-application-admin-02-jersey-07</module>
+        <module>my-boot-application-admin-02-jersey-08</module>
     </modules>
 
 
