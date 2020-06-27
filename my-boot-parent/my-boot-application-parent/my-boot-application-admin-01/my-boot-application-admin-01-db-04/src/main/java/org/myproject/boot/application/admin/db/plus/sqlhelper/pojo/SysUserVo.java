@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.plus.sqlhelper.pojo;
+package org.myproject.boot.application.admin.db.plus.pagehelper.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

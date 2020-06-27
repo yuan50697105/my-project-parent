@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.plus.sqlhelper.pojo;
+package org.myproject.boot.application.admin.db.plus.pagehelper.pojo;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExample;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;

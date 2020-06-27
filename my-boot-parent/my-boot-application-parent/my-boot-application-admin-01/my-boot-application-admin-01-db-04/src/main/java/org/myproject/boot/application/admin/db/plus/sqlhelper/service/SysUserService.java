@@ -1,10 +1,10 @@
-package org.myproject.boot.application.admin.db.plus.sqlhelper.service;
+package org.myproject.boot.application.admin.db.plus.pagehelper.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserExample;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserQuery;
 
 import java.util.List;
 

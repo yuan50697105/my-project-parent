@@ -5,9 +5,7 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.*;
 import org.myproject.mybatis.mapper.pagehelper.pojo.BaseEntity;
-import tk.mybatis.mapper.entity.Condition;
-
-import java.io.Serializable;
+import tk.mybatis.mapper.entity.Example;
 
 /**
  * sys_user
@@ -17,7 +15,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysUserQuery extends BaseEntity implements Serializable, MybatisExampleForTk<SysUser, Condition> {
+public class SysUserQuery extends BaseEntity implements MybatisExampleForTk<SysUser, Example> {
     private static final long serialVersionUID = 1L;
     /**
      * 用户名

@@ -1,8 +1,8 @@
-package org.myproject.boot.application.admin.db.plus.sqlhelper.converter;
+package org.myproject.boot.application.admin.db.plus.pagehelper.converter;
 
 import org.mapstruct.Mapper;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserVo;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserVo;
 
 /**
  * @program: my-project-parent

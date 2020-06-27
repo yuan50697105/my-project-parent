@@ -2,11 +2,11 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.converter.SysUserConverter;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.service.SysUserService;
+import org.myproject.boot.application.admin.db.plus.pagehelper.converter.SysUserConverter;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserVo;
+import org.myproject.boot.application.admin.db.plus.pagehelper.service.SysUserService;
 import org.myproject.mybatisplus.base.sqlhelper.pojo.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

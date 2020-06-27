@@ -4,10 +4,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.plus.pagehelper.mapper.SysUserMapper;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUser;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.plus.pagehelper.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.plus.pagehelper.service.SysUserService;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUser;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserExample;
-import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserQuery;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,5 +52,4 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     public List<SysUser> selectByQuery(SysUserQuery query) {
         return baseMapper.selectByExample(query.toExample());
     }
-
 }

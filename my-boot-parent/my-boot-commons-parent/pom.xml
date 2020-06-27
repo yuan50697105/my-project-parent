@@ -23,13 +23,13 @@
         <module>my-boot-mybatis-plus-sqlhelper</module>
         <module>my-boot-mybatis-mapper-pagehelper</module>
         <module>my-boot-mybatis-mapper-sqlhelper</module>
+        <module>my-boot-mybatis-mapper-plus-pagehelper</module>
+        <module>my-boot-mybatis-mapper-plus-sqlhelper</module>
         <module>my-boot-security</module>
         <module>my-boot-commons-webservice-cxf</module>
         <module>my-boot-commons-webservice-jersey</module>
         <module>my-boot-commons-webflux</module>
         <module>my-boot-security-session-redis</module>
-        <module>my-boot-mybatis-plus-mapper-pagehelper</module>
-        <module>my-boot-mybatis-plus-mapper-sqlhelper</module>
     </modules>
     <build>
         <plugins>
