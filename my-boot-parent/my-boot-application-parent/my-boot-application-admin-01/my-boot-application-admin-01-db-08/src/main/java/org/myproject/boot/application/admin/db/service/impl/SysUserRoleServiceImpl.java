@@ -82,11 +82,6 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
         return new PageInfo<>(sysUserMapper.selectByExample(example));
     }
 
-    @Override
-    public PageInfo<SysUser> selectByQueryWithPage(int page, int pageSize, SysRoleQuery query) {
-        PageHelper.startPage(page, pageSize);
-        return new PageInfo<>(sysUserMapper.selectByExample(query.toExample()));
-    }
 }
 
 
