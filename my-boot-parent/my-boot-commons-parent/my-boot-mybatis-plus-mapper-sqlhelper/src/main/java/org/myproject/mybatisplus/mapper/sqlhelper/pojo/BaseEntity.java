@@ -1,10 +1,11 @@
-package org.myproject.mybatis.mapper.pagehelper.pojo;
+package org.myproject.mybatisplus.mapper.sqlhelper.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import org.myproject.boot.mybatis.commons.annotation.Identify;
 import tk.mybatis.mapper.annotation.KeySql;
 
-import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
@@ -20,6 +21,6 @@ public class BaseEntity {
     @Id
     @Identify
     @KeySql(genId = IdentifyGenId.class)
-    @Column(name = "id")
+    @TableId(type = IdType.ID_WORKER)
     private Long id;
 }

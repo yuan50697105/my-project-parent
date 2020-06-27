@@ -28,6 +28,8 @@
         <module>my-boot-commons-webservice-jersey</module>
         <module>my-boot-commons-webflux</module>
         <module>my-boot-security-session-redis</module>
+        <module>my-boot-mybatis-plus-mapper-pagehelper</module>
+        <module>my-boot-mybatis-plus-mapper-sqlhelper</module>
     </modules>
     <build>
         <plugins>

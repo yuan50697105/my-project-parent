@@ -1,4 +1,4 @@
-package org.myproject.mybatisplus.pagehelper.pojo;
+package org.myproject.mybatisplus.base.pagehelper.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

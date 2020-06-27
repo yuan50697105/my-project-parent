@@ -1,9 +1,10 @@
-package org.myproject.mybatisplus.sqlhelper.pojo;
+package org.myproject.mybatisplus.mapper.pagehelper.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import org.myproject.boot.mybatis.commons.annotation.Identify;
+import tk.mybatis.mapper.annotation.KeySql;
 
 /**
  * @program: my-project-parent
@@ -14,6 +15,7 @@ import org.myproject.boot.mybatis.commons.annotation.Identify;
 @Data
 public class BaseEntity {
     @Identify
-    @TableId(type = IdType.ID_WORKER)
+    @TableId(type = IdType.ASSIGN_ID)
+    @KeySql(genId = IdentifyGenId.class)
     private Long id;
 }

@@ -7,7 +7,7 @@ import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUser;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.pojo.SysUserVo;
 import org.myproject.boot.application.admin.db.plus.sqlhelper.service.SysUserService;
-import org.myproject.mybatisplus.sqlhelper.pojo.Page;
+import org.myproject.mybatisplus.base.sqlhelper.pojo.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

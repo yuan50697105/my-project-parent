@@ -1,4 +1,4 @@
-package org.myproject.mybatisplus.sqlhelper.pojo;
+package org.myproject.mybatisplus.base.pagehelper.pojo;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.PageInfo;
