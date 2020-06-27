@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -7,10 +8,16 @@ import org.myproject.boot.application.admin.db.pojo.SysRole;
 import org.myproject.boot.application.admin.db.pojo.SysRoleExample;
 
 @Mapper
-public interface SysRoleMapper {
+public interface SysRoleMapper extends BaseMapper<SysRole> {
     long countByExample(SysRoleExample example);
 
     int deleteByExample(SysRoleExample example);
+
+    List<SysRole> selectByExample(SysRoleExample example);
+
+    int updateByExampleSelective(@Param("record") SysRole record, @Param("example") SysRoleExample example);
+
+    int updateByExample(@Param("record") SysRole record, @Param("example") SysRoleExample example);
 
     /**
      * delete by primary key
@@ -36,8 +43,6 @@ public interface SysRoleMapper {
      */
     int insertSelective(SysRole record);
 
-    List<SysRole> selectByExample(SysRoleExample example);
-
     /**
      * select by primary key
      *
@@ -45,10 +50,6 @@ public interface SysRoleMapper {
      * @return object by primary key
      */
     SysRole selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") SysRole record, @Param("example") SysRoleExample example);
-
-    int updateByExample(@Param("record") SysRole record, @Param("example") SysRoleExample example);
 
     /**
      * update record selective

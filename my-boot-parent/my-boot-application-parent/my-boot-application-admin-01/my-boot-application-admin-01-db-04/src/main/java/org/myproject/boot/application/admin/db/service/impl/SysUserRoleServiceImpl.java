@@ -7,8 +7,9 @@ import org.myproject.boot.application.admin.db.mapper.SysUserRoleMapper;
 import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserRole;
 import org.myproject.boot.application.admin.db.service.SysUserRoleService;
+
 @Service
-public class SysUserRoleServiceImpl implements SysUserRoleService{
+public class SysUserRoleServiceImpl implements SysUserRoleService {
 
     @Resource
     private SysUserRoleMapper sysUserRoleMapper;
@@ -49,13 +50,13 @@ public class SysUserRoleServiceImpl implements SysUserRoleService{
     }
 
     @Override
-    public int updateByExampleSelective(SysUserRole record,SysUserRoleExample example) {
-        return sysUserRoleMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysUserRole record, SysUserRoleExample example) {
+        return sysUserRoleMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(SysUserRole record,SysUserRoleExample example) {
-        return sysUserRoleMapper.updateByExample(record,example);
+    public int updateByExample(SysUserRole record, SysUserRoleExample example) {
+        return sysUserRoleMapper.updateByExample(record, example);
     }
 
     @Override
@@ -69,3 +70,4 @@ public class SysUserRoleServiceImpl implements SysUserRoleService{
     }
 
 }
+

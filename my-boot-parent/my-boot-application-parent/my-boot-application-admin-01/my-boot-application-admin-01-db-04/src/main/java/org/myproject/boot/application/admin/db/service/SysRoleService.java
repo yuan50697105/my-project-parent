@@ -1,5 +1,8 @@
 package org.myproject.boot.application.admin.db.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.SysRole;
 import org.myproject.boot.application.admin.db.pojo.SysRoleExample;
@@ -7,7 +10,7 @@ import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
 
 import java.util.List;
 
-public interface SysRoleService {
+public interface SysRoleService extends IService<SysRole> {
 
 
     long countByExample(SysRoleExample example);
@@ -37,6 +40,11 @@ public interface SysRoleService {
     List<SysRole> selectByQuery(SysRoleQuery query);
 
     PageInfo<SysRole> selectByExampleWithPage(int page, int pageSize, SysRoleExample example);
+
+    IPage<SysRole> pageByQuery(Page<SysRole> page, SysRoleQuery query);
+
+    List<SysRole> listByQuery(SysRoleQuery query);
 }
+
 
 
