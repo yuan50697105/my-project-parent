@@ -31,10 +31,5 @@
             <artifactId>my-boot-commons-webservice-cxf</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-webmvc-04</artifactId>
-            <version>1.0.0</version>
-        </dependency>
     </dependencies>
 </project>
