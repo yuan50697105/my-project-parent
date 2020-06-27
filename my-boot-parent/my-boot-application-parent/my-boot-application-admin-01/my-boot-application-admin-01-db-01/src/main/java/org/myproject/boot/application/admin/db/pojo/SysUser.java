@@ -1,9 +1,12 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import lombok.*;
-import org.myproject.boot.mybatis.pojo.BaseEntity;
-
 import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import org.myproject.boot.mybatis.sqlhelper.pojo.BaseEntity;
 
 /**
  * sys_user
@@ -14,6 +17,11 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SysUser extends BaseEntity implements Serializable {
+    /**
+     * id
+     */
+    private Long id;
+
     /**
      * 用户名
      */
