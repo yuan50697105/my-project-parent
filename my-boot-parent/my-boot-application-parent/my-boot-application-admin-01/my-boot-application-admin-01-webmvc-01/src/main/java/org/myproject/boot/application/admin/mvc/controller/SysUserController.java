@@ -8,7 +8,7 @@ import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserExamp
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.base.pagehelper.pojo.SysUserVo;
 import org.myproject.boot.application.admin.db.base.pagehelper.service.SysUserService;
-import org.myproject.mybatis.pagehelper.pojo.Page;
+import org.myproject.mybatis.pagehelper.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +34,7 @@ public class SysUserController {
     public Result<?> data(SysUserQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        Page<SysUser> result = new Page<>(sysUserService.selectByQueryWithPage(page, size, query));
+        PageResult<SysUser> result = new PageResult<>(sysUserService.selectByQueryWithPage(page, size, query));
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
