@@ -32,6 +32,7 @@
         <module>my-boot-security-session-redis</module>
         <module>my-boot-mybatis-commons-dynamic-datasource</module>
         <module>my-boot-genernate-route</module>
+        <module>my-boot-mybatis-commons-sharding-jdbc</module>
     </modules>
     <build>
         <plugins>
