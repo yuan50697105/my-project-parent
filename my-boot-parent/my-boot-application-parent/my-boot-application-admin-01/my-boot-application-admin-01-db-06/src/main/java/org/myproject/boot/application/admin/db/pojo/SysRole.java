@@ -1,13 +1,11 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import java.io.Serializable;
-import javax.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * sys_role
