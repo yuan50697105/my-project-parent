@@ -19,14 +19,13 @@ import java.util.List;
  * @program: my-project-parent
  * @description:
  * @author: yuane
- * @create: 2020-06-25 19:06
+ * @create: 2020-06-27 14:16
  */
 @RestController
-@RequestMapping("sys/user")
+@RequestMapping("sys/role")
 public class SysRoleController {
     @Autowired
     private SysRoleService sysRoleService;
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private SysRoleConverter sysRoleConverter;
 
@@ -46,21 +45,21 @@ public class SysRoleController {
 
     @GetMapping("get")
     public Result<?> get(Long id) {
-        SysRole sysRole = sysRoleService.selectByPrimaryKey(id);
-        return ResultInfo.success(sysRole);
+        SysRole SysRole = sysRoleService.selectByPrimaryKey(id);
+        return ResultInfo.success(SysRole);
     }
 
     @PostMapping("save")
-    public Result<?> save(@RequestBody @Validated SysRoleVo sysRoleVo) {
-        SysRole sysRole = sysRoleConverter.voToPo(sysRoleVo);
-        sysRoleService.insert(sysRole);
+    public Result<?> save(@RequestBody @Validated SysRoleVo SysRoleVo) {
+        SysRole SysRole = sysRoleConverter.voToPo(SysRoleVo);
+        sysRoleService.insert(SysRole);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT})
-    public Result<?> update(@RequestBody @Validated SysRoleVo sysRoleVo) {
-        SysRole sysRole = sysRoleConverter.voToPo(sysRoleVo);
-        sysRoleService.updateByPrimaryKeySelective(sysRole);
+    public Result<?> update(@RequestBody @Validated SysRoleVo SysRoleVo) {
+        SysRole SysRole = sysRoleConverter.voToPo(SysRoleVo);
+        sysRoleService.updateByPrimaryKeySelective(SysRole);
         return ResultInfo.success();
     }
 
@@ -83,4 +82,5 @@ public class SysRoleController {
         sysRoleService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
+    
 }

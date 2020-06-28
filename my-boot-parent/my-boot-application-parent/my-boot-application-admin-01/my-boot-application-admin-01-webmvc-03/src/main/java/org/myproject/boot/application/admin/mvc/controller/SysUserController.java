@@ -2,9 +2,9 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.myproject.boot.application.admin.db.converter.SysUserConverter;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
+import org.myproject.boot.application.admin.db.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.pojo.SysUserVo;
 import org.myproject.boot.application.admin.db.service.SysUserService;
@@ -38,61 +38,49 @@ public class SysUserController {
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
-    @GetMapping("data2")
-    public Result<?> data2(SysUserQuery query,
-                           @RequestParam(defaultValue = "1") int page,
-                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<SysUser> result = new PageResult<>(sysUserService.pageByQuery(new Page<>(page, size), query));
-        return ResultInfo.success(result.getData(), result.getTotalRows());
-    }
-
     @GetMapping("list")
     public Result<?> list(SysUserQuery query) {
         List<SysUser> list = sysUserService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
-    @GetMapping("list2")
-    public Result<?> list2(SysUserQuery query) {
-        List<SysUser> list = sysUserService.listByQuery(query);
-        return ResultInfo.success(list, (long) list.size());
-    }
-
     @GetMapping("get")
     public Result<?> get(Long id) {
-        SysUser sysUser = sysUserService.getById(id);
+        SysUser sysUser = sysUserService.selectByPrimaryKey(id);
         return ResultInfo.success(sysUser);
     }
 
     @PostMapping("save")
     public Result<?> save(@RequestBody @Validated SysUserVo sysUserVo) {
         SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
-        sysUserService.save(sysUser);
+        sysUserService.insert(sysUser);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT})
     public Result<?> update(@RequestBody @Validated SysUserVo sysUserVo) {
         SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
-        sysUserService.updateById(sysUser);
+        sysUserService.updateByPrimaryKeySelective(sysUser);
         return ResultInfo.success();
     }
 
     @GetMapping(value = "delete", params = "ids")
     public Result<?> delete(List<Long> ids) {
-        sysUserService.removeByIds(ids);
+        SysUserExample example = new SysUserExample();
+        example.or().andIdIn(ids);
+        sysUserService.deleteByExample(example);
         return ResultInfo.success();
     }
 
     @GetMapping(value = "delete", params = "id")
     public Result<?> delete(Long id) {
-        sysUserService.removeById(id);
+        sysUserService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteRs(@PathVariable("id") Long id) {
-        sysUserService.removeById(id);
+        sysUserService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
 }
