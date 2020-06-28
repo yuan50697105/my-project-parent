@@ -10,6 +10,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>my-boot-mybatis-commons-sharding-jdbc</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-mybatis-commons</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-transaction-base-seata-at</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+    </dependencies>
 
 </project>
