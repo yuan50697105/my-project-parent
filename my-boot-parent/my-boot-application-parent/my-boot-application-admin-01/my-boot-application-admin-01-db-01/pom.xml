@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-application-admin-01</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.0.1</version>
+        <version>1.0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-mybatis-base-pagehelper</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.0.1</version>
         </dependency>
     </dependencies>
     <build>
