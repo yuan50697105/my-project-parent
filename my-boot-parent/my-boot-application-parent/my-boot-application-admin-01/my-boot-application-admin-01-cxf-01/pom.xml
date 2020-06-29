@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-application-admin-01</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,22 +14,22 @@
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-commons-utils</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-commons-webmvc</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-commons-webservice-cxf</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-application-admin-01-db-01</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 </project>
