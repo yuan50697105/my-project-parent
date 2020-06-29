@@ -11,5 +11,8 @@
 
     <artifactId>my-boot-application-admin-03</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>my-boot-application-admin-03-db-01</module>
+    </modules>
 
 </project>
