@@ -9,7 +9,6 @@ import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.jupiter.api.Test;
 import org.myproject.boot.application.admin.cxf.Application;
 import org.myproject.boot.application.admin.cxf.webservice.WebSysUserService;
-import org.myproject.boot.application.admin.cxf.webservice.WebUserRsService;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserWsService;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.pojo.SysUserVo;

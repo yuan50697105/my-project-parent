@@ -2,7 +2,6 @@ package org.myproject.boot.application.admin.cxf.webservice.impl;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.cxf.webservice.WebUserRsService;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;

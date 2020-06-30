@@ -8,7 +8,7 @@ import org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.jupiter.api.Test;
 import org.myproject.boot.application.admin.cxf.Application;
-import org.myproject.boot.application.admin.cxf.webservice.WebUserRsService;
+import org.myproject.boot.application.admin.cxf.webservice.WebSysUserService;
 import org.myproject.boot.application.admin.cxf.webservice.WebUserWsService;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.pojo.SysUserVo;
@@ -43,6 +43,8 @@ public class MvcConfigurationTests {
         SysUserVo sysUser = new SysUserVo();
         Result<?> result = webUserWsService.save(sysUser);
         System.out.println("JSONUtil.toJsonPrettyStr(result) = " + JSONUtil.toJsonPrettyStr(result));
+        WebSysUserService userService = factoryBean.create(WebSysUserService.class);
+        userService.save(sysUser);
     }
 
     /**

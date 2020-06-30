@@ -27,6 +27,13 @@ public class WebServiceConfiguration {
         return endpoint;
     }
 
+    @Bean(WebSysUserService.SERVICE_NAME)
+    public Endpoint webUserService(Bus bus, WebSysUserService webSysUserService) {
+        EndpointImpl endpoint = new EndpointImpl(bus, webSysUserService);
+        endpoint.publish(WebSysUserService.SERVICE_NAME_URL);
+        return endpoint;
+    }
+
     @Bean
     public Server webUserServiceRs(Bus bus, WebUserRsService userServiceRS) {
         JAXRSServerFactoryBean endpoint = new JAXRSServerFactoryBean();
