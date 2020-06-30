@@ -13,6 +13,13 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-application-admin-03-db-01</module>
+        <module>my-boot-application-admin-03-db-02</module>
+        <module>my-boot-application-admin-03-db-03</module>
+        <module>my-boot-application-admin-03-db-04</module>
+        <module>my-boot-application-admin-03-db-05</module>
+        <module>my-boot-application-admin-03-db-06</module>
+        <module>my-boot-application-admin-03-db-07</module>
+        <module>my-boot-application-admin-03-db-08</module>
     </modules>
 
 </project>
