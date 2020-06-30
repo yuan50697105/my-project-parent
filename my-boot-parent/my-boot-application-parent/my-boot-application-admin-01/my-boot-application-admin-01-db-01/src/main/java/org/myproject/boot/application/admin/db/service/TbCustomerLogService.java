@@ -1,7 +1,7 @@
 package org.myproject.boot.application.admin.db.service;
 
-import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerLogExample;
+import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.pojo.*;
 
 import java.util.List;
 
@@ -30,4 +30,7 @@ public interface TbCustomerLogService {
 
     int updateByPrimaryKey(TbCustomerLog record);
 
+    PageInfo<TbCustomerLog> selectByQueryWithPage(int page, int size, TbCustomerLogQuery query);
+
+    List<TbCustomerLog> selectByQuery(TbCustomerLogQuery query);
 }

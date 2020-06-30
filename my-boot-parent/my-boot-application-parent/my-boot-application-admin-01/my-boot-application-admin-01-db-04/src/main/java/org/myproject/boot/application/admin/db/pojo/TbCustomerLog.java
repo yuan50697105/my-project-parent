@@ -2,10 +2,8 @@ package org.myproject.boot.application.admin.db.pojo;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.gitee.denger.mybatis.example.ext.MybatisExampleForTk;
 import lombok.*;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
-import tk.mybatis.mapper.entity.Example;
 
 import java.io.Serializable;
 
@@ -15,7 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "tb_customer_log")
-public class TbCustomerLogQuery extends BaseEntity implements Serializable, MybatisExampleForTk<TbCustomerLog, Example> {
+public class TbCustomerLog extends BaseEntity implements Serializable {
     public static final String COL_ID = "id";
     public static final String COL_CUSTOMER_ID = "customer_id";
     public static final String COL_CUSTOMER_NAME = "customer_name";

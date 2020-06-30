@@ -1,8 +1,11 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.mapper.TbCustomerLogMapper;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerLogExample;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerLogQuery;
 import org.myproject.boot.application.admin.db.service.TbCustomerLogService;
 import org.springframework.stereotype.Service;
 
@@ -70,4 +73,20 @@ public class TbCustomerLogServiceImpl implements TbCustomerLogService {
         return tbCustomerLogMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public PageInfo<TbCustomerLog> selectByQueryWithPage(int page, int size, TbCustomerLogQuery query) {
+        PageHelper.startPage(page, size);
+        return new PageInfo<>(tbCustomerLogMapper.selectByExample(query.toExample()));
+    }
+
+    @Override
+    public PageInfo<TbCustomerLog> selectByExampleWithPage(int page, int pageSize, TbCustomerLogExample example) {
+        PageHelper.startPage(page, pageSize);
+        return new PageInfo<>(tbCustomerLogMapper.selectByExample(example));
+    }
+
+    @Override
+    public List<TbCustomerLog> selectByQuery(TbCustomerLogQuery query) {
+        return tbCustomerLogMapper.selectByExample(query.toExample());
+    }
 }
