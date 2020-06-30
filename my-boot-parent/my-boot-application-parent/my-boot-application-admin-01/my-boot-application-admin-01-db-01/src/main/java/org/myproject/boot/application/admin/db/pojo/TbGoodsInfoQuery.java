@@ -1,6 +1,7 @@
 package org.myproject.boot.application.admin.db.pojo;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExample;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndGreaterThanOrEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import lombok.*;
@@ -24,4 +25,6 @@ public class TbGoodsInfoQuery extends BaseEntity implements Serializable, Mybati
     private BigDecimal priceStart;
     @AndGreaterThanOrEqualTo(property = "price")
     private BigDecimal priceEnd;
+    @AndEqualTo
+    private Long typeId;
 }

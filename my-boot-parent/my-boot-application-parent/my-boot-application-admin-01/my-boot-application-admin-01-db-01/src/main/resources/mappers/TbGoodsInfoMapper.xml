@@ -8,6 +8,7 @@
     <result column="code" jdbcType="BIGINT" property="code" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="type_id" jdbcType="BIGINT" property="typeId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--@mbg.generated-->
@@ -71,7 +72,7 @@
   </sql>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, code, `name`, price
+    id, code, `name`, price, type_id
   </sql>
   <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbGoodsInfoExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -109,10 +110,10 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.TbGoodsInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into tb_goods_info (code, `name`, price
-      )
-    values (#{code,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}
-      )
+    insert into tb_goods_info (code, `name`, price, 
+      type_id)
+    values (#{code,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{typeId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.TbGoodsInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
@@ -127,6 +128,9 @@
       <if test="price != null">
         price,
       </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="code != null">
@@ -137,6 +141,9 @@
       </if>
       <if test="price != null">
         #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -163,6 +170,9 @@
       <if test="record.price != null">
         price = #{record.price,jdbcType=DECIMAL},
       </if>
+      <if test="record.typeId != null">
+        type_id = #{record.typeId,jdbcType=BIGINT},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -174,7 +184,8 @@
     set id = #{record.id,jdbcType=BIGINT},
       code = #{record.code,jdbcType=BIGINT},
       `name` = #{record.name,jdbcType=VARCHAR},
-      price = #{record.price,jdbcType=DECIMAL}
+      price = #{record.price,jdbcType=DECIMAL},
+      type_id = #{record.typeId,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -192,6 +203,9 @@
       <if test="price != null">
         price = #{price,jdbcType=DECIMAL},
       </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=BIGINT},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -200,7 +214,8 @@
     update tb_goods_info
     set code = #{code,jdbcType=BIGINT},
       `name` = #{name,jdbcType=VARCHAR},
-      price = #{price,jdbcType=DECIMAL}
+      price = #{price,jdbcType=DECIMAL},
+      type_id = #{typeId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

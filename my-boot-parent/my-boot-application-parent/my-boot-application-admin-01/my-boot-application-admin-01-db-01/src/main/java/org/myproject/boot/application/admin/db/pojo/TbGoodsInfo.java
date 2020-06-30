@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +20,8 @@ public class TbGoodsInfo extends BaseEntity implements Serializable {
     private String name;
 
     private BigDecimal price;
+
+    private Long typeId;
 
     private static final long serialVersionUID = 1L;
 }

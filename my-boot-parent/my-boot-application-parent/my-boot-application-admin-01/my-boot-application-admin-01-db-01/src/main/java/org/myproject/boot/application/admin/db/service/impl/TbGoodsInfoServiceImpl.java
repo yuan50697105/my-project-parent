@@ -7,8 +7,9 @@ import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoExample;
 import org.myproject.boot.application.admin.db.service.TbGoodsInfoService;
+
 @Service
-public class TbGoodsInfoServiceImpl implements TbGoodsInfoService{
+public class TbGoodsInfoServiceImpl implements TbGoodsInfoService {
 
     @Resource
     private TbGoodsInfoMapper tbGoodsInfoMapper;
@@ -49,13 +50,13 @@ public class TbGoodsInfoServiceImpl implements TbGoodsInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(TbGoodsInfo record,TbGoodsInfoExample example) {
-        return tbGoodsInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbGoodsInfo record, TbGoodsInfoExample example) {
+        return tbGoodsInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbGoodsInfo record,TbGoodsInfoExample example) {
-        return tbGoodsInfoMapper.updateByExample(record,example);
+    public int updateByExample(TbGoodsInfo record, TbGoodsInfoExample example) {
+        return tbGoodsInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -69,3 +70,4 @@ public class TbGoodsInfoServiceImpl implements TbGoodsInfoService{
     }
 
 }
+
