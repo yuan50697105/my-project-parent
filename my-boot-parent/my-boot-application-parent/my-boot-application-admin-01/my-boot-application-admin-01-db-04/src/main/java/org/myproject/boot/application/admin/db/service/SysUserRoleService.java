@@ -1,8 +1,9 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserRole;
+import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;
+
+import java.util.List;
 
 public interface SysUserRoleService {
 

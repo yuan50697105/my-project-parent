@@ -8,13 +8,12 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 import java.io.Serializable;
 
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class TbCustomerTypeQuery extends BaseEntity implements Serializable, MybatisExample<TbCustomerTypeExample> {
+    private static final long serialVersionUID = 1L;
     @AndLike
     private Integer naem;
-
-    private static final long serialVersionUID = 1L;
 }

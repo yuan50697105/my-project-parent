@@ -5,7 +5,8 @@ import org.myproject.boot.application.admin.db.pojo.SysRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRouteExample;
 
 import java.util.List;
-public interface SysRouteService extends IService<SysRoute>{
+
+public interface SysRouteService extends IService<SysRoute> {
 
 
     long countByExample(SysRouteExample example);
@@ -14,8 +15,8 @@ public interface SysRouteService extends IService<SysRoute>{
 
     List<SysRoute> selectByExample(SysRouteExample example);
 
-    int updateByExampleSelective(SysRoute record,SysRouteExample example);
+    int updateByExampleSelective(SysRoute record, SysRouteExample example);
 
-    int updateByExample(SysRoute record,SysRouteExample example);
+    int updateByExample(SysRoute record, SysRouteExample example);
 
 }

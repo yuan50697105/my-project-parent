@@ -1,8 +1,9 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.SysRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRouteExample;
+
+import java.util.List;
 
 public interface SysRouteService {
 

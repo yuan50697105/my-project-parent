@@ -17,11 +17,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Table(name = "sys_role_route")
 public class SysRoleRoute extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Column(name = "role_id")
     private Long roleId;
-
     @Column(name = "route_id")
     private Long routeId;
-
-    private static final long serialVersionUID = 1L;
 }

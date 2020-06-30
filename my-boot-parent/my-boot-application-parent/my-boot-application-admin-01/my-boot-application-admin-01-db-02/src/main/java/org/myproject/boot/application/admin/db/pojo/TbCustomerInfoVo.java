@@ -14,30 +14,25 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TbCustomerInfoVo extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     private String name;
-
     /**
      * namePy
      */
     private String namePy;
-
     /**
      * namePyF
      */
     private String namePyF;
-
     /**
      * phone
      */
     private String phone;
-
     /**
      * age
      */
     private Integer age;
-
-    private static final long serialVersionUID = 1L;
 }

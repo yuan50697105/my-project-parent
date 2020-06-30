@@ -1,13 +1,11 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import java.io.Serializable;
-import javax.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * 路由表
@@ -19,8 +17,7 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 @NoArgsConstructor
 @Table(name = "sys_route")
 public class SysRoute extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Column(name = "url")
     private String url;
-
-    private static final long serialVersionUID = 1L;
 }

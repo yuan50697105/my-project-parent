@@ -12,8 +12,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TbCustomerTypeVo extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Column(name = "naem")
     private Integer naem;
-
-    private static final long serialVersionUID = 1L;
 }

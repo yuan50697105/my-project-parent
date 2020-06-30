@@ -8,18 +8,15 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 import java.io.Serializable;
 
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "tb_customer_type")
 public class TbCustomerTypeQuery extends BaseEntity implements Serializable {
+    public static final String COL_ID = "id";
+    public static final String COL_NAEM = "naem";
+    private static final long serialVersionUID = 1L;
     @TableField(value = "naem")
     private Integer naem;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "id";
-
-    public static final String COL_NAEM = "naem";
 }

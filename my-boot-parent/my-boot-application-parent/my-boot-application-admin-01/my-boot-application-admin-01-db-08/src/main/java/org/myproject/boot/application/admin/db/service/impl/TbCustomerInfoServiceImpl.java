@@ -41,13 +41,13 @@ public class TbCustomerInfoServiceImpl extends ServiceImpl<TbCustomerInfoMapper,
     }
 
     @Override
-    public PageInfo<TbCustomerInfo> selectByQueryWithPage(int page, int size, TbCustomerInfoQuery query) {
-        PageHelper.startPage(page, size);
-        return new PageInfo<>(baseMapper.selectByExample(query.toExample()));
+    public List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery query) {
+        return baseMapper.selectByExample(query.toExample());
     }
 
     @Override
-    public List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery query) {
-        return baseMapper.selectByExample(query.toExample());
+    public PageInfo<TbCustomerInfo> selectByQueryWithPage(int page, int size, TbCustomerInfoQuery query) {
+        PageHelper.startPage(page, size);
+        return new PageInfo<>(baseMapper.selectByExample(query.toExample()));
     }
 }

@@ -29,7 +29,7 @@ public class SysRoleController {
     @Autowired
     private SysRoleConverter sysRoleConverter;
 
-    @RequestMapping(value = "data",method = {RequestMethod.GET})
+    @RequestMapping(value = "data", method = {RequestMethod.GET})
     public Result<?> data(SysRoleQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
@@ -37,19 +37,19 @@ public class SysRoleController {
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
-    @RequestMapping(value = "list",method = {RequestMethod.GET})
+    @RequestMapping(value = "list", method = {RequestMethod.GET})
     public Result<?> list(SysRoleQuery query) {
         List<SysRole> list = sysRoleService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
-    @RequestMapping(value = "get",method = {RequestMethod.GET})
+    @RequestMapping(value = "get", method = {RequestMethod.GET})
     public Result<?> get(Long id) {
         SysRole SysRole = sysRoleService.selectByPrimaryKey(id);
         return ResultInfo.success(SysRole);
     }
 
-    @RequestMapping(value = "save",method = {RequestMethod.POST})
+    @RequestMapping(value = "save", method = {RequestMethod.POST})
     public Result<?> save(@RequestBody @Validated SysRoleVo SysRoleVo) {
         SysRole SysRole = sysRoleConverter.voToPo(SysRoleVo);
         sysRoleService.insert(SysRole);
@@ -63,7 +63,7 @@ public class SysRoleController {
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "ids",method = {RequestMethod.GET,RequestMethod.DELETE})
+    @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteList(List<Long> ids) {
         SysRoleExample example = new SysRoleExample();
         example.or().andIdIn(ids);
@@ -71,7 +71,7 @@ public class SysRoleController {
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "id",method = {RequestMethod.GET,RequestMethod.DELETE})
+    @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteOne(Long id) {
         sysRoleService.deleteByPrimaryKey(id);
         return ResultInfo.success();
@@ -82,5 +82,5 @@ public class SysRoleController {
         sysRoleService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
-    
+
 }

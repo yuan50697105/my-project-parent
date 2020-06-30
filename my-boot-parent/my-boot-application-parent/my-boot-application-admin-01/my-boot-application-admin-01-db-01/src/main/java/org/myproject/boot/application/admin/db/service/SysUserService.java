@@ -6,7 +6,8 @@ import org.myproject.boot.application.admin.db.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
 
 import java.util.List;
-public interface SysUserService{
+
+public interface SysUserService {
 
 
     long countByExample(SysUserExample example);
@@ -23,9 +24,9 @@ public interface SysUserService{
 
     SysUser selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysUser record,SysUserExample example);
+    int updateByExampleSelective(SysUser record, SysUserExample example);
 
-    int updateByExample(SysUser record,SysUserExample example);
+    int updateByExample(SysUser record, SysUserExample example);
 
     int updateByPrimaryKeySelective(SysUser record);
 

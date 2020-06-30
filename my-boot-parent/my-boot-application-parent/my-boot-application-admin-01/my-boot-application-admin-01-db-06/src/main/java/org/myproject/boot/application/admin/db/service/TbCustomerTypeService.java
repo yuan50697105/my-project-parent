@@ -1,8 +1,9 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
+
+import java.util.List;
 
 public interface TbCustomerTypeService {
 

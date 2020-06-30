@@ -7,7 +7,7 @@ import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 
 import java.util.List;
 
-public interface TbCustomerInfoService{
+public interface TbCustomerInfoService {
 
 
     long countByExample(TbCustomerInfoExample example);
@@ -24,9 +24,9 @@ public interface TbCustomerInfoService{
 
     TbCustomerInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbCustomerInfo record,TbCustomerInfoExample example);
+    int updateByExampleSelective(TbCustomerInfo record, TbCustomerInfoExample example);
 
-    int updateByExample(TbCustomerInfo record,TbCustomerInfoExample example);
+    int updateByExample(TbCustomerInfo record, TbCustomerInfoExample example);
 
     int updateByPrimaryKeySelective(TbCustomerInfo record);
 

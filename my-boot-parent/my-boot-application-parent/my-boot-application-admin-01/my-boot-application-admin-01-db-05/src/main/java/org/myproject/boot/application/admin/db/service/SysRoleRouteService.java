@@ -1,8 +1,9 @@
 package org.myproject.boot.application.admin.db.service;
 
 import org.myproject.boot.application.admin.db.pojo.SysRoleRoute;
-import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.SysRoleRouteExample;
+
+import java.util.List;
 
 public interface SysRoleRouteService {
 

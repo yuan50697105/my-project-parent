@@ -8,7 +8,7 @@ import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 
 import java.util.List;
 
-public interface TbCustomerInfoService extends IService<TbCustomerInfo>{
+public interface TbCustomerInfoService extends IService<TbCustomerInfo> {
 
 
     long countByExample(TbCustomerInfoExample example);
@@ -17,11 +17,12 @@ public interface TbCustomerInfoService extends IService<TbCustomerInfo>{
 
     List<TbCustomerInfo> selectByExample(TbCustomerInfoExample example);
 
-    int updateByExampleSelective(TbCustomerInfo record,TbCustomerInfoExample example);
+    int updateByExampleSelective(TbCustomerInfo record, TbCustomerInfoExample example);
 
-    int updateByExample(TbCustomerInfo record,TbCustomerInfoExample example);
+    int updateByExample(TbCustomerInfo record, TbCustomerInfoExample example);
 
     PageInfo<TbCustomerInfo> selectByQueryWithPage(int page, int size, TbCustomerInfoQuery query);
 
     List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery query);
+
 }

@@ -1,9 +1,11 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
-public interface TbCustomerTypeService{
+import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
+
+import java.util.List;
+
+public interface TbCustomerTypeService {
 
 
     long countByExample(TbCustomerTypeExample example);
@@ -20,9 +22,9 @@ public interface TbCustomerTypeService{
 
     TbCustomerType selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbCustomerType record,TbCustomerTypeExample example);
+    int updateByExampleSelective(TbCustomerType record, TbCustomerTypeExample example);
 
-    int updateByExample(TbCustomerType record,TbCustomerTypeExample example);
+    int updateByExample(TbCustomerType record, TbCustomerTypeExample example);
 
     int updateByPrimaryKeySelective(TbCustomerType record);
 

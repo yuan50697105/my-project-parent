@@ -11,28 +11,33 @@ import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
-public class TbCustomerInfoServiceImpl extends ServiceImpl<TbCustomerInfoMapper, TbCustomerInfo> implements TbCustomerInfoService{
+public class TbCustomerInfoServiceImpl extends ServiceImpl<TbCustomerInfoMapper, TbCustomerInfo> implements TbCustomerInfoService {
 
     @Override
     public long countByExample(TbCustomerInfoExample example) {
         return baseMapper.countByExample(example);
     }
+
     @Override
     public int deleteByExample(TbCustomerInfoExample example) {
         return baseMapper.deleteByExample(example);
     }
+
     @Override
     public List<TbCustomerInfo> selectByExample(TbCustomerInfoExample example) {
         return baseMapper.selectByExample(example);
     }
+
     @Override
-    public int updateByExampleSelective(TbCustomerInfo record,TbCustomerInfoExample example) {
-        return baseMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbCustomerInfo record, TbCustomerInfoExample example) {
+        return baseMapper.updateByExampleSelective(record, example);
     }
+
     @Override
-    public int updateByExample(TbCustomerInfo record,TbCustomerInfoExample example) {
-        return baseMapper.updateByExample(record,example);
+    public int updateByExample(TbCustomerInfo record, TbCustomerInfoExample example) {
+        return baseMapper.updateByExample(record, example);
     }
 
     @Override

@@ -1,14 +1,16 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import org.myproject.boot.application.admin.db.mapper.TbCustomerTypeMapper;
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 import org.myproject.boot.application.admin.db.service.TbCustomerTypeService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class TbCustomerTypeServiceImpl implements TbCustomerTypeService{
+public class TbCustomerTypeServiceImpl implements TbCustomerTypeService {
 
     @Resource
     private TbCustomerTypeMapper tbCustomerTypeMapper;
@@ -49,13 +51,13 @@ public class TbCustomerTypeServiceImpl implements TbCustomerTypeService{
     }
 
     @Override
-    public int updateByExampleSelective(TbCustomerType record,TbCustomerTypeExample example) {
-        return tbCustomerTypeMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbCustomerType record, TbCustomerTypeExample example) {
+        return tbCustomerTypeMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbCustomerType record,TbCustomerTypeExample example) {
-        return tbCustomerTypeMapper.updateByExample(record,example);
+    public int updateByExample(TbCustomerType record, TbCustomerTypeExample example) {
+        return tbCustomerTypeMapper.updateByExample(record, example);
     }
 
     @Override

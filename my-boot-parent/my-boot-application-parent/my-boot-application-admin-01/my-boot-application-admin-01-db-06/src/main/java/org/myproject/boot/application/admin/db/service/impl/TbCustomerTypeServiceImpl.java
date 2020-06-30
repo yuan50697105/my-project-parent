@@ -1,12 +1,13 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import org.myproject.boot.application.admin.db.mapper.TbCustomerTypeMapper;
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 import org.myproject.boot.application.admin.db.service.TbCustomerTypeService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class TbCustomerTypeServiceImpl implements TbCustomerTypeService {

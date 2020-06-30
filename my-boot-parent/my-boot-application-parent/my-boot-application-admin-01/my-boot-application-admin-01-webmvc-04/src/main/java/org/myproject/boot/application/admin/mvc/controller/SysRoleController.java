@@ -82,5 +82,5 @@ public class SysRoleController {
         sysRoleService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
-    
+
 }
