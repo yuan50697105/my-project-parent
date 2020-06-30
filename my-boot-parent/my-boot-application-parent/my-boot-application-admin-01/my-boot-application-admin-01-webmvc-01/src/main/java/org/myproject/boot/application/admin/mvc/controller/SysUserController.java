@@ -30,7 +30,7 @@ public class SysUserController {
     @Autowired
     private SysUserConverter sysUserConverter;
 
-    @GetMapping("data")
+    @RequestMapping(value = "data",method = {RequestMethod.GET})
     public Result<?> data(SysUserQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
@@ -38,19 +38,19 @@ public class SysUserController {
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
-    @GetMapping("list")
+    @RequestMapping(value = "list",method = {RequestMethod.GET})
     public Result<?> list(SysUserQuery query) {
         List<SysUser> list = sysUserService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
-    @GetMapping("get")
+    @RequestMapping(value = "get",method = {RequestMethod.GET})
     public Result<?> get(Long id) {
         SysUser sysUser = sysUserService.selectByPrimaryKey(id);
         return ResultInfo.success(sysUser);
     }
 
-    @PostMapping("save")
+    @RequestMapping(value = "save",method = {RequestMethod.POST})
     public Result<?> save(@RequestBody @Validated SysUserVo sysUserVo) {
         SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
         sysUserService.insert(sysUser);
@@ -64,16 +64,16 @@ public class SysUserController {
         return ResultInfo.success();
     }
 
-    @GetMapping(value = "delete", params = "ids")
-    public Result<?> delete(List<Long> ids) {
+    @RequestMapping(value = "delete", params = "ids",method = {RequestMethod.GET,RequestMethod.DELETE})
+    public Result<?> deleteList(List<Long> ids) {
         SysUserExample example = new SysUserExample();
         example.or().andIdIn(ids);
         sysUserService.deleteByExample(example);
         return ResultInfo.success();
     }
 
-    @GetMapping(value = "delete", params = "id")
-    public Result<?> delete(Long id) {
+    @RequestMapping(value = "delete", params = "id",method = {RequestMethod.GET,RequestMethod.DELETE})
+    public Result<?> deleteOne(Long id) {
         sysUserService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
