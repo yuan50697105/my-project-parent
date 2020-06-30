@@ -44,6 +44,7 @@
         <module>my-boot-application-admin-01-jersey-06</module>
         <module>my-boot-application-admin-01-jersey-07</module>
         <module>my-boot-application-admin-01-jersey-08</module>
+        <module>my-boot-application-admin-01-webmvc-view-01</module>
     </modules>
     <dependencies>
     </dependencies>
