@@ -10,6 +10,7 @@
     <result column="name_py_f" jdbcType="VARCHAR" property="namePyF" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="type_id" jdbcType="BIGINT" property="typeId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--@mbg.generated-->
@@ -73,7 +74,7 @@
   </sql>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, `name`, name_py, name_py_f, phone, age
+    id, `name`, name_py, name_py_f, phone, age, type_id
   </sql>
   <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -109,22 +110,17 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerInfo">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into tb_customer_info (id, `name`, name_py, 
-      name_py_f, phone, age
-      )
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{namePy,jdbcType=VARCHAR}, 
-      #{namePyF,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}
-      )
+    insert into tb_customer_info (`name`, name_py, name_py_f, 
+      phone, age, type_id)
+    values (#{name,jdbcType=VARCHAR}, #{namePy,jdbcType=VARCHAR}, #{namePyF,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{typeId,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerInfo">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into tb_customer_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
       <if test="name != null">
         `name`,
       </if>
@@ -140,11 +136,11 @@
       <if test="age != null">
         age,
       </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
@@ -159,6 +155,9 @@
       </if>
       <if test="age != null">
         #{age,jdbcType=INTEGER},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -191,6 +190,9 @@
       <if test="record.age != null">
         age = #{record.age,jdbcType=INTEGER},
       </if>
+      <if test="record.typeId != null">
+        type_id = #{record.typeId,jdbcType=BIGINT},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -204,7 +206,8 @@
       name_py = #{record.namePy,jdbcType=VARCHAR},
       name_py_f = #{record.namePyF,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
-      age = #{record.age,jdbcType=INTEGER}
+      age = #{record.age,jdbcType=INTEGER},
+      type_id = #{record.typeId,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -228,6 +231,9 @@
       <if test="age != null">
         age = #{age,jdbcType=INTEGER},
       </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=BIGINT},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -238,7 +244,8 @@
       name_py = #{namePy,jdbcType=VARCHAR},
       name_py_f = #{namePyF,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      age = #{age,jdbcType=INTEGER}
+      age = #{age,jdbcType=INTEGER},
+      type_id = #{typeId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

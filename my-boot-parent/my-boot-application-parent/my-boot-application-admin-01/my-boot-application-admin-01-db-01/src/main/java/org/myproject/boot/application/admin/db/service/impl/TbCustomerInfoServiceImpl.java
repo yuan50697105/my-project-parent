@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.mapper.TbCustomerInfoMapper;
@@ -8,26 +9,46 @@ import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-@Transactional
-public class TbCustomerInfoServiceImpl implements TbCustomerInfoService {
-
-    @Resource
-    private TbCustomerInfoMapper tbCustomerInfoMapper;
+public class TbCustomerInfoServiceImpl extends ServiceImpl<TbCustomerInfoMapper, TbCustomerInfo> implements TbCustomerInfoService {
 
     @Override
     public long countByExample(TbCustomerInfoExample example) {
-        return tbCustomerInfoMapper.countByExample(example);
+        return baseMapper.countByExample(example);
     }
 
     @Override
     public int deleteByExample(TbCustomerInfoExample example) {
-        return tbCustomerInfoMapper.deleteByExample(example);
+        return baseMapper.deleteByExample(example);
+    }
+
+    @Override
+    public List<TbCustomerInfo> selectByExample(TbCustomerInfoExample example) {
+        return baseMapper.selectByExample(example);
+    }
+
+    @Override
+    public int updateByExampleSelective(TbCustomerInfo record, TbCustomerInfoExample example) {
+        return baseMapper.updateByExampleSelective(record, example);
+    }
+
+    @Override
+    public int updateByExample(TbCustomerInfo record, TbCustomerInfoExample example) {
+        return baseMapper.updateByExample(record, example);
+    }
+
+    @Override
+    public List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery query) {
+        return baseMapper.selectByExample(query.toExample());
+    }
+
+    @Override
+    public PageInfo<TbCustomerInfo> selectByQueryWithPage(int page, int size, TbCustomerInfoQuery query) {
+        PageHelper.startPage(page, size);
+        return new PageInfo<>(baseMapper.selectByExample(query.toExample()));
     }
 
     @Override
@@ -46,23 +67,8 @@ public class TbCustomerInfoServiceImpl implements TbCustomerInfoService {
     }
 
     @Override
-    public List<TbCustomerInfo> selectByExample(TbCustomerInfoExample example) {
-        return tbCustomerInfoMapper.selectByExample(example);
-    }
-
-    @Override
     public TbCustomerInfo selectByPrimaryKey(Long id) {
         return tbCustomerInfoMapper.selectByPrimaryKey(id);
-    }
-
-    @Override
-    public int updateByExampleSelective(TbCustomerInfo record, TbCustomerInfoExample example) {
-        return tbCustomerInfoMapper.updateByExampleSelective(record, example);
-    }
-
-    @Override
-    public int updateByExample(TbCustomerInfo record, TbCustomerInfoExample example) {
-        return tbCustomerInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -74,22 +80,5 @@ public class TbCustomerInfoServiceImpl implements TbCustomerInfoService {
     public int updateByPrimaryKey(TbCustomerInfo record) {
         return tbCustomerInfoMapper.updateByPrimaryKey(record);
     }
-
-    @Override
-    public PageInfo<TbCustomerInfo> selectByExampleWithPage(int page, int pageSize, TbCustomerInfoExample example) {
-        PageHelper.startPage(page, pageSize);
-        return new PageInfo<>(tbCustomerInfoMapper.selectByExample(example));
-    }
-
-
-    @Override
-    public PageInfo<TbCustomerInfo> selectByQueryWithPage(int page, int pageSize, TbCustomerInfoQuery query) {
-        PageHelper.startPage(page, pageSize);
-        return new PageInfo<>(tbCustomerInfoMapper.selectByExample(query.toExample()));
-    }
-
-    @Override
-    public List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery query) {
-        return tbCustomerInfoMapper.selectByExample(query.toExample());
-    }
 }
+

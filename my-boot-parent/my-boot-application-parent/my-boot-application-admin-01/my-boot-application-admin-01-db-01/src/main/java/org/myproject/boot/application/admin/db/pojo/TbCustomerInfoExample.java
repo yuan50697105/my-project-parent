@@ -14,20 +14,20 @@ public class TbCustomerInfoExample {
         oredCriteria = new ArrayList<>();
     }
 
-    public String getOrderByClause() {
-        return orderByClause;
-    }
-
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
 
-    public boolean isDistinct() {
-        return distinct;
+    public String getOrderByClause() {
+        return orderByClause;
     }
 
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
+    }
+
+    public boolean isDistinct() {
+        return distinct;
     }
 
     public List<Criteria> getOredCriteria() {
@@ -503,6 +503,66 @@ public class TbCustomerInfoExample {
             addCriterion("age not between", value1, value2, "age");
             return (Criteria) this;
         }
+
+        public Criteria andTypeIdIsNull() {
+            addCriterion("type_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdIsNotNull() {
+            addCriterion("type_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdEqualTo(Long value) {
+            addCriterion("type_id =", value, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdNotEqualTo(Long value) {
+            addCriterion("type_id <>", value, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdGreaterThan(Long value) {
+            addCriterion("type_id >", value, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("type_id >=", value, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdLessThan(Long value) {
+            addCriterion("type_id <", value, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdLessThanOrEqualTo(Long value) {
+            addCriterion("type_id <=", value, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdIn(List<Long> values) {
+            addCriterion("type_id in", values, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdNotIn(List<Long> values) {
+            addCriterion("type_id not in", values, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdBetween(Long value1, Long value2) {
+            addCriterion("type_id between", value1, value2, "typeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIdNotBetween(Long value1, Long value2) {
+            addCriterion("type_id not between", value1, value2, "typeId");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
@@ -528,6 +588,38 @@ public class TbCustomerInfoExample {
         private boolean listValue;
 
         private String typeHandler;
+
+        public String getCondition() {
+            return condition;
+        }
+
+        public Object getValue() {
+            return value;
+        }
+
+        public Object getSecondValue() {
+            return secondValue;
+        }
+
+        public boolean isNoValue() {
+            return noValue;
+        }
+
+        public boolean isSingleValue() {
+            return singleValue;
+        }
+
+        public boolean isBetweenValue() {
+            return betweenValue;
+        }
+
+        public boolean isListValue() {
+            return listValue;
+        }
+
+        public String getTypeHandler() {
+            return typeHandler;
+        }
 
         protected Criterion(String condition) {
             super();
@@ -563,38 +655,6 @@ public class TbCustomerInfoExample {
 
         protected Criterion(String condition, Object value, Object secondValue) {
             this(condition, value, secondValue, null);
-        }
-
-        public String getCondition() {
-            return condition;
-        }
-
-        public Object getValue() {
-            return value;
-        }
-
-        public Object getSecondValue() {
-            return secondValue;
-        }
-
-        public boolean isNoValue() {
-            return noValue;
-        }
-
-        public boolean isSingleValue() {
-            return singleValue;
-        }
-
-        public boolean isBetweenValue() {
-            return betweenValue;
-        }
-
-        public boolean isListValue() {
-            return listValue;
-        }
-
-        public String getTypeHandler() {
-            return typeHandler;
         }
     }
 }

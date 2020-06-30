@@ -14,25 +14,38 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TbCustomerInfoVo extends BaseEntity implements Serializable {
-    private static final long serialVersionUID = 1L;
+    public static final String COL_ID = "id";
+    public static final String COL_NAME = "name";
+    public static final String COL_NAME_PY = "name_py";
+    public static final String COL_NAME_PY_F = "name_py_f";
+    public static final String COL_PHONE = "phone";
+    public static final String COL_AGE = "age";
     /**
      * name
      */
     private String name;
+
     /**
      * namePy
      */
     private String namePy;
+
     /**
      * namePyF
      */
     private String namePyF;
+
     /**
      * phone
      */
     private String phone;
+
     /**
      * age
      */
     private Integer age;
+
+    private Long typeId;
+
+    private static final long serialVersionUID = 1L;
 }
