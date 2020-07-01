@@ -3,6 +3,8 @@ package org.myproject.boot.application.admin.mvc.controller;
 import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeNode;
 import cn.hutool.core.lang.tree.TreeUtil;
+import cn.hutool.json.JSONUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.myproject.boot.application.admin.db.pojo.SysRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRouteExample;
 import org.myproject.boot.application.admin.db.service.SysRouteService;
@@ -22,9 +24,8 @@ import java.util.List;
  * @create: 2020-06-30 22:53
  */
 @Controller
+@Slf4j
 public class IndexController {
-    @Autowired
-    private SysUserRouteService sysUserRouteService;
     @Autowired
     private SysRouteService sysRouteService;
 
@@ -35,8 +36,8 @@ public class IndexController {
     String index(Model model) {
         List<SysRoute> sysRoutes = sysRouteService.selectByExample(new SysRouteExample());
         List<TreeNode<Long>> treeNodeList = RouteUtils.convert(sysRoutes);
-        List<Tree<Long>> list = TreeUtil.build(treeNodeList, 0L);
-        model.addAttribute("list", list);
+        List<Tree<Long>> list = TreeUtil.build(treeNodeList, 1L);
+        log.info("JSONUtil.toJsonPrettyStr(list) = " + JSONUtil.toJsonPrettyStr(list));
         return "index";
     }
 
