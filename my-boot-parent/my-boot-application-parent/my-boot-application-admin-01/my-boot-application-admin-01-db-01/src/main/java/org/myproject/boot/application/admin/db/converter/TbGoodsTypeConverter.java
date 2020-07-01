@@ -1,8 +1,6 @@
 package org.myproject.boot.application.admin.db.converter;
 
 import org.mapstruct.Mapper;
-import org.myproject.boot.application.admin.db.pojo.TbGoodsInfo;
-import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoVo;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeVo;
 

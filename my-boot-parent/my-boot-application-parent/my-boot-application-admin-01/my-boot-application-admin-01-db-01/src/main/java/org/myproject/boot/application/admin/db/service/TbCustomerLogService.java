@@ -1,7 +1,9 @@
 package org.myproject.boot.application.admin.db.service;
 
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.pojo.*;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerLogExample;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerLogQuery;
 
 import java.util.List;
 

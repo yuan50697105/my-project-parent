@@ -1,9 +1,11 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeExample;
-public interface TbGoodsTypeService{
+
+import java.util.List;
+
+public interface TbGoodsTypeService {
 
 
     long countByExample(TbGoodsTypeExample example);
@@ -20,9 +22,9 @@ public interface TbGoodsTypeService{
 
     TbGoodsType selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbGoodsType record,TbGoodsTypeExample example);
+    int updateByExampleSelective(TbGoodsType record, TbGoodsTypeExample example);
 
-    int updateByExample(TbGoodsType record,TbGoodsTypeExample example);
+    int updateByExample(TbGoodsType record, TbGoodsTypeExample example);
 
     int updateByPrimaryKeySelective(TbGoodsType record);
 

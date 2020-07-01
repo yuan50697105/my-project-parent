@@ -7,16 +7,13 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class TbGoodsInfoVo extends BaseEntity implements Serializable {
-    private Long code;
-
-    private String name;
-
-    private BigDecimal price;
-
     private static final long serialVersionUID = 1L;
+    private Long code;
+    private String name;
+    private BigDecimal price;
 }

@@ -1,9 +1,11 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.SysLogExample;
 import org.myproject.boot.application.admin.db.pojo.SysLog;
-public interface SysLogService{
+import org.myproject.boot.application.admin.db.pojo.SysLogExample;
+
+import java.util.List;
+
+public interface SysLogService {
 
 
     long countByExample(SysLogExample example);
@@ -20,9 +22,9 @@ public interface SysLogService{
 
     SysLog selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysLog record,SysLogExample example);
+    int updateByExampleSelective(SysLog record, SysLogExample example);
 
-    int updateByExample(SysLog record,SysLogExample example);
+    int updateByExample(SysLog record, SysLogExample example);
 
     int updateByPrimaryKeySelective(SysLog record);
 

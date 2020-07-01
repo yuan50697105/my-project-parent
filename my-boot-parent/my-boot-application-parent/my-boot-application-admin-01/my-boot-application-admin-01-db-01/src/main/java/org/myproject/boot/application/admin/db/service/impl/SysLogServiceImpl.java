@@ -1,14 +1,16 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.SysLogExample;
 import org.myproject.boot.application.admin.db.mapper.SysLogMapper;
 import org.myproject.boot.application.admin.db.pojo.SysLog;
+import org.myproject.boot.application.admin.db.pojo.SysLogExample;
 import org.myproject.boot.application.admin.db.service.SysLogService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class SysLogServiceImpl implements SysLogService{
+public class SysLogServiceImpl implements SysLogService {
 
     @Resource
     private SysLogMapper sysLogMapper;
@@ -49,13 +51,13 @@ public class SysLogServiceImpl implements SysLogService{
     }
 
     @Override
-    public int updateByExampleSelective(SysLog record,SysLogExample example) {
-        return sysLogMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysLog record, SysLogExample example) {
+        return sysLogMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(SysLog record,SysLogExample example) {
-        return sysLogMapper.updateByExample(record,example);
+    public int updateByExample(SysLog record, SysLogExample example) {
+        return sysLogMapper.updateByExample(record, example);
     }
 
     @Override

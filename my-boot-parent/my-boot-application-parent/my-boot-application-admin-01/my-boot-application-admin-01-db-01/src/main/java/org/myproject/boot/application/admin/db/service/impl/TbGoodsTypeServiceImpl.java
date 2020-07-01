@@ -1,14 +1,16 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
 import org.myproject.boot.application.admin.db.mapper.TbGoodsTypeMapper;
+import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeExample;
 import org.myproject.boot.application.admin.db.service.TbGoodsTypeService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class TbGoodsTypeServiceImpl implements TbGoodsTypeService{
+public class TbGoodsTypeServiceImpl implements TbGoodsTypeService {
 
     @Resource
     private TbGoodsTypeMapper tbGoodsTypeMapper;
@@ -49,13 +51,13 @@ public class TbGoodsTypeServiceImpl implements TbGoodsTypeService{
     }
 
     @Override
-    public int updateByExampleSelective(TbGoodsType record,TbGoodsTypeExample example) {
-        return tbGoodsTypeMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbGoodsType record, TbGoodsTypeExample example) {
+        return tbGoodsTypeMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbGoodsType record,TbGoodsTypeExample example) {
-        return tbGoodsTypeMapper.updateByExample(record,example);
+    public int updateByExample(TbGoodsType record, TbGoodsTypeExample example) {
+        return tbGoodsTypeMapper.updateByExample(record, example);
     }
 
     @Override

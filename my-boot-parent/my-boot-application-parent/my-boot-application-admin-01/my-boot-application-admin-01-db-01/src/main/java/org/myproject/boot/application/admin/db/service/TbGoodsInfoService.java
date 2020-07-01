@@ -1,8 +1,9 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoExample;
+
+import java.util.List;
 
 public interface TbGoodsInfoService {
 
