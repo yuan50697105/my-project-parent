@@ -18,7 +18,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TbCustomerInfoQuery extends BaseEntity implements Serializable, MybatisExample<TbCustomerInfo> {
+public class TbCustomerInfoQuery extends BaseEntity implements Serializable, MybatisExample<TbCustomerInfoExample> {
     public static final String COL_ID = "id";
     public static final String COL_NAME = "name";
     public static final String COL_NAME_PY = "name_py";

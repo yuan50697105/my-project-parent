@@ -1,40 +1,26 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
 import org.myproject.boot.application.admin.db.mapper.SysRouteMapper;
+import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.SysRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRouteExample;
 import org.myproject.boot.application.admin.db.service.SysRouteService;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-
 @Service
-public class SysRouteServiceImpl extends ServiceImpl<SysRouteMapper, SysRoute> implements SysRouteService {
+public class SysRouteServiceImpl implements SysRouteService{
+
+    @Resource
+    private SysRouteMapper sysRouteMapper;
 
     @Override
     public long countByExample(SysRouteExample example) {
-        return baseMapper.countByExample(example);
+        return sysRouteMapper.countByExample(example);
     }
 
     @Override
     public int deleteByExample(SysRouteExample example) {
-        return baseMapper.deleteByExample(example);
-    }
-
-    @Override
-    public List<SysRoute> selectByExample(SysRouteExample example) {
-        return baseMapper.selectByExample(example);
-    }
-
-    @Override
-    public int updateByExampleSelective(SysRoute record, SysRouteExample example) {
-        return baseMapper.updateByExampleSelective(record, example);
-    }
-
-    @Override
-    public int updateByExample(SysRoute record, SysRouteExample example) {
-        return baseMapper.updateByExample(record, example);
+        return sysRouteMapper.deleteByExample(example);
     }
 
     @Override
@@ -53,8 +39,23 @@ public class SysRouteServiceImpl extends ServiceImpl<SysRouteMapper, SysRoute> i
     }
 
     @Override
+    public List<SysRoute> selectByExample(SysRouteExample example) {
+        return sysRouteMapper.selectByExample(example);
+    }
+
+    @Override
     public SysRoute selectByPrimaryKey(Long id) {
         return sysRouteMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByExampleSelective(SysRoute record,SysRouteExample example) {
+        return sysRouteMapper.updateByExampleSelective(record,example);
+    }
+
+    @Override
+    public int updateByExample(SysRoute record,SysRouteExample example) {
+        return sysRouteMapper.updateByExample(record,example);
     }
 
     @Override
@@ -66,5 +67,5 @@ public class SysRouteServiceImpl extends ServiceImpl<SysRouteMapper, SysRoute> i
     public int updateByPrimaryKey(SysRoute record) {
         return sysRouteMapper.updateByPrimaryKey(record);
     }
-}
 
+}
