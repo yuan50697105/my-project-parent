@@ -11,6 +11,8 @@ import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.util.Sqls;
 
 import java.util.List;
 
@@ -46,32 +48,32 @@ public class CustomerInfoController {
     @RequestMapping(value = "save", method = {RequestMethod.POST})
     public Result<?> save(@RequestBody @Validated TbCustomerInfoVo vo) {
         TbCustomerInfo customerInfo = customerInfoConverter.voToPo(vo);
-        customerInfoService.save(customerInfo);
+        customerInfoService.insert(customerInfo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.GET, RequestMethod.POST})
     public Result<?> update(@RequestBody TbCustomerInfoVo vo) {
         TbCustomerInfo customerInfo = customerInfoConverter.voToPo(vo);
-        customerInfoService.updateById(customerInfo);
+        customerInfoService.updateByPrimaryKeySelective(customerInfo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET})
     public Result<?> deleteList(List<Long> ids) {
-        customerInfoService.removeByIds(ids);
+        customerInfoService.deleteByExample(Example.builder(TbCustomerInfo.class).andWhere(Sqls.custom().andIn("id",ids)).build());
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteOne(Long id) {
-        customerInfoService.removeById(id);
+        customerInfoService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteRs(@PathVariable Long id) {
-        customerInfoService.removeById(id);
+        customerInfoService.deleteByPrimaryKey(id);
         return ResultInfo.success();
     }
 }

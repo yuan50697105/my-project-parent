@@ -32,6 +32,6 @@ public class RouteServiceImpl implements RouteService {
     @Override
     @Transactional
     public void saveRoute(Route route) {
-        sysRouteService.save(SysRoute.builder().url(route.getUrl()).build());
+        sysRouteService.insert(SysRoute.builder().url(route.getUrl()).build());
     }
 }

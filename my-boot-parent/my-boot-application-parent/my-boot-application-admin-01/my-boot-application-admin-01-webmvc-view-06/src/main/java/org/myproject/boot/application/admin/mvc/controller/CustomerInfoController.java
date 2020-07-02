@@ -4,7 +4,6 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.converter.TbCustomerInfoConverter;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoVo;
 import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
@@ -12,6 +11,8 @@ import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.util.Sqls;
 
 import java.util.List;
 
@@ -60,9 +61,7 @@ public class CustomerInfoController {
 
     @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET})
     public Result<?> deleteList(List<Long> ids) {
-        TbCustomerInfoExample example = new TbCustomerInfoExample();
-        example.or().andIdIn(ids);
-        customerInfoService.deleteByExample(example);
+        customerInfoService.deleteByExample(Example.builder(TbCustomerInfo.class).andWhere(Sqls.custom().andIn("id",ids)).build());
         return ResultInfo.success();
     }
 
