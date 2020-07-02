@@ -10,7 +10,7 @@ import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
 
 import java.util.List;
 
-public interface SysRoleService extends IService<SysRole>{
+public interface SysRoleService extends IService<SysRole> {
 
 
     long countByExample(SysRoleExample example);
@@ -29,7 +29,7 @@ public interface SysRoleService extends IService<SysRole>{
 
     int updateByExampleSelective(SysRole record, SysRoleExample example);
 
-    int updateByExample(SysRole record,SysRoleExample example);
+    int updateByExample(SysRole record, SysRoleExample example);
 
     int updateByPrimaryKeySelective(SysRole record);
 

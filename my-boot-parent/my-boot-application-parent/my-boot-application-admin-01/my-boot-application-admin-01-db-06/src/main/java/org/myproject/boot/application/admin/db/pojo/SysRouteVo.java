@@ -17,8 +17,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Table(name = "sys_route")
 public class SysRouteVo extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Column(name = "url")
     private String url;
-
-    private static final long serialVersionUID = 1L;
 }

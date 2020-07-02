@@ -19,7 +19,7 @@ import javax.jws.WebService;
 public interface WebUserWsService {
 
     String NAMESPACE = "http://web.ser.service";
-    String SERVICE_NAME = "WebUserService";
+    String SERVICE_NAME = "WebUserWsService";
     String SERVICE_NAME_URL = "/" + SERVICE_NAME;
 
     @WebMethod

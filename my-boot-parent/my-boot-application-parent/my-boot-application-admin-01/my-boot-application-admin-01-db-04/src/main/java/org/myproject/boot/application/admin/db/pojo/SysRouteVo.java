@@ -8,21 +8,18 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 import java.io.Serializable;
 
 /**
-    * 路由表
-    */
+ * 路由表
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "sys_route")
 public class SysRouteVo extends BaseEntity implements Serializable {
+    public static final String COL_ID = "id";
+    public static final String COL_URL = "url";
+    private static final long serialVersionUID = 1L;
     @TableField(value = "url")
     private String url;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "id";
-
-    public static final String COL_URL = "url";
 }

@@ -46,21 +46,21 @@ public class SysUserController {
 
     @GetMapping("get")
     public Result<?> get(Long id) {
-        SysUser sysUser = sysUserService.selectByPrimaryKey(id);
+        SysUser sysUser = sysUserService.getById(id);
         return ResultInfo.success(sysUser);
     }
 
     @PostMapping("save")
     public Result<?> save(@RequestBody @Validated SysUserVo sysUserVo) {
         SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
-        sysUserService.insert(sysUser);
+        sysUserService.save(sysUser);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT})
     public Result<?> update(@RequestBody @Validated SysUserVo sysUserVo) {
         SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
-        sysUserService.updateByPrimaryKeySelective(sysUser);
+        sysUserService.updateById(sysUser);
         return ResultInfo.success();
     }
 
@@ -74,13 +74,13 @@ public class SysUserController {
 
     @GetMapping(value = "delete", params = "id")
     public Result<?> delete(Long id) {
-        sysUserService.deleteByPrimaryKey(id);
+        sysUserService.removeById(id);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteRs(@PathVariable("id") Long id) {
-        sysUserService.deleteByPrimaryKey(id);
+        sysUserService.removeById(id);
         return ResultInfo.success();
     }
 }

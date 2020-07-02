@@ -22,5 +22,14 @@ public class SysRoute extends BaseEntity implements Serializable {
     @Column(name = "url")
     private String url;
 
+    @Column(name = "`name`")
+    private String name;
+
+    @Column(name = "parent_id")
+    private Long parentId;
+
+    @Column(name = "weight")
+    private Integer weight;
+
     private static final long serialVersionUID = 1L;
 }

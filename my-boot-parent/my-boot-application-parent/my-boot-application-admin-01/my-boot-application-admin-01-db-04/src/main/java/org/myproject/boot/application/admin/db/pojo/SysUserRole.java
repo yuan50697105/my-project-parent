@@ -17,17 +17,12 @@ import java.io.Serializable;
 @NoArgsConstructor
 @TableName(value = "sys_user_role")
 public class SysUserRole extends BaseEntity implements Serializable {
+    public static final String COL_ID = "id";
+    public static final String COL_USER_ID = "user_id";
+    public static final String COL_ROLE_ID = "role_id";
+    private static final long serialVersionUID = 1L;
     @TableField(value = "user_id")
     private Long userId;
-
     @TableField(value = "role_id")
     private Long roleId;
-
-    private static final long serialVersionUID = 1L;
-
-    public static final String COL_ID = "id";
-
-    public static final String COL_USER_ID = "user_id";
-
-    public static final String COL_ROLE_ID = "role_id";
 }

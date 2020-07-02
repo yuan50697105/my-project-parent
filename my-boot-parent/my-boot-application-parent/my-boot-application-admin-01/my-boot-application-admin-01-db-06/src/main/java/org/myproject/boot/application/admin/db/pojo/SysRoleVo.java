@@ -17,23 +17,20 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Table(name = "sys_role")
 public class SysRoleVo extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * 角色名称
      */
     @Column(name = "`name`")
     private String name;
-
     /**
      * 角色描述
      */
     @Column(name = "description")
     private String description;
-
     /**
      * 启用状态
      */
     @Column(name = "enabled")
     private String enabled;
-
-    private static final long serialVersionUID = 1L;
 }

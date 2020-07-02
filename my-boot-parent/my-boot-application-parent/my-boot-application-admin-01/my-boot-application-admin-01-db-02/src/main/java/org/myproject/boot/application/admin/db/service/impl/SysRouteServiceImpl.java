@@ -1,14 +1,16 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import org.myproject.boot.application.admin.db.mapper.SysRouteMapper;
-import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.SysRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRouteExample;
 import org.myproject.boot.application.admin.db.service.SysRouteService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class SysRouteServiceImpl implements SysRouteService{
+public class SysRouteServiceImpl implements SysRouteService {
 
     @Resource
     private SysRouteMapper sysRouteMapper;
@@ -49,13 +51,13 @@ public class SysRouteServiceImpl implements SysRouteService{
     }
 
     @Override
-    public int updateByExampleSelective(SysRoute record,SysRouteExample example) {
-        return sysRouteMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(SysRoute record, SysRouteExample example) {
+        return sysRouteMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(SysRoute record,SysRouteExample example) {
-        return sysRouteMapper.updateByExample(record,example);
+    public int updateByExample(SysRoute record, SysRouteExample example) {
+        return sysRouteMapper.updateByExample(record, example);
     }
 
     @Override

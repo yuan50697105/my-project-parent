@@ -5,7 +5,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
-import org.myproject.boot.application.admin.db.pojo.SysUserExample;import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.db.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;

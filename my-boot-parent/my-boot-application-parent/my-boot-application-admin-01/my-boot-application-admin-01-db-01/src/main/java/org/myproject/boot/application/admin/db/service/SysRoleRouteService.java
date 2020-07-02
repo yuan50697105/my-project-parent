@@ -1,9 +1,11 @@
 package org.myproject.boot.application.admin.db.service;
 
 import org.myproject.boot.application.admin.db.pojo.SysRoleRoute;
-import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.SysRoleRouteExample;
-public interface SysRoleRouteService{
+
+import java.util.List;
+
+public interface SysRoleRouteService {
 
 
     long countByExample(SysRoleRouteExample example);
@@ -20,9 +22,9 @@ public interface SysRoleRouteService{
 
     SysRoleRoute selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(SysRoleRoute record,SysRoleRouteExample example);
+    int updateByExampleSelective(SysRoleRoute record, SysRoleRouteExample example);
 
-    int updateByExample(SysRoleRoute record,SysRoleRouteExample example);
+    int updateByExample(SysRoleRoute record, SysRoleRouteExample example);
 
     int updateByPrimaryKeySelective(SysRoleRoute record);
 

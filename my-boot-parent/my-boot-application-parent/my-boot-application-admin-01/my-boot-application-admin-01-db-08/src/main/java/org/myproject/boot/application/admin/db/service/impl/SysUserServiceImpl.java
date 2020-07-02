@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class SysUserServiceImpl extends ServiceImpl<SysUserMapper,SysUser> implements SysUserService {
+public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
     @Resource
     private SysUserMapper sysUserMapper;
@@ -72,7 +72,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper,SysUser> imple
 
     @Override
     public IPage<SysUser> pageByQuery(Page<SysUser> page, SysUserQuery query) {
-        return page(page,createCondition(query));
+        return page(page, createCondition(query));
     }
 
     @Override

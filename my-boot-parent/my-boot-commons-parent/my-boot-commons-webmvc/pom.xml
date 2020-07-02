@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-commons-parent</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.0.0</version>
+        <version>1.0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>ai.ylyue</groupId>
             <artifactId>yue-library-base</artifactId>
-            <version>Finchley.SR4.1</version>
+            <version>Greenwich.SR2.1</version>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>

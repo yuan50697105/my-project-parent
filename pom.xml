@@ -14,7 +14,7 @@
     </parent>
     <groupId>org.myproject</groupId>
     <artifactId>my-project-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0.1</version>
     <name>my-project-parent</name>
     <description>Demo project for Spring Boot</description>
     <packaging>pom</packaging>
@@ -79,13 +79,13 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>1.3.0.Final</version>
+            <version>1.4.0.Beta1</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-processor</artifactId>
-            <version>1.3.0.Final</version>
+            <version>1.4.0.Beta1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -130,6 +130,14 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

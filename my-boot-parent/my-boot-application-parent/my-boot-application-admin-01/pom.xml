@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-application-parent</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.0.0</version>
+        <version>1.0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -44,6 +44,14 @@
         <module>my-boot-application-admin-01-jersey-06</module>
         <module>my-boot-application-admin-01-jersey-07</module>
         <module>my-boot-application-admin-01-jersey-08</module>
+        <module>my-boot-application-admin-01-webmvc-view-01</module>
+        <module>my-boot-application-admin-01-webmvc-view-02</module>
+        <module>my-boot-application-admin-01-webmvc-view-03</module>
+        <module>my-boot-application-admin-01-webmvc-view-04</module>
+        <module>my-boot-application-admin-01-webmvc-view-05</module>
+        <module>my-boot-application-admin-01-webmvc-view-06</module>
+        <module>my-boot-application-admin-01-webmvc-view-07</module>
+        <module>my-boot-application-admin-01-webmvc-view-08</module>
     </modules>
     <dependencies>
     </dependencies>

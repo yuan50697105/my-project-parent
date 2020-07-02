@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper,SysRole> implements SysRoleService {
+public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements SysRoleService {
 
     @Resource
     private SysRoleMapper sysRoleMapper;

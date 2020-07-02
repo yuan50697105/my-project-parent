@@ -1,11 +1,12 @@
 package org.myproject.boot.application.admin.db.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.admin.db.pojo.SysRoleRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRoleRouteExample;
+
+import java.util.List;
 
 @Mapper
 public interface SysRoleRouteMapper extends BaseMapper<SysRoleRoute> {
