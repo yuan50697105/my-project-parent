@@ -47,6 +47,11 @@
         <module>my-boot-application-admin-01-webmvc-view-01</module>
         <module>my-boot-application-admin-01-webmvc-view-02</module>
         <module>my-boot-application-admin-01-webmvc-view-03</module>
+        <module>my-boot-application-admin-01-webmvc-view-04</module>
+        <module>my-boot-application-admin-01-webmvc-view-05</module>
+        <module>my-boot-application-admin-01-webmvc-view-06</module>
+        <module>my-boot-application-admin-01-webmvc-view-07</module>
+        <module>my-boot-application-admin-01-webmvc-view-08</module>
     </modules>
     <dependencies>
     </dependencies>
