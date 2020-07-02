@@ -8,7 +8,7 @@ import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerLogExample;
 
 @Mapper
-public interface TbCustomerLogMapper extends BaseMapper<TbCustomerLog> {
+public interface TbCustomerLogMapper extends BaseMapper<TbCustomerLog>, tk.mybatis.mapper.common.Mapper<TbCustomerLog> {
     long countByExample(TbCustomerLogExample example);
 
     int deleteByExample(TbCustomerLogExample example);
