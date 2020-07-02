@@ -3,6 +3,7 @@ package org.myproject.boot.application.admin.mvc.command;
 import lombok.extern.slf4j.Slf4j;
 import org.myproject.boot.application.admin.db.pojo.SysRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRouteExample;
+import org.myproject.boot.application.admin.db.service.SysRouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
