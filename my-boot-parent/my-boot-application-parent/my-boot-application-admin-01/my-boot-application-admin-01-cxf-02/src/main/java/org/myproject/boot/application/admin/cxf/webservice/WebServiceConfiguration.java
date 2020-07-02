@@ -34,13 +34,4 @@ public class WebServiceConfiguration {
         return endpoint;
     }
 
-    @Bean
-    public Server webUserServiceRs(Bus bus, WebUserRsService userServiceRS) {
-        JAXRSServerFactoryBean endpoint = new JAXRSServerFactoryBean();
-        endpoint.setBus(bus);
-        endpoint.setAddress("/user");
-        endpoint.setServiceBeans(Collections.singletonList(userServiceRS));
-        endpoint.setFeatures(Arrays.asList(new Swagger2Feature()));
-        return endpoint.create();
-    }
 }
