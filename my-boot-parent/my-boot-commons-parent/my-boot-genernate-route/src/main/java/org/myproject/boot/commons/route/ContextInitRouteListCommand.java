@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  * @author: yuane
  * @create: 2020-06-26 17:03
  */
-@ConditionalOnClass(RouteService.class)
+
 @Component
 @Slf4j
 public class ContextInitRouteListCommand implements ApplicationRunner {
@@ -38,7 +38,7 @@ public class ContextInitRouteListCommand implements ApplicationRunner {
     @Transactional
     public void run(ApplicationArguments args) throws Exception {
         Map<String, Object> beans = context.getBeansWithAnnotation(Controller.class);
-        ArrayList<String> routes = new ArrayList<>();
+        ArrayList<Route> routes = new ArrayList<>();
         beans.putAll(context.getBeansWithAnnotation(RestController.class));
         List<String> adminRoutes = new ArrayList<>();
         for (Map.Entry<String, Object> entry : beans.entrySet()) {
@@ -60,16 +60,19 @@ public class ContextInitRouteListCommand implements ApplicationRunner {
                 if (!routeUrlList.contains(adminRoute)) {
                     Route route = new Route();
                     route.setUrl(adminRoute);
-                    routeService.saveRoute(route);
+                    routes.add(route);
+//                    routeService.saveRoute(route);
                 }
             }
         } else {
             for (String adminRoute : adminRoutes) {
                 Route route = new Route();
                 route.setUrl(adminRoute);
-                routeService.saveRoute(route);
+                routes.add(route);
+//                routeService.saveRoute(route);
             }
         }
+        routeService.saveRoutes(routes);
 
     }
 

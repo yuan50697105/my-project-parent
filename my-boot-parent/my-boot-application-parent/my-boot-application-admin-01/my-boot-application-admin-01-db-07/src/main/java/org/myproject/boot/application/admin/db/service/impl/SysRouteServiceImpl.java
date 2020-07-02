@@ -14,7 +14,7 @@ public class SysRouteServiceImpl extends ServiceImpl<SysRouteMapper, SysRoute> i
 
     @Override
     public long countByExample(SysRouteExample example) {
-        return baseMapper.countByExample(example);
+        return baseMapper.selectCountByExample(example);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package org.myproject.boot.commons.route;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 /**
@@ -12,4 +14,11 @@ public interface RouteService {
     List<Route> selectAllRoutes();
 
     void saveRoute(Route route);
+
+    @Transactional
+    default void saveRoutes(List<Route> routes) {
+        for (Route route : routes) {
+            saveRoute(route);
+        }
+    }
 }
