@@ -33,6 +33,7 @@
         <module>my-boot-commons-webservice-cxf</module>
         <module>my-boot-commons-webservice-jersey</module>
         <module>my-boot-genernate-route</module>
+        <module>my-boot-commons-webview</module>
     </modules>
     <build>
         <plugins>

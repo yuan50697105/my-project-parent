@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-admin-01-webmvc-view-01</artifactId>
+    <artifactId>my-boot-application-admin-01-webmvc-view-03</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
@@ -23,7 +23,7 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-db-01</artifactId>
+            <artifactId>my-boot-application-admin-01-db-02</artifactId>
             <version>1.0.0.1</version>
         </dependency>
         <dependency>
