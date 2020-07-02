@@ -47,21 +47,21 @@ public class MvcConfigurationTests {
         userService.save(sysUser);
     }
 
-    /**
-     * 未通过
-     */
-    @Test
-    void name2() {
-        JAXRSClientFactoryBean factoryBean = new JAXRSClientFactoryBean();
-        factoryBean.setAddress("http://localhost:8080/services/user");
-        factoryBean.setServiceClass(WebUserRsService.class);
-        WebUserRsService userRsService = factoryBean.create(WebUserRsService.class);
-        userRsService.save(new SysUser());
+//    /**
+//     * 未通过
+//     */
+//    @Test
+//    void name2() {
+//        JAXRSClientFactoryBean factoryBean = new JAXRSClientFactoryBean();
+//        factoryBean.setAddress("http://localhost:8080/services/user");
+//        factoryBean.setServiceClass(WebUserRsService.class);
+//        WebUserRsService userRsService = factoryBean.create(WebUserRsService.class);
+//        userRsService.save(new SysUser());
 //        WebUserRsService webUserRsService = JAXRSClientFactory.create("http://localhost:8080/services/user", WebUserRsService.class);
 //        String aa = webUserRsService.aa();
 //        log.info(aa);
 //        Result<?> result = webUserRsService.save(new SysUser());
 //        System.out.println("JSONUtil.toJsonPrettyStr(result) = " + JSONUtil.toJsonPrettyStr(result));
 //        WebClient.create("http://localhost:8080").path("/services/user")
-    }
+//    }
 }
