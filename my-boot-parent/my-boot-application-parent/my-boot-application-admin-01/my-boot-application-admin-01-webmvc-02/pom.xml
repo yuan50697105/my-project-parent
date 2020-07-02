@@ -22,5 +22,10 @@
             <artifactId>my-boot-application-admin-01-db-02</artifactId>
             <version>1.0.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-genernate-route</artifactId>
+            <version>1.0.0.1</version>
+        </dependency>
     </dependencies>
 </project>
