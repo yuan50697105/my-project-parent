@@ -88,5 +88,6 @@ public class SysRoleServiceImpl implements SysRoleService {
         PageHelper.startPage(page, pageSize);
         return new PageInfo<>(sysRoleMapper.selectByExample(example));
     }
+
 }
 
