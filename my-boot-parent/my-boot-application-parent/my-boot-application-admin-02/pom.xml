@@ -12,38 +12,14 @@
     <artifactId>my-boot-application-admin-02</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>my-boot-application-admin-02-db-01</module>
-        <module>my-boot-application-admin-02-db-02</module>
-        <module>my-boot-application-admin-02-db-03</module>
-        <module>my-boot-application-admin-02-db-04</module>
-        <module>my-boot-application-admin-02-db-05</module>
-        <module>my-boot-application-admin-02-db-06</module>
-        <module>my-boot-application-admin-02-db-07</module>
-        <module>my-boot-application-admin-02-db-08</module>
-        <module>my-boot-application-admin-02-webmvc-01</module>
-        <module>my-boot-application-admin-02-webmvc-02</module>
-        <module>my-boot-application-admin-02-webmvc-03</module>
-        <module>my-boot-application-admin-02-webmvc-04</module>
-        <module>my-boot-application-admin-02-webmvc-05</module>
-        <module>my-boot-application-admin-02-webmvc-06</module>
-        <module>my-boot-application-admin-02-webmvc-07</module>
-        <module>my-boot-application-admin-02-webmvc-08</module>
-        <module>my-boot-application-admin-02-cxf-01</module>
-        <module>my-boot-application-admin-02-cxf-02</module>
-        <module>my-boot-application-admin-02-cxf-03</module>
-        <module>my-boot-application-admin-02-cxf-04</module>
-        <module>my-boot-application-admin-02-cxf-05</module>
-        <module>my-boot-application-admin-02-cxf-06</module>
-        <module>my-boot-application-admin-02-cxf-07</module>
-        <module>my-boot-application-admin-02-cxf-08</module>
-        <module>my-boot-application-admin-02-jersey-01</module>
-        <module>my-boot-application-admin-02-jersey-02</module>
-        <module>my-boot-application-admin-02-jersey-03</module>
-        <module>my-boot-application-admin-02-jersey-04</module>
-        <module>my-boot-application-admin-02-jersey-05</module>
-        <module>my-boot-application-admin-02-jersey-06</module>
-        <module>my-boot-application-admin-02-jersey-07</module>
-        <module>my-boot-application-admin-02-jersey-08</module>
+        <module>my-boot-application-admin-02-01</module>
+        <module>my-boot-application-admin-02-02</module>
+        <module>my-boot-application-admin-02-03</module>
+        <module>my-boot-application-admin-02-04</module>
+        <module>my-boot-application-admin-02-05</module>
+        <module>my-boot-application-admin-02-06</module>
+        <module>my-boot-application-admin-02-07</module>
+        <module>my-boot-application-admin-02-08</module>
     </modules>
 
 
