@@ -50,7 +50,7 @@ public class CustomerInfoController {
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "update", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "update", method = {RequestMethod.PUT, RequestMethod.POST})
     public Result<?> update(@RequestBody TbCustomerInfoVo vo) {
         TbCustomerInfo customerInfo = customerInfoConverter.voToPo(vo);
         customerInfoService.updateById(customerInfo);
