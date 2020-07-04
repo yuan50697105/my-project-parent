@@ -7,6 +7,7 @@ import org.myproject.boot.application.admin.db.pojo.SysRole;
 import org.myproject.boot.application.admin.db.pojo.SysRoleExample;
 import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
 import org.myproject.boot.application.admin.db.pojo.SysRoleVo;
+import org.myproject.boot.application.admin.db.service.BSysRoleService;
 import org.myproject.boot.application.admin.db.service.SysRoleService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ import java.util.List;
 @RequestMapping("sys/role")
 public class SysRoleController {
     @Autowired
-    private SysRoleService sysRoleService;
+    private BSysRoleService sysRoleService;
     @Autowired
     private SysRoleConverter sysRoleConverter;
 
@@ -33,7 +34,7 @@ public class SysRoleController {
     public Result<?> data(SysRoleQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<SysRole> result = new PageResult<>(sysRoleService.selectByQueryWithPage(page, size, query));
+        PageResult<SysRole> result = sysRoleService.selectByQueryWithPage(page, size, query);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
@@ -51,23 +52,19 @@ public class SysRoleController {
 
     @RequestMapping(value = "save", method = {RequestMethod.POST})
     public Result<?> save(@RequestBody @Validated SysRoleVo SysRoleVo) {
-        SysRole SysRole = sysRoleConverter.voToPo(SysRoleVo);
-        sysRoleService.insert(SysRole);
+        sysRoleService.insert(SysRoleVo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT})
     public Result<?> update(@RequestBody @Validated SysRoleVo SysRoleVo) {
-        SysRole SysRole = sysRoleConverter.voToPo(SysRoleVo);
-        sysRoleService.updateByPrimaryKeySelective(SysRole);
+        sysRoleService.updateByPrimaryKeySelective(SysRoleVo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteList(List<Long> ids) {
-        SysRoleExample example = new SysRoleExample();
-        example.or().andIdIn(ids);
-        sysRoleService.deleteByExample(example);
+        sysRoleService.deleteByIds(ids);
         return ResultInfo.success();
     }
 

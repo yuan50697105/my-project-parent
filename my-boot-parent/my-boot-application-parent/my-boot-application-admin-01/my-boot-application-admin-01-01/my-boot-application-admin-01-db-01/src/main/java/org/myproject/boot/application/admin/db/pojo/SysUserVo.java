@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * sys_user
@@ -33,4 +35,8 @@ public class SysUserVo implements Serializable {
      * 启用状态
      */
     private String enabled;
+    /**
+     * 角色ID列表
+     */
+    private List<Long> roleIds = new ArrayList<>();
 }

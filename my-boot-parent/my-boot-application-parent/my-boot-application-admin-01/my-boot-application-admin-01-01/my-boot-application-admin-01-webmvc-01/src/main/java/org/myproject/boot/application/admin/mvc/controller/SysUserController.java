@@ -4,10 +4,9 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.converter.SysUserConverter;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
-import org.myproject.boot.application.admin.db.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.service.SysUserService;
+import org.myproject.boot.application.admin.db.service.BSysUserService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -25,16 +24,13 @@ import java.util.List;
 @RequestMapping("sys/user")
 public class SysUserController {
     @Autowired
-    private SysUserService sysUserService;
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-    @Autowired
-    private SysUserConverter sysUserConverter;
+    private BSysUserService sysUserService;
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
     public Result<?> data(SysUserQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<SysUser> result = new PageResult<>(sysUserService.selectByQueryWithPage(page, size, query));
+        PageResult<SysUser> result = sysUserService.selectByQueryWithPage(page, size, query);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
@@ -52,23 +48,19 @@ public class SysUserController {
 
     @RequestMapping(value = "save", method = {RequestMethod.POST})
     public Result<?> save(@RequestBody @Validated SysUserVo sysUserVo) {
-        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
-        sysUserService.insert(sysUser);
+        sysUserService.insert(sysUserVo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT})
     public Result<?> update(@RequestBody @Validated SysUserVo sysUserVo) {
-        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
-        sysUserService.updateByPrimaryKeySelective(sysUser);
+        sysUserService.updateByPrimaryKeySelective(sysUserVo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteList(List<Long> ids) {
-        SysUserExample example = new SysUserExample();
-        example.or().andIdIn(ids);
-        sysUserService.deleteByExample(example);
+        sysUserService.deleteByIds(ids);
         return ResultInfo.success();
     }
 

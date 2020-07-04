@@ -4,6 +4,7 @@ import lombok.*;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * sys_role
@@ -27,4 +28,8 @@ public class SysRoleVo extends BaseEntity implements Serializable {
      * 启用状态
      */
     private String enabled;
+    /**
+     * 路由ID列表
+     */
+    private List<Long> routeIds;
 }

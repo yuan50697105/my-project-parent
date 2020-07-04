@@ -70,5 +70,10 @@ public class SysUserRoleServiceImpl implements SysUserRoleService {
         return sysUserRoleMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public int insertBatch(List<SysUserRole> userRoles) {
+        return userRoles.stream().map(this::insert).reduce(Integer::sum).orElse(0);
+    }
+
 }
 

@@ -30,5 +30,6 @@ public interface SysUserRoleService {
 
     int updateByPrimaryKey(SysUserRole record);
 
+    int insertBatch(List<SysUserRole> userRoles);
 }
 

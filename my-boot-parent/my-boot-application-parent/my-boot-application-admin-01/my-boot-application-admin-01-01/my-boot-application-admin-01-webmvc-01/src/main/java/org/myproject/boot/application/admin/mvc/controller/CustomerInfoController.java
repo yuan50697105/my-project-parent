@@ -26,6 +26,7 @@ import java.util.List;
 public class CustomerInfoController {
     @Autowired
     private TbCustomerInfoService customerInfoService;
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private TbCustomerInfoConverter customerInfoConverter;
 
@@ -51,14 +52,14 @@ public class CustomerInfoController {
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "update", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "update", method = {RequestMethod.PUT, RequestMethod.POST})
     public Result<?> update(@RequestBody TbCustomerInfoVo vo) {
         TbCustomerInfo customerInfo = customerInfoConverter.voToPo(vo);
         customerInfoService.updateByPrimaryKeySelective(customerInfo);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET})
+    @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET,RequestMethod.DELETE})
     public Result<?> deleteList(List<Long> ids) {
         TbCustomerInfoExample example = new TbCustomerInfoExample();
         example.or().andIdIn(ids);
