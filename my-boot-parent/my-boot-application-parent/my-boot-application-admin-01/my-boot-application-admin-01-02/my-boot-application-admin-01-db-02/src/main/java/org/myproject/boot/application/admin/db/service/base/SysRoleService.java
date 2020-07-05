@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.service;
+package org.myproject.boot.application.admin.db.service.base;
 
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.SysRole;
@@ -32,10 +32,10 @@ public interface SysRoleService {
 
     int updateByPrimaryKey(SysRole record);
 
-    PageInfo<SysRole> selectByQueryWithPage(int page, int size, SysRoleQuery query);
+    PageInfo<SysRole> selectByQuery(SysRoleQuery query, int page, int size);
 
     List<SysRole> selectByQuery(SysRoleQuery query);
 
-    PageInfo<SysRole> selectByExampleWithPage(int page, int pageSize, SysRoleExample example);
+    PageInfo<SysRole> selectByExample(SysRoleExample example, int page, int pageSize);
 }
 

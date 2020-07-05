@@ -1,7 +1,9 @@
-package org.myproject.boot.application.admin.db.service;
+package org.myproject.boot.application.admin.db.service.base;
 
+import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeQuery;
 
 import java.util.List;
 
@@ -30,4 +32,8 @@ public interface TbCustomerTypeService {
 
     int updateByPrimaryKey(TbCustomerType record);
 
+    PageInfo<TbCustomerType> selectByExample(TbCustomerTypeExample example, int page, int pageSize);
+
+    PageInfo<TbCustomerType> selectByQuery(TbCustomerTypeQuery query, int page, int pageSize);
+    List<TbCustomerType> selectByQuery(TbCustomerTypeQuery query);
 }

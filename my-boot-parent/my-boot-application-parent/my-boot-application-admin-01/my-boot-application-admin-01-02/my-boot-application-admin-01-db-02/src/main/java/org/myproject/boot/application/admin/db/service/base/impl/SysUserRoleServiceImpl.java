@@ -1,9 +1,9 @@
-package org.myproject.boot.application.admin.db.service.impl;
+package org.myproject.boot.application.admin.db.service.base.impl;
 
 import org.myproject.boot.application.admin.db.mapper.SysUserRoleMapper;
 import org.myproject.boot.application.admin.db.pojo.SysUserRole;
 import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;
-import org.myproject.boot.application.admin.db.service.SysUserRoleService;
+import org.myproject.boot.application.admin.db.service.base.SysUserRoleService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

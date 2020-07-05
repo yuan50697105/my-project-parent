@@ -7,7 +7,7 @@ import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoVo;
-import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
+import org.myproject.boot.application.admin.db.service.base.TbCustomerInfoService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -33,7 +33,7 @@ public class CustomerInfoController {
     public Result<?> data(TbCustomerInfoQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<TbCustomerInfo> pageResult = new PageResult<>(customerInfoService.selectByQueryWithPage(page, size, query));
+        PageResult<TbCustomerInfo> pageResult = new PageResult<>(customerInfoService.selectByQuery(query, page, size));
         return ResultInfo.success(pageResult.getData(), pageResult.getTotalRows());
     }
 

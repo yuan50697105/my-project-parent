@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.service.impl;
+package org.myproject.boot.application.admin.db.service.base.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -6,7 +6,7 @@ import org.myproject.boot.application.admin.db.mapper.SysUserMapper;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.service.SysUserService;
+import org.myproject.boot.application.admin.db.service.base.SysUserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -73,15 +73,16 @@ public class SysUserServiceImpl implements SysUserService {
         return sysUserMapper.updateByPrimaryKey(record);
     }
 
+
     @Override
-    public PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example) {
+    public PageInfo<SysUser> selectByExample(SysUserExample example, int page, int pageSize) {
         PageHelper.startPage(page, pageSize);
         return new PageInfo<>(sysUserMapper.selectByExample(example));
     }
 
     @Override
-    public PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query) {
-        return selectByExampleWithPage(page, size, query.toExample());
+    public PageInfo<SysUser> selectByQuery(SysUserQuery query, int page, int size) {
+        return selectByExample(query.toExample(), page, size);
     }
 
     @Override

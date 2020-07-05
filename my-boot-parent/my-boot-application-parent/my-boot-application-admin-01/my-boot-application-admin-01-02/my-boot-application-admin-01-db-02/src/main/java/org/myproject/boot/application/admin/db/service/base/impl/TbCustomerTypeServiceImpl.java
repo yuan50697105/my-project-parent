@@ -1,9 +1,12 @@
-package org.myproject.boot.application.admin.db.service.impl;
+package org.myproject.boot.application.admin.db.service.base.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.mapper.TbCustomerTypeMapper;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
-import org.myproject.boot.application.admin.db.service.TbCustomerTypeService;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeQuery;
+import org.myproject.boot.application.admin.db.service.base.TbCustomerTypeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -70,4 +73,19 @@ public class TbCustomerTypeServiceImpl implements TbCustomerTypeService {
         return tbCustomerTypeMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public PageInfo<TbCustomerType> selectByExample(TbCustomerTypeExample example, int page, int pageSize) {
+        PageHelper.startPage(page, pageSize);
+        return new PageInfo<>(tbCustomerTypeMapper.selectByExample(example));
+    }
+
+    @Override
+    public PageInfo<TbCustomerType> selectByQuery(TbCustomerTypeQuery query, int page, int pageSize) {
+        return selectByExample(query.toExample(), page, pageSize);
+    }
+
+    @Override
+    public List<TbCustomerType> selectByQuery(TbCustomerTypeQuery query) {
+        return selectByExample(query.toExample());
+    }
 }

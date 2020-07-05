@@ -4,7 +4,7 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerLogQuery;
-import org.myproject.boot.application.admin.db.service.TbCustomerLogService;
+import org.myproject.boot.application.admin.db.service.base.TbCustomerLogService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +30,7 @@ public class CustomerLogController {
     public Result<?> data(TbCustomerLogQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<TbCustomerLog> pageResult = new PageResult<>(customerLogService.selectByQueryWithPage(page, size, query));
+        PageResult<TbCustomerLog> pageResult = new PageResult<>(customerLogService.selectByQuery(query, page, size));
         return ResultInfo.success(pageResult.getData(), pageResult.getTotalRows());
     }
 

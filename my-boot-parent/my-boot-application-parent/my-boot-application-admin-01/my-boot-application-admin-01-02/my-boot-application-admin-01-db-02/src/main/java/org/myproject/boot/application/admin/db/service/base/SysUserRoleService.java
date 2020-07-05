@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.service;
+package org.myproject.boot.application.admin.db.service.base;
 
 import org.myproject.boot.application.admin.db.pojo.SysUserRole;
 import org.myproject.boot.application.admin.db.pojo.SysUserRoleExample;

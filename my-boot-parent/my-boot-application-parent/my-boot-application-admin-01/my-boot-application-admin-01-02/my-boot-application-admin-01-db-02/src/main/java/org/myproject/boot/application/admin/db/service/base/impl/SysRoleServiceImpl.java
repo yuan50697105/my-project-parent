@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.service.impl;
+package org.myproject.boot.application.admin.db.service.base.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -6,7 +6,7 @@ import org.myproject.boot.application.admin.db.mapper.SysRoleMapper;
 import org.myproject.boot.application.admin.db.pojo.SysRole;
 import org.myproject.boot.application.admin.db.pojo.SysRoleExample;
 import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
-import org.myproject.boot.application.admin.db.service.SysRoleService;
+import org.myproject.boot.application.admin.db.service.base.SysRoleService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -74,8 +74,8 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
-    public PageInfo<SysRole> selectByQueryWithPage(int page, int size, SysRoleQuery query) {
-        return selectByExampleWithPage(page, size, query.toExample());
+    public PageInfo<SysRole> selectByQuery(SysRoleQuery query, int page, int size) {
+        return selectByExample(query.toExample(), page, size);
     }
 
     @Override
@@ -84,7 +84,7 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
-    public PageInfo<SysRole> selectByExampleWithPage(int page, int pageSize, SysRoleExample example) {
+    public PageInfo<SysRole> selectByExample(SysRoleExample example, int page, int pageSize) {
         PageHelper.startPage(page, pageSize);
         return new PageInfo<>(sysRoleMapper.selectByExample(example));
     }

@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.service;
+package org.myproject.boot.application.admin.db.service.base;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.service;
+package org.myproject.boot.application.admin.db.service.base;
 
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
@@ -32,9 +32,9 @@ public interface SysUserService {
 
     int updateByPrimaryKey(SysUser record);
 
-    PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example);
+    PageInfo<SysUser> selectByExample(SysUserExample example, int page, int pageSize);
 
-    PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query);
+    PageInfo<SysUser> selectByQuery(SysUserQuery query, int page, int size);
 
     List<SysUser> selectByQuery(SysUserQuery query);
 }

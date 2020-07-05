@@ -1,9 +1,9 @@
-package org.myproject.boot.application.admin.db.service.impl;
+package org.myproject.boot.application.admin.db.service.base.impl;
 
 import org.myproject.boot.application.admin.db.mapper.SysRoleRouteMapper;
 import org.myproject.boot.application.admin.db.pojo.SysRoleRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRoleRouteExample;
-import org.myproject.boot.application.admin.db.service.SysRoleRouteService;
+import org.myproject.boot.application.admin.db.service.base.SysRoleRouteService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

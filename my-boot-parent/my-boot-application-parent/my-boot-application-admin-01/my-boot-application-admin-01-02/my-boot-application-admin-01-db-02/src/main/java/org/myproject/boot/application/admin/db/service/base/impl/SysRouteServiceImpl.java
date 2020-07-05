@@ -1,9 +1,9 @@
-package org.myproject.boot.application.admin.db.service.impl;
+package org.myproject.boot.application.admin.db.service.base.impl;
 
 import org.myproject.boot.application.admin.db.mapper.SysRouteMapper;
 import org.myproject.boot.application.admin.db.pojo.SysRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRouteExample;
-import org.myproject.boot.application.admin.db.service.SysRouteService;
+import org.myproject.boot.application.admin.db.service.base.SysRouteService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

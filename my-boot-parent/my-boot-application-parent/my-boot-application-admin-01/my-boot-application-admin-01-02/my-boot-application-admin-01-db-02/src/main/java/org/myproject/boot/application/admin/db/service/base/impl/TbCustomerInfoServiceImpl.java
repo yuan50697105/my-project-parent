@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.service.impl;
+package org.myproject.boot.application.admin.db.service.base.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -6,7 +6,7 @@ import org.myproject.boot.application.admin.db.mapper.TbCustomerInfoMapper;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
-import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
+import org.myproject.boot.application.admin.db.service.base.TbCustomerInfoService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -76,14 +76,14 @@ public class TbCustomerInfoServiceImpl implements TbCustomerInfoService {
     }
 
     @Override
-    public PageInfo<TbCustomerInfo> selectByExampleWithPage(int page, int pageSize, TbCustomerInfoExample example) {
+    public PageInfo<TbCustomerInfo> selectByExample(TbCustomerInfoExample example, int page, int pageSize) {
         PageHelper.startPage(page, pageSize);
         return new PageInfo<>(tbCustomerInfoMapper.selectByExample(example));
     }
 
 
     @Override
-    public PageInfo<TbCustomerInfo> selectByQueryWithPage(int page, int pageSize, TbCustomerInfoQuery query) {
+    public PageInfo<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery query, int page, int pageSize) {
         PageHelper.startPage(page, pageSize);
         return new PageInfo<>(tbCustomerInfoMapper.selectByExample(query.toExample()));
     }
