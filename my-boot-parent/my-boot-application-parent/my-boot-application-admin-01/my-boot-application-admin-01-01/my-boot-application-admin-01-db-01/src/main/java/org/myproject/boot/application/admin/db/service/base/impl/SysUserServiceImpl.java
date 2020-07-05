@@ -74,14 +74,14 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public PageInfo<SysUser> selectByExampleWithPage(int page, int pageSize, SysUserExample example) {
+    public PageInfo<SysUser> selectByExample(SysUserExample example, int page, int pageSize) {
         PageHelper.startPage(page, pageSize);
         return new PageInfo<>(sysUserMapper.selectByExample(example));
     }
 
     @Override
-    public PageInfo<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query) {
-        return selectByExampleWithPage(page, size, query.toExample());
+    public PageInfo<SysUser> selectByQuery(SysUserQuery query, int page, int size) {
+        return selectByExample(query.toExample(), page, size);
     }
 
     @Override

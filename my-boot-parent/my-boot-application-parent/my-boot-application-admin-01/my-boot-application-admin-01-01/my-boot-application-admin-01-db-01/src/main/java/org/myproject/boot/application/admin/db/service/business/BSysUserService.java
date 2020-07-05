@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.service.base;
+package org.myproject.boot.application.admin.db.service.business;
 
 import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.pojo.SysUserExample;

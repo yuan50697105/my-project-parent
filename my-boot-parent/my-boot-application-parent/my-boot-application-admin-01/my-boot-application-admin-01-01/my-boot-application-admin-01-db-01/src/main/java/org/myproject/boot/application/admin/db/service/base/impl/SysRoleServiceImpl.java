@@ -73,9 +73,8 @@ public class SysRoleServiceImpl implements SysRoleService {
         return sysRoleMapper.updateByPrimaryKey(record);
     }
 
-    @Override
-    public PageInfo<SysRole> selectByQueryWithPage(int page, int size, SysRoleQuery query) {
-        return selectByExampleWithPage(page, size, query.toExample());
+    public PageInfo<SysRole> selectByQuery(SysRoleQuery query, int page, int size) {
+        return selectByExample(query.toExample(), page, size);
     }
 
     @Override
@@ -84,7 +83,7 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
-    public PageInfo<SysRole> selectByExampleWithPage(int page, int pageSize, SysRoleExample example) {
+    public PageInfo<SysRole> selectByExample(SysRoleExample example, int page, int pageSize) {
         PageHelper.startPage(page, pageSize);
         return new PageInfo<>(sysRoleMapper.selectByExample(example));
     }

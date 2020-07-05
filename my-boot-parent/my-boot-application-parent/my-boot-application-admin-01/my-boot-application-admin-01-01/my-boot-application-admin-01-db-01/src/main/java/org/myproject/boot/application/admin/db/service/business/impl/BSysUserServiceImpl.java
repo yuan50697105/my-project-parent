@@ -3,7 +3,7 @@ import com.google.common.collect.Lists;
 
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.pojo.*;
-import org.myproject.boot.application.admin.db.service.base.BSysUserService;
+import org.myproject.boot.application.admin.db.service.business.BSysUserService;
 import org.myproject.boot.application.admin.db.service.base.SysRoleService;
 import org.myproject.boot.application.admin.db.service.base.SysUserRoleService;
 import org.myproject.boot.application.admin.db.service.base.SysUserService;
@@ -29,7 +29,7 @@ public class BSysUserServiceImpl implements BSysUserService {
 
     @Override
     public PageResult<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query) {
-        return new PageResult<>(sysUserService.selectByQueryWithPage(page, size, query));
+        return new PageResult<>(sysUserService.selectByQuery(query,page, size));
     }
 
     @Override

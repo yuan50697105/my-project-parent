@@ -30,7 +30,7 @@ public class BSysRoleServiceImpl implements BSysRoleService {
 
     @Override
     public PageResult<SysRole> selectByQuery( SysRoleQuery query,int page, int size) {
-        return new PageResult<>(sysRoleService.selectByQueryWithPage(page, size, query));
+        return new PageResult<>(sysRoleService.selectByQuery(query,page, size));
     }
 
     @Override
