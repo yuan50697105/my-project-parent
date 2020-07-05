@@ -42,7 +42,7 @@ public class WebUserWsServiceImpl implements WebUserWsService {
     @Override
     @Transactional
     public Result<?> save(SysUserVo sysUserVo) {
-        SysUserVo sysUser = sysUserConverter.voToPo(sysUserVo);
+        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
         sysUserService.save(sysUser);
         return ResultInfo.success();
     }
@@ -50,7 +50,7 @@ public class WebUserWsServiceImpl implements WebUserWsService {
     @Override
     @Transactional
     public Result<?> update(SysUserVo sysUserVo) {
-        SysUserVo sysUser = sysUserConverter.voToPo(sysUserVo);
+        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
         sysUserService.updateById(sysUser);
         return ResultInfo.success();
     }
