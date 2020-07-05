@@ -1,7 +1,6 @@
 package org.myproject.boot.application.admin.db.converter;
 
 import org.mapstruct.Mapper;
-import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.pojo.SysUserVo;
 
 /**
@@ -12,5 +11,5 @@ import org.myproject.boot.application.admin.db.pojo.SysUserVo;
  */
 @Mapper(componentModel = "spring")
 public interface SysUserConverter {
-    SysUser voToPo(SysUserVo sysUserVo);
+    SysUserVo voToPo(SysUserVo sysUserVo);
 }

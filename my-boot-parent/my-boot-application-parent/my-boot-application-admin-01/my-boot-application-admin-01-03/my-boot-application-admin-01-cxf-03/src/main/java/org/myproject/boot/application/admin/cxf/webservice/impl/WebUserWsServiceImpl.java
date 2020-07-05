@@ -9,7 +9,7 @@ import org.myproject.boot.application.admin.db.converter.SysUserConverter;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.service.SysUserService;
+import org.myproject.boot.application.admin.db.service.base.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,7 +42,7 @@ public class WebUserWsServiceImpl implements WebUserWsService {
     @Override
     @Transactional
     public Result<?> save(SysUserVo sysUserVo) {
-        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
+        SysUserVo sysUser = sysUserConverter.voToPo(sysUserVo);
         sysUserService.save(sysUser);
         return ResultInfo.success();
     }
@@ -50,7 +50,7 @@ public class WebUserWsServiceImpl implements WebUserWsService {
     @Override
     @Transactional
     public Result<?> update(SysUserVo sysUserVo) {
-        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
+        SysUserVo sysUser = sysUserConverter.voToPo(sysUserVo);
         sysUserService.updateById(sysUser);
         return ResultInfo.success();
     }
