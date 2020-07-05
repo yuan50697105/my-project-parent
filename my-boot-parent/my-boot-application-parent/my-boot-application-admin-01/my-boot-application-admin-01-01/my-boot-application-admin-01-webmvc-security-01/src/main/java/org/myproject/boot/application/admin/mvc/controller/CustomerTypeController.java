@@ -1,7 +1,6 @@
 package org.myproject.boot.application.admin.mvc.controller;
 
-import org.myproject.boot.application.admin.db.service.BCustomerTypeService;
-import org.myproject.boot.application.admin.db.service.TbCustomerTypeService;
+import org.myproject.boot.application.admin.db.service.business.BCustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

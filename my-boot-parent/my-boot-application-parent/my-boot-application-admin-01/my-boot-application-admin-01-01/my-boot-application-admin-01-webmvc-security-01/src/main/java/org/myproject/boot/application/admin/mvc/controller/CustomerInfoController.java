@@ -4,11 +4,9 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.converter.TbCustomerInfoConverter;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoVo;
-import org.myproject.boot.application.admin.db.service.BCustomerInfoService;
-import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
+import org.myproject.boot.application.admin.db.service.business.BCustomerInfoService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -35,7 +33,7 @@ public class CustomerInfoController {
     public Result<?> data(TbCustomerInfoQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<TbCustomerInfo> pageResult = customerInfoService.selectByQueryWithPage(page, size, query);
+        PageResult<TbCustomerInfo> pageResult = customerInfoService.selectByQuery(query,page, size);
         return ResultInfo.success(pageResult.getData(), pageResult.getTotalRows());
     }
 
@@ -54,25 +52,25 @@ public class CustomerInfoController {
 
     @RequestMapping(value = "update", method = {RequestMethod.PUT, RequestMethod.POST})
     public Result<?> update(@RequestBody TbCustomerInfoVo vo) {
-        customerInfoService.updateByPrimaryKeySelective(vo);
+        customerInfoService.update(vo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET,RequestMethod.DELETE})
     public Result<?> deleteList(List<Long> ids) {
-        customerInfoService.deleteByIds(ids);
+        customerInfoService.delete(ids);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteOne(Long id) {
-        customerInfoService.deleteByPrimaryKey(id);
+        customerInfoService.delete(id);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteRs(@PathVariable Long id) {
-        customerInfoService.deleteByPrimaryKey(id);
+        customerInfoService.delete(id);
         return ResultInfo.success();
     }
 }

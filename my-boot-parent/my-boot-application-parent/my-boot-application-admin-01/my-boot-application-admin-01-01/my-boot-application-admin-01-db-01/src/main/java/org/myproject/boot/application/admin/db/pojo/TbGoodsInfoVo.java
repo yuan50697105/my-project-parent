@@ -16,4 +16,5 @@ public class TbGoodsInfoVo extends BaseEntity implements Serializable {
     private Long code;
     private String name;
     private BigDecimal price;
+    private Long typeId;
 }

@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TbGoodsTypeQuery extends BaseEntity implements Serializable, MybatisExample<TbGoodsType> {
+public class TbGoodsTypeQuery extends BaseEntity implements Serializable, MybatisExample<TbGoodsTypeExample> {
     private static final long serialVersionUID = 1L;
     @AndLike
     private String name;

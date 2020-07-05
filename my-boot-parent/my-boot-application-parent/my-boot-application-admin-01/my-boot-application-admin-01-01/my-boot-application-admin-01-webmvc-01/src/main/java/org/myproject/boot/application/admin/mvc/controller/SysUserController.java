@@ -5,7 +5,7 @@ import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.service.BSysUserService;
+import org.myproject.boot.application.admin.db.service.base.BSysUserService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -51,27 +51,27 @@ public class SysUserController {
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT})
+    @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH})
     public Result<?> update(@RequestBody @Validated SysUserVo sysUserVo) {
-        sysUserService.updateByPrimaryKeySelective(sysUserVo);
+        sysUserService.update(sysUserVo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteList(List<Long> ids) {
-        sysUserService.deleteByIds(ids);
+        sysUserService.delete(ids);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteOne(Long id) {
-        sysUserService.deleteByPrimaryKey(id);
+        sysUserService.delete(id);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteRs(@PathVariable("id") Long id) {
-        sysUserService.deleteByPrimaryKey(id);
+        sysUserService.delete(id);
         return ResultInfo.success();
     }
 }
