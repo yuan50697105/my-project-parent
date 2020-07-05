@@ -1,4 +1,4 @@
-package org.myproject.boot.security.pojo;
+package org.myproject.boot.security.userdetails;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LoginUser implements UserDetails {
+public class JwtUser implements UserDetails {
     private Long id;
     private String username;
     private String name;

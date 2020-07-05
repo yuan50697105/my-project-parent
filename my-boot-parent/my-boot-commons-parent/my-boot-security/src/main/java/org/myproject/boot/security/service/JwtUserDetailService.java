@@ -8,5 +8,5 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  * @author: yuane
  * @create: 2020-06-26 22:20
  */
-public interface SysUserService extends UserDetailsService {
+public interface JwtUserDetailService extends UserDetailsService {
 }

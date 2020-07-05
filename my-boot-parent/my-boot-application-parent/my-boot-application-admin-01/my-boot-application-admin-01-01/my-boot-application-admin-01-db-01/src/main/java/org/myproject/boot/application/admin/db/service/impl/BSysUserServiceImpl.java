@@ -28,8 +28,6 @@ public class BSysUserServiceImpl implements BSysUserService {
     private final SysUserService sysUserService;
     private final SysRoleService sysRoleService;
     private final SysUserRoleService sysUserRoleService;
-    private final SysUserConverter sysUserConverter;
-    private final SysUserRoleConverter sysUserRoleConverter;
 
     @Override
     public PageResult<SysUser> selectByQueryWithPage(int page, int size, SysUserQuery query) {
@@ -58,7 +56,7 @@ public class BSysUserServiceImpl implements BSysUserService {
 
     @Override
     public int updateByPrimaryKeySelective(SysUserVo sysUserVo) {
-        SysUser sysUser = sysUserConverter.voToPo(sysUserVo);
+        SysUser sysUser = createUser(sysUserVo);
         return sysUserService.updateByPrimaryKeySelective(sysUser);
     }
 
