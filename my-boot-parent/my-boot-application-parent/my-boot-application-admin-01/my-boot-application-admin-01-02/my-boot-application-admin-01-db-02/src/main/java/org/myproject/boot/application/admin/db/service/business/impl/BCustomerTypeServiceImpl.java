@@ -5,7 +5,7 @@ import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeQuery;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeVo;
-import org.myproject.boot.application.admin.db.service.base.TbCustomerTypeService;
+import org.myproject.boot.application.admin.db.service.table.TbCustomerTypeService;
 import org.myproject.boot.application.admin.db.service.business.BCustomerTypeService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;

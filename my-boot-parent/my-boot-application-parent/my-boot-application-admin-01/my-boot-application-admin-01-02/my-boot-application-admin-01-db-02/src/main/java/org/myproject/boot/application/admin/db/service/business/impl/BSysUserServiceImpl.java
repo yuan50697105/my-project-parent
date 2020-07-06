@@ -5,7 +5,7 @@ import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.pojo.SysUserExample;
 import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.db.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.service.base.SysUserService;
+import org.myproject.boot.application.admin.db.service.table.SysUserService;
 import org.myproject.boot.application.admin.db.service.business.BSysUserService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;

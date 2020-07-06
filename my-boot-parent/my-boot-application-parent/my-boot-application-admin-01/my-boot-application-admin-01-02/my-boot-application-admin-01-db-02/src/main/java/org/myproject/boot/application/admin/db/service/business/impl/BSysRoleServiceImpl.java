@@ -5,7 +5,7 @@ import org.myproject.boot.application.admin.db.pojo.SysRole;
 import org.myproject.boot.application.admin.db.pojo.SysRoleExample;
 import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
 import org.myproject.boot.application.admin.db.pojo.SysRoleVo;
-import org.myproject.boot.application.admin.db.service.base.SysRoleService;
+import org.myproject.boot.application.admin.db.service.table.SysRoleService;
 import org.myproject.boot.application.admin.db.service.business.BSysRoleService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
