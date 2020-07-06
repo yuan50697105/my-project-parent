@@ -7,7 +7,6 @@ import org.myproject.boot.application.admin.db.pojo.SysRole;
 import org.myproject.boot.application.admin.db.pojo.SysRoleExample;
 import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
 import org.myproject.boot.application.admin.db.pojo.SysRoleVo;
-import org.myproject.boot.application.admin.db.service.SysRoleService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

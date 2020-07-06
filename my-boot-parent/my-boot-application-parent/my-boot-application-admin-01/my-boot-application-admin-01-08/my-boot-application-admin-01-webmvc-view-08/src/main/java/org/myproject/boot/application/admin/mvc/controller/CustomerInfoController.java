@@ -6,7 +6,6 @@ import org.myproject.boot.application.admin.db.converter.TbCustomerInfoConverter
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoVo;
-import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
