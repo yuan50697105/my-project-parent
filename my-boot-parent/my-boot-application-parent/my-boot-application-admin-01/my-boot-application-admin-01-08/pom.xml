@@ -17,6 +17,7 @@
         <module>my-boot-application-admin-01-webmvc-view-08</module>
         <module>my-boot-application-admin-01-cxf-08</module>
         <module>my-boot-application-admin-01-jersey-08</module>
+        <module>my-boot-application-admin-01-webmvc-security-08</module>
     </modules>
 
 </project>

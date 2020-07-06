@@ -1,11 +1,15 @@
 package org.myproject.boot.application.admin.db.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
-
-import java.io.Serializable;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -13,10 +17,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "tb_customer_type")
-public class TbCustomerType extends BaseEntity implements Serializable {
-    public static final String COL_ID = "id";
-    public static final String COL_NAEM = "naem";
+public class TbCustomerType extends BaseEntity {
     private static final long serialVersionUID = 1L;
     @TableField(value = "naem")
     private Integer naem;
+
+    public static final String COL_ID = "id";
+
+    public static final String COL_NAEM = "naem";
 }
