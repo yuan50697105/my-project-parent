@@ -6,7 +6,8 @@ import org.myproject.boot.application.admin.db.converter.TbCustomerInfoConverter
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoVo;
-import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
+import org.myproject.boot.application.admin.db.service.business.BCustomerInfoService;
+import org.myproject.boot.application.admin.db.service.table.TbCustomerInfoService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -24,7 +25,7 @@ import java.util.List;
 @RequestMapping("customer/info")
 public class CustomerInfoController {
     @Autowired
-    private TbCustomerInfoService customerInfoService;
+    private BCustomerInfoService customerInfoService;
     @Autowired
     private TbCustomerInfoConverter customerInfoConverter;
 
@@ -32,7 +33,7 @@ public class CustomerInfoController {
     public Result<?> data(TbCustomerInfoQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<TbCustomerInfo> pageResult = new PageResult<>(customerInfoService.selectByQueryWithPage(page, size, query));
+        PageResult<TbCustomerInfo> pageResult = customerInfoService.selectByQuery(query, page, size);
         return ResultInfo.success(pageResult.getData(), pageResult.getTotalRows());
     }
 
@@ -45,33 +46,31 @@ public class CustomerInfoController {
 
     @RequestMapping(value = "save", method = {RequestMethod.POST})
     public Result<?> save(@RequestBody @Validated TbCustomerInfoVo vo) {
-        TbCustomerInfo customerInfo = customerInfoConverter.voToPo(vo);
-        customerInfoService.save(customerInfo);
+        customerInfoService.save(vo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.PUT, RequestMethod.POST})
     public Result<?> update(@RequestBody TbCustomerInfoVo vo) {
-        TbCustomerInfo customerInfo = customerInfoConverter.voToPo(vo);
-        customerInfoService.updateById(customerInfo);
+        customerInfoService.update(vo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET})
     public Result<?> deleteList(List<Long> ids) {
-        customerInfoService.removeByIds(ids);
+        customerInfoService.delete(ids);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteOne(Long id) {
-        customerInfoService.removeById(id);
+        customerInfoService.delete(id);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteRs(@PathVariable Long id) {
-        customerInfoService.removeById(id);
+        customerInfoService.delete(id);
         return ResultInfo.success();
     }
 }

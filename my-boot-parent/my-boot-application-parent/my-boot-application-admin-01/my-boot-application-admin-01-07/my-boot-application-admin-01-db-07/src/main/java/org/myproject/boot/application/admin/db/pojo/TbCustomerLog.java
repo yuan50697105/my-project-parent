@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +17,8 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "tb_customer_log")
-public class TbCustomerLog extends BaseEntity implements Serializable {
+public class TbCustomerLog extends BaseEntity {
+    private static final long serialVersionUID = 1L;
     @TableField(value = "customer_id")
     private Long customerId;
 
@@ -27,8 +27,6 @@ public class TbCustomerLog extends BaseEntity implements Serializable {
 
     @TableField(value = "content")
     private String content;
-
-    private static final long serialVersionUID = 1L;
 
     public static final String COL_ID = "id";
 

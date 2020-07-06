@@ -1,11 +1,15 @@
 package org.myproject.boot.application.admin.db.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
-
-import java.io.Serializable;
 
 /**
  * 用户角色
@@ -16,13 +20,17 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "sys_user_role")
-public class SysUserRole extends BaseEntity implements Serializable {
-    public static final String COL_ID = "id";
-    public static final String COL_USER_ID = "user_id";
-    public static final String COL_ROLE_ID = "role_id";
+public class SysUserRole extends BaseEntity {
     private static final long serialVersionUID = 1L;
     @TableField(value = "user_id")
     private Long userId;
+
     @TableField(value = "role_id")
     private Long roleId;
+
+    public static final String COL_ID = "id";
+
+    public static final String COL_USER_ID = "user_id";
+
+    public static final String COL_ROLE_ID = "role_id";
 }
