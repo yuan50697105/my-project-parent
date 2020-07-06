@@ -4,7 +4,7 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerLogQuery;
-import org.myproject.boot.application.admin.db.service.TbCustomerLogService;
+import org.myproject.boot.application.admin.db.service.table.TbCustomerLogService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,13 +1,11 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import java.math.BigDecimal;
-import javax.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -15,7 +13,7 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_goods_info")
-public class TbGoodsInfo extends BaseEntity {
+public class TbGoodsInfoVo extends BaseEntity {
     private static final long serialVersionUID = 1L;
     @Column(name = "code")
     private Long code;

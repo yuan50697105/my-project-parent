@@ -1,12 +1,10 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import javax.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -14,7 +12,7 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_goods_type")
-public class TbGoodsType extends BaseEntity {
+public class TbGoodsTypeVo extends BaseEntity {
     private static final long serialVersionUID = 1L;
     @Column(name = "`name`")
     private String name;

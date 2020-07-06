@@ -7,16 +7,17 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.persistence.Column;
-import java.io.Serializable;
+import javax.persistence.Table;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TbCustomerTypeQuery extends BaseEntity implements Serializable, MybatisExampleForTk<TbCustomerType, Example> {
+@Table(name = "tb_goods_type")
+public class TbGoodsTypeQuery extends BaseEntity implements MybatisExampleForTk<TbGoodsType, Example> {
     private static final long serialVersionUID = 1L;
-    @Column(name = "n2aem")
+    @Column(name = "`name`")
     @AndLike
-    private Integer naem;
+    private String name;
 }

@@ -41,4 +41,6 @@ public class TbCustomerInfoVo extends BaseEntity implements Serializable {
      */
     @Column(name = "age")
     private Integer age;
+
+    private Long typeId;
 }

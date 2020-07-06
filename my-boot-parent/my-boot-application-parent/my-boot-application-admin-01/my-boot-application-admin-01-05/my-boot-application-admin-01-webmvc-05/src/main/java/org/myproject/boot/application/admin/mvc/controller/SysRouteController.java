@@ -2,7 +2,7 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.service.SysUserRouteService;
+import org.myproject.boot.application.admin.db.service.table.SysUserRouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
