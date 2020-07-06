@@ -6,7 +6,7 @@ import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeQuery;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeVo;
 import org.myproject.boot.application.admin.db.service.business.BGoodsTypeService;
-import org.myproject.boot.application.admin.db.service.base.TbGoodsTypeService;
+import org.myproject.boot.application.admin.db.service.table.TbGoodsTypeService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

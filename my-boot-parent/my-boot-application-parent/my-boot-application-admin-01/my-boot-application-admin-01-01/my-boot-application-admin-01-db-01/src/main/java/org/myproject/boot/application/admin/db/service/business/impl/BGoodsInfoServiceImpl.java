@@ -5,7 +5,7 @@ import org.myproject.boot.application.admin.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoExample;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoQuery;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoVo;
-import org.myproject.boot.application.admin.db.service.base.TbGoodsInfoService;
+import org.myproject.boot.application.admin.db.service.table.TbGoodsInfoService;
 import org.myproject.boot.application.admin.db.service.business.BGoodsInfoService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
