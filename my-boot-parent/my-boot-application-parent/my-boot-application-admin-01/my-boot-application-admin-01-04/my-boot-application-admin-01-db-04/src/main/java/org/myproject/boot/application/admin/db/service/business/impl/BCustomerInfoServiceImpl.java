@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoVo;
-import org.myproject.boot.application.admin.db.service.base.TbCustomerInfoService;
+import org.myproject.boot.application.admin.db.service.table.TbCustomerInfoService;
 import org.myproject.boot.application.admin.db.service.business.BCustomerInfoService;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
