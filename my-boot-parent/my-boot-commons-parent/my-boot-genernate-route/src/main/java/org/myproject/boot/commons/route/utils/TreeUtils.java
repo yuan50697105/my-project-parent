@@ -47,7 +47,7 @@ public class TreeUtils {
     public static List<TreeNode> list2tree(List<TreeNode> list) {
         List<TreeNode> result = new ArrayList<>();
 
-        Map<Long, TreeNode> hash = list.stream().collect(Collectors.toMap(test -> test.getId(), test -> test));
+        Map<Long, TreeNode> hash = list.stream().collect(Collectors.toMap(TreeNode::getId, test -> test));
         for (TreeNode test : list) {
             TreeNode p = hash.get(test.getParentId());
             if (p == null) {
