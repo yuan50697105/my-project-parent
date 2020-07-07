@@ -13,7 +13,12 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-db-01</artifactId>
+            <artifactId>my-boot-commons-utils</artifactId>
+            <version>1.0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-mybatis-base-pagehelper</artifactId>
             <version>1.0.0.1</version>
         </dependency>
         <dependency>
