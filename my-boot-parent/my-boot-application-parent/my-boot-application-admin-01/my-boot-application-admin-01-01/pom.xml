@@ -18,5 +18,6 @@
         <module>my-boot-application-admin-01-cxf-01</module>
         <module>my-boot-application-admin-01-jersey-01</module>
         <module>my-boot-application-admin-01-webmvc-security-01</module>
+        <module>my-boot-application-admin-01-db-dynamic-01</module>
     </modules>
 </project>

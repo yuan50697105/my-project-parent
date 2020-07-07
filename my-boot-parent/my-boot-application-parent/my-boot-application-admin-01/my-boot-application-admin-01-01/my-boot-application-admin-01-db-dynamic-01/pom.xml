@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>my-boot-application-admin-01-01</artifactId>
@@ -9,21 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-admin-01-webmvc-01</artifactId>
+    <artifactId>my-boot-application-admin-01-db-dynamic-01</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-webmvc</artifactId>
+            <artifactId>my-boot-application-admin-01-db-01</artifactId>
             <version>1.0.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-db-dynamic-01</artifactId>
-            <version>1.0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-genernate-route</artifactId>
+            <artifactId>my-boot-mybatis-commons-dynamic-datasource</artifactId>
             <version>1.0.0.1</version>
         </dependency>
     </dependencies>

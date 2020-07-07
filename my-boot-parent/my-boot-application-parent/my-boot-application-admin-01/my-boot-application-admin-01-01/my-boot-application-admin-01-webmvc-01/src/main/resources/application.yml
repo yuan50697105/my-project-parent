@@ -1,5 +1,5 @@
 spring:
   profiles:
-    active: db,mvc
+    active: db2,mvc
 server:
   port: 8081
