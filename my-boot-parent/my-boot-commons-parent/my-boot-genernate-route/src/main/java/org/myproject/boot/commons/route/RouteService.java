@@ -1,5 +1,6 @@
 package org.myproject.boot.commons.route;
 
+import org.myproject.boot.commons.route.pojo.Route;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
