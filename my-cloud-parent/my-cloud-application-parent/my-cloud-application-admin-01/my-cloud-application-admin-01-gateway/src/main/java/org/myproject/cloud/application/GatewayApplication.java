@@ -1,4 +1,4 @@
-package org.yuan.cloud.application;
+package org.myproject.cloud.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;

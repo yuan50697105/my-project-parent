@@ -12,6 +12,11 @@
     <artifactId>my-boot-genernate-route</artifactId>
     <dependencies>
         <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-commons-utils</artifactId>
+            <version>1.0.0.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>

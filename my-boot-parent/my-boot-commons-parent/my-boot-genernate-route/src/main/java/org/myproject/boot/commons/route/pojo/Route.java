@@ -1,4 +1,4 @@
-package org.myproject.boot.commons.route;
+package org.myproject.boot.commons.route.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
