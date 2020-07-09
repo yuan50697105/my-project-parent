@@ -6,7 +6,7 @@ logging:
 spring:
   shardingsphere:
     datasource:
-      names: ds0,ds1,ds2,ds3
+      names: ds0,ds1,ds2,ds3,ds4,ds5
       ds0:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysqll.cj.jdbc.Driver
@@ -31,6 +31,18 @@ spring:
         jdbc-url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
         username: root
         password: root
+      ds4:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysqll.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+        username: root
+        password: root
+      ds5:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysqll.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+        username: root
+        password: root
     sharding:
       tables:
         sys_user:
@@ -42,3 +54,5 @@ spring:
           key-generator:
             column: id
             type: SNOWFLAKE
+  main:
+    allow-bean-definition-overriding: true

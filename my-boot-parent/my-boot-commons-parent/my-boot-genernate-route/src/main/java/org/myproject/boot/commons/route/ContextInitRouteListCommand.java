@@ -1,6 +1,7 @@
 package org.myproject.boot.commons.route;
 
 import lombok.extern.slf4j.Slf4j;
+import org.myproject.boot.commons.route.pojo.Route;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;

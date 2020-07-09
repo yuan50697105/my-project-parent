@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.pojo.SysRoute;
 import org.myproject.boot.application.admin.db.pojo.SysRouteExample;
 import org.myproject.boot.application.admin.db.service.table.SysRouteService;
-import org.myproject.boot.commons.route.Route;
 import org.myproject.boot.commons.route.RouteService;
+import org.myproject.boot.commons.route.pojo.Route;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
