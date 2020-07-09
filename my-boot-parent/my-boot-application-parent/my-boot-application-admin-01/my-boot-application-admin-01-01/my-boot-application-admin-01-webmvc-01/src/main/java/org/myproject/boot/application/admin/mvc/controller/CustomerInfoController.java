@@ -2,6 +2,7 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
+import io.swagger.annotations.ApiOperation;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoVo;
@@ -25,6 +26,7 @@ public class CustomerInfoController {
     @Autowired
     private BCustomerInfoService customerInfoService;
 
+    @ApiOperation(value = "客户信息表格", response = Result.class)
     @RequestMapping(value = "data", method = {RequestMethod.GET})
     public Result<?> data(TbCustomerInfoQuery query,
                           @RequestParam(defaultValue = "1") int page,
