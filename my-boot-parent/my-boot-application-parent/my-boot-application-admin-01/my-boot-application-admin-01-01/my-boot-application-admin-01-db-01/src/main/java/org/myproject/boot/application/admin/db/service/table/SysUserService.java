@@ -32,9 +32,13 @@ public interface SysUserService {
 
     int updateByPrimaryKey(SysUser record);
 
-    PageInfo<SysUser> selectByExample( SysUserExample example,int page, int pageSize);
+    PageInfo<SysUser> selectByExample(SysUserExample example, int page, int pageSize);
 
-    PageInfo<SysUser> selectByQuery(SysUserQuery query,int page, int size);
+    PageInfo<SysUser> selectByQuery(SysUserQuery query, int page, int size);
 
     List<SysUser> selectByQuery(SysUserQuery query);
+
+    SysUser selectByUsername(String username);
+
+    SysUser selectOneByUsername(String username);
 }

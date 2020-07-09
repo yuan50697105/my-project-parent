@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.mvc.service.impl;
+package org.myproject.boot.application.admin.mvc.service;
 
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.pojo.SysRoute;
