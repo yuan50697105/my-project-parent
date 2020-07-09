@@ -6,6 +6,7 @@ import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,7 @@ import java.util.stream.Collectors;
  * @create: 2020-06-26 17:03
  */
 
+@ConditionalOnBean(RouteService.class)
 @Component
 @Slf4j
 public class ContextInitRouteListCommand implements ApplicationRunner {

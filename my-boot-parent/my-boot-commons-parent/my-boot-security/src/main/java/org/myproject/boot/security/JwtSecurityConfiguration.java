@@ -6,7 +6,7 @@ import org.myproject.boot.security.handler.JWTAuthenticationEntryPoint;
 import org.myproject.boot.security.service.UserDetailsAndRouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -15,7 +15,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -28,13 +27,13 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
  * @create: 2020-06-25 23:00
  */
 @SpringBootConfiguration
-@ConditionalOnClass(UserDetailsAndRouteService.class)
+@ConditionalOnBean(UserDetailsAndRouteService.class)
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, jsr250Enabled = true, securedEnabled = true)
 @ComponentScan(basePackageClasses = JwtSecurityConfiguration.class)
 public class JwtSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
-    private UserDetailsService userDetailsService;
+    private UserDetailsAndRouteService userDetailsService;
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
