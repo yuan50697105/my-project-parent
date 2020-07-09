@@ -34,6 +34,7 @@
         <module>my-boot-commons-webservice-jersey</module>
         <module>my-boot-genernate-route</module>
         <module>my-boot-commons-webview</module>
+        <module>my-boot-security-jdbcprovider</module>
     </modules>
     <build>
         <plugins>
