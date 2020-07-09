@@ -1,7 +1,6 @@
 package org.myproject.boot.webmvc;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
-import org.minbox.framework.api.boot.autoconfigure.swagger.annotation.EnableApiBootSwagger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,7 +16,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @SpringBootConfiguration
 @EnableSwagger2
-@EnableApiBootSwagger
 @EnableKnife4j
 @Import(BeanValidatorPluginsConfiguration.class)
 @ComponentScan(basePackageClasses = MvcConfiguration.class)
