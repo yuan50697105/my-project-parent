@@ -2,11 +2,11 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.pojo.SysRole;
-import org.myproject.boot.application.admin.db.pojo.SysRoleQuery;
-import org.myproject.boot.application.admin.db.pojo.SysRoleVo;
-import org.myproject.boot.application.admin.db.service.business.BSysRoleService;
-import org.myproject.boot.mybatis.pojo.PageResult;
+import org.myproject.boot.application.admin.pojo.SysRole;
+import org.myproject.boot.application.admin.pojo.SysRoleQuery;
+import org.myproject.boot.application.admin.pojo.SysRoleVo;
+import org.myproject.boot.application.admin.service.BSysRoleService;
+import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +29,7 @@ public class SysRoleController {
     public Result<?> data(SysRoleQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<SysRole> result = sysRoleService.selectByQuery(query,page, size );
+        IPage<SysRole> result = sysRoleService.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 

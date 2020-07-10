@@ -2,11 +2,11 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.pojo.SysUser;
-import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.service.business.BSysUserService;
-import org.myproject.boot.mybatis.pojo.PageResult;
+import org.myproject.boot.application.admin.pojo.SysUser;
+import org.myproject.boot.application.admin.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.BSysUserService;
+import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +29,7 @@ public class SysUserController {
     public Result<?> data(SysUserQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<SysUser> result = sysUserService.selectByQueryWithPage(page, size, query);
+        IPage<SysUser> result = sysUserService.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 

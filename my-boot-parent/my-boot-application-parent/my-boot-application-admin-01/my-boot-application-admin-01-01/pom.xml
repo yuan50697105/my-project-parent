@@ -12,7 +12,7 @@
     <artifactId>my-boot-application-admin-01-01</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>my-boot-application-admin-01-db-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-base-pagehelper-01</module>
         <module>my-boot-application-admin-01-db-dynamic-01</module>
         <module>my-boot-application-admin-01-db-sharding-01</module>
         <module>my-boot-application-admin-01-webmvc-01</module>
