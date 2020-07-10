@@ -88,4 +88,14 @@ public class SysUserServiceImpl implements SysUserService {
     public List<SysUser> selectByQuery(SysUserQuery query) {
         return selectByExample(query.toExample());
     }
+
+    @Override
+    public SysUser selectByUsername(String username) {
+        return null;
+    }
+
+    @Override
+    public SysUser selectOneByUsername(String username) {
+        return sysUserMapper.selectOneByUsername(username);
+    }
 }

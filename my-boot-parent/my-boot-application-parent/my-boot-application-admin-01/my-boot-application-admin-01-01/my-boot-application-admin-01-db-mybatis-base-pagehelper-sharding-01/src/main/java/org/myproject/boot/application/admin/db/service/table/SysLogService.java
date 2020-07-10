@@ -1,14 +1,13 @@
-package org.myproject.boot.application.admin.db.mapper;
+package org.myproject.boot.application.admin.db.service.table;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.admin.db.pojo.SysLog;
 import org.myproject.boot.application.admin.db.pojo.SysLogExample;
 
 import java.util.List;
 
-@Mapper
-public interface SysLogMapper {
+public interface SysLogService {
+
+
     long countByExample(SysLogExample example);
 
     int deleteByExample(SysLogExample example);
@@ -23,11 +22,12 @@ public interface SysLogMapper {
 
     SysLog selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") SysLog record, @Param("example") SysLogExample example);
+    int updateByExampleSelective(SysLog record, SysLogExample example);
 
-    int updateByExample(@Param("record") SysLog record, @Param("example") SysLogExample example);
+    int updateByExample(SysLog record, SysLogExample example);
 
     int updateByPrimaryKeySelective(SysLog record);
 
     int updateByPrimaryKey(SysLog record);
+
 }

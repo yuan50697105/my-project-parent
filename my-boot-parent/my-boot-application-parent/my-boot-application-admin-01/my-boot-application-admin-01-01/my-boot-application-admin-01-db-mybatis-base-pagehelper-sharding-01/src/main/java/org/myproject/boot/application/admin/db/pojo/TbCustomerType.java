@@ -10,9 +10,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysLog extends BaseEntity implements Serializable {
+public class TbCustomerType extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
-    private String url;
-    private String method;
-    private String params;
+    private Integer naem;
 }

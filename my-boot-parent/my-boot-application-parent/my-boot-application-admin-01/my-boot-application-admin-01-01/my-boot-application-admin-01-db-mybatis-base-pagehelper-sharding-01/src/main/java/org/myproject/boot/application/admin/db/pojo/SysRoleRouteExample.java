@@ -3,14 +3,14 @@ package org.myproject.boot.application.admin.db.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TbCustomerTypeExample {
+public class SysRoleRouteExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TbCustomerTypeExample() {
+    public SysRoleRouteExample() {
         oredCriteria = new ArrayList<>();
     }
 
@@ -164,63 +164,123 @@ public class TbCustomerTypeExample {
             return (Criteria) this;
         }
 
-        public Criteria andNaemIsNull() {
-            addCriterion("naem is null");
+        public Criteria andRoleIdIsNull() {
+            addCriterion("role_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andNaemIsNotNull() {
-            addCriterion("naem is not null");
+        public Criteria andRoleIdIsNotNull() {
+            addCriterion("role_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNaemEqualTo(Integer value) {
-            addCriterion("naem =", value, "naem");
+        public Criteria andRoleIdEqualTo(Long value) {
+            addCriterion("role_id =", value, "roleId");
             return (Criteria) this;
         }
 
-        public Criteria andNaemNotEqualTo(Integer value) {
-            addCriterion("naem <>", value, "naem");
+        public Criteria andRoleIdNotEqualTo(Long value) {
+            addCriterion("role_id <>", value, "roleId");
             return (Criteria) this;
         }
 
-        public Criteria andNaemGreaterThan(Integer value) {
-            addCriterion("naem >", value, "naem");
+        public Criteria andRoleIdGreaterThan(Long value) {
+            addCriterion("role_id >", value, "roleId");
             return (Criteria) this;
         }
 
-        public Criteria andNaemGreaterThanOrEqualTo(Integer value) {
-            addCriterion("naem >=", value, "naem");
+        public Criteria andRoleIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("role_id >=", value, "roleId");
             return (Criteria) this;
         }
 
-        public Criteria andNaemLessThan(Integer value) {
-            addCriterion("naem <", value, "naem");
+        public Criteria andRoleIdLessThan(Long value) {
+            addCriterion("role_id <", value, "roleId");
             return (Criteria) this;
         }
 
-        public Criteria andNaemLessThanOrEqualTo(Integer value) {
-            addCriterion("naem <=", value, "naem");
+        public Criteria andRoleIdLessThanOrEqualTo(Long value) {
+            addCriterion("role_id <=", value, "roleId");
             return (Criteria) this;
         }
 
-        public Criteria andNaemIn(List<Integer> values) {
-            addCriterion("naem in", values, "naem");
+        public Criteria andRoleIdIn(List<Long> values) {
+            addCriterion("role_id in", values, "roleId");
             return (Criteria) this;
         }
 
-        public Criteria andNaemNotIn(List<Integer> values) {
-            addCriterion("naem not in", values, "naem");
+        public Criteria andRoleIdNotIn(List<Long> values) {
+            addCriterion("role_id not in", values, "roleId");
             return (Criteria) this;
         }
 
-        public Criteria andNaemBetween(Integer value1, Integer value2) {
-            addCriterion("naem between", value1, value2, "naem");
+        public Criteria andRoleIdBetween(Long value1, Long value2) {
+            addCriterion("role_id between", value1, value2, "roleId");
             return (Criteria) this;
         }
 
-        public Criteria andNaemNotBetween(Integer value1, Integer value2) {
-            addCriterion("naem not between", value1, value2, "naem");
+        public Criteria andRoleIdNotBetween(Long value1, Long value2) {
+            addCriterion("role_id not between", value1, value2, "roleId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdIsNull() {
+            addCriterion("route_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdIsNotNull() {
+            addCriterion("route_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdEqualTo(Long value) {
+            addCriterion("route_id =", value, "routeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdNotEqualTo(Long value) {
+            addCriterion("route_id <>", value, "routeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdGreaterThan(Long value) {
+            addCriterion("route_id >", value, "routeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("route_id >=", value, "routeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdLessThan(Long value) {
+            addCriterion("route_id <", value, "routeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdLessThanOrEqualTo(Long value) {
+            addCriterion("route_id <=", value, "routeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdIn(List<Long> values) {
+            addCriterion("route_id in", values, "routeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdNotIn(List<Long> values) {
+            addCriterion("route_id not in", values, "routeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdBetween(Long value1, Long value2) {
+            addCriterion("route_id between", value1, value2, "routeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andRouteIdNotBetween(Long value1, Long value2) {
+            addCriterion("route_id not between", value1, value2, "routeId");
             return (Criteria) this;
         }
     }
@@ -234,20 +294,13 @@ public class TbCustomerTypeExample {
 
     public static class Criterion {
         private final String condition;
-
-        private Object value;
-
-        private Object secondValue;
-
-        private boolean noValue;
-
-        private boolean singleValue;
-
-        private boolean betweenValue;
-
-        private boolean listValue;
-
         private final String typeHandler;
+        private Object value;
+        private Object secondValue;
+        private boolean noValue;
+        private boolean singleValue;
+        private boolean betweenValue;
+        private boolean listValue;
 
         protected Criterion(String condition) {
             super();

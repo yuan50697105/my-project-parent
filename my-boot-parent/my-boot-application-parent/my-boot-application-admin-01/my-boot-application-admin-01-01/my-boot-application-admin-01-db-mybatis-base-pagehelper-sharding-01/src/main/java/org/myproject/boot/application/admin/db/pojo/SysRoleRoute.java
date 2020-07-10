@@ -5,14 +5,16 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
 
+/**
+ * 角色路由表
+ */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysLog extends BaseEntity implements Serializable {
+public class SysRoleRoute extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
-    private String url;
-    private String method;
-    private String params;
+    private Long roleId;
+    private Long routeId;
 }

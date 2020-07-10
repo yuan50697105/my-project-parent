@@ -1,12 +1,9 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
+
+import java.io.Serializable;
 
 /**
  * tb_customer_info

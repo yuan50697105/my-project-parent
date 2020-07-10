@@ -2,16 +2,16 @@ package org.myproject.boot.application.admin.db.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.myproject.boot.application.admin.db.pojo.SysUser;
-import org.myproject.boot.application.admin.db.pojo.SysUserExample;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 
 import java.util.List;
 
 @Mapper
-public interface SysUserMapper {
-    long countByExample(SysUserExample example);
+public interface TbCustomerTypeMapper {
+    long countByExample(TbCustomerTypeExample example);
 
-    int deleteByExample(SysUserExample example);
+    int deleteByExample(TbCustomerTypeExample example);
 
     /**
      * delete by primary key
@@ -27,7 +27,7 @@ public interface SysUserMapper {
      * @param record the record
      * @return insert count
      */
-    int insert(SysUser record);
+    int insert(TbCustomerType record);
 
     /**
      * insert record to table selective
@@ -35,9 +35,9 @@ public interface SysUserMapper {
      * @param record the record
      * @return insert count
      */
-    int insertSelective(SysUser record);
+    int insertSelective(TbCustomerType record);
 
-    List<SysUser> selectByExample(SysUserExample example);
+    List<TbCustomerType> selectByExample(TbCustomerTypeExample example);
 
     /**
      * select by primary key
@@ -45,11 +45,11 @@ public interface SysUserMapper {
      * @param id primary key
      * @return object by primary key
      */
-    SysUser selectByPrimaryKey(Long id);
+    TbCustomerType selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") SysUser record, @Param("example") SysUserExample example);
+    int updateByExampleSelective(@Param("record") TbCustomerType record, @Param("example") TbCustomerTypeExample example);
 
-    int updateByExample(@Param("record") SysUser record, @Param("example") SysUserExample example);
+    int updateByExample(@Param("record") TbCustomerType record, @Param("example") TbCustomerTypeExample example);
 
     /**
      * update record selective
@@ -57,7 +57,7 @@ public interface SysUserMapper {
      * @param record the updated record
      * @return update count
      */
-    int updateByPrimaryKeySelective(SysUser record);
+    int updateByPrimaryKeySelective(TbCustomerType record);
 
     /**
      * update record
@@ -65,9 +65,5 @@ public interface SysUserMapper {
      * @param record the updated record
      * @return update count
      */
-    int updateByPrimaryKey(SysUser record);
-
-    SysUser selectOneByUsername(@Param("username") String username);
-
-
+    int updateByPrimaryKey(TbCustomerType record);
 }

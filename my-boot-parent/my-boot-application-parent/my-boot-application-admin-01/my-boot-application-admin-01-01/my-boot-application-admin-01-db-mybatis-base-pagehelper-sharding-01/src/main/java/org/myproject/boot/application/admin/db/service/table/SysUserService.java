@@ -37,4 +37,8 @@ public interface SysUserService {
     PageInfo<SysUser> selectByQuery(SysUserQuery query, int page, int size);
 
     List<SysUser> selectByQuery(SysUserQuery query);
+
+    SysUser selectByUsername(String username);
+
+    SysUser selectOneByUsername(String username);
 }

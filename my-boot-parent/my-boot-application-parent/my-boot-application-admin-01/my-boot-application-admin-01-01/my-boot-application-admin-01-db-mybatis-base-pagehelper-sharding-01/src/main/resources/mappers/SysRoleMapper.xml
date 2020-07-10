@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.boot.application.admin.db.mapper.SysUserMapper">
-  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.SysUser">
+<mapper namespace="org.myproject.boot.application.admin.db.mapper.SysRoleMapper">
+  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.SysRole">
     <!--@mbg.generated-->
-    <!--@Table sys_user-->
+    <!--@Table sys_role-->
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="enabled" jdbcType="VARCHAR" property="enabled" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -72,16 +71,16 @@
   </sql>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, username, `name`, `password`, enabled
+    id, `name`, description, enabled
   </sql>
-  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.SysUserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.SysRoleExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from sys_user
+    from sys_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -93,82 +92,79 @@
     <!--@mbg.generated-->
     select 
     <include refid="Base_Column_List" />
-    from sys_user
+    from sys_role
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     <!--@mbg.generated-->
-    delete from sys_user
+    delete from sys_role
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.db.pojo.SysUserExample">
+  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.db.pojo.SysRoleExample">
     <!--@mbg.generated-->
-    delete from sys_user
+    delete from sys_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser" useGeneratedKeys="true">
+  <insert id="insert" parameterType="org.myproject.boot.application.admin.db.pojo.SysRole">
     <!--@mbg.generated-->
-    insert into sys_user (username, `name`, `password`, 
+    insert into sys_role (id, `name`, description, 
       enabled)
-    values (#{username,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{enabled,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser" useGeneratedKeys="true">
+  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.db.pojo.SysRole">
     <!--@mbg.generated-->
-    insert into sys_user
+    insert into sys_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="username != null">
-        username,
+      <if test="id != null">
+        id,
       </if>
       <if test="name != null">
         `name`,
       </if>
-      <if test="password != null">
-        `password`,
+      <if test="description != null">
+        description,
       </if>
       <if test="enabled != null">
         enabled,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
       </if>
       <if test="enabled != null">
         #{enabled,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.myproject.boot.application.admin.db.pojo.SysUserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="org.myproject.boot.application.admin.db.pojo.SysRoleExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
-    select count(*) from sys_user
+    select count(*) from sys_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
     <!--@mbg.generated-->
-    update sys_user
+    update sys_role
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.username != null">
-        username = #{record.username,jdbcType=VARCHAR},
-      </if>
       <if test="record.name != null">
         `name` = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.password != null">
-        `password` = #{record.password,jdbcType=VARCHAR},
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
       </if>
       <if test="record.enabled != null">
         enabled = #{record.enabled,jdbcType=VARCHAR},
@@ -180,28 +176,24 @@
   </update>
   <update id="updateByExample" parameterType="map">
     <!--@mbg.generated-->
-    update sys_user
+    update sys_role
     set id = #{record.id,jdbcType=BIGINT},
-      username = #{record.username,jdbcType=VARCHAR},
       `name` = #{record.name,jdbcType=VARCHAR},
-      `password` = #{record.password,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
       enabled = #{record.enabled,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser">
+  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.boot.application.admin.db.pojo.SysRole">
     <!--@mbg.generated-->
-    update sys_user
+    update sys_role
     <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
       <if test="name != null">
         `name` = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        `password` = #{password,jdbcType=VARCHAR},
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
       </if>
       <if test="enabled != null">
         enabled = #{enabled,jdbcType=VARCHAR},
@@ -209,31 +201,12 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="org.myproject.boot.application.admin.db.pojo.SysUser">
+  <update id="updateByPrimaryKey" parameterType="org.myproject.boot.application.admin.db.pojo.SysRole">
     <!--@mbg.generated-->
-    update sys_user
-    set username = #{username,jdbcType=VARCHAR},
-      `name` = #{name,jdbcType=VARCHAR},
-      `password` = #{password,jdbcType=VARCHAR},
+    update sys_role
+    set `name` = #{name,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
       enabled = #{enabled,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-<!--auto generated by MybatisCodeHelper on 2020-06-25-->
-  <select id="selectAllByEnabled" resultMap="BaseResultMap">
-    select <include refid="Base_Column_List" />
-    from sys_user
-    where enabled=#{enabled,jdbcType=VARCHAR}
-  </select>
-<!--auto generated by MybatisCodeHelper on 2020-06-25-->
-  <select id="selectUsernameByEnabled" resultType="java.lang.String">
-    select username
-    from sys_user
-    where enabled=#{enabled,jdbcType=VARCHAR}
-  </select>
-<!--auto generated by MybatisCodeHelper on 2020-07-09-->
-  <select id="selectOneByUsername" resultMap="BaseResultMap">
-    select <include refid="Base_Column_List"/>
-    from sys_user
-    where username=#{username,jdbcType=VARCHAR}
-  </select>
 </mapper>

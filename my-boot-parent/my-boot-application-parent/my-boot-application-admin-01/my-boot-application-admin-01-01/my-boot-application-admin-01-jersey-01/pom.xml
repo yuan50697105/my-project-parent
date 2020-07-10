@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-db-01</artifactId>
+            <artifactId>my-boot-application-admin-01-db-mybatis-base-pagehelper-01</artifactId>
             <version>1.0.0.2</version>
         </dependency>
     </dependencies>
