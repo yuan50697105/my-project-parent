@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.converter.SysUserConverter;
 import org.myproject.boot.application.admin.db.converter.SysUserRoleConverter;
+import org.myproject.boot.application.admin.db.pojo.*;
 import org.myproject.boot.application.admin.db.service.table.SysRoleService;
 import org.myproject.boot.application.admin.db.service.table.SysUserRoleService;
 import org.myproject.boot.application.admin.db.service.table.SysUserService;

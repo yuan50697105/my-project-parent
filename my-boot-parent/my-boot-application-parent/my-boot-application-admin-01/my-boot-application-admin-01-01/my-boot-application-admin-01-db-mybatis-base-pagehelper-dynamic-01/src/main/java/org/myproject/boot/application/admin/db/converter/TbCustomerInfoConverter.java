@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.converter;
 
+import com.github.pagehelper.PageInfo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
@@ -30,7 +31,7 @@ public interface TbCustomerInfoConverter {
 
     TbCustomerInfo convert(CustomerInfoVo vo);
 
-    PageResult<CustomerInfo> convert(PageResult<TbCustomerInfo> pageResult);
+    PageInfo<CustomerInfo> convert(PageInfo<TbCustomerInfo> pageResult);
 
     List<CustomerInfo> convert(List<TbCustomerInfo> tbCustomerInfos);
 }

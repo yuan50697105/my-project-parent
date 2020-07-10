@@ -24,9 +24,9 @@ public interface TbCustomerInfoService {
 
     TbCustomerInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbCustomerInfo record, TbCustomerInfoExample example);
+    int updateByExampleSelective(TbCustomerInfo record,TbCustomerInfoExample example);
 
-    int updateByExample(TbCustomerInfo record, TbCustomerInfoExample example);
+    int updateByExample(TbCustomerInfo record,TbCustomerInfoExample example);
 
     int updateByPrimaryKeySelective(TbCustomerInfo record);
 
