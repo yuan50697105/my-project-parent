@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.service;
 
+import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.converter.TbCustomerInfoConverter;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
@@ -33,8 +34,8 @@ public class BCustomerInfoServiceImpl implements BCustomerInfoService {
     @Override
     public IPage<CustomerInfo> selectByQuery(CustomerInfoQuery query, int page, int size) {
         TbCustomerInfoQuery customerInfoQuery = customerInfoConverter.convert(query);
-        PageResult<TbCustomerInfo> pageResult = new PageResult<>(customerInfoService.selectByQueryWithPage(page, size, customerInfoQuery));
-        return customerInfoConverter.convert(pageResult);
+        PageInfo<TbCustomerInfo> pageResult = customerInfoService.selectByQueryWithPage(page, size, customerInfoQuery);
+        return new PageResult<>(customerInfoConverter.convert(pageResult));
     }
 
     @Override
