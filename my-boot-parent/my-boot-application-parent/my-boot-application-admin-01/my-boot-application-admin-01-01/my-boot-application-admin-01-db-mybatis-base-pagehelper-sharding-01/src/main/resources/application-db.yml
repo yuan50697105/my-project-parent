@@ -1,0 +1,58 @@
+mybatis:
+  mapper-locations: classpath*:mappers/*.xml
+logging:
+  level:
+    org.myproject.boot.application.admin.db.mapper: debug
+spring:
+  shardingsphere:
+    datasource:
+      names: ds0,ds1,ds2,ds3,ds4,ds5
+      ds0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysqll.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+        username: root
+        password: root
+      ds1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysqll.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+        username: root
+        password: root
+      ds2:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysqll.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+        username: root
+        password: root
+      ds3:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysqll.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+        username: root
+        password: root
+      ds4:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysqll.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+        username: root
+        password: root
+      ds5:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysqll.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+        username: root
+        password: root
+    sharding:
+      tables:
+        sys_user:
+          actual-data-nodes: ds$->{0..3}.sys_user
+          table-strategy:
+            inline:
+              sharding-column: id
+              algorithm-expression: sys_user
+          key-generator:
+            column: id
+            type: SNOWFLAKE
+  main:
+    allow-bean-definition-overriding: true
