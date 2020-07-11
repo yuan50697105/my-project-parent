@@ -12,7 +12,7 @@ import java.util.List;
  * @create: 2020-06-28 21:25
  */
 public interface RouteService {
-    List<Route> selectAllRoutes();
+    List<Route> allRoutes();
 
     void saveRoute(Route route);
 

@@ -24,62 +24,63 @@ import java.util.List;
 @RequestMapping("customer/info")
 public class CustomerInfoController {
     @Autowired
-    private BCustomerInfoApi customerInfoService;
+    private BCustomerInfoApi customerInfoApi;
 
-    @ApiOperation(value = "客户信息表格", response = Result.class)
+    @ApiOperation(value = "客户信息表格")
     @RequestMapping(value = "data", method = {RequestMethod.GET})
     public Result<?> data(CustomerInfoQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        IPage<CustomerInfo> pageResult = customerInfoService.selectByQuery(query, page, size);
+        IPage<CustomerInfo> pageResult = customerInfoApi.selectByQuery(query, page, size);
         return ResultInfo.success(pageResult.getData(), pageResult.getTotalRows());
     }
 
+    @ApiOperation("客户信息列表")
     @RequestMapping(value = "list", method = {RequestMethod.GET})
     public Result<?> list(CustomerInfoQuery query) {
-        List<CustomerInfo> list = customerInfoService.selectByQuery(query);
+        List<CustomerInfo> list = customerInfoApi.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
     @RequestMapping(value = "get", params = "id", method = {RequestMethod.GET})
     public Result<?> get(Long id) {
-        CustomerInfo customerInfo = customerInfoService.get(id);
+        CustomerInfo customerInfo = customerInfoApi.get(id);
         return ResultInfo.success(customerInfo);
     }
 
     @RequestMapping(value = "get/{id}", params = "id", method = {RequestMethod.GET})
     public Result<?> getRs(@PathVariable Long id) {
-        CustomerInfo customerInfo = customerInfoService.get(id);
+        CustomerInfo customerInfo = customerInfoApi.get(id);
         return ResultInfo.success(customerInfo);
     }
 
     @RequestMapping(value = "save", method = {RequestMethod.POST})
     public Result<?> save(@RequestBody @Validated CustomerInfoVo vo) {
-        customerInfoService.insert(vo);
+        customerInfoApi.insert(vo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.PUT, RequestMethod.POST, RequestMethod.PATCH})
     public Result<?> update(@RequestBody CustomerInfoVo vo) {
-        customerInfoService.update(vo);
+        customerInfoApi.update(vo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteList(List<Long> ids) {
-        customerInfoService.delete(ids);
+        customerInfoApi.delete(ids);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteOne(Long id) {
-        customerInfoService.delete(id);
+        customerInfoApi.delete(id);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
     public Result<?> deleteRs(@PathVariable Long id) {
-        customerInfoService.delete(id);
+        customerInfoApi.delete(id);
         return ResultInfo.success();
     }
 }

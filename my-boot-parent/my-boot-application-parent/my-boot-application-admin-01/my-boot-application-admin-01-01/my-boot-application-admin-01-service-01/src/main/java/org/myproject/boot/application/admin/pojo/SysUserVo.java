@@ -3,6 +3,7 @@ package org.myproject.boot.application.admin.pojo;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 public class SysUserVo implements Serializable {
@@ -27,5 +28,9 @@ public class SysUserVo implements Serializable {
      * 启用状态
      */
     private String enabled;
+    /**
+     * 角色ID列表
+     */
+    private List<Long> roleIds;
 }
 

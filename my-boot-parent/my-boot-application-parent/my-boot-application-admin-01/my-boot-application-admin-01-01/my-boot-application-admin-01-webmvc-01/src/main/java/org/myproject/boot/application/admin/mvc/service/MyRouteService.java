@@ -1,13 +1,11 @@
 package org.myproject.boot.application.admin.mvc.service;
 
 import lombok.AllArgsConstructor;
-import org.myproject.boot.application.admin.db.pojo.SysRoute;
-import org.myproject.boot.application.admin.db.pojo.SysRouteExample;
-import org.myproject.boot.application.admin.db.service.table.SysRouteService;
+import org.myproject.boot.application.admin.api.RouteApi;
+import org.myproject.boot.application.admin.mvc.converter.MapConverter;
+import org.myproject.boot.application.admin.pojo.Route;
 import org.myproject.boot.commons.route.RouteService;
-import org.myproject.boot.commons.route.pojo.Route;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,17 +19,22 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class MyRouteService implements RouteService {
-    private final SysRouteService sysRouteService;
+    private final RouteApi routeApi;
+    private final MapConverter converter;
 
     @Override
-    public List<Route> selectAllRoutes() {
-        List<SysRoute> sysRoutes = sysRouteService.selectByExample(new SysRouteExample());
-        return sysRoutes.stream().map(SysRoute::getUrl).map(Route::new).collect(Collectors.toList());
+    public List<org.myproject.boot.commons.route.pojo.Route> allRoutes() {
+        List<Route> entities = routeApi.allRoutes();
+        return entities.stream().map(Route::getUrl).distinct().map(org.myproject.boot.commons.route.pojo.Route::new).collect(Collectors.toList());
     }
 
     @Override
-    @Transactional
-    public void saveRoute(Route route) {
-        sysRouteService.insert(SysRoute.builder().url(route.getUrl()).build());
+    public void saveRoute(org.myproject.boot.commons.route.pojo.Route route) {
+        routeApi.saveRoute(converter.route(route));
+    }
+
+    @Override
+    public void saveRoutes(List<org.myproject.boot.commons.route.pojo.Route> routes) {
+        routeApi.saveRoute(converter.route(routes));
     }
 }

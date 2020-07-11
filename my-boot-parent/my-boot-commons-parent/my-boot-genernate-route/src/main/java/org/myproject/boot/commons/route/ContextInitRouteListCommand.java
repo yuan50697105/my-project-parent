@@ -54,7 +54,7 @@ public class ContextInitRouteListCommand implements ApplicationRunner {
                 adminRoutes.addAll(routeList);
             }
         }
-        List<Route> routeList = routeService.selectAllRoutes();
+        List<Route> routeList = routeService.allRoutes();
         List<String> routeUrlList = routeList.stream().map(Route::getUrl).collect(Collectors.toList());
         adminRoutes = adminRoutes.stream().distinct().collect(Collectors.toList());
         if (routeUrlList.size() > 0) {
