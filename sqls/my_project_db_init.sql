@@ -11,10 +11,10 @@ create table if not exists sys_role
     comment 'sys_role';
 
 create index enabled
-    on sys_role (enabled);
+    on tb_sys_role (enabled);
 
 create index name
-    on sys_role (name);
+    on tb_sys_role (name);
 
 create table if not exists sys_user
 (
@@ -30,7 +30,7 @@ create table if not exists sys_user
     comment 'sys_user';
 
 create index name
-    on sys_user (name);
+    on tb_sys_user (name);
 
 create table if not exists sys_user_role
 (

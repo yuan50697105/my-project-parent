@@ -1,0 +1,30 @@
+mybatis-plus:
+  mapper-locations: classpath*:mappers/*.xml
+spring:
+  datasource:
+    dynamic:
+
+      primary: master #设置默认的数据源或者数据源组,默认值即为master
+      strict: false #设置严格模式,默认false不启动. 启动后在未匹配到指定数据源时候回抛出异常,不启动会使用默认数据源.
+      seata: false
+      p6spy: true
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+          username: root
+          password: root
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        slave_1:
+          url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+          username: root
+          password: root
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        slave_2:
+          url: jdbc:mysql://localhost:3306/my_project?serverTimezone=Asia/Shanghai
+          username: root
+          password: root
+          driver-class-name: com.mysql.cj.jdbc.Driver
+      strategy: com.baomidou.dynamic.datasource.strategy.LoadBalanceDynamicDataSourceStrategy
+logging:
+  level:
+    org.myproject.boot.application.admin.db.mapper: debug

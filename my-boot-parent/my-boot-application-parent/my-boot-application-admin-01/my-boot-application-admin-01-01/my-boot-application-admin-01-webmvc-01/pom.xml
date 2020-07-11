@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-application-admin-01-01</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.0.0.1</version>
+        <version>1.0.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,19 +13,29 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-webmvc</artifactId>
-            <version>1.0.0.1</version>
+            <artifactId>my-boot-application-admin-01-service-01</artifactId>
+            <version>1.0.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-db-01</artifactId>
-            <version>1.0.0.1</version>
+            <artifactId>my-boot-commons-webmvc</artifactId>
+            <version>1.0.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-01-db-mybatis-base-pagehelper-01</artifactId>
+            <version>1.0.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-genernate-route</artifactId>
-            <version>1.0.0.1</version>
+            <version>1.0.0.2</version>
         </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.myproject</groupId>-->
+        <!--            <artifactId>my-boot-security</artifactId>-->
+        <!--            <version>1.0.0.2</version>-->
+        <!--        </dependency>-->
     </dependencies>
 
 </project>

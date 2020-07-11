@@ -6,7 +6,7 @@ import org.myproject.boot.application.admin.cxf.webservice.WebSysUserService;
 import org.myproject.boot.application.admin.db.converter.SysUserConverter;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.myproject.boot.application.admin.db.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.service.base.SysUserService;
+import org.myproject.boot.application.admin.db.service.table.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

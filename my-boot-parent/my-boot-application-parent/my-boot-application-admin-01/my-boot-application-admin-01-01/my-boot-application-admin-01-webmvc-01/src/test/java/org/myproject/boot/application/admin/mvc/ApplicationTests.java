@@ -1,9 +1,6 @@
 package org.myproject.boot.application.admin.mvc;
 
-import cn.hutool.core.lang.Singleton;
-import cn.hutool.extra.pinyin.PinyinEngine;
 import cn.hutool.extra.pinyin.PinyinUtil;
-import cn.hutool.extra.pinyin.engine.jpinyin.JPinyinEngine;
 import org.junit.jupiter.api.Test;
 
 /**

@@ -2,11 +2,11 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeQuery;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeVo;
-import org.myproject.boot.application.admin.db.service.business.BCustomerTypeService;
-import org.myproject.boot.mybatis.pojo.PageResult;
+import org.myproject.boot.application.admin.service.api.BCustomerTypeApi;
+import org.myproject.boot.application.admin.service.pojo.CustomerType;
+import org.myproject.boot.application.admin.service.pojo.CustomerTypeQuery;
+import org.myproject.boot.application.admin.service.pojo.CustomerTypeVo;
+import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -23,44 +23,44 @@ import java.util.List;
 @RequestMapping("customer/type")
 public class CustomerTypeController {
     @Autowired
-    private BCustomerTypeService customerTypeService;
+    private BCustomerTypeApi customerTypeService;
 
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
-    public Result<?> data(TbCustomerTypeQuery query,
+    public Result<?> data(CustomerTypeQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<TbCustomerType> result = customerTypeService.selectByQuery(query, page, size);
+        IPage<CustomerType> result = customerTypeService.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
     @RequestMapping(value = "list", method = {RequestMethod.GET})
-    public Result<?> list(TbCustomerTypeQuery query) {
-        List<TbCustomerType> list = customerTypeService.selectByQuery(query);
+    public Result<?> list(CustomerTypeQuery query) {
+        List<CustomerType> list = customerTypeService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
 
     @RequestMapping(value = "get", params = "id", method = {RequestMethod.GET})
     public Result<?> get(Long id) {
-        TbCustomerType customerType = customerTypeService.selectById(id);
+        CustomerType customerType = customerTypeService.get(id);
         return ResultInfo.success(customerType);
     }
 
     @RequestMapping(value = "get/{id}", params = "id", method = {RequestMethod.GET})
     public Result<?> getRs(@PathVariable Long id) {
-        TbCustomerType customerType = customerTypeService.selectById(id);
+        CustomerType customerType = customerTypeService.get(id);
         return ResultInfo.success(customerType);
     }
 
     @RequestMapping(value = "save", method = {RequestMethod.POST})
-    public Result<?> save(@RequestBody @Validated TbCustomerTypeVo vo) {
+    public Result<?> save(@RequestBody @Validated CustomerTypeVo vo) {
         customerTypeService.insert(vo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH})
-    public Result<?> update(@RequestBody @Validated TbCustomerTypeVo vo) {
+    public Result<?> update(@RequestBody @Validated CustomerTypeVo vo) {
         customerTypeService.update(vo);
         return ResultInfo.success();
     }

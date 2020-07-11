@@ -2,11 +2,11 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.db.pojo.SysUser;
-import org.myproject.boot.application.admin.db.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.db.pojo.SysUserVo;
-import org.myproject.boot.application.admin.db.service.business.BSysUserService;
-import org.myproject.boot.mybatis.pojo.PageResult;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
+import org.myproject.boot.application.admin.service.api.BSysUserApi;
+import org.myproject.boot.application.admin.service.pojo.SysUser;
+import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -23,25 +23,25 @@ import java.util.List;
 @RequestMapping("sys/user")
 public class SysUserController {
     @Autowired
-    private BSysUserService sysUserService;
+    private BSysUserApi sysUserService;
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
-    public Result<?> data(SysUserQuery query,
+    public Result<?> data(TbSysUserQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<SysUser> result = sysUserService.selectByQueryWithPage(page, size, query);
+        IPage<SysUser> result = sysUserService.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
     @RequestMapping(value = "list", method = {RequestMethod.GET})
-    public Result<?> list(SysUserQuery query) {
+    public Result<?> list(TbSysUserQuery query) {
         List<SysUser> list = sysUserService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
     @RequestMapping(value = "get", method = {RequestMethod.GET})
     public Result<?> get(Long id) {
-        SysUser sysUser = sysUserService.selectByPrimaryKey(id);
+        SysUser sysUser = sysUserService.get(id);
         return ResultInfo.success(sysUser);
     }
 

@@ -3,11 +3,11 @@ package org.myproject.boot.application.admin.mvc.controller;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import lombok.AllArgsConstructor;
-import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
-import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeQuery;
-import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeVo;
-import org.myproject.boot.application.admin.db.service.business.BGoodsTypeService;
-import org.myproject.boot.mybatis.pojo.PageResult;
+import org.myproject.boot.application.admin.service.api.BGoodsTypeApi;
+import org.myproject.boot.application.admin.service.pojo.GoodsType;
+import org.myproject.boot.application.admin.service.pojo.GoodsTypeQuery;
+import org.myproject.boot.application.admin.service.pojo.GoodsTypeVo;
+import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,25 +24,25 @@ import java.util.List;
 @Validated
 @AllArgsConstructor
 public class GoodsTypeController {
-    private final BGoodsTypeService goodsTypeService;
+    private final BGoodsTypeApi goodsTypeService;
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
-    public Result<?> data(TbGoodsTypeQuery query,
+    public Result<?> data(GoodsTypeQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        PageResult<TbGoodsType> result = goodsTypeService.selectByQuery(query, page, size);
+        IPage<GoodsType> result = goodsTypeService.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
     @RequestMapping(value = "list", method = {RequestMethod.GET})
-    public Result<?> list(TbGoodsTypeQuery query) {
-        List<TbGoodsType> result = goodsTypeService.selectByQuery(query);
+    public Result<?> list(GoodsTypeQuery query) {
+        List<GoodsType> result = goodsTypeService.selectByQuery(query);
         return ResultInfo.success(result, (long) result.size());
     }
 
     @RequestMapping(value = "get", params = "id", method = {RequestMethod.GET})
     public Result<?> get(Long id) {
-        return ResultInfo.success(goodsTypeService.selectById(id));
+        return ResultInfo.success(goodsTypeService.get(id));
     }
 
     @RequestMapping(value = "get/{id}", method = {RequestMethod.GET})
@@ -51,13 +51,13 @@ public class GoodsTypeController {
     }
 
     @RequestMapping(value = "save", method = {RequestMethod.POST})
-    public Result<?> save(@RequestBody @Validated TbGoodsTypeVo vo) {
+    public Result<?> save(@RequestBody @Validated GoodsTypeVo vo) {
         goodsTypeService.insert(vo);
         return ResultInfo.success();
     }
 
     @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH})
-    public Result<?> update(@RequestBody @Validated TbGoodsTypeVo vo) {
+    public Result<?> update(@RequestBody @Validated GoodsTypeVo vo) {
         goodsTypeService.update(vo);
         return ResultInfo.success();
     }

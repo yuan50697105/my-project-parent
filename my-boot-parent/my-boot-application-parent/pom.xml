@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-parent</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.0.0.1</version>
+        <version>1.0.0.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,7 +13,5 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-application-admin-01</module>
-        <module>my-boot-application-admin-02</module>
-        <module>my-boot-application-admin-03</module>
     </modules>
 </project>

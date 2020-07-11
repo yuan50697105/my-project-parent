@@ -7,3 +7,6 @@ spring:
     time-zone: GMT+8
     locale: zh_CN
     date-format: yyyy-MM-dd HH:mm:ss
+logging:
+  level:
+    web: debug
