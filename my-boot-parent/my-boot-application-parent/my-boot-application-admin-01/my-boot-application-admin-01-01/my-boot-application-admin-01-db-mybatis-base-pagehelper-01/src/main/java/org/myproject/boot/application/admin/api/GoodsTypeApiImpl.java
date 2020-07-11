@@ -1,8 +1,7 @@
-package org.myproject.boot.application.admin.db.api;
+package org.myproject.boot.application.admin.api;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
-import org.myproject.boot.application.admin.api.BGoodsTypeApi;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeQuery;
@@ -27,38 +26,38 @@ import java.util.List;
 @AllArgsConstructor
 @Transactional
 public class GoodsTypeApiImpl implements BGoodsTypeApi {
-    private final TbConverter tbConverter;
+    private final TbConverter converter;
     private final TbGoodsTypeService goodsTypeService;
 
     @Override
     public IPage<GoodsType> selectByQuery(GoodsTypeQuery query, int page, int size) {
-        TbGoodsTypeQuery goodsTypeQuery = tbConverter.goodsType(query);
+        TbGoodsTypeQuery goodsTypeQuery = converter.goodsType(query);
         PageInfo<TbGoodsType> pageInfo = goodsTypeService.selectByQuery(goodsTypeQuery, page, size);
-        return new PageResult<>(tbConverter.goodsType(pageInfo));
+        return new PageResult<>(converter.goodsType(pageInfo));
     }
 
     @Override
     public List<GoodsType> selectByQuery(GoodsTypeQuery query) {
-        TbGoodsTypeQuery goodsTypeQuery = tbConverter.goodsType(query);
+        TbGoodsTypeQuery goodsTypeQuery = converter.goodsType(query);
         List<TbGoodsType> list = goodsTypeService.selectByQuery(goodsTypeQuery);
-        return tbConverter.goodsType(list);
+        return converter.goodsType(list);
     }
 
     @Override
     public GoodsType get(Long id) {
         TbGoodsType goodsType = goodsTypeService.selectByPrimaryKey(id);
-        return tbConverter.goodsType(goodsType);
+        return converter.goodsType(goodsType);
     }
 
     @Override
     public void insert(GoodsTypeVo vo) {
-        TbGoodsType record = tbConverter.goodsType(vo);
+        TbGoodsType record = converter.goodsType(vo);
         goodsTypeService.insert(record);
     }
 
     @Override
     public void update(GoodsTypeVo vo) {
-        goodsTypeService.updateByPrimaryKeySelective(tbConverter.goodsType(vo));
+        goodsTypeService.updateByPrimaryKeySelective(converter.goodsType(vo));
     }
 
     @Override

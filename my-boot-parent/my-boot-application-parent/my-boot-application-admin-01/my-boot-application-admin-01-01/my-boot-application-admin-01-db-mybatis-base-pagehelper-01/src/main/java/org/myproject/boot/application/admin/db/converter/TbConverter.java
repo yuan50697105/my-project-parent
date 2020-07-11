@@ -2,11 +2,12 @@ package org.myproject.boot.application.admin.db.converter;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import com.google.common.collect.Lists;
+import org.mapstruct.*;
 import org.myproject.boot.application.admin.db.pojo.*;
 import org.myproject.boot.application.admin.pojo.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-11 19:01
  */
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, nullValueCheckStrategy = NullValueCheckStrategy.ON_IMPLICIT_CONVERSION)
 public interface TbConverter {
     @Mapping(target = "ageStart", ignore = true)
     @Mapping(target = "ageEnd", ignore = true)
@@ -27,6 +28,8 @@ public interface TbConverter {
 
     CustomerInfo customerInfo(TbCustomerInfo customerInfo);
 
+    @Mapping(target = "namePy", expression = "java(cn.hutool.extra.pinyin.PinyinUtil.getPinyin(vo.getName(),\"\"))")
+    @Mapping(target = "namePyF", expression = "java(cn.hutool.extra.pinyin.PinyinUtil.getFirstLetter(vo.getName(),\"\"))")
     TbCustomerInfo customerInfo(CustomerInfoVo vo);
 
     TbCustomerTypeQuery customerType(CustomerTypeQuery query);
@@ -80,4 +83,15 @@ public interface TbConverter {
     SysUser sysUser(TbSysUser sysUser);
 
     TbSysUser sysUser(SysUserVo sysUser);
+
+    default List<TbSysUserRole> sysUserRole(Long userId, List<Long> roleIds) {
+        ArrayList<TbSysUserRole> sysUserRoles = Lists.newArrayList();
+        for (Long roleId : roleIds) {
+            sysUserRoles.add(sysUserRole(userId, roleId));
+        }
+        return sysUserRoles;
+    }
+
+    @Mapping(target = "id", ignore = true)
+    TbSysUserRole sysUserRole(Long userId, Long roleId);
 }

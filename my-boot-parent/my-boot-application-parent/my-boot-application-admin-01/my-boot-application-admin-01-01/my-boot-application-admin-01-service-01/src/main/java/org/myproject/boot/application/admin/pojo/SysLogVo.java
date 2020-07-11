@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class SysRouteVo implements Serializable {
+public class SysLogVo implements Serializable {
     /**
      *
      */
@@ -19,17 +19,12 @@ public class SysRouteVo implements Serializable {
     /**
      *
      */
-    private String name;
+    private String method;
 
     /**
      *
      */
-    private Long parentId;
-
-    /**
-     *
-     */
-    private Integer weight;
+    private String params;
 
     private static final long serialVersionUID = 1L;
 }

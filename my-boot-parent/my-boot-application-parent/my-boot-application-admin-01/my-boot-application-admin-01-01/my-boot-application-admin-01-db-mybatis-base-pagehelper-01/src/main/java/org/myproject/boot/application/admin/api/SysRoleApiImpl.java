@@ -1,8 +1,7 @@
-package org.myproject.boot.application.admin.db.api;
+package org.myproject.boot.application.admin.api;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
-import org.myproject.boot.application.admin.api.BSysRoleApi;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbSysRole;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleQuery;
@@ -27,35 +26,35 @@ import java.util.List;
 @AllArgsConstructor
 @Transactional
 public class SysRoleApiImpl implements BSysRoleApi {
-    private final TbConverter tbConverter;
+    private final TbConverter converter;
     private final TbSysRoleService sysRoleService;
 
     @Override
     public IPage<SysRole> selectByQuery(SysRoleQuery query, int page, int size) {
-        TbSysRoleQuery sysRoleQuery = tbConverter.sysRole(query);
+        TbSysRoleQuery sysRoleQuery = converter.sysRole(query);
         PageInfo<TbSysRole> pageInfo = sysRoleService.selectByQuery(sysRoleQuery, page, size);
-        return new PageResult<>(tbConverter.sysRole(pageInfo));
+        return new PageResult<>(converter.sysRole(pageInfo));
     }
 
     @Override
     public List<SysRole> selectByQuery(SysRoleQuery query) {
-        TbSysRoleQuery sysRoleQuery = tbConverter.sysRole(query);
-        return tbConverter.sysRole(sysRoleService.selectByQuery(sysRoleQuery));
+        TbSysRoleQuery sysRoleQuery = converter.sysRole(query);
+        return converter.sysRole(sysRoleService.selectByQuery(sysRoleQuery));
     }
 
     @Override
     public SysRole get(Long id) {
-        return tbConverter.sysRole(sysRoleService.selectByPrimaryKey(id));
+        return converter.sysRole(sysRoleService.selectByPrimaryKey(id));
     }
 
     @Override
     public void insert(SysRoleVo sysRoleVo) {
-        sysRoleService.insert(tbConverter.sysRole(sysRoleVo));
+        sysRoleService.insert(converter.sysRole(sysRoleVo));
     }
 
     @Override
     public void update(SysRoleVo sysRoleVo) {
-        sysRoleService.updateByPrimaryKeySelective(tbConverter.sysRole(sysRoleVo));
+        sysRoleService.updateByPrimaryKeySelective(converter.sysRole(sysRoleVo));
     }
 
     @Override
