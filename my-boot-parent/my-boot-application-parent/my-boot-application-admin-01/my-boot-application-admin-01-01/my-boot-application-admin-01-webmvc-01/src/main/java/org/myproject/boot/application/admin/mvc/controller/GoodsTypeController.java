@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.pojo.GoodsType;
 import org.myproject.boot.application.admin.pojo.GoodsTypeQuery;
 import org.myproject.boot.application.admin.pojo.GoodsTypeVo;
-import org.myproject.boot.application.admin.service.BGoodsTypeService;
+import org.myproject.boot.application.admin.api.BGoodsTypeApi;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +24,7 @@ import java.util.List;
 @Validated
 @AllArgsConstructor
 public class GoodsTypeController {
-    private final BGoodsTypeService goodsTypeService;
+    private final BGoodsTypeApi goodsTypeService;
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
     public Result<?> data(GoodsTypeQuery query,
@@ -42,7 +42,7 @@ public class GoodsTypeController {
 
     @RequestMapping(value = "get", params = "id", method = {RequestMethod.GET})
     public Result<?> get(Long id) {
-        return ResultInfo.success(goodsTypeService.selectById(id));
+        return ResultInfo.success(goodsTypeService.get(id));
     }
 
     @RequestMapping(value = "get/{id}", method = {RequestMethod.GET})

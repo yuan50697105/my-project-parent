@@ -5,7 +5,7 @@ import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.pojo.SysUser;
 import org.myproject.boot.application.admin.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.pojo.SysUserVo;
-import org.myproject.boot.application.admin.service.BSysUserService;
+import org.myproject.boot.application.admin.api.BSysUserApi;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("sys/user")
 public class SysUserController {
     @Autowired
-    private BSysUserService sysUserService;
+    private BSysUserApi sysUserService;
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
     public Result<?> data(SysUserQuery query,
@@ -41,7 +41,7 @@ public class SysUserController {
 
     @RequestMapping(value = "get", method = {RequestMethod.GET})
     public Result<?> get(Long id) {
-        SysUser sysUser = sysUserService.selectByPrimaryKey(id);
+        SysUser sysUser = sysUserService.get(id);
         return ResultInfo.success(sysUser);
     }
 

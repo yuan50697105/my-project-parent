@@ -7,5 +7,5 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 @Data
 @EqualsAndHashCode(callSuper=true)
 public class TbCustomerType extends BaseEntity {
-    private Integer naem;
+    private Integer name;
 }

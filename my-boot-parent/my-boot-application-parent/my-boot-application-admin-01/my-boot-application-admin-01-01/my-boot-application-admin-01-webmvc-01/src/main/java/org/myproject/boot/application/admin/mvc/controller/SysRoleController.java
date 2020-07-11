@@ -5,7 +5,7 @@ import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.pojo.SysRole;
 import org.myproject.boot.application.admin.pojo.SysRoleQuery;
 import org.myproject.boot.application.admin.pojo.SysRoleVo;
-import org.myproject.boot.application.admin.service.BSysRoleService;
+import org.myproject.boot.application.admin.api.BSysRoleApi;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("sys/role")
 public class SysRoleController {
     @Autowired
-    private BSysRoleService sysRoleService;
+    private BSysRoleApi sysRoleService;
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
     public Result<?> data(SysRoleQuery query,
@@ -41,7 +41,7 @@ public class SysRoleController {
 
     @RequestMapping(value = "get", method = {RequestMethod.GET})
     public Result<?> get(Long id) {
-        SysRole SysRole = sysRoleService.selectById(id);
+        SysRole SysRole = sysRoleService.get(id);
         return ResultInfo.success(SysRole);
     }
 

@@ -1,8 +1,13 @@
 package org.myproject.boot.application.admin.db.service;
 
 import java.util.List;
+
+import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
+import org.myproject.boot.application.admin.pojo.SysUserQuery;
+
 public interface TbSysUserService{
 
 
@@ -28,4 +33,7 @@ public interface TbSysUserService{
 
     int updateByPrimaryKey(TbSysUser record);
 
+    PageInfo<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery, int page, int size);
+
+    List<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery);
 }

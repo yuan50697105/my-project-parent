@@ -1,14 +1,22 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoQuery;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import org.myproject.boot.application.admin.db.mapper.TbGoodsInfoMapper;
+
 import java.util.List;
+
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoExample;
 import org.myproject.boot.application.admin.db.service.TbGoodsInfoService;
+
 @Service
-public class TbGoodsInfoServiceImpl implements TbGoodsInfoService{
+public class TbGoodsInfoServiceImpl implements TbGoodsInfoService {
 
     @Resource
     private TbGoodsInfoMapper tbGoodsInfoMapper;
@@ -49,13 +57,13 @@ public class TbGoodsInfoServiceImpl implements TbGoodsInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(TbGoodsInfo record,TbGoodsInfoExample example) {
-        return tbGoodsInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbGoodsInfo record, TbGoodsInfoExample example) {
+        return tbGoodsInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbGoodsInfo record,TbGoodsInfoExample example) {
-        return tbGoodsInfoMapper.updateByExample(record,example);
+    public int updateByExample(TbGoodsInfo record, TbGoodsInfoExample example) {
+        return tbGoodsInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -66,6 +74,17 @@ public class TbGoodsInfoServiceImpl implements TbGoodsInfoService{
     @Override
     public int updateByPrimaryKey(TbGoodsInfo record) {
         return tbGoodsInfoMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public PageInfo<TbGoodsInfo> selectByQuery(TbGoodsInfoQuery goodsInfoQuery, int page, int size) {
+        PageHelper.startPage(page, size);
+        return new PageInfo<>(selectByExample(goodsInfoQuery.toExample()));
+    }
+
+    @Override
+    public List<TbGoodsInfo> selectByQuery(TbGoodsInfoQuery goodsInfoQuery) {
+        return selectByExample(goodsInfoQuery.toExample());
     }
 
 }

@@ -1,5 +1,8 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import org.myproject.boot.application.admin.db.mapper.TbSysUserMapper;
@@ -66,6 +69,17 @@ public class TbSysUserServiceImpl implements TbSysUserService{
     @Override
     public int updateByPrimaryKey(TbSysUser record) {
         return tbSysUserMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public PageInfo<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery, int page, int size) {
+        PageHelper.startPage(page, size);
+        return new PageInfo<>(selectByExample(sysUserQuery.toExample()));
+    }
+
+    @Override
+    public List<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery) {
+        return selectByExample(sysUserQuery.toExample());
     }
 
 }

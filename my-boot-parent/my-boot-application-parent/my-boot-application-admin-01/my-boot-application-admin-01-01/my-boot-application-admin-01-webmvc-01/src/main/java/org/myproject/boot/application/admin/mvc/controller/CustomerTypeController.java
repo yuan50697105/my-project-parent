@@ -5,7 +5,7 @@ import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.pojo.CustomerType;
 import org.myproject.boot.application.admin.pojo.CustomerTypeQuery;
 import org.myproject.boot.application.admin.pojo.CustomerTypeVo;
-import org.myproject.boot.application.admin.service.BCustomerTypeService;
+import org.myproject.boot.application.admin.api.BCustomerTypeApi;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -23,7 +23,7 @@ import java.util.List;
 @RequestMapping("customer/type")
 public class CustomerTypeController {
     @Autowired
-    private BCustomerTypeService customerTypeService;
+    private BCustomerTypeApi customerTypeService;
 
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
@@ -43,13 +43,13 @@ public class CustomerTypeController {
 
     @RequestMapping(value = "get", params = "id", method = {RequestMethod.GET})
     public Result<?> get(Long id) {
-        CustomerType customerType = customerTypeService.selectById(id);
+        CustomerType customerType = customerTypeService.get(id);
         return ResultInfo.success(customerType);
     }
 
     @RequestMapping(value = "get/{id}", params = "id", method = {RequestMethod.GET})
     public Result<?> getRs(@PathVariable Long id) {
-        CustomerType customerType = customerTypeService.selectById(id);
+        CustomerType customerType = customerTypeService.get(id);
         return ResultInfo.success(customerType);
     }
 

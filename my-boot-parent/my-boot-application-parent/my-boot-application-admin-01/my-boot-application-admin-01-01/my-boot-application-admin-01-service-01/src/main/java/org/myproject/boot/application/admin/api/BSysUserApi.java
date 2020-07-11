@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.service;
+package org.myproject.boot.application.admin.api;
 
 
 import org.myproject.boot.application.admin.pojo.SysUser;
@@ -14,18 +14,18 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-04 23:17
  */
-public interface BSysUserService {
+public interface BSysUserApi {
     IPage<SysUser> selectByQuery(SysUserQuery query, int page, int size);
 
     List<SysUser> selectByQuery(SysUserQuery query);
 
-    SysUser selectByPrimaryKey(Long id);
+    SysUser get(Long id);
 
-    int insert(SysUserVo sysUser);
+    void insert(SysUserVo sysUser);
 
-    int update(SysUserVo sysUser);
+    void update(SysUserVo sysUser);
 
-    int delete(Long id);
+    void delete(Long id);
 
-    int delete(List<Long> ids);
+    void delete(List<Long> ids);
 }

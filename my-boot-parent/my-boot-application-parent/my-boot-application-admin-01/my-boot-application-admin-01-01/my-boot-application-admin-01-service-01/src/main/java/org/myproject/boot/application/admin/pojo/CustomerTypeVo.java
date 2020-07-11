@@ -19,5 +19,5 @@ public class CustomerTypeVo implements Serializable {
      *
      */
     @ApiModelProperty(value = "")
-    private Integer naem;
+    private Integer name;
 }

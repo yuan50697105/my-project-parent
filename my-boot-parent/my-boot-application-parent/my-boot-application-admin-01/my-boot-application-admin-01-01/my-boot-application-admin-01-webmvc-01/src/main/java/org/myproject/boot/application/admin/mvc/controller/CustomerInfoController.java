@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiOperation;
 import org.myproject.boot.application.admin.pojo.CustomerInfo;
 import org.myproject.boot.application.admin.pojo.CustomerInfoQuery;
 import org.myproject.boot.application.admin.pojo.CustomerInfoVo;
-import org.myproject.boot.application.admin.service.BCustomerInfoService;
+import org.myproject.boot.application.admin.api.BCustomerInfoApi;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -24,7 +24,7 @@ import java.util.List;
 @RequestMapping("customer/info")
 public class CustomerInfoController {
     @Autowired
-    private BCustomerInfoService customerInfoService;
+    private BCustomerInfoApi customerInfoService;
 
     @ApiOperation(value = "客户信息表格", response = Result.class)
     @RequestMapping(value = "data", method = {RequestMethod.GET})

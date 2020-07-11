@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.service;
+package org.myproject.boot.application.admin.api;
 
 
 import org.myproject.boot.application.admin.pojo.CustomerInfo;
@@ -14,7 +14,7 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-05 09:52
  */
-public interface BCustomerInfoService {
+public interface BCustomerInfoApi {
     IPage<CustomerInfo> selectByQuery(CustomerInfoQuery query, int page, int size);
 
     List<CustomerInfo> selectByQuery(CustomerInfoQuery query);

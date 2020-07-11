@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.service;
+package org.myproject.boot.application.admin.api;
 
 
 import org.myproject.boot.application.admin.pojo.GoodsInfo;
@@ -14,10 +14,12 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-05 16:23
  */
-public interface BGoodsInfoService {
+public interface BGoodsInfoApi {
     IPage<GoodsInfo> selectByQuery(GoodsInfoQuery query, int page, int size);
 
     List<GoodsInfo> selectByQuery(GoodsInfoQuery query);
+
+    GoodsInfo get(Long id);
 
     void insert(GoodsInfoVo vo);
 

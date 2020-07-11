@@ -1,0 +1,74 @@
+package org.myproject.boot.application.admin.db.api;
+
+import com.github.pagehelper.PageInfo;
+import lombok.AllArgsConstructor;
+import org.myproject.boot.application.admin.db.converter.TbConverter;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
+import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
+import org.myproject.boot.application.admin.pojo.CustomerInfo;
+import org.myproject.boot.application.admin.pojo.CustomerInfoQuery;
+import org.myproject.boot.application.admin.pojo.CustomerInfoVo;
+import org.myproject.boot.application.admin.api.BCustomerInfoApi;
+import org.myproject.boot.mybatis.commons.pojo.IPage;
+import org.myproject.boot.mybatis.pojo.PageResult;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+/**
+ * @program: my-project-parent
+ * @description:
+ * @author: yuane
+ * @create: 2020-07-11 19:00
+ */
+@Service
+@AllArgsConstructor
+@Transactional
+public class CustomerInfoApiImpl implements BCustomerInfoApi {
+    private final TbConverter tbConverter;
+    private final TbCustomerInfoService customerInfoService;
+
+    @Override
+    public IPage<CustomerInfo> selectByQuery(CustomerInfoQuery query, int page, int size) {
+        TbCustomerInfoQuery customerInfoQuery = tbConverter.customerInfo(query);
+        PageInfo<TbCustomerInfo> pageInfo = customerInfoService.selectByQuery(customerInfoQuery, page, size);
+        return new PageResult<>(tbConverter.convertCustomerInfo(pageInfo));
+    }
+
+    @Override
+    public List<CustomerInfo> selectByQuery(CustomerInfoQuery query) {
+        TbCustomerInfoQuery customerInfoQuery = tbConverter.customerInfo(query);
+        List<TbCustomerInfo> list = customerInfoService.selectByQuery(customerInfoQuery);
+        return tbConverter.customerInfo(list);
+    }
+
+    @Override
+    public CustomerInfo get(Long id) {
+        TbCustomerInfo customerInfo = customerInfoService.selectByPrimaryKey(id);
+        return tbConverter.customerInfo(customerInfo);
+    }
+
+    @Override
+    public void insert(CustomerInfoVo vo) {
+        TbCustomerInfo customerInfo = tbConverter.customerInfo(vo);
+        customerInfoService.insert(customerInfo);
+    }
+
+    @Override
+    public void update(CustomerInfoVo vo) {
+        TbCustomerInfo customerInfo = tbConverter.customerInfo(vo);
+        customerInfoService.updateByPrimaryKeySelective(customerInfo);
+    }
+
+    @Override
+    public void delete(List<Long> ids) {
+        ids.stream().map(customerInfoService::deleteByPrimaryKey);
+    }
+
+    @Override
+    public void delete(Long id) {
+        customerInfoService.deleteByPrimaryKey(id);
+    }
+}

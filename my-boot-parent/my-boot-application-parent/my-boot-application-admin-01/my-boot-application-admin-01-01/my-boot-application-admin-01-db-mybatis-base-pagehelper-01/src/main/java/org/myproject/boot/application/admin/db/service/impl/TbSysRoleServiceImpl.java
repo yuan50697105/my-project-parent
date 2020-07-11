@@ -1,14 +1,22 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.pojo.TbSysRoleQuery;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import org.myproject.boot.application.admin.db.mapper.TbSysRoleMapper;
 import org.myproject.boot.application.admin.db.pojo.TbSysRole;
+
 import java.util.List;
+
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleExample;
 import org.myproject.boot.application.admin.db.service.TbSysRoleService;
+
 @Service
-public class TbSysRoleServiceImpl implements TbSysRoleService{
+public class TbSysRoleServiceImpl implements TbSysRoleService {
 
     @Resource
     private TbSysRoleMapper tbSysRoleMapper;
@@ -49,13 +57,13 @@ public class TbSysRoleServiceImpl implements TbSysRoleService{
     }
 
     @Override
-    public int updateByExampleSelective(TbSysRole record,TbSysRoleExample example) {
-        return tbSysRoleMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbSysRole record, TbSysRoleExample example) {
+        return tbSysRoleMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbSysRole record,TbSysRoleExample example) {
-        return tbSysRoleMapper.updateByExample(record,example);
+    public int updateByExample(TbSysRole record, TbSysRoleExample example) {
+        return tbSysRoleMapper.updateByExample(record, example);
     }
 
     @Override
@@ -66,6 +74,17 @@ public class TbSysRoleServiceImpl implements TbSysRoleService{
     @Override
     public int updateByPrimaryKey(TbSysRole record) {
         return tbSysRoleMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public PageInfo<TbSysRole> selectByQuery(TbSysRoleQuery sysRoleQuery, int page, int size) {
+        PageHelper.startPage(page, size);
+        return new PageInfo<>(selectByExample(sysRoleQuery.toExample()));
+    }
+
+    @Override
+    public List<TbSysRole> selectByQuery(TbSysRoleQuery sysRoleQuery) {
+        return selectByExample(sysRoleQuery.toExample());
     }
 
 }

@@ -1,8 +1,11 @@
 package org.myproject.boot.application.admin.db.service;
 
+import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
 import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
+
 public interface TbCustomerInfoService{
 
 
@@ -28,4 +31,7 @@ public interface TbCustomerInfoService{
 
     int updateByPrimaryKey(TbCustomerInfo record);
 
+    PageInfo<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery customerInfoQuery, int page, int size);
+
+    List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery customerInfoQuery);
 }

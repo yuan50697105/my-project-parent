@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.service;
+package org.myproject.boot.application.admin.api;
 
 
 import org.myproject.boot.application.admin.pojo.CustomerType;
@@ -14,12 +14,12 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-05 09:57
  */
-public interface BCustomerTypeService {
+public interface BCustomerTypeApi {
     IPage<CustomerType> selectByQuery(CustomerTypeQuery query, int page, int size);
 
     List<CustomerType> selectByQuery(CustomerTypeQuery query);
 
-    CustomerType selectById(Long id);
+    CustomerType get(Long id);
 
     void insert(CustomerTypeVo vo);
 

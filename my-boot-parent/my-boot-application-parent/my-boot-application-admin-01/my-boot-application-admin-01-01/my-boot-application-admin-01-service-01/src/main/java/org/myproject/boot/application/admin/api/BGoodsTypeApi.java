@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.service;
+package org.myproject.boot.application.admin.api;
 
 
 import org.myproject.boot.application.admin.pojo.GoodsType;
@@ -14,12 +14,12 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-05 16:03
  */
-public interface BGoodsTypeService {
+public interface BGoodsTypeApi {
     IPage<GoodsType> selectByQuery(GoodsTypeQuery query, int page, int size);
 
     List<GoodsType> selectByQuery(GoodsTypeQuery query);
 
-    GoodsType selectById(Long id);
+    GoodsType get(Long id);
 
     void insert(GoodsTypeVo vo);
 

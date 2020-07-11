@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.pojo.GoodsInfo;
 import org.myproject.boot.application.admin.pojo.GoodsInfoQuery;
 import org.myproject.boot.application.admin.pojo.GoodsInfoVo;
-import org.myproject.boot.application.admin.service.BGoodsInfoService;
+import org.myproject.boot.application.admin.api.BGoodsInfoApi;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +24,7 @@ import java.util.List;
 @Validated
 @AllArgsConstructor
 public class GoodsInfoController {
-    private final BGoodsInfoService goodsInfoService;
+    private final BGoodsInfoApi goodsInfoService;
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
     public Result<?> data(GoodsInfoQuery query,
@@ -38,6 +38,16 @@ public class GoodsInfoController {
     public Result<?> list(GoodsInfoQuery query) {
         List<GoodsInfo> list = goodsInfoService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
+    }
+
+    @RequestMapping(value = "get", params = "id", method = {RequestMethod.GET})
+    public Result<?> get(Long id) {
+        return ResultInfo.success(goodsInfoService.get(id));
+    }
+
+    @RequestMapping(value = "get/{id}", method = {RequestMethod.GET})
+    public Result<?> getRs(@PathVariable Long id) {
+        return ResultInfo.success(goodsInfoService.get(id));
     }
 
 

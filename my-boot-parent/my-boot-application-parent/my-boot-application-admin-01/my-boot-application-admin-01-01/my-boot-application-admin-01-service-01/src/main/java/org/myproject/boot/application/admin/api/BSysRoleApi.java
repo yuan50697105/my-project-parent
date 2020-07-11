@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.service;
+package org.myproject.boot.application.admin.api;
 
 
 import org.myproject.boot.application.admin.pojo.SysRole;
@@ -14,13 +14,13 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-04 23:35
  */
-public interface BSysRoleService {
+public interface BSysRoleApi {
 
     IPage<SysRole> selectByQuery(SysRoleQuery query, int page, int size);
 
     List<SysRole> selectByQuery(SysRoleQuery query);
 
-    SysRole selectById(Long id);
+    SysRole get(Long id);
 
     void insert(SysRoleVo sysRoleVo);
 

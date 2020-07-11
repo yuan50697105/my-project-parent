@@ -1,5 +1,8 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeQuery;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
@@ -66,6 +69,17 @@ public class TbGoodsTypeServiceImpl implements TbGoodsTypeService{
     @Override
     public int updateByPrimaryKey(TbGoodsType record) {
         return tbGoodsTypeMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public PageInfo<TbGoodsType> selectByQuery(TbGoodsTypeQuery goodsTypeQuery, int page, int size) {
+        PageHelper.startPage(page, size);
+        return new PageInfo<>(selectByExample(goodsTypeQuery.toExample()));
+    }
+
+    @Override
+    public List<TbGoodsType> selectByQuery(TbGoodsTypeQuery goodsTypeQuery) {
+        return selectByExample(goodsTypeQuery.toExample());
     }
 
 }

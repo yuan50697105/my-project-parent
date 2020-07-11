@@ -1,5 +1,9 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
@@ -66,6 +70,17 @@ public class TbCustomerInfoServiceImpl implements TbCustomerInfoService{
     @Override
     public int updateByPrimaryKey(TbCustomerInfo record) {
         return tbCustomerInfoMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public PageInfo<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery customerInfoQuery, int page, int size) {
+        PageHelper.startPage(page, size);
+        return new PageInfo<>(selectByExample(customerInfoQuery.toExample()));
+    }
+
+    @Override
+    public List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery customerInfoQuery) {
+        return selectByExample(customerInfoQuery.toExample());
     }
 
 }
