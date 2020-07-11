@@ -1,9 +1,9 @@
 package org.myproject.boot.application.admin.service.pojo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-
-import lombok.Data;
 
 @Data
 public class GoodsInfo implements Serializable {

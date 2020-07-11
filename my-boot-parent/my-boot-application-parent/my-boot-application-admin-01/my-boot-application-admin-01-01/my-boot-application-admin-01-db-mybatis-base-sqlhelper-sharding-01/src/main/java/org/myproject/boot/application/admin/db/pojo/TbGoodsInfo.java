@@ -1,12 +1,13 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import java.math.BigDecimal;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
+import java.math.BigDecimal;
+
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class TbGoodsInfo extends BaseEntity {
     private Long code;
 

@@ -1,13 +1,13 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeQuery;
 
-public interface TbCustomerTypeService{
+import java.util.List;
+
+public interface TbCustomerTypeService {
 
 
     long countByExample(TbCustomerTypeExample example);
@@ -24,9 +24,9 @@ public interface TbCustomerTypeService{
 
     TbCustomerType selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbCustomerType record,TbCustomerTypeExample example);
+    int updateByExampleSelective(TbCustomerType record, TbCustomerTypeExample example);
 
-    int updateByExample(TbCustomerType record,TbCustomerTypeExample example);
+    int updateByExample(TbCustomerType record, TbCustomerTypeExample example);
 
     int updateByPrimaryKeySelective(TbCustomerType record);
 

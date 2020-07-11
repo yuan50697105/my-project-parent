@@ -31,11 +31,11 @@
             <artifactId>my-boot-genernate-route</artifactId>
             <version>1.0.0.2</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.myproject</groupId>-->
-<!--            <artifactId>my-boot-security</artifactId>-->
-<!--            <version>1.0.0.2</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.myproject</groupId>-->
+        <!--            <artifactId>my-boot-security</artifactId>-->
+        <!--            <version>1.0.0.2</version>-->
+        <!--        </dependency>-->
     </dependencies>
 
 </project>

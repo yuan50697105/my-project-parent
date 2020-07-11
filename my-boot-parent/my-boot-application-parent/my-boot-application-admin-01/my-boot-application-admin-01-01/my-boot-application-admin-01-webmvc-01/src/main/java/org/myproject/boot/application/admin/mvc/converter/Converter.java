@@ -12,7 +12,7 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-11 20:05
  */
-@Mapper(componentModel = "spring",nullValueCheckStrategy = NullValueCheckStrategy.ON_IMPLICIT_CONVERSION,nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
+@Mapper(componentModel = "spring", nullValueCheckStrategy = NullValueCheckStrategy.ON_IMPLICIT_CONVERSION, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
 public interface Converter {
     @Mapping(target = "name", ignore = true)
     @Mapping(target = "method", ignore = true)

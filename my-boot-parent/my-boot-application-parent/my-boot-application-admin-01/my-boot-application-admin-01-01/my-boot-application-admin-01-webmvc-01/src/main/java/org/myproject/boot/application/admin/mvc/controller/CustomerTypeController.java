@@ -2,10 +2,10 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
+import org.myproject.boot.application.admin.service.api.BCustomerTypeApi;
 import org.myproject.boot.application.admin.service.pojo.CustomerType;
 import org.myproject.boot.application.admin.service.pojo.CustomerTypeQuery;
 import org.myproject.boot.application.admin.service.pojo.CustomerTypeVo;
-import org.myproject.boot.application.admin.service.api.BCustomerTypeApi;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

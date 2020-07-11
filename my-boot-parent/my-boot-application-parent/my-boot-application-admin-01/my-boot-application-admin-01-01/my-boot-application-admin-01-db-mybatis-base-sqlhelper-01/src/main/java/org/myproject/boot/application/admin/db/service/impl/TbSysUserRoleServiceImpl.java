@@ -1,14 +1,16 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserRoleExample;
 import org.myproject.boot.application.admin.db.mapper.TbSysUserRoleMapper;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserRole;
-import java.util.List;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserRoleExample;
 import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class TbSysUserRoleServiceImpl implements TbSysUserRoleService{
+public class TbSysUserRoleServiceImpl implements TbSysUserRoleService {
 
     @Resource
     private TbSysUserRoleMapper tbSysUserRoleMapper;
@@ -49,13 +51,13 @@ public class TbSysUserRoleServiceImpl implements TbSysUserRoleService{
     }
 
     @Override
-    public int updateByExampleSelective(TbSysUserRole record,TbSysUserRoleExample example) {
-        return tbSysUserRoleMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbSysUserRole record, TbSysUserRoleExample example) {
+        return tbSysUserRoleMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbSysUserRole record,TbSysUserRoleExample example) {
-        return tbSysUserRoleMapper.updateByExample(record,example);
+    public int updateByExample(TbSysUserRole record, TbSysUserRoleExample example) {
+        return tbSysUserRoleMapper.updateByExample(record, example);
     }
 
     @Override

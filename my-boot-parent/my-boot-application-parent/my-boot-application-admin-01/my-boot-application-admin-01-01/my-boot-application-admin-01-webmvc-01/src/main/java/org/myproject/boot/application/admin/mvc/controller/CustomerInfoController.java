@@ -34,7 +34,7 @@ public class CustomerInfoController {
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
         IPage<CustomerInfo> iPage = customerInfoApi.selectByQuery(query, page, size);
-        return ResultInfo.success(iPage,iPage.getTotalRows());
+        return ResultInfo.success(iPage, iPage.getTotalRows());
     }
 
     @ApiOperation("客户信息列表")

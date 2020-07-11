@@ -5,10 +5,10 @@ import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 /**
-    * 路由表
-    */
+ * 路由表
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class TbSysRoute extends BaseEntity {
     private String url;
 

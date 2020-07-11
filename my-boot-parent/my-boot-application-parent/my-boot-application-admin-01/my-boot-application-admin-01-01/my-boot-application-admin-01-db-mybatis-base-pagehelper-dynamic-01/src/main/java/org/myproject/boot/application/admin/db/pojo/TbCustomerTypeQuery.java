@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class TbCustomerTypeQuery extends BaseEntity implements MybatisExample<TbCustomerTypeExample> {
     @AndLike
     private Integer name;

@@ -5,10 +5,10 @@ import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 /**
-    * 用户角色
-    */
+ * 用户角色
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class TbSysUserRole extends BaseEntity {
     private Long userId;
 

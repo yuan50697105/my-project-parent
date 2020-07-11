@@ -5,10 +5,10 @@ import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 /**
-    * 角色路由表
-    */
+ * 角色路由表
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class TbSysRoleRoute extends BaseEntity {
     private Long roleId;
 

@@ -1,14 +1,16 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import org.myproject.boot.application.admin.db.mapper.TbSysRouteMapper;
+import org.myproject.boot.application.admin.db.pojo.TbSysRoute;
+import org.myproject.boot.application.admin.db.pojo.TbSysRouteExample;
+import org.myproject.boot.application.admin.db.service.TbSysRouteService;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 import java.util.List;
-import org.myproject.boot.application.admin.db.mapper.TbSysRouteMapper;
-import org.myproject.boot.application.admin.db.pojo.TbSysRouteExample;
-import org.myproject.boot.application.admin.db.pojo.TbSysRoute;
-import org.myproject.boot.application.admin.db.service.TbSysRouteService;
+
 @Service
-public class TbSysRouteServiceImpl implements TbSysRouteService{
+public class TbSysRouteServiceImpl implements TbSysRouteService {
 
     @Resource
     private TbSysRouteMapper tbSysRouteMapper;
@@ -49,13 +51,13 @@ public class TbSysRouteServiceImpl implements TbSysRouteService{
     }
 
     @Override
-    public int updateByExampleSelective(TbSysRoute record,TbSysRouteExample example) {
-        return tbSysRouteMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbSysRoute record, TbSysRouteExample example) {
+        return tbSysRouteMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbSysRoute record,TbSysRouteExample example) {
-        return tbSysRouteMapper.updateByExample(record,example);
+    public int updateByExample(TbSysRoute record, TbSysRouteExample example) {
+        return tbSysRouteMapper.updateByExample(record, example);
     }
 
     @Override

@@ -6,6 +6,6 @@ package org.myproject.boot.webmvc.controller;
  * @author: yuane
  * @create: 2020-06-27 14:07
  */
-public class BaseController  {
+public class BaseController {
 
 }

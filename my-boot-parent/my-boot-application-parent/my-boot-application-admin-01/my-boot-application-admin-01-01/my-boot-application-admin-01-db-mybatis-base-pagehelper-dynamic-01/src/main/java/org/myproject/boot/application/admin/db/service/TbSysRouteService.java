@@ -1,9 +1,11 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbSysRouteExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoute;
-public interface TbSysRouteService{
+import org.myproject.boot.application.admin.db.pojo.TbSysRouteExample;
+
+import java.util.List;
+
+public interface TbSysRouteService {
 
 
     long countByExample(TbSysRouteExample example);
@@ -20,9 +22,9 @@ public interface TbSysRouteService{
 
     TbSysRoute selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbSysRoute record,TbSysRouteExample example);
+    int updateByExampleSelective(TbSysRoute record, TbSysRouteExample example);
 
-    int updateByExample(TbSysRoute record,TbSysRouteExample example);
+    int updateByExample(TbSysRoute record, TbSysRouteExample example);
 
     int updateByPrimaryKeySelective(TbSysRoute record);
 

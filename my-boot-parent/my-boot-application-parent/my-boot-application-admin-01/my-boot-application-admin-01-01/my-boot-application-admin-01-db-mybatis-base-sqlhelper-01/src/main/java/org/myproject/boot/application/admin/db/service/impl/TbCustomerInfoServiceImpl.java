@@ -2,17 +2,18 @@ package org.myproject.boot.application.admin.db.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
-import java.util.List;
 import org.myproject.boot.application.admin.db.mapper.TbCustomerInfoMapper;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class TbCustomerInfoServiceImpl implements TbCustomerInfoService{
+public class TbCustomerInfoServiceImpl implements TbCustomerInfoService {
 
     @Resource
     private TbCustomerInfoMapper tbCustomerInfoMapper;
@@ -53,13 +54,13 @@ public class TbCustomerInfoServiceImpl implements TbCustomerInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(TbCustomerInfo record,TbCustomerInfoExample example) {
-        return tbCustomerInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbCustomerInfo record, TbCustomerInfoExample example) {
+        return tbCustomerInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbCustomerInfo record,TbCustomerInfoExample example) {
-        return tbCustomerInfoMapper.updateByExample(record,example);
+    public int updateByExample(TbCustomerInfo record, TbCustomerInfoExample example) {
+        return tbCustomerInfoMapper.updateByExample(record, example);
     }
 
     @Override

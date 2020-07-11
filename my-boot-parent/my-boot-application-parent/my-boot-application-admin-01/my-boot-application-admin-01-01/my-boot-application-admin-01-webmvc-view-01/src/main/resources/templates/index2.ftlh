@@ -8,8 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        ${index}
-    </div>
+<div>
+    ${index}
+</div>
 </body>
 </html>

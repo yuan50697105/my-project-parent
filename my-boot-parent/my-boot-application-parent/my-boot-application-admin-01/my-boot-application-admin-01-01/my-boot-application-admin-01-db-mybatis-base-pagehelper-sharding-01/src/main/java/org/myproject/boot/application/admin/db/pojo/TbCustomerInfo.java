@@ -5,34 +5,34 @@ import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 /**
-    * tb_customer_info
-    */
+ * tb_customer_info
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class TbCustomerInfo extends BaseEntity {
     /**
-    * name
-    */
+     * name
+     */
     private String name;
 
     /**
-    * namePy
-    */
+     * namePy
+     */
     private String namePy;
 
     /**
-    * namePyF
-    */
+     * namePyF
+     */
     private String namePyF;
 
     /**
-    * phone
-    */
+     * phone
+     */
     private String phone;
 
     /**
-    * age
-    */
+     * age
+     */
     private Integer age;
 
     private Long typeId;

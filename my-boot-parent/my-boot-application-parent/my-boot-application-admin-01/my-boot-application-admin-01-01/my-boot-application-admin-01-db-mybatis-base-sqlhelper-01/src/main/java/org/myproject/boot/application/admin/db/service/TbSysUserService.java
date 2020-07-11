@@ -1,13 +1,13 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 
-public interface TbSysUserService{
+import java.util.List;
+
+public interface TbSysUserService {
 
 
     long countByExample(TbSysUserExample example);
@@ -24,9 +24,9 @@ public interface TbSysUserService{
 
     TbSysUser selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbSysUser record,TbSysUserExample example);
+    int updateByExampleSelective(TbSysUser record, TbSysUserExample example);
 
-    int updateByExample(TbSysUser record,TbSysUserExample example);
+    int updateByExample(TbSysUser record, TbSysUserExample example);
 
     int updateByPrimaryKeySelective(TbSysUser record);
 

@@ -1,8 +1,8 @@
 package org.myproject.boot.application.admin.service.pojo;
 
-import java.io.Serializable;
-
 import lombok.Data;
+
+import java.io.Serializable;
 
 @Data
 public class SysUserRole implements Serializable {

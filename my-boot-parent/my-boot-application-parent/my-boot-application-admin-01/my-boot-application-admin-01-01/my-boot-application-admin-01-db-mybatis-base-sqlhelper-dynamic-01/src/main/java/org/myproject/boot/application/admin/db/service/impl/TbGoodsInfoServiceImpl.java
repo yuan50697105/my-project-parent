@@ -2,18 +2,15 @@ package org.myproject.boot.application.admin.db.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.mapper.TbGoodsInfoMapper;
+import org.myproject.boot.application.admin.db.pojo.TbGoodsInfo;
+import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoExample;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoQuery;
+import org.myproject.boot.application.admin.db.service.TbGoodsInfoService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-
-import org.myproject.boot.application.admin.db.mapper.TbGoodsInfoMapper;
-
 import java.util.List;
-
-import org.myproject.boot.application.admin.db.pojo.TbGoodsInfo;
-import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoExample;
-import org.myproject.boot.application.admin.db.service.TbGoodsInfoService;
 
 @Service
 public class TbGoodsInfoServiceImpl implements TbGoodsInfoService {

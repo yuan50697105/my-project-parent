@@ -1,13 +1,13 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeQuery;
 
-public interface TbGoodsTypeService{
+import java.util.List;
+
+public interface TbGoodsTypeService {
 
 
     long countByExample(TbGoodsTypeExample example);
@@ -24,9 +24,9 @@ public interface TbGoodsTypeService{
 
     TbGoodsType selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbGoodsType record,TbGoodsTypeExample example);
+    int updateByExampleSelective(TbGoodsType record, TbGoodsTypeExample example);
 
-    int updateByExample(TbGoodsType record,TbGoodsTypeExample example);
+    int updateByExample(TbGoodsType record, TbGoodsTypeExample example);
 
     int updateByPrimaryKeySelective(TbGoodsType record);
 

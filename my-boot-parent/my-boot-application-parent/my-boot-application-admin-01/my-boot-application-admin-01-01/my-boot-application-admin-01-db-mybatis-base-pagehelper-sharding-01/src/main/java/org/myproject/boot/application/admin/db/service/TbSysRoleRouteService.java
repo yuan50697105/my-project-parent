@@ -2,8 +2,10 @@ package org.myproject.boot.application.admin.db.service;
 
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleRoute;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleRouteExample;
+
 import java.util.List;
-public interface TbSysRoleRouteService{
+
+public interface TbSysRoleRouteService {
 
 
     long countByExample(TbSysRoleRouteExample example);
@@ -20,9 +22,9 @@ public interface TbSysRoleRouteService{
 
     TbSysRoleRoute selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbSysRoleRoute record,TbSysRoleRouteExample example);
+    int updateByExampleSelective(TbSysRoleRoute record, TbSysRoleRouteExample example);
 
-    int updateByExample(TbSysRoleRoute record,TbSysRoleRouteExample example);
+    int updateByExample(TbSysRoleRoute record, TbSysRoleRouteExample example);
 
     int updateByPrimaryKeySelective(TbSysRoleRoute record);
 

@@ -33,7 +33,7 @@ public class CustomerTypeApiImpl implements BCustomerTypeApi {
 
     @Override
     public IPage<CustomerType> selectByQuery(CustomerTypeQuery query, int page, int size) {
-        TbCustomerTypeQuery customerTypeQuery= converter.customerType(query);
+        TbCustomerTypeQuery customerTypeQuery = converter.customerType(query);
         PageInfo<TbCustomerType> pageInfo = customerTypeService.selectByQuery(customerTypeQuery, page, size);
         return new PageResult<>(converter.customerType(pageInfo));
     }
