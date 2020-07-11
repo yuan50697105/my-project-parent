@@ -1,6 +1,7 @@
 package org.myproject.boot.application.admin.db;
 
 import lombok.extern.slf4j.Slf4j;
+import org.myproject.boot.application.admin.Application;
 import org.myproject.boot.application.admin.db.mapper.SysUserMapper;
 import org.myproject.boot.application.admin.db.pojo.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;

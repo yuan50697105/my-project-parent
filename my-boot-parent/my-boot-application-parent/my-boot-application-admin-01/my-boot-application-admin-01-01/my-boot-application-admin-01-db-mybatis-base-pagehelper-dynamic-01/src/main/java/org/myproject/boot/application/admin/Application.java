@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db;
+package org.myproject.boot.application.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,7 @@
 package org.myproject.boot.application.admin.db;
 
 import lombok.extern.slf4j.Slf4j;
+import org.myproject.boot.application.admin.Application;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**

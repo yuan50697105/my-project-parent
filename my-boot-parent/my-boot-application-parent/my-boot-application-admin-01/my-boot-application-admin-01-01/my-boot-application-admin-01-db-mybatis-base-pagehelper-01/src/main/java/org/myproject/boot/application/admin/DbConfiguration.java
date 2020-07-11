@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db;
+package org.myproject.boot.application.admin;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringBootConfiguration;

@@ -11,6 +11,7 @@ import org.myproject.boot.application.admin.pojo.GoodsInfoQuery;
 import org.myproject.boot.application.admin.pojo.GoodsInfoVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.PageResult;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,6 +26,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 @Transactional
+@Primary
 public class GoodsInfoApiImpl implements BGoodsInfoApi {
     private final TbConverter converter;
     private final TbGoodsInfoService goodsInfoService;
