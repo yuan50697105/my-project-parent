@@ -75,7 +75,7 @@ public interface TbConverter {
 
     TbSysRole sysRole(SysRoleVo sysRoleVo);
 
-    TbSysUserQuery sysUser(SysUserQuery query);
+    TbSysUserQuery sysUser(TbSysUserQuery query);
 
     PageInfo<SysUser> sysUser(PageInfo<TbSysUser> selectByQuery);
 

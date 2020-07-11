@@ -9,7 +9,6 @@ import org.myproject.boot.application.admin.db.service.TbSysRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
 import org.myproject.boot.application.admin.service.pojo.SysUser;
-import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.PageResult;
@@ -36,13 +35,13 @@ public class SysUserApiImpl implements BSysUserApi {
     private final TbSysRoleService sysRoleService;
 
     @Override
-    public IPage<SysUser> selectByQuery(SysUserQuery query, int page, int size) {
+    public IPage<SysUser> selectByQuery(TbSysUserQuery query, int page, int size) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
         return new PageResult<>(converter.sysUser(sysUserService.selectByQuery(sysUserQuery, page, size)));
     }
 
     @Override
-    public List<SysUser> selectByQuery(SysUserQuery query) {
+    public List<SysUser> selectByQuery(TbSysUserQuery query) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
         return converter.sysUser(sysUserService.selectByQuery(sysUserQuery));
     }
