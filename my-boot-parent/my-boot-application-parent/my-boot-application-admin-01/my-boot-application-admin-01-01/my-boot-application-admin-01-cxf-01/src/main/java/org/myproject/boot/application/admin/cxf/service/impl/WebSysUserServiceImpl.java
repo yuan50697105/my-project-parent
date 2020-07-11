@@ -6,6 +6,7 @@ import org.myproject.boot.application.admin.cxf.service.WebSysUserService;
 import org.myproject.boot.application.admin.service.api.BSysUserApi;
 import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
@@ -18,8 +19,8 @@ import javax.jws.WebService;
  * @author: yuane
  * @create: 2020-07-11 23:28
  */
-@Service
-@WebService(targetNamespace = "http://web.sys.user")
+@Component
+@WebService(targetNamespace = "http://web.sys.user",endpointInterface = "org.myproject.boot.application.admin.cxf.service.WebSysUserService")
 @Transactional
 public class WebSysUserServiceImpl implements WebSysUserService {
     @Autowired
