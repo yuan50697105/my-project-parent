@@ -6,31 +6,26 @@ import java.io.Serializable;
 
 @Data
 public class SysRouteVo implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      *
      */
     private Long id;
-
     /**
      *
      */
     private String url;
-
     /**
      *
      */
     private String name;
-
     /**
      *
      */
     private Long parentId;
-
     /**
      *
      */
     private Integer weight;
-
-    private static final long serialVersionUID = 1L;
 }
 

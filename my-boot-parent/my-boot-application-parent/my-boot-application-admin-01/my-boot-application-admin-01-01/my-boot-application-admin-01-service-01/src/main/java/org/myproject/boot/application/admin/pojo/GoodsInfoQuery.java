@@ -7,31 +7,26 @@ import java.math.BigDecimal;
 
 @Data
 public class GoodsInfoQuery implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      *
      */
     private Long id;
-
     /**
      *
      */
     private Long code;
-
     /**
      *
      */
     private String name;
-
     /**
      *
      */
     private BigDecimal price;
-
     /**
      *
      */
     private Long typeId;
-
-    private static final long serialVersionUID = 1L;
 }
 
