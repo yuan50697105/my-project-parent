@@ -35,7 +35,7 @@ public class CustomerInfoApiImpl implements BCustomerInfoApi {
     public IPage<CustomerInfo> selectByQuery(CustomerInfoQuery query, int page, int size) {
         TbCustomerInfoQuery customerInfoQuery = converter.customerInfo(query);
         PageInfo<TbCustomerInfo> pageInfo = customerInfoService.selectByQuery(customerInfoQuery, page, size);
-        return new PageResult<>(converter.convertCustomerInfo(pageInfo));
+        return new PageResult<>(converter.customerInfo(pageInfo));
     }
 
     @Override

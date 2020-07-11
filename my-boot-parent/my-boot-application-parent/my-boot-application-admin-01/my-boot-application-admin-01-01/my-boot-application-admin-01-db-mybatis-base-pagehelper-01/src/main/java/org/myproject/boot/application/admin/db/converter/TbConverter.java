@@ -21,7 +21,7 @@ public interface TbConverter {
     @Mapping(target = "ageEnd", ignore = true)
     TbCustomerInfoQuery customerInfo(CustomerInfoQuery query);
 
-    PageInfo<CustomerInfo> convertCustomerInfo(PageInfo<TbCustomerInfo> pageInfo);
+    PageInfo<CustomerInfo> customerInfo(PageInfo<TbCustomerInfo> pageInfo);
 
     List<CustomerInfo> customerInfo(List<TbCustomerInfo> list);
 
