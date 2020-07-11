@@ -1,9 +1,9 @@
 package org.myproject.boot.application.admin.mvc.service;
 
 import lombok.AllArgsConstructor;
-import org.myproject.boot.application.admin.api.RouteApi;
+import org.myproject.boot.application.admin.service.api.RouteApi;
 import org.myproject.boot.application.admin.mvc.converter.MapConverter;
-import org.myproject.boot.application.admin.pojo.Route;
+import org.myproject.boot.application.admin.service.pojo.Route;
 import org.myproject.boot.commons.route.RouteService;
 import org.springframework.stereotype.Service;
 

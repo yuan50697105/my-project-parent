@@ -1,8 +1,10 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbSysRouteExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoute;
+import org.myproject.boot.application.admin.db.pojo.TbSysRouteExample;
+
+import java.util.List;
+
 public interface TbSysRouteService{
 
 

@@ -1,7 +1,7 @@
 package org.myproject.boot.application.admin.mvc.converter;
 
 import org.mapstruct.*;
-import org.myproject.boot.application.admin.pojo.Route;
+import org.myproject.boot.application.admin.service.pojo.Route;
 
 import java.util.List;
 

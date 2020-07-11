@@ -2,10 +2,10 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.pojo.SysUser;
-import org.myproject.boot.application.admin.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.pojo.SysUserVo;
-import org.myproject.boot.application.admin.api.BSysUserApi;
+import org.myproject.boot.application.admin.service.pojo.SysUser;
+import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.api.BSysUserApi;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

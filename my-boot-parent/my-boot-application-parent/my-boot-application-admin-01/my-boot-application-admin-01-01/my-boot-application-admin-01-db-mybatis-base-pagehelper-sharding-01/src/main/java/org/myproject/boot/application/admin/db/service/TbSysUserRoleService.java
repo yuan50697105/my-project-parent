@@ -1,8 +1,10 @@
 package org.myproject.boot.application.admin.db.service;
 
-import org.myproject.boot.application.admin.db.pojo.TbSysUserRoleExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserRole;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserRoleExample;
+
 import java.util.List;
+
 public interface TbSysUserRoleService{
 
 

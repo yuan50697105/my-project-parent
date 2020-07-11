@@ -4,7 +4,8 @@ import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
 import org.mapstruct.*;
 import org.myproject.boot.application.admin.db.pojo.*;
-import org.myproject.boot.application.admin.pojo.*;
+import org.myproject.boot.application.admin.service.pojo.*;
+import org.springframework.context.annotation.Primary;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,13 +16,14 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-11 19:01
  */
+@Primary
 @Mapper(componentModel = "spring", nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, nullValueCheckStrategy = NullValueCheckStrategy.ON_IMPLICIT_CONVERSION)
 public interface TbConverter {
     @Mapping(target = "ageStart", ignore = true)
     @Mapping(target = "ageEnd", ignore = true)
     TbCustomerInfoQuery customerInfo(CustomerInfoQuery query);
 
-    PageInfo<CustomerInfo> convertCustomerInfo(PageInfo<TbCustomerInfo> pageInfo);
+    PageInfo<CustomerInfo> customerInfo(PageInfo<TbCustomerInfo> pageInfo);
 
     List<CustomerInfo> customerInfo(List<TbCustomerInfo> list);
 

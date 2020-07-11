@@ -2,14 +2,16 @@ package org.myproject.boot.application.admin.db.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import org.myproject.boot.application.admin.db.mapper.TbSysUserMapper;
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserExample;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class TbSysUserServiceImpl implements TbSysUserService{
 

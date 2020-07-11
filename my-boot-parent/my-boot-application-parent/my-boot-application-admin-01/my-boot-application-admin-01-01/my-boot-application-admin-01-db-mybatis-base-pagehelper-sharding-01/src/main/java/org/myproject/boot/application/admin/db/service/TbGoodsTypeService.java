@@ -1,11 +1,11 @@
 package org.myproject.boot.application.admin.db.service;
 
-import java.util.List;
-
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeExample;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeQuery;
+
+import java.util.List;
 
 public interface TbGoodsTypeService{
 

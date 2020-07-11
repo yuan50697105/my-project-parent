@@ -1,7 +1,6 @@
 package org.myproject.boot.application.admin.db;
 
 import org.mybatis.spring.annotation.MapperScan;
-import org.myproject.boot.application.admin.db.mapper.BaseMapper;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -13,6 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootConfiguration
 @ComponentScan(basePackageClasses = DbConfiguration.class)
-@MapperScan(basePackageClasses = BaseMapper.class)
+@MapperScan(basePackageClasses = DbConfiguration.class)
 public class DbConfiguration {
 }
