@@ -1,14 +1,12 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.myproject.boot.application.admin.db.mapper.TbSysRoleRouteMapper;
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleRoute;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleRouteExample;
-import org.myproject.boot.application.admin.db.service.TbSysRoleRouteService;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 import java.util.List;
-
+import org.myproject.boot.application.admin.db.mapper.TbSysRoleRouteMapper;
+import org.myproject.boot.application.admin.db.service.TbSysRoleRouteService;
 @Service
 public class TbSysRoleRouteServiceImpl implements TbSysRoleRouteService{
 

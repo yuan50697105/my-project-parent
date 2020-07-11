@@ -1,10 +1,8 @@
 package org.myproject.boot.application.admin.db.service;
 
+import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.TbSysLog;
 import org.myproject.boot.application.admin.db.pojo.TbSysLogExample;
-
-import java.util.List;
-
 public interface TbSysLogService{
 
 

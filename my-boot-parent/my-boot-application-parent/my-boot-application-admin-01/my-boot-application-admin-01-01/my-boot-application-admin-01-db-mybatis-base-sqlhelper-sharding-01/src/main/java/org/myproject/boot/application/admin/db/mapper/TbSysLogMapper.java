@@ -1,11 +1,10 @@
 package org.myproject.boot.application.admin.db.mapper;
 
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.admin.db.pojo.TbSysLog;
 import org.myproject.boot.application.admin.db.pojo.TbSysLogExample;
-
-import java.util.List;
 
 @Mapper
 public interface TbSysLogMapper {

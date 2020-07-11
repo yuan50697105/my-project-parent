@@ -1,14 +1,12 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+import java.util.List;
 import org.myproject.boot.application.admin.db.mapper.TbSysLogMapper;
 import org.myproject.boot.application.admin.db.pojo.TbSysLog;
 import org.myproject.boot.application.admin.db.pojo.TbSysLogExample;
 import org.myproject.boot.application.admin.db.service.TbSysLogService;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-import java.util.List;
-
 @Service
 public class TbSysLogServiceImpl implements TbSysLogService{
 

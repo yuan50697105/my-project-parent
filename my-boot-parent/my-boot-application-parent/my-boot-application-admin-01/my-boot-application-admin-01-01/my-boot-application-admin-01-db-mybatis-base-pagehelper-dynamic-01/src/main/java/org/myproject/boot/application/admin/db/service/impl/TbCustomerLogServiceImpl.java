@@ -1,14 +1,12 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.myproject.boot.application.admin.db.mapper.TbCustomerLogMapper;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerLogExample;
-import org.myproject.boot.application.admin.db.service.TbCustomerLogService;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.util.List;
-
+import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerLogExample;
+import org.myproject.boot.application.admin.db.mapper.TbCustomerLogMapper;
+import org.myproject.boot.application.admin.db.service.TbCustomerLogService;
 @Service
 public class TbCustomerLogServiceImpl implements TbCustomerLogService{
 

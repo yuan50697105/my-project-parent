@@ -1,11 +1,11 @@
 package org.myproject.boot.application.admin.db.service;
 
-import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.pojo.TbSysUser;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserExample;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
-
 import java.util.List;
+
+import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserExample;
+import org.myproject.boot.application.admin.db.pojo.TbSysUser;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 
 public interface TbSysUserService{
 

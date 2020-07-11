@@ -2,15 +2,18 @@ package org.myproject.boot.application.admin.db.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.mapper.TbSysRoleMapper;
-import org.myproject.boot.application.admin.db.pojo.TbSysRole;
-import org.myproject.boot.application.admin.db.pojo.TbSysRoleExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleQuery;
-import org.myproject.boot.application.admin.db.service.TbSysRoleService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+
+import org.myproject.boot.application.admin.db.mapper.TbSysRoleMapper;
+import org.myproject.boot.application.admin.db.pojo.TbSysRole;
+
 import java.util.List;
+
+import org.myproject.boot.application.admin.db.pojo.TbSysRoleExample;
+import org.myproject.boot.application.admin.db.service.TbSysRoleService;
 
 @Service
 public class TbSysRoleServiceImpl implements TbSysRoleService {

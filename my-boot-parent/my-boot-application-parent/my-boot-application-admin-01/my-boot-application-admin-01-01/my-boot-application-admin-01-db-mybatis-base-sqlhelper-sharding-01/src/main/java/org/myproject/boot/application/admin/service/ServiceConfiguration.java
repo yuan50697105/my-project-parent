@@ -10,6 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
  * @create: 2020-07-11 21:12
  */
 @SpringBootConfiguration
-@ComponentScan(basePackageClasses = ServiceConfiguration.class)
+@ComponentScan(basePackages = {"org.myproject.boot.application.admin.service"})
 public class ServiceConfiguration {
 }
