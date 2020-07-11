@@ -19,7 +19,7 @@
 -- Table structure for table `sys_role`
 --
 
-DROP TABLE IF EXISTS `sys_role`;
+DROP TABLE IF EXISTS tb_sys_role;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `sys_role` (
@@ -37,17 +37,17 @@ CREATE TABLE `sys_role` (
 -- Dumping data for table `sys_role`
 --
 
-LOCK TABLES `sys_role` WRITE;
-/*!40000 ALTER TABLE `sys_role` DISABLE KEYS */;
-INSERT INTO `sys_role` (`id`, `name`, `description`, `enabled`) VALUES (1,'管理员',NULL,NULL),(2,'管理员',NULL,NULL),(3,'管理员',NULL,NULL),(1276764439621799936,'管理员',NULL,NULL),(1276764540188626944,'管理员',NULL,NULL),(1276764540188626945,'管理员',NULL,NULL);
-/*!40000 ALTER TABLE `sys_role` ENABLE KEYS */;
+LOCK TABLES tb_sys_role WRITE;
+/*!40000 ALTER TABLE tb_sys_role DISABLE KEYS */;
+INSERT INTO tb_sys_role (`id`, `name`, `description`, `enabled`) VALUES (1,'管理员',NULL,NULL),(2,'管理员',NULL,NULL),(3,'管理员',NULL,NULL),(1276764439621799936,'管理员',NULL,NULL),(1276764540188626944,'管理员',NULL,NULL),(1276764540188626945,'管理员',NULL,NULL);
+/*!40000 ALTER TABLE tb_sys_role ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `sys_user`
 --
 
-DROP TABLE IF EXISTS `sys_user`;
+DROP TABLE IF EXISTS tb_sys_user;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `sys_user` (
@@ -66,16 +66,16 @@ CREATE TABLE `sys_user` (
 -- Dumping data for table `sys_user`
 --
 
-LOCK TABLES `sys_user` WRITE;
-/*!40000 ALTER TABLE `sys_user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sys_user` ENABLE KEYS */;
+LOCK TABLES tb_sys_user WRITE;
+/*!40000 ALTER TABLE tb_sys_user DISABLE KEYS */;
+/*!40000 ALTER TABLE tb_sys_user ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `sys_user_role`
 --
 
-DROP TABLE IF EXISTS `sys_user_role`;
+DROP TABLE IF EXISTS tb_sys_user_role;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `sys_user_role` (
@@ -90,9 +90,9 @@ CREATE TABLE `sys_user_role` (
 -- Dumping data for table `sys_user_role`
 --
 
-LOCK TABLES `sys_user_role` WRITE;
-/*!40000 ALTER TABLE `sys_user_role` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sys_user_role` ENABLE KEYS */;
+LOCK TABLES tb_sys_user_role WRITE;
+/*!40000 ALTER TABLE tb_sys_user_role DISABLE KEYS */;
+/*!40000 ALTER TABLE tb_sys_user_role ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

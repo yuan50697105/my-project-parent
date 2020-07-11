@@ -105,26 +105,20 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerType">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerType" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into tb_customer_type (id, naem)
-    values (#{id,jdbcType=BIGINT}, #{naem,jdbcType=INTEGER})
+    insert into tb_customer_type (naem)
+    values (#{naem,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerType">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerType" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into tb_customer_type
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
       <if test="naem != null">
         naem,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
       <if test="naem != null">
         #{naem,jdbcType=INTEGER},
       </if>
