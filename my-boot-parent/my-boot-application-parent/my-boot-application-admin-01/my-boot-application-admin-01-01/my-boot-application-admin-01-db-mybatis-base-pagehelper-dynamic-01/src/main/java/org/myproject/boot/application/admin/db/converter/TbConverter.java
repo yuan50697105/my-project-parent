@@ -96,12 +96,12 @@ public interface TbConverter {
     @Mapping(target = "id", ignore = true)
     TbSysUserRole sysUserRole(Long userId, Long roleId);
 
-    List<Route> createRoutes(List<TbSysRoute> list);
+    List<ServiceRoute> createRoutes(List<TbSysRoute> list);
 
     @Mapping(target = "weight", ignore = true)
     @Mapping(target = "parentId", ignore = true)
     @Mapping(target = "id", ignore = true)
-    TbSysRoute routeForInsert(Route route);
+    TbSysRoute routeForInsert(ServiceRoute serviceRoute);
 
-    List<TbSysRoute> routeForInsert(List<Route> route);
+    List<TbSysRoute> routeForInsert(List<ServiceRoute> serviceRoute);
 }

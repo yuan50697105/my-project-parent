@@ -1,7 +1,8 @@
 package org.myproject.boot.application.admin.mvc.converter;
 
 import org.mapstruct.*;
-import org.myproject.boot.application.admin.service.pojo.Route;
+import org.myproject.boot.application.admin.service.pojo.ServiceRoute;
+import org.myproject.boot.commons.route.pojo.UrlRoute;
 
 import java.util.List;
 
@@ -15,7 +16,8 @@ import java.util.List;
 public interface Converter {
     @Mapping(target = "name", ignore = true)
     @Mapping(target = "method", ignore = true)
-    Route route(org.myproject.boot.commons.route.pojo.Route route);
+    ServiceRoute route(UrlRoute route);
 
-    List<Route> route(List<org.myproject.boot.commons.route.pojo.Route> routes);
+    List<ServiceRoute> route(List<UrlRoute> routes);
+
 }

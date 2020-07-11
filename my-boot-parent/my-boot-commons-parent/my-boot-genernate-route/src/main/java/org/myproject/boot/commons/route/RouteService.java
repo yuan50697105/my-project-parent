@@ -1,6 +1,6 @@
 package org.myproject.boot.commons.route;
 
-import org.myproject.boot.commons.route.pojo.Route;
+import org.myproject.boot.commons.route.pojo.UrlRoute;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -12,13 +12,13 @@ import java.util.List;
  * @create: 2020-06-28 21:25
  */
 public interface RouteService {
-    List<Route> allRoutes();
+    List<UrlRoute> allRoutes();
 
-    void saveRoute(Route route);
+    void saveRoute(UrlRoute route);
 
     @Transactional
-    default void saveRoutes(List<Route> routes) {
-        for (Route route : routes) {
+    default void saveRoutes(List<UrlRoute> routes) {
+        for (UrlRoute route : routes) {
             saveRoute(route);
         }
     }

@@ -1,7 +1,7 @@
 package org.myproject.boot.commons.route;
 
 import lombok.extern.slf4j.Slf4j;
-import org.myproject.boot.commons.route.pojo.Route;
+import org.myproject.boot.commons.route.pojo.UrlRoute;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -40,7 +40,7 @@ public class ContextInitRouteListCommand implements ApplicationRunner {
     @Transactional
     public void run(ApplicationArguments args) throws Exception {
         Map<String, Object> beans = context.getBeansWithAnnotation(Controller.class);
-        ArrayList<Route> routes = new ArrayList<>();
+        ArrayList<UrlRoute> routes = new ArrayList<>();
         beans.putAll(context.getBeansWithAnnotation(RestController.class));
         List<String> adminRoutes = new ArrayList<>();
         for (Map.Entry<String, Object> entry : beans.entrySet()) {
@@ -54,13 +54,13 @@ public class ContextInitRouteListCommand implements ApplicationRunner {
                 adminRoutes.addAll(routeList);
             }
         }
-        List<Route> routeList = routeService.allRoutes();
-        List<String> routeUrlList = routeList.stream().map(Route::getUrl).collect(Collectors.toList());
+        List<UrlRoute> routeList = routeService.allRoutes();
+        List<String> routeUrlList = routeList.stream().map(UrlRoute::getUrl).collect(Collectors.toList());
         adminRoutes = adminRoutes.stream().distinct().collect(Collectors.toList());
         if (routeUrlList.size() > 0) {
             for (String adminRoute : adminRoutes) {
                 if (!routeUrlList.contains(adminRoute)) {
-                    Route route = new Route();
+                    UrlRoute route = new UrlRoute();
                     route.setUrl(adminRoute);
                     routes.add(route);
 //                    routeService.saveRoute(route);
@@ -68,7 +68,7 @@ public class ContextInitRouteListCommand implements ApplicationRunner {
             }
         } else {
             for (String adminRoute : adminRoutes) {
-                Route route = new Route();
+                UrlRoute route = new UrlRoute();
                 route.setUrl(adminRoute);
                 routes.add(route);
 //                routeService.saveRoute(route);

@@ -3,8 +3,9 @@ package org.myproject.boot.application.admin.mvc.service;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.service.api.RouteApi;
 import org.myproject.boot.application.admin.mvc.converter.Converter;
-import org.myproject.boot.application.admin.service.pojo.Route;
+import org.myproject.boot.application.admin.service.pojo.ServiceRoute;
 import org.myproject.boot.commons.route.RouteService;
+import org.myproject.boot.commons.route.pojo.UrlRoute;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,18 +24,18 @@ public class MyRouteService implements RouteService {
     private final Converter converter;
 
     @Override
-    public List<org.myproject.boot.commons.route.pojo.Route> allRoutes() {
-        List<Route> entities = routeApi.allRoutes();
-        return entities.stream().map(Route::getUrl).distinct().map(org.myproject.boot.commons.route.pojo.Route::new).collect(Collectors.toList());
+    public List<UrlRoute> allRoutes() {
+        List<ServiceRoute> entities = routeApi.allRoutes();
+        return entities.stream().map(ServiceRoute::getUrl).distinct().map(UrlRoute::new).collect(Collectors.toList());
     }
 
     @Override
-    public void saveRoute(org.myproject.boot.commons.route.pojo.Route route) {
+    public void saveRoute(UrlRoute route) {
         routeApi.saveRoute(converter.route(route));
     }
 
     @Override
-    public void saveRoutes(List<org.myproject.boot.commons.route.pojo.Route> routes) {
+    public void saveRoutes(List<UrlRoute> routes) {
         routeApi.saveRoute(converter.route(routes));
     }
 }

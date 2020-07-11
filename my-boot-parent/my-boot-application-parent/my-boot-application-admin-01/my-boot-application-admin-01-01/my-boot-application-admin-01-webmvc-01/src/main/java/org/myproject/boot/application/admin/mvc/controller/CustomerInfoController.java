@@ -3,12 +3,13 @@ package org.myproject.boot.application.admin.mvc.controller;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
+import org.myproject.boot.application.admin.mvc.converter.Converter;
+import org.myproject.boot.application.admin.service.api.BCustomerInfoApi;
 import org.myproject.boot.application.admin.service.pojo.CustomerInfo;
 import org.myproject.boot.application.admin.service.pojo.CustomerInfoQuery;
 import org.myproject.boot.application.admin.service.pojo.CustomerInfoVo;
-import org.myproject.boot.application.admin.service.api.BCustomerInfoApi;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,17 +23,18 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("customer/info")
+@AllArgsConstructor
 public class CustomerInfoController {
-    @Autowired
-    private BCustomerInfoApi customerInfoApi;
+    private final BCustomerInfoApi customerInfoApi;
+    private final Converter converter;
 
     @ApiOperation(value = "客户信息表格")
     @RequestMapping(value = "data", method = {RequestMethod.GET})
     public Result<?> data(CustomerInfoQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        IPage<CustomerInfo> pageResult = customerInfoApi.selectByQuery(query, page, size);
-        return ResultInfo.success(pageResult.getData(), pageResult.getTotalRows());
+        IPage<CustomerInfo> iPage = customerInfoApi.selectByQuery(query, page, size);
+        return ResultInfo.success(iPage,iPage.getTotalRows());
     }
 
     @ApiOperation("客户信息列表")

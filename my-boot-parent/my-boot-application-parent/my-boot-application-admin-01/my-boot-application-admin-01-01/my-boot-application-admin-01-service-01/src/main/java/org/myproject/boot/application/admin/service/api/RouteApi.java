@@ -1,6 +1,6 @@
 package org.myproject.boot.application.admin.service.api;
 
-import org.myproject.boot.application.admin.service.pojo.Route;
+import org.myproject.boot.application.admin.service.pojo.ServiceRoute;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import java.util.List;
  * @create: 2020-07-11 20:23
  */
 public interface RouteApi {
-    List<Route> allRoutes();
+    List<ServiceRoute> allRoutes();
 
-    void saveRoute(Route route);
+    void saveRoute(ServiceRoute serviceRoute);
 
-    void saveRoute(List<Route> route);
+    void saveRoute(List<ServiceRoute> serviceRoute);
 }

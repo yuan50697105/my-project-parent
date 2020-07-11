@@ -13,7 +13,7 @@ import lombok.*;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class Route {
+public class ServiceRoute {
     @NonNull
     private String url;
     private String name;
