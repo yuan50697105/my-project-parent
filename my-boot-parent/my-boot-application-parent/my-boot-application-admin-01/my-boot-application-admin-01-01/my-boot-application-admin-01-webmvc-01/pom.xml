@@ -23,7 +23,7 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-db-mybatis-base-pagehelper-01</artifactId>
+            <artifactId>my-boot-application-admin-01-db-mybatis-base-sqlhelper-01</artifactId>
             <version>1.0.0.2</version>
         </dependency>
         <dependency>
@@ -31,11 +31,11 @@
             <artifactId>my-boot-genernate-route</artifactId>
             <version>1.0.0.2</version>
         </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-security</artifactId>
-            <version>1.0.0.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.myproject</groupId>-->
+<!--            <artifactId>my-boot-security</artifactId>-->
+<!--            <version>1.0.0.2</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>

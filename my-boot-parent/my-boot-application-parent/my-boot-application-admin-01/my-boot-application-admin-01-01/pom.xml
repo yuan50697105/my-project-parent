@@ -20,5 +20,8 @@
         <module>my-boot-application-admin-01-cxf-01</module>
         <module>my-boot-application-admin-01-jersey-01</module>
         <module>my-boot-application-admin-01-service-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-base-sqlhelper-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-base-sqlhelper-dynamic-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-base-sqlhelper-sharding-01</module>
     </modules>
 </project>
