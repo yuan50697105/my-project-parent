@@ -2,21 +2,22 @@ package org.myproject.boot.application.admin.service.api;
 
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
-import org.myproject.boot.application.admin.db.pojo.TbSysUser;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserRole;
+import org.myproject.boot.application.admin.db.pojo.*;
 import org.myproject.boot.application.admin.db.service.TbSysRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
 import org.myproject.boot.application.admin.service.pojo.SysUser;
+import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
+import org.myproject.boot.mybatis.pojo.BaseEntity;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @program: my-project-parent
@@ -35,13 +36,13 @@ public class SysUserApiImpl implements BSysUserApi {
     private final TbSysRoleService sysRoleService;
 
     @Override
-    public IPage<SysUser> selectByQuery(TbSysUserQuery query, int page, int size) {
+    public IPage<SysUser> selectByQuery(SysUserQuery query, int page, int size) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
         return new PageResult<>(converter.sysUser(sysUserService.selectByQuery(sysUserQuery, page, size)));
     }
 
     @Override
-    public List<SysUser> selectByQuery(TbSysUserQuery query) {
+    public List<SysUser> selectByQuery(SysUserQuery query) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
         return converter.sysUser(sysUserService.selectByQuery(sysUserQuery));
     }
@@ -52,10 +53,15 @@ public class SysUserApiImpl implements BSysUserApi {
     }
 
     @Override
-    public void insert(SysUserVo sysUserVo) {
+    public void save(SysUserVo sysUserVo) {
         TbSysUser sysUser = converter.sysUser(sysUserVo);
         sysUserService.insert(sysUser);
-        List<TbSysUserRole> sysUserRoles = converter.sysUserRole(sysUser.getId(), sysUserVo.getRoleIds());
+        TbSysRoleExample example = new TbSysRoleExample();
+        example.or().andIdIn(sysUserVo.getRoleIds());
+        List<TbSysRole> sysRoles = sysRoleService.selectByExample(example);
+        List<Long> roleIds = sysRoles.stream().map(BaseEntity::getId).distinct().collect(Collectors.toList());
+        List<TbSysUserRole> sysUserRoles = converter.sysUserRole(sysUser.getId(), roleIds);
+        sysUserRoles.forEach(sysUserRoleService::insert);
     }
 
     @Override

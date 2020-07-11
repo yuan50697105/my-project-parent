@@ -47,7 +47,7 @@ public class SysUserController {
 
     @RequestMapping(value = "save", method = {RequestMethod.POST})
     public Result<?> save(@RequestBody @Validated SysUserVo sysUserVo) {
-        sysUserService.insert(sysUserVo);
+        sysUserService.save(sysUserVo);
         return ResultInfo.success();
     }
 

@@ -51,7 +51,7 @@ public class SysUserApiImpl implements BSysUserApi {
     }
 
     @Override
-    public void insert(SysUserVo sysUser) {
+    public void save(SysUserVo sysUser) {
         sysUserService.save(converter.sysUser(sysUser));
     }
 

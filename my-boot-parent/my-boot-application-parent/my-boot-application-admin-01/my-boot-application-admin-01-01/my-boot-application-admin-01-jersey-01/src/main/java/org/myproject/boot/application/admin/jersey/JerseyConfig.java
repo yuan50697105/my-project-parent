@@ -1,7 +1,6 @@
-package org.myproject.boot.application.admin.jersey.config;
+package org.myproject.boot.application.admin.jersey;
 
 import org.glassfish.jersey.server.ResourceConfig;
-import org.myproject.boot.application.admin.jersey.resource.UserResource;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,6 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
-        register(UserResource.class);
+//        register(UserResource.class);
     }
 }

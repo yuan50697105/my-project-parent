@@ -104,4 +104,6 @@ public interface TbConverter {
     TbSysRoute routeForInsert(ServiceRoute serviceRoute);
 
     List<TbSysRoute> routeForInsert(List<ServiceRoute> serviceRoute);
+
+    TbSysUserQuery sysUser(SysUserQuery query);
 }

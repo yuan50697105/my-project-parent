@@ -21,7 +21,7 @@ public interface BSysUserApi {
 
     SysUser get(Long id);
 
-    void insert(SysUserVo sysUser);
+    void save(SysUserVo sysUser);
 
     void update(SysUserVo sysUser);
 
