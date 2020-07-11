@@ -2,7 +2,7 @@ package org.myproject.boot.application.admin.mvc.service;
 
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.service.api.RouteApi;
-import org.myproject.boot.application.admin.mvc.converter.MapConverter;
+import org.myproject.boot.application.admin.mvc.converter.Converter;
 import org.myproject.boot.application.admin.service.pojo.Route;
 import org.myproject.boot.commons.route.RouteService;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class MyRouteService implements RouteService {
     private final RouteApi routeApi;
-    private final MapConverter converter;
+    private final Converter converter;
 
     @Override
     public List<org.myproject.boot.commons.route.pojo.Route> allRoutes() {
