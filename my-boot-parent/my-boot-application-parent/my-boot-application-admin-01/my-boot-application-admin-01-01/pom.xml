@@ -12,14 +12,14 @@
     <artifactId>my-boot-application-admin-01-01</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>my-boot-application-admin-01-db-mybatis-base-pagehelper-01</module>
-        <module>my-boot-application-admin-01-db-mybatis-base-pagehelper-dynamic-01</module>
-        <module>my-boot-application-admin-01-db-mybatis-base-pagehelper-sharding-01</module>
         <module>my-boot-application-admin-01-webmvc-01</module>
         <module>my-boot-application-admin-01-webmvc-view-01</module>
         <module>my-boot-application-admin-01-cxf-01</module>
         <module>my-boot-application-admin-01-jersey-01</module>
         <module>my-boot-application-admin-01-service-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-base-pagehelper-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-base-pagehelper-dynamic-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-base-pagehelper-sharding-01</module>
         <module>my-boot-application-admin-01-db-mybatis-base-sqlhelper-01</module>
         <module>my-boot-application-admin-01-db-mybatis-base-sqlhelper-dynamic-01</module>
         <module>my-boot-application-admin-01-db-mybatis-base-sqlhelper-sharding-01</module>
@@ -29,5 +29,17 @@
         <module>my-boot-application-admin-01-db-mybatis-plus-sqlhelper-01</module>
         <module>my-boot-application-admin-01-db-mybatis-plus-sqlhelper-dynamic-01</module>
         <module>my-boot-application-admin-01-db-mybatis-plus-sqlhelper-sharding-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-base-pagehelper-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-base-pagehelper-dynamic-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-base-pagehelper-sharding-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-base-sqlhelper-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-base-sqlhelper-dynamic-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-base-sqlhelper-sharding-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-plus-pagehelper-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-plus-pagehelper-dynamic-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-plus-pagehelper-sharding-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-plus-sqlhelper-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-plus-sqlhelper-dynamic-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-plus-sqlhelper-sharding-01</module>
     </modules>
 </project>
