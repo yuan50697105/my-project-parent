@@ -1,7 +1,9 @@
 package org.myproject.commons.utils;
 
+import cn.hutool.extra.spring.SpringUtil;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 
 /**
  * @program: my-boot-commons-parent
@@ -11,5 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootConfiguration
 @ComponentScan(basePackageClasses = CommonsUtilsConfiguration.class)
+@Import(SpringUtil.class)
 public class CommonsUtilsConfiguration {
 }

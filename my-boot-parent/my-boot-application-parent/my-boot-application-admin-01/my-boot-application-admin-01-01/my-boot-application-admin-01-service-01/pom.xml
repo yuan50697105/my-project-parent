@@ -12,6 +12,11 @@
     <artifactId>my-boot-application-admin-01-service-01</artifactId>
     <dependencies>
         <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-commons-utils</artifactId>
+            <version>1.0.0.2</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
             <version>2.0.4</version>
