@@ -1,3 +1,8 @@
+
 spring:
+  application:
+    name: my-cloud-application-admin-01-mybatis-base-pagehelper-01
   profiles:
-    active: db
+    active: db,mvc
+server:
+  port: 8081

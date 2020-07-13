@@ -1,0 +1,12 @@
+spring:
+  mvc:
+    converters:
+      preferred-json-mapper: jackson
+    locale: zh_CN
+  jackson:
+    time-zone: GMT+8
+    locale: zh_CN
+    date-format: yyyy-MM-dd HH:mm:ss
+logging:
+  level:
+    web: debug
