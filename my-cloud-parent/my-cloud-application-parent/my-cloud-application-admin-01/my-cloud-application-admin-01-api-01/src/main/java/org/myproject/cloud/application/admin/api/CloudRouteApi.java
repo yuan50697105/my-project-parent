@@ -1,5 +1,6 @@
 package org.myproject.cloud.application.admin.api;
 
+import org.myproject.boot.application.admin.service.api.RouteApi;
 import org.myproject.boot.application.admin.service.pojo.ServiceRoute;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-11 20:23
  */
-public interface RouteApi {
+public interface CloudRouteApi extends RouteApi {
     List<ServiceRoute> allRoutes();
 
     void saveRoute(ServiceRoute serviceRoute);
