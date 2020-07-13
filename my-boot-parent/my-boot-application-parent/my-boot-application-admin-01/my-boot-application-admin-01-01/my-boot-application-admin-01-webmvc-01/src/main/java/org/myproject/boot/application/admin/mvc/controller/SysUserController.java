@@ -35,7 +35,7 @@ public class SysUserController {
     }
 
     @RequestMapping(value = "list", method = {RequestMethod.GET})
-    public Result<?> list(TbSysUserQuery query) {
+    public Result<?> list(SysUserQuery query) {
         List<SysUser> list = sysUserService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
