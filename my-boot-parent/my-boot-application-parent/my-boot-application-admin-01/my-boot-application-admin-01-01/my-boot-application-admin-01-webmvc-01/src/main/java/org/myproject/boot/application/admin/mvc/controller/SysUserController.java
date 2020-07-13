@@ -5,6 +5,7 @@ import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 import org.myproject.boot.application.admin.service.api.BSysUserApi;
 import org.myproject.boot.application.admin.service.pojo.SysUser;
+import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class SysUserController {
     private BSysUserApi sysUserService;
 
     @RequestMapping(value = "data", method = {RequestMethod.GET})
-    public Result<?> data(TbSysUserQuery query,
+    public Result<?> data(SysUserQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
         IPage<SysUser> result = sysUserService.selectByQuery(query, page, size);
