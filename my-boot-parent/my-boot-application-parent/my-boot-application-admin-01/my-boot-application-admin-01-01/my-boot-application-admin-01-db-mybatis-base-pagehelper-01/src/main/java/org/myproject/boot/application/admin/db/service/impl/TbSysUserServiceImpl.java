@@ -84,14 +84,5 @@ public class TbSysUserServiceImpl implements TbSysUserService {
         return selectByExample(sysUserQuery.toExample());
     }
 
-    @Override
-    public PageInfo<TbSysUser> selectByQueryCustom(TbSysUserQuery query, int page, int pageSize) {
-        PageHelper.startPage(page, pageSize);
-        return new PageInfo<>(tbSysUserMapper.selectByQuery(query));
-    }
-
-    @Override
-    public List<TbSysUser> selectByQueryCustom(TbSysUserQuery query) {
-        return tbSysUserMapper.selectByQuery(query);
-    }
 }
+

@@ -36,3 +36,4 @@ public interface TbCustomerTypeService {
 
     List<TbCustomerType> selectByQuery(TbCustomerTypeQuery customerTypeQuery);
 }
+

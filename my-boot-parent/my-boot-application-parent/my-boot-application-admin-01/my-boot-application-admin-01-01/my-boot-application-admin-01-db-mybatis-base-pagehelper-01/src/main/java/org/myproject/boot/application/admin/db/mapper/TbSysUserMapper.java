@@ -1,12 +1,10 @@
 package org.myproject.boot.application.admin.db.mapper;
 
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserExample;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
-
-import java.util.List;
 
 @Mapper
 public interface TbSysUserMapper {
@@ -21,8 +19,6 @@ public interface TbSysUserMapper {
     int insertSelective(TbSysUser record);
 
     List<TbSysUser> selectByExample(TbSysUserExample example);
-
-    List<TbSysUser> selectByQuery(TbSysUserQuery query);
 
     TbSysUser selectByPrimaryKey(Long id);
 
