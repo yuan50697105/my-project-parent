@@ -14,7 +14,7 @@
     <modules>
         <module>my-cloud-netflix-commons</module>
         <module>my-cloud-alibaba-commons</module>
-        <module>my-cloud-seata</module>
+        <module>my-cloud-seata-sharding-jdbc</module>
     </modules>
     <build>
         <plugins>

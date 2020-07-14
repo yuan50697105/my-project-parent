@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-cloud-seata</artifactId>
+            <artifactId>my-cloud-seata-sharding-jdbc</artifactId>
             <version>1.0.0.0</version>
         </dependency>
         <dependency>
