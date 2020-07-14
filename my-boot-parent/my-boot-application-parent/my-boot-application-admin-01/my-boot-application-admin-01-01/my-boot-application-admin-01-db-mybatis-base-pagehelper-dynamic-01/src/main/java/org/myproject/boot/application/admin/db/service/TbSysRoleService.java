@@ -36,3 +36,4 @@ public interface TbSysRoleService {
 
     List<TbSysRole> selectByQuery(TbSysRoleQuery sysRoleQuery);
 }
+

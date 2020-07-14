@@ -31,3 +31,4 @@ public interface TbSysUserRoleService {
     int updateByPrimaryKey(TbSysUserRole record);
 
 }
+

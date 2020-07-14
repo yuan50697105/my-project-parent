@@ -31,3 +31,4 @@ public interface TbSysLogService {
     int updateByPrimaryKey(TbSysLog record);
 
 }
+

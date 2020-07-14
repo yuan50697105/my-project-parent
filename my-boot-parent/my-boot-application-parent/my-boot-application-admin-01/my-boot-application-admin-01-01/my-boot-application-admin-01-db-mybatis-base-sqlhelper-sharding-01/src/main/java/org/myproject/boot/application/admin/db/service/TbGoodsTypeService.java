@@ -36,3 +36,4 @@ public interface TbGoodsTypeService {
 
     List<TbGoodsType> selectByQuery(TbGoodsTypeQuery goodsTypeQuery);
 }
+

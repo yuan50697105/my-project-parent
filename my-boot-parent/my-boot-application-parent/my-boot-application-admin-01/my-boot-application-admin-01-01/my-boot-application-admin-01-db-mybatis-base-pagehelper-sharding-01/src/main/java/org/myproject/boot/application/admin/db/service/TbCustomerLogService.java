@@ -31,3 +31,4 @@ public interface TbCustomerLogService {
     int updateByPrimaryKey(TbCustomerLog record);
 
 }
+

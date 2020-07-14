@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.pojo;
 
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
@@ -9,7 +10,11 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class TbSysRole extends BaseEntity {
+public class TbSysRole extends BaseEntity implements Serializable {
+    public static final String COL_ID = "id";
+    public static final String COL_NAME = "name";
+    public static final String COL_DESCRIPTION = "description";
+    public static final String COL_ENABLED = "enabled";
     /**
      * 角色名称
      */
@@ -24,4 +29,6 @@ public class TbSysRole extends BaseEntity {
      * 启用状态
      */
     private String enabled;
+
+    private static final long serialVersionUID = 1L;
 }

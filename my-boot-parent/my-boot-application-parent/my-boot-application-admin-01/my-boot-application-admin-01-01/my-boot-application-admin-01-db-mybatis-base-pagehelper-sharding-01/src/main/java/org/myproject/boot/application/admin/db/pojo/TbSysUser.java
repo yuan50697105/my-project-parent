@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.pojo;
 
+import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
@@ -9,7 +10,12 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class TbSysUser extends BaseEntity {
+public class TbSysUser extends BaseEntity implements Serializable {
+    public static final String COL_ID = "id";
+    public static final String COL_USERNAME = "username";
+    public static final String COL_NAME = "name";
+    public static final String COL_PASSWORD = "password";
+    public static final String COL_ENABLED = "enabled";
     /**
      * 用户名
      */
@@ -29,4 +35,6 @@ public class TbSysUser extends BaseEntity {
      * 启用状态
      */
     private String enabled;
+
+    private static final long serialVersionUID = 1L;
 }

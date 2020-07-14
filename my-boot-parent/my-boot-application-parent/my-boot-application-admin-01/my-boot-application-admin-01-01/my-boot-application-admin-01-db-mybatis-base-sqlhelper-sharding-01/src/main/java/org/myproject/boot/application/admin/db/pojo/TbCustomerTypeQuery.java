@@ -10,5 +10,5 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 @EqualsAndHashCode(callSuper = true)
 public class TbCustomerTypeQuery extends BaseEntity implements MybatisExample<TbCustomerTypeExample> {
     @AndLike
-    private Integer name;
+    private String name;
 }

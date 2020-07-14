@@ -36,3 +36,4 @@ public interface TbCustomerInfoService {
 
     List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery customerInfoQuery);
 }
+

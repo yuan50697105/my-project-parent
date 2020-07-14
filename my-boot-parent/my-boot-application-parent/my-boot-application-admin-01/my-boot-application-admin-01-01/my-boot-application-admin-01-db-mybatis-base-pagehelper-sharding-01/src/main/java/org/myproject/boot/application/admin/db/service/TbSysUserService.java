@@ -36,3 +36,4 @@ public interface TbSysUserService {
 
     List<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery);
 }
+

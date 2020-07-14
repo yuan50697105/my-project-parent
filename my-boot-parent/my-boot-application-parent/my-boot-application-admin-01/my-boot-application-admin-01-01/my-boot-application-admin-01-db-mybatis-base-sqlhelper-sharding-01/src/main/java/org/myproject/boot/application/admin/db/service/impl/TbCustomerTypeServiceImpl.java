@@ -85,3 +85,4 @@ public class TbCustomerTypeServiceImpl implements TbCustomerTypeService {
     }
 
 }
+

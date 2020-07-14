@@ -26,8 +26,6 @@
         <module>my-boot-mybatis-plus-sqlhelper</module>
         <module>my-boot-mybatis-mapper-pagehelper</module>
         <module>my-boot-mybatis-mapper-sqlhelper</module>
-        <module>my-boot-mybatis-mapper-plus-pagehelper</module>
-        <module>my-boot-mybatis-mapper-plus-sqlhelper</module>
         <module>my-boot-genernate-route</module>
         <module>my-boot-security</module>
         <module>my-boot-security-session-redis</module>

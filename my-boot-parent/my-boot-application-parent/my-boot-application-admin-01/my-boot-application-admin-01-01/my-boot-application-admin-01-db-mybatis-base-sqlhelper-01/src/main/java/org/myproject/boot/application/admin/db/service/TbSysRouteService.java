@@ -31,3 +31,4 @@ public interface TbSysRouteService {
     int updateByPrimaryKey(TbSysRoute record);
 
 }
+

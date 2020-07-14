@@ -14,20 +14,20 @@ public class TbCustomerTypeExample {
         oredCriteria = new ArrayList<>();
     }
 
-    public String getOrderByClause() {
-        return orderByClause;
-    }
-
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
 
-    public boolean isDistinct() {
-        return distinct;
+    public String getOrderByClause() {
+        return orderByClause;
     }
 
     public void setDistinct(boolean distinct) {
         this.distinct = distinct;
+    }
+
+    public boolean isDistinct() {
+        return distinct;
     }
 
     public List<Criteria> getOredCriteria() {
@@ -164,63 +164,63 @@ public class TbCustomerTypeExample {
             return (Criteria) this;
         }
 
-        public Criteria andNaemIsNull() {
-            addCriterion("naem is null");
+        public Criteria andNameIsNull() {
+            addCriterion("`name` is null");
             return (Criteria) this;
         }
 
-        public Criteria andNaemIsNotNull() {
-            addCriterion("naem is not null");
+        public Criteria andNameIsNotNull() {
+            addCriterion("`name` is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNaemEqualTo(Integer value) {
-            addCriterion("naem =", value, "naem");
+        public Criteria andNameEqualTo(Integer value) {
+            addCriterion("`name` =", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNaemNotEqualTo(Integer value) {
-            addCriterion("naem <>", value, "naem");
+        public Criteria andNameNotEqualTo(Integer value) {
+            addCriterion("`name` <>", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNaemGreaterThan(Integer value) {
-            addCriterion("naem >", value, "naem");
+        public Criteria andNameGreaterThan(Integer value) {
+            addCriterion("`name` >", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNaemGreaterThanOrEqualTo(Integer value) {
-            addCriterion("naem >=", value, "naem");
+        public Criteria andNameGreaterThanOrEqualTo(Integer value) {
+            addCriterion("`name` >=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNaemLessThan(Integer value) {
-            addCriterion("naem <", value, "naem");
+        public Criteria andNameLessThan(Integer value) {
+            addCriterion("`name` <", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNaemLessThanOrEqualTo(Integer value) {
-            addCriterion("naem <=", value, "naem");
+        public Criteria andNameLessThanOrEqualTo(Integer value) {
+            addCriterion("`name` <=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNaemIn(List<Integer> values) {
-            addCriterion("naem in", values, "naem");
+        public Criteria andNameIn(List<Integer> values) {
+            addCriterion("`name` in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNaemNotIn(List<Integer> values) {
-            addCriterion("naem not in", values, "naem");
+        public Criteria andNameNotIn(List<Integer> values) {
+            addCriterion("`name` not in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNaemBetween(Integer value1, Integer value2) {
-            addCriterion("naem between", value1, value2, "naem");
+        public Criteria andNameBetween(Integer value1, Integer value2) {
+            addCriterion("`name` between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andNaemNotBetween(Integer value1, Integer value2) {
-            addCriterion("naem not between", value1, value2, "naem");
+        public Criteria andNameNotBetween(Integer value1, Integer value2) {
+            addCriterion("`name` not between", value1, value2, "name");
             return (Criteria) this;
         }
     }
@@ -248,6 +248,38 @@ public class TbCustomerTypeExample {
         private boolean listValue;
 
         private String typeHandler;
+
+        public String getCondition() {
+            return condition;
+        }
+
+        public Object getValue() {
+            return value;
+        }
+
+        public Object getSecondValue() {
+            return secondValue;
+        }
+
+        public boolean isNoValue() {
+            return noValue;
+        }
+
+        public boolean isSingleValue() {
+            return singleValue;
+        }
+
+        public boolean isBetweenValue() {
+            return betweenValue;
+        }
+
+        public boolean isListValue() {
+            return listValue;
+        }
+
+        public String getTypeHandler() {
+            return typeHandler;
+        }
 
         protected Criterion(String condition) {
             super();
@@ -283,38 +315,6 @@ public class TbCustomerTypeExample {
 
         protected Criterion(String condition, Object value, Object secondValue) {
             this(condition, value, secondValue, null);
-        }
-
-        public String getCondition() {
-            return condition;
-        }
-
-        public Object getValue() {
-            return value;
-        }
-
-        public Object getSecondValue() {
-            return secondValue;
-        }
-
-        public boolean isNoValue() {
-            return noValue;
-        }
-
-        public boolean isSingleValue() {
-            return singleValue;
-        }
-
-        public boolean isBetweenValue() {
-            return betweenValue;
-        }
-
-        public boolean isListValue() {
-            return listValue;
-        }
-
-        public String getTypeHandler() {
-            return typeHandler;
         }
     }
 }

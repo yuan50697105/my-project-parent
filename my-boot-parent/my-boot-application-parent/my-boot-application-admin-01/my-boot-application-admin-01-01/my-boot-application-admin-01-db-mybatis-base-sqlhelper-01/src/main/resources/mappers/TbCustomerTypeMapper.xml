@@ -5,7 +5,7 @@
     <!--@mbg.generated-->
     <!--@Table tb_customer_type-->
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="INTEGER" property="naem" />
+    <result column="name" jdbcType="INTEGER" property="name" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--@mbg.generated-->
@@ -69,7 +69,7 @@
   </sql>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, name
+    id, `name`
   </sql>
   <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerTypeExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
@@ -107,20 +107,20 @@
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerType" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into tb_customer_type (name)
-    values (#{naem,jdbcType=INTEGER})
+    insert into tb_customer_type (`name`)
+    values (#{name,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerType" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into tb_customer_type
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="naem != null">
-        name,
+      <if test="name != null">
+        `name`,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="naem != null">
-        #{naem,jdbcType=INTEGER},
+      <if test="name != null">
+        #{name,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -138,8 +138,8 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.naem != null">
-        name = #{record.naem,jdbcType=INTEGER},
+      <if test="record.name != null">
+        `name` = #{record.name,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -150,7 +150,7 @@
     <!--@mbg.generated-->
     update tb_customer_type
     set id = #{record.id,jdbcType=BIGINT},
-      name = #{record.naem,jdbcType=INTEGER}
+      `name` = #{record.name,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -159,8 +159,8 @@
     <!--@mbg.generated-->
     update tb_customer_type
     <set>
-      <if test="naem != null">
-        name = #{naem,jdbcType=INTEGER},
+      <if test="name != null">
+        `name` = #{name,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -168,7 +168,7 @@
   <update id="updateByPrimaryKey" parameterType="org.myproject.boot.application.admin.db.pojo.TbCustomerType">
     <!--@mbg.generated-->
     update tb_customer_type
-    set name = #{naem,jdbcType=INTEGER}
+    set `name` = #{name,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
