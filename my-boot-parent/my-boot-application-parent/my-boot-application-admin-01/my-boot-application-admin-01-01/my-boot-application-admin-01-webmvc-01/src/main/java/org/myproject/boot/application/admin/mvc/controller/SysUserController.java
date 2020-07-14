@@ -26,7 +26,7 @@ public class SysUserController {
     @Autowired
     private BSysUserApi sysUserService;
 
-    @RequestMapping(value = "data", method = {RequestMethod.GET})
+    @GetMapping(value = "data")
     public Result<?> data(SysUserQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
@@ -34,43 +34,55 @@ public class SysUserController {
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
-    @RequestMapping(value = "list", method = {RequestMethod.GET})
+    @GetMapping(value = "list")
     public Result<?> list(SysUserQuery query) {
         List<SysUser> list = sysUserService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
-    @RequestMapping(value = "get", method = {RequestMethod.GET})
-    public Result<?> get(Long id) {
+    @GetMapping(value = "get")
+    public Result<?> getOne(Long id) {
         SysUser sysUser = sysUserService.get(id);
         return ResultInfo.success(sysUser);
     }
 
-    @RequestMapping(value = "save", method = {RequestMethod.POST})
+    @GetMapping("{id}")
+    public Result<?> get(@PathVariable Long id) {
+        SysUser sysUser = sysUserService.get(id);
+        return ResultInfo.success(sysUser);
+    }
+
+    @PostMapping
     public Result<?> save(@RequestBody @Validated SysUserVo sysUserVo) {
         sysUserService.save(sysUserVo);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH})
+    @PutMapping
     public Result<?> update(@RequestBody @Validated SysUserVo sysUserVo) {
         sysUserService.update(sysUserVo);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @PatchMapping
+    public Result<?> modify(@RequestBody @Validated SysUserVo sysUserVo) {
+        sysUserService.modify(sysUserVo);
+        return ResultInfo.success();
+    }
+
+    @DeleteMapping(params = "ids")
     public Result<?> deleteList(List<Long> ids) {
         sysUserService.delete(ids);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @DeleteMapping(params = "id")
     public Result<?> deleteOne(Long id) {
         sysUserService.delete(id);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @DeleteMapping("{id}")
     public Result<?> deleteRs(@PathVariable("id") Long id) {
         sysUserService.delete(id);
         return ResultInfo.success();

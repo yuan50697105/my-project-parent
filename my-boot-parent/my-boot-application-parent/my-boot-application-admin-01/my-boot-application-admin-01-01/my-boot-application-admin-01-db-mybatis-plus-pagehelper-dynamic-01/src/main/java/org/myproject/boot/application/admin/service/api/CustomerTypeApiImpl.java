@@ -51,7 +51,7 @@ public class CustomerTypeApiImpl implements BCustomerTypeApi {
     }
 
     @Override
-    public void insert(CustomerTypeVo vo) {
+    public void save(CustomerTypeVo vo) {
         TbCustomerType customerType = converter.customerType(vo);
         customerTypeService.save(customerType);
     }

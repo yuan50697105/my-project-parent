@@ -23,6 +23,11 @@
 <!--        </dependency>-->
         <dependency>
             <groupId>org.myproject</groupId>
+            <artifactId>my-cloud-netflix-commons</artifactId>
+            <version>1.0.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
             <artifactId>my-boot-application-admin-01-db-mybatis-base-pagehelper-01</artifactId>
             <version>1.0.0.0</version>
         </dependency>

@@ -22,7 +22,7 @@ public interface BSysRoleApi {
 
     SysRole get(Long id);
 
-    void insert(SysRoleVo sysRoleVo);
+    void save(SysRoleVo sysRoleVo);
 
     void update(SysRoleVo sysRoleVo);
 

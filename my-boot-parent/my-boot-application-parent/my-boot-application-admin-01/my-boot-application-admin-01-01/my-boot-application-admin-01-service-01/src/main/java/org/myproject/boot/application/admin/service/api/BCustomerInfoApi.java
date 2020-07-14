@@ -21,7 +21,7 @@ public interface BCustomerInfoApi {
 
     CustomerInfo get(Long id);
 
-    void insert(CustomerInfoVo vo);
+    void save(CustomerInfoVo vo);
 
     void update(CustomerInfoVo vo);
 

@@ -14,14 +14,7 @@
     <modules>
         <module>my-cloud-netflix-commons</module>
         <module>my-cloud-alibaba-commons</module>
-        <module>my-cloud-alibaba-mybatis-base-pagehelper</module>
-        <module>my-cloud-alibaba-mybatis-base-sqlhelper</module>
-        <module>my-cloud-alibaba-mybatis-plus-pagehelper</module>
-        <module>my-cloud-alibaba-mybatis-plus-sqlhelper</module>
-        <module>my-cloud-alibaba-mybatis-mapper-pagehelper</module>
-        <module>my-cloud-alibaba-mybatis-mapper-sqlhelper</module>
-        <module>my-cloud-alibaba-mybatis-mapper-plus-pagehelper</module>
-        <module>my-cloud-alibaba-mybatis-mapper-plus-sqlhelper</module>
+        <module>my-cloud-seata</module>
     </modules>
     <build>
         <plugins>

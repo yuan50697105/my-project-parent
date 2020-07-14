@@ -31,7 +31,7 @@ public interface CloudBCustomerInfoApi extends BCustomerInfoApi {
     CustomerInfo get(@PathVariable Long id);
 
     @RequestMapping(value = "", method = {RequestMethod.POST})
-    void insert(@RequestBody CustomerInfoVo vo);
+    void save(@RequestBody CustomerInfoVo vo);
 
     @RequestMapping(value = "", method = {RequestMethod.PUT})
     void update(CustomerInfoVo vo);

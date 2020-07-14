@@ -29,11 +29,11 @@
         <module>my-boot-application-admin-01-db-mybatis-plus-sqlhelper-01</module>
         <module>my-boot-application-admin-01-db-mybatis-plus-sqlhelper-dynamic-01</module>
         <module>my-boot-application-admin-01-db-mybatis-plus-sqlhelper-sharding-01</module>
-        <module>my-boot-application-admin-01-db-mybatis-mapper-base-pagehelper-01</module>
-        <module>my-boot-application-admin-01-db-mybatis-mapper-base-pagehelper-dynamic-01</module>
-        <module>my-boot-application-admin-01-db-mybatis-mapper-base-pagehelper-sharding-01</module>
-        <module>my-boot-application-admin-01-db-mybatis-mapper-base-sqlhelper-01</module>
-        <module>my-boot-application-admin-01-db-mybatis-mapper-base-sqlhelper-dynamic-01</module>
-        <module>my-boot-application-admin-01-db-mybatis-mapper-base-sqlhelper-sharding-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-pagehelper-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-pagehelper-dynamic-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-pagehelper-sharding-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-sqlhelper-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-sqlhelper-dynamic-01</module>
+        <module>my-boot-application-admin-01-db-mybatis-mapper-sqlhelper-sharding-01</module>
     </modules>
 </project>

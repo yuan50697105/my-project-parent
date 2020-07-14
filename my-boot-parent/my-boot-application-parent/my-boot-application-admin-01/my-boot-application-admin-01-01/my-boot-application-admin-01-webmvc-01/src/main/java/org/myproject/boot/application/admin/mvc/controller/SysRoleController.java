@@ -17,62 +17,67 @@ import java.util.List;
  * @program: my-project-parent
  * @description:
  * @author: yuane
- * @create: 2020-06-27 14:16
+ * @create: 2020-06-25 19:06
  */
 @RestController
 @RequestMapping("sys/role")
 public class SysRoleController {
     @Autowired
-    private BSysRoleApi sysRoleService;
+    private BSysRoleApi sysRoleApi;
 
-    @RequestMapping(value = "data", method = {RequestMethod.GET})
+    @GetMapping(value = "data")
     public Result<?> data(SysRoleQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        IPage<SysRole> result = sysRoleService.selectByQuery(query, page, size);
+        IPage<SysRole> result = sysRoleApi.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
-    @RequestMapping(value = "list", method = {RequestMethod.GET})
+    @GetMapping(value = "list")
     public Result<?> list(SysRoleQuery query) {
-        List<SysRole> list = sysRoleService.selectByQuery(query);
+        List<SysRole> list = sysRoleApi.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
-    @RequestMapping(value = "get", method = {RequestMethod.GET})
-    public Result<?> get(Long id) {
-        SysRole SysRole = sysRoleService.get(id);
-        return ResultInfo.success(SysRole);
+    @GetMapping(value = "get")
+    public Result<?> getOne(Long id) {
+        SysRole sysUser = sysRoleApi.get(id);
+        return ResultInfo.success(sysUser);
     }
 
-    @RequestMapping(value = "save", method = {RequestMethod.POST})
-    public Result<?> save(@RequestBody @Validated SysRoleVo SysRoleVo) {
-        sysRoleService.insert(SysRoleVo);
+    @GetMapping("{id}")
+    public Result<?> get(@PathVariable Long id) {
+        SysRole sysUser = sysRoleApi.get(id);
+        return ResultInfo.success(sysUser);
+    }
+
+    @PostMapping
+    public Result<?> save(@RequestBody @Validated SysRoleVo sysUserVo) {
+        sysRoleApi.save(sysUserVo);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT})
-    public Result<?> update(@RequestBody @Validated SysRoleVo SysRoleVo) {
-        sysRoleService.update(SysRoleVo);
+    @PutMapping
+    public Result<?> update(@RequestBody @Validated SysRoleVo sysUserVo) {
+        sysRoleApi.update(sysUserVo);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @DeleteMapping(params = "ids")
     public Result<?> deleteList(List<Long> ids) {
-        sysRoleService.delete(ids);
+        sysRoleApi.delete(ids);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @DeleteMapping(params = "id")
     public Result<?> deleteOne(Long id) {
-        sysRoleService.delete(id);
+        sysRoleApi.delete(id);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @DeleteMapping("{id}")
     public Result<?> deleteRs(@PathVariable("id") Long id) {
-        sysRoleService.delete(id);
+        sysRoleApi.delete(id);
         return ResultInfo.success();
     }
-
 }

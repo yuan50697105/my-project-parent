@@ -66,12 +66,17 @@ public class SysUserApiImpl implements BSysUserApi {
 
     @Override
     public void update(SysUserVo sysUser) {
-        sysUserService.updateByPrimaryKeySelective(converter.sysUser(sysUser));
+        sysUserService.updateByPrimaryKey(converter.sysUser(sysUser));
     }
 
     @Override
     public void delete(List<Long> ids) {
         ids.forEach(sysUserService::deleteByPrimaryKey);
+    }
+
+    @Override
+    public void modify(SysUserVo sysUserVo) {
+        sysUserService.updateByPrimaryKeySelective(converter.sysUser(sysUserVo));
     }
 
     @Override

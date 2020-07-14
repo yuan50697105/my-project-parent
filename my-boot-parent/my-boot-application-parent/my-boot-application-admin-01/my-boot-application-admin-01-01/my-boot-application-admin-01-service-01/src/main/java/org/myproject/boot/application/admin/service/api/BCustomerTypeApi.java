@@ -21,7 +21,7 @@ public interface BCustomerTypeApi {
 
     CustomerType get(Long id);
 
-    void insert(CustomerTypeVo vo);
+    void save(CustomerTypeVo vo);
 
     void update(CustomerTypeVo vo);
 

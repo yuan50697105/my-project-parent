@@ -52,7 +52,7 @@ public class GoodsTypeApiImpl implements BGoodsTypeApi {
     }
 
     @Override
-    public void insert(GoodsTypeVo vo) {
+    public void save(GoodsTypeVo vo) {
         TbGoodsType record = converter.goodsType(vo);
         goodsTypeService.insert(record);
     }

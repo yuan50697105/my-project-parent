@@ -2,83 +2,82 @@ package org.myproject.boot.application.admin.mvc.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.service.api.BGoodsTypeApi;
 import org.myproject.boot.application.admin.service.pojo.GoodsType;
 import org.myproject.boot.application.admin.service.pojo.GoodsTypeQuery;
 import org.myproject.boot.application.admin.service.pojo.GoodsTypeVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
- * @program: my-boot-application-admin-01-01
+ * @program: my-project-parent
  * @description:
  * @author: yuane
- * @create: 2020-07-05 16:03
+ * @create: 2020-06-25 19:06
  */
 @RestController
 @RequestMapping("goods/type")
-@Validated
-@AllArgsConstructor
 public class GoodsTypeController {
-    private final BGoodsTypeApi goodsTypeService;
+    @Autowired
+    private BGoodsTypeApi goodsTypeApi;
 
-    @RequestMapping(value = "data", method = {RequestMethod.GET})
+    @GetMapping(value = "data")
     public Result<?> data(GoodsTypeQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        IPage<GoodsType> result = goodsTypeService.selectByQuery(query, page, size);
+        IPage<GoodsType> result = goodsTypeApi.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
-    @RequestMapping(value = "list", method = {RequestMethod.GET})
+    @GetMapping(value = "list")
     public Result<?> list(GoodsTypeQuery query) {
-        List<GoodsType> result = goodsTypeService.selectByQuery(query);
-        return ResultInfo.success(result, (long) result.size());
+        List<GoodsType> list = goodsTypeApi.selectByQuery(query);
+        return ResultInfo.success(list, (long) list.size());
     }
 
-    @RequestMapping(value = "get", params = "id", method = {RequestMethod.GET})
-    public Result<?> get(Long id) {
-        return ResultInfo.success(goodsTypeService.get(id));
+    @GetMapping(value = "get")
+    public Result<?> getOne(Long id) {
+        GoodsType sysUser = goodsTypeApi.get(id);
+        return ResultInfo.success(sysUser);
     }
 
-    @RequestMapping(value = "get/{id}", method = {RequestMethod.GET})
-    public Result<?> getRs(@PathVariable Long id) {
-        return get(id);
+    @GetMapping("{id}")
+    public Result<?> get(@PathVariable Long id) {
+        GoodsType sysUser = goodsTypeApi.get(id);
+        return ResultInfo.success(sysUser);
     }
 
-    @RequestMapping(value = "save", method = {RequestMethod.POST})
-    public Result<?> save(@RequestBody @Validated GoodsTypeVo vo) {
-        goodsTypeService.insert(vo);
+    @PostMapping
+    public Result<?> save(@RequestBody @Validated GoodsTypeVo sysUserVo) {
+        goodsTypeApi.save(sysUserVo);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH})
-    public Result<?> update(@RequestBody @Validated GoodsTypeVo vo) {
-        goodsTypeService.update(vo);
+    @PutMapping
+    public Result<?> update(@RequestBody @Validated GoodsTypeVo sysUserVo) {
+        goodsTypeApi.update(sysUserVo);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @DeleteMapping(params = "ids")
     public Result<?> deleteList(List<Long> ids) {
-        goodsTypeService.delete(ids);
+        goodsTypeApi.delete(ids);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @DeleteMapping(params = "id")
     public Result<?> deleteOne(Long id) {
-        goodsTypeService.delete(id);
+        goodsTypeApi.delete(id);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
-    public Result<?> delete(@PathVariable Long id) {
-        goodsTypeService.delete(id);
+    @DeleteMapping("{id}")
+    public Result<?> deleteRs(@PathVariable("id") Long id) {
+        goodsTypeApi.delete(id);
         return ResultInfo.success();
     }
-
-
 }

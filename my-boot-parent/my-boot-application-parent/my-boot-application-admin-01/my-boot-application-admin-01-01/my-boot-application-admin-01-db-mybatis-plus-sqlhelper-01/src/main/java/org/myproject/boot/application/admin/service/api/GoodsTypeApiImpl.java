@@ -50,7 +50,7 @@ public class GoodsTypeApiImpl implements BGoodsTypeApi {
     }
 
     @Override
-    public void insert(GoodsTypeVo vo) {
+    public void save(GoodsTypeVo vo) {
         goodsTypeService.save(converter.goodsType(vo));
     }
 

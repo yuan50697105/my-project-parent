@@ -21,7 +21,7 @@ public interface BGoodsInfoApi {
 
     GoodsInfo get(Long id);
 
-    void insert(GoodsInfoVo vo);
+    void save(GoodsInfoVo vo);
 
     void update(GoodsInfoVo vo);
 

@@ -53,8 +53,8 @@ public class CloudBCustomerInfoApiImpl extends CustomerInfoApiImpl implements Cl
 
     @Override
     @RequestMapping(method = {RequestMethod.POST})
-    public void insert(CustomerInfoVo vo) {
-        super.insert(vo);
+    public void save(CustomerInfoVo vo) {
+        super.save(vo);
     }
 
     @Override

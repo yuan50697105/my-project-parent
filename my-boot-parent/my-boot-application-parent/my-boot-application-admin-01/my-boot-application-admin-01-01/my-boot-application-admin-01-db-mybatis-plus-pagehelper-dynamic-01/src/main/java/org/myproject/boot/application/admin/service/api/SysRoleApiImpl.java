@@ -50,7 +50,7 @@ public class SysRoleApiImpl implements BSysRoleApi {
     }
 
     @Override
-    public void insert(SysRoleVo sysRoleVo) {
+    public void save(SysRoleVo sysRoleVo) {
         sysRoleService.save(converter.sysUser(sysRoleVo));
     }
 

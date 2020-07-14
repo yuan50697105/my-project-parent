@@ -52,7 +52,7 @@ public class CustomerInfoApiImpl implements BCustomerInfoApi {
     }
 
     @Override
-    public void insert(CustomerInfoVo vo) {
+    public void save(CustomerInfoVo vo) {
         TbCustomerInfo customerInfo = converter.customerInfo(vo);
         customerInfoService.insert(customerInfo);
     }

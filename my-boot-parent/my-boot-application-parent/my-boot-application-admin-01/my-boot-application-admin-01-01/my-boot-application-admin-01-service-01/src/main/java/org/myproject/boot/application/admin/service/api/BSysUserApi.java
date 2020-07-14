@@ -28,4 +28,6 @@ public interface BSysUserApi {
     void delete(Long id);
 
     void delete(List<Long> ids);
+
+    void modify(SysUserVo sysUserVo);
 }

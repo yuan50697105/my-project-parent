@@ -14,74 +14,70 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @program: my-boot-parent
+ * @program: my-project-parent
  * @description:
  * @author: yuane
- * @create: 2020-06-29 22:10
+ * @create: 2020-06-25 19:06
  */
 @RestController
 @RequestMapping("customer/type")
 public class CustomerTypeController {
     @Autowired
-    private BCustomerTypeApi customerTypeService;
+    private BCustomerTypeApi customerTypeApi;
 
-
-    @RequestMapping(value = "data", method = {RequestMethod.GET})
+    @GetMapping(value = "data")
     public Result<?> data(CustomerTypeQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        IPage<CustomerType> result = customerTypeService.selectByQuery(query, page, size);
+        IPage<CustomerType> result = customerTypeApi.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
-    @RequestMapping(value = "list", method = {RequestMethod.GET})
+    @GetMapping(value = "list")
     public Result<?> list(CustomerTypeQuery query) {
-        List<CustomerType> list = customerTypeService.selectByQuery(query);
+        List<CustomerType> list = customerTypeApi.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
-
-    @RequestMapping(value = "get", params = "id", method = {RequestMethod.GET})
-    public Result<?> get(Long id) {
-        CustomerType customerType = customerTypeService.get(id);
-        return ResultInfo.success(customerType);
+    @GetMapping(value = "get")
+    public Result<?> getOne(Long id) {
+        CustomerType sysUser = customerTypeApi.get(id);
+        return ResultInfo.success(sysUser);
     }
 
-    @RequestMapping(value = "get/{id}", params = "id", method = {RequestMethod.GET})
-    public Result<?> getRs(@PathVariable Long id) {
-        CustomerType customerType = customerTypeService.get(id);
-        return ResultInfo.success(customerType);
+    @GetMapping("{id}")
+    public Result<?> get(@PathVariable Long id) {
+        CustomerType sysUser = customerTypeApi.get(id);
+        return ResultInfo.success(sysUser);
     }
 
-    @RequestMapping(value = "save", method = {RequestMethod.POST})
-    public Result<?> save(@RequestBody @Validated CustomerTypeVo vo) {
-        customerTypeService.insert(vo);
+    @PostMapping
+    public Result<?> save(@RequestBody @Validated CustomerTypeVo sysUserVo) {
+        customerTypeApi.save(sysUserVo);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "update", method = {RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH})
-    public Result<?> update(@RequestBody @Validated CustomerTypeVo vo) {
-        customerTypeService.update(vo);
+    @PutMapping
+    public Result<?> update(@RequestBody @Validated CustomerTypeVo sysUserVo) {
+        customerTypeApi.update(sysUserVo);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "ids", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @DeleteMapping(params = "ids")
     public Result<?> deleteList(List<Long> ids) {
-        customerTypeService.delete(ids);
+        customerTypeApi.delete(ids);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete", params = "id", method = {RequestMethod.GET, RequestMethod.DELETE})
+    @DeleteMapping(params = "id")
     public Result<?> deleteOne(Long id) {
-        customerTypeService.delete(id);
+        customerTypeApi.delete(id);
         return ResultInfo.success();
     }
 
-    @RequestMapping(value = "delete/{id}", method = {RequestMethod.GET, RequestMethod.DELETE})
-    public Result<?> delete(@PathVariable Long id) {
-        customerTypeService.delete(id);
+    @DeleteMapping("{id}")
+    public Result<?> deleteRs(@PathVariable("id") Long id) {
+        customerTypeApi.delete(id);
         return ResultInfo.success();
     }
-
-
 }

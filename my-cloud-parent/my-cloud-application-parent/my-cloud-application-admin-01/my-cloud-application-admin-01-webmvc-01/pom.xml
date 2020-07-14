@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-cloud-alibaba-mybatis-base-pagehelper</artifactId>
+            <artifactId>my-cloud-alibaba-commons</artifactId>
             <version>1.0.0.0</version>
         </dependency>
     </dependencies>

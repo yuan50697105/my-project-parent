@@ -21,7 +21,7 @@ public interface BGoodsTypeApi {
 
     GoodsType get(Long id);
 
-    void insert(GoodsTypeVo vo);
+    void save(GoodsTypeVo vo);
 
     void update(GoodsTypeVo vo);
 

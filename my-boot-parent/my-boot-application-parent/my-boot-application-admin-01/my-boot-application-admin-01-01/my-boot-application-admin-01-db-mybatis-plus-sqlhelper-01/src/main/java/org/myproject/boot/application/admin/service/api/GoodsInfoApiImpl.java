@@ -51,7 +51,7 @@ public class GoodsInfoApiImpl implements BGoodsInfoApi {
     }
 
     @Override
-    public void insert(GoodsInfoVo vo) {
+    public void save(GoodsInfoVo vo) {
         TbGoodsInfo goodsInfo = converter.goodsInfo(vo);
         goodsInfoService.save(goodsInfo);
     }
