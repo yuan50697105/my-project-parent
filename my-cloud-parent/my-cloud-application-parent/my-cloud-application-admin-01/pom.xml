@@ -14,8 +14,7 @@
     <modules>
         <module>my-cloud-application-admin-01-api-01</module>
         <module>my-cloud-application-admin-01-gateway</module>
-        <module>my-cloud-application-admin-01-webmvc-01</module>
-        <module>my-cloud-application-admin-01-mybatis-base-pagehelper-01</module>
+        <module>my-cloud-application-admin-01-webmvc-api-01</module>
         <module>my-cloud-application-admin-eruka-service-01</module>
     </modules>
     <dependencies>

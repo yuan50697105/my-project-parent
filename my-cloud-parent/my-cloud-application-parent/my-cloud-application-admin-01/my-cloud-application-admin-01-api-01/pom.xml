@@ -14,11 +14,6 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-service-01</artifactId>
-            <version>1.0.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
             <artifactId>my-boot-mybatis-commons</artifactId>
             <version>1.0.0.0</version>
             <scope>provided</scope>
