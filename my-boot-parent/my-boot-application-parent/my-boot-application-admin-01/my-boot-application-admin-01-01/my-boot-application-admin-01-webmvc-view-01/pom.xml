@@ -36,6 +36,12 @@
             <artifactId>my-boot-genernate-route</artifactId>
             <version>1.0.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>datatables</artifactId>
+            <version>1.10.21</version>
+        </dependency>
+
     </dependencies>
 
 </project>
