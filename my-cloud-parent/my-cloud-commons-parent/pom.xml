@@ -15,6 +15,7 @@
         <module>my-cloud-netflix-commons</module>
         <module>my-cloud-alibaba-commons</module>
         <module>my-cloud-seata-sharding-jdbc</module>
+        <module>my-cloud-seata-dynamic-datasource</module>
     </modules>
     <build>
         <plugins>
