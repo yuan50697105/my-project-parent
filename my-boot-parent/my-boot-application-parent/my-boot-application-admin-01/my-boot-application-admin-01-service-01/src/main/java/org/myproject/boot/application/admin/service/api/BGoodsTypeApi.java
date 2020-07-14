@@ -1,0 +1,31 @@
+package org.myproject.boot.application.admin.service.api;
+
+
+import org.myproject.boot.application.admin.service.pojo.GoodsType;
+import org.myproject.boot.application.admin.service.pojo.GoodsTypeQuery;
+import org.myproject.boot.application.admin.service.pojo.GoodsTypeVo;
+import org.myproject.boot.mybatis.commons.pojo.IPage;
+
+import java.util.List;
+
+/**
+ * @program: my-boot-application-admin-01
+ * @description:
+ * @author: yuane
+ * @create: 2020-07-05 16:03
+ */
+public interface BGoodsTypeApi {
+    IPage<GoodsType> selectByQuery(GoodsTypeQuery query, int page, int size);
+
+    List<GoodsType> selectByQuery(GoodsTypeQuery query);
+
+    GoodsType get(Long id);
+
+    void save(GoodsTypeVo vo);
+
+    void update(GoodsTypeVo vo);
+
+    void delete(List<Long> ids);
+
+    void delete(Long id);
+}
