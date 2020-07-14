@@ -18,8 +18,6 @@
         <module>my-boot-commons-webflux</module>
         <module>my-boot-commons-webservice</module>
         <module>my-boot-mybatis-commons</module>
-        <module>my-boot-mybatis-commons-dynamic-datasource</module>
-        <module>my-boot-mybatis-commons-sharding-jdbc</module>
         <module>my-boot-mybatis-base-pagehelper</module>
         <module>my-boot-mybatis-base-sqlhelper</module>
         <module>my-boot-mybatis-plus-pagehelper</module>
