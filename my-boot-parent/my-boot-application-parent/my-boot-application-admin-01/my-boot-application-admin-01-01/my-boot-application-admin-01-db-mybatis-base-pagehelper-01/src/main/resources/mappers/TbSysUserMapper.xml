@@ -231,7 +231,6 @@
         select
         <include refid="Base_Column_List"/>
         from tb_sys_user
-        <include refid="Query_where"/>
         <where>
             <if test="username != null and username != ''">
                 <bind name="usernameLike" value="'%' + username + '%'"/>
@@ -253,7 +252,4 @@
             </if>
         </where>
     </select>
-    <sql id="Query_where">
-
-</sql>
 </mapper>
