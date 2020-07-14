@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-webmvc-01</artifactId>
+            <artifactId>my-boot-application-admin-01-webmvc-api-01</artifactId>
             <version>1.0.0.0</version>
         </dependency>
         <dependency>
