@@ -66,7 +66,7 @@ public class SysUserApiImpl implements BSysUserApi {
 
     @Override
     public void update(SysUserVo sysUser) {
-        sysUserService.updateByPrimaryKey(converter.sysUser(sysUser));
+        sysUserService.updateByPrimaryKey(converter.sysUserForUpdate(sysUser));
     }
 
     @Override

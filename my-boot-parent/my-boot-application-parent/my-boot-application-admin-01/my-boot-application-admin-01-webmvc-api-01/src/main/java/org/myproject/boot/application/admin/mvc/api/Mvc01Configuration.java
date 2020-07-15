@@ -22,26 +22,22 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @create: 2020-06-27 12:57
  */
 @SpringBootConfiguration
-@EnableApiBootSwagger
-@EnableSwagger2
-@EnableKnife4j
-@Import(BeanValidatorPluginsConfiguration.class)
 @ComponentScan(basePackageClasses = Mvc01Configuration.class)
 public class Mvc01Configuration {
 
-    @Bean
-    public Docket createRestApi(){
-        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any()).build();
-    }
-
-    private ApiInfo apiInfo(){
-        return new ApiInfoBuilder()
-                .title("Kitty API Doc")
-                .description("This is a restful api document of Kitty.")
-                .version("1.0")
-                .build();
-    }
+//    @Bean
+//    public Docket createRestApi(){
+//        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
+//                .select()
+//                .apis(RequestHandlerSelectors.any())
+//                .paths(PathSelectors.any()).build();
+//    }
+//
+//    private ApiInfo apiInfo(){
+//        return new ApiInfoBuilder()
+//                .title("Kitty API Doc")
+//                .description("This is a restful api document of Kitty.")
+//                .version("1.0")
+//                .build();
+//    }
 }

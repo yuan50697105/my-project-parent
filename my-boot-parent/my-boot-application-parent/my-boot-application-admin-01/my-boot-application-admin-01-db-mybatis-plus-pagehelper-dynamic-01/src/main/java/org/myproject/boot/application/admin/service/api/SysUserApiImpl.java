@@ -57,7 +57,7 @@ public class SysUserApiImpl implements BSysUserApi {
 
     @Override
     public void update(SysUserVo sysUser) {
-        sysUserService.updateById(converter.sysUser(sysUser));
+        sysUserService.updateById(converter.sysUserUpdate(sysUser));
     }
 
     @Override
@@ -68,5 +68,10 @@ public class SysUserApiImpl implements BSysUserApi {
     @Override
     public void delete(List<Long> ids) {
         sysUserService.removeByIds(ids);
+    }
+
+    @Override
+    public void modify(SysUserVo sysUserVo) {
+        sysUserService.updateById(converter.sysUserUpdate(sysUserVo));
     }
 }

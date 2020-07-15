@@ -84,4 +84,7 @@ public interface TbConverter {
     TbSysRoute routeForInsert(ServiceRoute serviceRoute);
 
     List<TbSysRoute> routeForInsert(List<ServiceRoute> serviceRoute);
+
+    @Mapping(target = "password", ignore = true)
+    TbSysUser sysUserUpdate(SysUserVo sysUser);
 }
