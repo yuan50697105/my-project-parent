@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.jersey.resource;
 
+import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
@@ -15,7 +16,11 @@ import javax.ws.rs.core.MediaType;
  */
 @Component
 @Path("user")
-public class UserResource {
+public class UserResource extends ResourceConfig {
+    public UserResource() {
+        register(this.getClass());
+    }
+
     @GET
     @Path("aa")
     @Produces({MediaType.APPLICATION_JSON})

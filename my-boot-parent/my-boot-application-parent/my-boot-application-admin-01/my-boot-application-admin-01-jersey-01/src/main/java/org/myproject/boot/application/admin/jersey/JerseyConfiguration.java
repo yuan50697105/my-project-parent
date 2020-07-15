@@ -20,15 +20,15 @@ import java.util.Map;
 @SpringBootConfiguration
 @ComponentScan
 public class JerseyConfiguration {
-    @Bean
-    public ApplicationListener<ContextRefreshedEvent> applicationListener(){
-        return contextRefreshedEvent -> {
-            ResourceConfig jerseyConfig = new ResourceConfig();
-            ApplicationContext context = contextRefreshedEvent.getApplicationContext();
-            Map<String, Object> beans = context.getBeansWithAnnotation(Path.class);
-            for (Map.Entry<String, Object> entry : beans.entrySet()) {
-                jerseyConfig.register(entry.getValue().getClass());
-            }
-        };
-    }
+//    @Bean
+//    public ApplicationListener<ContextRefreshedEvent> applicationListener(){
+//        return contextRefreshedEvent -> {
+//            ResourceConfig jerseyConfig = new ResourceConfig();
+//            ApplicationContext context = contextRefreshedEvent.getApplicationContext();
+//            Map<String, Object> beans = context.getBeansWithAnnotation(Path.class);
+//            for (Map.Entry<String, Object> entry : beans.entrySet()) {
+//                jerseyConfig.register(entry.getValue().getClass());
+//            }
+//        };
+//    }
 }
