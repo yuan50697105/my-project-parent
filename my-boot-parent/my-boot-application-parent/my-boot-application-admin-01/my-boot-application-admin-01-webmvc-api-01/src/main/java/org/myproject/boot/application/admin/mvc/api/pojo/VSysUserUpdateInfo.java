@@ -11,7 +11,7 @@ import java.util.List;
  * @create: 2020-07-15 20:00
  */
 @Data
-public class VSysUserUpdate {
+public class VSysUserUpdateInfo {
     private String name;
     private List<Long> roleIds;
 }

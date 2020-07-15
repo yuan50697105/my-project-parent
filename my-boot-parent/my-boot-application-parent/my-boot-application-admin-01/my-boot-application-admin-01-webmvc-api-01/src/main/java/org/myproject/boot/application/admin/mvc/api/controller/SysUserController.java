@@ -3,6 +3,8 @@ package org.myproject.boot.application.admin.mvc.api.controller;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.mvc.api.converter.Converter;
+import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserAdd;
+import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserUpdateInfo;
 import org.myproject.boot.application.admin.service.api.BSysUserApi;
 import org.myproject.boot.application.admin.service.pojo.BSysUser;
 import org.myproject.boot.application.admin.service.pojo.BSysUserQuery;
@@ -89,4 +91,15 @@ public class SysUserController {
         sysUserService.delete(id);
         return ResultInfo.success();
     }
+
+    @PostMapping("add")
+    public Result<?> add(VSysUserAdd sysUser){
+        return save(converter.sysUserAdd(sysUser));
+    }
+
+    @PatchMapping("info")
+    public Result<?> modifyInfo(VSysUserUpdateInfo sysUser){
+        return modify(converter.sysUserUpdateInfo(sysUser));
+    }
+
 }
