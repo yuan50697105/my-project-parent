@@ -3,7 +3,10 @@ type Query {
     users:SysUser
     input(input:SysUserInput):SysUser
 }
-
+type SysUserA{
+    id:String
+    aaa:String
+}
 #type Mutation {
 #
 #}
