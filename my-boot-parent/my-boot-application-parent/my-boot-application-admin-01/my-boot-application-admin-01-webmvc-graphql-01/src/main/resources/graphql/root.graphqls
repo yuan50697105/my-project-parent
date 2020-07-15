@@ -1,0 +1,9 @@
+type Query {
+    aa:String
+    users:SysUser
+    input(input:SysUserInput):SysUser
+}
+
+#type Mutation {
+#
+#}

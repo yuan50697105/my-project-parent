@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.mvc.controller;
+package org.myproject.boot.application.admin.mvc.api.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;

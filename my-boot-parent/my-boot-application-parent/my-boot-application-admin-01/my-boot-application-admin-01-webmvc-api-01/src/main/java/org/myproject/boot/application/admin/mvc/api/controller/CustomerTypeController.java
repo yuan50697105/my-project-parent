@@ -1,11 +1,11 @@
-package org.myproject.boot.application.admin.mvc.controller;
+package org.myproject.boot.application.admin.mvc.api.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.service.api.BGoodsInfoApi;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfo;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfoQuery;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfoVo;
+import org.myproject.boot.application.admin.service.api.BCustomerTypeApi;
+import org.myproject.boot.application.admin.service.pojo.CustomerType;
+import org.myproject.boot.application.admin.service.pojo.CustomerTypeQuery;
+import org.myproject.boot.application.admin.service.pojo.CustomerTypeVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -20,64 +20,64 @@ import java.util.List;
  * @create: 2020-06-25 19:06
  */
 @RestController
-@RequestMapping("goods/info")
-public class GoodsInfoController {
+@RequestMapping("customer/type")
+public class CustomerTypeController {
     @Autowired
-    private BGoodsInfoApi goodsInfoApi;
+    private BCustomerTypeApi customerTypeApi;
 
     @GetMapping(value = "data")
-    public Result<?> data(GoodsInfoQuery query,
+    public Result<?> data(CustomerTypeQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        IPage<GoodsInfo> result = goodsInfoApi.selectByQuery(query, page, size);
+        IPage<CustomerType> result = customerTypeApi.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
     @GetMapping(value = "list")
-    public Result<?> list(GoodsInfoQuery query) {
-        List<GoodsInfo> list = goodsInfoApi.selectByQuery(query);
+    public Result<?> list(CustomerTypeQuery query) {
+        List<CustomerType> list = customerTypeApi.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
     @GetMapping(value = "get")
     public Result<?> getOne(Long id) {
-        GoodsInfo sysUser = goodsInfoApi.get(id);
+        CustomerType sysUser = customerTypeApi.get(id);
         return ResultInfo.success(sysUser);
     }
 
     @GetMapping("{id}")
     public Result<?> get(@PathVariable Long id) {
-        GoodsInfo sysUser = goodsInfoApi.get(id);
+        CustomerType sysUser = customerTypeApi.get(id);
         return ResultInfo.success(sysUser);
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody @Validated GoodsInfoVo sysUserVo) {
-        goodsInfoApi.save(sysUserVo);
+    public Result<?> save(@RequestBody @Validated CustomerTypeVo sysUserVo) {
+        customerTypeApi.save(sysUserVo);
         return ResultInfo.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody @Validated GoodsInfoVo sysUserVo) {
-        goodsInfoApi.update(sysUserVo);
+    public Result<?> update(@RequestBody @Validated CustomerTypeVo sysUserVo) {
+        customerTypeApi.update(sysUserVo);
         return ResultInfo.success();
     }
 
     @DeleteMapping(params = "ids")
     public Result<?> deleteList(List<Long> ids) {
-        goodsInfoApi.delete(ids);
+        customerTypeApi.delete(ids);
         return ResultInfo.success();
     }
 
     @DeleteMapping(params = "id")
     public Result<?> deleteOne(Long id) {
-        goodsInfoApi.delete(id);
+        customerTypeApi.delete(id);
         return ResultInfo.success();
     }
 
     @DeleteMapping("{id}")
     public Result<?> deleteRs(@PathVariable("id") Long id) {
-        goodsInfoApi.delete(id);
+        customerTypeApi.delete(id);
         return ResultInfo.success();
     }
 }

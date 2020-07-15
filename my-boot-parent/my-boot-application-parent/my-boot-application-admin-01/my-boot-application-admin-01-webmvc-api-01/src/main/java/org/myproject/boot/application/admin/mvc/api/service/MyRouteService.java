@@ -1,7 +1,7 @@
-package org.myproject.boot.application.admin.mvc.service;
+package org.myproject.boot.application.admin.mvc.api.service;
 
 import lombok.AllArgsConstructor;
-import org.myproject.boot.application.admin.mvc.converter.Converter;
+import org.myproject.boot.application.admin.mvc.api.converter.Converter;
 import org.myproject.boot.application.admin.service.api.RouteApi;
 import org.myproject.boot.application.admin.service.pojo.ServiceRoute;
 import org.myproject.boot.commons.route.RouteService;

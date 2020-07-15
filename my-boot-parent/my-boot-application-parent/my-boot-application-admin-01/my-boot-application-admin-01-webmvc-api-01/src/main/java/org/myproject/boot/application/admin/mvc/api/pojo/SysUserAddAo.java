@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.mvc.pojo;
+package org.myproject.boot.application.admin.mvc.api.pojo;
 
 import lombok.Data;
 

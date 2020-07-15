@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.mvc.contorller;
+package org.myproject.boot.application.admin.mvc.view.contorller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
@@ -11,7 +11,6 @@ import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import retrofit2.http.POST;
 
 import java.util.List;
 

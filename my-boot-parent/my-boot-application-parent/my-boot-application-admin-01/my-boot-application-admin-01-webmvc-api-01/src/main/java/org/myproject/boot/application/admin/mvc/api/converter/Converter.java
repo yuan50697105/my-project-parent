@@ -1,7 +1,7 @@
-package org.myproject.boot.application.admin.mvc.converter;
+package org.myproject.boot.application.admin.mvc.api.converter;
 
 import org.mapstruct.*;
-import org.myproject.boot.application.admin.mvc.pojo.SysUserAddAo;
+import org.myproject.boot.application.admin.mvc.api.pojo.SysUserAddAo;
 import org.myproject.boot.application.admin.service.pojo.ServiceRoute;
 import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 import org.myproject.boot.commons.route.pojo.UrlRoute;

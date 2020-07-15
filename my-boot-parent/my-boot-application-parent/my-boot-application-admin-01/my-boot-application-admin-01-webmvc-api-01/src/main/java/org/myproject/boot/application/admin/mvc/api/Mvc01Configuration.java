@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.mvc;
+package org.myproject.boot.application.admin.mvc.api;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.minbox.framework.api.boot.autoconfigure.swagger.annotation.EnableApiBootSwagger;
