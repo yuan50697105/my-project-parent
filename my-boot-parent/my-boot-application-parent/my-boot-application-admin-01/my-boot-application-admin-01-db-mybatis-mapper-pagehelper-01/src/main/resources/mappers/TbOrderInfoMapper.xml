@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.myproject.boot.application.admin.db.mapper.TbOrderInfoMapper">
   <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.TbOrderInfo">
-    <!--@mbg.generated generated on Wed Jul 15 21:29:44 CST 2020.-->
+    <!--@mbg.generated generated on Thu Jul 16 00:36:18 CST 2020.-->
     <!--@Table tb_order_info-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
@@ -11,7 +11,7 @@
     <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!--@mbg.generated generated on Wed Jul 15 21:29:44 CST 2020.-->
+    <!--@mbg.generated generated on Thu Jul 16 00:36:18 CST 2020.-->
     id, order_no, customer_id, customer_name, total_price
   </sql>
 </mapper>

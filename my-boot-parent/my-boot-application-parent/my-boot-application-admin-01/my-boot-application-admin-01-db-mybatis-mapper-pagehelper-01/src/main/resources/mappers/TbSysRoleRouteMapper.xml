@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.myproject.boot.application.admin.db.mapper.TbSysRoleRouteMapper">
   <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.TbSysRoleRoute">
-    <!--@mbg.generated generated on Wed Jul 15 21:29:41 CST 2020.-->
+    <!--@mbg.generated generated on Thu Jul 16 00:36:17 CST 2020.-->
     <!--@Table tb_sys_role_route-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="role_id" jdbcType="BIGINT" property="roleId" />
     <result column="route_id" jdbcType="BIGINT" property="routeId" />
   </resultMap>
   <sql id="Base_Column_List">
-    <!--@mbg.generated generated on Wed Jul 15 21:29:41 CST 2020.-->
+    <!--@mbg.generated generated on Thu Jul 16 00:36:17 CST 2020.-->
     id, role_id, route_id
   </sql>
 </mapper>

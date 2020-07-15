@@ -1,28 +1,24 @@
 package org.myproject.boot.application.admin.db.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
-import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoExample;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 
 import java.util.List;
 
-public interface TbCustomerInfoService extends IService<TbCustomerInfo> {
+public interface TbCustomerInfoService {
 
-
-    long countByExample(TbCustomerInfoExample example);
-
-    int deleteByExample(TbCustomerInfoExample example);
-
-    List<TbCustomerInfo> selectByExample(TbCustomerInfoExample example);
-
-    int updateByExampleSelective(TbCustomerInfo record, TbCustomerInfoExample example);
-
-    int updateByExample(TbCustomerInfo record, TbCustomerInfoExample example);
 
     PageInfo<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery customerInfoQuery, int page, int size);
 
     List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery customerInfoQuery);
+
+    TbCustomerInfo selectByPrimaryKey(Long id);
+
+    int insert(TbCustomerInfo customerInfo);
+
+    int updateByPrimaryKeySelective(TbCustomerInfo customerInfo);
+
+    int deleteByPrimaryKey(Long id);
 }
 

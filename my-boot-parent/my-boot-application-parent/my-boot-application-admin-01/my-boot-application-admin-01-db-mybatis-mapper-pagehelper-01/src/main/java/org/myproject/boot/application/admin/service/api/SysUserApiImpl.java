@@ -90,9 +90,7 @@ public class SysUserApiImpl implements BSysUserApi {
     private void addUser(BSysUserVo BSysUserVo) {
         TbSysUser sysUser = converter.sysUser(BSysUserVo);
         sysUserService.insert(sysUser);
-        TbSysRoleExample example = new TbSysRoleExample();
-        example.or().andIdIn(BSysUserVo.getRoleIds());
-        List<TbSysRole> sysRoles = sysRoleService.selectByExample(example);
+        List<TbSysRole> sysRoles = sysRoleService.selectByIds(BSysUserVo.getRoleIds());
         List<Long> roleIds = sysRoles.stream().map(BaseEntity::getId).distinct().collect(Collectors.toList());
         List<TbSysUserRole> sysUserRoles = converter.sysUserRole(sysUser.getId(), roleIds);
         sysUserRoles.forEach(sysUserRoleService::insert);

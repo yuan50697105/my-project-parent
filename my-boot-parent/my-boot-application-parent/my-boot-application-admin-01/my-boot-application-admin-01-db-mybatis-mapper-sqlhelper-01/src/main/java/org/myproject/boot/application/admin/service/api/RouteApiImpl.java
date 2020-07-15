@@ -3,7 +3,6 @@ package org.myproject.boot.application.admin.service.api;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoute;
-import org.myproject.boot.application.admin.db.pojo.TbSysRouteExample;
 import org.myproject.boot.application.admin.db.service.TbSysRouteService;
 import org.myproject.boot.application.admin.service.pojo.BServiceRoute;
 import org.springframework.context.annotation.Primary;
@@ -28,7 +27,7 @@ public class RouteApiImpl implements RouteApi {
 
     @Override
     public List<BServiceRoute> allRoutes() {
-        List<TbSysRoute> list = sysRouteService.selectByExample(new TbSysRouteExample());
+        List<TbSysRoute> list = sysRouteService.selectAll();
         return converter.createRoutes(list);
     }
 

@@ -1,23 +1,15 @@
 package org.myproject.boot.application.admin.db.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoute;
-import org.myproject.boot.application.admin.db.pojo.TbSysRouteExample;
 
 import java.util.List;
 
-public interface TbSysRouteService extends IService<TbSysRoute> {
+public interface TbSysRouteService {
 
 
-    long countByExample(TbSysRouteExample example);
+    List<TbSysRoute> selectAll();
 
-    int deleteByExample(TbSysRouteExample example);
 
-    List<TbSysRoute> selectByExample(TbSysRouteExample example);
-
-    int updateByExampleSelective(TbSysRoute record, TbSysRouteExample example);
-
-    int updateByExample(TbSysRoute record, TbSysRouteExample example);
-
+    int insert(TbSysRoute sysRoute);
 }
 

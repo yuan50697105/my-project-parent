@@ -1,54 +1,60 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.mapper.TbSysRoleMapper;
 import org.myproject.boot.application.admin.db.pojo.TbSysRole;
-import org.myproject.boot.application.admin.db.pojo.TbSysRoleExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleQuery;
 import org.myproject.boot.application.admin.db.service.TbSysRoleService;
+import org.myproject.boot.mybatis.pojo.BaseEntity;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.weekend.Weekend;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class TbSysRoleServiceImpl extends ServiceImpl<TbSysRoleMapper, TbSysRole> implements TbSysRoleService {
+public class TbSysRoleServiceImpl implements TbSysRoleService {
+
+    @Resource
+    private TbSysRoleMapper tbSysRoleMapper;
 
     @Override
-    public long countByExample(TbSysRoleExample example) {
-        return baseMapper.countByExample(example);
-    }
-
-    @Override
-    public int deleteByExample(TbSysRoleExample example) {
-        return baseMapper.deleteByExample(example);
-    }
-
-    @Override
-    public List<TbSysRole> selectByExample(TbSysRoleExample example) {
-        return baseMapper.selectByExample(example);
-    }
-
-    @Override
-    public int updateByExampleSelective(TbSysRole record, TbSysRoleExample example) {
-        return baseMapper.updateByExampleSelective(record, example);
-    }
-
-    @Override
-    public int updateByExample(TbSysRole record, TbSysRoleExample example) {
-        return baseMapper.updateByExample(record, example);
+    public List<TbSysRole> selectByIds(List<Long> roleIds) {
+        Weekend<TbSysRole> example = Weekend.of(TbSysRole.class);
+        example.weekendCriteria().andIn(BaseEntity::getId, roleIds);
+        return tbSysRoleMapper.selectByExample(example);
     }
 
     @Override
     public PageInfo<TbSysRole> selectByQuery(TbSysRoleQuery sysRoleQuery, int page, int size) {
         PageHelper.startPage(page, size);
-        return new PageInfo<>(selectByExample(sysRoleQuery.toExample()));
+        return new PageInfo<>(tbSysRoleMapper.selectByExample(sysRoleQuery.toExample()));
     }
 
     @Override
     public List<TbSysRole> selectByQuery(TbSysRoleQuery sysRoleQuery) {
-        return selectByExample(sysRoleQuery.toExample());
+        return tbSysRoleMapper.selectByExample(sysRoleQuery.toExample());
+    }
+
+    @Override
+    public TbSysRole selectByPrimaryKey(Long id) {
+        return tbSysRoleMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int insert(TbSysRole sysRole) {
+        return tbSysRoleMapper.insert(sysRole);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(TbSysRole sysRole) {
+        return tbSysRoleMapper.updateByPrimaryKeySelective(sysRole);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return tbSysRoleMapper.deleteByPrimaryKey(id);
     }
 }
 

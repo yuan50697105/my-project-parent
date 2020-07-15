@@ -1,54 +1,56 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.mapper.TbSysUserMapper;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
-import org.myproject.boot.application.admin.db.pojo.TbSysUserExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
-import org.myproject.boot.application.admin.db.service.TbSysUserService;
 import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+import org.myproject.boot.application.admin.db.mapper.TbSysUserMapper;
+import org.myproject.boot.application.admin.db.service.TbSysUserService;
 
 import java.util.List;
 
 @Service
-public class TbSysUserServiceImpl extends ServiceImpl<TbSysUserMapper, TbSysUser> implements TbSysUserService {
+public class TbSysUserServiceImpl implements TbSysUserService {
+
+    @Resource
+    private TbSysUserMapper tbSysUserMapper;
 
     @Override
-    public long countByExample(TbSysUserExample example) {
-        return baseMapper.countByExample(example);
-    }
-
-    @Override
-    public int deleteByExample(TbSysUserExample example) {
-        return baseMapper.deleteByExample(example);
-    }
-
-    @Override
-    public List<TbSysUser> selectByExample(TbSysUserExample example) {
-        return baseMapper.selectByExample(example);
-    }
-
-    @Override
-    public int updateByExampleSelective(TbSysUser record, TbSysUserExample example) {
-        return baseMapper.updateByExampleSelective(record, example);
-    }
-
-    @Override
-    public int updateByExample(TbSysUser record, TbSysUserExample example) {
-        return baseMapper.updateByExample(record, example);
-    }
-
-    @Override
-    public PageInfo<TbSysUser> selectByQuery(TbSysUserQuery query, int page, int size) {
+    public PageInfo<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery, int page, int size) {
         PageHelper.startPage(page, size);
-        return new PageInfo<>(selectByExample(query.toExample()));
+        return new PageInfo<>(tbSysUserMapper.selectByExample(sysUserQuery.toExample()));
     }
 
     @Override
     public List<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery) {
-        return selectByExample(sysUserQuery.toExample());
+        return tbSysUserMapper.selectByExample(sysUserQuery.toExample());
+    }
+
+    @Override
+    public TbSysUser selectByPrimaryKey(Long id) {
+        return tbSysUserMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Long id) {
+        return tbSysUserMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByPrimaryKey(TbSysUser sysUser) {
+        return tbSysUserMapper.updateByPrimaryKey(sysUser);
+    }
+
+    @Override
+    public int insert(TbSysUser sysUser) {
+        return tbSysUserMapper.insert(sysUser);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(TbSysUser sysUserUpdateInfo) {
+        return tbSysUserMapper.updateByPrimaryKeySelective(sysUserUpdateInfo);
     }
 }
 
