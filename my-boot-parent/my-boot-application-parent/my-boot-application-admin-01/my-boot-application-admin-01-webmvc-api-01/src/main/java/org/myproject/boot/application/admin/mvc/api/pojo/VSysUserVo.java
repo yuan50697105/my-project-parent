@@ -1,8 +1,7 @@
 package org.myproject.boot.application.admin.mvc.api.pojo;
 
 import lombok.Data;
-
-import java.util.List;
+import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
 
 /**
  * @program: my-project-parent
@@ -11,9 +10,5 @@ import java.util.List;
  * @create: 2020-07-15 10:51
  */
 @Data
-public class VSysUserAdd {
-    private String username;
-    private String password;
-    private String name;
-    private List<Long> roleIds;
+public class VSysUserVo extends BSysUserVo {
 }

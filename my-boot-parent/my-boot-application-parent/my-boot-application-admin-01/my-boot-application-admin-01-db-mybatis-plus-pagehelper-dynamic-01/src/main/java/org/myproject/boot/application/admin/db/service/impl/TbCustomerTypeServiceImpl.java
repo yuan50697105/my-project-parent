@@ -45,4 +45,9 @@ public class TbCustomerTypeServiceImpl extends ServiceImpl<TbCustomerTypeMapper,
         PageHelper.startPage(page, size);
         return new PageInfo<>(selectByExample(customerTypeQuery.toExample()));
     }
+
+    @Override
+    public List<TbCustomerType> selectByQuery(TbCustomerTypeQuery customerTypeQuery) {
+        return selectByExample(customerTypeQuery.toExample());
+    }
 }

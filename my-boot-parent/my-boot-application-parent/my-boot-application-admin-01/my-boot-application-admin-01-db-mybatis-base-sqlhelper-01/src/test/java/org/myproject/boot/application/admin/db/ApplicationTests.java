@@ -23,11 +23,11 @@ import java.util.List;
 public class ApplicationTests {
     @Test
     void name() {
-        TbSysUserMapper sysUserMapper = SpringUtil.getBean(TbSysUserMapper.class);
-        TbSysUserQuery query = new TbSysUserQuery();
-        query.setUsername("aaa");
-        List<TbSysUser> users = sysUserMapper.selectByQuery(query);
-        String jsonStr = JSONUtil.toJsonStr(users);
-        System.out.println("jsonStr = " + jsonStr);
+//        TbSysUserMapper sysUserMapper = SpringUtil.getBean(TbSysUserMapper.class);
+//        TbSysUserQuery query = new TbSysUserQuery();
+//        query.setUsername("aaa");
+//        List<TbSysUser> users = sysUserMapper.selectByQuery(query);
+//        String jsonStr = JSONUtil.toJsonStr(users);
+//        System.out.println("jsonStr = " + jsonStr);
     }
 }

@@ -19,4 +19,5 @@ public interface TbSysUserRoleService extends IService<TbSysUserRole> {
 
     int updateByExample(TbSysUserRole record, TbSysUserRoleExample example);
 
+    boolean removeByUserId(Long userId);
 }

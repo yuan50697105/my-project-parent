@@ -3,8 +3,7 @@ package org.myproject.boot.application.admin.mvc.api.controller;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.mvc.api.converter.Converter;
-import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserAdd;
-import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserUpdateInfo;
+import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserVo;
 import org.myproject.boot.application.admin.service.api.BSysUserApi;
 import org.myproject.boot.application.admin.service.pojo.BSysUser;
 import org.myproject.boot.application.admin.service.pojo.BSysUserQuery;
@@ -93,13 +92,20 @@ public class SysUserController {
     }
 
     @PostMapping("add")
-    public Result<?> add(VSysUserAdd sysUser){
-        return save(converter.sysUserAdd(sysUser));
+    public Result<?> add(@RequestBody VSysUserVo sysUser) {
+        sysUser.setOp(BSysUserVo.Op.ADD);
+        return save(converter.vSysUser(sysUser));
     }
 
     @PatchMapping("info")
-    public Result<?> modifyInfo(VSysUserUpdateInfo sysUser){
-        return modify(converter.sysUserUpdateInfo(sysUser));
+    public Result<?> modifyInfo(@RequestBody VSysUserVo sysUser) {
+        sysUser.setOp(BSysUserVo.Op.UPDATE_INFO);
+        return modify(converter.vSysUser(sysUser));
     }
 
+    @PatchMapping("role")
+    public Result<?> modifyRole(@RequestBody VSysUserVo sysUserVo) {
+        sysUserVo.setOp(BSysUserVo.Op.UPDATE_ROLE);
+        return modify(converter.vSysUser(sysUserVo));
+    }
 }

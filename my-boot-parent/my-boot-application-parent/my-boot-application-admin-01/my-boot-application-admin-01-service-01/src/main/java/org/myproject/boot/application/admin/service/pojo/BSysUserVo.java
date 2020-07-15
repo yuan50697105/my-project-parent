@@ -32,5 +32,13 @@ public class BSysUserVo implements Serializable {
      * 角色ID列表
      */
     private List<Long> roleIds;
+    /**
+     * 操作
+     */
+    private Op op;
+
+    public enum Op {
+        ADD, UPDATE_INFO, UPDATE_ROLE
+    }
 }
 

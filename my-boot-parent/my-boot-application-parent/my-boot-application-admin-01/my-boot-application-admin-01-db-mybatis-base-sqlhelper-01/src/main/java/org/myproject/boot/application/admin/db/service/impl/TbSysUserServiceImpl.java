@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.mapper.TbSysUserMapper;
@@ -84,5 +85,14 @@ public class TbSysUserServiceImpl implements TbSysUserService {
         return selectByExample(sysUserQuery.toExample());
     }
 
+
+    @Override
+    public void saveOrUpdate(TbSysUser sysUser) {
+        if (ObjectUtil.isEmpty(sysUser.getId())) {
+            insert(sysUser);
+        } else {
+            updateByPrimaryKeySelective(sysUser);
+        }
+    }
 }
 

@@ -54,19 +54,22 @@ public class SysUserApiImpl implements BSysUserApi {
 
     @Override
     public void save(BSysUserVo BSysUserVo) {
-        TbSysUser sysUser = converter.sysUser(BSysUserVo);
-        sysUserService.insert(sysUser);
-        TbSysRoleExample example = new TbSysRoleExample();
-        example.or().andIdIn(BSysUserVo.getRoleIds());
-        List<TbSysRole> sysRoles = sysRoleService.selectByExample(example);
-        List<Long> roleIds = sysRoles.stream().map(BaseEntity::getId).distinct().collect(Collectors.toList());
-        List<TbSysUserRole> sysUserRoles = converter.sysUserRole(sysUser.getId(), roleIds);
-        sysUserRoles.forEach(sysUserRoleService::insert);
+        addUser(BSysUserVo);
     }
 
     @Override
     public void update(BSysUserVo sysUser) {
-        sysUserService.updateByPrimaryKeySelective(converter.sysUser(sysUser));
+        switch (sysUser.getOp()) {
+            default:
+            case ADD:
+                break;
+            case UPDATE_INFO:
+                updateInfo(sysUser);
+                break;
+            case UPDATE_ROLE:
+                updateRole(sysUser);
+                break;
+        }
     }
 
     @Override
@@ -82,5 +85,28 @@ public class SysUserApiImpl implements BSysUserApi {
     @Override
     public void delete(Long id) {
         sysUserService.deleteByPrimaryKey(id);
+    }
+
+    private void addUser(BSysUserVo BSysUserVo) {
+        TbSysUser sysUser = converter.sysUser(BSysUserVo);
+        sysUserService.insert(sysUser);
+        TbSysRoleExample example = new TbSysRoleExample();
+        example.or().andIdIn(BSysUserVo.getRoleIds());
+        List<TbSysRole> sysRoles = sysRoleService.selectByExample(example);
+        List<Long> roleIds = sysRoles.stream().map(BaseEntity::getId).distinct().collect(Collectors.toList());
+        List<TbSysUserRole> sysUserRoles = converter.sysUserRole(sysUser.getId(), roleIds);
+        sysUserRoles.forEach(sysUserRoleService::insert);
+    }
+
+    private void updateInfo(BSysUserVo sysUser) {
+        sysUserService.updateByPrimaryKeySelective(converter.sysUserUpdateInfo(sysUser));
+    }
+
+    private void updateRole(BSysUserVo sysUser) {
+        Long id = sysUser.getId();
+        List<Long> roleIds = sysUser.getRoleIds();
+        sysUserRoleService.deleteByUserId(id);
+        List<TbSysUserRole> sysUserRoles = converter.sysUserRole(id, roleIds);
+        sysUserRoles.forEach(sysUserRoleService::insert);
     }
 }

@@ -1,8 +1,7 @@
 package org.myproject.boot.application.admin.mvc.api.converter;
 
 import org.mapstruct.*;
-import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserAdd;
-import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserUpdateInfo;
+import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserVo;
 import org.myproject.boot.application.admin.service.pojo.BServiceRoute;
 import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
 import org.myproject.boot.commons.route.pojo.UrlRoute;
@@ -23,10 +22,6 @@ public interface Converter {
 
     List<BServiceRoute> route(List<UrlRoute> routes);
 
+    BSysUserVo vSysUser(VSysUserVo sysUser);
 
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "enabled", ignore = true)
-    BSysUserVo sysUserAdd(VSysUserAdd sysUser);
-
-    BSysUserVo sysUserUpdateInfo(VSysUserUpdateInfo sysUser);
 }

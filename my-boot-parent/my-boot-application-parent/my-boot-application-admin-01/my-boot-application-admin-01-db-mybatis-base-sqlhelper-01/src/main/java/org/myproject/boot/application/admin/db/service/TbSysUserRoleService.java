@@ -30,5 +30,6 @@ public interface TbSysUserRoleService {
 
     int updateByPrimaryKey(TbSysUserRole record);
 
+    int deleteByUserId(Long userId);
 }
 

@@ -35,5 +35,7 @@ public interface TbSysUserService {
     PageInfo<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery, int page, int size);
 
     List<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery);
+
+    void saveOrUpdate(TbSysUser sysUser);
 }
 

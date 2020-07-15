@@ -218,4 +218,29 @@
       enabled = #{enabled,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+    <select id="selectByQuery" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from tb_sys_user
+        <where>
+            <if test="username != null and username != ''">
+                <bind name="usernameLike" value="'%' + username + '%'" />
+                and username like #{usernameLike,jdbcType=VARCHAR}
+            </if>
+            <if test="name != null and name != ''">
+                <bind name="nameLike" value="'%' + name + '%'" />
+                and name like #{nameLike,jdbcType=VARCHAR}
+            </if>
+            <if test="enabled != null and enabled != ''">
+                <choose>
+                    <when test="enabled == 'enable'">
+                        and enabled = 'enable'
+                    </when>
+                    <otherwise>
+                        and enabled = 'disable'
+                    </otherwise>
+                </choose>
+            </if>
+        </where>
+    </select>
 </mapper>

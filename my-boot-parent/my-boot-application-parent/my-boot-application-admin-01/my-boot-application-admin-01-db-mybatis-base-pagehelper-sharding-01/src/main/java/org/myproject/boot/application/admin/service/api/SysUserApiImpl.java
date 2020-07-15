@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.service.api;
 
+import cn.hutool.core.util.ObjectUtil;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.*;
@@ -54,6 +55,40 @@ public class SysUserApiImpl implements BSysUserApi {
 
     @Override
     public void save(BSysUserVo BSysUserVo) {
+        addUser(BSysUserVo);
+    }
+
+    @Override
+    public void update(BSysUserVo sysUser) {
+        sysUserService.saveOrUpdate(converter.sysUser(sysUser));
+    }
+
+    @Override
+    public void delete(List<Long> ids) {
+        ids.forEach(sysUserService::deleteByPrimaryKey);
+    }
+
+    @Override
+    public void modify(BSysUserVo BSysUserVo) {
+        switch (BSysUserVo.getOp()) {
+            default:
+            case ADD:
+                break;
+            case UPDATE_INFO:
+                updateInfo(BSysUserVo);
+            case UPDATE_ROLE:
+                updateRole(BSysUserVo);
+                break;
+        }
+
+    }
+
+    @Override
+    public void delete(Long id) {
+        sysUserService.deleteByPrimaryKey(id);
+    }
+
+    private void addUser(BSysUserVo BSysUserVo) {
         TbSysUser sysUser = converter.sysUser(BSysUserVo);
         sysUserService.insert(sysUser);
         TbSysRoleExample example = new TbSysRoleExample();
@@ -64,23 +99,15 @@ public class SysUserApiImpl implements BSysUserApi {
         sysUserRoles.forEach(sysUserRoleService::insert);
     }
 
-    @Override
-    public void update(BSysUserVo sysUser) {
-        sysUserService.updateByPrimaryKeySelective(converter.sysUser(sysUser));
-    }
-
-    @Override
-    public void delete(List<Long> ids) {
-        ids.forEach(sysUserService::deleteByPrimaryKey);
-    }
-
-    @Override
-    public void modify(BSysUserVo BSysUserVo) {
+    private void updateInfo(BSysUserVo BSysUserVo) {
         sysUserService.updateByPrimaryKeySelective(converter.sysUser(BSysUserVo));
     }
 
-    @Override
-    public void delete(Long id) {
-        sysUserService.deleteByPrimaryKey(id);
+    private void updateRole(BSysUserVo BSysUserVo) {
+        Long id = BSysUserVo.getId();
+        List<Long> roleIds = BSysUserVo.getRoleIds();
+        sysUserRoleService.deleteByUserId(id);
+        List<TbSysUserRole> sysUserRoles = converter.sysUserRole(id, roleIds);
+        sysUserRoles.forEach(sysUserRoleService::insert);
     }
 }

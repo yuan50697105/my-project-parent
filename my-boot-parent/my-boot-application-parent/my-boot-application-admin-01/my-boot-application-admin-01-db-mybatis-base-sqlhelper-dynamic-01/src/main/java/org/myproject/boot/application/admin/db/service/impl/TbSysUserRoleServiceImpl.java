@@ -70,5 +70,12 @@ public class TbSysUserRoleServiceImpl implements TbSysUserRoleService {
         return tbSysUserRoleMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public int deleteByUserId(Long userId) {
+        TbSysUserRoleExample example = new TbSysUserRoleExample();
+        example.or().andUserIdEqualTo(userId);
+        return deleteByExample(example);
+    }
+
 }
 

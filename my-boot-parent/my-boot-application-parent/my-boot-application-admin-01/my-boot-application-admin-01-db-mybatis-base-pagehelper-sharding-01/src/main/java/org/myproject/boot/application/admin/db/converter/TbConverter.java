@@ -106,4 +106,7 @@ public interface TbConverter {
     List<TbSysRoute> routeForInsert(List<BServiceRoute> BServiceRoute);
 
     TbSysUserQuery sysUser(BSysUserQuery query);
+
+    @Mapping(target = "password", ignore = true)
+    TbSysUser sysUserForUpdate(BSysUserVo sysUser);
 }
