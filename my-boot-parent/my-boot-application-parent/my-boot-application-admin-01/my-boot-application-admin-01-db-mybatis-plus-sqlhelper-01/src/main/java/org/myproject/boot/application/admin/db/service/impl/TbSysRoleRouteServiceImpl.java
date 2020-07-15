@@ -37,3 +37,4 @@ public class TbSysRoleRouteServiceImpl extends ServiceImpl<TbSysRoleRouteMapper,
         return baseMapper.updateByExample(record, example);
     }
 }
+

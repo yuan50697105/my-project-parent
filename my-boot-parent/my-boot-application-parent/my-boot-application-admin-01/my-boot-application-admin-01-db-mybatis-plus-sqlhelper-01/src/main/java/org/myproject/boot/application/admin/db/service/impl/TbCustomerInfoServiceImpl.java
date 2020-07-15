@@ -51,3 +51,4 @@ public class TbCustomerInfoServiceImpl extends ServiceImpl<TbCustomerInfoMapper,
         return selectByExample(customerInfoQuery.toExample());
     }
 }
+

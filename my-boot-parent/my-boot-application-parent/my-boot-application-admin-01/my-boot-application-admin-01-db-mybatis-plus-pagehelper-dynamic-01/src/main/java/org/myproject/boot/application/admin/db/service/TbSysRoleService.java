@@ -25,3 +25,4 @@ public interface TbSysRoleService extends IService<TbSysRole> {
 
     List<TbSysRole> selectByQuery(TbSysRoleQuery sysRoleQuery);
 }
+

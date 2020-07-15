@@ -26,3 +26,4 @@ public interface TbCustomerTypeService extends IService<TbCustomerType> {
     List<TbCustomerType> selectByQuery(TbCustomerTypeQuery customerTypeQuery);
 
 }
+

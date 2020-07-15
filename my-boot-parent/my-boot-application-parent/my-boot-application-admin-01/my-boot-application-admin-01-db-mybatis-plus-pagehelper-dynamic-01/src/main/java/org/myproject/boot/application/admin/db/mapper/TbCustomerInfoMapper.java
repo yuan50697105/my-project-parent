@@ -19,4 +19,16 @@ public interface TbCustomerInfoMapper extends BaseMapper<TbCustomerInfo> {
     int updateByExampleSelective(@Param("record") TbCustomerInfo record, @Param("example") TbCustomerInfoExample example);
 
     int updateByExample(@Param("record") TbCustomerInfo record, @Param("example") TbCustomerInfoExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(TbCustomerInfo record);
+
+    int insertSelective(TbCustomerInfo record);
+
+    TbCustomerInfo selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(TbCustomerInfo record);
+
+    int updateByPrimaryKey(TbCustomerInfo record);
 }

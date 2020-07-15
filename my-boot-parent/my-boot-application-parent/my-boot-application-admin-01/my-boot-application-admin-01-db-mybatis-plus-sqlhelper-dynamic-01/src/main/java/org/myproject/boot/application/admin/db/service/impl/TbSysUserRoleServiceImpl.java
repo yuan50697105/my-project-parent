@@ -36,4 +36,10 @@ public class TbSysUserRoleServiceImpl extends ServiceImpl<TbSysUserRoleMapper, T
     public int updateByExample(TbSysUserRole record, TbSysUserRoleExample example) {
         return baseMapper.updateByExample(record, example);
     }
+
+    @Override
+    public boolean removeByUserId(Long userId) {
+        return remove(lambdaQuery().eq(TbSysUserRole::getUserId, userId));
+    }
 }
+

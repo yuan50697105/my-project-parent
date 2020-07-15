@@ -20,3 +20,4 @@ public interface TbCustomerLogService extends IService<TbCustomerLog> {
     int updateByExample(TbCustomerLog record, TbCustomerLogExample example);
 
 }
+

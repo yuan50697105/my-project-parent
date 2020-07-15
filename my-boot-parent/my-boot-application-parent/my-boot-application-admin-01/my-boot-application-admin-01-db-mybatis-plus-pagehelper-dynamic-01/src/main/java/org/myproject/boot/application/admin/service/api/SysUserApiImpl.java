@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserRole;
+import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
 import org.myproject.boot.application.admin.service.pojo.BSysUser;
 import org.myproject.boot.application.admin.service.pojo.BSysUserQuery;
@@ -29,6 +31,7 @@ import java.util.List;
 public class SysUserApiImpl implements BSysUserApi {
     private final TbConverter converter;
     private final TbSysUserService sysUserService;
+    private final TbSysUserRoleService sysUserRoleService;
 
     @Override
     public IPage<BSysUser> selectByQuery(BSysUserQuery query, int page, int size) {
@@ -57,7 +60,7 @@ public class SysUserApiImpl implements BSysUserApi {
 
     @Override
     public void update(BSysUserVo sysUser) {
-        sysUserService.updateById(converter.sysUserUpdate(sysUser));
+        sysUserService.saveOrUpdate(converter.sysUser(sysUser));
     }
 
     @Override
@@ -72,6 +75,26 @@ public class SysUserApiImpl implements BSysUserApi {
 
     @Override
     public void modify(BSysUserVo BSysUserVo) {
-        sysUserService.updateById(converter.sysUserUpdate(BSysUserVo));
+        switch (BSysUserVo.getOp()) {
+            case UPDATE_ROLE:
+                updateRole(BSysUserVo);
+            case UPDATE_INFO:
+                updateInfo(BSysUserVo);
+            case ADD:
+            default:
+                break;
+        }
+    }
+
+    private void updateInfo(BSysUserVo bSysUserVo) {
+        sysUserService.updateById(converter.sysUserUpdateInfo(bSysUserVo));
+    }
+
+    private void updateRole(BSysUserVo bSysUserVo) {
+        Long id = bSysUserVo.getId();
+        List<Long> roleIds = bSysUserVo.getRoleIds();
+        sysUserRoleService.removeByUserId(id);
+        List<TbSysUserRole> sysUserRoles = converter.sysUserRole(id, roleIds);
+        sysUserRoleService.saveBatch(sysUserRoles);
     }
 }

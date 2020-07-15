@@ -51,3 +51,4 @@ public class TbSysRoleServiceImpl extends ServiceImpl<TbSysRoleMapper, TbSysRole
         return selectByExample(sysRoleQuery.toExample());
     }
 }
+

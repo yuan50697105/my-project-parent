@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.mapper.TbGoodsInfoMapper;
@@ -9,68 +10,34 @@ import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoQuery;
 import org.myproject.boot.application.admin.db.service.TbGoodsInfoService;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class TbGoodsInfoServiceImpl implements TbGoodsInfoService {
-
-    @Resource
-    private TbGoodsInfoMapper tbGoodsInfoMapper;
+public class TbGoodsInfoServiceImpl extends ServiceImpl<TbGoodsInfoMapper, TbGoodsInfo> implements TbGoodsInfoService {
 
     @Override
     public long countByExample(TbGoodsInfoExample example) {
-        return tbGoodsInfoMapper.countByExample(example);
+        return baseMapper.countByExample(example);
     }
 
     @Override
     public int deleteByExample(TbGoodsInfoExample example) {
-        return tbGoodsInfoMapper.deleteByExample(example);
-    }
-
-    @Override
-    public int deleteByPrimaryKey(Long id) {
-        return tbGoodsInfoMapper.deleteByPrimaryKey(id);
-    }
-
-    @Override
-    public int insert(TbGoodsInfo record) {
-        return tbGoodsInfoMapper.insert(record);
-    }
-
-    @Override
-    public int insertSelective(TbGoodsInfo record) {
-        return tbGoodsInfoMapper.insertSelective(record);
+        return baseMapper.deleteByExample(example);
     }
 
     @Override
     public List<TbGoodsInfo> selectByExample(TbGoodsInfoExample example) {
-        return tbGoodsInfoMapper.selectByExample(example);
-    }
-
-    @Override
-    public TbGoodsInfo selectByPrimaryKey(Long id) {
-        return tbGoodsInfoMapper.selectByPrimaryKey(id);
+        return baseMapper.selectByExample(example);
     }
 
     @Override
     public int updateByExampleSelective(TbGoodsInfo record, TbGoodsInfoExample example) {
-        return tbGoodsInfoMapper.updateByExampleSelective(record, example);
+        return baseMapper.updateByExampleSelective(record, example);
     }
 
     @Override
     public int updateByExample(TbGoodsInfo record, TbGoodsInfoExample example) {
-        return tbGoodsInfoMapper.updateByExample(record, example);
-    }
-
-    @Override
-    public int updateByPrimaryKeySelective(TbGoodsInfo record) {
-        return tbGoodsInfoMapper.updateByPrimaryKeySelective(record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(TbGoodsInfo record) {
-        return tbGoodsInfoMapper.updateByPrimaryKey(record);
+        return baseMapper.updateByExample(record, example);
     }
 
     @Override
@@ -83,6 +50,5 @@ public class TbGoodsInfoServiceImpl implements TbGoodsInfoService {
     public List<TbGoodsInfo> selectByQuery(TbGoodsInfoQuery goodsInfoQuery) {
         return selectByExample(goodsInfoQuery.toExample());
     }
-
 }
 

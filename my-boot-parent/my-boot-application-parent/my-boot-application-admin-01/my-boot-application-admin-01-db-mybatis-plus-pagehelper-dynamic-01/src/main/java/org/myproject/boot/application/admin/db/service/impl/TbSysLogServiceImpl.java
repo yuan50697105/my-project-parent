@@ -37,3 +37,4 @@ public class TbSysLogServiceImpl extends ServiceImpl<TbSysLogMapper, TbSysLog> i
         return baseMapper.updateByExample(record, example);
     }
 }
+

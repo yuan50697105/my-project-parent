@@ -19,4 +19,16 @@ public interface TbSysUserMapper extends BaseMapper<TbSysUser> {
     int updateByExampleSelective(@Param("record") TbSysUser record, @Param("example") TbSysUserExample example);
 
     int updateByExample(@Param("record") TbSysUser record, @Param("example") TbSysUserExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(TbSysUser record);
+
+    int insertSelective(TbSysUser record);
+
+    TbSysUser selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(TbSysUser record);
+
+    int updateByPrimaryKey(TbSysUser record);
 }

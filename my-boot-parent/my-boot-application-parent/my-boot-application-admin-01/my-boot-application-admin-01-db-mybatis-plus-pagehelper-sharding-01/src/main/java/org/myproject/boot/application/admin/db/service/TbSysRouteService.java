@@ -20,3 +20,4 @@ public interface TbSysRouteService extends IService<TbSysRoute> {
     int updateByExample(TbSysRoute record, TbSysRouteExample example);
 
 }
+

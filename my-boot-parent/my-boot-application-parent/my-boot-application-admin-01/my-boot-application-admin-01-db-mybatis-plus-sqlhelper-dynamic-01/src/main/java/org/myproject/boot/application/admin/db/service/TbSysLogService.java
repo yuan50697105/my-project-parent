@@ -20,3 +20,4 @@ public interface TbSysLogService extends IService<TbSysLog> {
     int updateByExample(TbSysLog record, TbSysLogExample example);
 
 }
+

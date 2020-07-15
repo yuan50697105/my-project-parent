@@ -37,3 +37,4 @@ public class TbCustomerLogServiceImpl extends ServiceImpl<TbCustomerLogMapper, T
         return baseMapper.updateByExample(record, example);
     }
 }
+

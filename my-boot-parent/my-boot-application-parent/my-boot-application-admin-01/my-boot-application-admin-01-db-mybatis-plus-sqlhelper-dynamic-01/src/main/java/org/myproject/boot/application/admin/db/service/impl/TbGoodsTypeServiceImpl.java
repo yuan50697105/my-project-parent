@@ -51,3 +51,4 @@ public class TbGoodsTypeServiceImpl extends ServiceImpl<TbGoodsTypeMapper, TbGoo
         return selectByExample(goodsTypeQuery.toExample());
     }
 }
+

@@ -25,3 +25,4 @@ public interface TbGoodsInfoService extends IService<TbGoodsInfo> {
 
     List<TbGoodsInfo> selectByQuery(TbGoodsInfoQuery goodsInfoQuery);
 }
+

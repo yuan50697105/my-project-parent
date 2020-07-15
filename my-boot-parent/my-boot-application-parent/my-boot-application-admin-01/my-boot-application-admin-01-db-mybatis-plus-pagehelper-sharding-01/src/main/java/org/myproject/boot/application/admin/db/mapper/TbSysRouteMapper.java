@@ -19,4 +19,16 @@ public interface TbSysRouteMapper extends BaseMapper<TbSysRoute> {
     int updateByExampleSelective(@Param("record") TbSysRoute record, @Param("example") TbSysRouteExample example);
 
     int updateByExample(@Param("record") TbSysRoute record, @Param("example") TbSysRouteExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(TbSysRoute record);
+
+    int insertSelective(TbSysRoute record);
+
+    TbSysRoute selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(TbSysRoute record);
+
+    int updateByPrimaryKey(TbSysRoute record);
 }

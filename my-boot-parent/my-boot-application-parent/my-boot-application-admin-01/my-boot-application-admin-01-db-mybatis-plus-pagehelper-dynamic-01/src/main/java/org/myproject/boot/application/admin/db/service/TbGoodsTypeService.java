@@ -25,3 +25,4 @@ public interface TbGoodsTypeService extends IService<TbGoodsType> {
 
     List<TbGoodsType> selectByQuery(TbGoodsTypeQuery goodsTypeQuery);
 }
+

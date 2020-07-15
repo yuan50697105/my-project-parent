@@ -19,4 +19,16 @@ public interface TbSysLogMapper extends BaseMapper<TbSysLog> {
     int updateByExampleSelective(@Param("record") TbSysLog record, @Param("example") TbSysLogExample example);
 
     int updateByExample(@Param("record") TbSysLog record, @Param("example") TbSysLogExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(TbSysLog record);
+
+    int insertSelective(TbSysLog record);
+
+    TbSysLog selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(TbSysLog record);
+
+    int updateByPrimaryKey(TbSysLog record);
 }

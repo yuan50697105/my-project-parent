@@ -21,3 +21,4 @@ public interface TbSysUserRoleService extends IService<TbSysUserRole> {
 
     boolean removeByUserId(Long userId);
 }
+

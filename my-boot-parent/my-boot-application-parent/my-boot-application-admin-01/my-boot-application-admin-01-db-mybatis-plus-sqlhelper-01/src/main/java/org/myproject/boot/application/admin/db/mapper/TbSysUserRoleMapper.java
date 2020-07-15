@@ -19,4 +19,16 @@ public interface TbSysUserRoleMapper extends BaseMapper<TbSysUserRole> {
     int updateByExampleSelective(@Param("record") TbSysUserRole record, @Param("example") TbSysUserRoleExample example);
 
     int updateByExample(@Param("record") TbSysUserRole record, @Param("example") TbSysUserRoleExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(TbSysUserRole record);
+
+    int insertSelective(TbSysUserRole record);
+
+    TbSysUserRole selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(TbSysUserRole record);
+
+    int updateByPrimaryKey(TbSysUserRole record);
 }

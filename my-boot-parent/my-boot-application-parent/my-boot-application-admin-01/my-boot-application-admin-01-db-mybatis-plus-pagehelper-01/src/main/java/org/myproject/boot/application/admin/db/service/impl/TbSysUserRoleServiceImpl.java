@@ -42,3 +42,4 @@ public class TbSysUserRoleServiceImpl extends ServiceImpl<TbSysUserRoleMapper, T
         return remove(lambdaQuery().eq(TbSysUserRole::getUserId, userId));
     }
 }
+

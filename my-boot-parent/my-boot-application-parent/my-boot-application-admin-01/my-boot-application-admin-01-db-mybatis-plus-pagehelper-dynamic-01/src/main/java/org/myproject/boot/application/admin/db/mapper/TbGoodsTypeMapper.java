@@ -19,4 +19,16 @@ public interface TbGoodsTypeMapper extends BaseMapper<TbGoodsType> {
     int updateByExampleSelective(@Param("record") TbGoodsType record, @Param("example") TbGoodsTypeExample example);
 
     int updateByExample(@Param("record") TbGoodsType record, @Param("example") TbGoodsTypeExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(TbGoodsType record);
+
+    int insertSelective(TbGoodsType record);
+
+    TbGoodsType selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(TbGoodsType record);
+
+    int updateByPrimaryKey(TbGoodsType record);
 }

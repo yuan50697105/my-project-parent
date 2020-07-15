@@ -19,4 +19,16 @@ public interface TbCustomerLogMapper extends BaseMapper<TbCustomerLog> {
     int updateByExampleSelective(@Param("record") TbCustomerLog record, @Param("example") TbCustomerLogExample example);
 
     int updateByExample(@Param("record") TbCustomerLog record, @Param("example") TbCustomerLogExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(TbCustomerLog record);
+
+    int insertSelective(TbCustomerLog record);
+
+    TbCustomerLog selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(TbCustomerLog record);
+
+    int updateByPrimaryKey(TbCustomerLog record);
 }

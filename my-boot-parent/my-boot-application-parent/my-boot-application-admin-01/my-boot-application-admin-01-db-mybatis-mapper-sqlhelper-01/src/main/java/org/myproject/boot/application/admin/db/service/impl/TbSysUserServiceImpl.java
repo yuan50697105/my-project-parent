@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.mapper.TbSysUserMapper;
@@ -9,80 +10,45 @@ import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class TbSysUserServiceImpl implements TbSysUserService {
-
-    @Resource
-    private TbSysUserMapper tbSysUserMapper;
+public class TbSysUserServiceImpl extends ServiceImpl<TbSysUserMapper, TbSysUser> implements TbSysUserService {
 
     @Override
     public long countByExample(TbSysUserExample example) {
-        return tbSysUserMapper.countByExample(example);
+        return baseMapper.countByExample(example);
     }
 
     @Override
     public int deleteByExample(TbSysUserExample example) {
-        return tbSysUserMapper.deleteByExample(example);
-    }
-
-    @Override
-    public int deleteByPrimaryKey(Long id) {
-        return tbSysUserMapper.deleteByPrimaryKey(id);
-    }
-
-    @Override
-    public int insert(TbSysUser record) {
-        return tbSysUserMapper.insert(record);
-    }
-
-    @Override
-    public int insertSelective(TbSysUser record) {
-        return tbSysUserMapper.insertSelective(record);
+        return baseMapper.deleteByExample(example);
     }
 
     @Override
     public List<TbSysUser> selectByExample(TbSysUserExample example) {
-        return tbSysUserMapper.selectByExample(example);
-    }
-
-    @Override
-    public TbSysUser selectByPrimaryKey(Long id) {
-        return tbSysUserMapper.selectByPrimaryKey(id);
+        return baseMapper.selectByExample(example);
     }
 
     @Override
     public int updateByExampleSelective(TbSysUser record, TbSysUserExample example) {
-        return tbSysUserMapper.updateByExampleSelective(record, example);
+        return baseMapper.updateByExampleSelective(record, example);
     }
 
     @Override
     public int updateByExample(TbSysUser record, TbSysUserExample example) {
-        return tbSysUserMapper.updateByExample(record, example);
+        return baseMapper.updateByExample(record, example);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(TbSysUser record) {
-        return tbSysUserMapper.updateByPrimaryKeySelective(record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(TbSysUser record) {
-        return tbSysUserMapper.updateByPrimaryKey(record);
-    }
-
-    @Override
-    public PageInfo<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery, int page, int size) {
+    public PageInfo<TbSysUser> selectByQuery(TbSysUserQuery query, int page, int size) {
         PageHelper.startPage(page, size);
-        return new PageInfo<>(selectByExample(sysUserQuery.toExample()));
+        return new PageInfo<>(selectByExample(query.toExample()));
     }
 
     @Override
     public List<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery) {
         return selectByExample(sysUserQuery.toExample());
     }
-
 }
 

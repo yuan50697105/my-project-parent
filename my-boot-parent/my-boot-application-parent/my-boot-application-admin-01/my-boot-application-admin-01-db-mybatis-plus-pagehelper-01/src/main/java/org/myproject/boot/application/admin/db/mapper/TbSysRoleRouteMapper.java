@@ -19,4 +19,16 @@ public interface TbSysRoleRouteMapper extends BaseMapper<TbSysRoleRoute> {
     int updateByExampleSelective(@Param("record") TbSysRoleRoute record, @Param("example") TbSysRoleRouteExample example);
 
     int updateByExample(@Param("record") TbSysRoleRoute record, @Param("example") TbSysRoleRouteExample example);
+
+    int deleteByPrimaryKey(Long id);
+
+    int insert(TbSysRoleRoute record);
+
+    int insertSelective(TbSysRoleRoute record);
+
+    TbSysRoleRoute selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(TbSysRoleRoute record);
+
+    int updateByPrimaryKey(TbSysRoleRoute record);
 }

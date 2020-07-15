@@ -1,7 +1,11 @@
 package org.myproject.boot.application.admin.db.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;import org.myproject.boot.application.admin.db.pojo.TbCustomerLogExample;import java.util.List;
+import org.apache.ibatis.annotations.Param;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerLog;
+import org.myproject.boot.application.admin.db.pojo.TbCustomerLogExample;
+
+import java.util.List;
 
 @Mapper
 public interface TbCustomerLogMapper extends tk.mybatis.mapper.common.Mapper<TbCustomerLog> {

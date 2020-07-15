@@ -54,6 +54,40 @@ public class SysUserApiImpl implements BSysUserApi {
 
     @Override
     public void save(BSysUserVo BSysUserVo) {
+        addUser(BSysUserVo);
+    }
+
+    @Override
+    public void update(BSysUserVo sysUser) {
+        switch (sysUser.getOp()) {
+            default:
+            case ADD:
+                break;
+            case UPDATE_INFO:
+                updateInfo(sysUser);
+                break;
+            case UPDATE_ROLE:
+                updateRole(sysUser);
+                break;
+        }
+    }
+
+    @Override
+    public void delete(List<Long> ids) {
+        ids.forEach(sysUserService::deleteByPrimaryKey);
+    }
+
+    @Override
+    public void modify(BSysUserVo BSysUserVo) {
+        sysUserService.updateByPrimaryKey(converter.sysUser(BSysUserVo));
+    }
+
+    @Override
+    public void delete(Long id) {
+        sysUserService.deleteByPrimaryKey(id);
+    }
+
+    private void addUser(BSysUserVo BSysUserVo) {
         TbSysUser sysUser = converter.sysUser(BSysUserVo);
         sysUserService.insert(sysUser);
         TbSysRoleExample example = new TbSysRoleExample();
@@ -64,18 +98,15 @@ public class SysUserApiImpl implements BSysUserApi {
         sysUserRoles.forEach(sysUserRoleService::insert);
     }
 
-    @Override
-    public void update(BSysUserVo sysUser) {
-        sysUserService.updateByPrimaryKeySelective(converter.sysUser(sysUser));
+    private void updateInfo(BSysUserVo sysUser) {
+        sysUserService.updateByPrimaryKeySelective(converter.sysUserUpdateInfo(sysUser));
     }
 
-    @Override
-    public void delete(List<Long> ids) {
-        ids.forEach(sysUserService::deleteByPrimaryKey);
-    }
-
-    @Override
-    public void delete(Long id) {
-        sysUserService.deleteByPrimaryKey(id);
+    private void updateRole(BSysUserVo sysUser) {
+        Long id = sysUser.getId();
+        List<Long> roleIds = sysUser.getRoleIds();
+        sysUserRoleService.deleteByUserId(id);
+        List<TbSysUserRole> sysUserRoles = converter.sysUserRole(id, roleIds);
+        sysUserRoles.forEach(sysUserRoleService::insert);
     }
 }

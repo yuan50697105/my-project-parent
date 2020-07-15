@@ -5,6 +5,7 @@ import org.mapstruct.*;
 import org.myproject.boot.application.admin.db.pojo.*;
 import org.myproject.boot.application.admin.service.pojo.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -84,4 +85,19 @@ public interface TbConverter {
     TbSysRoute routeForInsert(BServiceRoute BServiceRoute);
 
     List<TbSysRoute> routeForInsert(List<BServiceRoute> BServiceRoute);
+
+    @Mapping(target = "password", ignore = true)
+    @Mapping(target = "username", ignore = true)
+    TbSysUser sysUserUpdateInfo(BSysUserVo bSysUserVo);
+
+    default List<TbSysUserRole> sysUserRole(Long id, List<Long> roleIds) {
+        ArrayList<TbSysUserRole> sysUserRoles = new ArrayList<>();
+        for (Long roleId : roleIds) {
+            sysUserRoles.add(sysUserRole(id, roleId));
+        }
+        return sysUserRoles;
+    }
+
+    @Mapping(target = "id", ignore = true)
+    TbSysUserRole sysUserRole(Long userId, Long roleId);
 }

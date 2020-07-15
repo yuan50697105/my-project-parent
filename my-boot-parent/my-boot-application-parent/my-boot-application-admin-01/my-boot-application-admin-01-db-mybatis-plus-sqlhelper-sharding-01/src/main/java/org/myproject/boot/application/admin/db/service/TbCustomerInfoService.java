@@ -25,3 +25,4 @@ public interface TbCustomerInfoService extends IService<TbCustomerInfo> {
 
     List<TbCustomerInfo> selectByQuery(TbCustomerInfoQuery customerInfoQuery);
 }
+

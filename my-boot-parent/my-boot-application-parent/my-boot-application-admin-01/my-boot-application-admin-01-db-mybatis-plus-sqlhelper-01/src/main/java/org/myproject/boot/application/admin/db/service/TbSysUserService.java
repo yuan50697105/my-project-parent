@@ -25,3 +25,4 @@ public interface TbSysUserService extends IService<TbSysUser> {
 
     List<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery);
 }
+
