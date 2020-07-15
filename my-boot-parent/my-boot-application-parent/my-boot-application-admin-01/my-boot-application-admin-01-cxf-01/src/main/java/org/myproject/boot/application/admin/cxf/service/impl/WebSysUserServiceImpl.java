@@ -4,10 +4,9 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.cxf.service.WebSysUserService;
 import org.myproject.boot.application.admin.service.api.BSysUserApi;
-import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
@@ -27,8 +26,8 @@ public class WebSysUserServiceImpl implements WebSysUserService {
     private BSysUserApi sysUserApi;
 
     @Override
-    public Result<?> save(@Validated SysUserVo sysUserVo) {
-        sysUserApi.save(sysUserVo);
+    public Result<?> save(@Validated BSysUserVo BSysUserVo) {
+        sysUserApi.save(BSysUserVo);
         return ResultInfo.success();
     }
 }

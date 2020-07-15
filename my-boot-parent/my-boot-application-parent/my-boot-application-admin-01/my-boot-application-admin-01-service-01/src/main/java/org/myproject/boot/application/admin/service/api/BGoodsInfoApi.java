@@ -1,9 +1,9 @@
 package org.myproject.boot.application.admin.service.api;
 
 
-import org.myproject.boot.application.admin.service.pojo.GoodsInfo;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfoQuery;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfoVo;
+import org.myproject.boot.application.admin.service.pojo.BGoodsInfo;
+import org.myproject.boot.application.admin.service.pojo.BGoodsInfoQuery;
+import org.myproject.boot.application.admin.service.pojo.BGoodsInfoVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 
 import java.util.List;
@@ -15,15 +15,15 @@ import java.util.List;
  * @create: 2020-07-05 16:23
  */
 public interface BGoodsInfoApi {
-    IPage<GoodsInfo> selectByQuery(GoodsInfoQuery query, int page, int size);
+    IPage<BGoodsInfo> selectByQuery(BGoodsInfoQuery query, int page, int size);
 
-    List<GoodsInfo> selectByQuery(GoodsInfoQuery query);
+    List<BGoodsInfo> selectByQuery(BGoodsInfoQuery query);
 
-    GoodsInfo get(Long id);
+    BGoodsInfo get(Long id);
 
-    void save(GoodsInfoVo vo);
+    void save(BGoodsInfoVo vo);
 
-    void update(GoodsInfoVo vo);
+    void update(BGoodsInfoVo vo);
 
     void delete(List<Long> ids);
 

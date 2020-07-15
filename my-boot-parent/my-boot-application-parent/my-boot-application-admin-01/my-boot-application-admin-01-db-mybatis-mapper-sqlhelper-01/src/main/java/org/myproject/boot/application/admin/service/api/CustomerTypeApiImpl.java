@@ -6,9 +6,9 @@ import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeQuery;
 import org.myproject.boot.application.admin.db.service.TbCustomerTypeService;
-import org.myproject.boot.application.admin.service.pojo.CustomerType;
-import org.myproject.boot.application.admin.service.pojo.CustomerTypeQuery;
-import org.myproject.boot.application.admin.service.pojo.CustomerTypeVo;
+import org.myproject.boot.application.admin.service.pojo.BCustomerType;
+import org.myproject.boot.application.admin.service.pojo.BCustomerTypeQuery;
+import org.myproject.boot.application.admin.service.pojo.BCustomerTypeVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.context.annotation.Primary;
@@ -32,33 +32,33 @@ public class CustomerTypeApiImpl implements BCustomerTypeApi {
     private final TbCustomerTypeService customerTypeService;
 
     @Override
-    public IPage<CustomerType> selectByQuery(CustomerTypeQuery query, int page, int size) {
+    public IPage<BCustomerType> selectByQuery(BCustomerTypeQuery query, int page, int size) {
         TbCustomerTypeQuery customerTypeQuery = converter.customerType(query);
         PageInfo<TbCustomerType> pageInfo = customerTypeService.selectByQuery(customerTypeQuery, page, size);
         return new PageResult<>(converter.customerType(pageInfo));
     }
 
     @Override
-    public List<CustomerType> selectByQuery(CustomerTypeQuery query) {
+    public List<BCustomerType> selectByQuery(BCustomerTypeQuery query) {
         TbCustomerTypeQuery customerTypeQuery = converter.customerType(query);
         List<TbCustomerType> list = customerTypeService.selectByQuery(customerTypeQuery);
         return converter.customerType(list);
     }
 
     @Override
-    public CustomerType get(Long id) {
+    public BCustomerType get(Long id) {
         TbCustomerType customerType = customerTypeService.selectByPrimaryKey(id);
         return converter.customerType(customerType);
     }
 
     @Override
-    public void save(CustomerTypeVo vo) {
+    public void save(BCustomerTypeVo vo) {
         TbCustomerType record = converter.customerType(vo);
         customerTypeService.insert(record);
     }
 
     @Override
-    public void update(CustomerTypeVo vo) {
+    public void update(BCustomerTypeVo vo) {
         TbCustomerType record = converter.customerType(vo);
         customerTypeService.updateByPrimaryKeySelective(record);
     }

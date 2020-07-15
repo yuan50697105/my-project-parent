@@ -1,9 +1,9 @@
 package org.myproject.boot.application.admin.service.api;
 
 
-import org.myproject.boot.application.admin.service.pojo.SysUser;
-import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.pojo.BSysUser;
+import org.myproject.boot.application.admin.service.pojo.BSysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 
 import java.util.List;
@@ -15,19 +15,19 @@ import java.util.List;
  * @create: 2020-07-04 23:17
  */
 public interface BSysUserApi {
-    IPage<SysUser> selectByQuery(SysUserQuery query, int page, int size);
+    IPage<BSysUser> selectByQuery(BSysUserQuery query, int page, int size);
 
-    List<SysUser> selectByQuery(SysUserQuery query);
+    List<BSysUser> selectByQuery(BSysUserQuery query);
 
-    SysUser get(Long id);
+    BSysUser get(Long id);
 
-    void save(SysUserVo sysUser);
+    void save(BSysUserVo sysUser);
 
-    void update(SysUserVo sysUser);
+    void update(BSysUserVo sysUser);
 
     void delete(Long id);
 
     void delete(List<Long> ids);
 
-    void modify(SysUserVo sysUserVo);
+    void modify(BSysUserVo BSysUserVo);
 }

@@ -1,7 +1,7 @@
 package org.myproject.boot.application.admin.cxf.service;
 
 import ai.yue.library.base.view.Result;
-import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
 import org.springframework.validation.annotation.Validated;
 
 import javax.jws.WebMethod;
@@ -17,5 +17,5 @@ import javax.ws.rs.core.Context;
 @WebService
 public interface WebSysUserService {
     @WebMethod
-    Result<?> save(@Context @Validated SysUserVo sysUserVo);
+    Result<?> save(@Context @Validated BSysUserVo BSysUserVo);
 }

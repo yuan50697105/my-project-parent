@@ -32,43 +32,43 @@
 //
 //    @Override
 //    public Set<String> getRoleList(String username) {
-//        SysUser sysUser = sysUserService.selectOneByUsername(username);
+//        BSysUser sysUser = sysUserService.selectOneByUsername(username);
 //        SysUserRoleExample sysUserRoleExample = new SysUserRoleExample();
 //        sysUserRoleExample.or().andUserIdEqualTo(sysUser.getId());
-//        List<SysUserRole> userRoles = sysUserRoleService.selectByExample(sysUserRoleExample);
-//        List<Long> roleIds = userRoles.stream().map(SysUserRole::getRoleId).distinct().collect(Collectors.toList());
+//        List<BSysUserRole> userRoles = sysUserRoleService.selectByExample(sysUserRoleExample);
+//        List<Long> roleIds = userRoles.stream().map(BSysUserRole::getRoleId).distinct().collect(Collectors.toList());
 //        SysRoleExample sysRoleExample = new SysRoleExample();
 //        sysRoleExample.or().andIdIn(roleIds);
-//        List<SysRole> sysRoles = sysRoleService.selectByExample(sysRoleExample);
-//        return sysRoles.stream().map(SysRole::getName).collect(Collectors.toCollection(LinkedHashSet::new));
+//        List<BSysRole> sysRoles = sysRoleService.selectByExample(sysRoleExample);
+//        return sysRoles.stream().map(BSysRole::getName).collect(Collectors.toCollection(LinkedHashSet::new));
 //    }
 //
 //    @Override
 //    public Set<String> getRouteList(String username) {
-//        SysUser sysUser = sysUserService.selectOneByUsername(username);
+//        BSysUser sysUser = sysUserService.selectOneByUsername(username);
 //        SysUserRoleExample sysUserRoleExample = new SysUserRoleExample();
 //        sysUserRoleExample.or().andUserIdEqualTo(sysUser.getId());
-//        List<SysUserRole> userRoles = sysUserRoleService.selectByExample(sysUserRoleExample);
-//        List<Long> roleIds = userRoles.stream().map(SysUserRole::getRoleId).distinct().collect(Collectors.toList());
+//        List<BSysUserRole> userRoles = sysUserRoleService.selectByExample(sysUserRoleExample);
+//        List<Long> roleIds = userRoles.stream().map(BSysUserRole::getRoleId).distinct().collect(Collectors.toList());
 //        SysRoleRouteExample sysRoleRouteExample = new SysRoleRouteExample();
 //        sysRoleRouteExample.or().andIdIn(roleIds);
-//        List<SysRoleRoute> sysRoleRoutes = sysRoleRouteService.selectByExample(sysRoleRouteExample);
-//        List<Long> routeIds = sysRoleRoutes.stream().map(SysRoleRoute::getRouteId).distinct().collect(Collectors.toList());
+//        List<BSysRoleRoute> sysRoleRoutes = sysRoleRouteService.selectByExample(sysRoleRouteExample);
+//        List<Long> routeIds = sysRoleRoutes.stream().map(BSysRoleRoute::getRouteId).distinct().collect(Collectors.toList());
 //        SysRouteExample sysRouteExample = new SysRouteExample();
 //        sysRouteExample.or().andIdIn(routeIds);
-//        return sysRouteService.selectByExample(sysRouteExample).stream().map(SysRoute::getUrl).collect(Collectors.toSet());
+//        return sysRouteService.selectByExample(sysRouteExample).stream().map(BSysRoute::getUrl).collect(Collectors.toSet());
 //    }
 //
 //    @Override
 //    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-//        SysUser sysUser = sysUserService.selectOneByUsername(s);
+//        BSysUser sysUser = sysUserService.selectOneByUsername(s);
 //        SysUserRoleExample sysUserRoleExample = new SysUserRoleExample();
 //        sysUserRoleExample.or().andUserIdEqualTo(sysUser.getId());
-//        List<SysUserRole> userRoles = sysUserRoleService.selectByExample(sysUserRoleExample);
-//        List<Long> roleIds = userRoles.stream().map(SysUserRole::getRoleId).distinct().collect(Collectors.toList());
+//        List<BSysUserRole> userRoles = sysUserRoleService.selectByExample(sysUserRoleExample);
+//        List<Long> roleIds = userRoles.stream().map(BSysUserRole::getRoleId).distinct().collect(Collectors.toList());
 //        SysRoleExample sysRoleExample = new SysRoleExample();
 //        sysRoleExample.or().andIdIn(roleIds);
-//        List<SysRole> sysRoles = sysRoleService.selectByExample(sysRoleExample);
-//        return new JwtUser(new User(sysUser.getId(), sysUser.getUsername(), sysUser.getPassword(), sysRoles.stream().map(SysRole::getName).distinct().collect(Collectors.toList())));
+//        List<BSysRole> sysRoles = sysRoleService.selectByExample(sysRoleExample);
+//        return new JwtUser(new User(sysUser.getId(), sysUser.getUsername(), sysUser.getPassword(), sysRoles.stream().map(BSysRole::getName).distinct().collect(Collectors.toList())));
 //    }
 //}

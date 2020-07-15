@@ -1,9 +1,9 @@
 package org.myproject.boot.application.admin.service.api;
 
 
-import org.myproject.boot.application.admin.service.pojo.SysRole;
-import org.myproject.boot.application.admin.service.pojo.SysRoleQuery;
-import org.myproject.boot.application.admin.service.pojo.SysRoleVo;
+import org.myproject.boot.application.admin.service.pojo.BSysRole;
+import org.myproject.boot.application.admin.service.pojo.BSysRoleQuery;
+import org.myproject.boot.application.admin.service.pojo.BSysRoleVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 
 import java.util.List;
@@ -16,15 +16,15 @@ import java.util.List;
  */
 public interface BSysRoleApi {
 
-    IPage<SysRole> selectByQuery(SysRoleQuery query, int page, int size);
+    IPage<BSysRole> selectByQuery(BSysRoleQuery query, int page, int size);
 
-    List<SysRole> selectByQuery(SysRoleQuery query);
+    List<BSysRole> selectByQuery(BSysRoleQuery query);
 
-    SysRole get(Long id);
+    BSysRole get(Long id);
 
-    void save(SysRoleVo sysRoleVo);
+    void save(BSysRoleVo BSysRoleVo);
 
-    void update(SysRoleVo sysRoleVo);
+    void update(BSysRoleVo BSysRoleVo);
 
     void delete(List<Long> ids);
 

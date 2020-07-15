@@ -6,9 +6,9 @@ import org.myproject.boot.application.admin.db.pojo.*;
 import org.myproject.boot.application.admin.db.service.TbSysRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
-import org.myproject.boot.application.admin.service.pojo.SysUser;
-import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.pojo.BSysUser;
+import org.myproject.boot.application.admin.service.pojo.BSysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 import org.myproject.boot.mybatis.pojo.PageResult;
@@ -36,28 +36,28 @@ public class SysUserApiImpl implements BSysUserApi {
     private final TbSysRoleService sysRoleService;
 
     @Override
-    public IPage<SysUser> selectByQuery(SysUserQuery query, int page, int size) {
+    public IPage<BSysUser> selectByQuery(BSysUserQuery query, int page, int size) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
         return new PageResult<>(converter.sysUser(sysUserService.selectByQuery(sysUserQuery, page, size)));
     }
 
     @Override
-    public List<SysUser> selectByQuery(SysUserQuery query) {
+    public List<BSysUser> selectByQuery(BSysUserQuery query) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
         return converter.sysUser(sysUserService.selectByQuery(sysUserQuery));
     }
 
     @Override
-    public SysUser get(Long id) {
+    public BSysUser get(Long id) {
         return converter.sysUser(sysUserService.selectByPrimaryKey(id));
     }
 
     @Override
-    public void save(SysUserVo sysUserVo) {
-        TbSysUser sysUser = converter.sysUser(sysUserVo);
+    public void save(BSysUserVo BSysUserVo) {
+        TbSysUser sysUser = converter.sysUser(BSysUserVo);
         sysUserService.insert(sysUser);
         TbSysRoleExample example = new TbSysRoleExample();
-        example.or().andIdIn(sysUserVo.getRoleIds());
+        example.or().andIdIn(BSysUserVo.getRoleIds());
         List<TbSysRole> sysRoles = sysRoleService.selectByExample(example);
         List<Long> roleIds = sysRoles.stream().map(BaseEntity::getId).distinct().collect(Collectors.toList());
         List<TbSysUserRole> sysUserRoles = converter.sysUserRole(sysUser.getId(), roleIds);
@@ -65,7 +65,7 @@ public class SysUserApiImpl implements BSysUserApi {
     }
 
     @Override
-    public void update(SysUserVo sysUser) {
+    public void update(BSysUserVo sysUser) {
         sysUserService.updateByPrimaryKeySelective(converter.sysUser(sysUser));
     }
 
@@ -75,8 +75,8 @@ public class SysUserApiImpl implements BSysUserApi {
     }
 
     @Override
-    public void modify(SysUserVo sysUserVo) {
-        sysUserService.updateByPrimaryKey(converter.sysUser(sysUserVo));
+    public void modify(BSysUserVo BSysUserVo) {
+        sysUserService.updateByPrimaryKey(converter.sysUser(BSysUserVo));
     }
 
     @Override

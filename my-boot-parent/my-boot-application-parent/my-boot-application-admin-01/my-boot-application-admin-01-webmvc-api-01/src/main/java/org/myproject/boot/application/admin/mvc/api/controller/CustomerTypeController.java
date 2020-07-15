@@ -3,9 +3,9 @@ package org.myproject.boot.application.admin.mvc.api.controller;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.service.api.BCustomerTypeApi;
-import org.myproject.boot.application.admin.service.pojo.CustomerType;
-import org.myproject.boot.application.admin.service.pojo.CustomerTypeQuery;
-import org.myproject.boot.application.admin.service.pojo.CustomerTypeVo;
+import org.myproject.boot.application.admin.service.pojo.BCustomerType;
+import org.myproject.boot.application.admin.service.pojo.BCustomerTypeQuery;
+import org.myproject.boot.application.admin.service.pojo.BCustomerTypeVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -26,39 +26,39 @@ public class CustomerTypeController {
     private BCustomerTypeApi customerTypeApi;
 
     @GetMapping(value = "data")
-    public Result<?> data(CustomerTypeQuery query,
+    public Result<?> data(BCustomerTypeQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        IPage<CustomerType> result = customerTypeApi.selectByQuery(query, page, size);
+        IPage<BCustomerType> result = customerTypeApi.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
     @GetMapping(value = "list")
-    public Result<?> list(CustomerTypeQuery query) {
-        List<CustomerType> list = customerTypeApi.selectByQuery(query);
+    public Result<?> list(BCustomerTypeQuery query) {
+        List<BCustomerType> list = customerTypeApi.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
     @GetMapping(value = "get")
     public Result<?> getOne(Long id) {
-        CustomerType sysUser = customerTypeApi.get(id);
+        BCustomerType sysUser = customerTypeApi.get(id);
         return ResultInfo.success(sysUser);
     }
 
     @GetMapping("{id}")
     public Result<?> get(@PathVariable Long id) {
-        CustomerType sysUser = customerTypeApi.get(id);
+        BCustomerType sysUser = customerTypeApi.get(id);
         return ResultInfo.success(sysUser);
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody @Validated CustomerTypeVo sysUserVo) {
+    public Result<?> save(@RequestBody @Validated BCustomerTypeVo sysUserVo) {
         customerTypeApi.save(sysUserVo);
         return ResultInfo.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody @Validated CustomerTypeVo sysUserVo) {
+    public Result<?> update(@RequestBody @Validated BCustomerTypeVo sysUserVo) {
         customerTypeApi.update(sysUserVo);
         return ResultInfo.success();
     }

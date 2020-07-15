@@ -7,9 +7,9 @@ import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfo;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerInfoQuery;
 import org.myproject.boot.application.admin.db.service.TbCustomerInfoService;
-import org.myproject.boot.application.admin.service.pojo.CustomerInfo;
-import org.myproject.boot.application.admin.service.pojo.CustomerInfoQuery;
-import org.myproject.boot.application.admin.service.pojo.CustomerInfoVo;
+import org.myproject.boot.application.admin.service.pojo.BCustomerInfo;
+import org.myproject.boot.application.admin.service.pojo.BCustomerInfoQuery;
+import org.myproject.boot.application.admin.service.pojo.BCustomerInfoVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
@@ -31,33 +31,33 @@ public class CustomerInfoApiImpl implements BCustomerInfoApi {
     private final TbCustomerInfoService customerInfoService;
 
     @Override
-    public IPage<CustomerInfo> selectByQuery(CustomerInfoQuery query, int page, int size) {
+    public IPage<BCustomerInfo> selectByQuery(BCustomerInfoQuery query, int page, int size) {
         TbCustomerInfoQuery customerInfoQuery = converter.customerInfo(query);
         PageInfo<TbCustomerInfo> pageInfo = customerInfoService.selectByQuery(customerInfoQuery, page, size);
         return new PageResult<>(converter.customerInfo(pageInfo));
     }
 
     @Override
-    public List<CustomerInfo> selectByQuery(CustomerInfoQuery query) {
+    public List<BCustomerInfo> selectByQuery(BCustomerInfoQuery query) {
         TbCustomerInfoQuery customerInfoQuery = converter.customerInfo(query);
         List<TbCustomerInfo> list = customerInfoService.selectByQuery(customerInfoQuery);
         return converter.customerInfo(list);
     }
 
     @Override
-    public CustomerInfo get(Long id) {
+    public BCustomerInfo get(Long id) {
         TbCustomerInfo customerInfo = customerInfoService.getById(id);
         return converter.customerInfo(customerInfo);
     }
 
     @Override
-    public void save(CustomerInfoVo vo) {
+    public void save(BCustomerInfoVo vo) {
         TbCustomerInfo customerInfo = converter.customerInfo(vo);
         customerInfoService.save(customerInfo);
     }
 
     @Override
-    public void update(CustomerInfoVo vo) {
+    public void update(BCustomerInfoVo vo) {
         TbCustomerInfo customerInfo = converter.customerInfo(vo);
         customerInfoService.updateById(customerInfo);
     }

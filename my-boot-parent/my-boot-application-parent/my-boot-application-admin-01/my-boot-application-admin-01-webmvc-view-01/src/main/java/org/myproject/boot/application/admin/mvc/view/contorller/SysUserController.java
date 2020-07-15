@@ -4,9 +4,9 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.service.api.BSysUserApi;
-import org.myproject.boot.application.admin.service.pojo.SysUser;
-import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.pojo.BSysUser;
+import org.myproject.boot.application.admin.service.pojo.BSysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,29 +35,29 @@ public class SysUserController {
     }
 
     @GetMapping("data")
-    public IPage<SysUser> data(SysUserQuery query, int page, int size) {
+    public IPage<BSysUser> data(BSysUserQuery query, int page, int size) {
         return sysUserApi.selectByQuery(query, page, size);
     }
 
     @GetMapping("list")
-    public List<SysUser> list(SysUserQuery query) {
+    public List<BSysUser> list(BSysUserQuery query) {
         return sysUserApi.selectByQuery(query);
     }
 
     @GetMapping("get")
-    public SysUser get(Long id) {
+    public BSysUser get(Long id) {
         return sysUserApi.get(id);
     }
 
     @PostMapping("save")
-    public Result<?> save(SysUserVo sysUserVo) {
-        sysUserApi.save(sysUserVo);
+    public Result<?> save(BSysUserVo BSysUserVo) {
+        sysUserApi.save(BSysUserVo);
         return ResultInfo.success();
     }
 
     @PostMapping("update")
-    public Result<?> update(SysUserVo sysUserVo) {
-        sysUserApi.update(sysUserVo);
+    public Result<?> update(BSysUserVo BSysUserVo) {
+        sysUserApi.update(BSysUserVo);
         return ResultInfo.success();
     }
 

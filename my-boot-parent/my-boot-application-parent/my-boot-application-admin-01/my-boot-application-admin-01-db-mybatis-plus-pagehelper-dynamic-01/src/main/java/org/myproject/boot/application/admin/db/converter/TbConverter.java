@@ -17,74 +17,74 @@ import java.util.List;
 public interface TbConverter {
     @Mapping(target = "priceStart", ignore = true)
     @Mapping(target = "priceEnd", ignore = true)
-    TbGoodsInfoQuery goodsInfo(GoodsInfoQuery query);
+    TbGoodsInfoQuery goodsInfo(BGoodsInfoQuery query);
 
-    PageInfo<GoodsInfo> goodsInfo(PageInfo<TbGoodsInfo> pageInfo);
+    PageInfo<BGoodsInfo> goodsInfo(PageInfo<TbGoodsInfo> pageInfo);
 
-    List<GoodsInfo> goodsInfo(List<TbGoodsInfo> list);
+    List<BGoodsInfo> goodsInfo(List<TbGoodsInfo> list);
 
-    GoodsInfo goodsInfo(TbGoodsInfo goodsInfo);
+    BGoodsInfo goodsInfo(TbGoodsInfo goodsInfo);
 
-    TbGoodsInfo goodsInfo(GoodsInfoVo vo);
+    TbGoodsInfo goodsInfo(BGoodsInfoVo vo);
 
     @Mapping(target = "ageStart", ignore = true)
     @Mapping(target = "ageEnd", ignore = true)
-    TbCustomerInfoQuery customerInfo(CustomerInfoQuery query);
+    TbCustomerInfoQuery customerInfo(BCustomerInfoQuery query);
 
-    PageInfo<CustomerInfo> customerInfo(PageInfo<TbCustomerInfo> pageInfo);
+    PageInfo<BCustomerInfo> customerInfo(PageInfo<TbCustomerInfo> pageInfo);
 
-    List<CustomerInfo> customerInfo(List<TbCustomerInfo> list);
+    List<BCustomerInfo> customerInfo(List<TbCustomerInfo> list);
 
-    CustomerInfo customerInfo(TbCustomerInfo customerInfo);
+    BCustomerInfo customerInfo(TbCustomerInfo customerInfo);
 
-    TbCustomerInfo customerInfo(CustomerInfoVo vo);
+    TbCustomerInfo customerInfo(BCustomerInfoVo vo);
 
-    TbCustomerTypeQuery customerType(CustomerTypeQuery query);
+    TbCustomerTypeQuery customerType(BCustomerTypeQuery query);
 
-    PageInfo<CustomerType> customerType(PageInfo<TbCustomerType> pageInfo);
+    PageInfo<BCustomerType> customerType(PageInfo<TbCustomerType> pageInfo);
 
-    List<CustomerType> customerType(List<TbCustomerType> list);
+    List<BCustomerType> customerType(List<TbCustomerType> list);
 
-    CustomerType customerType(TbCustomerType customerType);
+    BCustomerType customerType(TbCustomerType customerType);
 
-    TbCustomerType customerType(CustomerTypeVo vo);
+    TbCustomerType customerType(BCustomerTypeVo vo);
 
-    TbSysUserQuery sysUser(SysUserQuery query);
+    TbSysUserQuery sysUser(BSysUserQuery query);
 
-    PageInfo<SysUser> sysUser(PageInfo<TbSysUser> pageInfo);
+    PageInfo<BSysUser> sysUser(PageInfo<TbSysUser> pageInfo);
 
-    List<SysUser> sysUser(List<TbSysUser> selectByQuery);
+    List<BSysUser> sysUser(List<TbSysUser> selectByQuery);
 
-    SysUser sysUser(TbSysUser sysUser);
+    BSysUser sysUser(TbSysUser sysUser);
 
-    TbSysUser sysUser(SysUserVo sysUser);
+    TbSysUser sysUser(BSysUserVo sysUser);
 
-    TbSysRoleQuery sysRole(SysRoleQuery query);
+    TbSysRoleQuery sysRole(BSysRoleQuery query);
 
-    PageInfo<SysRole> sysRole(PageInfo<TbSysRole> pageInfo);
+    PageInfo<BSysRole> sysRole(PageInfo<TbSysRole> pageInfo);
 
-    List<SysRole> sysRole(List<TbSysRole> selectByQuery);
+    List<BSysRole> sysRole(List<TbSysRole> selectByQuery);
 
-    SysRole sysRole(TbSysRole sysRole);
+    BSysRole sysRole(TbSysRole sysRole);
 
-    TbSysRole sysUser(SysRoleVo sysRoleVo);
+    TbSysRole sysUser(BSysRoleVo BSysRoleVo);
 
-    TbGoodsTypeQuery goodsType(GoodsTypeQuery query);
+    TbGoodsTypeQuery goodsType(BGoodsTypeQuery query);
 
-    PageInfo<GoodsType> goodsType(PageInfo<TbGoodsType> pageInfo);
+    PageInfo<BGoodsType> goodsType(PageInfo<TbGoodsType> pageInfo);
 
-    List<GoodsType> goodsType(List<TbGoodsType> list);
+    List<BGoodsType> goodsType(List<TbGoodsType> list);
 
-    GoodsType goodsType(TbGoodsType byId);
+    BGoodsType goodsType(TbGoodsType byId);
 
-    TbGoodsType goodsType(GoodsTypeVo vo);
+    TbGoodsType goodsType(BGoodsTypeVo vo);
 
-    List<ServiceRoute> createRoutes(List<TbSysRoute> list);
+    List<BServiceRoute> createRoutes(List<TbSysRoute> list);
 
-    TbSysRoute routeForInsert(ServiceRoute serviceRoute);
+    TbSysRoute routeForInsert(BServiceRoute BServiceRoute);
 
-    List<TbSysRoute> routeForInsert(List<ServiceRoute> serviceRoute);
+    List<TbSysRoute> routeForInsert(List<BServiceRoute> BServiceRoute);
 
     @Mapping(target = "password", ignore = true)
-    TbSysUser sysUserUpdate(SysUserVo sysUser);
+    TbSysUser sysUserUpdate(BSysUserVo sysUser);
 }

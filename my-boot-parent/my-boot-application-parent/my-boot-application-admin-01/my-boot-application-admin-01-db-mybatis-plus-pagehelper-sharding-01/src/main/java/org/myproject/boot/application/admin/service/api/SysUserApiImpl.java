@@ -7,9 +7,9 @@ import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
-import org.myproject.boot.application.admin.service.pojo.SysUser;
-import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.pojo.BSysUser;
+import org.myproject.boot.application.admin.service.pojo.BSysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
@@ -31,32 +31,32 @@ public class SysUserApiImpl implements BSysUserApi {
     private final TbSysUserService sysUserService;
 
     @Override
-    public IPage<SysUser> selectByQuery(SysUserQuery query, int page, int size) {
+    public IPage<BSysUser> selectByQuery(BSysUserQuery query, int page, int size) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
         PageInfo<TbSysUser> pageInfo = sysUserService.selectByQuery(sysUserQuery, page, size);
         return new PageResult<>(converter.sysUser(pageInfo));
     }
 
     @Override
-    public List<SysUser> selectByQuery(SysUserQuery query) {
+    public List<BSysUser> selectByQuery(BSysUserQuery query) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
         List<TbSysUser> list = sysUserService.selectByQuery(sysUserQuery);
         return converter.sysUser(list);
     }
 
     @Override
-    public SysUser get(Long id) {
+    public BSysUser get(Long id) {
         TbSysUser sysUser = sysUserService.getById(id);
         return converter.sysUser(sysUser);
     }
 
     @Override
-    public void save(SysUserVo sysUser) {
+    public void save(BSysUserVo sysUser) {
         sysUserService.save(converter.sysUser(sysUser));
     }
 
     @Override
-    public void update(SysUserVo sysUser) {
+    public void update(BSysUserVo sysUser) {
         sysUserService.updateById(converter.sysUser(sysUser));
     }
 

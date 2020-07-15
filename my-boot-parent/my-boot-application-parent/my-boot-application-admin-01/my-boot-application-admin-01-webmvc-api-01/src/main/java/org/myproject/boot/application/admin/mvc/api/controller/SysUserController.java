@@ -4,9 +4,9 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.mvc.api.converter.Converter;
 import org.myproject.boot.application.admin.service.api.BSysUserApi;
-import org.myproject.boot.application.admin.service.pojo.SysUser;
-import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.pojo.BSysUser;
+import org.myproject.boot.application.admin.service.pojo.BSysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -29,46 +29,46 @@ public class SysUserController {
     private Converter converter;
 
     @GetMapping(value = "data")
-    public Result<?> data(SysUserQuery query,
+    public Result<?> data(BSysUserQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        IPage<SysUser> result = sysUserService.selectByQuery(query, page, size);
+        IPage<BSysUser> result = sysUserService.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
     @GetMapping(value = "list")
-    public Result<?> list(SysUserQuery query) {
-        List<SysUser> list = sysUserService.selectByQuery(query);
+    public Result<?> list(BSysUserQuery query) {
+        List<BSysUser> list = sysUserService.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
     @GetMapping(value = "get")
     public Result<?> getOne(Long id) {
-        SysUser sysUser = sysUserService.get(id);
-        return ResultInfo.success(sysUser);
+        BSysUser BSysUser = sysUserService.get(id);
+        return ResultInfo.success(BSysUser);
     }
 
     @GetMapping("{id}")
     public Result<?> get(@PathVariable Long id) {
-        SysUser sysUser = sysUserService.get(id);
-        return ResultInfo.success(sysUser);
+        BSysUser BSysUser = sysUserService.get(id);
+        return ResultInfo.success(BSysUser);
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody @Validated SysUserVo sysUserVo) {
-        sysUserService.save(sysUserVo);
+    public Result<?> save(@RequestBody @Validated BSysUserVo sysUser) {
+        sysUserService.save(sysUser);
         return ResultInfo.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody @Validated SysUserVo sysUserVo) {
-        sysUserService.update(sysUserVo);
+    public Result<?> update(@RequestBody @Validated BSysUserVo BSysUserVo) {
+        sysUserService.update(BSysUserVo);
         return ResultInfo.success();
     }
 
     @PatchMapping
-    public Result<?> modify(@RequestBody @Validated SysUserVo sysUserVo) {
-        sysUserService.modify(sysUserVo);
+    public Result<?> modify(@RequestBody @Validated BSysUserVo BSysUserVo) {
+        sysUserService.modify(BSysUserVo);
         return ResultInfo.success();
     }
 

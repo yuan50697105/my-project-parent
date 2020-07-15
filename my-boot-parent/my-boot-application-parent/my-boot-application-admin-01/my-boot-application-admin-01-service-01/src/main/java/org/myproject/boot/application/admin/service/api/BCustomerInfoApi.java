@@ -1,9 +1,9 @@
 package org.myproject.boot.application.admin.service.api;
 
 
-import org.myproject.boot.application.admin.service.pojo.CustomerInfo;
-import org.myproject.boot.application.admin.service.pojo.CustomerInfoQuery;
-import org.myproject.boot.application.admin.service.pojo.CustomerInfoVo;
+import org.myproject.boot.application.admin.service.pojo.BCustomerInfo;
+import org.myproject.boot.application.admin.service.pojo.BCustomerInfoQuery;
+import org.myproject.boot.application.admin.service.pojo.BCustomerInfoVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 
 import java.util.List;
@@ -15,15 +15,15 @@ import java.util.List;
  * @create: 2020-07-05 09:52
  */
 public interface BCustomerInfoApi {
-    IPage<CustomerInfo> selectByQuery(CustomerInfoQuery query, int page, int size);
+    IPage<BCustomerInfo> selectByQuery(BCustomerInfoQuery query, int page, int size);
 
-    List<CustomerInfo> selectByQuery(CustomerInfoQuery query);
+    List<BCustomerInfo> selectByQuery(BCustomerInfoQuery query);
 
-    CustomerInfo get(Long id);
+    BCustomerInfo get(Long id);
 
-    void save(CustomerInfoVo vo);
+    void save(BCustomerInfoVo vo);
 
-    void update(CustomerInfoVo vo);
+    void update(BCustomerInfoVo vo);
 
     void delete(List<Long> ids);
 

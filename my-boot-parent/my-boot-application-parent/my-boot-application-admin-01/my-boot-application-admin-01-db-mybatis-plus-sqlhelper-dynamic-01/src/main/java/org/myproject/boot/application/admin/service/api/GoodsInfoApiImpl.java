@@ -7,9 +7,9 @@ import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoQuery;
 import org.myproject.boot.application.admin.db.service.TbGoodsInfoService;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfo;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfoQuery;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfoVo;
+import org.myproject.boot.application.admin.service.pojo.BGoodsInfo;
+import org.myproject.boot.application.admin.service.pojo.BGoodsInfoQuery;
+import org.myproject.boot.application.admin.service.pojo.BGoodsInfoVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
@@ -31,33 +31,33 @@ public class GoodsInfoApiImpl implements BGoodsInfoApi {
     private final TbGoodsInfoService goodsInfoService;
 
     @Override
-    public IPage<GoodsInfo> selectByQuery(GoodsInfoQuery query, int page, int size) {
+    public IPage<BGoodsInfo> selectByQuery(BGoodsInfoQuery query, int page, int size) {
         TbGoodsInfoQuery goodsInfoQuery = converter.goodsInfo(query);
         PageInfo<TbGoodsInfo> pageInfo = goodsInfoService.selectByQuery(goodsInfoQuery, page, size);
         return new PageResult<>(converter.goodsInfo(pageInfo));
     }
 
     @Override
-    public List<GoodsInfo> selectByQuery(GoodsInfoQuery query) {
+    public List<BGoodsInfo> selectByQuery(BGoodsInfoQuery query) {
         TbGoodsInfoQuery goodsInfoQuery = converter.goodsInfo(query);
         List<TbGoodsInfo> list = goodsInfoService.selectByQuery(goodsInfoQuery);
         return converter.goodsInfo(list);
     }
 
     @Override
-    public GoodsInfo get(Long id) {
+    public BGoodsInfo get(Long id) {
         TbGoodsInfo goodsInfo = goodsInfoService.getById(id);
         return converter.goodsInfo(goodsInfo);
     }
 
     @Override
-    public void save(GoodsInfoVo vo) {
+    public void save(BGoodsInfoVo vo) {
         TbGoodsInfo goodsInfo = converter.goodsInfo(vo);
         goodsInfoService.save(goodsInfo);
     }
 
     @Override
-    public void update(GoodsInfoVo vo) {
+    public void update(BGoodsInfoVo vo) {
         TbGoodsInfo goodsInfo = converter.goodsInfo(vo);
         goodsInfoService.updateById(goodsInfo);
     }

@@ -3,9 +3,9 @@ package org.myproject.boot.application.admin.mvc.api.controller;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.service.api.BGoodsInfoApi;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfo;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfoQuery;
-import org.myproject.boot.application.admin.service.pojo.GoodsInfoVo;
+import org.myproject.boot.application.admin.service.pojo.BGoodsInfo;
+import org.myproject.boot.application.admin.service.pojo.BGoodsInfoQuery;
+import org.myproject.boot.application.admin.service.pojo.BGoodsInfoVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -26,39 +26,39 @@ public class GoodsInfoController {
     private BGoodsInfoApi goodsInfoApi;
 
     @GetMapping(value = "data")
-    public Result<?> data(GoodsInfoQuery query,
+    public Result<?> data(BGoodsInfoQuery query,
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
-        IPage<GoodsInfo> result = goodsInfoApi.selectByQuery(query, page, size);
+        IPage<BGoodsInfo> result = goodsInfoApi.selectByQuery(query, page, size);
         return ResultInfo.success(result.getData(), result.getTotalRows());
     }
 
     @GetMapping(value = "list")
-    public Result<?> list(GoodsInfoQuery query) {
-        List<GoodsInfo> list = goodsInfoApi.selectByQuery(query);
+    public Result<?> list(BGoodsInfoQuery query) {
+        List<BGoodsInfo> list = goodsInfoApi.selectByQuery(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
     @GetMapping(value = "get")
     public Result<?> getOne(Long id) {
-        GoodsInfo sysUser = goodsInfoApi.get(id);
+        BGoodsInfo sysUser = goodsInfoApi.get(id);
         return ResultInfo.success(sysUser);
     }
 
     @GetMapping("{id}")
     public Result<?> get(@PathVariable Long id) {
-        GoodsInfo sysUser = goodsInfoApi.get(id);
+        BGoodsInfo sysUser = goodsInfoApi.get(id);
         return ResultInfo.success(sysUser);
     }
 
     @PostMapping
-    public Result<?> save(@RequestBody @Validated GoodsInfoVo sysUserVo) {
+    public Result<?> save(@RequestBody @Validated BGoodsInfoVo sysUserVo) {
         goodsInfoApi.save(sysUserVo);
         return ResultInfo.success();
     }
 
     @PutMapping
-    public Result<?> update(@RequestBody @Validated GoodsInfoVo sysUserVo) {
+    public Result<?> update(@RequestBody @Validated BGoodsInfoVo sysUserVo) {
         goodsInfoApi.update(sysUserVo);
         return ResultInfo.success();
     }

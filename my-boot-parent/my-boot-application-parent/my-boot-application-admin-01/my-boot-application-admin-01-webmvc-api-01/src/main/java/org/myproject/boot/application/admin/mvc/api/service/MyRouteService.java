@@ -3,7 +3,7 @@ package org.myproject.boot.application.admin.mvc.api.service;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.mvc.api.converter.Converter;
 import org.myproject.boot.application.admin.service.api.RouteApi;
-import org.myproject.boot.application.admin.service.pojo.ServiceRoute;
+import org.myproject.boot.application.admin.service.pojo.BServiceRoute;
 import org.myproject.boot.commons.route.RouteService;
 import org.myproject.boot.commons.route.pojo.UrlRoute;
 import org.springframework.stereotype.Service;
@@ -25,8 +25,8 @@ public class MyRouteService implements RouteService {
 
     @Override
     public List<UrlRoute> allRoutes() {
-        List<ServiceRoute> entities = routeApi.allRoutes();
-        return entities.stream().map(ServiceRoute::getUrl).distinct().map(UrlRoute::new).collect(Collectors.toList());
+        List<BServiceRoute> entities = routeApi.allRoutes();
+        return entities.stream().map(BServiceRoute::getUrl).distinct().map(UrlRoute::new).collect(Collectors.toList());
     }
 
     @Override
