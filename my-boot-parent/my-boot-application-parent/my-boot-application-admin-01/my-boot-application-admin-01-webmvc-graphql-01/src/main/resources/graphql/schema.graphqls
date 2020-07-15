@@ -8,3 +8,4 @@ input SysUserInput{
     id:Int
     username:String
 }
+
