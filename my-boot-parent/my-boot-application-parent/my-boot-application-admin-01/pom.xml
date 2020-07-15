@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-application-admin-01-webmvc-api-01</module>
+        <module>my-boot-application-admin-01-webmvc-graphql-01</module>
         <module>my-boot-application-admin-01-webmvc-view-01</module>
         <module>my-boot-application-admin-01-cxf-01</module>
         <module>my-boot-application-admin-01-jersey-01</module>

@@ -3,6 +3,8 @@ package org.myproject.boot.application.admin.mvc.controller;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
+import org.myproject.boot.application.admin.mvc.converter.Converter;
+import org.myproject.boot.application.admin.mvc.pojo.SysUserAddAo;
 import org.myproject.boot.application.admin.service.api.BSysUserApi;
 import org.myproject.boot.application.admin.service.pojo.SysUser;
 import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
@@ -25,6 +27,8 @@ import java.util.List;
 public class SysUserController {
     @Autowired
     private BSysUserApi sysUserService;
+    @Autowired
+    private Converter converter;
 
     @GetMapping(value = "data")
     public Result<?> data(SysUserQuery query,

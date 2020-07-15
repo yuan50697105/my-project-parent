@@ -1,7 +1,9 @@
 package org.myproject.boot.application.admin.mvc.converter;
 
 import org.mapstruct.*;
+import org.myproject.boot.application.admin.mvc.pojo.SysUserAddAo;
 import org.myproject.boot.application.admin.service.pojo.ServiceRoute;
+import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 import org.myproject.boot.commons.route.pojo.UrlRoute;
 
 import java.util.List;
@@ -20,4 +22,7 @@ public interface Converter {
 
     List<ServiceRoute> route(List<UrlRoute> routes);
 
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "enabled", ignore = true)
+    SysUserVo sysUser(SysUserAddAo userAddAo);
 }
