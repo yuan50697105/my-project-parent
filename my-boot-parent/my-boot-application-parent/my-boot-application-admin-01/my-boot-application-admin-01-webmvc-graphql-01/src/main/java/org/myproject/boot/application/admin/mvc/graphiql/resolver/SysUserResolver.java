@@ -1,18 +1,15 @@
 package org.myproject.boot.application.admin.mvc.graphiql.resolver;
 
-import cn.hutool.json.JSONUtil;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import graphql.kickstart.tools.GraphQLQueryResolver;
-import graphql.kickstart.tools.GraphQLResolver;
 import graphql.kickstart.tools.GraphQLSubscriptionResolver;
 import org.myproject.boot.application.admin.mvc.graphiql.converter.Converter;
 import org.myproject.boot.application.admin.mvc.graphiql.pojo.SysUser;
 import org.myproject.boot.application.admin.mvc.graphiql.pojo.SysUserInput;
-import org.myproject.boot.application.admin.service.api.BSysUserApi;
+import org.myproject.boot.application.admin.api.api.BSysUserApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**

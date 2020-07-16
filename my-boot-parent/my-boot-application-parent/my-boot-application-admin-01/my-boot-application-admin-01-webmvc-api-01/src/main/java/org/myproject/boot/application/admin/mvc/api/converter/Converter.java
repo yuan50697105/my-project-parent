@@ -2,8 +2,8 @@ package org.myproject.boot.application.admin.mvc.api.converter;
 
 import org.mapstruct.*;
 import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserVo;
-import org.myproject.boot.application.admin.service.pojo.BServiceRoute;
-import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
+import org.myproject.boot.application.admin.api.pojo.BServiceRoute;
+import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
 import org.myproject.boot.commons.route.pojo.UrlRoute;
 
 import java.util.List;

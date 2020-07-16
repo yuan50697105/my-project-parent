@@ -1,7 +1,7 @@
 package org.myproject.boot.application.admin.mvc.api.pojo;
 
 import lombok.Data;
-import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
+import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
 
 /**
  * @program: my-project-parent

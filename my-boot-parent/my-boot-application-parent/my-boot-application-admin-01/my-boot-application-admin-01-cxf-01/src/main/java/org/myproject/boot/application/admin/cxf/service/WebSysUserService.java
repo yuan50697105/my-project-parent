@@ -1,7 +1,7 @@
 package org.myproject.boot.application.admin.cxf.service;
 
 import ai.yue.library.base.view.Result;
-import org.myproject.boot.application.admin.service.pojo.BSysUserVo;
+import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
 import org.springframework.validation.annotation.Validated;
 
 import javax.jws.WebMethod;

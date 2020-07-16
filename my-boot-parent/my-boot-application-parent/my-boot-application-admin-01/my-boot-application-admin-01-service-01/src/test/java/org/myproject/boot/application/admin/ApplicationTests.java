@@ -2,8 +2,7 @@ package org.myproject.boot.application.admin;
 
 import cn.hutool.extra.spring.SpringUtil;
 import org.junit.jupiter.api.Test;
-import org.myproject.boot.application.admin.service.policy.BCustomerInfoPolicy;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.myproject.boot.application.admin.api.policy.BCustomerInfoPolicy;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**

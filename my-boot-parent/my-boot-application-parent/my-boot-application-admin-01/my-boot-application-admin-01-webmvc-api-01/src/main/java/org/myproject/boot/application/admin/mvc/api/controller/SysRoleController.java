@@ -2,10 +2,10 @@ package org.myproject.boot.application.admin.mvc.api.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.service.api.BSysRoleApi;
-import org.myproject.boot.application.admin.service.pojo.BSysRole;
-import org.myproject.boot.application.admin.service.pojo.BSysRoleQuery;
-import org.myproject.boot.application.admin.service.pojo.BSysRoleVo;
+import org.myproject.boot.application.admin.api.api.BSysRoleApi;
+import org.myproject.boot.application.admin.api.pojo.BSysRole;
+import org.myproject.boot.application.admin.api.pojo.BSysRoleQuery;
+import org.myproject.boot.application.admin.api.pojo.BSysRoleVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -39,7 +39,7 @@ public class SysRoleController {
         return ResultInfo.success(list, (long) list.size());
     }
 
-    @GetMapping(value = "get")
+    @GetMapping(value = "get", params = "id")
     public Result<?> getOne(Long id) {
         BSysRole sysUser = sysRoleApi.get(id);
         return ResultInfo.success(sysUser);
@@ -59,7 +59,22 @@ public class SysRoleController {
 
     @PutMapping
     public Result<?> update(@RequestBody @Validated BSysRoleVo sysUserVo) {
+        sysUserVo.setOp(BSysRoleVo.Op.UPDATE);
         sysRoleApi.update(sysUserVo);
+        return ResultInfo.success();
+    }
+
+    @PutMapping("route")
+    public Result<?> updateRoute(@RequestBody @Validated BSysRoleVo sysRoleVo) {
+        sysRoleVo.setOp(BSysRoleVo.Op.UPDATE_ROUTE);
+        sysRoleApi.update(sysRoleVo);
+        return ResultInfo.success();
+    }
+
+    @PutMapping("info")
+    public Result<?> updateInfo(@RequestBody @Validated BSysRoleVo sysRoleVo) {
+        sysRoleVo.setOp(BSysRoleVo.Op.UPDATE_INFO);
+        sysRoleApi.update(sysRoleVo);
         return ResultInfo.success();
     }
 

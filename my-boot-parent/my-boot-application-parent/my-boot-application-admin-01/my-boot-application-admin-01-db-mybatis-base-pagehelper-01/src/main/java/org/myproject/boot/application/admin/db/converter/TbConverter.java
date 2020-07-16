@@ -4,7 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
 import org.mapstruct.*;
 import org.myproject.boot.application.admin.db.pojo.*;
-import org.myproject.boot.application.admin.service.pojo.*;
+import org.myproject.boot.application.admin.api.pojo.*;
 import org.springframework.context.annotation.Primary;
 
 import java.util.ArrayList;

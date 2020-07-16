@@ -3,7 +3,7 @@ package org.myproject.boot.application.admin.db.converter;
 import com.github.pagehelper.PageInfo;
 import org.mapstruct.*;
 import org.myproject.boot.application.admin.db.pojo.*;
-import org.myproject.boot.application.admin.service.pojo.*;
+import org.myproject.boot.application.admin.api.pojo.*;
 
 import java.util.ArrayList;
 import java.util.List;

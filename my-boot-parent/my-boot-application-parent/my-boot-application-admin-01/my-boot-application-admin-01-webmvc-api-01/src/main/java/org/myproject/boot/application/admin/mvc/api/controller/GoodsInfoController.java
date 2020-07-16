@@ -2,10 +2,10 @@ package org.myproject.boot.application.admin.mvc.api.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.service.api.BGoodsInfoApi;
-import org.myproject.boot.application.admin.service.pojo.BGoodsInfo;
-import org.myproject.boot.application.admin.service.pojo.BGoodsInfoQuery;
-import org.myproject.boot.application.admin.service.pojo.BGoodsInfoVo;
+import org.myproject.boot.application.admin.api.api.BGoodsInfoApi;
+import org.myproject.boot.application.admin.api.pojo.BGoodsInfo;
+import org.myproject.boot.application.admin.api.pojo.BGoodsInfoQuery;
+import org.myproject.boot.application.admin.api.pojo.BGoodsInfoVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
