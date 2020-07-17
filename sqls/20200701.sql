@@ -168,7 +168,7 @@ VALUES (1, 'sys/role/update', '', NULL, NULL),
        (23, 'customer/info/delete', '', NULL, NULL),
        (24, 'customer/log/list', '', NULL, NULL),
        (25, 'customer/log/data', '', NULL, NULL),
-       (26, 'sys/serviceRoute/list', '', NULL, NULL);
+       (26, 'sys/BServiceRoute/list', '', NULL, NULL);
 /*!40000 ALTER TABLE tb_sys_route
     ENABLE KEYS */;
 UNLOCK TABLES;

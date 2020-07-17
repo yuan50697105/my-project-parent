@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-commons-parent</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.0.0.2</version>
+        <version>1.0.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -25,14 +25,18 @@
             <version>2.0.4</version>
         </dependency>
         <dependency>
+            <groupId>org.minbox.framework</groupId>
+            <artifactId>api-boot-starter-swagger</artifactId>
+        </dependency>
+        <dependency>
             <groupId>ai.ylyue</groupId>
             <artifactId>yue-library-base</artifactId>
             <version>Greenwich.SR2.1</version>
         </dependency>
         <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.3.8</version>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-commons-utils</artifactId>
+            <version>1.0.0.0</version>
         </dependency>
         <dependency>
             <groupId>wiki.xsx</groupId>

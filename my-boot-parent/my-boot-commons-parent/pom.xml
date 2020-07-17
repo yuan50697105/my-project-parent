@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-parent</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.0.0.2</version>
+        <version>1.0.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -18,16 +18,12 @@
         <module>my-boot-commons-webflux</module>
         <module>my-boot-commons-webservice</module>
         <module>my-boot-mybatis-commons</module>
-        <module>my-boot-mybatis-commons-dynamic-datasource</module>
-        <module>my-boot-mybatis-commons-sharding-jdbc</module>
         <module>my-boot-mybatis-base-pagehelper</module>
         <module>my-boot-mybatis-base-sqlhelper</module>
         <module>my-boot-mybatis-plus-pagehelper</module>
         <module>my-boot-mybatis-plus-sqlhelper</module>
         <module>my-boot-mybatis-mapper-pagehelper</module>
         <module>my-boot-mybatis-mapper-sqlhelper</module>
-        <module>my-boot-mybatis-mapper-plus-pagehelper</module>
-        <module>my-boot-mybatis-mapper-plus-sqlhelper</module>
         <module>my-boot-genernate-route</module>
         <module>my-boot-security</module>
         <module>my-boot-security-session-redis</module>

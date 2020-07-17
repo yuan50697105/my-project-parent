@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.boot.application.admin.mvc.api.Mvc01Configuration
