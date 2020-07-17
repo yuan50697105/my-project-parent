@@ -16,7 +16,6 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-05 09:52
  */
-@FeignClient("cloud-api")
 @RequestMapping("customer/info")
 public interface BCustomerInfoApi {
     @GetMapping("data")

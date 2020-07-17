@@ -17,7 +17,6 @@ import java.util.List;
  * @create: 2020-07-05 16:03
  */
 
-@FeignClient("cloud-api")
 @RequestMapping("goods/type")
 public interface BGoodsTypeApi {
     @GetMapping("data")

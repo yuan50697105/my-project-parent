@@ -24,7 +24,6 @@ import java.util.List;
  * @create: 2020-07-11 19:31
  */
 @Service
-@org.apache.dubbo.config.annotation.Service
 @AllArgsConstructor
 @Transactional
 @Primary

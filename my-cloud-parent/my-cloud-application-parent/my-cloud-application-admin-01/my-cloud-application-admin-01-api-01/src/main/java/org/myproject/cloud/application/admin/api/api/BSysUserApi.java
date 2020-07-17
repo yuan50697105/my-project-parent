@@ -16,7 +16,6 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-04 23:17
  */
-@FeignClient("cloud-api")
 @RequestMapping("sys/user")
 public interface BSysUserApi {
     @GetMapping("data")

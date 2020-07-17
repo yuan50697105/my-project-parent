@@ -20,20 +20,47 @@
     <packaging>pom</packaging>
     <properties>
         <java.version>11</java.version>
+        <sqlhelper.version>3.1.1</sqlhelper.version>
+        <spring-cloud-dependencies.version>Hoxton.SR6</spring-cloud-dependencies.version>
+        <spring-cloud-alibaba-dependencies.version>2.2.1.RELEASE</spring-cloud-alibaba-dependencies.version>
+        <api-boot-dependencies.version>2.2.7.RELEASE</api-boot-dependencies.version>
+        <sofaboot-dependencies.version>3.4.1</sofaboot-dependencies.version>
+        <camel-spring-boot-dependencies.version>3.4.1</camel-spring-boot-dependencies.version>
+        <hutool-all.version>5.3.9</hutool-all.version>
+        <joda-time.version>2.10.6</joda-time.version>
+        <jpinyin.version>1.1.8</jpinyin.version>
+        <mmseg4j-core.version>1.10.0</mmseg4j-core.version>
+        <retrofit.version>2.9.0</retrofit.version>
+        <rxjava.version>3.0.4</rxjava.version>
+        <core.version>3.4.0</core.version>
+        <slf4j-spring-boot-starter.version>1.4.1</slf4j-spring-boot-starter.version>
+        <cxf-spring-boot-starter.version>3.3.7</cxf-spring-boot-starter.version>
+        <beetl-framework-starter.version>1.2.33.RELEASE</beetl-framework-starter.version>
+        <myexcel.version>3.9.1</myexcel.version>
+        <easypoi-spring-boot-starter.version>4.2.0</easypoi-spring-boot-starter.version>
+        <itextpdf.version>5.5.13.1</itextpdf.version>
+        <docx4j.version>6.1.2</docx4j.version>
+        <mybatis-spring-boot-starter.version>2.1.3</mybatis-spring-boot-starter.version>
+        <pagehelper-spring-boot-starter.version>1.2.13</pagehelper-spring-boot-starter.version>
+        <mybatis-example-ext.version>1.0.1</mybatis-example-ext.version>
+        <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.3.2</mybatis-plus-boot-starter.version>
+        <easyjson-jackson.version>3.0.0</easyjson-jackson.version>
+        <jjwt.version>0.9.1</jjwt.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR6</version>
+                <version>${spring-cloud-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.2.1.RELEASE</version>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -47,23 +74,183 @@
             <dependency>
                 <groupId>org.minbox.framework</groupId>
                 <artifactId>api-boot-dependencies</artifactId>
-                <version>2.2.7.RELEASE</version>
+                <version>${api-boot-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.alipay.sofa</groupId>
                 <artifactId>sofaboot-dependencies</artifactId>
-                <version>3.4.1</version>
+                <version>${sofaboot-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-spring-boot-dependencies</artifactId>
-                <version>3.4.1</version>
+                <version>${camel-spring-boot-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.stuxuhai</groupId>
+                <artifactId>jpinyin</artifactId>
+                <version>${jpinyin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.chenlb.mmseg4j</groupId>
+                <artifactId>mmseg4j-core</artifactId>
+                <version>${mmseg4j-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>retrofit</artifactId>
+                <version>${retrofit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>adapter-rxjava3</artifactId>
+                <version>${retrofit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.reactivex.rxjava3</groupId>
+                <artifactId>rxjava</artifactId>
+                <version>${rxjava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>adapter-guava</artifactId>
+                <version>${retrofit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>converter-jackson</artifactId>
+                <version>${retrofit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>converter-simplexml</artifactId>
+                <version>${retrofit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>2.0.4</version>
+            </dependency>
+            <dependency>
+                <groupId>ai.ylyue</groupId>
+                <artifactId>yue-library-base</artifactId>
+                <version>Greenwich.SR2.1</version>
+            </dependency>
+            <dependency>
+                <groupId>wiki.xsx</groupId>
+                <artifactId>slf4j-spring-boot-starter</artifactId>
+                <version>${slf4j-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
+                <version>${cxf-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+                <version>${cxf-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ibeetl</groupId>
+                <artifactId>beetl-framework-starter</artifactId>
+                <version>${beetl-framework-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.liaochong</groupId>
+                <artifactId>myexcel</artifactId>
+                <version>${myexcel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-spring-boot-starter</artifactId>
+                <version>${easypoi-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.itextpdf</groupId>
+                <artifactId>itextpdf</artifactId>
+                <version>${itextpdf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.docx4j</groupId>
+                <artifactId>docx4j</artifactId>
+                <version>${docx4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gitee.denger</groupId>
+                <artifactId>mybatis-example-ext</artifactId>
+                <version>${mybatis-example-ext.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.fangjinuo.sqlhelper</groupId>
+                <artifactId>sqlhelper-mybatis-over-pagehelper</artifactId>
+                <version>${sqlhelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mapper-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.fangjinuo.sqlhelper</groupId>
+                <artifactId>sqlhelper-mybatis-spring-boot-starter</artifactId>
+                <version>${sqlhelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.fangjinuo.sqlhelper</groupId>
+                <artifactId>sqlhelper-tkmapper-spring-boot-starter</artifactId>
+                <version>${sqlhelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.fangjinuo.sqlhelper</groupId>
+                <artifactId>sqlhelper-mybatisplus-spring-boot-starter</artifactId>
+                <version>${sqlhelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.fangjinuo.easyjson</groupId>
+                <artifactId>easyjson-jackson</artifactId>
+                <version>${easyjson-jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

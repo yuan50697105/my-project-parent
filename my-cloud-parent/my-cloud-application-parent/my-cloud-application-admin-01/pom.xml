@@ -16,6 +16,7 @@
         <module>my-cloud-application-admin-01-gateway</module>
         <module>my-cloud-application-admin-eruka-service-01</module>
         <module>my-cloud-application-admin-01-db-mybatis-base-pagehelper-01</module>
+        <module>my-cloud-application-admin-01-service-01</module>
     </modules>
     <dependencies>
 <!--        <dependency>-->

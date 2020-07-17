@@ -17,24 +17,21 @@
             <version>1.0.0.0</version>
         </dependency>
         <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-commons-webmvc</artifactId>
+            <version>1.0.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
-            <version>3.3.7</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
-            <version>3.3.7</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-service-description-swagger</artifactId>
-            <version>3.3.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-webmvc</artifactId>
-            <version>1.0.0.0</version>
         </dependency>
     </dependencies>
 

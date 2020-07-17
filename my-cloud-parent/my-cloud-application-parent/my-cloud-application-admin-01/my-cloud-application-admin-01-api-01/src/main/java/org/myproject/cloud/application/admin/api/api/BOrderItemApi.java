@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author: yuane
  * @create: 2020-07-15 19:56
  */
-@FeignClient("cloud-api")
 @RequestMapping("order/item")
 public interface BOrderItemApi {
 }
