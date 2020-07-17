@@ -20,7 +20,7 @@
     <packaging>pom</packaging>
     <properties>
         <java.version>11</java.version>
-        <sqlhelper.version>3.1.1</sqlhelper.version>
+        <sqlhelper.version>${dynamic-datasource-spring-boot-starter.version}</sqlhelper.version>
         <spring-cloud-dependencies.version>Hoxton.SR6</spring-cloud-dependencies.version>
         <spring-cloud-alibaba-dependencies.version>2.2.1.RELEASE</spring-cloud-alibaba-dependencies.version>
         <api-boot-dependencies.version>2.2.7.RELEASE</api-boot-dependencies.version>
@@ -49,6 +49,9 @@
         <jjwt.version>0.9.1</jjwt.version>
         <yue-library-base.version>Greenwich.SR2.1</yue-library-base.version>
         <knife4j-spring-boot-starter.version>2.0.4</knife4j-spring-boot-starter.version>
+        <dynamic-datasource-spring-boot-starter.version>3.1.1</dynamic-datasource-spring-boot-starter.version>
+        <sharding-jdbc.version>4.1.1</sharding-jdbc.version>
+        <mapstruct.version>1.4.0.Beta2</mapstruct.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -254,6 +257,26 @@
                 <artifactId>jjwt</artifactId>
                 <version>${jjwt.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-datasource-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${sharding-jdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-transaction-base-seata-at</artifactId>
+                <version>${sharding-jdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-orchestration-spring-boot-starter</artifactId>
+                <version>${sharding-jdbc.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -268,13 +291,13 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>1.4.0.Beta2</version>
+            <version>${mapstruct.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-processor</artifactId>
-            <version>1.4.0.Beta2</version>
+            <version>${mapstruct.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
