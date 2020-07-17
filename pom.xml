@@ -31,7 +31,7 @@
         <jpinyin.version>1.1.8</jpinyin.version>
         <mmseg4j-core.version>1.10.0</mmseg4j-core.version>
         <retrofit.version>2.9.0</retrofit.version>
-        <rxjava.version>3.0.4</rxjava.version>
+        <rxjava3.version>3.0.4</rxjava3.version>
         <core.version>3.4.0</core.version>
         <slf4j-spring-boot-starter.version>1.4.1</slf4j-spring-boot-starter.version>
         <cxf-spring-boot-starter.version>3.3.7</cxf-spring-boot-starter.version>
@@ -47,6 +47,8 @@
         <mybatis-plus-boot-starter.version>3.3.2</mybatis-plus-boot-starter.version>
         <easyjson-jackson.version>3.0.0</easyjson-jackson.version>
         <jjwt.version>0.9.1</jjwt.version>
+        <yue-library-base.version>Greenwich.SR2.1</yue-library-base.version>
+        <knife4j-spring-boot-starter.version>2.0.4</knife4j-spring-boot-starter.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -130,7 +132,7 @@
             <dependency>
                 <groupId>io.reactivex.rxjava3</groupId>
                 <artifactId>rxjava</artifactId>
-                <version>${rxjava.version}</version>
+                <version>${rxjava3.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.squareup.retrofit2</groupId>
@@ -150,12 +152,12 @@
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-spring-boot-starter</artifactId>
-                <version>2.0.4</version>
+                <version>${knife4j-spring-boot-starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>ai.ylyue</groupId>
                 <artifactId>yue-library-base</artifactId>
-                <version>Greenwich.SR2.1</version>
+                <version>${yue-library-base.version}</version>
             </dependency>
             <dependency>
                 <groupId>wiki.xsx</groupId>
