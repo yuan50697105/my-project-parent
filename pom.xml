@@ -24,7 +24,7 @@
         <spring-cloud-dependencies.version>Hoxton.SR6</spring-cloud-dependencies.version>
         <spring-cloud-alibaba-dependencies.version>2.2.1.RELEASE</spring-cloud-alibaba-dependencies.version>
         <api-boot-dependencies.version>2.2.7.RELEASE</api-boot-dependencies.version>
-        <sofaboot-dependencies.version>3.4.1</sofaboot-dependencies.version>
+        <sofaboot-dependencies.version>${camel-spring-boot-dependencies.version}</sofaboot-dependencies.version>
         <camel-spring-boot-dependencies.version>3.4.1</camel-spring-boot-dependencies.version>
         <hutool-all.version>5.3.9</hutool-all.version>
         <joda-time.version>2.10.6</joda-time.version>
