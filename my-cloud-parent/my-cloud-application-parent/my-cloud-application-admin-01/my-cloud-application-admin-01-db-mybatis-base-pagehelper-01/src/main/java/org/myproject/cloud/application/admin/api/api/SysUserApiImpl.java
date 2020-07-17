@@ -1,12 +1,8 @@
 package org.myproject.cloud.application.admin.api.api;
 
 import lombok.AllArgsConstructor;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
-import org.myproject.boot.mybatis.pojo.PageResult;
-import org.myproject.cloud.application.admin.api.pojo.BSysUser;
-import org.myproject.cloud.application.admin.api.pojo.BSysUserQuery;
-import org.myproject.cloud.application.admin.api.pojo.BSysUserVo;
+import org.myproject.cloud.application.admin.api.pojo.*;
 import org.myproject.cloud.application.admin.db.converter.TbConverter;
 import org.myproject.cloud.application.admin.db.pojo.*;
 import org.myproject.cloud.application.admin.db.service.TbSysRoleService;
@@ -15,6 +11,7 @@ import org.myproject.cloud.application.admin.db.service.TbSysUserService;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,10 +22,11 @@ import java.util.stream.Collectors;
  * @author: yuane
  * @create: 2020-07-11 19:36
  */
-@Service
+//@Service
 @AllArgsConstructor
 @Transactional
 @Primary
+@RestController
 public class SysUserApiImpl implements BSysUserApi {
     private final TbConverter converter;
     private final TbSysUserService sysUserService;

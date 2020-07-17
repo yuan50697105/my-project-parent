@@ -2,11 +2,7 @@ package org.myproject.cloud.application.admin.api.api;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
-import org.myproject.boot.mybatis.pojo.PageResult;
-import org.myproject.cloud.application.admin.api.pojo.BGoodsInfo;
-import org.myproject.cloud.application.admin.api.pojo.BGoodsInfoQuery;
-import org.myproject.cloud.application.admin.api.pojo.BGoodsInfoVo;
+import org.myproject.cloud.application.admin.api.pojo.*;
 import org.myproject.cloud.application.admin.db.converter.TbConverter;
 import org.myproject.cloud.application.admin.db.pojo.TbGoodsInfo;
 import org.myproject.cloud.application.admin.db.pojo.TbGoodsInfoQuery;

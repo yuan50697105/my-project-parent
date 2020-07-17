@@ -1,11 +1,10 @@
 package org.myproject.cloud.application.admin.api.api;
 
 
-import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.cloud.application.admin.api.pojo.BCustomerInfo;
 import org.myproject.cloud.application.admin.api.pojo.BCustomerInfoQuery;
 import org.myproject.cloud.application.admin.api.pojo.BCustomerInfoVo;
-import org.springframework.cloud.openfeign.FeignClient;
+import org.myproject.cloud.application.admin.api.pojo.IPage;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,9 +16,10 @@ import java.util.List;
  * @create: 2020-07-05 09:52
  */
 @RequestMapping("customer/info")
+@ResponseBody
 public interface BCustomerInfoApi {
     @GetMapping("data")
-    IPage<BCustomerInfo> selectByQuery(BCustomerInfoQuery query,@RequestParam(defaultValue = "1") int page,@RequestParam(defaultValue = "20") int size);
+    IPage<BCustomerInfo> selectByQuery(BCustomerInfoQuery query, @RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "20") int size);
 
     @GetMapping("list")
     List<BCustomerInfo> selectByQuery(BCustomerInfoQuery query);

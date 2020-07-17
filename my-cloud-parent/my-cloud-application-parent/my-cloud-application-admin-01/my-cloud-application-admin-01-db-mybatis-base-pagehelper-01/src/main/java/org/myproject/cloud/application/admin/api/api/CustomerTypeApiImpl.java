@@ -2,11 +2,7 @@ package org.myproject.cloud.application.admin.api.api;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
-import org.myproject.boot.mybatis.pojo.PageResult;
-import org.myproject.cloud.application.admin.api.pojo.BCustomerType;
-import org.myproject.cloud.application.admin.api.pojo.BCustomerTypeQuery;
-import org.myproject.cloud.application.admin.api.pojo.BCustomerTypeVo;
+import org.myproject.cloud.application.admin.api.pojo.*;
 import org.myproject.cloud.application.admin.db.converter.TbConverter;
 import org.myproject.cloud.application.admin.db.pojo.TbCustomerType;
 import org.myproject.cloud.application.admin.db.pojo.TbCustomerTypeQuery;

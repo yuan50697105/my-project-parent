@@ -1,11 +1,10 @@
 package org.myproject.cloud.application.admin.api.api;
 
 
-import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.cloud.application.admin.api.pojo.BGoodsInfo;
 import org.myproject.cloud.application.admin.api.pojo.BGoodsInfoQuery;
 import org.myproject.cloud.application.admin.api.pojo.BGoodsInfoVo;
-import org.springframework.cloud.openfeign.FeignClient;
+import org.myproject.cloud.application.admin.api.pojo.IPage;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +16,7 @@ import java.util.List;
  * @create: 2020-07-05 16:23
  */
 @RequestMapping("goods/info")
+@ResponseBody
 public interface BGoodsInfoApi {
     @GetMapping("data")
     IPage<BGoodsInfo> selectByQuery(BGoodsInfoQuery query, @RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "20") int size);

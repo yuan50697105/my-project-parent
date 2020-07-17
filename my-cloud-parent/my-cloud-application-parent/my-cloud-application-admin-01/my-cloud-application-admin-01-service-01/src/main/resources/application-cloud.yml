@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: db
+  application:
+    name: cloud-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1000/eureka

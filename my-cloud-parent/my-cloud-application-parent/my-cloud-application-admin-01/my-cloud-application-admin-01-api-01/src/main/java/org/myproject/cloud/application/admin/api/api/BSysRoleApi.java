@@ -1,11 +1,10 @@
 package org.myproject.cloud.application.admin.api.api;
 
 
-import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.cloud.application.admin.api.pojo.BSysRole;
 import org.myproject.cloud.application.admin.api.pojo.BSysRoleQuery;
 import org.myproject.cloud.application.admin.api.pojo.BSysRoleVo;
-import org.springframework.cloud.openfeign.FeignClient;
+import org.myproject.cloud.application.admin.api.pojo.IPage;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +16,7 @@ import java.util.List;
  * @create: 2020-07-04 23:35
  */
 @RequestMapping("sys/role")
+@ResponseBody
 public interface BSysRoleApi {
 
     @GetMapping("data")
