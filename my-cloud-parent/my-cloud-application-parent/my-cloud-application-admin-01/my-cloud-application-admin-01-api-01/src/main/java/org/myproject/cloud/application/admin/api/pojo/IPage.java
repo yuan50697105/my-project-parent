@@ -1,5 +1,9 @@
 package org.myproject.cloud.application.admin.api.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 /**
@@ -8,14 +12,13 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-06-25 00:09
  */
-public interface IPage<T> {
-    long getPage();
-
-    long getSize();
-
-    long getTotalRows();
-
-    long getTotalPages();
-
-    List<T> getData();
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class IPage<T> {
+    private long page;
+    private long size;
+    private long totalRows;
+    private long totalPages;
+    private List<T> data;
 }

@@ -12,10 +12,12 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class PageResult<T> extends org.myproject.boot.mybatis.pojo.PageResult<T> implements IPage<T> {
+public class PageResult<T> extends IPage<T> {
 
-    public PageResult(PageInfo<T> pageInfo) {
-        super(pageInfo);
+    public PageResult() {
     }
 
+    public PageResult(PageInfo<T> pageInfo) {
+        super(pageInfo.getPageNum(), pageInfo.getPageSize(), pageInfo.getTotal(), pageInfo.getPages(), pageInfo.getList());
+    }
 }

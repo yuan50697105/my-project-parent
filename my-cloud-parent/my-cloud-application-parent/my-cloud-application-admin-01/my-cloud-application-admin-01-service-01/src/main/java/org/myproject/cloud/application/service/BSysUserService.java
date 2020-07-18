@@ -10,6 +10,6 @@ import org.springframework.stereotype.Component;
  * @author: yuane
  * @create: 2020-07-17 23:46
  */
-@FeignClient("CLOUD-API")
+@FeignClient("cloud-api")
 public interface BSysUserService extends BSysUserApi {
 }

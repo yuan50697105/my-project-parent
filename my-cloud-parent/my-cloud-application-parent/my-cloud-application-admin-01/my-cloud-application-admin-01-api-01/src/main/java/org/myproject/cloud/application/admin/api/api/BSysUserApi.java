@@ -16,37 +16,37 @@ import java.util.List;
  * @create: 2020-07-04 23:17
  */
 @RequestMapping("sys/user")
-@ResponseBody
-public interface BSysUserApi {
-    @PostMapping("data")
-    @ResponseBody
-    IPage<BSysUser> selectByQuery(@RequestBody BSysUserQuery query, @RequestBody @RequestParam(defaultValue = "1") int page, @RequestBody @RequestParam(defaultValue = "20") int size);
 
-    @PostMapping("list")
-    @ResponseBody
-    List<BSysUser> selectByQuery(@RequestBody BSysUserQuery query);
+public interface BSysUserApi {
+    @GetMapping("data")
+    
+    IPage<BSysUser> selectByQuery(BSysUserQuery query, @RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "20") int size);
+
+    @GetMapping("list")
+    
+    List<BSysUser> selectByQuery(BSysUserQuery query);
 
     @GetMapping("{id}")
-    @ResponseBody
+    
     BSysUser get(@PathVariable Long id);
 
     @PostMapping
-    @ResponseBody
+    
     void save(@RequestBody BSysUserVo sysUser);
 
     @PutMapping
-    @ResponseBody
+    
     void update(@RequestBody BSysUserVo sysUser);
 
     @DeleteMapping("{id}")
-    @ResponseBody
+    
     void delete(@PathVariable Long id);
 
     @DeleteMapping(params = "ids")
-    @ResponseBody
+    
     void delete(List<Long> ids);
 
     @PatchMapping
-    @ResponseBody
+    
     void modify(BSysUserVo BSysUserVo);
 }
