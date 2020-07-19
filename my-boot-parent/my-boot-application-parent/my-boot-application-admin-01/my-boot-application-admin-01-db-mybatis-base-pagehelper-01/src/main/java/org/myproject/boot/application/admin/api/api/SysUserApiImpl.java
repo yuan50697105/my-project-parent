@@ -75,6 +75,7 @@ public class SysUserApiImpl implements BSysUserApi {
                 break;
             case UPDATE_INFO:
                 updateInfo(BSysUserVo);
+                break;
             case UPDATE_ROLE:
                 updateRole(BSysUserVo);
                 break;

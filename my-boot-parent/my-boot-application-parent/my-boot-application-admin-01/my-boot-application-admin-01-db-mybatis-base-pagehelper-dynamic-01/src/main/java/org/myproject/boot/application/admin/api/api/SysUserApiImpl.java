@@ -1,14 +1,14 @@
 package org.myproject.boot.application.admin.api.api;
 
 import lombok.AllArgsConstructor;
+import org.myproject.boot.application.admin.api.pojo.BSysUser;
+import org.myproject.boot.application.admin.api.pojo.BSysUserQuery;
+import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.*;
 import org.myproject.boot.application.admin.db.service.TbSysRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
-import org.myproject.boot.application.admin.api.pojo.BSysUser;
-import org.myproject.boot.application.admin.api.pojo.BSysUserQuery;
-import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 import org.myproject.boot.mybatis.pojo.PageResult;
@@ -75,6 +75,7 @@ public class SysUserApiImpl implements BSysUserApi {
                 break;
             case UPDATE_INFO:
                 updateInfo(BSysUserVo);
+                break;
             case UPDATE_ROLE:
                 updateRole(BSysUserVo);
                 break;
