@@ -2,12 +2,13 @@ package org.myproject.cloud.application.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.cloud.application.admin.api.pojo.BSysUserQuery;
 import org.myproject.cloud.application.service.BSysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Arrays;
 
 /**
  * @program: my-project-parent
@@ -25,7 +26,8 @@ public class SysUserController {
     @GetMapping
     public Object data() {
         Result<?> success = ResultInfo.success();
-        return sysUserService.selectByQuery(new BSysUserQuery());
+        sysUserService.delete(Arrays.asList());
+        return success;
     }
 
 }

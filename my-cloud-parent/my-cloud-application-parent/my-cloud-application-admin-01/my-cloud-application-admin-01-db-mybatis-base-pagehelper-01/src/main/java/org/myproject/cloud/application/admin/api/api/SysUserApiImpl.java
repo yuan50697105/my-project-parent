@@ -9,7 +9,6 @@ import org.myproject.cloud.application.admin.db.service.TbSysRoleService;
 import org.myproject.cloud.application.admin.db.service.TbSysUserRoleService;
 import org.myproject.cloud.application.admin.db.service.TbSysUserService;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,14 +32,13 @@ public class SysUserApiImpl implements BSysUserApi {
     private final TbSysUserRoleService sysUserRoleService;
     private final TbSysRoleService sysRoleService;
 
-    @Override
-    public IPage<BSysUser> selectByQuery(BSysUserQuery query, int page, int size) {
+    public IPage<BSysUser> selectPageByQuery(BSysUserQuery query) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
-        return new PageResult<>(converter.sysUser(sysUserService.selectByQuery(sysUserQuery, page, size)));
+        return new PageResult<>(converter.sysUser(sysUserService.selectByQuery(sysUserQuery, query.getPage(), query.getSize())));
     }
 
     @Override
-    public List<BSysUser> selectByQuery(BSysUserQuery query) {
+    public List<BSysUser> selectListByQuery(BSysUserQuery query) {
         TbSysUserQuery sysUserQuery = converter.sysUser(query);
         return converter.sysUser(sysUserService.selectByQuery(sysUserQuery));
     }

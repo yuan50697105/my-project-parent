@@ -8,4 +8,5 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 logging:
   level:
-    org.myproject.boot.application.admin.db.mapper: debug
+    web: debug
+    org.myproject.cloud.application.admin.db.mapper: debug
