@@ -2,6 +2,7 @@ package org.myproject.cloud.application.admin.api.api;
 
 
 import org.myproject.cloud.application.admin.api.pojo.BServiceRoute;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-11 20:23
  */
+@ResponseBody
 public interface RouteApi {
     List<BServiceRoute> allRoutes();
 

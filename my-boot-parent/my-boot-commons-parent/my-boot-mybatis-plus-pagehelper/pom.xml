@@ -12,19 +12,21 @@
     <artifactId>my-boot-mybatis-plus-pagehelper</artifactId>
     <dependencies>
         <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-mybatis-commons</artifactId>
+            <version>1.0.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.2</version>
         </dependency>
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.2.13</version>
         </dependency>
         <dependency>
             <groupId>com.gitee.denger</groupId>
             <artifactId>mybatis-example-ext</artifactId>
-            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -45,11 +47,6 @@
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc8</artifactId>
             <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-mybatis-commons</artifactId>
-            <version>1.0.0.0</version>
         </dependency>
     </dependencies>
 

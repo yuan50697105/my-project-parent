@@ -7,31 +7,26 @@ import java.math.BigDecimal;
 
 @Data
 public class BOrderInfo implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      *
      */
     private Long id;
-
     /**
      *
      */
     private String orderNo;
-
     /**
      *
      */
     private Long customerId;
-
     /**
      *
      */
     private Integer customerName;
-
     /**
      *
      */
     private BigDecimal totalPrice;
-
-    private static final long serialVersionUID = 1L;
 }
 

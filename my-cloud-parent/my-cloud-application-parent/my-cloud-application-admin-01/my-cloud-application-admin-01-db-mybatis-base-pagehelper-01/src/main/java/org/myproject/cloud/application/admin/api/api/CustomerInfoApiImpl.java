@@ -2,11 +2,7 @@ package org.myproject.cloud.application.admin.api.api;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
-import org.myproject.boot.mybatis.pojo.PageResult;
-import org.myproject.cloud.application.admin.api.pojo.BCustomerInfo;
-import org.myproject.cloud.application.admin.api.pojo.BCustomerInfoQuery;
-import org.myproject.cloud.application.admin.api.pojo.BCustomerInfoVo;
+import org.myproject.cloud.application.admin.api.pojo.*;
 import org.myproject.cloud.application.admin.db.converter.TbConverter;
 import org.myproject.cloud.application.admin.db.pojo.TbCustomerInfo;
 import org.myproject.cloud.application.admin.db.pojo.TbCustomerInfoQuery;
@@ -25,7 +21,6 @@ import java.util.List;
  * @create: 2020-07-11 19:00
  */
 @Service
-@org.apache.dubbo.config.annotation.Service
 @AllArgsConstructor
 @Transactional
 @Primary

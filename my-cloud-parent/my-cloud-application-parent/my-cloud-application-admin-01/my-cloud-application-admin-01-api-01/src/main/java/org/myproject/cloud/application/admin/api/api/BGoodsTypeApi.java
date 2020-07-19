@@ -1,11 +1,10 @@
 package org.myproject.cloud.application.admin.api.api;
 
 
-import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.cloud.application.admin.api.pojo.BGoodsType;
 import org.myproject.cloud.application.admin.api.pojo.BGoodsTypeQuery;
 import org.myproject.cloud.application.admin.api.pojo.BGoodsTypeVo;
-import org.springframework.cloud.openfeign.FeignClient;
+import org.myproject.cloud.application.admin.api.pojo.IPage;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,8 +16,8 @@ import java.util.List;
  * @create: 2020-07-05 16:03
  */
 
-@FeignClient("cloud-api")
 @RequestMapping("goods/type")
+@ResponseBody
 public interface BGoodsTypeApi {
     @GetMapping("data")
     IPage<BGoodsType> selectByQuery(BGoodsTypeQuery query, int page, int size);

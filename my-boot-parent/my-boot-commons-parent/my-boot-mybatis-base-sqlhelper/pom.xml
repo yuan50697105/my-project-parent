@@ -12,24 +12,26 @@
     <artifactId>my-boot-mybatis-base-sqlhelper</artifactId>
     <dependencies>
         <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-mybatis-commons</artifactId>
+            <version>1.0.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.fangjinuo.sqlhelper</groupId>
             <artifactId>sqlhelper-mybatis-over-pagehelper</artifactId>
-            <version>3.1.1</version>
         </dependency>
         <dependency>
             <groupId>com.github.fangjinuo.sqlhelper</groupId>
             <artifactId>sqlhelper-mybatis-spring-boot-starter</artifactId>
-            <version>3.1.1</version>
         </dependency>
         <dependency>
             <groupId>com.github.fangjinuo.easyjson</groupId>
             <artifactId>easyjson-jackson</artifactId>
-            <version>3.0.0</version>
+            <version>${easyjson-jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.gitee.denger</groupId>
             <artifactId>mybatis-example-ext</artifactId>
-            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -50,11 +52,6 @@
             <groupId>com.oracle.ojdbc</groupId>
             <artifactId>ojdbc8</artifactId>
             <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-mybatis-commons</artifactId>
-            <version>1.0.0.0</version>
         </dependency>
     </dependencies>
 
