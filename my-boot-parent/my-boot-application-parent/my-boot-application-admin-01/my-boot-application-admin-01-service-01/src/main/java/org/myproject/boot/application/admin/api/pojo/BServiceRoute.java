@@ -2,6 +2,8 @@ package org.myproject.boot.application.admin.api.pojo;
 
 import lombok.*;
 
+import java.util.List;
+
 /**
  * @program: my-project-parent
  * @description:
@@ -18,4 +20,6 @@ public class BServiceRoute {
     private String url;
     private String name;
     private String method;
+    @Singular
+    private List<BServiceRoute> children;
 }
