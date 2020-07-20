@@ -5,7 +5,6 @@ import org.myproject.boot.application.admin.api.pojo.BGoodsType;
 import org.myproject.boot.application.admin.api.pojo.BGoodsTypeQuery;
 import org.myproject.boot.application.admin.api.pojo.BGoodsTypeVo;
 import org.myproject.boot.application.admin.api.pojo.IPage;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
 
 import java.util.List;
 

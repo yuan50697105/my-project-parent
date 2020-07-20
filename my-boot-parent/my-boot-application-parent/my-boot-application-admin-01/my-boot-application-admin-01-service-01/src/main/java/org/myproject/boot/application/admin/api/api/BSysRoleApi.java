@@ -5,7 +5,6 @@ import org.myproject.boot.application.admin.api.pojo.BSysRole;
 import org.myproject.boot.application.admin.api.pojo.BSysRoleQuery;
 import org.myproject.boot.application.admin.api.pojo.BSysRoleVo;
 import org.myproject.boot.application.admin.api.pojo.IPage;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
 
 import java.util.List;
 

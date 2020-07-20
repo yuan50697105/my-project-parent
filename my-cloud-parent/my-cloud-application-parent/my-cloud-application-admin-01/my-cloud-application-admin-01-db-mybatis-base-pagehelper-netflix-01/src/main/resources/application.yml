@@ -1,5 +1,5 @@
 spring:
   profiles:
-    active: db,netflix
+    active: db,cloud
 server:
   port: 1003

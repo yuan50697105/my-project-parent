@@ -6,7 +6,7 @@ import org.myproject.boot.application.admin.api.api.BGoodsInfoApi;
 import org.myproject.boot.application.admin.api.pojo.BGoodsInfo;
 import org.myproject.boot.application.admin.api.pojo.BGoodsInfoQuery;
 import org.myproject.boot.application.admin.api.pojo.BGoodsInfoVo;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
+import org.myproject.boot.application.admin.api.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
