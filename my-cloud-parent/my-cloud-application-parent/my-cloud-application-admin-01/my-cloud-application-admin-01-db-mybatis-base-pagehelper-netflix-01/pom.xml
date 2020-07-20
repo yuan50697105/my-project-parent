@@ -42,10 +42,6 @@
             <artifactId>feign-okhttp</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-cloud-application-admin-01-api-01</artifactId>
             <version>1.0.0.0</version>

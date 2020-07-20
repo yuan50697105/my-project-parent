@@ -1,5 +1,6 @@
 package org.myproject.cloud.application.service;
 
+import org.myproject.cloud.application.admin.api.base.BSysUserApi;
 import org.springframework.cloud.openfeign.FeignClient;
 
 /**
