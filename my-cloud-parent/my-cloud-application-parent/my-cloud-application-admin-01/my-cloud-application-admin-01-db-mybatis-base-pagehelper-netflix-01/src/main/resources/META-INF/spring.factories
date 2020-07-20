@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    org.myproject.cloud.application.admin.CloudConfiguration
+    org.myproject.cloud.application.admin.CloudConfiguration,\
+  org.myproject.cloud.application.admin.api.ServiceConfiguration

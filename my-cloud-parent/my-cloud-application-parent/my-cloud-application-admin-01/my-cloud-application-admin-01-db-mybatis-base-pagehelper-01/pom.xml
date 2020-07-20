@@ -13,26 +13,8 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-webmvc</artifactId>
-            <version>1.0.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
             <artifactId>my-boot-mybatis-base-pagehelper</artifactId>
             <version>1.0.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-cloud-application-admin-01-api-01</artifactId>
-            <version>1.0.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-okhttp</artifactId>
         </dependency>
     </dependencies>
 
