@@ -1,10 +1,11 @@
 package org.myproject.boot.application.admin.api.pojo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import lombok.Data;
 
 @Data
-public class BOrderItem {
+public class BOrderItem implements Serializable {
     /**
      *
      */

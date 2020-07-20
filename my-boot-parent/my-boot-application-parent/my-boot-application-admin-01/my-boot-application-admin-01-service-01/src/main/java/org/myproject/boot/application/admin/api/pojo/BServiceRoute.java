@@ -2,6 +2,7 @@ package org.myproject.boot.application.admin.api.pojo;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class BServiceRoute {
+public class BServiceRoute implements Serializable {
     @NonNull
     private String url;
     private String name;
