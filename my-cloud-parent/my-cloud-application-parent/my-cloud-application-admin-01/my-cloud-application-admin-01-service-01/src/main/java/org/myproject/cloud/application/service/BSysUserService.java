@@ -1,8 +1,6 @@
 package org.myproject.cloud.application.service;
 
-import org.myproject.cloud.application.admin.api.api.BSysUserApi;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 
 /**
  * @program: my-project-parent

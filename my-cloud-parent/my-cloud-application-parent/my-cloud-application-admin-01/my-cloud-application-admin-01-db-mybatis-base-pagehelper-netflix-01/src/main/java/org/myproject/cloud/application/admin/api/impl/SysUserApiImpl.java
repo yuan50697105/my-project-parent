@@ -1,9 +1,10 @@
-package org.myproject.cloud.application.admin.api.api;
+package org.myproject.cloud.application.admin.api.impl;
 
 import lombok.AllArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
+import org.myproject.cloud.application.admin.api.base.BSysUserApi;
 import org.myproject.cloud.application.admin.api.pojo.*;
-import org.myproject.cloud.application.admin.db.converter.TbConverter;
+import org.myproject.cloud.application.admin.api.converter.TbConverter;
 import org.myproject.cloud.application.admin.db.pojo.*;
 import org.myproject.cloud.application.admin.db.service.TbSysRoleService;
 import org.myproject.cloud.application.admin.db.service.TbSysUserRoleService;

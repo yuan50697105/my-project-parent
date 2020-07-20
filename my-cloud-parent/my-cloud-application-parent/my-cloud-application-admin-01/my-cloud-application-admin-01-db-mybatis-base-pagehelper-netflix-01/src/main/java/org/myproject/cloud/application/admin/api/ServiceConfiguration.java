@@ -1,6 +1,8 @@
 package org.myproject.cloud.application.admin.api;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -11,5 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootConfiguration
 @ComponentScan(basePackages = {"org.myproject.cloud.application.admin.api"})
+@EnableFeignClients(basePackages = {"org.myproject.cloud.application.admin.api.impl.feign"})
+@EnableDubbo(scanBasePackages = {"org.myproject.cloud.application.admin.api.impl.dubbo"})
 public class ServiceConfiguration {
 }

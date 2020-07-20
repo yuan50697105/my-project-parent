@@ -1,5 +1,6 @@
-package org.myproject.cloud.application.admin.api.api;
+package org.myproject.cloud.application.admin.api.impl;
 
+import org.myproject.cloud.application.admin.api.base.BOrderItemApi;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -7,9 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
  * @program: my-project-parent
  * @description:
  * @author: yuane
- * @create: 2020-07-15 19:58
+ * @create: 2020-07-15 19:57
  */
 @Service
 @Transactional
-public class BOrderInfoApiImpl implements BOrderInfoApi {
+public class BOrderItemApiImpl implements BOrderItemApi {
 }

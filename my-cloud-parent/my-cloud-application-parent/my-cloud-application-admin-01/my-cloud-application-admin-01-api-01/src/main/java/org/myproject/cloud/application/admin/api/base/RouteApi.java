@@ -1,4 +1,4 @@
-package org.myproject.cloud.application.admin.api.api;
+package org.myproject.cloud.application.admin.api.base;
 
 
 import org.myproject.cloud.application.admin.api.pojo.BServiceRoute;

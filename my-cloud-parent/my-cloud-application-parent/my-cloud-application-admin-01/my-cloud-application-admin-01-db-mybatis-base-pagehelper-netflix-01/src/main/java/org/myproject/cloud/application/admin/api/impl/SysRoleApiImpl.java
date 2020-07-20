@@ -1,9 +1,10 @@
-package org.myproject.cloud.application.admin.api.api;
+package org.myproject.cloud.application.admin.api.impl;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
+import org.myproject.cloud.application.admin.api.base.BSysRoleApi;
 import org.myproject.cloud.application.admin.api.pojo.*;
-import org.myproject.cloud.application.admin.db.converter.TbConverter;
+import org.myproject.cloud.application.admin.api.converter.TbConverter;
 import org.myproject.cloud.application.admin.db.pojo.TbSysRole;
 import org.myproject.cloud.application.admin.db.pojo.TbSysRoleQuery;
 import org.myproject.cloud.application.admin.db.service.TbSysRoleService;
