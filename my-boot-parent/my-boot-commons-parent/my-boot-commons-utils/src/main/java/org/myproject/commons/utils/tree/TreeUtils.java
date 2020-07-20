@@ -3,6 +3,7 @@ package org.myproject.commons.utils.tree;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import lombok.experimental.UtilityClass;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -18,9 +19,6 @@ import java.util.stream.Collectors;
  * @create: 2020-07-07 20:53
  */
 public abstract class TreeUtils {
-    private TreeUtils() {
-    }
-
     /**
      * treeList转list
      *
