@@ -2,15 +2,11 @@ package org.myproject.boot.application.admin.api.api;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
+import org.myproject.boot.application.admin.api.pojo.*;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsInfoQuery;
 import org.myproject.boot.application.admin.db.service.TbGoodsInfoService;
-import org.myproject.boot.application.admin.api.pojo.BGoodsInfo;
-import org.myproject.boot.application.admin.api.pojo.BGoodsInfoQuery;
-import org.myproject.boot.application.admin.api.pojo.BGoodsInfoVo;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
-import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

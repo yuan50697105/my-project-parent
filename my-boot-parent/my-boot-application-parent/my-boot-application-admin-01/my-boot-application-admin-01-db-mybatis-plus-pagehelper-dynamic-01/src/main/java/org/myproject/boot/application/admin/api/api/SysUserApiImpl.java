@@ -3,6 +3,7 @@ package org.myproject.boot.application.admin.api.api;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
+import org.myproject.boot.application.admin.api.pojo.IPage;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
@@ -12,7 +13,6 @@ import org.myproject.boot.application.admin.db.service.TbSysUserService;
 import org.myproject.boot.application.admin.api.pojo.BSysUser;
 import org.myproject.boot.application.admin.api.pojo.BSysUserQuery;
 import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
