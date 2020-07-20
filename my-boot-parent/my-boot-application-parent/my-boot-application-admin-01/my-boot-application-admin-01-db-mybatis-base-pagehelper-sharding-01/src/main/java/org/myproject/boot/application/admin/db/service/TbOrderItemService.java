@@ -1,9 +1,11 @@
 package org.myproject.boot.application.admin.db.service;
 
-import org.myproject.boot.application.admin.db.pojo.TbOrderItemExample;
-import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.TbOrderItem;
-public interface TbOrderItemService{
+import org.myproject.boot.application.admin.db.pojo.TbOrderItemExample;
+
+import java.util.List;
+
+public interface TbOrderItemService {
 
 
     long countByExample(TbOrderItemExample example);
@@ -20,9 +22,9 @@ public interface TbOrderItemService{
 
     TbOrderItem selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbOrderItem record,TbOrderItemExample example);
+    int updateByExampleSelective(TbOrderItem record, TbOrderItemExample example);
 
-    int updateByExample(TbOrderItem record,TbOrderItemExample example);
+    int updateByExample(TbOrderItem record, TbOrderItemExample example);
 
     int updateByPrimaryKeySelective(TbOrderItem record);
 

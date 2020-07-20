@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @SuperBuilder(toBuilder = true)
 @Accessors(chain = true)
-public class BOrderItemQuery  extends BBaserQuery implements Serializable {
+public class BOrderItemQuery extends BBaserQuery implements Serializable {
     /**
      *
      */

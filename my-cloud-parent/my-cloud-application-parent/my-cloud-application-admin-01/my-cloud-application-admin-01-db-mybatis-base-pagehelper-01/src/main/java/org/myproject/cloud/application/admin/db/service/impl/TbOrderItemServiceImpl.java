@@ -52,12 +52,12 @@ public class TbOrderItemServiceImpl implements TbOrderItemService {
 
     @Override
     public int updateByExampleSelective(TbOrderItem record, TbOrderItemExample example) {
-        return tbOrderItemMapper.updateByExampleSelective(record,example);
+        return tbOrderItemMapper.updateByExampleSelective(record, example);
     }
 
     @Override
     public int updateByExample(TbOrderItem record, TbOrderItemExample example) {
-        return tbOrderItemMapper.updateByExample(record,example);
+        return tbOrderItemMapper.updateByExample(record, example);
     }
 
     @Override

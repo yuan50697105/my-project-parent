@@ -19,7 +19,7 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "tb_customer_info")
-public class TbCustomerInfoQuery extends BaseEntity implements Serializable , MybatisExampleForTk<TbCustomerInfo, Example> {
+public class TbCustomerInfoQuery extends BaseEntity implements Serializable, MybatisExampleForTk<TbCustomerInfo, Example> {
     public static final String COL_ID = "id";
     public static final String COL_NAME = "name";
     public static final String COL_NAME_PY = "name_py";
@@ -27,34 +27,31 @@ public class TbCustomerInfoQuery extends BaseEntity implements Serializable , My
     public static final String COL_PHONE = "phone";
     public static final String COL_AGE = "age";
     public static final String COL_TYPE_ID = "type_id";
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     @Column(name = "`name`")
     @AndLike
     private String name;
-
     /**
      * namePy
      */
     @Column(name = "name_py")
     @AndLike
     private String namePy;
-
     /**
      * namePyF
      */
     @Column(name = "name_py_f")
     @AndLike
     private String namePyF;
-
     /**
      * phone
      */
     @Column(name = "phone")
     @AndLike
     private String phone;
-
     /**
      * age
      */
@@ -67,6 +64,4 @@ public class TbCustomerInfoQuery extends BaseEntity implements Serializable , My
     @Column(name = "type_id")
     @AndEqualTo
     private Long typeId;
-
-    private static final long serialVersionUID = 1L;
 }

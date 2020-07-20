@@ -9,6 +9,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.util.List;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor

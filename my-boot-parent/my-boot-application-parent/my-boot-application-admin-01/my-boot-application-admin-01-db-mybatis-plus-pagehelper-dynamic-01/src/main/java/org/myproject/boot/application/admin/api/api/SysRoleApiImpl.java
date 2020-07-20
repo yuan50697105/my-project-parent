@@ -3,13 +3,13 @@ package org.myproject.boot.application.admin.api.api;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
+import org.myproject.boot.application.admin.api.pojo.BSysRole;
+import org.myproject.boot.application.admin.api.pojo.BSysRoleQuery;
+import org.myproject.boot.application.admin.api.pojo.BSysRoleVo;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbSysRole;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleQuery;
 import org.myproject.boot.application.admin.db.service.TbSysRoleService;
-import org.myproject.boot.application.admin.api.pojo.BSysRole;
-import org.myproject.boot.application.admin.api.pojo.BSysRoleQuery;
-import org.myproject.boot.application.admin.api.pojo.BSysRoleVo;
 import org.myproject.boot.mybatis.commons.pojo.IPage;
 import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;

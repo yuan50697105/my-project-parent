@@ -1,15 +1,7 @@
 package org.myproject.boot.application.admin.jersey;
 
-import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.boot.SpringBootConfiguration;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.event.ContextRefreshedEvent;
-
-import javax.ws.rs.Path;
-import java.util.Map;
 
 /**
  * @program: my-project-parent

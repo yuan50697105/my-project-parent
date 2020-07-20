@@ -3,7 +3,6 @@ package org.myproject.commons.utils.tree;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import lombok.experimental.UtilityClass;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -65,7 +64,7 @@ public abstract class TreeUtils {
      */
     public static <T> List<TreeNode<T>> list2tree(List<TreeNode<T>> list) {
         List<TreeNode<T>> result = new ArrayList<>();
-        Map<String, TreeNode<T>> hash = list.stream().collect(Collectors.toMap(TreeNode<T>::getId, treeNode -> treeNode));
+        Map<String, TreeNode<T>> hash = list.stream().collect(Collectors.toMap(TreeNode::getId, treeNode -> treeNode));
         for (TreeNode<T> test : list) {
             TreeNode<T> p = hash.get(test.getParentId());
             if (p == null) {

@@ -1,10 +1,11 @@
 package org.myproject.boot.application.admin.db.mapper;
 
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeExample;
+
+import java.util.List;
 
 @Mapper
 public interface TbGoodsTypeMapper {

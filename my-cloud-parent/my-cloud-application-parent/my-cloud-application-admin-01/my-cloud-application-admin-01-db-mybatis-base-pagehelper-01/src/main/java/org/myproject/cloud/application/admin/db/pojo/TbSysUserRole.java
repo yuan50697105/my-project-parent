@@ -15,9 +15,7 @@ public class TbSysUserRole extends BaseEntity implements Serializable {
     public static final String COL_ID = "id";
     public static final String COL_USER_ID = "user_id";
     public static final String COL_ROLE_ID = "role_id";
-    private Long userId;
-
-    private Long roleId;
-
     private static final long serialVersionUID = 1L;
+    private Long userId;
+    private Long roleId;
 }

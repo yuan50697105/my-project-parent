@@ -2,11 +2,12 @@ package org.myproject.boot.application.admin.db.service;
 
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.TbOrderInfo;
-import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.TbOrderInfoExample;
 import org.myproject.boot.application.admin.db.pojo.TbOrderInfoQuery;
 
-public interface TbOrderInfoService{
+import java.util.List;
+
+public interface TbOrderInfoService {
 
 
     long countByExample(TbOrderInfoExample example);
@@ -23,9 +24,9 @@ public interface TbOrderInfoService{
 
     TbOrderInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(TbOrderInfo record,TbOrderInfoExample example);
+    int updateByExampleSelective(TbOrderInfo record, TbOrderInfoExample example);
 
-    int updateByExample(TbOrderInfo record,TbOrderInfoExample example);
+    int updateByExample(TbOrderInfo record, TbOrderInfoExample example);
 
     int updateByPrimaryKeySelective(TbOrderInfo record);
 

@@ -11,31 +11,23 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
-    * 订单项目
-    */
+ * 订单项目
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class TbOrderItemQuery extends BaseEntity implements Serializable, MybatisExample<TbOrderInfoExample> {
+    private static final long serialVersionUID = 1L;
     @AndEqualTo
     private Long orderId;
-
     @AndLike
     private Integer orderNo;
-
     @AndEqualTo
     private Long goodsId;
-
     @AndLike
     private String goodsCode;
-
     @AndLike
     private String goodsName;
-
     private BigDecimal goodsSinglePrice;
-
     private Integer goodsNum;
-
     private BigDecimal goodsTotalPrice;
-
-    private static final long serialVersionUID = 1L;
 }

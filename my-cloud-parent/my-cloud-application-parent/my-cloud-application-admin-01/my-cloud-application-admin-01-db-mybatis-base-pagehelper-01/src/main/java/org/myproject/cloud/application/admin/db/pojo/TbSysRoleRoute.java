@@ -15,9 +15,7 @@ public class TbSysRoleRoute extends BaseEntity implements Serializable {
     public static final String COL_ID = "id";
     public static final String COL_ROLE_ID = "role_id";
     public static final String COL_ROUTE_ID = "route_id";
-    private Long roleId;
-
-    private Long routeId;
-
     private static final long serialVersionUID = 1L;
+    private Long roleId;
+    private Long routeId;
 }

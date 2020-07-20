@@ -1,10 +1,10 @@
 package org.myproject.boot.application.admin.api.api;
 
 import lombok.AllArgsConstructor;
+import org.myproject.boot.application.admin.api.pojo.BServiceRoute;
 import org.myproject.boot.application.admin.db.converter.TbConverter;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoute;
 import org.myproject.boot.application.admin.db.service.TbSysRouteService;
-import org.myproject.boot.application.admin.api.pojo.BServiceRoute;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

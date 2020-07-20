@@ -17,9 +17,8 @@ import java.io.Serializable;
 public class TbCustomerTypeQuery extends BaseEntity implements Serializable, MybatisExampleForTk<TbCustomerType, Example> {
     public static final String COL_ID = "id";
     public static final String COL_NAME = "name";
+    private static final long serialVersionUID = 1L;
     @Column(name = "`name`")
     @AndLike
     private Integer name;
-
-    private static final long serialVersionUID = 1L;
 }

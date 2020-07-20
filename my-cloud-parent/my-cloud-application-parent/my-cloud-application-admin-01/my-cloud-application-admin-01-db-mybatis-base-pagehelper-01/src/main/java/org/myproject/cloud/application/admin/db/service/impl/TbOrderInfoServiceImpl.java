@@ -55,12 +55,12 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService {
 
     @Override
     public int updateByExampleSelective(TbOrderInfo record, TbOrderInfoExample example) {
-        return tbOrderInfoMapper.updateByExampleSelective(record,example);
+        return tbOrderInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
     public int updateByExample(TbOrderInfo record, TbOrderInfoExample example) {
-        return tbOrderInfoMapper.updateByExample(record,example);
+        return tbOrderInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -80,12 +80,12 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService {
     }
 
     @Override
-    public List<TbOrderInfo> selectByQuery(TbOrderInfoQuery query){
+    public List<TbOrderInfo> selectByQuery(TbOrderInfoQuery query) {
         return selectByExample(query.toExample());
     }
 
     @Override
-    public PageInfo<TbOrderInfo> selectByQuery(TbOrderInfoQuery query, int page, int pageSize){
-        return selectByExample(query.toExample(),page,pageSize);
+    public PageInfo<TbOrderInfo> selectByQuery(TbOrderInfoQuery query, int page, int pageSize) {
+        return selectByExample(query.toExample(), page, pageSize);
     }
 }

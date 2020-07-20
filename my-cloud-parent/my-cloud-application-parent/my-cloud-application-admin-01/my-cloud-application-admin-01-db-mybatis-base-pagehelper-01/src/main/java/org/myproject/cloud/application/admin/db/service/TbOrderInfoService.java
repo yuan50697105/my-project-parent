@@ -7,7 +7,7 @@ import org.myproject.cloud.application.admin.db.pojo.TbOrderInfoQuery;
 
 import java.util.List;
 
-public interface TbOrderInfoService{
+public interface TbOrderInfoService {
 
 
     long countByExample(TbOrderInfoExample example);

@@ -17,31 +17,26 @@ import java.math.BigDecimal;
 @SuperBuilder(toBuilder = true)
 @Accessors(chain = true)
 public class BOrderInfoQuery extends BBaserQuery implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      *
      */
     private Long id;
-
     /**
      *
      */
     private String orderNo;
-
     /**
      *
      */
     private Long customerId;
-
     /**
      *
      */
     private Integer customerName;
-
     /**
      *
      */
     private BigDecimal totalPrice;
-
-    private static final long serialVersionUID = 1L;
 }
 

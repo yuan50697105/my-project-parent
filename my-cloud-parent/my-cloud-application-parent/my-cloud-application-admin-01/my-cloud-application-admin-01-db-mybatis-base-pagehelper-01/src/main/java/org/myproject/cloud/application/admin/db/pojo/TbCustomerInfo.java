@@ -19,32 +19,26 @@ public class TbCustomerInfo extends BaseEntity implements Serializable {
     public static final String COL_PHONE = "phone";
     public static final String COL_AGE = "age";
     public static final String COL_TYPE_ID = "type_id";
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     private String name;
-
     /**
      * namePy
      */
     private String namePy;
-
     /**
      * namePyF
      */
     private String namePyF;
-
     /**
      * phone
      */
     private String phone;
-
     /**
      * age
      */
     private Integer age;
-
     private Long typeId;
-
-    private static final long serialVersionUID = 1L;
 }

@@ -2,8 +2,6 @@ package org.myproject.boot.application.admin.mvc.graphiql.pojo;
 
 import lombok.Data;
 
-import java.util.List;
-
 /**
  * @program: my-project-parent
  * @description:

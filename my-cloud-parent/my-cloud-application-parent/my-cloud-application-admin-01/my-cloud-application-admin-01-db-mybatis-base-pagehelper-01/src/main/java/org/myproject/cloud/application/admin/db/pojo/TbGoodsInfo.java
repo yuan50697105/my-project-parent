@@ -15,13 +15,9 @@ public class TbGoodsInfo extends BaseEntity implements Serializable {
     public static final String COL_NAME = "name";
     public static final String COL_PRICE = "price";
     public static final String COL_TYPE_ID = "type_id";
-    private Long code;
-
-    private String name;
-
-    private BigDecimal price;
-
-    private Long typeId;
-
     private static final long serialVersionUID = 1L;
+    private Long code;
+    private String name;
+    private BigDecimal price;
+    private Long typeId;
 }

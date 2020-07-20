@@ -13,13 +13,9 @@ import java.math.BigDecimal;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class TbOrderInfo extends BaseEntity implements Serializable {
-    private String orderNo;
-
-    private Long customerId;
-
-    private Integer customerName;
-
-    private BigDecimal totalPrice;
-
     private static final long serialVersionUID = 1L;
+    private String orderNo;
+    private Long customerId;
+    private Integer customerName;
+    private BigDecimal totalPrice;
 }

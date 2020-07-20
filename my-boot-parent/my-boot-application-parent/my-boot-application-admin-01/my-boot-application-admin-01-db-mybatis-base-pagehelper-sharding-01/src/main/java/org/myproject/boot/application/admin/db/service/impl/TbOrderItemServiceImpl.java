@@ -1,14 +1,16 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import org.myproject.boot.application.admin.db.mapper.TbOrderItemMapper;
-import org.myproject.boot.application.admin.db.pojo.TbOrderItemExample;
-import java.util.List;
 import org.myproject.boot.application.admin.db.pojo.TbOrderItem;
+import org.myproject.boot.application.admin.db.pojo.TbOrderItemExample;
 import org.myproject.boot.application.admin.db.service.TbOrderItemService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class TbOrderItemServiceImpl implements TbOrderItemService{
+public class TbOrderItemServiceImpl implements TbOrderItemService {
 
     @Resource
     private TbOrderItemMapper tbOrderItemMapper;
@@ -49,13 +51,13 @@ public class TbOrderItemServiceImpl implements TbOrderItemService{
     }
 
     @Override
-    public int updateByExampleSelective(TbOrderItem record,TbOrderItemExample example) {
-        return tbOrderItemMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbOrderItem record, TbOrderItemExample example) {
+        return tbOrderItemMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbOrderItem record,TbOrderItemExample example) {
-        return tbOrderItemMapper.updateByExample(record,example);
+    public int updateByExample(TbOrderItem record, TbOrderItemExample example) {
+        return tbOrderItemMapper.updateByExample(record, example);
     }
 
     @Override

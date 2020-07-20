@@ -2,16 +2,18 @@ package org.myproject.boot.application.admin.db.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.db.pojo.TbOrderInfoQuery;
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import org.myproject.boot.application.admin.db.pojo.TbOrderInfo;
-import java.util.List;
 import org.myproject.boot.application.admin.db.mapper.TbOrderInfoMapper;
+import org.myproject.boot.application.admin.db.pojo.TbOrderInfo;
 import org.myproject.boot.application.admin.db.pojo.TbOrderInfoExample;
+import org.myproject.boot.application.admin.db.pojo.TbOrderInfoQuery;
 import org.myproject.boot.application.admin.db.service.TbOrderInfoService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class TbOrderInfoServiceImpl implements TbOrderInfoService{
+public class TbOrderInfoServiceImpl implements TbOrderInfoService {
 
     @Resource
     private TbOrderInfoMapper tbOrderInfoMapper;
@@ -52,13 +54,13 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(TbOrderInfo record,TbOrderInfoExample example) {
-        return tbOrderInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbOrderInfo record, TbOrderInfoExample example) {
+        return tbOrderInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbOrderInfo record,TbOrderInfoExample example) {
-        return tbOrderInfoMapper.updateByExample(record,example);
+    public int updateByExample(TbOrderInfo record, TbOrderInfoExample example) {
+        return tbOrderInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -78,12 +80,12 @@ public class TbOrderInfoServiceImpl implements TbOrderInfoService{
     }
 
     @Override
-    public List<TbOrderInfo> selectByQuery(TbOrderInfoQuery query){
+    public List<TbOrderInfo> selectByQuery(TbOrderInfoQuery query) {
         return selectByExample(query.toExample());
     }
 
     @Override
-    public PageInfo<TbOrderInfo> selectByQuery(TbOrderInfoQuery query, int page, int pageSize){
-        return selectByExample(query.toExample(),page,pageSize);
+    public PageInfo<TbOrderInfo> selectByQuery(TbOrderInfoQuery query, int page, int pageSize) {
+        return selectByExample(query.toExample(), page, pageSize);
     }
 }
