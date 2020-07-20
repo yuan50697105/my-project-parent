@@ -1,11 +1,18 @@
 package org.myproject.cloud.application.admin.api.pojo;
 
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.Accessors;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class BCustomerLogQuery implements Serializable {
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder(toBuilder = true)
+@Accessors(chain = true)
+public class BCustomerLogQuery extends BBaserQuery implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      *
@@ -23,5 +30,7 @@ public class BCustomerLogQuery implements Serializable {
      *
      */
     private String content;
+
+
 }
 

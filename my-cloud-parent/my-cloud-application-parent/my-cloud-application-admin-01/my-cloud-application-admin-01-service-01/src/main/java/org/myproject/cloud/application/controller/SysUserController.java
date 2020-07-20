@@ -2,6 +2,9 @@ package org.myproject.cloud.application.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
+import org.myproject.cloud.application.admin.api.pojo.BSysUser;
+import org.myproject.cloud.application.admin.api.pojo.BSysUserQuery;
+import org.myproject.cloud.application.admin.api.pojo.IPage;
 import org.myproject.cloud.application.service.BSysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +25,10 @@ public class SysUserController {
     @Autowired
     private BSysUserService sysUserService;
 
-
-    @GetMapping
-    public Object data() {
-        Result<?> success = ResultInfo.success();
-        sysUserService.delete(Arrays.asList());
-        return success;
+    @GetMapping("data")
+    public Result<?> data(BSysUserQuery query) {
+        IPage<BSysUser> iPage = sysUserService.selectPageByQuery(query);
+        return ResultInfo.success(iPage.getData(), iPage.getTotalRows());
     }
 
 }

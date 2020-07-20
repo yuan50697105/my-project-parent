@@ -1,6 +1,9 @@
 package org.myproject.cloud.application.admin.api.pojo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  * @program: my-project-parent
@@ -9,7 +12,10 @@ import lombok.Data;
  * @create: 2020-07-19 20:04
  */
 @Data
-public class BBaserQuery {
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder(toBuilder = true)
+public abstract class BBaserQuery {
     private int page = 1;
-    private int size;
+    private int size = 10;
 }

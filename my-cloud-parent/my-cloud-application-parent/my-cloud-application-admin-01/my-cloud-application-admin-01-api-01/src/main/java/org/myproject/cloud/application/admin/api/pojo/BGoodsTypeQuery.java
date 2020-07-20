@@ -1,11 +1,19 @@
 package org.myproject.cloud.application.admin.api.pojo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
 @Data
-public class BGoodsTypeQuery implements Serializable {
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder(toBuilder = true)
+@Accessors(chain = true)
+public class BGoodsTypeQuery extends BBaserQuery implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      *
