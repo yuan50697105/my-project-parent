@@ -20,7 +20,7 @@
     <packaging>pom</packaging>
     <properties>
         <java.version>11</java.version>
-        <sqlhelper.version>${dynamic-datasource-spring-boot-starter.version}</sqlhelper.version>
+        <sqlhelper.version>3.1.1</sqlhelper.version>
         <spring-cloud-dependencies.version>Hoxton.SR6</spring-cloud-dependencies.version>
         <spring-cloud-alibaba-dependencies.version>2.2.1.RELEASE</spring-cloud-alibaba-dependencies.version>
         <api-boot-dependencies.version>2.2.7.RELEASE</api-boot-dependencies.version>
