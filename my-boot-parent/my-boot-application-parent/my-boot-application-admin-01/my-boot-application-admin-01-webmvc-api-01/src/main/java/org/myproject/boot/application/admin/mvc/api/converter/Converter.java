@@ -1,6 +1,7 @@
 package org.myproject.boot.application.admin.mvc.api.converter;
 
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.myproject.boot.application.admin.api.pojo.BServiceRoute;
 import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
 import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserVo;
@@ -14,7 +15,7 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-07-11 20:05
  */
-@Mapper(componentModel = "spring", nullValueCheckStrategy = NullValueCheckStrategy.ON_IMPLICIT_CONVERSION, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL)
+@Mapper(componentModel = "spring")
 public interface Converter {
     @Mapping(target = "name", ignore = true)
     @Mapping(target = "method", ignore = true)

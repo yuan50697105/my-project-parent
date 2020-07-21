@@ -9,6 +9,7 @@ import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
 import org.myproject.boot.application.admin.api.pojo.IPage;
 import org.myproject.boot.application.admin.mvc.api.converter.Converter;
 import org.myproject.boot.application.admin.mvc.api.pojo.VSysUserVo;
+import org.myproject.boot.application.admin.mvc.api.service.retrofit.RetrofitSysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,8 @@ public class SysUserController {
     private BSysUserApi sysUserService;
     @Autowired
     private Converter converter;
+    @Autowired
+    private RetrofitSysUserService retrofitSysUserService;
 
     @GetMapping(value = "data")
     public Result<?> data(BSysUserQuery query,
@@ -108,4 +111,10 @@ public class SysUserController {
         sysUserVo.setOp(BSysUserVo.Op.UPDATE_ROLE);
         return modify(converter.vSysUser(sysUserVo));
     }
+
+    @GetMapping("test")
+    public void test() {
+        retrofitSysUserService.get();
+    }
+
 }

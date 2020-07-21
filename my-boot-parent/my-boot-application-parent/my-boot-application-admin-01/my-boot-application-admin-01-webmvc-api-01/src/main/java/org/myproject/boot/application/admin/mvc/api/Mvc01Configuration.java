@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootConfiguration
 @ComponentScan(basePackageClasses = Mvc01Configuration.class)
-@RetrofitScan(basePackages = {"org.myproject.boot.application.admin.mvc.api.service.retrofit"})
+@RetrofitScan({"org.myproject.boot.application.admin.mvc.api.service.retrofit"})
 public class Mvc01Configuration {
 
 //    @Bean
