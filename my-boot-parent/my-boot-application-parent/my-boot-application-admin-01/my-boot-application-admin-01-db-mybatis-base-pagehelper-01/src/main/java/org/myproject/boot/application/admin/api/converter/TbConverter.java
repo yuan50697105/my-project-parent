@@ -2,7 +2,8 @@ package org.myproject.boot.application.admin.api.converter;
 
 import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.myproject.boot.application.admin.api.pojo.*;
 import org.myproject.boot.application.admin.db.pojo.*;
 import org.springframework.context.annotation.Primary;
@@ -17,7 +18,7 @@ import java.util.List;
  * @create: 2020-07-11 19:01
  */
 @Primary
-@Mapper(componentModel = "spring", nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, nullValueCheckStrategy = NullValueCheckStrategy.ON_IMPLICIT_CONVERSION)
+@Mapper(componentModel = "spring")
 public interface TbConverter {
     @Mapping(target = "ageStart", ignore = true)
     @Mapping(target = "ageEnd", ignore = true)
