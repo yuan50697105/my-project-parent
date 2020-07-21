@@ -52,6 +52,8 @@
         <dynamic-datasource-spring-boot-starter.version>3.1.1</dynamic-datasource-spring-boot-starter.version>
         <sharding-jdbc.version>4.1.1</sharding-jdbc.version>
         <mapstruct.version>1.4.0.Beta2</mapstruct.version>
+        <graphiql-spring-boot-starter.version>7.1.0</graphiql-spring-boot-starter.version>
+        <graphql-java-tools.version>6.1.0</graphql-java-tools.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -276,6 +278,21 @@
                 <groupId>org.apache.shardingsphere</groupId>
                 <artifactId>sharding-jdbc-orchestration-spring-boot-starter</artifactId>
                 <version>${sharding-jdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.graphql-java-kickstart</groupId>
+                <artifactId>graphiql-spring-boot-starter</artifactId>
+                <version>${graphiql-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.graphql-java-kickstart</groupId>
+                <artifactId>graphql-java-tools</artifactId>
+                <version>${graphql-java-tools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.graphql-java-kickstart</groupId>
+                <artifactId>graphql-spring-boot-starter</artifactId>
+                <version>${graphiql-spring-boot-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
