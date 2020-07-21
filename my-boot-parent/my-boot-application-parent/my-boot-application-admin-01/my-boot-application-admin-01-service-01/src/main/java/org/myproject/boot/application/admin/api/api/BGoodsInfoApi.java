@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.api.impl;
+package org.myproject.boot.application.admin.api.api;
 
 
 import org.myproject.boot.application.admin.api.pojo.BGoodsInfo;

@@ -3,6 +3,7 @@ package org.myproject.boot.application.admin.api.impl;
 
 import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
+import org.myproject.boot.application.admin.api.api.BCustomerTypeApi;
 import org.myproject.boot.application.admin.api.converter.TbConverter;
 import org.myproject.boot.application.admin.api.pojo.BCustomerType;
 import org.myproject.boot.application.admin.api.pojo.BCustomerTypeQuery;

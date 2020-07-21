@@ -3,7 +3,7 @@ package org.myproject.boot.application.admin.mvc.graphiql.resolver;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import graphql.kickstart.tools.GraphQLSubscriptionResolver;
-import org.myproject.boot.application.admin.api.impl.BSysUserApi;
+import org.myproject.boot.application.admin.api.api.BSysUserApi;
 import org.myproject.boot.application.admin.mvc.graphiql.converter.Converter;
 import org.myproject.boot.application.admin.mvc.graphiql.pojo.SysUser;
 import org.myproject.boot.application.admin.mvc.graphiql.pojo.SysUserInput;

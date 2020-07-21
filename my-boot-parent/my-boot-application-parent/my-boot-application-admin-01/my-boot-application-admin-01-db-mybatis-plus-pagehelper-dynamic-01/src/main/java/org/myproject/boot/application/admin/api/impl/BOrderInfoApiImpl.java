@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.api.impl;
 
+import org.myproject.boot.application.admin.api.api.BOrderInfoApi;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

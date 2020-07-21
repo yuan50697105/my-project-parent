@@ -2,7 +2,7 @@ package org.myproject.boot.application.admin.mvc.api.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.api.impl.BSysRoleApi;
+import org.myproject.boot.application.admin.api.api.BSysRoleApi;
 import org.myproject.boot.application.admin.api.pojo.BSysRole;
 import org.myproject.boot.application.admin.api.pojo.BSysRoleQuery;
 import org.myproject.boot.application.admin.api.pojo.BSysRoleVo;
