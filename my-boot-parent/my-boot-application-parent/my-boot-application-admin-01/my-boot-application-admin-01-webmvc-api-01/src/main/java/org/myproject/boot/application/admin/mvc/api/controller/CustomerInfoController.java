@@ -2,7 +2,7 @@ package org.myproject.boot.application.admin.mvc.api.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.api.api.BCustomerInfoApi;
+import org.myproject.boot.application.admin.api.impl.BCustomerInfoApi;
 import org.myproject.boot.application.admin.api.pojo.BCustomerInfo;
 import org.myproject.boot.application.admin.api.pojo.BCustomerInfoQuery;
 import org.myproject.boot.application.admin.api.pojo.BCustomerInfoVo;

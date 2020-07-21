@@ -3,7 +3,7 @@ package org.myproject.boot.application.admin.mvc.view.contorller;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import lombok.AllArgsConstructor;
-import org.myproject.boot.application.admin.api.api.BSysUserApi;
+import org.myproject.boot.application.admin.api.impl.BSysUserApi;
 import org.myproject.boot.application.admin.api.pojo.BSysUser;
 import org.myproject.boot.application.admin.api.pojo.BSysUserQuery;
 import org.myproject.boot.application.admin.api.pojo.BSysUserVo;

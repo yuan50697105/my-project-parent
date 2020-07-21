@@ -2,7 +2,7 @@ package org.myproject.boot.application.admin.mvc.api.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.api.api.BGoodsTypeApi;
+import org.myproject.boot.application.admin.api.impl.BGoodsTypeApi;
 import org.myproject.boot.application.admin.api.pojo.BGoodsType;
 import org.myproject.boot.application.admin.api.pojo.BGoodsTypeQuery;
 import org.myproject.boot.application.admin.api.pojo.BGoodsTypeVo;

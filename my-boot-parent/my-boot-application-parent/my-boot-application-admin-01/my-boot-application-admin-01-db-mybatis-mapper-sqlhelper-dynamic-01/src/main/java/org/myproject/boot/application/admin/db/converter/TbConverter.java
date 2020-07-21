@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.converter;
+package org.myproject.boot.application.admin.api.converter;
 
 import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
