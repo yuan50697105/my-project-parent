@@ -55,4 +55,5 @@ public class IdentifyInterceptor implements Interceptor {
     private Field[] getAllField(Object object) {
         return ReflectUtil.getFieldsDirectly(object.getClass(), true);
     }
+
 }
