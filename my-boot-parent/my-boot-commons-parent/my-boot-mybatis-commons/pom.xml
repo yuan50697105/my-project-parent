@@ -64,6 +64,11 @@
             <groupId>com.github.fangjinuo.easyjson</groupId>
             <artifactId>easyjson-jackson</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.amorou.uid</groupId>
+            <artifactId>uid-generator-spring-boot-starter</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

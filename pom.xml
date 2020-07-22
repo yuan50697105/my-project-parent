@@ -54,6 +54,7 @@
         <mapstruct.version>1.4.0.Beta2</mapstruct.version>
         <graphiql-spring-boot-starter.version>7.1.0</graphiql-spring-boot-starter.version>
         <graphql-java-tools.version>6.1.0</graphql-java-tools.version>
+        <uid-generator-spring-boot-starter.version>1.0.2</uid-generator-spring-boot-starter.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -293,6 +294,11 @@
                 <groupId>com.graphql-java-kickstart</groupId>
                 <artifactId>graphql-spring-boot-starter</artifactId>
                 <version>${graphiql-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.amorou.uid</groupId>
+                <artifactId>uid-generator-spring-boot-starter</artifactId>
+                <version>${uid-generator-spring-boot-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
