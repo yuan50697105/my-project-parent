@@ -16,9 +16,15 @@
         <module>my-cloud-application-admin-01-gateway</module>
         <module>my-cloud-application-admin-eruka-service-01</module>
         <module>my-cloud-application-admin-01-db-mybatis-base-pagehelper-01</module>
+        <module>my-cloud-application-admin-01-db-mybatis-base-sqlhelper-01</module>
+        <module>my-cloud-application-admin-01-db-mybatis-mapper-pagehelper-01</module>
+        <module>my-cloud-application-admin-01-db-mybatis-mapper-sqlhelper-01</module>
+        <module>my-cloud-application-admin-01-db-mybatis-plus-pagehelper-01</module>
+        <module>my-cloud-application-admin-01-db-mybatis-plus-sqlhelper-01</module>
         <module>my-cloud-application-admin-01-service-01</module>
         <module>my-cloud-application-admin-01-db-mybatis-base-pagehelper-netflix-01</module>
         <module>my-cloud-application-admin-01-db-mybatis-base-pagehelper-alibaba-01</module>
+        <module>my-cloud-application-admin-01-db-mybatis-base-pagehelper-zookeeper-01</module>
     </modules>
     <dependencies>
         <!--        <dependency>-->
