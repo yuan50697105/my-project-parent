@@ -1,6 +1,6 @@
 package org.myproject.boot.mybatis.commons.intercepter;
 
-import cn.hutool.core.lang.Snowflake;
+import cn.amorou.uid.UidGenerator;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.ReflectUtil;
 import org.apache.ibatis.executor.Executor;
@@ -29,8 +29,11 @@ import java.lang.reflect.Field;
         @Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})
 })
 public class IdentifyInterceptor implements Interceptor {
+//    @Autowired
+//    private Snowflake snowflake;
+
     @Autowired
-    private Snowflake snowflake;
+    private UidGenerator uidGenerator;
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
@@ -47,9 +50,13 @@ public class IdentifyInterceptor implements Interceptor {
         for (Field field : fields) {
             field.setAccessible(true);
             if (ObjectUtil.isEmpty(field.get(object)) && field.isAnnotationPresent(Identify.class)) {
-                field.set(object, snowflake.nextId());
+                field.set(object, getId());
             }
         }
+    }
+
+    private Object getId() {
+        return uidGenerator.getUID();
     }
 
     private Field[] getAllField(Object object) {
