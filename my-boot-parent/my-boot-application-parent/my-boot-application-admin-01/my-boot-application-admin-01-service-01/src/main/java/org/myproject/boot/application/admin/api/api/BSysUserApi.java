@@ -30,4 +30,5 @@ public interface BSysUserApi {
     void delete(List<Long> ids);
 
     void modify(BSysUserVo BSysUserVo);
+
 }

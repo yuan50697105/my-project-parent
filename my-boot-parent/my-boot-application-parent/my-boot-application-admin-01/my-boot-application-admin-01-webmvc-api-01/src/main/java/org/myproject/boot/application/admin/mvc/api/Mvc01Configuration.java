@@ -1,6 +1,5 @@
 package org.myproject.boot.application.admin.mvc.api;
 
-import com.github.lianjiatech.retrofit.plus.annotation.RetrofitScan;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -12,7 +11,6 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootConfiguration
 @ComponentScan(basePackageClasses = Mvc01Configuration.class)
-@RetrofitScan({"org.myproject.boot.application.admin.mvc.api.service.retrofit"})
 public class Mvc01Configuration {
 
 //    @Bean
