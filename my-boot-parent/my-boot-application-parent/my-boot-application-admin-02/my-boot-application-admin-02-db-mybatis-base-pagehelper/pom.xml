@@ -3,16 +3,19 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>my-boot-parent</artifactId>
+        <artifactId>my-boot-application-admin-02</artifactId>
         <groupId>org.myproject</groupId>
         <version>1.0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-parent</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>my-boot-application-admin-01</module>
-        <module>my-boot-application-admin-02</module>
-    </modules>
+    <artifactId>my-boot-application-admin-02-db-mybatis-base-pagehelper</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-mybatis-base-pagehelper</artifactId>
+            <version>1.0.0.1</version>
+        </dependency>
+    </dependencies>
+
 </project>

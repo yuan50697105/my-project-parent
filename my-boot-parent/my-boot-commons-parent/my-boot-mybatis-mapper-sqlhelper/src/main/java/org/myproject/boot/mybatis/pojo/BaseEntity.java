@@ -1,5 +1,6 @@
 package org.myproject.boot.mybatis.pojo;
 
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import lombok.Data;
 import org.myproject.boot.mybatis.commons.annotation.Identify;
 import tk.mybatis.mapper.annotation.KeySql;
@@ -19,5 +20,6 @@ public class BaseEntity {
     @Id
     @Identify
     @KeySql(genId = IdentifyGenId.class)
+    @AndEqualTo
     private Long id;
 }

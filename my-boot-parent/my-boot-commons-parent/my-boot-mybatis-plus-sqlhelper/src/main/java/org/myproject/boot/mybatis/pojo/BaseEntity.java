@@ -2,6 +2,7 @@ package org.myproject.boot.mybatis.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import lombok.Data;
 import org.myproject.boot.mybatis.commons.annotation.Identify;
 
@@ -15,5 +16,6 @@ import org.myproject.boot.mybatis.commons.annotation.Identify;
 public class BaseEntity {
     @Identify
     @TableId(type = IdType.ID_WORKER)
+    @AndEqualTo
     private Long id;
 }
