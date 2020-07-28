@@ -15,10 +15,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-@Accessors(chain = true)
+@With
 public class SysUserVo {
     @Accessors(fluent = true)
     private Event event;
+    @Accessors(fluent = true)
     private Long id;
     private String username;
     private String password;
@@ -27,6 +28,6 @@ public class SysUserVo {
     private List<Long> roleIds;
 
     public enum Event {
-        SAVE, ADD, UPDATE_INFO, UPDATE_ROLE
+        SAVE, ADD, UPDATE, UPDATE_INFO, UPDATE_ROLE
     }
 }
