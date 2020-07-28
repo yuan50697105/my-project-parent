@@ -6,12 +6,12 @@ import lombok.EqualsAndHashCode;
 import java.io.Serializable;
 
 /**
- * 角色
+ * 系统用户
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class TbSysRole extends TbBaseEntity implements Serializable {
+public class TbSysUserRole extends TbBaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
-    private String name;
-    private String description;
+    private Long userId;
+    private Long roleId;
 }

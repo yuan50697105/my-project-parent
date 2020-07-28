@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-application-admin-02-db-mybatis-base-pagehelper</module>
+        <module>my-boot-application-admin-02-web-api</module>
+        <module>my-boot-application-admin-02-service-api</module>
     </modules>
 
 </project>

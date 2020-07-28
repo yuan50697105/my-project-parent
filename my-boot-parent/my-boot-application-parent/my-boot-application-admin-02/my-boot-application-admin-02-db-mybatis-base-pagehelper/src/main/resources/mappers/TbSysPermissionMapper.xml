@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.boot.application.admin.db.mapper.TbSysUserMapper">
-  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.TbSysUser">
+<mapper namespace="org.myproject.boot.application.admin.db.mapper.TbSysPermissionMapper">
+  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.TbSysPermission">
     <!--@mbg.generated-->
-    <!--@Table tb_sys_user-->
-    <id column="id" jdbcType="BIGINT" property="id" />
+    <!--@Table tb_sys_permission-->
+    <result column="id" jdbcType="BIGINT" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="creater" jdbcType="VARCHAR" property="creater" />
     <result column="modifier" jdbcType="VARCHAR" property="modifier" />
     <result column="version" jdbcType="INTEGER" property="version" />
     <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--@mbg.generated-->
@@ -77,17 +76,16 @@
   </sql>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, create_time, update_time, creater, modifier, version, is_delete, username, `name`, 
-    `password`
+    id, create_time, update_time, creater, modifier, version, is_delete, `name`, role_id
   </sql>
-  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from tb_sys_user
+    from tb_sys_permission
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -95,39 +93,27 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample">
     <!--@mbg.generated-->
-    select 
-    <include refid="Base_Column_List" />
-    from tb_sys_user
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    <!--@mbg.generated-->
-    delete from tb_sys_user
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUserExample">
-    <!--@mbg.generated-->
-    delete from tb_sys_user
+    delete from tb_sys_permission
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUser">
+  <insert id="insert" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermission">
     <!--@mbg.generated-->
-    insert into tb_sys_user (id, create_time, update_time, 
+    insert into tb_sys_permission (id, create_time, update_time, 
       creater, modifier, version, 
-      is_delete, username, `name`, 
-      `password`)
+      is_delete, `name`, role_id
+      )
     values (#{id,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{creater,jdbcType=VARCHAR}, #{modifier,jdbcType=VARCHAR}, #{version,jdbcType=INTEGER}, 
-      #{isDelete,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR})
+      #{isDelete,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{roleId,jdbcType=BIGINT}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUser">
+  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermission">
     <!--@mbg.generated-->
-    insert into tb_sys_user
+    insert into tb_sys_permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -150,14 +136,11 @@
       <if test="isDelete != null">
         is_delete,
       </if>
-      <if test="username != null">
-        username,
-      </if>
       <if test="name != null">
         `name`,
       </if>
-      <if test="password != null">
-        `password`,
+      <if test="roleId != null">
+        role_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -182,27 +165,24 @@
       <if test="isDelete != null">
         #{isDelete,jdbcType=INTEGER},
       </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
-    select count(*) from tb_sys_user
+    select count(*) from tb_sys_permission
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
     <!--@mbg.generated-->
-    update tb_sys_user
+    update tb_sys_permission
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
@@ -225,14 +205,11 @@
       <if test="record.isDelete != null">
         is_delete = #{record.isDelete,jdbcType=INTEGER},
       </if>
-      <if test="record.username != null">
-        username = #{record.username,jdbcType=VARCHAR},
-      </if>
       <if test="record.name != null">
         `name` = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.password != null">
-        `password` = #{record.password,jdbcType=VARCHAR},
+      <if test="record.roleId != null">
+        role_id = #{record.roleId,jdbcType=BIGINT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -241,7 +218,7 @@
   </update>
   <update id="updateByExample" parameterType="map">
     <!--@mbg.generated-->
-    update tb_sys_user
+    update tb_sys_permission
     set id = #{record.id,jdbcType=BIGINT},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
@@ -249,59 +226,10 @@
       modifier = #{record.modifier,jdbcType=VARCHAR},
       version = #{record.version,jdbcType=INTEGER},
       is_delete = #{record.isDelete,jdbcType=INTEGER},
-      username = #{record.username,jdbcType=VARCHAR},
       `name` = #{record.name,jdbcType=VARCHAR},
-      `password` = #{record.password,jdbcType=VARCHAR}
+      role_id = #{record.roleId,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUser">
-    <!--@mbg.generated-->
-    update tb_sys_user
-    <set>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="creater != null">
-        creater = #{creater,jdbcType=VARCHAR},
-      </if>
-      <if test="modifier != null">
-        modifier = #{modifier,jdbcType=VARCHAR},
-      </if>
-      <if test="version != null">
-        version = #{version,jdbcType=INTEGER},
-      </if>
-      <if test="isDelete != null">
-        is_delete = #{isDelete,jdbcType=INTEGER},
-      </if>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null">
-        `name` = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        `password` = #{password,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUser">
-    <!--@mbg.generated-->
-    update tb_sys_user
-    set create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      creater = #{creater,jdbcType=VARCHAR},
-      modifier = #{modifier,jdbcType=VARCHAR},
-      version = #{version,jdbcType=INTEGER},
-      is_delete = #{isDelete,jdbcType=INTEGER},
-      username = #{username,jdbcType=VARCHAR},
-      `name` = #{name,jdbcType=VARCHAR},
-      `password` = #{password,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

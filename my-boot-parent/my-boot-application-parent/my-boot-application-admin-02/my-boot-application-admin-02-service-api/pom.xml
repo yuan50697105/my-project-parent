@@ -9,19 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-admin-02-db-mybatis-base-pagehelper</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-02-service-api</artifactId>
-            <version>1.0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-mybatis-base-pagehelper</artifactId>
-            <version>1.0.0.1</version>
-        </dependency>
-    </dependencies>
+    <artifactId>my-boot-application-admin-02-service-api</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -33,4 +21,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
