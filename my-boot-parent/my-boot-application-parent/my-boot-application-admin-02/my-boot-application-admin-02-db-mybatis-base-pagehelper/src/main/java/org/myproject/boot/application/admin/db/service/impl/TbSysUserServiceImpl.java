@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
+import cn.hutool.core.lang.Validator;
 import cn.hutool.core.util.ObjectUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -36,6 +37,7 @@ public class TbSysUserServiceImpl implements TbSysUserService {
 
     @Override
     public int insert(TbSysUser record) {
+        validateInsert(record);
         return tbSysUserMapper.insert(record);
     }
 
@@ -93,6 +95,12 @@ public class TbSysUserServiceImpl implements TbSysUserService {
         } else {
             updateByPrimaryKeySelective(sysUser);
         }
+    }
+
+    private void validateInsert(TbSysUser record) {
+        Validator.validateEmpty(record.getUsername(), "用户名不能为空");
+        Validator.validateEmpty(record.getPassword(), "密码不能为空");
+        Validator.validateEmpty(record.getName(), "昵称不能为空");
     }
 }
 

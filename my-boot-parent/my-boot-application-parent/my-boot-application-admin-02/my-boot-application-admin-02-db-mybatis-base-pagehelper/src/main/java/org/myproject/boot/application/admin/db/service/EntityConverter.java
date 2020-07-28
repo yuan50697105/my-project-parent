@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.service;
+package org.myproject.boot.application.admin.db.service;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -20,7 +20,7 @@ public interface EntityConverter {
     @Mapping(target = "isDelete", ignore = true)
     @Mapping(target = "creater", ignore = true)
     @Mapping(target = "createTime", ignore = true)
-    TbSysUser sysUserForAdd(SysUserVo vo);
+    TbSysUser convertSysUserForAdd(SysUserVo vo);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "updateTime", ignore = true)
@@ -30,5 +30,5 @@ public interface EntityConverter {
     @Mapping(target = "createTime", ignore = true)
     @Mapping(target = "username", ignore = true)
     @Mapping(target = "password", ignore = true)
-    TbSysUser sysUserForUpdateInfo(SysUserVo vo);
+    TbSysUser convertSysUserForUpdateInfo(SysUserVo vo);
 }
