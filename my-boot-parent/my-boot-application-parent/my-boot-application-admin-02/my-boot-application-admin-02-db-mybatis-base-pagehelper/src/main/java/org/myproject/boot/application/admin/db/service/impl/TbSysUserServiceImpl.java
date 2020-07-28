@@ -89,7 +89,7 @@ public class TbSysUserServiceImpl implements TbSysUserService {
 
 
     @Override
-    public void saveOrUpdate(TbSysUser sysUser) {
+    public void insertOrUpdate(TbSysUser sysUser) {
         if (ObjectUtil.isEmpty(sysUser.getId())) {
             insert(sysUser);
         } else {

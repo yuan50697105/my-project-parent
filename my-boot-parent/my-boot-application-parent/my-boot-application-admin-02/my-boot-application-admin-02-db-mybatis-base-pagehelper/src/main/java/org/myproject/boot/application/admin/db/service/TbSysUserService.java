@@ -36,7 +36,7 @@ public interface TbSysUserService {
 
     List<TbSysUser> selectByQuery(TbSysUserQuery sysUserQuery);
 
-    void saveOrUpdate(TbSysUser sysUser);
+    void insertOrUpdate(TbSysUser sysUser);
 }
 
 
