@@ -11,8 +11,11 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class TbSysRoute extends TbBaseEntity implements Serializable {
-    private static final long serialVersionUID = 1L;
     private String name;
+
     private String url;
+
     private Long roleId;
+
+    private static final long serialVersionUID = 1L;
 }

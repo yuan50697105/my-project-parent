@@ -27,14 +27,13 @@ public class SysUserServiceImpl implements SysUserService {
     @Transactional
     public boolean save(SysUserVo vo) {
         switch (vo.event()) {
+            case SAVE:
             case ADD:
                 return add(vo);
             case UPDATE_INFO:
                 return updateInfo(vo);
             case UPDATE_ROLE:
-                break;
-            case SAVE:
-                break;
+                return updateRole(vo);
         }
         return false;
     }
@@ -46,13 +45,17 @@ public class SysUserServiceImpl implements SysUserService {
         return CompletableFuture.completedFuture(save(vo));
     }
 
+    private boolean add(SysUserVo vo) {
+        TbSysUser record = converter.sysUserForAdd(vo);
+        return sysUserService.insert(record) > 0;
+    }
+
     private boolean updateInfo(SysUserVo vo) {
         TbSysUser record = converter.sysUserForUpdateInfo(vo);
         return sysUserService.updateByPrimaryKeySelective(record) > 0;
     }
 
-    private boolean add(SysUserVo vo) {
-        TbSysUser record = converter.sysUserForAdd(vo);
-        return sysUserService.insert(record) > 0;
+    private boolean updateRole(SysUserVo vo) {
+        return false;
     }
 }

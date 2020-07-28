@@ -27,7 +27,7 @@ public class SysUserController {
 
     @PostMapping
     public Mono<Result<Boolean>> save(@RequestBody SysUserVo vo) {
-        CompletableFuture<Boolean> future = sysUserService.saveAsync(vo);
+        CompletableFuture<Boolean> future = sysUserService.saveAsync(vo.event(SysUserVo.Event.ADD));
         return Mono.fromFuture(future).map(ResultInfo::success);
     }
 }

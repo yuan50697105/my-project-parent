@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
-
 @Service
 public class TbSysRouteServiceImpl implements TbSysRouteService {
 
@@ -23,11 +22,6 @@ public class TbSysRouteServiceImpl implements TbSysRouteService {
     @Override
     public int deleteByExample(TbSysRouteExample example) {
         return tbSysRouteMapper.deleteByExample(example);
-    }
-
-    @Override
-    public int deleteByPrimaryKey(Long id) {
-        return tbSysRouteMapper.deleteByPrimaryKey(id);
     }
 
     @Override
@@ -46,11 +40,6 @@ public class TbSysRouteServiceImpl implements TbSysRouteService {
     }
 
     @Override
-    public TbSysRoute selectByPrimaryKey(Long id) {
-        return tbSysRouteMapper.selectByPrimaryKey(id);
-    }
-
-    @Override
     public int updateByExampleSelective(TbSysRoute record, TbSysRouteExample example) {
         return tbSysRouteMapper.updateByExampleSelective(record, example);
     }
@@ -60,16 +49,4 @@ public class TbSysRouteServiceImpl implements TbSysRouteService {
         return tbSysRouteMapper.updateByExample(record, example);
     }
 
-    @Override
-    public int updateByPrimaryKeySelective(TbSysRoute record) {
-        return tbSysRouteMapper.updateByPrimaryKeySelective(record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(TbSysRoute record) {
-        return tbSysRouteMapper.updateByPrimaryKey(record);
-    }
-
 }
-
-

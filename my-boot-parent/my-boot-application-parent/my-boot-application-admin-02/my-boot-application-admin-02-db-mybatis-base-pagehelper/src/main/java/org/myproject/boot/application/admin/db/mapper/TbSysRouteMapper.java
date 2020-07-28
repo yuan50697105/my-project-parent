@@ -15,7 +15,6 @@ public interface TbSysRouteMapper {
 
     /**
      * insert record to table
-     *
      * @param record the record
      * @return insert count
      */
@@ -23,7 +22,6 @@ public interface TbSysRouteMapper {
 
     /**
      * insert record to table selective
-     *
      * @param record the record
      * @return insert count
      */
