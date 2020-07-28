@@ -2,6 +2,8 @@ package org.myproject.boot.application.admin.service;
 
 import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 
+import java.util.concurrent.CompletableFuture;
+
 /**
  * @program: my-project-parent
  * @description:
@@ -10,4 +12,6 @@ import org.myproject.boot.application.admin.service.pojo.SysUserVo;
  */
 public interface SysUserService {
     boolean save(SysUserVo vo);
+
+    CompletableFuture<Boolean> saveAsync(SysUserVo vo);
 }

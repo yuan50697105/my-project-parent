@@ -4,8 +4,11 @@ import org.myproject.boot.application.admin.db.pojo.TbSysUser;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
 import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @program: my-project-parent
@@ -34,6 +37,13 @@ public class SysUserServiceImpl implements SysUserService {
                 break;
         }
         return false;
+    }
+
+    @Override
+    @Async
+    @Transactional
+    public CompletableFuture<Boolean> saveAsync(SysUserVo vo) {
+        return CompletableFuture.completedFuture(save(vo));
     }
 
     private boolean updateInfo(SysUserVo vo) {

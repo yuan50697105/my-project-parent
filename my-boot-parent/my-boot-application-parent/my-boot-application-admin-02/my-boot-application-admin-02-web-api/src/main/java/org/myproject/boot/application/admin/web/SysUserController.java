@@ -1,5 +1,7 @@
 package org.myproject.boot.application.admin.web;
 
+import ai.yue.library.base.view.Result;
+import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.service.SysUserService;
 import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
-import retrofit2.adapter.rxjava3.Result;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @program: my-project-parent
@@ -23,7 +26,8 @@ public class SysUserController {
     private SysUserService sysUserService;
 
     @PostMapping
-    public Mono<Result<Void>> save(@RequestBody SysUserVo vo) {
-        return Mono.fromFuture(sysUserService.save(vo));
+    public Mono<Result<Boolean>> save(@RequestBody SysUserVo vo) {
+        CompletableFuture<Boolean> future = sysUserService.saveAsync(vo);
+        return Mono.fromFuture(future).map(ResultInfo::success);
     }
 }
