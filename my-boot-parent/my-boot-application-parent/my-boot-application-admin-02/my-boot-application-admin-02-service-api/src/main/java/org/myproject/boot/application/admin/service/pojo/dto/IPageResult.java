@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.service.pojo;
+package org.myproject.boot.application.admin.service.pojo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

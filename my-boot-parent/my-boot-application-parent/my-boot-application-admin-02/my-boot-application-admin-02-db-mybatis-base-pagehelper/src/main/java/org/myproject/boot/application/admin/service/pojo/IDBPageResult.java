@@ -3,6 +3,7 @@ package org.myproject.boot.application.admin.service.pojo;
 import com.github.pagehelper.PageInfo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.myproject.boot.application.admin.service.pojo.dto.IPageResult;
 
 /**
  * @program: my-project-parent

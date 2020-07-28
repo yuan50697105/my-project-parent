@@ -3,14 +3,15 @@ package org.myproject.boot.application.admin.web;
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.service.SysUserService;
-import org.myproject.boot.application.admin.service.pojo.IPageResult;
-import org.myproject.boot.application.admin.service.pojo.SysUserAo;
-import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
-import org.myproject.boot.application.admin.service.pojo.SysUserVo;
+import org.myproject.boot.application.admin.service.pojo.ao.SysUserAo;
+import org.myproject.boot.application.admin.service.pojo.dto.IPageResult;
+import org.myproject.boot.application.admin.service.pojo.query.SysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.vo.SysUserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -64,6 +65,12 @@ public class SysUserController {
     @GetMapping("page")
     public Mono<Result<IPageResult<SysUserAo>>> page(SysUserQuery query) {
         CompletableFuture<IPageResult<SysUserAo>> future = sysUserService.pageAsync(query);
+        return Mono.fromFuture(future).map(ResultInfo::success);
+    }
+
+    @GetMapping("list")
+    public Mono<Result<List<SysUserAo>>> list(SysUserQuery query) {
+        CompletableFuture<List<SysUserAo>> future = sysUserService.listAsync(query);
         return Mono.fromFuture(future).map(ResultInfo::success);
     }
 

@@ -14,6 +14,14 @@ public interface TbSysRoleMapper {
     int deleteByExample(TbSysRoleExample example);
 
     /**
+     * delete by primary key
+     *
+     * @param id primaryKey
+     * @return deleteCount
+     */
+    int deleteByPrimaryKey(Long id);
+
+    /**
      * insert record to table
      *
      * @param record the record
@@ -31,7 +39,31 @@ public interface TbSysRoleMapper {
 
     List<TbSysRole> selectByExample(TbSysRoleExample example);
 
+    /**
+     * select by primary key
+     *
+     * @param id primary key
+     * @return object by primary key
+     */
+    TbSysRole selectByPrimaryKey(Long id);
+
     int updateByExampleSelective(@Param("record") TbSysRole record, @Param("example") TbSysRoleExample example);
 
     int updateByExample(@Param("record") TbSysRole record, @Param("example") TbSysRoleExample example);
+
+    /**
+     * update record selective
+     *
+     * @param record the updated record
+     * @return update count
+     */
+    int updateByPrimaryKeySelective(TbSysRole record);
+
+    /**
+     * update record
+     *
+     * @param record the updated record
+     * @return update count
+     */
+    int updateByPrimaryKey(TbSysRole record);
 }

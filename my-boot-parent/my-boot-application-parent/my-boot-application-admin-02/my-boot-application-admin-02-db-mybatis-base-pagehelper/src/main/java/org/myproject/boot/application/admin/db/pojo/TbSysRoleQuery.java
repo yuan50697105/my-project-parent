@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class TbSysRoleQuery extends TbBaseQuery implements Serializable, MybatisExample<TbSysUserExample> {
+public class TbSysRoleQuery extends TbBaseQuery implements Serializable, MybatisExample<TbSysRoleExample> {
     @AndLike(type = ExampleCriteriaValueImpl4Like.Type.suffix)
     private String name;
 }

@@ -5,12 +5,17 @@ import org.myproject.boot.application.admin.db.pojo.TbSysUser;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 import org.myproject.boot.application.admin.db.service.EntityConverter;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
-import org.myproject.boot.application.admin.service.pojo.*;
+import org.myproject.boot.application.admin.service.pojo.IDBPageResult;
+import org.myproject.boot.application.admin.service.pojo.ao.SysUserAo;
+import org.myproject.boot.application.admin.service.pojo.dto.IPageResult;
+import org.myproject.boot.application.admin.service.pojo.query.SysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.vo.SysUserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -63,6 +68,13 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
+    public List<SysUserAo> list(SysUserQuery query) {
+        TbSysUserQuery sysUserQuery = converter.convertSysUserForQuery(query);
+        List<TbSysUser> tbSysUsers = sysUserService.selectByQuery(sysUserQuery);
+        return converter.convertSysUserForList(tbSysUsers);
+    }
+
+    @Override
     public CompletableFuture<SysUserAo> getByIdAsync(Long id) {
         SysUserAo ao = getById(id);
         return CompletableFuture.completedFuture(ao);
@@ -72,6 +84,12 @@ public class SysUserServiceImpl implements SysUserService {
     @Async
     public CompletableFuture<IPageResult<SysUserAo>> pageAsync(SysUserQuery query) {
         return CompletableFuture.completedFuture(page(query));
+    }
+
+    @Override
+    @Async
+    public CompletableFuture<List<SysUserAo>> listAsync(SysUserQuery query) {
+        return CompletableFuture.completedFuture(list(query));
     }
 
     @Override
