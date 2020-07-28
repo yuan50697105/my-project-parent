@@ -44,20 +44,8 @@ public class TbSysRoleServiceImpl implements TbSysRoleService {
     }
 
     @Override
-    public PageInfo<TbSysRole> selectByExample(TbSysRoleExample example, int page, int size) {
-        PageHelper.startPage(page, size);
-        return new PageInfo<>(selectByExample(example));
-    }
-
-    @Override
     public List<TbSysRole> selectByExample(TbSysRoleExample example) {
         return tbSysRoleMapper.selectByExample(example);
-    }
-
-    @Override
-    public TbSysRole selectOneByExample(TbSysRoleExample example) {
-        List<TbSysRole> tbSysRoles = selectByExample(example);
-        return tbSysRoles.stream().findFirst().orElse(new TbSysRole());
     }
 
     @Override
@@ -94,12 +82,6 @@ public class TbSysRoleServiceImpl implements TbSysRoleService {
     @Override
     public List<TbSysRole> selectByQuery(TbSysRoleQuery sysRoleQuery) {
         return selectByExample(sysRoleQuery.toExample());
-    }
-
-
-    @Override
-    public TbSysRole selectOneByQuery(TbSysRoleQuery sysRoleQuery) {
-        return selectByQuery(sysRoleQuery).stream().findFirst().orElse(new TbSysRole());
     }
 
 }

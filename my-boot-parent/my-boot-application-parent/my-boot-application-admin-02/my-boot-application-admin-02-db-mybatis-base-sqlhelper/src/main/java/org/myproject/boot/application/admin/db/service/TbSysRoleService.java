@@ -20,11 +20,7 @@ public interface TbSysRoleService {
 
     int insertSelective(TbSysRole record);
 
-    PageInfo<TbSysRole> selectByExample(TbSysRoleExample example, int page, int size);
-
     List<TbSysRole> selectByExample(TbSysRoleExample example);
-
-    TbSysRole selectOneByExample(TbSysRoleExample example);
 
     TbSysRole selectByPrimaryKey(Long id);
 
@@ -39,8 +35,6 @@ public interface TbSysRoleService {
     PageInfo<TbSysRole> selectByQuery(TbSysRoleQuery sysRoleQuery, int page, int size);
 
     List<TbSysRole> selectByQuery(TbSysRoleQuery sysRoleQuery);
-
-    TbSysRole selectOneByQuery(TbSysRoleQuery sysRoleQuery);
 }
 
 
