@@ -20,41 +20,7 @@
     <packaging>pom</packaging>
     <properties>
         <java.version>11</java.version>
-        <sqlhelper.version>3.1.1</sqlhelper.version>
-        <spring-cloud-dependencies.version>Hoxton.SR6</spring-cloud-dependencies.version>
-        <spring-cloud-alibaba-dependencies.version>2.2.1.RELEASE</spring-cloud-alibaba-dependencies.version>
-        <api-boot-dependencies.version>2.2.7.RELEASE</api-boot-dependencies.version>
-        <sofaboot-dependencies.version>${camel-spring-boot-dependencies.version}</sofaboot-dependencies.version>
-        <camel-spring-boot-dependencies.version>3.4.1</camel-spring-boot-dependencies.version>
-        <hutool-all.version>5.3.9</hutool-all.version>
-        <joda-time.version>2.10.6</joda-time.version>
-        <jpinyin.version>1.1.8</jpinyin.version>
-        <mmseg4j-core.version>1.10.0</mmseg4j-core.version>
-        <retrofit.version>2.9.0</retrofit.version>
-        <rxjava3.version>3.0.4</rxjava3.version>
-        <core.version>3.4.0</core.version>
-        <slf4j-spring-boot-starter.version>1.4.1</slf4j-spring-boot-starter.version>
-        <cxf-spring-boot-starter.version>3.3.7</cxf-spring-boot-starter.version>
-        <beetl-framework-starter.version>1.2.33.RELEASE</beetl-framework-starter.version>
-        <myexcel.version>3.9.1</myexcel.version>
-        <easypoi-spring-boot-starter.version>4.2.0</easypoi-spring-boot-starter.version>
-        <itextpdf.version>5.5.13.1</itextpdf.version>
-        <docx4j.version>6.1.2</docx4j.version>
-        <mybatis-spring-boot-starter.version>2.1.3</mybatis-spring-boot-starter.version>
-        <pagehelper-spring-boot-starter.version>1.2.13</pagehelper-spring-boot-starter.version>
-        <mybatis-example-ext.version>1.0.1</mybatis-example-ext.version>
-        <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
-        <mybatis-plus-boot-starter.version>3.3.2</mybatis-plus-boot-starter.version>
-        <easyjson-jackson.version>3.0.0</easyjson-jackson.version>
-        <jjwt.version>0.9.1</jjwt.version>
-        <yue-library-base.version>Greenwich.SR2.1</yue-library-base.version>
-        <knife4j-spring-boot-starter.version>2.0.4</knife4j-spring-boot-starter.version>
-        <dynamic-datasource-spring-boot-starter.version>3.1.1</dynamic-datasource-spring-boot-starter.version>
-        <sharding-jdbc.version>4.1.1</sharding-jdbc.version>
         <mapstruct.version>1.4.0.Beta2</mapstruct.version>
-        <graphiql-spring-boot-starter.version>7.1.0</graphiql-spring-boot-starter.version>
-        <graphql-java-tools.version>6.1.0</graphql-java-tools.version>
-        <uid-generator-spring-boot-starter.version>1.0.2</uid-generator-spring-boot-starter.version>
     </properties>
     <dependencyManagement>
         <dependencies>
