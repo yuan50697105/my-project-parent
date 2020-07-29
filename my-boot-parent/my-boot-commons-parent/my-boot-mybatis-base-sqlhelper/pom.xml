@@ -27,7 +27,7 @@
         <dependency>
             <groupId>com.github.fangjinuo.easyjson</groupId>
             <artifactId>easyjson-jackson</artifactId>
-            <version>${easyjson-jackson.version}</version>
+
         </dependency>
         <dependency>
             <groupId>com.gitee.denger</groupId>
