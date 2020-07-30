@@ -1,4 +1,4 @@
-package org.myproject.boot.application.admin.db.service;
+package org.myproject.boot.application.admin.service.converter;
 
 import com.github.pagehelper.PageInfo;
 import org.mapstruct.Mapper;
