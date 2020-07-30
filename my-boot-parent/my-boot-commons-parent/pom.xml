@@ -30,6 +30,8 @@
         <module>my-boot-commons-webservice-cxf</module>
         <module>my-boot-commons-webservice-jersey</module>
         <module>my-boot-commons-webview</module>
+        <module>my-boot-mybatis-mp-pagehelper</module>
+        <module>my-boot-mybatis-mp-sqlhelper</module>
     </modules>
     <build>
         <plugins>
