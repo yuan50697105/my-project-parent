@@ -15,7 +15,7 @@ import java.util.concurrent.CompletableFuture;
  * @create: 2020-07-28 09:15
  */
 public interface SysRoleService {
-    boolean save(SysRoleVo vo);
+    boolean save(SysRoleVo vo) throws IllegalStateException;
 
     CompletableFuture<Boolean> saveAsync(SysRoleVo vo);
 
