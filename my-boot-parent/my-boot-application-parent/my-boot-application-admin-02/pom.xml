@@ -12,13 +12,6 @@
     <artifactId>my-boot-application-admin-02</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>my-boot-application-admin-02-web-api-01</module>
-        <module>my-boot-application-admin-02-web-api-02</module>
-        <module>my-boot-application-admin-02-service-api</module>
-        <module>my-boot-application-admin-02-db-mybatis-base-pagehelper</module>
-        <module>my-boot-application-admin-02-db-mybatis-base-sqlhelper</module>
-        <module>my-boot-application-admin-02-db-mybatis-mapper-pagehelper</module>
-        <module>my-boot-application-admin-02-web-api-03</module>
     </modules>
 
 </project>
