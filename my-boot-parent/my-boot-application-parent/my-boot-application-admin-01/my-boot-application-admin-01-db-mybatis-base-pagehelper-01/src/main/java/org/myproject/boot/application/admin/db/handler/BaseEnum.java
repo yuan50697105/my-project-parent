@@ -1,7 +1,5 @@
 package org.myproject.boot.application.admin.db.handler;
 
-import org.myproject.boot.application.admin.db.constants.EnableStatus;
-
 /**
  * @program: my-project-parent
  * @description:
@@ -13,5 +11,5 @@ public interface BaseEnum<E> {
 
     String getText();
 
-    EnableStatus getByCode(int code);
+    E getByCode(int code);
 }

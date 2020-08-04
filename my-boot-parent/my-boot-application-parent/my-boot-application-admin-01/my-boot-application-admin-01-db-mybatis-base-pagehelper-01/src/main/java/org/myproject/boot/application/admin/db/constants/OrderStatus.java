@@ -25,7 +25,7 @@ public enum OrderStatus implements BaseEnum<OrderStatus> {
     }
 
     @Override
-    public EnableStatus getByCode(int code) {
+    public OrderStatus getByCode(int code) {
         switch (code) {
             case 0:
                 return CREATE;
