@@ -16,6 +16,4 @@ create table tb_sys_user
 )
     comment '系统用户';
 
-INSERT INTO my_project_admin.tb_sys_user (id, create_time, update_time, creater, modifier, version, is_delete, username,
-                                          name, password)
-VALUES (1287991227068846080, null, null, null, null, null, null, 'username', 'name', null);
+INSERT INTO my_project_admin.tb_sys_user (id, create_time, update_time, creater, modifier, version, is_delete, username, name, password) VALUES (1287991227068846080, null, null, null, null, null, null, 'username', 'name', null);

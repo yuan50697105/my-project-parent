@@ -1,6 +1,7 @@
 create table tb_sys_role
 (
-    id          bigint       null,
+    id          bigint       not null
+        primary key,
     create_time datetime     null,
     update_time datetime     null,
     creater     varchar(255) null,
