@@ -1,16 +1,17 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
-    * 角色
-    */
+ * 角色
+ */
 @Data
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class TbSysRoute extends BaseEntity implements Serializable {
     private Date createTime;
 

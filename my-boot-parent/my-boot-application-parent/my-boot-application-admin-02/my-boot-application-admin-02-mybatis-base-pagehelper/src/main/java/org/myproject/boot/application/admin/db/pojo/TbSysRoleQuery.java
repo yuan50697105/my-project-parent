@@ -1,17 +1,19 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import java.io.Serializable;
-import java.util.Date;
+import com.gitee.denger.mybatis.example.ext.MybatisExample;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 角色
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class TbSysRole extends BaseEntity implements Serializable {
+public class TbSysRoleQuery extends BaseEntity implements Serializable, MybatisExample<TbSysUserExample> {
     private Date createTime;
 
     private Date updateTime;

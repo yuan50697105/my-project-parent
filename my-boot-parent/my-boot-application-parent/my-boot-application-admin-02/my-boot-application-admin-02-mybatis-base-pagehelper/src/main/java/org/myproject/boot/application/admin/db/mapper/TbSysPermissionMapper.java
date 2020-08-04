@@ -1,10 +1,11 @@
 package org.myproject.boot.application.admin.db.mapper;
 
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.admin.db.pojo.TbSysPermission;
 import org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample;
+
+import java.util.List;
 
 @Mapper
 public interface TbSysPermissionMapper {
@@ -14,6 +15,7 @@ public interface TbSysPermissionMapper {
 
     /**
      * insert record to table
+     *
      * @param record the record
      * @return insert count
      */
@@ -21,6 +23,7 @@ public interface TbSysPermissionMapper {
 
     /**
      * insert record to table selective
+     *
      * @param record the record
      * @return insert count
      */

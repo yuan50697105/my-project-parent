@@ -12,6 +12,9 @@
     <artifactId>my-boot-application-admin-02</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <module>my-boot-application-admin-02-mybatis-base-pagehelper</module>
+        <module>my-boot-application-admin-02-mybatis-base-sqlhelper</module>
+        <module>my-boot-application-admin-02-service-api</module>
     </modules>
 
 </project>

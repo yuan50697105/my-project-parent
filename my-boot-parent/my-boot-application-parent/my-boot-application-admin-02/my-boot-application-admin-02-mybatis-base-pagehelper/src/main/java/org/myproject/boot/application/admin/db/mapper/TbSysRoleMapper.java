@@ -1,10 +1,11 @@
 package org.myproject.boot.application.admin.db.mapper;
 
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.admin.db.pojo.TbSysRole;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleExample;
+
+import java.util.List;
 
 @Mapper
 public interface TbSysRoleMapper {
@@ -14,6 +15,7 @@ public interface TbSysRoleMapper {
 
     /**
      * delete by primary key
+     *
      * @param id primaryKey
      * @return deleteCount
      */
@@ -21,6 +23,7 @@ public interface TbSysRoleMapper {
 
     /**
      * insert record to table
+     *
      * @param record the record
      * @return insert count
      */
@@ -28,6 +31,7 @@ public interface TbSysRoleMapper {
 
     /**
      * insert record to table selective
+     *
      * @param record the record
      * @return insert count
      */
@@ -37,6 +41,7 @@ public interface TbSysRoleMapper {
 
     /**
      * select by primary key
+     *
      * @param id primary key
      * @return object by primary key
      */
@@ -48,6 +53,7 @@ public interface TbSysRoleMapper {
 
     /**
      * update record selective
+     *
      * @param record the updated record
      * @return update count
      */
@@ -55,6 +61,7 @@ public interface TbSysRoleMapper {
 
     /**
      * update record
+     *
      * @param record the updated record
      * @return update count
      */

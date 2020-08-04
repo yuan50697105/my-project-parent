@@ -1,14 +1,16 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample;
 import org.myproject.boot.application.admin.db.mapper.TbSysPermissionMapper;
 import org.myproject.boot.application.admin.db.pojo.TbSysPermission;
+import org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample;
 import org.myproject.boot.application.admin.db.service.TbSysPermissionService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
-public class TbSysPermissionServiceImpl implements TbSysPermissionService{
+public class TbSysPermissionServiceImpl implements TbSysPermissionService {
 
     @Resource
     private TbSysPermissionMapper tbSysPermissionMapper;
@@ -39,13 +41,13 @@ public class TbSysPermissionServiceImpl implements TbSysPermissionService{
     }
 
     @Override
-    public int updateByExampleSelective(TbSysPermission record,TbSysPermissionExample example) {
-        return tbSysPermissionMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(TbSysPermission record, TbSysPermissionExample example) {
+        return tbSysPermissionMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(TbSysPermission record,TbSysPermissionExample example) {
-        return tbSysPermissionMapper.updateByExample(record,example);
+    public int updateByExample(TbSysPermission record, TbSysPermissionExample example) {
+        return tbSysPermissionMapper.updateByExample(record, example);
     }
 
     @Override
@@ -54,3 +56,4 @@ public class TbSysPermissionServiceImpl implements TbSysPermissionService{
     }
 
 }
+
