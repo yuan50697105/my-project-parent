@@ -5,14 +5,10 @@ import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.api.api.BGoodsTypeApi;
 import org.myproject.boot.application.admin.api.converter.TbConverter;
-import org.myproject.boot.application.admin.api.pojo.BGoodsType;
-import org.myproject.boot.application.admin.api.pojo.BGoodsTypeQuery;
-import org.myproject.boot.application.admin.api.pojo.BGoodsTypeVo;
+import org.myproject.boot.application.admin.api.pojo.*;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsType;
 import org.myproject.boot.application.admin.db.pojo.TbGoodsTypeQuery;
 import org.myproject.boot.application.admin.db.service.TbGoodsTypeService;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
-import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,7 +31,7 @@ public class GoodsTypeApiImpl implements BGoodsTypeApi {
     public IPage<BGoodsType> selectByQuery(BGoodsTypeQuery query, int page, int size) {
         TbGoodsTypeQuery goodsTypeQuery = converter.goodsType(query);
         PageInfo<TbGoodsType> pageInfo = goodsTypeService.selectByQuery(goodsTypeQuery, page, size);
-        return new PageResult<>(converter.goodsType(pageInfo));
+        return new PageResult<BGoodsType>(converter.goodsType(pageInfo));
     }
 
     @Override

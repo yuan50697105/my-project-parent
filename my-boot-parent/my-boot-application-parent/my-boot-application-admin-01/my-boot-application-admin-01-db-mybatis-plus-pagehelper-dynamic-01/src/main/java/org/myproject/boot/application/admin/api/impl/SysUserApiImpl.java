@@ -5,16 +5,12 @@ import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.api.api.BSysUserApi;
 import org.myproject.boot.application.admin.api.converter.TbConverter;
-import org.myproject.boot.application.admin.api.pojo.BSysUser;
-import org.myproject.boot.application.admin.api.pojo.BSysUserQuery;
-import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
-import org.myproject.boot.application.admin.api.pojo.IPage;
+import org.myproject.boot.application.admin.api.pojo.*;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserRole;
 import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysUserService;
-import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

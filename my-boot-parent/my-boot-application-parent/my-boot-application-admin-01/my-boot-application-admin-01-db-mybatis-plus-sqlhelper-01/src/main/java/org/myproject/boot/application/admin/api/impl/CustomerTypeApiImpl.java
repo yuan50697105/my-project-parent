@@ -5,14 +5,10 @@ import com.github.pagehelper.PageInfo;
 import lombok.AllArgsConstructor;
 import org.myproject.boot.application.admin.api.api.BCustomerTypeApi;
 import org.myproject.boot.application.admin.api.converter.TbConverter;
-import org.myproject.boot.application.admin.api.pojo.BCustomerType;
-import org.myproject.boot.application.admin.api.pojo.BCustomerTypeQuery;
-import org.myproject.boot.application.admin.api.pojo.BCustomerTypeVo;
+import org.myproject.boot.application.admin.api.pojo.*;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerType;
 import org.myproject.boot.application.admin.db.pojo.TbCustomerTypeQuery;
 import org.myproject.boot.application.admin.db.service.TbCustomerTypeService;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
-import org.myproject.boot.mybatis.pojo.PageResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
