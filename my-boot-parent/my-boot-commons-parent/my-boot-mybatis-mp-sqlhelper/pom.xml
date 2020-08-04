@@ -22,7 +22,7 @@
             <exclusions>
                 <exclusion>
                     <groupId>com.baomidou</groupId>
-                    <artifactId>mybatis-plus-boot-starter</artifactId>
+                    <artifactId>mybatis-plus-core</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
