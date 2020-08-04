@@ -7,7 +7,7 @@ import org.myproject.boot.application.admin.api.api.BSysUserApi;
 import org.myproject.boot.application.admin.api.pojo.BSysUser;
 import org.myproject.boot.application.admin.api.pojo.BSysUserQuery;
 import org.myproject.boot.application.admin.api.pojo.BSysUserVo;
-import org.myproject.boot.mybatis.commons.pojo.IPage;
+import org.myproject.boot.application.admin.api.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
