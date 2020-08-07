@@ -5,7 +5,6 @@ import org.myproject.boot.application.admin.db.pojo.TbSysUserRole;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserRoleExample;
 import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Condition;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,8 +22,8 @@ public class TbSysUserRoleServiceImpl implements TbSysUserRoleService {
 
     @Override
     public int deleteByUserId(Long userId) {
-        Condition example = new Condition(TbSysUserRole.class);
-        example.or().andEqualTo("userId", userId);
+        TbSysUserRoleExample example = new TbSysUserRoleExample();
+        example.or().andUserIdEqualTo(userId);
         return tbSysUserRoleMapper.deleteByExample(example);
     }
 
