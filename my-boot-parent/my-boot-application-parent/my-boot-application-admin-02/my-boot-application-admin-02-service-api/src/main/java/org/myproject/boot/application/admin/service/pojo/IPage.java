@@ -13,5 +13,10 @@ import lombok.*;
 @AllArgsConstructor
 @With
 @Builder(toBuilder = true)
-public class IPage {
+public class IPage<T> {
+    private long page;
+    private long limit;
+    private long totalPages;
+    private long totalRows;
+    private Iterable<T> list;
 }
