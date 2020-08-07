@@ -1,7 +1,6 @@
 package org.myproject.boot.application.admin.service.service;
 
-import org.myproject.boot.application.admin.service.pojo.SysUserAoDTO;
-import org.myproject.boot.application.admin.service.pojo.SysUserQueryDTO;
+import org.myproject.boot.application.admin.service.pojo.*;
 
 import java.util.List;
 
@@ -14,7 +13,11 @@ import java.util.List;
 public interface SysUserService {
     SysUserAoDTO get(Long id);
 
+    List<SysRoleAoDTO> get(Long userId, Long roleId);
+
     List<SysUserAoDTO> list(SysUserQueryDTO queryDTO);
 
+    IPage<SysUserAoDTO> list(SysUserQueryDTO queryDTO, int page, int limit);
 
+    void save(SysUserVoDTO sysUsers);
 }

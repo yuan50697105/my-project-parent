@@ -2,6 +2,8 @@ package org.myproject.boot.application.admin.service.pojo;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @program: my-project-parent
  * @description:
@@ -13,4 +15,5 @@ public class SysUserAoDTO {
     private Long id;
     private String username;
     private String name;
+    private List<SysRoleAoDTO> roles;
 }

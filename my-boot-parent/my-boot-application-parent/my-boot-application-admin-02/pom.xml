@@ -15,6 +15,7 @@
         <module>my-boot-application-admin-02-mybatis-base-pagehelper</module>
         <module>my-boot-application-admin-02-mybatis-base-sqlhelper</module>
         <module>my-boot-application-admin-02-service-api</module>
+        <module>my-boot-application-admin-02-restful-api-01</module>
     </modules>
 
 </project>

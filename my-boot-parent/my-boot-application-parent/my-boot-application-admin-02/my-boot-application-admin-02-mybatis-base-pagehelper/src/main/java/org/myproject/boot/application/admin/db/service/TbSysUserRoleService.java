@@ -35,6 +35,10 @@ public interface TbSysUserRoleService {
     int updateBatch(List<TbSysUserRole> list);
 
     int batchInsert(List<TbSysUserRole> list);
+
+    List<Long> selectRoleIdByUserId(Long userId);
+
+    void deleteByRoleId(Long roleId);
 }
 
 

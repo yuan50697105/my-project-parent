@@ -3,6 +3,8 @@ package org.myproject.boot.application.admin.service.pojo;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import java.util.List;
+
 /**
  * @program: my-project-parent
  * @description:
@@ -15,11 +17,14 @@ import lombok.experimental.Accessors;
 @With
 @Builder
 public class SysUserVoDTO {
+    @Accessors(fluent = true)
+    private Event event;
+    @Accessors(fluent = true)
+    private Long id;
     private String username;
     private String name;
     private String password;
-    @Accessors(fluent = true)
-    private Event event;
+    private List<Long> roleIds;
 
     public enum Event {
         ADD, UPDATE
