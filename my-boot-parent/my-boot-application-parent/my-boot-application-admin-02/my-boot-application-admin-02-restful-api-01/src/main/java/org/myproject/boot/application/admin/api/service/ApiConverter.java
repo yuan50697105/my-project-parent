@@ -15,18 +15,18 @@ import java.util.List;
  */
 @Mapper(componentModel = "spring")
 public interface ApiConverter {
-    SysUsersAo sysUser(SysUserAoDTO sysUserAoDTO);
-
-    List<SysRolesAo> sysRoles(List<SysRoleAoDTO> sysRoleAoDTOS);
-
-    SysRolesAo sysRole(SysRolesAo role);
-
     SysUserQueryDTO sysUserQuery(SysUsersQuery query);
+
+    @Mapping(target = "event", ignore = true)
+    SysUserVoDTO sysUsers(SysUsersVo sysUsersVo);
+
+    SysUsersAo sysUsers(SysUserAoDTO sysUserAoDTO);
 
     List<SysUsersAo> sysUsers(List<SysUserAoDTO> list);
 
     IPages<SysUsersAo> sysUsers(IPage<SysUserAoDTO> iPage);
 
-    @Mapping(target = "event", ignore = true)
-    SysUserVoDTO sysUsers(SysUsersVo sysUsersVo);
+    List<SysRolesAo> sysRoles(List<SysRoleAoDTO> sysRoleAoDTOS);
+
+    SysRolesAo sysRoles(SysRolesAo role);
 }

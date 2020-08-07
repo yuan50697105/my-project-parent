@@ -22,4 +22,8 @@ public interface SysUsersService {
     List<SysUsersAo> list(SysUsersQuery query);
 
     void add(SysUsersVo sysUsersAo);
+
+    void update(SysUsersVo sysUsersVo);
+
+    void delete(Long id);
 }

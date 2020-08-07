@@ -2,6 +2,8 @@ package org.myproject.boot.application.admin.api.pojo;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @program: my-boot-application-admin-02
  * @description:
@@ -14,6 +16,6 @@ public class IPages<T> {
     private long limit;
     private long totalPages;
     private long totalRows;
-    private Iterable<T> list;
+    private List<T> list;
 
 }

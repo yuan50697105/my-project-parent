@@ -12,7 +12,7 @@ import org.myproject.boot.application.admin.service.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -32,22 +32,22 @@ public class SysUsersServiceImpl implements SysUsersService {
     @Override
     public SysUsersAo get(Long id) {
         SysUserAoDTO sysUserAoDTO = sysUserService.get(id);
-        return converter.sysUser(sysUserAoDTO);
+        return converter.sysUsers(sysUserAoDTO);
     }
 
     @Override
     public List<SysRolesAo> getRoles(Long id) {
         SysUsersAo sysUsersAo = get(id);
-        return sysUsersAo.getRoles();
+        return Optional.ofNullable(sysUsersAo.getRoles()).orElse(new ArrayList<>());
     }
 
     @Override
     public List<SysRolesAo> getRoles(Long userId, Long roleId) {
         List<SysRolesAo> roles = getRoles(userId);
         if (ObjectUtil.isNotEmpty(roleId)) {
-            return roles.stream().filter(sysRolesPredicate(roleId)).collect(Collectors.toList());
+            return Optional.ofNullable(roles).stream().flatMap(Collection::stream).filter(sysRolesPredicate(roleId)).collect(Collectors.toList());
         } else {
-            return roles;
+            return Optional.ofNullable(roles).orElse(new ArrayList<>());
         }
     }
 
@@ -64,10 +64,22 @@ public class SysUsersServiceImpl implements SysUsersService {
     }
 
     @Override
-    public void add(SysUsersVo sysUsersVo) {
-        SysUserVoDTO sysUsers = converter.sysUsers(sysUsersVo);
+    public void add(SysUsersVo sysUsersAo) {
+        SysUserVoDTO sysUsers = converter.sysUsers(sysUsersAo);
         sysUsers.event(SysUserVoDTO.Event.ADD);
         sysUserService.save(sysUsers);
+    }
+
+    @Override
+    public void update(SysUsersVo sysUsersVo) {
+        SysUserVoDTO sysUsers = converter.sysUsers(sysUsersVo);
+        sysUsers.event(SysUserVoDTO.Event.UPDATE);
+        sysUserService.save(sysUsers);
+    }
+
+    @Override
+    public void delete(Long id) {
+        sysUserService.delete(id);
     }
 
     private Predicate<SysRolesAo> sysRolesPredicate(Long roleId) {

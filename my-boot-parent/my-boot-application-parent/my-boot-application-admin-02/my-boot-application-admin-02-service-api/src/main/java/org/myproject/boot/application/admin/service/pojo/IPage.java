@@ -2,6 +2,8 @@ package org.myproject.boot.application.admin.service.pojo;
 
 import lombok.*;
 
+import java.util.List;
+
 /**
  * @program: my-project-parent
  * @description:
@@ -18,5 +20,5 @@ public class IPage<T> {
     private long limit;
     private long totalPages;
     private long totalRows;
-    private Iterable<T> list;
+    private List<T> list;
 }

@@ -1,7 +1,6 @@
 package org.myproject.boot.application.admin.api.pojo;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,8 +11,11 @@ import java.util.List;
  * @create: 2020-08-07 22:02
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@With
 public class SysUsersVo {
-    @Accessors(fluent = true)
     private Long id;
     private String username;
     private String name;

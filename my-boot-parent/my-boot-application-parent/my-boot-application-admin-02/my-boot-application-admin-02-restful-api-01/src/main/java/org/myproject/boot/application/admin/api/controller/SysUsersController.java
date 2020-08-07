@@ -28,8 +28,14 @@ public class SysUsersController {
         return ResultInfo.success(sysUsersAo);
     }
 
+    @GetMapping("/{userId}/roles")
+    public Result<?> getRoles(@PathVariable("userId") Long userId) {
+        List<SysRolesAo> roles = sysUsersService.getRoles(userId);
+        return ResultInfo.success(roles);
+    }
+
     @GetMapping("/{userId}/roles/{roleId}")
-    public Result<?> getRoles(@PathVariable Long userId, @PathVariable(required = false) Long roleId) {
+    public Result<?> getRoles(@PathVariable("userId") Long userId, @PathVariable("roleId") Long roleId) {
         List<SysRolesAo> roles = sysUsersService.getRoles(userId, roleId);
         return ResultInfo.success(roles);
     }
@@ -49,6 +55,18 @@ public class SysUsersController {
     @PostMapping
     public Result<?> add(@RequestBody SysUsersVo sysUsersAo) {
         sysUsersService.add(sysUsersAo);
+        return ResultInfo.success();
+    }
+
+    @PutMapping("/{id}")
+    public Result<?> update(@PathVariable Long id, @RequestBody SysUsersVo sysUsersVo) {
+        sysUsersService.update(sysUsersVo.withId(id));
+        return ResultInfo.success();
+    }
+
+    @DeleteMapping("/{id}")
+    public Result<?> delete(@PathVariable Long id) {
+        sysUsersService.delete(id);
         return ResultInfo.success();
     }
 

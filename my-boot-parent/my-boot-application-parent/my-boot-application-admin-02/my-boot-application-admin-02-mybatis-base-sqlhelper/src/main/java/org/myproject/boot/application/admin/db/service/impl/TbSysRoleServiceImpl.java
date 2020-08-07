@@ -7,10 +7,12 @@ import org.myproject.boot.application.admin.db.pojo.TbSysRole;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleQuery;
 import org.myproject.boot.application.admin.db.service.TbSysRoleService;
+import org.myproject.boot.mybatis.pojo.BaseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TbSysRoleServiceImpl implements TbSysRoleService {
@@ -105,6 +107,12 @@ public class TbSysRoleServiceImpl implements TbSysRoleService {
     public int batchInsert(List<TbSysRole> list) {
         return tbSysRoleMapper.batchInsert(list);
     }
+
+    @Override
+    public List<Long> selecIdtByIds(List<Long> roleIds) {
+        return selectByIds(roleIds).stream().map(BaseEntity::getId).collect(Collectors.toList());
+    }
+
 }
 
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TbSysUserRoleServiceImpl implements TbSysUserRoleService {
@@ -85,6 +86,20 @@ public class TbSysUserRoleServiceImpl implements TbSysUserRoleService {
     @Override
     public int batchInsert(List<TbSysUserRole> list) {
         return tbSysUserRoleMapper.batchInsert(list);
+    }
+
+    @Override
+    public List<Long> selectRoleIdByUserId(Long userId) {
+        TbSysUserRoleExample example = new TbSysUserRoleExample();
+        example.or().andUserIdEqualTo(userId);
+        return selectByExample(example).stream().map(TbSysUserRole::getRoleId).collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteByRoleId(Long roleId) {
+        TbSysUserRoleExample example = new TbSysUserRoleExample();
+        example.or().andRoleIdEqualTo(roleId);
+        deleteByExample(example);
     }
 }
 

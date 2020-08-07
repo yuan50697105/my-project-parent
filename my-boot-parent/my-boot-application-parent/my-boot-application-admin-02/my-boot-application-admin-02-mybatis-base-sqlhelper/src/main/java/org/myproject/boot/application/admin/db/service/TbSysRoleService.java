@@ -43,6 +43,8 @@ public interface TbSysRoleService {
     int updateBatchSelective(List<TbSysRole> list);
 
     int batchInsert(List<TbSysRole> list);
+
+    List<Long> selecIdtByIds(List<Long> roleIds);
 }
 
 

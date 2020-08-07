@@ -20,4 +20,6 @@ public interface SysUserService {
     IPage<SysUserAoDTO> list(SysUserQueryDTO queryDTO, int page, int limit);
 
     void save(SysUserVoDTO sysUsers);
+
+    void delete(Long id);
 }
