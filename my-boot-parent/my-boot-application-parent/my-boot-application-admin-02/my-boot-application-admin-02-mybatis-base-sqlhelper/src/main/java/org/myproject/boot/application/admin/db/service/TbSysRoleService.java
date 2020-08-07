@@ -2,7 +2,8 @@ package org.myproject.boot.application.admin.db.service;
 
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.admin.db.pojo.TbSysRole;
-import org.myproject.boot.application.admin.db.pojo.TbSysRoleExample;import org.myproject.boot.application.admin.db.pojo.TbSysRoleQuery;
+import org.myproject.boot.application.admin.db.pojo.TbSysRoleExample;
+import org.myproject.boot.application.admin.db.pojo.TbSysRoleQuery;
 
 import java.util.List;
 

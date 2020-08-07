@@ -1,12 +1,13 @@
 package org.myproject.boot.application.admin.db.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample;
 import org.myproject.boot.application.admin.db.mapper.TbSysPermissionMapper;
 import org.myproject.boot.application.admin.db.pojo.TbSysPermission;
+import org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample;
 import org.myproject.boot.application.admin.db.service.TbSysPermissionService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class TbSysPermissionServiceImpl implements TbSysPermissionService {

@@ -1,10 +1,11 @@
 package org.myproject.boot.application.admin.db.pojo;
 
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 系统用户

@@ -7,9 +7,7 @@ import org.myproject.boot.application.admin.db.pojo.TbSysRole;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleExample;
 import org.myproject.boot.application.admin.db.pojo.TbSysRoleQuery;
 import org.myproject.boot.application.admin.db.service.TbSysRoleService;
-import org.myproject.boot.mybatis.pojo.BaseEntity;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.weekend.Weekend;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -22,8 +20,8 @@ public class TbSysRoleServiceImpl implements TbSysRoleService {
 
     @Override
     public List<TbSysRole> selectByIds(List<Long> roleIds) {
-        Weekend<TbSysRole> example = Weekend.of(TbSysRole.class);
-        example.weekendCriteria().andIn(BaseEntity::getId, roleIds);
+        TbSysRoleExample example = new TbSysRoleExample();
+        example.or().andIdIn(roleIds);
         return tbSysRoleMapper.selectByExample(example);
     }
 

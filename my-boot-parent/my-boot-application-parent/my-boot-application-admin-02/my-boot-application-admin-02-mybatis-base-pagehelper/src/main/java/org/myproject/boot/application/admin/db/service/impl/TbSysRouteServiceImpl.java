@@ -17,7 +17,7 @@ public class TbSysRouteServiceImpl implements TbSysRouteService {
 
     @Override
     public List<TbSysRoute> selectAll() {
-        return tbSysRouteMapper.selectAll();
+        return tbSysRouteMapper.selectByExample(new TbSysRouteExample());
     }
 
     @Override

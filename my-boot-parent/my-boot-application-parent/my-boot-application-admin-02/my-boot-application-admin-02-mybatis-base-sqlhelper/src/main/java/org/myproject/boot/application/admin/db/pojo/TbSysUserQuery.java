@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.db.pojo;
 
+import com.gitee.denger.mybatis.example.ext.MybatisExample;
 import com.gitee.denger.mybatis.example.ext.analytical.ExampleCriteriaValueImpl4Like;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndGreaterThanOrEqualTo;
@@ -17,7 +18,7 @@ import java.util.Date;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class TbSysUserQuery extends BaseEntity implements Serializable {
+public class TbSysUserQuery extends BaseEntity implements Serializable, MybatisExample<TbSysUserExample> {
     private static final long serialVersionUID = 1L;
     @AndGreaterThanOrEqualTo(property = "createTime")
     private Date createTimeStart;
