@@ -12,7 +12,6 @@
     <artifactId>my-cloud-application-admin-01</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>my-cloud-application-admin-01-api-01</module>
     </modules>
     <dependencies>
         <!--        <dependency>-->
