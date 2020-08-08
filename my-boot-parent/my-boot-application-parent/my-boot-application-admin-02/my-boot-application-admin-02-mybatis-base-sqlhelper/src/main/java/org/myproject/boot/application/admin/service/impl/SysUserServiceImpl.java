@@ -70,7 +70,7 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public void save(SysUserVoDTO sysUsers) {
-        switch (sysUsers.event()) {
+        switch (sysUsers.getEvent()) {
             case UPDATE:
                 update(sysUsers);
                 break;
@@ -87,11 +87,11 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     private void update(SysUserVoDTO sysUsers) {
-        Long id = sysUsers.id();
+        Long id = sysUsers.getId();
         TbSysUser tbSysUser = sysUserService.selectByPrimaryKey(id);
         converterService.copySysUser(sysUsers, tbSysUser);
         List<Long> roleIds = sysUsers.getRoleIds();
-        List<Long> roleIdsDb = sysUserRoleService.selectRoleIdByUserId(sysUsers.id());
+        List<Long> roleIdsDb = sysUserRoleService.selectRoleIdByUserId(sysUsers.getId());
         Collection<Long> intersection = CollUtil.intersection(roleIds, roleIdsDb);
         roleIdsDb.removeAll(intersection);
         roleIdsDb.forEach(sysUserRoleService::deleteByRoleId);

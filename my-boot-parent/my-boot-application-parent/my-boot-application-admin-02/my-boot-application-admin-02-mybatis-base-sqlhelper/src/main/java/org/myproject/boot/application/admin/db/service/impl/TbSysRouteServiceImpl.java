@@ -59,6 +59,13 @@ public class TbSysRouteServiceImpl implements TbSysRouteService {
     public int batchInsert(List<TbSysRoute> list) {
         return tbSysRouteMapper.batchInsert(list);
     }
+
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        TbSysRouteExample example = new TbSysRouteExample();
+        example.or().andRoleIdEqualTo(roleId);
+        return deleteByExample(example);
+    }
 }
 
 
