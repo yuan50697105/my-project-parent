@@ -1,6 +1,7 @@
 package org.myproject.boot.application.admin.api.controller;
 
 import ai.yue.library.base.view.Result;
+import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.api.pojo.SysRolesAo;
 import org.myproject.boot.application.admin.api.service.SysRolesService;
 import org.myproject.boot.application.admin.service.pojo.SysRoleAoDTO;
@@ -25,5 +26,6 @@ public class SysRolesController {
     @GetMapping("/{id}")
     public Result<?> get(@PathVariable Long id) {
         sysRolesService.get(id);
+        return ResultInfo.success();
     }
 }
