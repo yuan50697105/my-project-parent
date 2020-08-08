@@ -1,5 +1,0 @@
-spring:
-  profiles:
-    active: db,netflix
-server:
-  port: 1003
