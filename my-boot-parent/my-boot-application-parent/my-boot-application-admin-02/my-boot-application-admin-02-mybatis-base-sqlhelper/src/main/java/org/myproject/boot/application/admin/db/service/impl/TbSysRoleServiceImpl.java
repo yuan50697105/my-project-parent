@@ -109,7 +109,7 @@ public class TbSysRoleServiceImpl implements TbSysRoleService {
     }
 
     @Override
-    public List<Long> selecIdtByIds(List<Long> roleIds) {
+    public List<Long> selectIdtByIds(List<Long> roleIds) {
         return selectByIds(roleIds).stream().map(BaseEntity::getId).collect(Collectors.toList());
     }
 

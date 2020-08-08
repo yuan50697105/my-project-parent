@@ -44,7 +44,7 @@ public interface TbSysRoleService {
 
     int batchInsert(List<TbSysRole> list);
 
-    List<Long> selecIdtByIds(List<Long> roleIds);
+    List<Long> selectIdtByIds(List<Long> roleIds);
 }
 
 

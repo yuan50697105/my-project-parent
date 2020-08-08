@@ -104,7 +104,7 @@ public class SysUserServiceImpl implements SysUserService {
     private void insert(SysUserVoDTO sysUsers) {
         TbSysUser tbSysUser = converterService.sysUser(sysUsers);
         sysUserService.insert(tbSysUser);
-        List<Long> roleIds = sysRoleService.selecIdtByIds(sysUsers.getRoleIds());
+        List<Long> roleIds = sysRoleService.selectIdtByIds(sysUsers.getRoleIds());
         roleIds.stream().map(sysUserRole(tbSysUser)).forEach(sysUserRoleService::insert);
     }
 
