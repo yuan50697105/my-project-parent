@@ -40,31 +40,32 @@ public class SysUsersController {
         return ResultInfo.success(roles);
     }
 
-    @GetMapping(params = {"page", "limit"})
+    @GetMapping(value = {"","/list"},params = {"page", "limit"})
     public Result<?> list(SysUsersQuery query, int page, int limit) {
         IPages<SysUsersAo> iPages = sysUsersService.list(query, page, limit);
         return ResultInfo.success(iPages.getList(), iPages.getTotalRows());
     }
 
-    @GetMapping
+    @GetMapping({"","/list"})
     public Result<?> list(SysUsersQuery query) {
         List<SysUsersAo> list = sysUsersService.list(query);
         return ResultInfo.success(list, (long) list.size());
     }
 
-    @PostMapping
+    @PostMapping({""})
     public Result<?> add(@RequestBody SysUsersVo sysUsersAo) {
         sysUsersService.add(sysUsersAo);
         return ResultInfo.success();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping({"/{id}"})
     public Result<?> update(@PathVariable Long id, @RequestBody SysUsersVo sysUsersVo) {
-        sysUsersService.update(sysUsersVo.withId(id));
+        sysUsersVo.setId(id);
+        sysUsersService.update(sysUsersVo);
         return ResultInfo.success();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping({"/{id}"})
     public Result<?> delete(@PathVariable Long id) {
         sysUsersService.delete(id);
         return ResultInfo.success();

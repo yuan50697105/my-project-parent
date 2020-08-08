@@ -1,5 +1,6 @@
 package org.myproject.boot.application.admin.service.service;
 
+import org.myproject.boot.application.admin.service.pojo.SysRoleAoDTO;
 import org.myproject.boot.application.admin.service.pojo.SysRoleVoDTO;
 
 /**
@@ -12,4 +13,6 @@ public interface SysRoleService {
     void save(SysRoleVoDTO sysRoleVoDTO);
 
     void delete(Long id);
+
+    SysRoleAoDTO get(Long id);
 }

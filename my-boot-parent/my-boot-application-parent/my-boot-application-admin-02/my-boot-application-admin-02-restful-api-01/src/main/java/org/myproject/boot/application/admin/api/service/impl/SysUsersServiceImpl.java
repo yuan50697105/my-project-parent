@@ -66,14 +66,14 @@ public class SysUsersServiceImpl implements SysUsersService {
     @Override
     public void add(SysUsersVo sysUsersAo) {
         SysUserVoDTO sysUsers = converter.sysUsers(sysUsersAo);
-        sysUsers.event(SysUserVoDTO.Event.ADD);
+        sysUsers.setEvent(SysUserVoDTO.Event.ADD);
         sysUserService.save(sysUsers);
     }
 
     @Override
     public void update(SysUsersVo sysUsersVo) {
         SysUserVoDTO sysUsers = converter.sysUsers(sysUsersVo);
-        sysUsers.event(SysUserVoDTO.Event.UPDATE);
+        sysUsers.setEvent(SysUserVoDTO.Event.UPDATE);
         sysUserService.save(sysUsers);
     }
 

@@ -6,6 +6,7 @@ import org.myproject.boot.application.admin.db.service.TbSysRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysRouteService;
 import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
 import org.myproject.boot.application.admin.service.converter.ConverterService;
+import org.myproject.boot.application.admin.service.pojo.SysRoleAoDTO;
 import org.myproject.boot.application.admin.service.pojo.SysRoleVoDTO;
 import org.myproject.boot.application.admin.service.service.SysRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,12 @@ public class SysRoleServiceImpl implements SysRoleService {
         sysUserRoleService.deleteByRoleId(id);
         sysRouteService.deleteByRoleId(id);
         sysPermissionService.deleteByRoleId(id);
+    }
+
+    @Override
+    public SysRoleAoDTO get(Long id) {
+        TbSysRole tbSysRole = sysRoleService.selectByPrimaryKey(id);
+        return converterService.sysRoles(tbSysRole);
     }
 
 }

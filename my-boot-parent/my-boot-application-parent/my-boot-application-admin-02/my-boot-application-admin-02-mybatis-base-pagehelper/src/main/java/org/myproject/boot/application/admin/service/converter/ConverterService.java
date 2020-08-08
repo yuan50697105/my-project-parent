@@ -56,6 +56,7 @@ public interface ConverterService {
 
     List<SysRoleAoDTO> sysRoles(List<TbSysRole> selectByIds);
 
+    @Mapping(target = "createTime", ignore = true)
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "isDelete", ignore = true)
     @Mapping(target = "creater", ignore = true)
@@ -63,5 +64,11 @@ public interface ConverterService {
     @Mapping(target = "createTimeEnd", ignore = true)
     TbSysRole sysRoles(SysRoleVoDTO sysRoleVoDTO);
 
+    @Mapping(target = "version", ignore = true)
+    @Mapping(target = "isDelete", ignore = true)
+    @Mapping(target = "creater", ignore = true)
+    @Mapping(target = "createTime", ignore = true)
     void copySysRole(SysRoleVoDTO sysRoleVoDTO, @MappingTarget TbSysRole tbSysRole);
+
+    SysRoleAoDTO sysRoles(TbSysRole tbSysRole);
 }

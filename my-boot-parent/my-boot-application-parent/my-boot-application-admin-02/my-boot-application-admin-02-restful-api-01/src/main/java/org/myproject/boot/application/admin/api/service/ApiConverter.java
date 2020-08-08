@@ -28,4 +28,7 @@ public interface ApiConverter {
     List<SysRolesAo> sysRoles(List<SysRoleAoDTO> objects);
 
     SysRolesAo sysRoles(SysRolesAo role);
+
+    SysRolesAo sysRoles(SysRoleAoDTO sysRoleAoDTO);
+
 }
