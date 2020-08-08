@@ -49,7 +49,7 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public List<SysRoleAoDTO> get(Long userId, Long roleId) {
+    public List<Object> get(Long userId, Long roleId) {
         throw new RuntimeException("未实现");
     }
 

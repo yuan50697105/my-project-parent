@@ -26,6 +26,8 @@ public interface TbSysRouteService {
     int updateByExample(TbSysRoute record, TbSysRouteExample example);
 
     int batchInsert(List<TbSysRoute> list);
+
+    int deleteByRoleId(Long roleId);
 }
 
 

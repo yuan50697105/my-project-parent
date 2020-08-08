@@ -55,5 +55,12 @@ public class TbSysPermissionServiceImpl implements TbSysPermissionService {
         return tbSysPermissionMapper.batchInsert(list);
     }
 
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        TbSysPermissionExample example = new TbSysPermissionExample();
+        example.or().andRoleIdEqualTo(roleId);
+        return deleteByExample(example);
+    }
+
 }
 

@@ -17,7 +17,6 @@ import java.util.List;
 public interface ApiConverter {
     SysUserQueryDTO sysUserQuery(SysUsersQuery query);
 
-    @Mapping(target = "event", ignore = true)
     SysUserVoDTO sysUsers(SysUsersVo sysUsersVo);
 
     SysUsersAo sysUsers(SysUserAoDTO sysUserAoDTO);
@@ -26,7 +25,7 @@ public interface ApiConverter {
 
     IPages<SysUsersAo> sysUsers(IPage<SysUserAoDTO> iPage);
 
-    List<SysRolesAo> sysRoles(List<SysRoleAoDTO> sysRoleAoDTOS);
+    List<SysRolesAo> sysRoles(List<SysRoleAoDTO> objects);
 
     SysRolesAo sysRoles(SysRolesAo role);
 }

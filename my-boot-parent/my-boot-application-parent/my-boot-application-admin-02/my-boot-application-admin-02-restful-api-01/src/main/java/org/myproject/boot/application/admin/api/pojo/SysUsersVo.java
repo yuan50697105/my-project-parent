@@ -11,10 +11,6 @@ import java.util.List;
  * @create: 2020-08-07 22:02
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@With
 public class SysUsersVo {
     private Long id;
     private String username;

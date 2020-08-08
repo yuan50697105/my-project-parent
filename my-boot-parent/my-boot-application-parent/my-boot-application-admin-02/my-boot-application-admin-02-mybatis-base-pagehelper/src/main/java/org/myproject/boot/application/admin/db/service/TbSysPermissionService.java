@@ -24,5 +24,6 @@ public interface TbSysPermissionService {
 
     int batchInsert(List<TbSysPermission> list);
 
+    int deleteByRoleId(Long roleId);
 }
 

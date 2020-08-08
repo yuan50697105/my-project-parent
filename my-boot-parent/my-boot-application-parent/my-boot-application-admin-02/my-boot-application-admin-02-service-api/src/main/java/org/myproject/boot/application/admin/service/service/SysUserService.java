@@ -13,7 +13,7 @@ import java.util.List;
 public interface SysUserService {
     SysUserAoDTO get(Long id);
 
-    List<SysRoleAoDTO> get(Long userId, Long roleId);
+    List<Object> get(Long userId, Long roleId);
 
     List<SysUserAoDTO> list(SysUserQueryDTO queryDTO);
 

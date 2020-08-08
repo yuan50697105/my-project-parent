@@ -19,16 +19,9 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 public class TbSysRole extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
-    @AndGreaterThanOrEqualTo(property = "createTime")
-    private Date createTimeStart;
-    @AndLessThanOrEqualTo(property = "createTime")
-    private Date createTimeEnd;
-    @AndLike
+    private Date createTime;
     private String creater;
-    @AndEqualTo
     private Integer version;
-    @AndEqualTo
     private Integer isDelete;
-    @AndLike(type = ExampleCriteriaValueImpl4Like.Type.suffix)
     private String name;
 }

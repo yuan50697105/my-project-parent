@@ -7,7 +7,6 @@ import org.mapstruct.MappingTarget;
 import org.myproject.boot.application.admin.db.pojo.TbSysRole;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
-import org.myproject.boot.application.admin.service.pojo.SysRoleAoDTO;
 import org.myproject.boot.application.admin.service.pojo.SysUserAoDTO;
 import org.myproject.boot.application.admin.service.pojo.SysUserQueryDTO;
 import org.myproject.boot.application.admin.service.pojo.SysUserVoDTO;
@@ -46,7 +45,7 @@ public interface ConverterService {
 
     PageInfo<SysUserAoDTO> sysUsers(PageInfo<TbSysUser> pageInfo);
 
-    List<SysRoleAoDTO> sysRoles(List<TbSysRole> selectByIds);
+    List<Object> sysRoles(List<TbSysRole> selectByIds);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "updateTime", ignore = true)

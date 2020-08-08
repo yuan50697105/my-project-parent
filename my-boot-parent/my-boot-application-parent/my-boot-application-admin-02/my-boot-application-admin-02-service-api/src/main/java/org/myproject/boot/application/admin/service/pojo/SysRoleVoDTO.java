@@ -1,26 +1,26 @@
 package org.myproject.boot.application.admin.service.pojo;
 
-import lombok.*;
-import lombok.experimental.Accessors;
+import lombok.Data;
 
 import java.util.List;
 
 /**
- * @program: my-project-parent
+ * @program: my-boot-application-admin-02
  * @description:
  * @author: yuane
- * @create: 2020-08-05 14:36
+ * @create: 2020-08-08 16:48
  */
 @Data
-public class SysUserVoDTO {
+public class SysRoleVoDTO {
     private Event event;
     private Long id;
-    private String username;
     private String name;
-    private String password;
-    private List<Long> roleIds;
+    private String decription;
+    private List<Object> routes;
 
     public enum Event {
         ADD, UPDATE
     }
+
+
 }
