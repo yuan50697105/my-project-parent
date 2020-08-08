@@ -30,7 +30,7 @@ public class TbSysUserRoleServiceImpl implements TbSysUserRoleService {
     public void deleteByUserId(Long userId) {
         Example.Builder builder = Example.builder(TbSysUserRole.class);
         builder.where(WeekendSqls.<TbSysUserRole>custom().andEqualTo(TbSysUserRole::getUserId, userId));
-        tbSysUserRoleMapper.deleteByExample(builder.build())
+        tbSysUserRoleMapper.deleteByExample(builder.build());
     }
 
     @Override
