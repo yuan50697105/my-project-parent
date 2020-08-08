@@ -2,9 +2,7 @@ package org.myproject.boot.application.admin.api.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
-import org.myproject.boot.application.admin.api.pojo.SysRolesAo;
 import org.myproject.boot.application.admin.api.service.SysRolesService;
-import org.myproject.boot.application.admin.service.pojo.SysRoleAoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
