@@ -56,14 +56,18 @@ public interface ConverterService {
 
     List<SysRoleAoDTO> sysRoles(List<TbSysRole> selectByIds);
 
+    @Mapping(target = "updateTime", ignore = true)
+    @Mapping(target = "modifier", ignore = true)
+    @Mapping(target = "description", ignore = true)
     @Mapping(target = "createTime", ignore = true)
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "isDelete", ignore = true)
     @Mapping(target = "creater", ignore = true)
-    @Mapping(target = "createTimeStart", ignore = true)
-    @Mapping(target = "createTimeEnd", ignore = true)
     TbSysRole sysRoles(SysRoleVoDTO sysRoleVoDTO);
 
+    @Mapping(target = "updateTime", ignore = true)
+    @Mapping(target = "modifier", ignore = true)
+    @Mapping(target = "description", ignore = true)
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "isDelete", ignore = true)
     @Mapping(target = "creater", ignore = true)

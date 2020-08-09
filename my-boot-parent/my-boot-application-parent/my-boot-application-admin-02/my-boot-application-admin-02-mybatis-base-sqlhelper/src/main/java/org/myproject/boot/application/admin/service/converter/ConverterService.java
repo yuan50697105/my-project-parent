@@ -60,8 +60,6 @@ public interface ConverterService {
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "isDelete", ignore = true)
     @Mapping(target = "creater", ignore = true)
-    @Mapping(target = "createTimeStart", ignore = true)
-    @Mapping(target = "createTimeEnd", ignore = true)
     TbSysRole sysRoles(SysRoleVoDTO sysRoleVoDTO);
 
     @Mapping(target = "version", ignore = true)

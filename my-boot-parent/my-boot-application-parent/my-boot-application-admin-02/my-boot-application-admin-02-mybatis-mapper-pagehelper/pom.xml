@@ -32,6 +32,11 @@
             <artifactId>my-boot-application-admin-02-service-api</artifactId>
             <version>1.0.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.chris2018998</groupId>
+            <artifactId>spring-boot-starter-beecp</artifactId>
+            <version>1.3.4.RELEASE</version>
+        </dependency>
     </dependencies>
 
 </project>

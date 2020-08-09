@@ -21,6 +21,10 @@
         <module>my-boot-application-admin-02-mybatis-mapper-sqlhelper</module>
         <module>my-boot-application-admin-02-restful-api-11</module>
         <module>my-boot-application-admin-02-restful-api-12</module>
+        <module>my-boot-application-admin-02-mybatis-plus-pagehelper</module>
+        <module>my-boot-application-admin-02-mybatis-plus-sqlhelper</module>
+        <module>my-boot-application-admin-02-restful-api-21</module>
+        <module>my-boot-application-admin-02-restful-api-22</module>
     </modules>
 
 </project>
