@@ -4,6 +4,7 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import org.myproject.boot.application.admin.api.pojo.*;
 import org.myproject.boot.application.admin.api.service.SysUsersService;
+import org.myproject.boot.application.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,8 +43,8 @@ public class SysUsersController {
 
     @GetMapping(value = {"","/list"},params = {"page", "limit"})
     public Result<?> list(SysUsersQuery query, int page, int limit) {
-        IPages<SysUsersAo> iPages = sysUsersService.list(query, page, limit);
-        return ResultInfo.success(iPages.getList(), iPages.getTotalRows());
+        IPage<SysUsersAo> iPage = sysUsersService.list(query, page, limit);
+        return ResultInfo.success(iPage.getList(), iPage.getTotalRows());
     }
 
     @GetMapping({"","/list"})

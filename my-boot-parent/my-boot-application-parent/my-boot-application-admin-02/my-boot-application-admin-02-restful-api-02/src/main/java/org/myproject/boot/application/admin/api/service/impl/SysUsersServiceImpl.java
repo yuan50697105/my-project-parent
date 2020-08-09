@@ -4,11 +4,11 @@ import cn.hutool.core.util.ObjectUtil;
 import org.myproject.boot.application.admin.api.pojo.*;
 import org.myproject.boot.application.admin.api.service.ApiConverter;
 import org.myproject.boot.application.admin.api.service.SysUsersService;
-import org.myproject.boot.application.admin.service.pojo.IPage;
 import org.myproject.boot.application.admin.service.pojo.SysUserAoDTO;
 import org.myproject.boot.application.admin.service.pojo.SysUserQueryDTO;
 import org.myproject.boot.application.admin.service.pojo.SysUserVoDTO;
 import org.myproject.boot.application.admin.service.service.SysUserService;
+import org.myproject.boot.application.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,7 +52,7 @@ public class SysUsersServiceImpl implements SysUsersService {
     }
 
     @Override
-    public IPages<SysUsersAo> list(SysUsersQuery query, int page, int limit) {
+    public IPage<SysUsersAo> list(SysUsersQuery query, int page, int limit) {
         SysUserQueryDTO queryDTO = converter.sysUserQuery(query);
         IPage<SysUserAoDTO> iPage = sysUserService.list(queryDTO, page, limit);
         return converter.sysUsers(iPage);
