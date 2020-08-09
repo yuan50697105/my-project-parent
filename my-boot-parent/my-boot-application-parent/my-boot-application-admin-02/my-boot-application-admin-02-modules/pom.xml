@@ -13,6 +13,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-application-admin-02-modules-goods</module>
+        <module>my-boot-application-admin-02-modules-customer</module>
+        <module>my-boot-application-admin-02-modules-order</module>
+        <module>my-boot-application-admin-02-modules-price</module>
+        <module>my-boot-application-admin-02-modules-device</module>
     </modules>
 
 
