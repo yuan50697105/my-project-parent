@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-admin-02-restful-api-01</artifactId>
+    <artifactId>my-boot-application-admin-02-restful-api-12</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
@@ -28,10 +28,9 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-02-mybatis-mapper-pagehelper</artifactId>
+            <artifactId>my-boot-application-admin-02-mybatis-mapper-sqlhelper</artifactId>
             <version>1.0.0.1</version>
         </dependency>
     </dependencies>
-
 
 </project>

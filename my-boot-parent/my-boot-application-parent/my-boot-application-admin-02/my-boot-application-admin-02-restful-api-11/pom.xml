@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-admin-02-restful-api-01</artifactId>
+    <artifactId>my-boot-application-admin-02-restful-api-11</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
@@ -32,6 +32,5 @@
             <version>1.0.0.1</version>
         </dependency>
     </dependencies>
-
 
 </project>

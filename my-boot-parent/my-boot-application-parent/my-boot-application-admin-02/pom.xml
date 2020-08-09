@@ -18,6 +18,9 @@
         <module>my-boot-application-admin-02-restful-api-01</module>
         <module>my-boot-application-admin-02-restful-api-02</module>
         <module>my-boot-application-admin-02-mybatis-mapper-pagehelper</module>
+        <module>my-boot-application-admin-02-mybatis-mapper-sqlhelper</module>
+        <module>my-boot-application-admin-02-restful-api-11</module>
+        <module>my-boot-application-admin-02-restful-api-12</module>
     </modules>
 
 </project>
