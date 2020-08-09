@@ -30,6 +30,23 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
 
     @Override
     public void save(GoodsTypeVoDTO goodsTypeVoDTO) {
+        switch (goodsTypeVoDTO.getEvent()) {
+            case UPDATE:
+                update(goodsTypeVoDTO);
+                break;
+            case ADD:
+                add(goodsTypeVoDTO);
+                break;
+        }
+    }
+
+    private void update(GoodsTypeVoDTO goodsTypeVoDTO) {
+        TbGoodsType tbGoodsType = goodsTypeService.selectByPrimaryKey(goodsTypeVoDTO.getId());
+        converter.copyType(goodsTypeVoDTO, tbGoodsType);
+        goodsTypeService.updateByPrimaryKeySelective(tbGoodsType);
+    }
+
+    private void add(GoodsTypeVoDTO goodsTypeVoDTO) {
         TbGoodsType tbGoodsType = converter.typeVo(goodsTypeVoDTO);
         goodsTypeService.insert(tbGoodsType);
     }

@@ -13,12 +13,22 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-02-modules-goods-restful-api</artifactId>
+            <artifactId>my-boot-commons-webmvc</artifactId>
             <version>1.0.0.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-02-restful-api-01</artifactId>
+            <artifactId>my-boot-application-admin-02-modules-goods-restful-api</artifactId>
             <version>1.0.0.1</version>
         </dependency>
         <dependency>

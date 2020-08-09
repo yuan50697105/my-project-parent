@@ -2,6 +2,7 @@ package org.myproject.boot.application.goods.service;
 
 import com.github.pagehelper.PageInfo;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfoQuery;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsType;
@@ -38,4 +39,6 @@ public interface GoodsConverter {
     List<GoodsTypeAoDTO> typeAos(List<TbGoodsType> list);
 
     PageInfo<GoodsTypeAoDTO> typeAos(PageInfo<TbGoodsType> pageInfo);
+
+    void copyType(GoodsTypeVoDTO goodsTypeVoDTO, @MappingTarget TbGoodsType tbGoodsType);
 }
