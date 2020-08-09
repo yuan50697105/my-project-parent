@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.boot.application.admin.db.mapper.TbSysRouteMapper">
-  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.TbSysRoute">
+<mapper namespace="org.myproject.boot.application.admin.web.db.mapper.TbSysRouteMapper">
+  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.web.db.pojo.TbSysRoute">
     <!--@mbg.generated generated on Sun Aug 09 01:04:59 CST 2020.-->
     <!--@Table tb_sys_route-->
     <result column="id" jdbcType="BIGINT" property="id" />

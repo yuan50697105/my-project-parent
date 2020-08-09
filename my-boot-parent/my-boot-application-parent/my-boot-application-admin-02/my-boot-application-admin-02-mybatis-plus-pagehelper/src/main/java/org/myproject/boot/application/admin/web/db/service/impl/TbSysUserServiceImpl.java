@@ -1,0 +1,54 @@
+package org.myproject.boot.application.admin.web.db.service.impl;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.myproject.boot.application.admin.web.db.mapper.TbSysUserMapper;
+import org.myproject.boot.application.admin.web.db.pojo.TbSysUser;
+import org.myproject.boot.application.admin.web.db.pojo.TbSysUserExample;
+import org.myproject.boot.application.admin.web.db.pojo.TbSysUserQuery;
+import org.myproject.boot.application.admin.web.db.service.TbSysUserService;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class TbSysUserServiceImpl extends ServiceImpl<TbSysUserMapper, TbSysUser> implements TbSysUserService {
+
+    @Override
+    public long countByExample(TbSysUserExample example) {
+        return baseMapper.countByExample(example);
+    }
+
+    @Override
+    public int deleteByExample(TbSysUserExample example) {
+        return baseMapper.deleteByExample(example);
+    }
+
+    @Override
+    public List<TbSysUser> selectByExample(TbSysUserExample example) {
+        return baseMapper.selectByExample(example);
+    }
+
+    @Override
+    public int updateByExampleSelective(TbSysUser record, TbSysUserExample example) {
+        return baseMapper.updateByExampleSelective(record, example);
+    }
+
+    @Override
+    public int updateByExample(TbSysUser record, TbSysUserExample example) {
+        return baseMapper.updateByExample(record, example);
+    }
+
+    @Override
+    public List<TbSysUser> selectByQuery(TbSysUserQuery query) {
+        return baseMapper.selectByExample(query.toExample());
+    }
+
+    @Override
+    public PageInfo<TbSysUser> selectByQuery(TbSysUserQuery query, int page, int limit) {
+        PageHelper.startPage(page, limit);
+        return new PageInfo<>(selectByQuery(query));
+    }
+
+}

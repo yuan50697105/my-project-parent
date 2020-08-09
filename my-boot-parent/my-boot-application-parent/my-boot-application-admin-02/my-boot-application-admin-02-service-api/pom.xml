@@ -16,6 +16,12 @@
             <artifactId>my-boot-application-admin-02-commons</artifactId>
             <version>1.0.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-02-restful-api</artifactId>
+            <version>1.0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -27,6 +33,7 @@
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 
 </project>

@@ -2,7 +2,6 @@ package org.myproject.boot.application.goods.service.api;
 
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.commons.pojo.IPage;
-import org.myproject.boot.application.admin.service.pojo.PageResult;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfoQuery;
 import org.myproject.boot.application.goods.db.service.TbGoodsInfoService;
@@ -10,6 +9,7 @@ import org.myproject.boot.application.goods.service.GoodsConverter;
 import org.myproject.boot.application.goods.service.pojo.GoodsInfoAoDTO;
 import org.myproject.boot.application.goods.service.pojo.GoodsInfoQueryDTO;
 import org.myproject.boot.application.goods.service.pojo.GoodsInfoVoDTO;
+import org.myproject.boot.application.goods.service.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

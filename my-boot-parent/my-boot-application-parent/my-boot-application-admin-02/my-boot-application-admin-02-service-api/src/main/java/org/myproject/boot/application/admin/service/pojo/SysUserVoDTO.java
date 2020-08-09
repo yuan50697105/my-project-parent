@@ -1,7 +1,6 @@
 package org.myproject.boot.application.admin.service.pojo;
 
 import lombok.*;
-import lombok.experimental.Accessors;
 
 import java.util.List;
 

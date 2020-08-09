@@ -1,6 +1,8 @@
 package org.myproject.boot.application.admin.service.service;
 
-import org.myproject.boot.application.admin.service.pojo.*;
+import org.myproject.boot.application.admin.service.pojo.SysUserAoDTO;
+import org.myproject.boot.application.admin.service.pojo.SysUserQueryDTO;
+import org.myproject.boot.application.admin.service.pojo.SysUserVoDTO;
 import org.myproject.boot.application.commons.pojo.IPage;
 
 import java.util.List;

@@ -11,11 +11,7 @@
 
     <artifactId>my-boot-application-admin-02-modules-goods-db-01</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-02-mybatis-base-pagehelper</artifactId>
-            <version>1.0.0.1</version>
-        </dependency>
+       
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-application-admin-02-modules-goods-service-api</artifactId>

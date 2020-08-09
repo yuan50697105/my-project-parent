@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.boot.application.admin.db.mapper.TbSysUserMapper">
-  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.TbSysUser">
+<mapper namespace="org.myproject.boot.application.admin.web.db.mapper.TbSysUserMapper">
+  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.web.db.pojo.TbSysUser">
     <!--@mbg.generated-->
     <!--@Table tb_sys_user-->
     <id column="id" jdbcType="BIGINT" property="id" />
@@ -80,7 +80,7 @@
     id, create_time, update_time, creater, modifier, version, is_delete, username, `name`, 
     `password`
   </sql>
-  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysUserExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -107,14 +107,14 @@
     delete from tb_sys_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUserExample">
+  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysUserExample">
     <!--@mbg.generated-->
     delete from tb_sys_user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUser">
+  <insert id="insert" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysUser">
     <!--@mbg.generated-->
     insert into tb_sys_user (id, create_time, update_time, 
       creater, modifier, version, 
@@ -125,7 +125,7 @@
       #{isDelete,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUser">
+  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysUser">
     <!--@mbg.generated-->
     insert into tb_sys_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -193,7 +193,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysUserExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from tb_sys_user
     <if test="_parameter != null">
@@ -256,7 +256,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUser">
+  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysUser">
     <!--@mbg.generated-->
     update tb_sys_user
     <set>
@@ -290,7 +290,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysUser">
+  <update id="updateByPrimaryKey" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysUser">
     <!--@mbg.generated-->
     update tb_sys_user
     set create_time = #{createTime,jdbcType=TIMESTAMP},

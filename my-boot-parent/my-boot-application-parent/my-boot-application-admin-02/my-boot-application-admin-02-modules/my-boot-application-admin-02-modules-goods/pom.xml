@@ -15,6 +15,7 @@
         <module>my-boot-application-admin-02-modules-goods-db-01</module>
         <module>my-boot-application-admin-02-modules-goods-service-api</module>
         <module>my-boot-application-admin-02-modules-goods-restful-api-01</module>
+        <module>my-boot-application-admin-02-modules-goods-restful-api</module>
     </modules>
 
 

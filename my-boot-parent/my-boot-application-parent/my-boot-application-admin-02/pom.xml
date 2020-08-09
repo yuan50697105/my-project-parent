@@ -27,6 +27,7 @@
         <module>my-boot-application-admin-02-mybatis-plus-sqlhelper</module>
         <module>my-boot-application-admin-02-modules</module>
         <module>my-boot-application-admin-02-commons</module>
+        <module>my-boot-application-admin-02-restful-api</module>
     </modules>
 
 </project>

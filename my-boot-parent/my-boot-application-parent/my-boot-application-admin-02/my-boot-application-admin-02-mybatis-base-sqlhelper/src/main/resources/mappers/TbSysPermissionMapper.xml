@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.boot.application.admin.db.mapper.TbSysPermissionMapper">
-  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.db.pojo.TbSysPermission">
+<mapper namespace="org.myproject.boot.application.admin.web.db.mapper.TbSysPermissionMapper">
+  <resultMap id="BaseResultMap" type="org.myproject.boot.application.admin.web.db.pojo.TbSysPermission">
     <!--@mbg.generated-->
     <!--@Table tb_sys_permission-->
     <result column="id" jdbcType="BIGINT" property="id" />
@@ -78,7 +78,7 @@
     <!--@mbg.generated-->
     id, create_time, update_time, creater, modifier, version, is_delete, `name`, role_id
   </sql>
-  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysPermissionExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -93,14 +93,14 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample">
+  <delete id="deleteByExample" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysPermissionExample">
     <!--@mbg.generated-->
     delete from tb_sys_permission
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermission">
+  <insert id="insert" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysPermission">
     <!--@mbg.generated-->
     insert into tb_sys_permission (id, create_time, update_time, 
       creater, modifier, version, 
@@ -111,7 +111,7 @@
       #{isDelete,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{roleId,jdbcType=BIGINT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermission">
+  <insert id="insertSelective" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysPermission">
     <!--@mbg.generated-->
     insert into tb_sys_permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -173,7 +173,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.myproject.boot.application.admin.db.pojo.TbSysPermissionExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="org.myproject.boot.application.admin.web.db.pojo.TbSysPermissionExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from tb_sys_permission
     <if test="_parameter != null">

@@ -13,7 +13,17 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-02-modules-goods-restful-api</artifactId>
+            <version>1.0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
             <artifactId>my-boot-application-admin-02-restful-api-01</artifactId>
+            <version>1.0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-02-modules-goods-service-api</artifactId>
             <version>1.0.0.1</version>
         </dependency>
         <dependency>
