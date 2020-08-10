@@ -5,7 +5,7 @@ import org.myproject.boot.application.goods.commons.pojo.GoodsTypeQuery;
 import org.myproject.boot.application.goods.service.api.GoodsTypeService;
 import org.myproject.boot.application.goods.commons.pojo.GoodsTypeAo;
 import org.myproject.boot.application.goods.commons.pojo.GoodsTypeVo;
-import org.myproject.boot.application.goods.web.api.service.GoodsConverter;
+import org.myproject.boot.application.goods.web.api.service.GoodsWebConverter;
 import org.myproject.boot.application.goods.web.api.service.GoodsTypesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ public class GoodsTypesServiceImpl implements GoodsTypesService {
     @Autowired
     private GoodsTypeService goodsTypeService;
     @Autowired
-    private GoodsConverter converter;
+    private GoodsWebConverter converter;
 
     @Override
     public GoodsTypeAo get(Long id) {

@@ -15,7 +15,7 @@ import java.util.List;
  * @create: 2020-08-09 19:10
  */
 @Mapper(componentModel = "spring")
-public interface GoodsConverter {
+public interface GoodsWebConverter {
     GoodsTypeAo typeAo(GoodsTypeAo goodsTypeAo);
 
     GoodsTypeQuery typeQuery(GoodsTypeQuery query);
