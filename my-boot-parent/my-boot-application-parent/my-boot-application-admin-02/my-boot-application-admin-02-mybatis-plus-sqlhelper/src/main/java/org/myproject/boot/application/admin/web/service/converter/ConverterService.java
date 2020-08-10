@@ -1,13 +1,12 @@
-package org.myproject.boot.application.admin.web.service.converter;
+package org.myproject.boot.application.admin.service.converter;
 
 import com.github.pagehelper.PageInfo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-import org.myproject.boot.application.admin.web.db.pojo.TbSysRole;
-import org.myproject.boot.application.admin.web.db.pojo.TbSysUser;
-import org.myproject.boot.application.admin.web.db.pojo.TbSysUserQuery;
-import org.myproject.boot.application.admin.service.pojo.*;
+import org.myproject.boot.application.admin.db.pojo.TbSysRole;
+import org.myproject.boot.application.admin.db.pojo.TbSysUser;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
 
 import java.util.List;
 

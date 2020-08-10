@@ -1,11 +1,11 @@
-package org.myproject.boot.application.admin.web.service.impl;
+package org.myproject.boot.application.admin.service.impl;
 
-import org.myproject.boot.application.admin.web.db.pojo.TbSysRole;
-import org.myproject.boot.application.admin.web.db.service.TbSysPermissionService;
-import org.myproject.boot.application.admin.web.db.service.TbSysRoleService;
-import org.myproject.boot.application.admin.web.db.service.TbSysRouteService;
-import org.myproject.boot.application.admin.web.db.service.TbSysUserRoleService;
-import org.myproject.boot.application.admin.web.service.converter.ConverterService;
+import org.myproject.boot.application.admin.db.pojo.TbSysRole;
+import org.myproject.boot.application.admin.db.service.TbSysPermissionService;
+import org.myproject.boot.application.admin.db.service.TbSysRoleService;
+import org.myproject.boot.application.admin.db.service.TbSysRouteService;
+import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
+import org.myproject.boot.application.admin.service.converter.ConverterService;
 import org.myproject.boot.application.admin.service.pojo.SysRoleAo;
 import org.myproject.boot.application.admin.service.pojo.SysRoleVo;
 import org.myproject.boot.application.admin.service.service.SysRoleService;

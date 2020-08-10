@@ -1,16 +1,16 @@
-package org.myproject.boot.application.admin.web.service.impl;
+package org.myproject.boot.application.admin.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.boot.application.admin.web.db.pojo.TbSysUser;
-import org.myproject.boot.application.admin.web.db.pojo.TbSysUserQuery;
-import org.myproject.boot.application.admin.web.db.pojo.TbSysUserRole;
-import org.myproject.boot.application.admin.web.db.service.TbSysRoleService;
-import org.myproject.boot.application.admin.web.db.service.TbSysUserRoleService;
-import org.myproject.boot.application.admin.web.db.service.TbSysUserService;
-import org.myproject.boot.application.admin.web.service.converter.ConverterService;
+import org.myproject.boot.application.admin.db.pojo.TbSysUser;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
+import org.myproject.boot.application.admin.db.pojo.TbSysUserRole;
+import org.myproject.boot.application.admin.db.service.TbSysRoleService;
+import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
+import org.myproject.boot.application.admin.db.service.TbSysUserService;
+import org.myproject.boot.application.admin.service.converter.ConverterService;
 import org.myproject.boot.application.admin.service.pojo.SysUserAo;
 import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.service.pojo.SysUserVo;

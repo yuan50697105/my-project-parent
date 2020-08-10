@@ -23,7 +23,7 @@ public interface GoodsConverter {
 
     TbGoodsInfoQuery infoQuery(GoodsInfoQuery query);
 
-    TbGoodsInfo infoVo(GoodsInfoVo );
+    TbGoodsInfo infoVo(GoodsInfoVo goodsInfoVo );
 
     GoodsInfoAo infoAo(TbGoodsInfo selectByPrimaryKey);
 

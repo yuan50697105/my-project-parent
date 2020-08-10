@@ -31,8 +31,8 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
     private TbGoodsInfoService goodsInfoService;
 
     @Override
-    public void save(GoodsInfoVo ) {
-        goodsInfoService.insert(converter.infoVo());
+    public void save(GoodsInfoVo goodsInfoVo) {
+        goodsInfoService.insert(converter.infoVo(goodsInfoVo));
     }
 
     @Override
