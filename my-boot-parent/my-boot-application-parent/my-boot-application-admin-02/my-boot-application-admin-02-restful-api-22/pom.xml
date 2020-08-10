@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-02-mybatis-plus-sqlhelper</artifactId>
+            <artifactId>my-boot-application-admin-02-db-22</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>

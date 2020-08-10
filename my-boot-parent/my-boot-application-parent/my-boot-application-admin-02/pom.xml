@@ -19,12 +19,12 @@
         <module>my-boot-application-admin-02-restful-api-21</module>
         <module>my-boot-application-admin-02-restful-api-22</module>
         <module>my-boot-application-admin-02-service-api</module>
-        <module>my-boot-application-admin-02-mybatis-base-pagehelper</module>
-        <module>my-boot-application-admin-02-mybatis-base-sqlhelper</module>
-        <module>my-boot-application-admin-02-mybatis-mapper-pagehelper</module>
-        <module>my-boot-application-admin-02-mybatis-mapper-sqlhelper</module>
-        <module>my-boot-application-admin-02-mybatis-plus-pagehelper</module>
-        <module>my-boot-application-admin-02-mybatis-plus-sqlhelper</module>
+        <module>my-boot-application-admin-02-db-01</module>
+        <module>my-boot-application-admin-02-db-02</module>
+        <module>my-boot-application-admin-02-db-11</module>
+        <module>my-boot-application-admin-02-db-12</module>
+        <module>my-boot-application-admin-02-db-21</module>
+        <module>my-boot-application-admin-02-db-22</module>
         <module>my-boot-application-admin-02-modules</module>
         <module>my-boot-application-admin-02-commons</module>
         <module>my-boot-application-admin-02-restful-api</module>
