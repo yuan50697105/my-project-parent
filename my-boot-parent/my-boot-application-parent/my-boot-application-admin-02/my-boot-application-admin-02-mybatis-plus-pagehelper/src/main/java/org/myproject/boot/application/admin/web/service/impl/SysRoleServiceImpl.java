@@ -6,8 +6,8 @@ import org.myproject.boot.application.admin.db.service.TbSysRoleService;
 import org.myproject.boot.application.admin.db.service.TbSysRouteService;
 import org.myproject.boot.application.admin.db.service.TbSysUserRoleService;
 import org.myproject.boot.application.admin.service.converter.ConverterService;
-import org.myproject.boot.application.admin.service.pojo.SysRoleAo;
-import org.myproject.boot.application.admin.service.pojo.SysRoleVo;
+import org.myproject.boot.application.admin.service.pojo.SysRoleAoDTO;
+import org.myproject.boot.application.admin.service.pojo.SysRoleVoDTO;
 import org.myproject.boot.application.admin.service.service.SysRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +34,7 @@ public class SysRoleServiceImpl implements SysRoleService {
     private ConverterService converterService;
 
     @Override
-    public void save(SysRoleVo sysRoleVo) {
+    public void save(SysRoleVoDTO sysRoleVo) {
         switch (sysRoleVo.getEvent()) {
             case ADD:
                 insert(sysRoleVo);
@@ -45,14 +45,14 @@ public class SysRoleServiceImpl implements SysRoleService {
         }
     }
 
-    private void update(SysRoleVo sysRoleVo) {
+    private void update(SysRoleVoDTO sysRoleVo) {
         Long id = sysRoleVo.getId();
         TbSysRole tbSysRole = sysRoleService.getById(id);
         converterService.copySysRole(sysRoleVo, tbSysRole);
         sysRoleService.updateById(tbSysRole);
     }
 
-    private void insert(SysRoleVo sysRoleVo) {
+    private void insert(SysRoleVoDTO sysRoleVo) {
         sysRoleService.save(converterService.sysRoles(sysRoleVo));
     }
 
@@ -65,7 +65,7 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
-    public SysRoleAo get(Long id) {
+    public SysRoleAoDTO get(Long id) {
         TbSysRole tbSysRole = sysRoleService.getById(id);
         return converterService.sysRoles(tbSysRole);
     }

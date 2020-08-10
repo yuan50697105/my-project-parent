@@ -47,14 +47,12 @@ public class GoodsTypesServiceImpl implements GoodsTypesService {
 
     @Override
     public void add(GoodsTypeVo goodsTypeVo) {
-        GoodsTypeVo goodsTypeVo = converter.typeVo(goodsTypeVo);
         goodsTypeVo.setEvent(GoodsTypeVo.Event.ADD);
         goodsTypeService.save(goodsTypeVo);
     }
 
     @Override
     public void update(GoodsTypeVo goodsTypeVo) {
-        GoodsTypeVo goodsTypeVo = converter.typeVo(goodsTypeVo);
         goodsTypeVo.setEvent(GoodsTypeVo.Event.UPDATE);
         goodsTypeService.save(goodsTypeVo);
     }

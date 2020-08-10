@@ -16,13 +16,13 @@ import java.util.List;
  */
 @Mapper(componentModel = "spring")
 public interface GoodsConverter {
-    org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo typeAo(GoodsTypeAo goodsTypeAo);
+    GoodsTypeAo typeAo(GoodsTypeAo goodsTypeAo);
 
-    GoodsTypeQuery typeQuery(org.myproject.boot.application.goods.web.api.pojo.GoodsTypeQuery query);
+    GoodsTypeQuery typeQuery(GoodsTypeQuery query);
 
-    List<org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo> typeAos(List<GoodsTypeAo> list);
+    List<GoodsTypeAo> typeAos(List<GoodsTypeAo> list);
 
-    IPage<org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo> typeAos(IPage<GoodsTypeAo> list);
+    IPage<GoodsTypeAo> typeAos(IPage<GoodsTypeAo> list);
 
-    GoodsTypeVo typeVo(org.myproject.boot.application.goods.web.api.pojo.GoodsTypeVo goodsTypeVo);
+    GoodsTypeVo typeVo(GoodsTypeVo goodsTypeVo);
 }
