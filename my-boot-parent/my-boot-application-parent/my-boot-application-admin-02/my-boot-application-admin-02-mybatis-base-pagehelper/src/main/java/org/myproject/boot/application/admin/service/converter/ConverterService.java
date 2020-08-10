@@ -7,6 +7,7 @@ import org.mapstruct.MappingTarget;
 import org.myproject.boot.application.admin.db.pojo.TbSysRole;
 import org.myproject.boot.application.admin.db.pojo.TbSysUser;
 import org.myproject.boot.application.admin.db.pojo.TbSysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.*;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface ConverterService {
     @Mapping(target = "roles", ignore = true)
-    SysUserAo sysUser(TbSysUser tbSysUser);
+    SysUserAoDTO sysUser(TbSysUser tbSysUser);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "updateTime", ignore = true)
@@ -28,7 +29,7 @@ public interface ConverterService {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "creater", ignore = true)
     @Mapping(target = "createTime", ignore = true)
-    TbSysUser sysUser(SysUserVo sysUsers);
+    TbSysUser sysUser(SysUserVoDTO sysUsers);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "modifier", ignore = true)
@@ -36,11 +37,11 @@ public interface ConverterService {
     @Mapping(target = "creater", ignore = true)
     @Mapping(target = "createTimeStart", ignore = true)
     @Mapping(target = "createTimeEnd", ignore = true)
-    TbSysUserQuery sysUser(SysUserQuery query);
+    TbSysUserQuery sysUser(SysUserQueryDTO query);
 
-    List<SysUserAo> sysUser(List<TbSysUser> selectByQuery);
+    List<SysUserAoDTO> sysUser(List<TbSysUser> selectByQuery);
 
-    PageInfo<SysUserAo> sysUsers(PageInfo<TbSysUser> pageInfo);
+    PageInfo<SysUserAoDTO> sysUsers(PageInfo<TbSysUser> pageInfo);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "updateTime", ignore = true)
@@ -51,21 +52,21 @@ public interface ConverterService {
     @Mapping(target = "createTime", ignore = true)
     @Mapping(target = "username", ignore = true)
     @Mapping(target = "password", ignore = true)
-    void copySysUser(SysUserVo sysUsers, @MappingTarget TbSysUser tbSysUser);
+    void copySysUser(SysUserVoDTO sysUsers, @MappingTarget TbSysUser tbSysUser);
 
-    List<SysRoleAo> sysRoles(List<TbSysRole> selectByIds);
+    List<SysRoleAoDTO> sysRoles(List<TbSysRole> selectByIds);
 
     @Mapping(target = "createTime", ignore = true)
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "isDelete", ignore = true)
     @Mapping(target = "creater", ignore = true)
-    TbSysRole sysRoles(SysRoleVo sysRoleVo);
+    TbSysRole sysRoles(SysRoleVoDTO sysRoleVo);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "isDelete", ignore = true)
     @Mapping(target = "creater", ignore = true)
     @Mapping(target = "createTime", ignore = true)
-    void copySysRole(SysRoleVo sysRoleVo, @MappingTarget TbSysRole tbSysRole);
+    void copySysRole(SysRoleVoDTO sysRoleVo, @MappingTarget TbSysRole tbSysRole);
 
-    SysRoleAo sysRoles(TbSysRole tbSysRole);
+    SysRoleAoDTO sysRoles(TbSysRole tbSysRole);
 }
