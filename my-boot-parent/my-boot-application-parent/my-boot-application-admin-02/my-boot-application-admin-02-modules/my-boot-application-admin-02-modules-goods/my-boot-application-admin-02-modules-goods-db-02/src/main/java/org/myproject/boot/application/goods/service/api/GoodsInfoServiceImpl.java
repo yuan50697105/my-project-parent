@@ -2,13 +2,13 @@ package org.myproject.boot.application.goods.service.api;
 
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.commons.pojo.IPage;
+import org.myproject.boot.application.goods.commons.pojo.GoodsInfoAo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsInfoQuery;
+import org.myproject.boot.application.goods.commons.pojo.GoodsInfoVo;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfoQuery;
 import org.myproject.boot.application.goods.db.service.TbGoodsInfoService;
 import org.myproject.boot.application.goods.service.GoodsConverter;
-import org.myproject.boot.application.goods.service.pojo.GoodsInfoAoDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsInfoQueryDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsInfoVoDTO;
 import org.myproject.boot.application.goods.service.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,8 +31,8 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
     private TbGoodsInfoService goodsInfoService;
 
     @Override
-    public void save(GoodsInfoVoDTO dto) {
-        goodsInfoService.insert(converter.infoVo(dto));
+    public void save(GoodsInfoVo ) {
+        goodsInfoService.insert(converter.infoVo());
     }
 
     @Override
@@ -41,21 +41,21 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
     }
 
     @Override
-    public GoodsInfoAoDTO get(Long id) {
+    public GoodsInfoAo get(Long id) {
         return converter.infoAo(goodsInfoService.selectByPrimaryKey(id));
     }
 
     @Override
-    public List<GoodsInfoAoDTO> list(GoodsInfoQueryDTO queryDTO) {
-        TbGoodsInfoQuery query = converter.infoQuery(queryDTO);
-        List<TbGoodsInfo> tbGoodsInfos = goodsInfoService.selectByQuery(query);
+    public List<GoodsInfoAo> list(GoodsInfoQuery query) {
+        TbGoodsInfoQuery goodsInfoQuery = converter.infoQuery(query);
+        List<TbGoodsInfo> tbGoodsInfos = goodsInfoService.selectByQuery(goodsInfoQuery);
         return converter.infoAos(tbGoodsInfos);
     }
 
     @Override
-    public IPage<GoodsInfoAoDTO> list(GoodsInfoQueryDTO queryDTO, int page, int limit) {
-        TbGoodsInfoQuery query = converter.infoQuery(queryDTO);
-        PageInfo<TbGoodsInfo> pageInfo = goodsInfoService.selectByQuery(query, page, limit);
+    public IPage<GoodsInfoAo> list(GoodsInfoQuery query, int page, int limit) {
+        TbGoodsInfoQuery goodsInfoQuery = converter.infoQuery(query);
+        PageInfo<TbGoodsInfo> pageInfo = goodsInfoService.selectByQuery(goodsInfoQuery, page, limit);
         return new PageResult<>(converter.infoAos(pageInfo));
     }
 

@@ -1,8 +1,8 @@
 package org.myproject.boot.application.goods.web.api.controller;
 
 import ai.yue.library.base.view.Result;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeQuery;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeVo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeQuery;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeVo;
 import org.springframework.web.bind.annotation.*;
 
 /**

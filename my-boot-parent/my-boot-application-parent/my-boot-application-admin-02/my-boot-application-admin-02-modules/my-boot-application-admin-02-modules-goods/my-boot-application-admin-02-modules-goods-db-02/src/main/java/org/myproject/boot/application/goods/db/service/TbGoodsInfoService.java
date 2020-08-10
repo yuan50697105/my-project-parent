@@ -4,7 +4,7 @@ import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfoExample;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfoQuery;
-import org.myproject.boot.application.goods.service.pojo.GoodsInfoQueryDTO;
+import org.myproject.boot.application.goods.service.pojo.GoodsInfoQuery;
 
 import java.util.List;
 

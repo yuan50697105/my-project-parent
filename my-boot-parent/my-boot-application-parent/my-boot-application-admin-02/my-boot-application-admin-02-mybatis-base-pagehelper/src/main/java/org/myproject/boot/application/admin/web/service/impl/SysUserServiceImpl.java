@@ -13,9 +13,9 @@ import org.myproject.boot.application.admin.web.db.service.TbSysUserService;
 import org.myproject.boot.application.admin.web.service.converter.ConverterService;
 import org.myproject.boot.application.admin.service.service.SysUserService;
 import org.myproject.boot.application.admin.service.pojo.PageResult;
-import org.myproject.boot.application.admin.service.pojo.SysUserAoDTO;
-import org.myproject.boot.application.admin.service.pojo.SysUserQueryDTO;
-import org.myproject.boot.application.admin.service.pojo.SysUserVoDTO;
+import org.myproject.boot.application.admin.service.pojo.SysUserAo;
+import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
+import org.myproject.boot.application.admin.service.pojo.SysUserVo;
 import org.myproject.boot.application.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,14 +42,14 @@ public class SysUserServiceImpl implements SysUserService {
     private TbSysUserRoleService sysUserRoleService;
 
     @Override
-    public SysUserAoDTO get(Long id) {
+    public SysUserAo get(Long id) {
         TbSysUser tbSysUser = sysUserService.selectByPrimaryKey(id);
-        SysUserAoDTO sysUserAoDTO = converterService.sysUser(tbSysUser);
+        SysUserAo sysUserAo = converterService.sysUser(tbSysUser);
         List<Long> roleIds = sysUserRoleService.selectRoleIdByUserId(id);
         if (ObjectUtil.isNotEmpty(roleIds)) {
-            sysUserAoDTO.setRoles(converterService.sysRoles(sysRoleService.selectByIds(roleIds)));
+            sysUserAo.setRoles(converterService.sysRoles(sysRoleService.selectByIds(roleIds)));
         }
-        return sysUserAoDTO;
+        return sysUserAo;
     }
 
     @Override
@@ -58,22 +58,22 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
-    public List<SysUserAoDTO> list(SysUserQueryDTO queryDTO) {
-        TbSysUserQuery sysUserQuery = converterService.sysUser(queryDTO);
+    public List<SysUserAo> list(SysUserQuery query) {
+        TbSysUserQuery sysUserQuery = converterService.sysUser(query);
         List<TbSysUser> list = sysUserService.selectByQuery(sysUserQuery);
         return converterService.sysUser(list);
     }
 
     @Override
-    public IPage<SysUserAoDTO> list(SysUserQueryDTO queryDTO, int page, int limit) {
+    public IPage<SysUserAo> list(SysUserQuery query, int page, int limit) {
         PageHelper.startPage(page, limit);
-        TbSysUserQuery sysUserQuery = converterService.sysUser(queryDTO);
+        TbSysUserQuery sysUserQuery = converterService.sysUser(query);
         PageInfo<TbSysUser> pageInfo = sysUserService.selectByQuery(sysUserQuery, page, limit);
         return new PageResult<>(converterService.sysUsers(pageInfo));
     }
 
     @Override
-    public void save(SysUserVoDTO sysUsers) {
+    public void save(SysUserVo sysUsers) {
         switch (sysUsers.getEvent()) {
             case UPDATE:
                 update(sysUsers);
@@ -90,7 +90,7 @@ public class SysUserServiceImpl implements SysUserService {
         sysUserRoleService.deleteByUserId(id);
     }
 
-    private void update(SysUserVoDTO sysUsers) {
+    private void update(SysUserVo sysUsers) {
         Long id = sysUsers.getId();
         TbSysUser tbSysUser = sysUserService.selectByPrimaryKey(id);
         converterService.copySysUser(sysUsers, tbSysUser);
@@ -105,7 +105,7 @@ public class SysUserServiceImpl implements SysUserService {
 
     }
 
-    private void insert(SysUserVoDTO sysUsers) {
+    private void insert(SysUserVo sysUsers) {
         TbSysUser tbSysUser = converterService.sysUser(sysUsers);
         sysUserService.insert(tbSysUser);
         List<Long> roleIds = sysRoleService.selectIdtByIds(sysUsers.getRoleIds());

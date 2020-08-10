@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-application-admin-02-modules-goods</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.0.0.1</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,7 +14,7 @@
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-commons-webmvc</artifactId>
-            <version>1.0.0.1</version>
+            <version>1.0.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
@@ -29,17 +29,17 @@
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-application-admin-02-modules-goods-restful-api</artifactId>
-            <version>1.0.0.1</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-application-admin-02-modules-goods-service-api</artifactId>
-            <version>1.0.0.1</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-application-admin-02-modules-goods-db-11</artifactId>
-            <version>1.0.0.1</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

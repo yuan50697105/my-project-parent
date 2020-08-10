@@ -1,9 +1,9 @@
 package org.myproject.boot.application.goods.service.api;
 
 import org.myproject.boot.application.commons.pojo.IPage;
-import org.myproject.boot.application.goods.service.pojo.GoodsInfoAoDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsInfoQueryDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsInfoVoDTO;
+import org.myproject.boot.application.goods.commons.pojo.GoodsInfoAo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsInfoQuery;
+import org.myproject.boot.application.goods.commons.pojo.GoodsInfoVo;
 
 import java.util.List;
 
@@ -14,13 +14,13 @@ import java.util.List;
  * @create: 2020-08-09 13:37
  */
 public interface GoodsInfoService {
-    void save(GoodsInfoVoDTO dto);
+    void save(GoodsInfoVo goodsInfoVo);
 
     void delete(Long id);
 
-    GoodsInfoAoDTO get(Long id);
+    GoodsInfoAo get(Long id);
 
-    List<GoodsInfoAoDTO> list(GoodsInfoQueryDTO queryDTO);
+    List<GoodsInfoAo> list(GoodsInfoQuery query);
 
-    IPage<GoodsInfoAoDTO> list(GoodsInfoQueryDTO queryDTO, int page, int limit);
+    IPage<GoodsInfoAo> list(GoodsInfoQuery query, int page, int limit);
 }

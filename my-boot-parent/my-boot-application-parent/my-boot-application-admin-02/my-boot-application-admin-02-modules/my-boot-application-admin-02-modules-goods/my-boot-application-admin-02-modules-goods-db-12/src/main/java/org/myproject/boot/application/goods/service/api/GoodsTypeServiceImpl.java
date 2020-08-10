@@ -2,13 +2,13 @@ package org.myproject.boot.application.goods.service.api;
 
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.commons.pojo.IPage;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeAo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeQuery;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeVo;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsType;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsTypeQuery;
 import org.myproject.boot.application.goods.db.service.TbGoodsTypeService;
 import org.myproject.boot.application.goods.service.GoodsConverter;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeAoDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeQueryDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeVoDTO;
 import org.myproject.boot.application.goods.service.pojo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,25 +29,25 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
     private TbGoodsTypeService goodsTypeService;
 
     @Override
-    public void save(GoodsTypeVoDTO goodsTypeVoDTO) {
-        switch (goodsTypeVoDTO.getEvent()) {
+    public void save(GoodsTypeVo goodsTypeVo) {
+        switch (goodsTypeVo.getEvent()) {
             case UPDATE:
-                update(goodsTypeVoDTO);
+                update(goodsTypeVo);
                 break;
             case ADD:
-                add(goodsTypeVoDTO);
+                add(goodsTypeVo);
                 break;
         }
     }
 
-    private void update(GoodsTypeVoDTO goodsTypeVoDTO) {
-        TbGoodsType tbGoodsType = goodsTypeService.selectByPrimaryKey(goodsTypeVoDTO.getId());
-        converter.copyType(goodsTypeVoDTO, tbGoodsType);
+    private void update(GoodsTypeVo goodsTypeVo) {
+        TbGoodsType tbGoodsType = goodsTypeService.selectByPrimaryKey(goodsTypeVo.getId());
+        converter.copyType(goodsTypeVo, tbGoodsType);
         goodsTypeService.updateByPrimaryKeySelective(tbGoodsType);
     }
 
-    private void add(GoodsTypeVoDTO goodsTypeVoDTO) {
-        TbGoodsType tbGoodsType = converter.typeVo(goodsTypeVoDTO);
+    private void add(GoodsTypeVo goodsTypeVo) {
+        TbGoodsType tbGoodsType = converter.typeVo(goodsTypeVo);
         goodsTypeService.insert(tbGoodsType);
     }
 
@@ -57,22 +57,22 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
     }
 
     @Override
-    public GoodsTypeAoDTO get(Long id) {
+    public GoodsTypeAo get(Long id) {
         TbGoodsType tbGoodsType = goodsTypeService.selectByPrimaryKey(id);
         return converter.typeAo(tbGoodsType);
     }
 
     @Override
-    public List<GoodsTypeAoDTO> list(GoodsTypeQueryDTO queryDTO) {
-        TbGoodsTypeQuery query = converter.typeQuery(queryDTO);
-        List<TbGoodsType> list = goodsTypeService.selectByQuery(query);
+    public List<GoodsTypeAo> list(GoodsTypeQuery query) {
+        TbGoodsTypeQuery goodsTypeQuery = converter.typeQuery(query);
+        List<TbGoodsType> list = goodsTypeService.selectByQuery(goodsTypeQuery);
         return converter.typeAos(list);
     }
 
     @Override
-    public IPage<GoodsTypeAoDTO> list(GoodsTypeQueryDTO queryDTO, int page, int limit) {
-        TbGoodsTypeQuery query = converter.typeQuery(queryDTO);
-        PageInfo<TbGoodsType> pageInfo = goodsTypeService.selectByQuery(query, page, limit);
+    public IPage<GoodsTypeAo> list(GoodsTypeQuery query, int page, int limit) {
+        TbGoodsTypeQuery goodsTypeQuery = converter.typeQuery(query);
+        PageInfo<TbGoodsType> pageInfo = goodsTypeService.selectByQuery(goodsTypeQuery, page, limit);
         return new PageResult<>(converter.typeAos(pageInfo));
     }
 }

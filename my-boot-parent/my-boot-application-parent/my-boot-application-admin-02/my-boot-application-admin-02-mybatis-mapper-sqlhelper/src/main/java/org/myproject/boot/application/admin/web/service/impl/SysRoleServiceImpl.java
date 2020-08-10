@@ -6,8 +6,8 @@ import org.myproject.boot.application.admin.web.db.service.TbSysRoleService;
 import org.myproject.boot.application.admin.web.db.service.TbSysRouteService;
 import org.myproject.boot.application.admin.web.db.service.TbSysUserRoleService;
 import org.myproject.boot.application.admin.web.service.converter.ConverterService;
-import org.myproject.boot.application.admin.service.pojo.SysRoleAoDTO;
-import org.myproject.boot.application.admin.service.pojo.SysRoleVoDTO;
+import org.myproject.boot.application.admin.service.pojo.SysRoleAo;
+import org.myproject.boot.application.admin.service.pojo.SysRoleVo;
 import org.myproject.boot.application.admin.service.service.SysRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,26 +34,26 @@ public class SysRoleServiceImpl implements SysRoleService {
     private ConverterService converterService;
 
     @Override
-    public void save(SysRoleVoDTO sysRoleVoDTO) {
-        switch (sysRoleVoDTO.getEvent()) {
+    public void save(SysRoleVo sysRoleVo) {
+        switch (sysRoleVo.getEvent()) {
             case ADD:
-                insert(sysRoleVoDTO);
+                insert(sysRoleVo);
                 break;
             case UPDATE:
-                update(sysRoleVoDTO);
+                update(sysRoleVo);
                 break;
         }
     }
 
-    private void update(SysRoleVoDTO sysRoleVoDTO) {
-        Long id = sysRoleVoDTO.getId();
+    private void update(SysRoleVo sysRoleVo) {
+        Long id = sysRoleVo.getId();
         TbSysRole tbSysRole = sysRoleService.selectByPrimaryKey(id);
-        converterService.copySysRole(sysRoleVoDTO, tbSysRole);
+        converterService.copySysRole(sysRoleVo, tbSysRole);
         sysRoleService.updateByPrimaryKeySelective(tbSysRole);
     }
 
-    private void insert(SysRoleVoDTO sysRoleVoDTO) {
-        sysRoleService.insert(converterService.sysRoles(sysRoleVoDTO));
+    private void insert(SysRoleVo sysRoleVo) {
+        sysRoleService.insert(converterService.sysRoles(sysRoleVo));
     }
 
     @Override
@@ -65,7 +65,7 @@ public class SysRoleServiceImpl implements SysRoleService {
     }
 
     @Override
-    public SysRoleAoDTO get(Long id) {
+    public SysRoleAo get(Long id) {
         TbSysRole tbSysRole = sysRoleService.selectByPrimaryKey(id);
         return converterService.sysRoles(tbSysRole);
     }

@@ -1,9 +1,9 @@
 package org.myproject.boot.application.goods.web.api.service;
 
 import org.myproject.boot.application.commons.pojo.IPage;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeQuery;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeVo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeAo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeQuery;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeVo;
 
 import java.util.List;
 

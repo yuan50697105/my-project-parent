@@ -3,11 +3,11 @@ package org.myproject.boot.application.goods.service;
 import com.github.pagehelper.PageInfo;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
+import org.myproject.boot.application.goods.commons.pojo.*;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfoQuery;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsType;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsTypeQuery;
-import org.myproject.boot.application.goods.service.pojo.*;
 
 import java.util.List;
 
@@ -20,25 +20,25 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface GoodsConverter {
 
-    TbGoodsInfoQuery infoQuery(GoodsInfoQueryDTO queryDTO);
+    TbGoodsInfoQuery infoQuery(GoodsInfoQuery query);
 
-    TbGoodsInfo infoVo(GoodsInfoVoDTO dto);
+    TbGoodsInfo infoVo(GoodsInfoVo goodsInfoVo);
 
-    GoodsInfoAoDTO infoAo(TbGoodsInfo selectByPrimaryKey);
+    GoodsInfoAo infoAo(TbGoodsInfo selectByPrimaryKey);
 
-    List<GoodsInfoAoDTO> infoAos(List<TbGoodsInfo> tbGoodsInfos);
+    List<GoodsInfoAo> infoAos(List<TbGoodsInfo> tbGoodsInfos);
 
-    PageInfo<GoodsInfoAoDTO> infoAos(PageInfo<TbGoodsInfo> pageInfo);
+    PageInfo<GoodsInfoAo> infoAos(PageInfo<TbGoodsInfo> pageInfo);
 
-    TbGoodsTypeQuery typeQuery(GoodsTypeQueryDTO queryDTO);
+    TbGoodsTypeQuery typeQuery(GoodsTypeQuery query);
 
-    TbGoodsType typeVo(GoodsTypeVoDTO goodsTypeVoDTO);
+    TbGoodsType typeVo(GoodsTypeVo goodsTypeVo);
 
-    GoodsTypeAoDTO typeAo(TbGoodsType tbGoodsType);
+    GoodsTypeAo typeAo(TbGoodsType tbGoodsType);
 
-    List<GoodsTypeAoDTO> typeAos(List<TbGoodsType> list);
+    List<GoodsTypeAo> typeAos(List<TbGoodsType> list);
 
-    PageInfo<GoodsTypeAoDTO> typeAos(PageInfo<TbGoodsType> pageInfo);
+    PageInfo<GoodsTypeAo> typeAos(PageInfo<TbGoodsType> pageInfo);
 
-    void copyType(GoodsTypeVoDTO goodsTypeVoDTO, @MappingTarget TbGoodsType tbGoodsType);
+    void copyType(GoodsTypeVo goodsTypeVo, @MappingTarget TbGoodsType tbGoodsType);
 }

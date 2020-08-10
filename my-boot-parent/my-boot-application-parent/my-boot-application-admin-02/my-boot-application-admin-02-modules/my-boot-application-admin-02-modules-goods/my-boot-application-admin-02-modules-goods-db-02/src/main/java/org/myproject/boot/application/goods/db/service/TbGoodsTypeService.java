@@ -32,7 +32,7 @@ public interface TbGoodsTypeService{
 
     int updateByPrimaryKey(TbGoodsType record);
 
-    List<TbGoodsType> selectByQuery(TbGoodsTypeQuery queryDTO);
+    List<TbGoodsType> selectByQuery(TbGoodsTypeQuery query);
 
     PageInfo<TbGoodsType> selectByQuery(TbGoodsTypeQuery query, int page, int limit);
 }

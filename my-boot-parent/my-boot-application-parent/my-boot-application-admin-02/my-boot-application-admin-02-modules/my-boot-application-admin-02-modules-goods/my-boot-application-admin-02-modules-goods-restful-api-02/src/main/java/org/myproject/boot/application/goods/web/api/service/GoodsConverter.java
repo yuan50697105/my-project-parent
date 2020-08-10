@@ -2,12 +2,9 @@ package org.myproject.boot.application.goods.web.api.service;
 
 import org.mapstruct.Mapper;
 import org.myproject.boot.application.commons.pojo.IPage;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeAoDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeQueryDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeVoDTO;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeQuery;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeVo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeAo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeQuery;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeVo;
 
 import java.util.List;
 
@@ -19,13 +16,13 @@ import java.util.List;
  */
 @Mapper(componentModel = "spring")
 public interface GoodsConverter {
-    GoodsTypeAo typeAo(GoodsTypeAoDTO goodsTypeAoDTO);
+    org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo typeAo(GoodsTypeAo goodsTypeAo);
 
-    GoodsTypeQueryDTO typeQuery(GoodsTypeQuery query);
+    GoodsTypeQuery typeQuery(org.myproject.boot.application.goods.web.api.pojo.GoodsTypeQuery query);
 
-    List<GoodsTypeAo> typeAos(List<GoodsTypeAoDTO> list);
+    List<org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo> typeAos(List<GoodsTypeAo> list);
 
-    IPage<GoodsTypeAo> typeAos(IPage<GoodsTypeAoDTO> list);
+    IPage<org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo> typeAos(IPage<GoodsTypeAo> list);
 
-    GoodsTypeVoDTO typeVo(GoodsTypeVo goodsTypeVo);
+    GoodsTypeVo typeVo(org.myproject.boot.application.goods.web.api.pojo.GoodsTypeVo goodsTypeVo);
 }

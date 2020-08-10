@@ -72,7 +72,7 @@ public class TbGoodsTypeServiceImpl implements TbGoodsTypeService{
     }
 
     @Override
-    public List<TbGoodsType> selectByQuery(TbGoodsTypeQuery queryDTO) {
+    public List<TbGoodsType> selectByQuery(TbGoodsTypeQuery query) {
         return null;
     }
 

@@ -20,7 +20,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface ConverterService {
     @Mapping(target = "roles", ignore = true)
-    SysUserAoDTO sysUser(TbSysUser tbSysUser);
+    SysUserAo sysUser(TbSysUser tbSysUser);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "updateTime", ignore = true)
@@ -29,7 +29,7 @@ public interface ConverterService {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "creater", ignore = true)
     @Mapping(target = "createTime", ignore = true)
-    TbSysUser sysUser(SysUserVoDTO sysUsers);
+    TbSysUser sysUser(SysUserVo sysUsers);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "modifier", ignore = true)
@@ -37,11 +37,11 @@ public interface ConverterService {
     @Mapping(target = "creater", ignore = true)
     @Mapping(target = "createTimeStart", ignore = true)
     @Mapping(target = "createTimeEnd", ignore = true)
-    TbSysUserQuery sysUser(SysUserQueryDTO queryDTO);
+    TbSysUserQuery sysUser(SysUserQuery query);
 
-    List<SysUserAoDTO> sysUser(List<TbSysUser> selectByQuery);
+    List<SysUserAo> sysUser(List<TbSysUser> selectByQuery);
 
-    PageInfo<SysUserAoDTO> sysUsers(PageInfo<TbSysUser> pageInfo);
+    PageInfo<SysUserAo> sysUsers(PageInfo<TbSysUser> pageInfo);
 
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "updateTime", ignore = true)
@@ -52,9 +52,9 @@ public interface ConverterService {
     @Mapping(target = "createTime", ignore = true)
     @Mapping(target = "username", ignore = true)
     @Mapping(target = "password", ignore = true)
-    void copySysUser(SysUserVoDTO sysUsers, @MappingTarget TbSysUser tbSysUser);
+    void copySysUser(SysUserVo sysUsers, @MappingTarget TbSysUser tbSysUser);
 
-    List<SysRoleAoDTO> sysRoles(List<TbSysRole> selectByIds);
+    List<SysRoleAo> sysRoles(List<TbSysRole> selectByIds);
 
     @Mapping(target = "updateTime", ignore = true)
     @Mapping(target = "modifier", ignore = true)
@@ -63,7 +63,7 @@ public interface ConverterService {
     @Mapping(target = "version", ignore = true)
     @Mapping(target = "isDelete", ignore = true)
     @Mapping(target = "creater", ignore = true)
-    TbSysRole sysRoles(SysRoleVoDTO sysRoleVoDTO);
+    TbSysRole sysRoles(SysRoleVo sysRoleVo);
 
     @Mapping(target = "updateTime", ignore = true)
     @Mapping(target = "modifier", ignore = true)
@@ -72,7 +72,7 @@ public interface ConverterService {
     @Mapping(target = "isDelete", ignore = true)
     @Mapping(target = "creater", ignore = true)
     @Mapping(target = "createTime", ignore = true)
-    void copySysRole(SysRoleVoDTO sysRoleVoDTO, @MappingTarget TbSysRole tbSysRole);
+    void copySysRole(SysRoleVo sysRoleVo, @MappingTarget TbSysRole tbSysRole);
 
-    SysRoleAoDTO sysRoles(TbSysRole tbSysRole);
+    SysRoleAo sysRoles(TbSysRole tbSysRole);
 }

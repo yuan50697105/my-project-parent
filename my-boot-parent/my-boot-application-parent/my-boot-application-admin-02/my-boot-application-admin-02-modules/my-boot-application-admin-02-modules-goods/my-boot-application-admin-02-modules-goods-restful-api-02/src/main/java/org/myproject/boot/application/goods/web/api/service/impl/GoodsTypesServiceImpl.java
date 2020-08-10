@@ -2,12 +2,9 @@ package org.myproject.boot.application.goods.web.api.service.impl;
 
 import org.myproject.boot.application.commons.pojo.IPage;
 import org.myproject.boot.application.goods.service.api.GoodsTypeService;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeAoDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeVoDTO;
-import org.myproject.boot.application.goods.service.pojo.PageResult;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeAo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeVo;
 import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeQuery;
-import org.myproject.boot.application.goods.web.api.pojo.GoodsTypeVo;
 import org.myproject.boot.application.goods.web.api.service.GoodsConverter;
 import org.myproject.boot.application.goods.web.api.service.GoodsTypesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,35 +28,35 @@ public class GoodsTypesServiceImpl implements GoodsTypesService {
     private GoodsConverter converter;
 
     @Override
-    public GoodsTypeAo get(Long id) {
-        GoodsTypeAoDTO goodsTypeAoDTO = goodsTypeService.get(id);
-        return Optional.ofNullable(converter.typeAo(goodsTypeAoDTO)).orElse(new GoodsTypeAo());
+    public org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo get(Long id) {
+        GoodsTypeAo goodsTypeAo = goodsTypeService.get(id);
+        return Optional.ofNullable(converter.typeAo(goodsTypeAo)).orElse(new org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo());
     }
 
     @Override
-    public List<GoodsTypeAo> list(GoodsTypeQuery query) {
-        List<GoodsTypeAoDTO> list = goodsTypeService.list(converter.typeQuery(query));
+    public List<org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo> list(GoodsTypeQuery query) {
+        List<GoodsTypeAo> list = goodsTypeService.list(converter.typeQuery(query));
         return Optional.ofNullable(converter.typeAos(list)).orElse(new ArrayList<>());
     }
 
     @Override
-    public IPage<GoodsTypeAo> list(GoodsTypeQuery query, int page, int limit) {
-        IPage<GoodsTypeAoDTO> list = goodsTypeService.list(converter.typeQuery(query), page, limit);
+    public IPage<org.myproject.boot.application.goods.web.api.pojo.GoodsTypeAo> list(GoodsTypeQuery query, int page, int limit) {
+        IPage<GoodsTypeAo> list = goodsTypeService.list(converter.typeQuery(query), page, limit);
         return converter.typeAos(list);
     }
 
     @Override
-    public void add(GoodsTypeVo goodsTypeVo) {
-        GoodsTypeVoDTO goodsTypeVoDTO = converter.typeVo(goodsTypeVo);
-        goodsTypeVoDTO.setEvent(GoodsTypeVoDTO.Event.ADD);
-        goodsTypeService.save(goodsTypeVoDTO);
+    public void add(org.myproject.boot.application.goods.web.api.pojo.GoodsTypeVo goodsTypeVo) {
+        GoodsTypeVo goodsTypeVo = converter.typeVo(goodsTypeVo);
+        goodsTypeVo.setEvent(GoodsTypeVo.Event.ADD);
+        goodsTypeService.save(goodsTypeVo);
     }
 
     @Override
-    public void update(GoodsTypeVo goodsTypeVo) {
-        GoodsTypeVoDTO goodsTypeVoDTO = converter.typeVo(goodsTypeVo);
-        goodsTypeVoDTO.setEvent(GoodsTypeVoDTO.Event.UPDATE);
-        goodsTypeService.save(goodsTypeVoDTO);
+    public void update(org.myproject.boot.application.goods.web.api.pojo.GoodsTypeVo goodsTypeVo) {
+        GoodsTypeVo goodsTypeVo = converter.typeVo(goodsTypeVo);
+        goodsTypeVo.setEvent(GoodsTypeVo.Event.UPDATE);
+        goodsTypeService.save(goodsTypeVo);
     }
 
     @Override

@@ -2,9 +2,9 @@ package org.myproject.boot.application.admin.web.api.service;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.myproject.boot.application.admin.service.pojo.SysRoleAoDTO;
-import org.myproject.boot.application.admin.service.pojo.SysUserAoDTO;
-import org.myproject.boot.application.admin.service.pojo.SysUserQueryDTO;
+import org.myproject.boot.application.admin.service.pojo.SysRoleAo;
+import org.myproject.boot.application.admin.service.pojo.SysUserAo;
+import org.myproject.boot.application.admin.service.pojo.SysUserQuery;
 import org.myproject.boot.application.admin.service.pojo.SysUserVoDTO;
 import org.myproject.boot.application.admin.web.api.pojo.SysRolesAo;
 import org.myproject.boot.application.admin.web.api.pojo.SysUsersAo;

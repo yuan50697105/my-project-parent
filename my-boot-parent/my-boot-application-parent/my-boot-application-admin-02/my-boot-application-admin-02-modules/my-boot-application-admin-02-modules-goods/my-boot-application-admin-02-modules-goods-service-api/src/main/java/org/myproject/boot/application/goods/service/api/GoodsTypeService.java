@@ -1,9 +1,9 @@
 package org.myproject.boot.application.goods.service.api;
 
 import org.myproject.boot.application.commons.pojo.IPage;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeAoDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeQueryDTO;
-import org.myproject.boot.application.goods.service.pojo.GoodsTypeVoDTO;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeAo;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeQuery;
+import org.myproject.boot.application.goods.commons.pojo.GoodsTypeVo;
 
 import java.util.List;
 
@@ -14,13 +14,13 @@ import java.util.List;
  * @create: 2020-08-09 13:35
  */
 public interface GoodsTypeService {
-    void save(GoodsTypeVoDTO goodsTypeVoDTO);
+    void save(GoodsTypeVo goodsTypeVo);
 
     void delete(Long id);
 
-    GoodsTypeAoDTO get(Long id);
+    GoodsTypeAo get(Long id);
 
-    List<GoodsTypeAoDTO> list(GoodsTypeQueryDTO queryDTO);
+    List<GoodsTypeAo> list(GoodsTypeQuery query);
 
-    IPage<GoodsTypeAoDTO> list(GoodsTypeQueryDTO queryDTO, int page, int limit);
+    IPage<GoodsTypeAo> list(GoodsTypeQuery query, int page, int limit);
 }

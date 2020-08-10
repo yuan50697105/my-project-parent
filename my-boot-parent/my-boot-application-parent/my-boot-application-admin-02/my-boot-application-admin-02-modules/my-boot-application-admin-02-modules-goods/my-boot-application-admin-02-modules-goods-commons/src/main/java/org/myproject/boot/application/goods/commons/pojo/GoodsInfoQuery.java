@@ -1,4 +1,4 @@
-package org.myproject.boot.application.goods.web.api.pojo;
+package org.myproject.boot.application.goods.commons.pojo;
 
 import lombok.Data;
 
@@ -6,11 +6,10 @@ import lombok.Data;
  * @program: my-boot-application-admin-02
  * @description:
  * @author: yuane
- * @create: 2020-08-09 13:53
+ * @create: 2020-08-09 13:41
  */
 @Data
-public class GoodsInfoAo {
+public class GoodsInfoQuery {
     private Long id;
     private String name;
-    private String description;
 }

@@ -1,4 +1,4 @@
-package org.myproject.boot.application.goods.web.api.pojo;
+package org.myproject.boot.application.goods.commons.pojo;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ import lombok.Data;
  * @create: 2020-08-09 13:53
  */
 @Data
-public class GoodsInfoVo {
+public class GoodsInfoAo {
     private Long id;
     private String name;
     private String description;
