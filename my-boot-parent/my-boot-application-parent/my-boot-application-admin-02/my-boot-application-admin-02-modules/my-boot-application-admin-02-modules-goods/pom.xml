@@ -12,10 +12,16 @@
     <artifactId>my-boot-application-admin-02-modules-goods</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>my-boot-application-admin-02-modules-goods-db-01</module>
-        <module>my-boot-application-admin-02-modules-goods-service-api</module>
-        <module>my-boot-application-admin-02-modules-goods-restful-api-01</module>
         <module>my-boot-application-admin-02-modules-goods-restful-api</module>
+        <module>my-boot-application-admin-02-modules-goods-service-api</module>
+        <module>my-boot-application-admin-02-modules-goods-db-01</module>
+        <module>my-boot-application-admin-02-modules-goods-db-02</module>
+        <module>my-boot-application-admin-02-modules-goods-db-11</module>
+        <module>my-boot-application-admin-02-modules-goods-db-12</module>
+        <module>my-boot-application-admin-02-modules-goods-restful-api-01</module>
+        <module>my-boot-application-admin-02-modules-goods-restful-api-02</module>
+        <module>my-boot-application-admin-02-modules-goods-restful-api-11</module>
+        <module>my-boot-application-admin-02-modules-goods-restful-api-12</module>
     </modules>
 
 
