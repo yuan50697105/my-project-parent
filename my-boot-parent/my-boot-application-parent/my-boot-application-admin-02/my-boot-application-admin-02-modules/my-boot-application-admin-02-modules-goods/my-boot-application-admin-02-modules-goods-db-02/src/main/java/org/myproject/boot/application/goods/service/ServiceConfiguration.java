@@ -11,7 +11,6 @@ import org.springframework.context.annotation.ComponentScan;
  * @create: 2020-08-04 01:03
  */
 @SpringBootConfiguration
-@ComponentScan(basePackages = "org.myproject.boot.application.admin.db")
-@MapperScan(basePackages = "org.myproject.boot.application.admin.db.mapper")
+@ComponentScan(basePackages = "org.myproject.boot.application.goods.service")
 public class ServiceConfiguration {
 }
