@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfo;
 import org.myproject.boot.application.goods.db.pojo.TbGoodsInfoExample;
+import org.myproject.boot.application.goods.db.pojo.TbGoodsInfoQuery;
 
 @Mapper
 public interface TbGoodsInfoMapper {
@@ -29,4 +30,6 @@ public interface TbGoodsInfoMapper {
     int updateByPrimaryKeySelective(TbGoodsInfo record);
 
     int updateByPrimaryKey(TbGoodsInfo record);
+
+    List<TbGoodsInfo> selectByQuery(TbGoodsInfoQuery query);
 }
