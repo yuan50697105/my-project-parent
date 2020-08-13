@@ -23,6 +23,10 @@
         <module>my-boot-application-admin-02-modules-goods-restful-api-11</module>
         <module>my-boot-application-admin-02-modules-goods-restful-api-12</module>
         <module>my-boot-application-admin-02-modules-goods-commons</module>
+        <module>my-boot-application-admin-02-modules-goods-db-21</module>
+        <module>my-boot-application-admin-02-modules-goods-db-22</module>
+        <module>my-boot-application-admin-02-modules-goods-restful-api-21</module>
+        <module>my-boot-application-admin-02-modules-goods-restful-api-22</module>
     </modules>
 
 

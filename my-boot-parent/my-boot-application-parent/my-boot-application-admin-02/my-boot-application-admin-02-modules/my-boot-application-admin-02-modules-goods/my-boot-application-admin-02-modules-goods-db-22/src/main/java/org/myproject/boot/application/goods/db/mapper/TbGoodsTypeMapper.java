@@ -1,0 +1,21 @@
+package org.myproject.boot.application.goods.db.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.myproject.boot.application.goods.db.pojo.TbGoodsType;
+import org.myproject.boot.application.goods.db.pojo.TbGoodsTypeExample;
+
+@Mapper
+public interface TbGoodsTypeMapper extends BaseMapper<TbGoodsType> {
+    long countByExample(TbGoodsTypeExample example);
+
+    int deleteByExample(TbGoodsTypeExample example);
+
+    List<TbGoodsType> selectByExample(TbGoodsTypeExample example);
+
+    int updateByExampleSelective(@Param("record") TbGoodsType record, @Param("example") TbGoodsTypeExample example);
+
+    int updateByExample(@Param("record") TbGoodsType record, @Param("example") TbGoodsTypeExample example);
+}
