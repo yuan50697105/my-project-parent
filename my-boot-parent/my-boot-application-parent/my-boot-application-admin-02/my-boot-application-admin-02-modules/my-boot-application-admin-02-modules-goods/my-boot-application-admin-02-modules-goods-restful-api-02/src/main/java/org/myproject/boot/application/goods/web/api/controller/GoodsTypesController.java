@@ -30,7 +30,7 @@ public class GoodsTypesController implements GoodsTypesApi {
     }
 
     @Override
-    public Result<?> list(GoodsTypeQuery query) {
+    public Result<?> postList(GoodsTypeQuery query) {
         List<GoodsTypeAo> list = goodsTypesService.list(query);
         return ResultInfo.success(list);
     }

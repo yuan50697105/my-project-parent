@@ -17,7 +17,7 @@ public interface GoodsTypesApi {
     Result<?> get(@PathVariable Long id);
 
     @GetMapping
-    Result<?> list(GoodsTypeQuery query);
+    Result<?> postList(GoodsTypeQuery query);
 
     @GetMapping(params = {"page", "limit"})
     Result<?> list(GoodsTypeQuery query, int page, int limit);
