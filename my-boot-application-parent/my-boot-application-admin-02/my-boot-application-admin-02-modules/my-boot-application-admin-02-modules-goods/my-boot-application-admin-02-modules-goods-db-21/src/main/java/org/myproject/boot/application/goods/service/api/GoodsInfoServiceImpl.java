@@ -32,7 +32,8 @@ public class GoodsInfoServiceImpl implements GoodsInfoService {
 
     @Override
     public void save(GoodsInfoVo goodsInfoVo) {
-        goodsInfoService.save(converter.infoVo(goodsInfoVo));
+        goodsInfoService.saveOrUpdate(converter.infoVo(goodsInfoVo));
+
     }
 
     @Override

@@ -22,8 +22,8 @@ public interface GoodsInfoApi {
     @PostMapping
     Result<?> add(@RequestBody GoodsInfoVo vo);
 
-    @PutMapping
-    Result<?> update(@RequestBody GoodsInfoVo vo);
+    @PutMapping("/{id}")
+    Result<?> update(@PathVariable Long id,@RequestBody GoodsInfoVo vo);
 
     @DeleteMapping("/{id}")
     Result<?> delete(@PathVariable Long id);

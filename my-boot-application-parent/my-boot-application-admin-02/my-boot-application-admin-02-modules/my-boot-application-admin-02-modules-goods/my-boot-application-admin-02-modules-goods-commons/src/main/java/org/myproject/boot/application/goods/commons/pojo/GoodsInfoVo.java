@@ -10,7 +10,13 @@ import lombok.Data;
  */
 @Data
 public class GoodsInfoVo {
+    private Event event;
     private Long id;
     private String name;
     private String description;
+
+    public enum Event {
+        ADD,UPDATE
+    }
+
 }
