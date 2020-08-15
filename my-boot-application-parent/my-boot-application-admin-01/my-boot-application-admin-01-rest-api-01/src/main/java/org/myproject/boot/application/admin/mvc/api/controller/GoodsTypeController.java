@@ -30,13 +30,13 @@ public class GoodsTypeController {
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
         IPage<BGoodsType> result = goodsTypeApi.selectByQuery(query, page, size);
-        return ResultInfo.success(result.getData(), result.getTotalRows());
+        return ResultInfo.success(result.getTotalRows(), result.getData());
     }
 
     @GetMapping(value = "list")
     public Result<?> list(BGoodsTypeQuery query) {
         List<BGoodsType> list = goodsTypeApi.selectByQuery(query);
-        return ResultInfo.success(list, (long) list.size());
+        return ResultInfo.success((long) list.size(), list);
     }
 
     @GetMapping(value = "get")

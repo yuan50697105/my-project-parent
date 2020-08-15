@@ -30,13 +30,13 @@ public class SysRoleController {
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
         IPage<BSysRole> result = sysRoleApi.selectByQuery(query, page, size);
-        return ResultInfo.success(result.getData(), result.getTotalRows());
+        return ResultInfo.success(result.getTotalRows(), result.getData());
     }
 
     @GetMapping(value = "list")
     public Result<?> list(BSysRoleQuery query) {
         List<BSysRole> list = sysRoleApi.selectByQuery(query);
-        return ResultInfo.success(list, (long) list.size());
+        return ResultInfo.success((long) list.size(), list);
     }
 
     @GetMapping(value = "get", params = "id")

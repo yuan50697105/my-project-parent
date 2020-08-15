@@ -34,13 +34,13 @@ public class SysUserController {
                           @RequestParam(defaultValue = "1") int page,
                           @RequestParam(defaultValue = "20") int size) {
         IPage<BSysUser> result = sysUserService.selectByQuery(query, page, size);
-        return ResultInfo.success(result.getData(), result.getTotalRows());
+        return ResultInfo.success(result);
     }
 
     @GetMapping(value = "list")
     public Result<?> list(BSysUserQuery query) {
         List<BSysUser> list = sysUserService.selectByQuery(query);
-        return ResultInfo.success(list, (long) list.size());
+        return ResultInfo.success(list);
     }
 
     @GetMapping(value = "get")

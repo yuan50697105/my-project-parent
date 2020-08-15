@@ -50,14 +50,14 @@ public class SysUsersController implements SysUsersApi {
     @GetMapping(value = {"", "/list"}, params = {"page", "limit"})
     public Result<?> list(SysUsersQuery query, int page, int limit) {
         IPage<SysUsersAo> iPage = sysUsersService.list(query, page, limit);
-        return ResultInfo.success(iPage.getList(), iPage.getTotalRows());
+        return ResultInfo.success(iPage.getTotalRows(), iPage.getList());
     }
 
     @Override
     @GetMapping({"", "/list"})
     public Result<?> list(SysUsersQuery query) {
         List<SysUsersAo> list = sysUsersService.list(query);
-        return ResultInfo.success(list, (long) list.size());
+        return ResultInfo.success((long) list.size(), list);
     }
 
     @Override
