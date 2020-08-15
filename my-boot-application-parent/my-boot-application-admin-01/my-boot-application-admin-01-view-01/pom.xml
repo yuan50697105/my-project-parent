@@ -9,11 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-application-admin-01-webmvc-graphql-01</artifactId>
+    <artifactId>my-boot-application-admin-01-view-01</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-application-admin-01-db-11</artifactId>
+            <artifactId>my-boot-commons-utils</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-commons-webview</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
@@ -22,20 +27,21 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-01-db-11</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphiql-spring-boot-starter</artifactId>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-genernate-route</artifactId>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphql-spring-boot-starter</artifactId>
+            <groupId>org.webjars</groupId>
+            <artifactId>datatables</artifactId>
+            <version>1.10.21</version>
         </dependency>
-        <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphql-java-tools</artifactId>
-        </dependency>
+
     </dependencies>
+
 </project>
