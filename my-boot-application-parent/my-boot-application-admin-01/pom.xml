@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>my-boot-application-parent</artifactId>
+        <groupId>org.myproject</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>my-boot-application-admin-01</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>my-boot-application-admin-01-webmvc-api-01</module>
+        <module>my-boot-application-admin-01-webmvc-graphql-01</module>
+        <module>my-boot-application-admin-01-webmvc-view-01</module>
+        <module>my-boot-application-admin-01-cxf-01</module>
+        <module>my-boot-application-admin-01-jersey-01</module>
+        <module>my-boot-application-admin-01-service-01</module>
+        <module>my-boot-application-admin-01-db-01</module>
+        <module>my-boot-application-admin-01-db-02</module>
+        <module>my-boot-application-admin-01-db-03</module>
+        <module>my-boot-application-admin-01-db-11</module>
+        <module>my-boot-application-admin-01-db-12</module>
+        <module>my-boot-application-admin-01-db-13</module>
+        <module>my-boot-application-admin-01-db-21</module>
+        <module>my-boot-application-admin-01-db-22</module>
+        <module>my-boot-application-admin-01-db-23</module>
+        <module>my-boot-application-admin-01-db-31</module>
+        <module>my-boot-application-admin-01-db-32</module>
+        <module>my-boot-application-admin-01-db-33</module>
+        <module>my-boot-application-admin-01-db-41</module>
+        <module>my-boot-application-admin-01-db-42</module>
+        <module>my-boot-application-admin-01-db-43</module>
+        <module>my-boot-application-admin-01-db-51</module>
+        <module>my-boot-application-admin-01-db-52</module>
+        <module>my-boot-application-admin-01-db-53</module>
+    </modules>
+    <dependencies>
+    </dependencies>
+
+</project>
