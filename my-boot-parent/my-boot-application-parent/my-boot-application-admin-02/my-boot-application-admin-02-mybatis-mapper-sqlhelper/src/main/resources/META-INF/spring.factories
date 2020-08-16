@@ -1,1 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.boot.application.admin.web.db.DbConfiguration,org.myproject.boot.application.admin.web.service.ServiceConfiguration
