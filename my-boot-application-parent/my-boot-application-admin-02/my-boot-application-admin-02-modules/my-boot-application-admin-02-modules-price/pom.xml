@@ -11,5 +11,11 @@
 
     <artifactId>my-boot-application-admin-02-modules-price</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>my-boot-application-admin-02-modules-price-commons</module>
+        <module>my-boot-application-admin-02-modules-price-restful-api</module>
+        <module>my-boot-application-admin-02-modules-price-service-api</module>
+        <module>my-boot-application-admin-02-modules-price-restful-api-01</module>
+    </modules>
 
 </project>
