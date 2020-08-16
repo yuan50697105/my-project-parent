@@ -10,6 +10,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>my-boot-application-admin-02-modules-price-restful-api-01</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-commons-webmvc</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-02-modules-price-restful-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-02-modules-price-service-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-application-admin-02-modules-price-db-01</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

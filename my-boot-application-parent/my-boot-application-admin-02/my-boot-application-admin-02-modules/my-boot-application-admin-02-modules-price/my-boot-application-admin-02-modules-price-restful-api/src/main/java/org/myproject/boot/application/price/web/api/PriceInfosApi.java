@@ -3,10 +3,12 @@ package org.myproject.boot.application.price.web.api;
 import ai.yue.library.base.view.Result;
 import org.myproject.boot.application.price.commons.pojo.PriceInfoAo;
 import org.myproject.boot.application.price.commons.pojo.PriceInfoQuery;
+import org.myproject.boot.application.price.commons.pojo.PriceInfoVo;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @program: my-boot-application-admin-02
@@ -23,15 +25,15 @@ public interface PriceInfosApi {
     Result<BigDecimal> getPrice(@PathVariable Long id);
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    Result<PriceInfoAo> list(PriceInfoQuery query, int page, int limit);
+    Result<List<PriceInfoAo>> list(PriceInfoQuery query, int page, int limit);
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    Result<Void> add(@RequestBody PriceInfoAo priceInfoAo);
+    Result<?> add(@RequestBody PriceInfoVo priceInfoAo);
 
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    Result<Void> update(@PathVariable Long id, @RequestBody PriceInfoAo priceInfoAo);
+    Result<?> update(@PathVariable Long id, @RequestBody PriceInfoVo priceInfoAo);
 
     @DeleteMapping("/{id}")
-    Result<Void> delete(@PathVariable Long id);
+    Result<?> delete(@PathVariable Long id);
 
 }

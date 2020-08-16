@@ -31,5 +31,10 @@ public class PriceInfoVo implements Serializable {
      */
     @ApiModelProperty(value = "定价")
     private BigDecimal price;
+    private Event event;
+
+    public enum Event {
+        ADD, UPDATE
+    }
 }
 
