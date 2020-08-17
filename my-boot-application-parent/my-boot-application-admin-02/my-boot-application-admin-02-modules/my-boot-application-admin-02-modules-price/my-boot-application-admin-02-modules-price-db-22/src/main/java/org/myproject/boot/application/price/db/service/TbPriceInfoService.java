@@ -1,5 +1,6 @@
 package org.myproject.boot.application.price.db.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.PageInfo;
 import org.myproject.boot.application.price.commons.pojo.PriceInfoQuery;
 import org.myproject.boot.application.price.db.pojo.TbPriceInfo;
@@ -22,4 +23,6 @@ public interface TbPriceInfoService extends IService<TbPriceInfo>{
     int updateByExample(TbPriceInfo record,TbPriceInfoExample example);
 
     PageInfo<TbPriceInfo> selectByQuery(TbPriceInfoQuery priceInfoQuery, int page, int limit);
+
+    IPage<TbPriceInfo> selectByQuery(TbPriceInfoQuery query, IPage<TbPriceInfo> iPage);
 }

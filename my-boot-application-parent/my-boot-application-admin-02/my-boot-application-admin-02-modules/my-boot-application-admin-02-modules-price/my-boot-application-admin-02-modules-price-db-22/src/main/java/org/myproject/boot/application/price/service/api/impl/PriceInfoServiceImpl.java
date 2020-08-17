@@ -37,7 +37,7 @@ public class PriceInfoServiceImpl implements PriceInfoService {
         TbPriceInfoQuery priceInfoQuery = converter.priceQuery(query);
         return new PageResult<>(converter.priceQuery(service.selectByQuery(priceInfoQuery, page, limit)));
     }
-
+    
     @Override
     public void save(PriceInfoVo priceInfoVo) {
         switch (priceInfoVo.getEvent()) {

@@ -17,4 +17,8 @@ public class PageResult<T> extends IPage<T> {
     public PageResult(PageInfo<T> pageInfo) {
         super(pageInfo.getPageNum(), pageInfo.getPageSize(), pageInfo.getPages(), pageInfo.getTotal(), pageInfo.getList());
     }
+
+    public PageResult(com.baomidou.mybatisplus.core.metadata.IPage<T> iPage) {
+        super(iPage.getCurrent(), iPage.getSize(), iPage.getPages(), iPage.getTotal(), iPage.getRecords());
+    }
 }
