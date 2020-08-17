@@ -1,8 +1,8 @@
 package org.myproject.boot.application.price.db;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @program: my-boot-application-admin-02-modules

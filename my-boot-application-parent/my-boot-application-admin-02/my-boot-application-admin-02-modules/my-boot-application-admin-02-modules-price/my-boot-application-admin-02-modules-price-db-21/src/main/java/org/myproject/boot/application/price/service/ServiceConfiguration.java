@@ -1,17 +1,16 @@
-package org.myproject.boot.application.price.db;
+package org.myproject.boot.application.price.service;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
-import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @program: my-boot-application-admin-02-modules
  * @description:
  * @author: yuane
- * @create: 2020-08-17 20:53
+ * @create: 2020-08-17 20:37
  */
 @SpringBootConfiguration
 @ComponentScan
-@MapperScan(basePackages = "org.myproject.boot.application.price.db.mapper")
-public class DbConfiguration {
+public class ServiceConfiguration {
 }

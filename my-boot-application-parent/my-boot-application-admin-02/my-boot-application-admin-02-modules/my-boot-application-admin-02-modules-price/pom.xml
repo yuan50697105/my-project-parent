@@ -15,14 +15,18 @@
         <module>my-boot-application-admin-02-modules-price-commons</module>
         <module>my-boot-application-admin-02-modules-price-restful-api</module>
         <module>my-boot-application-admin-02-modules-price-service-api</module>
-        <module>my-boot-application-admin-02-modules-price-restful-api-01</module>
         <module>my-boot-application-admin-02-modules-price-db-01</module>
         <module>my-boot-application-admin-02-modules-price-db-02</module>
-        <module>my-boot-application-admin-02-modules-price-restful-api-02</module>
         <module>my-boot-application-admin-02-modules-price-db-11</module>
         <module>my-boot-application-admin-02-modules-price-db-12</module>
+        <module>my-boot-application-admin-02-modules-price-db-21</module>
+        <module>my-boot-application-admin-02-modules-price-db-22</module>
+        <module>my-boot-application-admin-02-modules-price-restful-api-01</module>
+        <module>my-boot-application-admin-02-modules-price-restful-api-02</module>
         <module>my-boot-application-admin-02-modules-price-restful-api-11</module>
         <module>my-boot-application-admin-02-modules-price-restful-api-12</module>
+        <module>my-boot-application-admin-02-modules-price-restful-api-21</module>
+        <module>my-boot-application-admin-02-modules-price-restful-api-22</module>
     </modules>
 
 </project>
