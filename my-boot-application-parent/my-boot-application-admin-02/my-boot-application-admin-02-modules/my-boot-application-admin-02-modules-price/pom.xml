@@ -19,6 +19,10 @@
         <module>my-boot-application-admin-02-modules-price-db-01</module>
         <module>my-boot-application-admin-02-modules-price-db-02</module>
         <module>my-boot-application-admin-02-modules-price-restful-api-02</module>
+        <module>my-boot-application-admin-02-modules-price-db-11</module>
+        <module>my-boot-application-admin-02-modules-price-db-12</module>
+        <module>my-boot-application-admin-02-modules-price-restful-api-11</module>
+        <module>my-boot-application-admin-02-modules-price-restful-api-12</module>
     </modules>
 
 </project>
