@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>my-boot-application-admin-02-modules-price</artifactId>
@@ -32,5 +32,39 @@
             <version>1.0.0</version>
         </dependency>
     </dependencies>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-shade-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>shade</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <createSourcesJar>true</createSourcesJar>-->
+<!--                            <promoteTransitiveDependencies>true</promoteTransitiveDependencies>-->
+<!--                            <artifactSet>-->
+<!--                                <includes>-->
+<!--                                    <include>${project.groupId}:my-boot-application-admin-02-modules-price-db-01</include>-->
+<!--                                    <include>${project.groupId}:my-boot-application-admin-02-modules-price-restful-api</include>-->
+<!--                                    <include>${project.groupId}:my-boot-application-admin-02-modules-price-service-api</include>-->
 
+<!--                                </includes>-->
+<!--                            </artifactSet>-->
+<!--                            <transformers>-->
+<!--                                <transformer-->
+<!--                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">-->
+<!--                                    <resource>META-INF/***-->
+<!--                                    </resource>-->
+<!--                                </transformer>-->
+<!--                            </transformers>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 </project>
