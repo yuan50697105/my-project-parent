@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.myproject.commons.utils.CommonsUtilsConfiguration,\
+  org.myproject.commons.utils.retrofit.RetrofitConfiguration
