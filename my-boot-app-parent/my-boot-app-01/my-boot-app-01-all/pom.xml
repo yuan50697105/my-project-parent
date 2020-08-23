@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app--01-modules-area</artifactId>
+            <artifactId>my-boot-app-01-modules-area</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>

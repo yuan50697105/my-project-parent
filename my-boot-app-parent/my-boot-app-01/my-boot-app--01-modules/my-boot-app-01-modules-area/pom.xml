@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-app--01-modules-area</artifactId>
+    <artifactId>my-boot-app-01-modules-area</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
