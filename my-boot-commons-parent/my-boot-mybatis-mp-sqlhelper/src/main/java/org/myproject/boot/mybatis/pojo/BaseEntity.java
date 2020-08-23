@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import lombok.Data;
-import org.myproject.boot.mybatis.commons.annotation.Identify;
+import org.myproject.boot.mybatis.annotation.Identify;
 import tk.mybatis.mapper.annotation.KeySql;
 
 /**

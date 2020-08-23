@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.github.pagehelper.PageInfo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.myproject.boot.mybatis.commons.pojo.AbstractPage;
 
 /**
  * @program: my-project-parent
