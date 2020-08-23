@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Api(value = "客户信息", produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
-@RequestMapping("auth/users")
+@RequestMapping("customer/info")
 @AllArgsConstructor
 public class CustomerInfoController {
     private final CustomerInfoService CustomerInfoService;

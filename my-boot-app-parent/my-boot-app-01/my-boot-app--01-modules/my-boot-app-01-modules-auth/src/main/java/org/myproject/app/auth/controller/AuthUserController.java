@@ -52,7 +52,7 @@ public class AuthUserController {
 
     @PutMapping
     @ApiOperation("更新")
-    public Result<?> update(AuthUserVo authUserVo) {
+    public Result<?> update(@RequestBody AuthUserVo authUserVo) {
         userService.updateByPrimaryKeySelective(authUserVo);
         return ResultInfo.success();
     }
