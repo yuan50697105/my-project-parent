@@ -1,11 +1,12 @@
 package org.myproject.app.auth.mapper;
 
-import java.util.Collection;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.app.auth.pojo.AuthRole;
 import org.myproject.app.auth.pojo.AuthRoleExample;
+
+import java.util.Collection;
+import java.util.List;
 
 @Mapper
 public interface AuthRoleMapper {

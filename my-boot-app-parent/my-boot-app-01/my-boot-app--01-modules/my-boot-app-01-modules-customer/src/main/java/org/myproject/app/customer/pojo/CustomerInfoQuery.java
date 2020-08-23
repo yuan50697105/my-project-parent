@@ -1,7 +1,6 @@
-package org.myproject.app.auth.pojo;
+package org.myproject.app.customer.pojo;
 
 import com.gitee.denger.mybatis.example.ext.MybatisExample;
-import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -11,22 +10,16 @@ import org.myproject.app.commons.pojo.BaseQuery;
 import java.io.Serializable;
 
 /**
- * auth_permission
+ * customer_info
  */
-@ApiModel(value = "org-myproject-app-auth-pojo-AuthPermission")
+@ApiModel(value = "org-myproject-app-auth-pojo-CustomerInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthPermissionQuery extends BaseQuery implements Serializable, MybatisExample<AuthPermissionExample> {
+public class CustomerInfoQuery extends BaseQuery implements Serializable, MybatisExample<CustomerInfoExample> {
     private static final long serialVersionUID = 1L;
-    /**
-     * name
-     */
-    @ApiModelProperty(value = "name")
-    @AndLike
-    private String name;
     /**
      * code
      */
@@ -34,9 +27,18 @@ public class AuthPermissionQuery extends BaseQuery implements Serializable, Myba
     @AndLike
     private String code;
     /**
-     * enabled
+     * name
      */
-    @ApiModelProperty(value = "enabled")
-    @AndEqualTo
-    private Integer enabled;
+    @ApiModelProperty(value = "name")
+    private String name;
+    /**
+     * nickName
+     */
+    @ApiModelProperty(value = "nickName")
+    private String nickName;
+    /**
+     * type
+     */
+    @ApiModelProperty(value = "type")
+    private String type;
 }

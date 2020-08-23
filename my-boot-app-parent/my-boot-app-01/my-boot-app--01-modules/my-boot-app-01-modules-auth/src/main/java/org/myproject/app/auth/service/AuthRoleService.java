@@ -32,9 +32,9 @@ public interface AuthRoleService{
 
     AuthRole selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(AuthRole record,AuthRoleExample example);
+    int updateByExampleSelective(AuthRole record, AuthRoleExample example);
 
-    int updateByExample(AuthRole record,AuthRoleExample example);
+    int updateByExample(AuthRole record, AuthRoleExample example);
 
     int updateByPrimaryKeySelective(AuthRole record);
 

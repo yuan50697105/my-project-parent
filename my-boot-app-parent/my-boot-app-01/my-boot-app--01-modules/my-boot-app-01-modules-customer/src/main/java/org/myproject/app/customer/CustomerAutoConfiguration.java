@@ -1,4 +1,4 @@
-package org.myproject.app.auth;
+package org.myproject.app.customer;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringBootConfiguration;
@@ -8,10 +8,10 @@ import org.springframework.context.annotation.ComponentScan;
  * @program: my-project-parent
  * @description:
  * @author: yuane
- * @create: 2020-08-23 16:39
+ * @create: 2020-08-23 18:14
  */
 @SpringBootConfiguration
 @ComponentScan
-@MapperScan(basePackages = "org.myproject.app.customer.mapper")
-public class AuthAutoConfiguration {
+@MapperScan(basePackages = "org.myproject.app.*.mapper")
+public class CustomerAutoConfiguration {
 }
