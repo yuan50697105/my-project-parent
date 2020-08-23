@@ -14,5 +14,6 @@
     <modules>
         <module>my-boot-application-admin-01</module>
         <module>my-boot-application-admin-02</module>
+        <module>my-boot-application-admin-03</module>
     </modules>
 </project>
