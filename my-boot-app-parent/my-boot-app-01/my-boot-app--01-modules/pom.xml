@@ -15,6 +15,7 @@
         <module>my-boot-app-01-modules-auth</module>
         <module>my-boot-app-01-modules-commons</module>
         <module>my-boot-app-01-modules-customer</module>
+        <module>my-boot-app--01-modules-area</module>
     </modules>
 
 
