@@ -9,9 +9,11 @@ import org.myproject.app.auth.pojo.AuthRoleQuery;
 import org.myproject.app.auth.pojo.AuthRoleVo;
 import org.myproject.app.auth.service.AuthRoleService;
 import org.myproject.app.commons.pojo.IPage;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @program: my-project-parent
@@ -19,7 +21,7 @@ import java.util.Arrays;
  * @author: yuane
  * @create: 2020-08-23 15:23
  */
-@Api("认证角色")
+@Api(value = "认证角色",produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
 @RequestMapping("auth/roles")
 @AllArgsConstructor
@@ -27,15 +29,15 @@ public class AuthRoleController {
     private final AuthRoleService roleService;
 
     @GetMapping
-    public Result<?> list(AuthRoleQuery query) {
+    public Result<List<AuthRole>> list(AuthRoleQuery query) {
         IPage<AuthRole> pageInfo = roleService.selectPageByQuery(query);
         return ResultInfo.success(pageInfo.getTotal(), pageInfo.getList());
     }
 
     @GetMapping("/{id}")
-    public Result<?> get(@PathVariable Long id) {
+    public Result<AuthRole> get(@PathVariable Long id) {
         AuthRole authRole = roleService.selectByPrimaryKey(id);
-        return ResultInfo.success();
+        return ResultInfo.success(authRole);
     }
 
     @PostMapping

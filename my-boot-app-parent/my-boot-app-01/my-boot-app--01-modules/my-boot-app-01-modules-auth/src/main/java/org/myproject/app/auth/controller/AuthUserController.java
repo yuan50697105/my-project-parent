@@ -10,9 +10,11 @@ import org.myproject.app.auth.pojo.AuthUserQuery;
 import org.myproject.app.auth.pojo.AuthUserVo;
 import org.myproject.app.auth.service.AuthUserService;
 import org.myproject.app.commons.pojo.IPage;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @program: my-project-parent
@@ -20,7 +22,7 @@ import java.util.Arrays;
  * @author: yuane
  * @create: 2020-08-23 14:47
  */
-@Api("认证用户")
+@Api(value = "认证用户",produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
 @RequestMapping("auth/users")
 @AllArgsConstructor
@@ -29,14 +31,14 @@ public class AuthUserController {
 
     @GetMapping
     @ApiOperation("查询")
-    public Result<?> list(AuthUserQuery query) {
+    public Result<List<AuthUser>> list(AuthUserQuery query) {
         IPage<AuthUser> pageInfo = userService.selectPageByQuery(query);
         return ResultInfo.success(pageInfo.getTotal(), pageInfo.getList());
     }
 
     @GetMapping("/{id}")
     @ApiOperation("ID获取")
-    public Result<?> get(@PathVariable Long id) {
+    public Result<AuthUser> get(@PathVariable Long id) {
         AuthUser authUser = userService.selectByPrimaryKey(id);
         return ResultInfo.success(authUser);
     }
