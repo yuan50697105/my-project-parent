@@ -27,7 +27,6 @@
         <module>my-boot-application-admin-02-modules-price-restful-api-12</module>
         <module>my-boot-application-admin-02-modules-price-restful-api-21</module>
         <module>my-boot-application-admin-02-modules-price-restful-api-22</module>
-        <module>my-boot-application-admin-02-modules-price-all-01</module>
     </modules>
 
 </project>
