@@ -13,6 +13,11 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
+            <artifactId>my-boot-app--01-modules-db</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
             <artifactId>my-boot-app-01-modules-commons</artifactId>
             <version>1.0.0</version>
         </dependency>

@@ -1,6 +1,3 @@
 spring:
   profiles:
     include: mysql
-  mvc:
-    converters:
-      preferred-json-mapper: jackson

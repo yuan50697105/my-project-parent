@@ -24,7 +24,7 @@ import java.util.List;
  */
 @Api(value = "客户类型", produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
-@RequestMapping("auth/users")
+@RequestMapping("customer/types")
 @AllArgsConstructor
 public class CustomerTypeController {
     private final CustomerTypeService customerTypeService;
