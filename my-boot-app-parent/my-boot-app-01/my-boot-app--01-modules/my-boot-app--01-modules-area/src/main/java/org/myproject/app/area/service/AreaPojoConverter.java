@@ -1,6 +1,8 @@
 package org.myproject.app.area.service;
 
 import org.mapstruct.Mapper;
+import org.myproject.app.area.pojo.AreaAddress;
+import org.myproject.app.area.pojo.AreaAddressVo;
 import org.myproject.app.area.pojo.AreaInfo;
 import org.myproject.app.area.pojo.AreaInfoVo;
 
@@ -13,4 +15,7 @@ import org.myproject.app.area.pojo.AreaInfoVo;
 @Mapper(componentModel = "spring")
 public interface AreaPojoConverter {
     AreaInfo convert(AreaInfoVo areaInfoVo);
+
+    AreaAddress convert(AreaAddressVo areaAddressVo);
+
 }
