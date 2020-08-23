@@ -1,7 +1,0 @@
-spring:
-  profiles:
-    active: db,mvc
-server:
-  port: 8081
-service:
-  baseUrl: http://www.baidu.com

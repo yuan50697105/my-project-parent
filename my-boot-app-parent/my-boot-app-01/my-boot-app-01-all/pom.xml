@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>my-boot-app-01</artifactId>
+        <groupId>org.myproject</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>my-boot-app-01-all</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-app-01-modules-commons</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-app-01-modules-auth</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-app-01-modules-customer</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-app-01-modules-area</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-shade-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>shade</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <createSourcesJar>false</createSourcesJar>-->
+<!--                            <promoteTransitiveDependencies>true</promoteTransitiveDependencies>-->
+<!--                            &lt;!&ndash; 包含要合并的模块 &ndash;&gt;-->
+<!--                            <artifactSet>-->
+<!--                                <includes>-->
+<!--                                    <include>${project.groupId}:*:*</include>-->
+
+<!--                                </includes>-->
+<!--                            </artifactSet>-->
+<!--                            &lt;!&ndash; 包含号合并的资源文件 &ndash;&gt;-->
+<!--                            <transformers>-->
+<!--                                <transformer-->
+<!--                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">-->
+<!--                                    <resource>META-INF/*-->
+<!--                                    </resource>-->
+<!--                                </transformer>-->
+<!--                            </transformers>-->
+
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.myproject.app.Application</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

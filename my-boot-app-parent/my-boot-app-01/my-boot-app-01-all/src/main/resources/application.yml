@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: all
+logging:
+  file:
+    name: log.log
