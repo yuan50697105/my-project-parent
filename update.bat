@@ -1,0 +1,1 @@
+call mvn versions:use-latest-versions versions:commit
