@@ -5,3 +5,5 @@ spring:
     url: jdbc:mysql://localhost:3306/my_project?&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
+  profiles:
+    include: flyway
