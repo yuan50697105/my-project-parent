@@ -1,6 +1,6 @@
 spring:
   profiles:
-    include: commons
+    include: commons,db
   flyway:
     baseline-on-migrate: true
     out-of-order: false
