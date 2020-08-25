@@ -45,4 +45,20 @@ public class DeviceInfo extends BaseEntity implements Serializable {
     private String status;
 
     private static final long serialVersionUID = 1L;
+
+    public org.myproject.app.device.pojo.DeviceInfo withCode(String code) {
+        return this.code == code ? this : new org.myproject.app.device.pojo.DeviceInfo(code, this.name, this.typeId, this.status);
+    }
+
+    public org.myproject.app.device.pojo.DeviceInfo withName(String name) {
+        return this.name == name ? this : new org.myproject.app.device.pojo.DeviceInfo(this.code, name, this.typeId, this.status);
+    }
+
+    public org.myproject.app.device.pojo.DeviceInfo withTypeId(Long typeId) {
+        return this.typeId == typeId ? this : new org.myproject.app.device.pojo.DeviceInfo(this.code, this.name, typeId, this.status);
+    }
+
+    public org.myproject.app.device.pojo.DeviceInfo withStatus(String status) {
+        return this.status == status ? this : new org.myproject.app.device.pojo.DeviceInfo(this.code, this.name, this.typeId, status);
+    }
 }

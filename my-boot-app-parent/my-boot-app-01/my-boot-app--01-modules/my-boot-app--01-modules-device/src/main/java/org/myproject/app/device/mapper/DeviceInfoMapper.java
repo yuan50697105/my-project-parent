@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.myproject.app.device.pojo.DeviceInfo;
 import org.myproject.app.device.pojo.DeviceInfoExample;
 
+import java.util.Collection;
 import java.util.List;
 
 @Mapper
@@ -34,6 +35,8 @@ public interface DeviceInfoMapper {
     int updateByPrimaryKeySelective(DeviceInfo record);
 
     int updateByPrimaryKey(DeviceInfo record);
+
+    int deleteByIdIn(@Param("idCollection") Collection<Long> idCollection);
 
     int updateBatch(List<DeviceInfo> list);
 

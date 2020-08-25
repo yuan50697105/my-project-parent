@@ -218,6 +218,14 @@
       `status` = #{status,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <delete id="deleteByIdIn">
+        <!--@mbg.generated-->
+        delete from device_info
+        where id in
+        <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
+            #{item,jdbcType=BIGINT}
+        </foreach>
+    </delete>
   <update id="updateBatch" parameterType="java.util.List">
     <!--@mbg.generated-->
     update device_info

@@ -1,17 +1,27 @@
 package org.myproject.app.device.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import org.myproject.app.device.pojo.DeviceInfo;
-import java.util.List;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.myproject.app.commons.pojo.IPage;
 import org.myproject.app.device.mapper.DeviceInfoMapper;
-import org.myproject.app.device.pojo.DeviceInfoExample;
+import org.myproject.app.device.pojo.*;
 import org.myproject.app.device.service.DeviceInfoService;
+import org.myproject.app.device.service.DevicePojoConverter;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
+import java.util.Collection;
+import java.util.List;
+
 @Service
-public class DeviceInfoServiceImpl implements DeviceInfoService{
+@Transactional
+public class DeviceInfoServiceImpl implements DeviceInfoService {
 
     @Resource
     private DeviceInfoMapper deviceInfoMapper;
+    @Resource
+    private DevicePojoConverter converter;
 
     @Override
     public long countByExample(DeviceInfoExample example) {
@@ -59,13 +69,13 @@ public class DeviceInfoServiceImpl implements DeviceInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(DeviceInfo record,DeviceInfoExample example) {
-        return deviceInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(DeviceInfo record, DeviceInfoExample example) {
+        return deviceInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(DeviceInfo record,DeviceInfoExample example) {
-        return deviceInfoMapper.updateByExample(record,example);
+    public int updateByExample(DeviceInfo record, DeviceInfoExample example) {
+        return deviceInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -88,4 +98,25 @@ public class DeviceInfoServiceImpl implements DeviceInfoService{
         return deviceInfoMapper.batchInsert(list);
     }
 
+    @Override
+    public IPage<DeviceInfo> selectPageByQuery(DeviceInfoQuery query) {
+        PageHelper.startPage(query.getPage(), query.getLimit());
+        return new IPageInfo<>(new PageInfo<>(selectByExample(query.toExample())));
+    }
+
+    @Override
+    public int insert(DeviceInfoVo deviceInfoVo) {
+        return insert(converter.convert(deviceInfoVo));
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(DeviceInfoVo deviceInfoVo) {
+        return updateByPrimaryKeySelective(converter.convert(deviceInfoVo));
+    }
+
+    @Override
+    public int deleteByIdIn(Collection<Long> idCollection) {
+        return deviceInfoMapper.deleteByIdIn(idCollection);
+    }
 }
+

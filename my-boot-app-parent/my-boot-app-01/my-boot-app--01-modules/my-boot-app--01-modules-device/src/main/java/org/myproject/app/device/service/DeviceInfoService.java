@@ -1,9 +1,15 @@
 package org.myproject.app.device.service;
 
+import org.myproject.app.commons.pojo.IPage;
 import org.myproject.app.device.pojo.DeviceInfo;
-import java.util.List;
 import org.myproject.app.device.pojo.DeviceInfoExample;
-public interface DeviceInfoService{
+import org.myproject.app.device.pojo.DeviceInfoQuery;
+import org.myproject.app.device.pojo.DeviceInfoVo;
+
+import java.util.Collection;
+import java.util.List;
+
+public interface DeviceInfoService {
 
 
     long countByExample(DeviceInfoExample example);
@@ -24,9 +30,9 @@ public interface DeviceInfoService{
 
     DeviceInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(DeviceInfo record,DeviceInfoExample example);
+    int updateByExampleSelective(DeviceInfo record, DeviceInfoExample example);
 
-    int updateByExample(DeviceInfo record,DeviceInfoExample example);
+    int updateByExample(DeviceInfo record, DeviceInfoExample example);
 
     int updateByPrimaryKeySelective(DeviceInfo record);
 
@@ -36,4 +42,12 @@ public interface DeviceInfoService{
 
     int batchInsert(List<DeviceInfo> list);
 
+    IPage<DeviceInfo> selectPageByQuery(DeviceInfoQuery query);
+
+    int insert(DeviceInfoVo deviceInfoVo);
+
+    int updateByPrimaryKeySelective(DeviceInfoVo deviceInfoVo);
+
+    int deleteByIdIn(Collection<Long> idCollection);
 }
+
