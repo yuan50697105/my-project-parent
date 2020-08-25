@@ -17,6 +17,7 @@
         <module>my-boot-app-01-modules-customer</module>
         <module>my-boot-app-01-modules-area</module>
         <module>my-boot-app--01-modules-db</module>
+        <module>my-boot-app--01-modules-device</module>
     </modules>
 
 
