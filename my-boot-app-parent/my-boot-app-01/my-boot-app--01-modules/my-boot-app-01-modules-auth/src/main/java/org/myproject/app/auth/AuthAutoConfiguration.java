@@ -12,6 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootConfiguration
 @ComponentScan
-@MapperScan(basePackages = "org.myproject.app.customer.mapper")
+@MapperScan(basePackages = "org.myproject.app.*.mapper")
 public class AuthAutoConfiguration {
 }
