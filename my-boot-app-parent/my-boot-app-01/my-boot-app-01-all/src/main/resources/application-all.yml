@@ -1,3 +1,3 @@
 spring:
   profiles:
-    include: commons,auth,customer,area,db
+    include: commons,db,auth,customer,area,device

@@ -3,3 +3,8 @@ spring:
     active: all
 server:
   port: 8000
+api:
+  boot:
+    swagger:
+      contact:
+        name: 袁恩志

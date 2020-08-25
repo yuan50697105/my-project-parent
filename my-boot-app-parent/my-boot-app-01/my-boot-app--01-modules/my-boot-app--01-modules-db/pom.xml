@@ -38,27 +38,28 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--            <groupId>org.flywaydb</groupId>-->
-<!--            <artifactId>flyway-maven-plugin</artifactId>-->
-<!--            &lt;!&ndash;                <executions>&ndash;&gt;-->
-<!--            &lt;!&ndash;                    <execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;                        <phase>generate-sources</phase>&ndash;&gt;-->
-<!--            &lt;!&ndash;                        <goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;                            <goal>migrate</goal>&ndash;&gt;-->
-<!--            &lt;!&ndash;                        </goals>&ndash;&gt;-->
-<!--            &lt;!&ndash;                    </execution>&ndash;&gt;-->
-<!--            &lt;!&ndash;                </executions>&ndash;&gt;-->
-<!--            <configuration>-->
-<!--                &lt;!&ndash;                    jdbc:mysql://localhost:3306/my_project?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai&ndash;&gt;-->
-<!--                <url>-->
-<!--                    <![CDATA[jdbc:mysql://localhost:3306/my_project?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai]]></url>-->
-<!--                <user>root</user>-->
-<!--                <password>root</password>-->
-<!--                <defaultSchema>my_project</defaultSchema>-->
-<!--                <schemas>my_project</schemas>-->
-<!--            </configuration>-->
-<!--        </plugin>-->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>clean</goal>
+                            <goal>migrate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--                    jdbc:mysql://localhost:3306/my_project?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai-->
+                    <url>
+                        <![CDATA[jdbc:mysql://localhost:3306/my_project?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai]]></url>
+                    <user>root</user>
+                    <password>root</password>
+                    <defaultSchema>my_project</defaultSchema>
+                    <schemas>my_project</schemas>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

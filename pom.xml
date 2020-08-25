@@ -351,11 +351,23 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>repackage</goal>
+<!--                            <goal>build-image</goal>-->
+<!--                            <goal>build-info</goal>-->
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <fork>true</fork>
+<!--                    <layers>true</layers>-->
                     <attach>false</attach>
                     <executable>true</executable>
                     <classifier>boot</classifier>
+                    <finalName>${project.artifactId}</finalName>
                 </configuration>
             </plugin>
             <plugin>
