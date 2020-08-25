@@ -33,3 +33,7 @@ CREATE TABLE if not exists auth_permission
     PRIMARY KEY (id)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT 'auth_permission';
+alter table auth_user add column last_login_time datetime default now();
+alter table auth_user
+    add create_time datetime default now() null;
+
