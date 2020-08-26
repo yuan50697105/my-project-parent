@@ -19,6 +19,4 @@
         <module>my-boot-app--01-modules-db</module>
         <module>my-boot-app--01-modules-device</module>
     </modules>
-
-
 </project>

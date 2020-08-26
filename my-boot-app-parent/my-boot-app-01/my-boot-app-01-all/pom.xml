@@ -43,67 +43,61 @@
     </dependencies>
     <build>
         <plugins>
-
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-shade-plugin</artifactId>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>shade</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <createSourcesJar>false</createSourcesJar>-->
-<!--                    <minimizeJar>true</minimizeJar>-->
-<!--                    <createSourcesJar>false</createSourcesJar>&ndash;&gt;-->
-<!--                    <promoteTransitiveDependencies>false</promoteTransitiveDependencies>-->
-<!--                    &lt;!&ndash; 包含要合并的模块 &ndash;&gt;-->
-<!--                    <artifactSet>-->
-<!--                        <includes>-->
-<!--                            <include>${project.groupId}:*:*</include>-->
-<!--                            &lt;!&ndash;&ndash;&gt;-->
-<!--                        </includes>-->
-<!--                    </artifactSet>-->
-<!--                    &lt;!&ndash; 包含号合并的资源文件 &ndash;&gt;-->
-<!--                    <transformers>-->
-<!--                        <transformer-->
-<!--                                implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">-->
-<!--                            <resource>META-INF/*-->
-<!--                            </resource>-->
-<!--                        </transformer>-->
-<!--                    </transformers>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-dependency-plugin</artifactId>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>copy-dependencies</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <excludes>${project.groupId}:*:*</excludes>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <configuration>
+                    <mainClass>org.myproject.app.Application</mainClass>
+                </configuration>
             </plugin>
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-shade-plugin</artifactId>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>shade</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--                <configuration>-->
+            <!--                    <createSourcesJar>false</createSourcesJar>-->
+            <!--                    <minimizeJar>true</minimizeJar>-->
+            <!--                    <createSourcesJar>false</createSourcesJar>&ndash;&gt;-->
+            <!--                    <promoteTransitiveDependencies>false</promoteTransitiveDependencies>-->
+            <!--                    &lt;!&ndash; 包含要合并的模块 &ndash;&gt;-->
+            <!--                    <artifactSet>-->
+            <!--                        <includes>-->
+            <!--                            <include>${project.groupId}:*:*</include>-->
+            <!--                            &lt;!&ndash;&ndash;&gt;-->
+            <!--                        </includes>-->
+            <!--                    </artifactSet>-->
+            <!--                    &lt;!&ndash; 包含号合并的资源文件 &ndash;&gt;-->
+            <!--                    <transformers>-->
+            <!--                        <transformer-->
+            <!--                                implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">-->
+            <!--                            <resource>META-INF/*-->
+            <!--                            </resource>-->
+            <!--                        </transformer>-->
+            <!--                    </transformers>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-dependency-plugin</artifactId>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>copy-dependencies</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--                <configuration>-->
+            <!--                    <excludes>${project.groupId}:*:*</excludes>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
         </plugins>
     </build>
 </project>
