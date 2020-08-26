@@ -23,7 +23,7 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app--01-modules-db</artifactId>
+            <artifactId>my-boot-app-01-modules-db</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
