@@ -3,6 +3,7 @@ package org.myproject.app.area;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @create: 2020-08-23 20:42
  */
 @SpringBootConfiguration
+@EnableCaching
 @ComponentScan
 @MapperScan(basePackages = "org.myproject.app.*.mapper")
 public class AreaAutoConfiguration {
