@@ -79,9 +79,29 @@ create table if not exists device_info
     code varchar(50) default '' not null comment 'code',
     name varchar(50) default '' not null comment 'name',
     type_id bigint(15) default -1 not null comment 'typeId',
-    status varchar(50) default '' not null comment 'status'
+    status varchar(50) default '' not null comment 'status',
+    start_time datetime null comment '启用时间',
+    end_time datetime null comment '停用时间'
 )
     comment 'device_info';
+
+create table if not exists flyway_schema_history
+(
+    installed_rank int not null
+        primary key,
+    version varchar(50) null,
+    description varchar(200) not null,
+    type varchar(20) not null,
+    script varchar(1000) not null,
+    checksum int null,
+    installed_by varchar(100) not null,
+    installed_on timestamp default CURRENT_TIMESTAMP not null,
+    execution_time int not null,
+    success tinyint(1) not null
+);
+
+create index flyway_schema_history_s_idx
+    on flyway_schema_history (success);
 
 create table if not exists price_info
 (
@@ -94,9 +114,4 @@ create table if not exists price_info
     internal decimal(13,4) default -1.0000 not null comment 'internal'
 )
     comment 'price_info';
-
-alter table customer_type modify name varchar(100) default '' not null comment 'name';
-
-alter table price_info
-    add status int null;
 
