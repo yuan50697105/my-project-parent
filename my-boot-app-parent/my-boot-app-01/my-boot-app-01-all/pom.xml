@@ -36,5 +36,10 @@
             <artifactId>my-boot-app-01-modules-device</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-app-01-modules-price</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 </project>
