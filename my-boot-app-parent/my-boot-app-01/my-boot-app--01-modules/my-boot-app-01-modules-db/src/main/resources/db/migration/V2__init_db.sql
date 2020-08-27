@@ -1,5 +1,3 @@
-create schema if not exists my_project collate utf8mb4_0900_ai_ci;
-
 create table if not exists area_address
 (
     id bigint(15) auto_increment comment 'id'
