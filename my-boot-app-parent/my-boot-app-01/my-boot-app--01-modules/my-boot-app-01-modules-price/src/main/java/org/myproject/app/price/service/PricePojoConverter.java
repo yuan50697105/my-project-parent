@@ -13,4 +13,6 @@ import org.myproject.app.price.pojo.PriceInfoVo;
 @Mapper(componentModel = "spring")
 public interface PricePojoConverter {
     PriceInfo convert(PriceInfoVo priceInfoVo);
+
+    PriceInfoVo convert(PriceInfo priceInfo);
 }

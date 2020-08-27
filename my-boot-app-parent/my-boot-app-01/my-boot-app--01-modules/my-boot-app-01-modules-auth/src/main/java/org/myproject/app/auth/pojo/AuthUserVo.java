@@ -18,30 +18,26 @@ import java.io.Serializable;
 @NoArgsConstructor
 @With
 public class AuthUserVo extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * username
      */
     @ApiModelProperty(value = "username")
     private String username;
-
     /**
      * password
      */
     @ApiModelProperty(value = "password")
     private String password;
-
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
     /**
      * enabled
      */
     @ApiModelProperty(value = "enabled")
     private Integer enabled;
-
-    private static final long serialVersionUID = 1L;
 
 }

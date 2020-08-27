@@ -19,36 +19,31 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PriceInfo extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * code
      */
     @ApiModelProperty(value = "code")
     @JsonView(PriceInfo.class)
     private String code;
-
     /**
      * type
      */
     @ApiModelProperty(value = "type")
     private String type;
-
     /**
      * point
      */
     @ApiModelProperty(value = "point")
     private Integer point;
-
     /**
      * price
      */
     @ApiModelProperty(value = "price")
     private BigDecimal price;
-
     /**
      * internal
      */
     @ApiModelProperty(value = "internal")
     private BigDecimal internal;
-
-    private static final long serialVersionUID = 1L;
 }

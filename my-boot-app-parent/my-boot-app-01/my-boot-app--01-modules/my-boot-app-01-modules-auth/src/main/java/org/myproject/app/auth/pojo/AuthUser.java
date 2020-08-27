@@ -19,37 +19,31 @@ import java.util.Date;
 @NoArgsConstructor
 @With
 public class AuthUser extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * username
      */
     @ApiModelProperty(value = "username")
     private String username;
-
     /**
      * password
      */
     @ApiModelProperty(value = "password")
     private String password;
-
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
     /**
      * enabled
      */
     @ApiModelProperty(value = "enabled")
     private Integer enabled;
-
     @ApiModelProperty(value = "")
     private Date lastLoginTime;
-
     @ApiModelProperty(value = "")
     private Date createTime;
-
-    private static final long serialVersionUID = 1L;
 
 
 }

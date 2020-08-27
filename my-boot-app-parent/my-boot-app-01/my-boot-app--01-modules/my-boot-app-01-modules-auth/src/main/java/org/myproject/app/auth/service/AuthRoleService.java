@@ -9,7 +9,7 @@ import org.myproject.app.commons.pojo.IPage;
 import java.util.Collection;
 import java.util.List;
 
-public interface AuthRoleService{
+public interface AuthRoleService {
 
 
     long countByExample(AuthRoleExample example);
@@ -48,9 +48,9 @@ public interface AuthRoleService{
 
     int deleteByIdIn(Collection<Long> idCollection);
 
-    int updateEnabledById(Integer updatedEnabled,Long id);
+    int updateEnabledById(Integer updatedEnabled, Long id);
 
-    int updateEnabledByIdIn(Integer updatedEnabled,Collection<Long> idCollection);
+    int updateEnabledByIdIn(Integer updatedEnabled, Collection<Long> idCollection);
 
     int updateBatch(List<AuthRole> list);
 

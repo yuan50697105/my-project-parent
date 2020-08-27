@@ -33,7 +33,7 @@ public class AreaInfoController {
 
     @GetMapping
     @ApiOperation("查询")
-    @Log(value = "查询",level = Level.INFO)
+    @Log(value = "查询", level = Level.INFO)
     public Result<List<AreaInfo>> list(AreaInfoQuery query) {
         IPage<AreaInfo> pageInfo = areaInfoService.selectPageByQuery(query);
         return ResultInfo.success(pageInfo.getTotal(), pageInfo.getList());

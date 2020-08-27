@@ -1,11 +1,12 @@
 package org.myproject.app.customer.mapper;
 
-import java.util.Collection;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.app.customer.pojo.CustomerInfo;
 import org.myproject.app.customer.pojo.CustomerInfoExample;
+
+import java.util.Collection;
+import java.util.List;
 
 @Mapper
 public interface CustomerInfoMapper {

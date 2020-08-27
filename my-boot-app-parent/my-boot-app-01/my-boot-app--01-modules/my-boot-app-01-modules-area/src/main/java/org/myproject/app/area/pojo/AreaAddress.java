@@ -2,13 +2,10 @@ package org.myproject.app.area.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
+
+import java.io.Serializable;
 
 /**
  * area_address
@@ -20,17 +17,15 @@ import org.myproject.boot.mybatis.pojo.BaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AreaAddress extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * areaId
      */
     @ApiModelProperty(value = "areaId")
     private Long areaId;
-
     /**
      * address
      */
     @ApiModelProperty(value = "address")
     private String address;
-
-    private static final long serialVersionUID = 1L;
 }

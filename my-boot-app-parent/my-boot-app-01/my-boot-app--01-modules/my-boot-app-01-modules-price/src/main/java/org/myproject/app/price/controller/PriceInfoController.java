@@ -13,6 +13,7 @@ import org.myproject.app.price.pojo.PriceInfo;
 import org.myproject.app.price.pojo.PriceInfoQuery;
 import org.myproject.app.price.pojo.PriceInfoVo;
 import org.myproject.app.price.service.PriceInfoService;
+import org.myproject.app.price.service.PricePojoConverter;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,6 +32,7 @@ import java.util.List;
 @AllArgsConstructor
 public class PriceInfoController {
     private final PriceInfoService priceInfoService;
+    private final PricePojoConverter converter;
 
     @GetMapping
     @ApiOperation("查询")
