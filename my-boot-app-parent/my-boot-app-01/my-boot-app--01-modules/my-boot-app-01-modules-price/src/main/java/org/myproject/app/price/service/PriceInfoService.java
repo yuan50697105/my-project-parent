@@ -8,7 +8,8 @@ import org.myproject.app.price.pojo.PriceInfoVo;
 
 import java.util.Collection;
 import java.util.List;
-public interface PriceInfoService{
+
+public interface PriceInfoService {
 
 
     long countByExample(PriceInfoExample example);
@@ -29,9 +30,9 @@ public interface PriceInfoService{
 
     PriceInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(PriceInfo record,PriceInfoExample example);
+    int updateByExampleSelective(PriceInfo record, PriceInfoExample example);
 
-    int updateByExample(PriceInfo record,PriceInfoExample example);
+    int updateByExample(PriceInfo record, PriceInfoExample example);
 
     int updateByPrimaryKeySelective(PriceInfo record);
 
@@ -55,3 +56,4 @@ public interface PriceInfoService{
 
     int updateByPrimaryKeySelective(PriceInfoVo priceInfoVo);
 }
+

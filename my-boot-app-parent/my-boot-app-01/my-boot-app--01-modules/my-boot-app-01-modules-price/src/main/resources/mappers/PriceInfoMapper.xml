@@ -236,11 +236,10 @@
   <select id="selectAllByIdIn" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
-        <include refid="Base_Column_List"/>
+        <include refid="Base_Column_List" />
         from price_info
         where id in
-        <foreach item="item" index="index" collection="idCollection"
-                 open="(" separator="," close=")">
+        <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
             #{item,jdbcType=BIGINT}
         </foreach>
     </select>
@@ -248,26 +247,24 @@
         <!--@mbg.generated-->
         delete from price_info
         where id in
-        <foreach item="item" index="index" collection="idCollection"
-                 open="(" separator="," close=")">
+        <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
             #{item,jdbcType=BIGINT}
         </foreach>
     </delete>
   <select id="selectAllByCodeIn" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
-        <include refid="Base_Column_List"/>
+        <include refid="Base_Column_List" />
         from price_info
         where code in
-        <foreach item="item" index="index" collection="codeCollection"
-                 open="(" separator="," close=")">
+        <foreach close=")" collection="codeCollection" index="index" item="item" open="(" separator=",">
             #{item,jdbcType=VARCHAR}
         </foreach>
     </select>
   <select id="selectAllByCode" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
-        <include refid="Base_Column_List"/>
+        <include refid="Base_Column_List" />
         from price_info
         where code=#{code,jdbcType=VARCHAR}
     </select>
