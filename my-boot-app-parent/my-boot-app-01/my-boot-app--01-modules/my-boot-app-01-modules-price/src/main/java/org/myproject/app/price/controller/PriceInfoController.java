@@ -4,6 +4,7 @@ import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
 import com.alibaba.fastjson.support.spring.annotation.FastJsonFilter;
 import com.alibaba.fastjson.support.spring.annotation.FastJsonView;
+import com.fasterxml.jackson.annotation.JsonView;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
@@ -40,6 +41,7 @@ public class PriceInfoController {
 
     @GetMapping("/{id}")
     @ApiOperation("ID获取")
+    @JsonView(PriceInfo.class)
     @FastJsonView(exclude = {@FastJsonFilter(clazz = Result.class, props = {"count", "flag"})},include = {@FastJsonFilter(clazz = PriceInfo.class,props = "code")})
     public Result<PriceInfo> get(@PathVariable Long id) {
         PriceInfo priceInfo = priceInfoService.selectByPrimaryKey(id);
