@@ -18,5 +18,6 @@
         <module>my-boot-app-01-modules-area</module>
         <module>my-boot-app-01-modules-db</module>
         <module>my-boot-app-01-modules-device</module>
+        <module>my-boot-app-01-modules-price</module>
     </modules>
 </project>

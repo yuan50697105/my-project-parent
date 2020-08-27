@@ -49,5 +49,8 @@ public interface DeviceInfoService {
     int updateByPrimaryKeySelective(DeviceInfoVo deviceInfoVo);
 
     int deleteByIdIn(Collection<Long> idCollection);
+
+    List<DeviceInfo> selectAllByIdIn(Collection<Long> idCollection);
 }
+
 

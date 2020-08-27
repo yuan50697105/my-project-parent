@@ -38,6 +38,8 @@ public interface DeviceInfoMapper {
 
     int deleteByIdIn(@Param("idCollection") Collection<Long> idCollection);
 
+    List<DeviceInfo> selectAllByIdIn(@Param("idCollection") Collection<Long> idCollection);
+
     int updateBatch(List<DeviceInfo> list);
 
     int batchInsert(@Param("list") List<DeviceInfo> list);

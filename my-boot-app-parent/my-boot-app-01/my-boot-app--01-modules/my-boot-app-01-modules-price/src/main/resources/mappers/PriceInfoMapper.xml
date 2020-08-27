@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.app.device.mapper.DeviceInfoMapper">
-  <resultMap id="BaseResultMap" type="org.myproject.app.device.pojo.DeviceInfo">
+<mapper namespace="org.myproject.app.price.mapper.PriceInfoMapper">
+  <resultMap id="BaseResultMap" type="org.myproject.app.price.pojo.PriceInfo">
     <!--@mbg.generated-->
-    <!--@Table device_info-->
+    <!--@Table price_info-->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="code" jdbcType="VARCHAR" property="code" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="type_id" jdbcType="BIGINT" property="typeId" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
-    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="point" jdbcType="INTEGER" property="point" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="internal" jdbcType="DECIMAL" property="internal" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--@mbg.generated-->
@@ -74,16 +73,16 @@
   </sql>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, code, `name`, type_id, `status`, start_time, end_time
+    id, code, `type`, point, price, internal
   </sql>
-  <select id="selectByExample" parameterType="org.myproject.app.device.pojo.DeviceInfoExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.myproject.app.price.pojo.PriceInfoExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from device_info
+    from price_info
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -95,84 +94,76 @@
     <!--@mbg.generated-->
     select 
     <include refid="Base_Column_List" />
-    from device_info
+    from price_info
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     <!--@mbg.generated-->
-    delete from device_info
+    delete from price_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="org.myproject.app.device.pojo.DeviceInfoExample">
+  <delete id="deleteByExample" parameterType="org.myproject.app.price.pojo.PriceInfoExample">
     <!--@mbg.generated-->
-    delete from device_info
+    delete from price_info
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.device.pojo.DeviceInfo" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.price.pojo.PriceInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into device_info (code, `name`, type_id, 
-      `status`, start_time, end_time
-      )
-    values (#{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{typeId,jdbcType=BIGINT}, 
-      #{status,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}
-      )
+    insert into price_info (code, `type`, point, 
+      price, internal)
+    values (#{code,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{point,jdbcType=INTEGER}, 
+      #{price,jdbcType=DECIMAL}, #{internal,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.device.pojo.DeviceInfo" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.price.pojo.PriceInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into device_info
+    insert into price_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="code != null">
         code,
       </if>
-      <if test="name != null">
-        `name`,
+      <if test="type != null">
+        `type`,
       </if>
-      <if test="typeId != null">
-        type_id,
+      <if test="point != null">
+        point,
       </if>
-      <if test="status != null">
-        `status`,
+      <if test="price != null">
+        price,
       </if>
-      <if test="startTime != null">
-        start_time,
-      </if>
-      <if test="endTime != null">
-        end_time,
+      <if test="internal != null">
+        internal,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="code != null">
         #{code,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
       </if>
-      <if test="typeId != null">
-        #{typeId,jdbcType=BIGINT},
+      <if test="point != null">
+        #{point,jdbcType=INTEGER},
       </if>
-      <if test="status != null">
-        #{status,jdbcType=VARCHAR},
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
       </if>
-      <if test="startTime != null">
-        #{startTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="endTime != null">
-        #{endTime,jdbcType=TIMESTAMP},
+      <if test="internal != null">
+        #{internal,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.myproject.app.device.pojo.DeviceInfoExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="org.myproject.app.price.pojo.PriceInfoExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
-    select count(*) from device_info
+    select count(*) from price_info
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
     <!--@mbg.generated-->
-    update device_info
+    update price_info
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
@@ -180,20 +171,17 @@
       <if test="record.code != null">
         code = #{record.code,jdbcType=VARCHAR},
       </if>
-      <if test="record.name != null">
-        `name` = #{record.name,jdbcType=VARCHAR},
+      <if test="record.type != null">
+        `type` = #{record.type,jdbcType=VARCHAR},
       </if>
-      <if test="record.typeId != null">
-        type_id = #{record.typeId,jdbcType=BIGINT},
+      <if test="record.point != null">
+        point = #{record.point,jdbcType=INTEGER},
       </if>
-      <if test="record.status != null">
-        `status` = #{record.status,jdbcType=VARCHAR},
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
       </if>
-      <if test="record.startTime != null">
-        start_time = #{record.startTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.endTime != null">
-        end_time = #{record.endTime,jdbcType=TIMESTAMP},
+      <if test="record.internal != null">
+        internal = #{record.internal,jdbcType=DECIMAL},
       </if>
     </set>
     <if test="_parameter != null">
@@ -202,104 +190,114 @@
   </update>
   <update id="updateByExample" parameterType="map">
     <!--@mbg.generated-->
-    update device_info
+    update price_info
     set id = #{record.id,jdbcType=BIGINT},
       code = #{record.code,jdbcType=VARCHAR},
-      `name` = #{record.name,jdbcType=VARCHAR},
-      type_id = #{record.typeId,jdbcType=BIGINT},
-      `status` = #{record.status,jdbcType=VARCHAR},
-      start_time = #{record.startTime,jdbcType=TIMESTAMP},
-      end_time = #{record.endTime,jdbcType=TIMESTAMP}
+      `type` = #{record.type,jdbcType=VARCHAR},
+      point = #{record.point,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=DECIMAL},
+      internal = #{record.internal,jdbcType=DECIMAL}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.device.pojo.DeviceInfo">
+  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.price.pojo.PriceInfo">
     <!--@mbg.generated-->
-    update device_info
+    update price_info
     <set>
       <if test="code != null">
         code = #{code,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        `name` = #{name,jdbcType=VARCHAR},
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
       </if>
-      <if test="typeId != null">
-        type_id = #{typeId,jdbcType=BIGINT},
+      <if test="point != null">
+        point = #{point,jdbcType=INTEGER},
       </if>
-      <if test="status != null">
-        `status` = #{status,jdbcType=VARCHAR},
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
       </if>
-      <if test="startTime != null">
-        start_time = #{startTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="endTime != null">
-        end_time = #{endTime,jdbcType=TIMESTAMP},
+      <if test="internal != null">
+        internal = #{internal,jdbcType=DECIMAL},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="org.myproject.app.device.pojo.DeviceInfo">
+  <update id="updateByPrimaryKey" parameterType="org.myproject.app.price.pojo.PriceInfo">
     <!--@mbg.generated-->
-    update device_info
+    update price_info
     set code = #{code,jdbcType=VARCHAR},
-      `name` = #{name,jdbcType=VARCHAR},
-      type_id = #{typeId,jdbcType=BIGINT},
-      `status` = #{status,jdbcType=VARCHAR},
-      start_time = #{startTime,jdbcType=TIMESTAMP},
-      end_time = #{endTime,jdbcType=TIMESTAMP}
+      `type` = #{type,jdbcType=VARCHAR},
+      point = #{point,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      internal = #{internal,jdbcType=DECIMAL}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <delete id="deleteByIdIn">
-        <!--@mbg.generated-->
-        delete from device_info
-        where id in
-        <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
-            #{item,jdbcType=BIGINT}
-        </foreach>
-    </delete>
   <select id="selectAllByIdIn" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
-        <include refid="Base_Column_List" />
-        from device_info
+        <include refid="Base_Column_List"/>
+        from price_info
         where id in
-        <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
+        <foreach item="item" index="index" collection="idCollection"
+                 open="(" separator="," close=")">
             #{item,jdbcType=BIGINT}
         </foreach>
     </select>
+  <delete id="deleteByIdIn">
+        <!--@mbg.generated-->
+        delete from price_info
+        where id in
+        <foreach item="item" index="index" collection="idCollection"
+                 open="(" separator="," close=")">
+            #{item,jdbcType=BIGINT}
+        </foreach>
+    </delete>
+  <select id="selectAllByCodeIn" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from price_info
+        where code in
+        <foreach item="item" index="index" collection="codeCollection"
+                 open="(" separator="," close=")">
+            #{item,jdbcType=VARCHAR}
+        </foreach>
+    </select>
+  <select id="selectAllByCode" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from price_info
+        where code=#{code,jdbcType=VARCHAR}
+    </select>
   <update id="updateBatch" parameterType="java.util.List">
     <!--@mbg.generated-->
-    update device_info
+    update price_info
     <trim prefix="set" suffixOverrides=",">
       <trim prefix="code = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
           when id = #{item.id,jdbcType=BIGINT} then #{item.code,jdbcType=VARCHAR}
         </foreach>
       </trim>
-      <trim prefix="`name` = case" suffix="end,">
+      <trim prefix="`type` = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
+          when id = #{item.id,jdbcType=BIGINT} then #{item.type,jdbcType=VARCHAR}
         </foreach>
       </trim>
-      <trim prefix="type_id = case" suffix="end,">
+      <trim prefix="point = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.typeId,jdbcType=BIGINT}
+          when id = #{item.id,jdbcType=BIGINT} then #{item.point,jdbcType=INTEGER}
         </foreach>
       </trim>
-      <trim prefix="`status` = case" suffix="end,">
+      <trim prefix="price = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.status,jdbcType=VARCHAR}
+          when id = #{item.id,jdbcType=BIGINT} then #{item.price,jdbcType=DECIMAL}
         </foreach>
       </trim>
-      <trim prefix="start_time = case" suffix="end,">
+      <trim prefix="internal = case" suffix="end,">
         <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.startTime,jdbcType=TIMESTAMP}
-        </foreach>
-      </trim>
-      <trim prefix="end_time = case" suffix="end,">
-        <foreach collection="list" index="index" item="item">
-          when id = #{item.id,jdbcType=BIGINT} then #{item.endTime,jdbcType=TIMESTAMP}
+          when id = #{item.id,jdbcType=BIGINT} then #{item.internal,jdbcType=DECIMAL}
         </foreach>
       </trim>
     </trim>
@@ -310,28 +308,26 @@
   </update>
   <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into device_info
-    (code, `name`, type_id, `status`, start_time, end_time)
+    insert into price_info
+    (code, `type`, point, price, internal)
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.code,jdbcType=VARCHAR}, #{item.name,jdbcType=VARCHAR}, #{item.typeId,jdbcType=BIGINT}, 
-        #{item.status,jdbcType=VARCHAR}, #{item.startTime,jdbcType=TIMESTAMP}, #{item.endTime,jdbcType=TIMESTAMP}
-        )
+      (#{item.code,jdbcType=VARCHAR}, #{item.type,jdbcType=VARCHAR}, #{item.point,jdbcType=INTEGER}, 
+        #{item.price,jdbcType=DECIMAL}, #{item.internal,jdbcType=DECIMAL})
     </foreach>
   </insert>
-  <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.device.pojo.DeviceInfo" useGeneratedKeys="true">
+  <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.price.pojo.PriceInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into device_info
+    insert into price_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
       </if>
       code,
-      `name`,
-      type_id,
-      `status`,
-      start_time,
-      end_time,
+      `type`,
+      point,
+      price,
+      internal,
     </trim>
     values
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -339,11 +335,10 @@
         #{id,jdbcType=BIGINT},
       </if>
       #{code,jdbcType=VARCHAR},
-      #{name,jdbcType=VARCHAR},
-      #{typeId,jdbcType=BIGINT},
-      #{status,jdbcType=VARCHAR},
-      #{startTime,jdbcType=TIMESTAMP},
-      #{endTime,jdbcType=TIMESTAMP},
+      #{type,jdbcType=VARCHAR},
+      #{point,jdbcType=INTEGER},
+      #{price,jdbcType=DECIMAL},
+      #{internal,jdbcType=DECIMAL},
     </trim>
     on duplicate key update 
     <trim suffixOverrides=",">
@@ -351,16 +346,15 @@
         id = #{id,jdbcType=BIGINT},
       </if>
       code = #{code,jdbcType=VARCHAR},
-      `name` = #{name,jdbcType=VARCHAR},
-      type_id = #{typeId,jdbcType=BIGINT},
-      `status` = #{status,jdbcType=VARCHAR},
-      start_time = #{startTime,jdbcType=TIMESTAMP},
-      end_time = #{endTime,jdbcType=TIMESTAMP},
+      `type` = #{type,jdbcType=VARCHAR},
+      point = #{point,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      internal = #{internal,jdbcType=DECIMAL},
     </trim>
   </insert>
-  <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.device.pojo.DeviceInfo" useGeneratedKeys="true">
+  <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.price.pojo.PriceInfo" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into device_info
+    insert into price_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -368,20 +362,17 @@
       <if test="code != null">
         code,
       </if>
-      <if test="name != null">
-        `name`,
+      <if test="type != null">
+        `type`,
       </if>
-      <if test="typeId != null">
-        type_id,
+      <if test="point != null">
+        point,
       </if>
-      <if test="status != null">
-        `status`,
+      <if test="price != null">
+        price,
       </if>
-      <if test="startTime != null">
-        start_time,
-      </if>
-      <if test="endTime != null">
-        end_time,
+      <if test="internal != null">
+        internal,
       </if>
     </trim>
     values
@@ -392,20 +383,17 @@
       <if test="code != null">
         #{code,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
       </if>
-      <if test="typeId != null">
-        #{typeId,jdbcType=BIGINT},
+      <if test="point != null">
+        #{point,jdbcType=INTEGER},
       </if>
-      <if test="status != null">
-        #{status,jdbcType=VARCHAR},
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
       </if>
-      <if test="startTime != null">
-        #{startTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="endTime != null">
-        #{endTime,jdbcType=TIMESTAMP},
+      <if test="internal != null">
+        #{internal,jdbcType=DECIMAL},
       </if>
     </trim>
     on duplicate key update 
@@ -416,20 +404,17 @@
       <if test="code != null">
         code = #{code,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        `name` = #{name,jdbcType=VARCHAR},
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
       </if>
-      <if test="typeId != null">
-        type_id = #{typeId,jdbcType=BIGINT},
+      <if test="point != null">
+        point = #{point,jdbcType=INTEGER},
       </if>
-      <if test="status != null">
-        `status` = #{status,jdbcType=VARCHAR},
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
       </if>
-      <if test="startTime != null">
-        start_time = #{startTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="endTime != null">
-        end_time = #{endTime,jdbcType=TIMESTAMP},
+      <if test="internal != null">
+        internal = #{internal,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>

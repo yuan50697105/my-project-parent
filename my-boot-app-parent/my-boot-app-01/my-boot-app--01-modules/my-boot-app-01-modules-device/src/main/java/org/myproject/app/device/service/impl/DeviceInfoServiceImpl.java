@@ -118,5 +118,11 @@ public class DeviceInfoServiceImpl implements DeviceInfoService {
     public int deleteByIdIn(Collection<Long> idCollection) {
         return deviceInfoMapper.deleteByIdIn(idCollection);
     }
+
+    @Override
+    public List<DeviceInfo> selectAllByIdIn(Collection<Long> idCollection) {
+        return deviceInfoMapper.selectAllByIdIn(idCollection);
+    }
 }
+
 

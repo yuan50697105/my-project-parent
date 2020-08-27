@@ -6,6 +6,7 @@ import lombok.*;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * device_info
@@ -13,7 +14,7 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-device-pojo-DeviceInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
+@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @With
@@ -39,4 +40,15 @@ public class DeviceInfoVo extends BaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "status")
     private String status;
+    /**
+     * 启用时间
+     */
+    @ApiModelProperty(value = "启用时间")
+    private Date startTime;
+    /**
+     * 停用时间
+     */
+    @ApiModelProperty(value = "停用时间")
+    private Date endTime;
+
 }
