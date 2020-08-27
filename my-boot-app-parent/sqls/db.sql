@@ -79,7 +79,9 @@ create table if not exists device_info
     code varchar(50) default '' not null comment 'code',
     name varchar(50) default '' not null comment 'name',
     type_id bigint(15) default -1 not null comment 'typeId',
-    status varchar(50) default '' not null comment 'status'
+    status varchar(50) default '' not null comment 'status',
+    start_time datetime null comment '启用时间',
+    end_time datetime null comment '停用时间'
 )
     comment 'device_info';
 
@@ -94,9 +96,4 @@ create table if not exists price_info
     internal decimal(13,4) default -1.0000 not null comment 'internal'
 )
     comment 'price_info';
-
-alter table customer_type modify name varchar(100) default '' not null comment 'name';
-
-alter table price_info
-    add status int null;
 

@@ -1,11 +1,12 @@
 package org.myproject.app.price.mapper;
 
-import java.util.Collection;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.app.price.pojo.PriceInfo;
 import org.myproject.app.price.pojo.PriceInfoExample;
+
+import java.util.Collection;
+import java.util.List;
 
 @Mapper
 public interface PriceInfoMapper {
