@@ -42,7 +42,13 @@ public class PriceInfoController {
     @GetMapping("/{id}")
     @ApiOperation("ID获取")
     @JsonView(PriceInfo.class)
-    @FastJsonView(exclude = {@FastJsonFilter(clazz = Result.class, props = {"count", "flag"})},include = {@FastJsonFilter(clazz = PriceInfo.class,props = "code")})
+    @FastJsonView(
+            exclude = {
+                    @FastJsonFilter(clazz = Result.class, props = {"count", "flag"})
+            },
+            include = {
+                    @FastJsonFilter(clazz = PriceInfo.class, props = "code")
+            })
     public Result<PriceInfo> get(@PathVariable Long id) {
         PriceInfo priceInfo = priceInfoService.selectByPrimaryKey(id);
         return ResultInfo.success(priceInfo);
