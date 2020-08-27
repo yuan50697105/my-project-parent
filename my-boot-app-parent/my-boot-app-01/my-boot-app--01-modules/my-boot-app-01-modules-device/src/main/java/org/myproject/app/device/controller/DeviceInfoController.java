@@ -51,7 +51,7 @@ public class DeviceInfoController {
 
     @PutMapping
     @ApiOperation("更新")
-    public Result<?> update(DeviceInfoVo DeviceInfoVo) {
+    public Result<?> update(@RequestBody DeviceInfoVo DeviceInfoVo) {
         deviceInfoService.updateByPrimaryKeySelective(DeviceInfoVo);
         return ResultInfo.success();
     }

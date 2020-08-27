@@ -52,7 +52,7 @@ public class PriceInfoController {
 
     @PutMapping
     @ApiOperation("更新")
-    public Result<?> update(PriceInfoVo PriceInfoVo) {
+    public Result<?> update(@RequestBody PriceInfoVo PriceInfoVo) {
         priceInfoService.updateByPrimaryKeySelective(PriceInfoVo);
         return ResultInfo.success();
     }
