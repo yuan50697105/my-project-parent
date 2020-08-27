@@ -58,7 +58,8 @@ create table if not exists customer_info
     code varchar(50) default '' not null comment 'code',
     name varchar(50) default '' not null comment 'name',
     nick_name varchar(50) default '' not null comment 'nickName',
-    type varchar(50) default '' not null comment 'type'
+    type varchar(50) default '' not null comment 'type',
+    sex int default 0 null comment '性别（0:男，1:女）'
 )
     comment 'customer_info';
 
