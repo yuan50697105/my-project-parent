@@ -1,17 +1,27 @@
 package org.myproject.app.price.service.impl;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import org.myproject.app.price.pojo.PriceInfoExample;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.myproject.app.commons.pojo.IPage;
 import org.myproject.app.price.mapper.PriceInfoMapper;
-import org.myproject.app.price.pojo.PriceInfo;
+import org.myproject.app.price.pojo.*;
 import org.myproject.app.price.service.PriceInfoService;
+import org.myproject.app.price.service.PricePojoConverter;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
+import java.util.Collection;
+import java.util.List;
+
 @Service
-public class PriceInfoServiceImpl implements PriceInfoService{
+@Transactional
+public class PriceInfoServiceImpl implements PriceInfoService {
 
     @Resource
     private PriceInfoMapper priceInfoMapper;
+    @Resource
+    private PricePojoConverter converter;
 
     @Override
     public long countByExample(PriceInfoExample example) {
@@ -59,13 +69,13 @@ public class PriceInfoServiceImpl implements PriceInfoService{
     }
 
     @Override
-    public int updateByExampleSelective(PriceInfo record,PriceInfoExample example) {
-        return priceInfoMapper.updateByExampleSelective(record,example);
+    public int updateByExampleSelective(PriceInfo record, PriceInfoExample example) {
+        return priceInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(PriceInfo record,PriceInfoExample example) {
-        return priceInfoMapper.updateByExample(record,example);
+    public int updateByExample(PriceInfo record, PriceInfoExample example) {
+        return priceInfoMapper.updateByExample(record, example);
     }
 
     @Override
@@ -106,6 +116,26 @@ public class PriceInfoServiceImpl implements PriceInfoService{
     @Override
     public int batchInsert(List<PriceInfo> list) {
         return priceInfoMapper.batchInsert(list);
+    }
+
+    @Override
+    public IPage<PriceInfo> selectPageByQuery(PriceInfoQuery query) {
+        PageHelper.startPage(query.getPage(), query.getLimit());
+        return new IPageInfo<>(PageInfo.of(selectByExample(query.toExample())));
+    }
+
+    @Override
+    @Transactional
+    public int insert(PriceInfoVo priceInfoVo) {
+        PriceInfo record = converter.convert(priceInfoVo);
+        return priceInfoMapper.insert(record);
+    }
+
+    @Override
+    @Transactional
+    public int updateByPrimaryKeySelective(PriceInfoVo priceInfoVo) {
+        PriceInfo record = converter.convert(priceInfoVo);
+        return priceInfoMapper.updateByPrimaryKeySelective(record);
     }
 
 }

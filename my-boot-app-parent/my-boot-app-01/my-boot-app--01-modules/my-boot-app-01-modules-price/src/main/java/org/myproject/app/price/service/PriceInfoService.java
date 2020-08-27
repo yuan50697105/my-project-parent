@@ -1,8 +1,13 @@
 package org.myproject.app.price.service;
 
-import java.util.List;
-import org.myproject.app.price.pojo.PriceInfoExample;
+import org.myproject.app.commons.pojo.IPage;
 import org.myproject.app.price.pojo.PriceInfo;
+import org.myproject.app.price.pojo.PriceInfoExample;
+import org.myproject.app.price.pojo.PriceInfoQuery;
+import org.myproject.app.price.pojo.PriceInfoVo;
+
+import java.util.Collection;
+import java.util.List;
 public interface PriceInfoService{
 
 
@@ -44,4 +49,9 @@ public interface PriceInfoService{
 
     int batchInsert(List<PriceInfo> list);
 
+    IPage<PriceInfo> selectPageByQuery(PriceInfoQuery query);
+
+    int insert(PriceInfoVo priceInfoVo);
+
+    int updateByPrimaryKeySelective(PriceInfoVo priceInfoVo);
 }

@@ -8,12 +8,14 @@ import org.myproject.app.auth.service.AuthPojoConverter;
 import org.myproject.app.auth.service.AuthRoleService;
 import org.myproject.app.commons.pojo.IPage;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.List;
 
 @Service
+@Transactional
 public class AuthRoleServiceImpl implements AuthRoleService {
 
     @Resource

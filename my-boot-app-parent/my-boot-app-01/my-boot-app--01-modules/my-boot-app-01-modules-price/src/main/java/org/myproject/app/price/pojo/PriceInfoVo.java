@@ -1,14 +1,12 @@
 package org.myproject.app.price.pojo;
 
-import com.gitee.denger.mybatis.example.ext.MybatisExample;
-import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
-import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
-import org.myproject.app.commons.pojo.BaseQuery;
+import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * price_info
@@ -19,18 +17,36 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PriceInfoQuery extends BaseQuery implements Serializable, MybatisExample<PriceInfoExample> {
-    private static final long serialVersionUID = 1L;
+public class PriceInfoVo extends BaseEntity implements Serializable {
     /**
      * code
      */
     @ApiModelProperty(value = "code")
-    @AndLike
     private String code;
+
     /**
      * type
      */
     @ApiModelProperty(value = "type")
-    @AndEqualTo
     private String type;
+
+    /**
+     * point
+     */
+    @ApiModelProperty(value = "point")
+    private Integer point;
+
+    /**
+     * price
+     */
+    @ApiModelProperty(value = "price")
+    private BigDecimal price;
+
+    /**
+     * internal
+     */
+    @ApiModelProperty(value = "internal")
+    private BigDecimal internal;
+
+    private static final long serialVersionUID = 1L;
 }
