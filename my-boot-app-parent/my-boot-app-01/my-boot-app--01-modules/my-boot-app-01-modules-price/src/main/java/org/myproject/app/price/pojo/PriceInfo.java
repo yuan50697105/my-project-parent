@@ -1,15 +1,13 @@
 package org.myproject.app.price.pojo;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
+import org.myproject.boot.mybatis.pojo.BaseEntity;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 /**
  * price_info
@@ -25,6 +23,7 @@ public class PriceInfo extends BaseEntity implements Serializable {
      * code
      */
     @ApiModelProperty(value = "code")
+    @JsonView(PriceInfo.class)
     private String code;
 
     /**
