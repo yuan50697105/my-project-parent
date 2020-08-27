@@ -123,6 +123,17 @@ public class DeviceInfoServiceImpl implements DeviceInfoService {
     public List<DeviceInfo> selectAllByIdIn(Collection<Long> idCollection) {
         return deviceInfoMapper.selectAllByIdIn(idCollection);
     }
+
+    @Override
+    public DeviceInfo selectOneByCodeOrId(String code, Long id) {
+        return deviceInfoMapper.selectOneByCodeOrId(code, id);
+    }
+
+    @Override
+    public List<DeviceInfo> selectAllByCodeInOrIdIn(Collection<String> codeCollection, Collection<Long> idCollection) {
+        return deviceInfoMapper.selectAllByCodeInOrIdIn(codeCollection, idCollection);
+    }
 }
+
 
 

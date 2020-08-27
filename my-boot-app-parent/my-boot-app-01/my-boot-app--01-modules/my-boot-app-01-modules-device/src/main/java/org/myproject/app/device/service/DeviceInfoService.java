@@ -51,6 +51,11 @@ public interface DeviceInfoService {
     int deleteByIdIn(Collection<Long> idCollection);
 
     List<DeviceInfo> selectAllByIdIn(Collection<Long> idCollection);
+
+    DeviceInfo selectOneByCodeOrId(String code, Long id);
+
+    List<DeviceInfo> selectAllByCodeInOrIdIn(Collection<String> codeCollection, Collection<Long> idCollection);
 }
+
 
 

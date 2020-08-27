@@ -268,6 +268,27 @@
             #{item,jdbcType=BIGINT}
         </foreach>
     </select>
+  <select id="selectOneByCodeOrId" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List" />
+        from device_info
+        where code=#{code,jdbcType=VARCHAR} or id=#{id,jdbcType=BIGINT}
+    </select>
+  <select id="selectAllByCodeInOrIdIn" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List" />
+        from device_info
+        where code in
+        <foreach close=")" collection="codeCollection" index="index" item="item" open="(" separator=",">
+            #{item,jdbcType=VARCHAR}
+        </foreach>
+        or id in
+        <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
+            #{item,jdbcType=BIGINT}
+        </foreach>
+    </select>
   <update id="updateBatch" parameterType="java.util.List">
     <!--@mbg.generated-->
     update device_info

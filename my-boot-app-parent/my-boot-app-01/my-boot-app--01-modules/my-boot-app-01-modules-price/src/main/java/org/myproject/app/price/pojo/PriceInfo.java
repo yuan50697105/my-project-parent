@@ -1,5 +1,6 @@
 package org.myproject.app.price.pojo;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
@@ -22,6 +23,7 @@ public class PriceInfo extends BaseEntity implements Serializable {
      * code
      */
     @ApiModelProperty(value = "code")
+    @JsonView(PriceInfo.class)
     private String code;
 
     /**

@@ -40,6 +40,10 @@ public interface DeviceInfoMapper {
 
     List<DeviceInfo> selectAllByIdIn(@Param("idCollection") Collection<Long> idCollection);
 
+    DeviceInfo selectOneByCodeOrId(@Param("code") String code, @Param("id") Long id);
+
+    List<DeviceInfo> selectAllByCodeInOrIdIn(@Param("codeCollection") Collection<String> codeCollection, @Param("idCollection") Collection<Long> idCollection);
+
     int updateBatch(List<DeviceInfo> list);
 
     int batchInsert(@Param("list") List<DeviceInfo> list);
