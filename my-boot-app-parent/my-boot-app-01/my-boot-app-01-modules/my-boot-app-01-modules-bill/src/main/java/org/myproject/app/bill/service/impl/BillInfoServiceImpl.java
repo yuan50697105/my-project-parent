@@ -2,18 +2,17 @@ package org.myproject.app.bill.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.myproject.app.bill.mapper.BillInfoMapper;
 import org.myproject.app.bill.pojo.*;
+import org.myproject.app.bill.service.BillInfoService;
 import org.myproject.app.bill.service.BillPojoConverter;
 import org.myproject.app.commons.pojo.IPage;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.List;
-
-import org.myproject.app.bill.mapper.BillInfoMapper;
-import org.myproject.app.bill.service.BillInfoService;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
@@ -105,4 +104,5 @@ public class BillInfoServiceImpl implements BillInfoService {
         return billInfoMapper.updateByPrimaryKeySelective(converter.convert(vo));
     }
 }
+
 

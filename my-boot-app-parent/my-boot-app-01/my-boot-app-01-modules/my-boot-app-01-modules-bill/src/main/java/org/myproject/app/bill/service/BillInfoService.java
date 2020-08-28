@@ -1,13 +1,13 @@
 package org.myproject.app.bill.service;
 
-import java.util.Collection;
-import java.util.List;
-
-import org.myproject.app.bill.pojo.BillInfoExample;
 import org.myproject.app.bill.pojo.BillInfo;
+import org.myproject.app.bill.pojo.BillInfoExample;
 import org.myproject.app.bill.pojo.BillInfoQuery;
 import org.myproject.app.bill.pojo.BillInfoVo;
 import org.myproject.app.commons.pojo.IPage;
+
+import java.util.Collection;
+import java.util.List;
 
 public interface BillInfoService {
 
@@ -44,4 +44,5 @@ public interface BillInfoService {
 
     int updateByPrimaryKeySelective(BillInfoVo vo);
 }
+
 

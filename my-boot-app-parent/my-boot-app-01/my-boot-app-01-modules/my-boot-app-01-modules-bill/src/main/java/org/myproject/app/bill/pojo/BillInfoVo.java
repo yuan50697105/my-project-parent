@@ -19,12 +19,6 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class BillInfoVo extends BaseEntity implements Serializable {
     /**
-     * id
-     */
-    @ApiModelProperty(value = "id")
-    private Long id;
-
-    /**
      * 订单号
      */
     @ApiModelProperty(value = "订单号")

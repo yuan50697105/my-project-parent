@@ -1,11 +1,12 @@
 package org.myproject.app.bill.mapper;
 
-import java.util.Collection;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.app.bill.pojo.BillInfo;
 import org.myproject.app.bill.pojo.BillInfoExample;
+
+import java.util.Collection;
+import java.util.List;
 
 @Mapper
 public interface BillInfoMapper {
