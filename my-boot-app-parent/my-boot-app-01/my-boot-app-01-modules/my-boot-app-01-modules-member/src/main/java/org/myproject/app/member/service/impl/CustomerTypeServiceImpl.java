@@ -1,4 +1,4 @@
-package org.myproject.app.customer.service.impl;
+package org.myproject.app.member.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

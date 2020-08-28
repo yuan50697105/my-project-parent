@@ -1,4 +1,4 @@
-package org.myproject.app.customer;
+package org.myproject.app.member;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2020-08-23 18:12
  */
 @SpringBootApplication
-public class CustomerApplication {
+public class MemberApplication {
     public static void main(String[] args) {
-        SpringApplication.run(org.myproject.app.member.MemberApplication.class, args);
+        SpringApplication.run(MemberApplication.class, args);
     }
 }

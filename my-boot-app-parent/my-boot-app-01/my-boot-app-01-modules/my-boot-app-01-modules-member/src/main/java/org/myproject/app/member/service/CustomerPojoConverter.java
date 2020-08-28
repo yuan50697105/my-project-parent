@@ -1,4 +1,4 @@
-package org.myproject.app.customer.service;
+package org.myproject.app.member.service;
 
 import org.mapstruct.Mapper;
 

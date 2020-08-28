@@ -6,10 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.myproject.app.commons.pojo.IPage;
-import org.myproject.app.customer.pojo.CustomerInfo;
-import org.myproject.app.customer.pojo.CustomerInfoQuery;
-import org.myproject.app.customer.pojo.CustomerInfoVo;
-import org.myproject.app.customer.service.CustomerInfoService;
+import org.myproject.app.member.service.CustomerInfoService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

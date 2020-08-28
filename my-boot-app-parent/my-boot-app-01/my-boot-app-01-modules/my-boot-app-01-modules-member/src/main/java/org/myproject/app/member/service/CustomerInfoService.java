@@ -1,4 +1,4 @@
-package org.myproject.app.customer.service;
+package org.myproject.app.member.service;
 
 import org.myproject.app.commons.pojo.IPage;
 

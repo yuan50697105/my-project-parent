@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.app.customer.mapper.CustomerTypeMapper">
-    <resultMap id="BaseResultMap" type="org.myproject.app.customer.pojo.CustomerType">
+<mapper namespace="org.myproject.app.member.mapper.CustomerTypeMapper">
+    <resultMap id="BaseResultMap" type="org.myproject.app.member.pojo.CustomerType">
         <!--@mbg.generated-->
         <!--@Table customer_type-->
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -75,7 +75,7 @@
         <!--@mbg.generated-->
         id, `name`, description, enabled
     </sql>
-    <select id="selectByExample" parameterType="org.myproject.app.customer.pojo.CustomerTypeExample"
+    <select id="selectByExample" parameterType="org.myproject.app.member.pojo.CustomerTypeExample"
             resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
@@ -103,14 +103,14 @@
         delete from customer_type
         where id = #{id,jdbcType=BIGINT}
     </delete>
-    <delete id="deleteByExample" parameterType="org.myproject.app.customer.pojo.CustomerTypeExample">
+    <delete id="deleteByExample" parameterType="org.myproject.app.member.pojo.CustomerTypeExample">
         <!--@mbg.generated-->
         delete from customer_type
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.customer.pojo.CustomerType"
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.member.pojo.CustomerType"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into customer_type (`name`, description, enabled
@@ -119,7 +119,7 @@
         )
     </insert>
     <insert id="insertSelective" keyColumn="id" keyProperty="id"
-            parameterType="org.myproject.app.customer.pojo.CustomerType" useGeneratedKeys="true">
+            parameterType="org.myproject.app.member.pojo.CustomerType" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into customer_type
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -145,7 +145,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="org.myproject.app.customer.pojo.CustomerTypeExample"
+    <select id="countByExample" parameterType="org.myproject.app.member.pojo.CustomerTypeExample"
             resultType="java.lang.Long">
         <!--@mbg.generated-->
         select count(*) from customer_type
@@ -185,7 +185,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.customer.pojo.CustomerType">
+    <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.member.pojo.CustomerType">
         <!--@mbg.generated-->
         update customer_type
         <set>
@@ -201,7 +201,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="org.myproject.app.customer.pojo.CustomerType">
+    <update id="updateByPrimaryKey" parameterType="org.myproject.app.member.pojo.CustomerType">
         <!--@mbg.generated-->
         update customer_type
         set `name` = #{name,jdbcType=VARCHAR},
@@ -263,7 +263,7 @@
         </foreach>
     </insert>
     <insert id="insertOrUpdate" keyColumn="id" keyProperty="id"
-            parameterType="org.myproject.app.customer.pojo.CustomerType" useGeneratedKeys="true">
+            parameterType="org.myproject.app.member.pojo.CustomerType" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into customer_type
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -294,7 +294,7 @@
         </trim>
     </insert>
     <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
-            parameterType="org.myproject.app.customer.pojo.CustomerType" useGeneratedKeys="true">
+            parameterType="org.myproject.app.member.pojo.CustomerType" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into customer_type
         <trim prefix="(" suffix=")" suffixOverrides=",">
