@@ -2,14 +2,11 @@ package org.myproject.app.bill.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
+import org.myproject.boot.mybatis.pojo.BaseEntity;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import org.beetl.core.lab.BaseEntity;
 
 /**
  * bill_info
@@ -21,12 +18,6 @@ import org.beetl.core.lab.BaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BillInfo extends BaseEntity implements Serializable {
-    /**
-     * id
-     */
-    @ApiModelProperty(value = "id")
-    private Long id;
-
     /**
      * 订单号
      */

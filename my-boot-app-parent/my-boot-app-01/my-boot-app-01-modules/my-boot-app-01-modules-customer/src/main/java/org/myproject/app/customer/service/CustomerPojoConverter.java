@@ -1,6 +1,10 @@
 package org.myproject.app.customer.service;
 
 import org.mapstruct.Mapper;
+import org.myproject.app.customer.pojo.CustomerInfo;
+import org.myproject.app.customer.pojo.CustomerInfoVo;
+import org.myproject.app.customer.pojo.CustomerType;
+import org.myproject.app.customer.pojo.CustomerTypeVo;
 
 /**
  * @program: my-project-parent

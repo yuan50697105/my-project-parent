@@ -41,5 +41,10 @@
             <artifactId>my-boot-app-01-modules-price</artifactId>
             <version>1.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-app-01-modules-bill</artifactId>
+            <version>1.1.0</version>
+        </dependency>
     </dependencies>
 </project>
