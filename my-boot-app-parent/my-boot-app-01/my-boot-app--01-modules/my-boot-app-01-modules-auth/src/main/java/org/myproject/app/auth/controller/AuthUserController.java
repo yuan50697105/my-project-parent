@@ -22,7 +22,7 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-08-23 14:47
  */
-@Api(value = "认证用户",produces = MediaType.APPLICATION_JSON_VALUE)
+@Api(value = "认证用户", produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
 @RequestMapping("auth/users")
 @AllArgsConstructor

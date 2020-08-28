@@ -1,6 +1,10 @@
 spring:
   profiles:
     active: all
-logging:
-  file:
-    name: log.log
+server:
+  port: 8000
+api:
+  boot:
+    swagger:
+      contact:
+        name: 袁恩志

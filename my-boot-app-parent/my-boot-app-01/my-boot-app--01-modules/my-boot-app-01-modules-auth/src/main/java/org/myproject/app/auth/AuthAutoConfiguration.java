@@ -2,6 +2,7 @@ package org.myproject.app.auth;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -11,7 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
  * @create: 2020-08-23 16:39
  */
 @SpringBootConfiguration
+@EnableCaching
 @ComponentScan
-@MapperScan(basePackages = "org.myproject.app.customer.mapper")
+@MapperScan(basePackages = "org.myproject.app.*.mapper")
 public class AuthAutoConfiguration {
 }

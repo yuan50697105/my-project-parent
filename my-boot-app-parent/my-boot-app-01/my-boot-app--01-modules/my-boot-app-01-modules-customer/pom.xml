@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>my-boot-app--01-modules</artifactId>
+        <artifactId>my-boot-app-01-modules</artifactId>
         <groupId>org.myproject</groupId>
         <version>1.0.0</version>
     </parent>
@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app--01-modules-db</artifactId>
+            <artifactId>my-boot-app-01-modules-db</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
@@ -32,8 +32,8 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
     </dependencies>
 

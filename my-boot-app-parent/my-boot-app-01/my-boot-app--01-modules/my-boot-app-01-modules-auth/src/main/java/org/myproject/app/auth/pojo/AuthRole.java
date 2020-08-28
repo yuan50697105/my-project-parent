@@ -13,28 +13,25 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-auth-pojo-AuthRole")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
+@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @With
 public class AuthRole extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
     /**
      * description
      */
     @ApiModelProperty(value = "description")
     private String description;
-
     /**
      * enabled
      */
     @ApiModelProperty(value = "enabled")
     private Integer enabled;
-
-    private static final long serialVersionUID = 1L;
 }

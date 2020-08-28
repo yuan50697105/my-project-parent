@@ -9,7 +9,7 @@ import org.myproject.app.commons.pojo.IPage;
 import java.util.Collection;
 import java.util.List;
 
-public interface AreaInfoService{
+public interface AreaInfoService {
 
 
     long countByExample(AreaInfoExample example);
@@ -30,9 +30,9 @@ public interface AreaInfoService{
 
     AreaInfo selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(AreaInfo record,AreaInfoExample example);
+    int updateByExampleSelective(AreaInfo record, AreaInfoExample example);
 
-    int updateByExample(AreaInfo record,AreaInfoExample example);
+    int updateByExample(AreaInfo record, AreaInfoExample example);
 
     int updateByPrimaryKeySelective(AreaInfo record);
 

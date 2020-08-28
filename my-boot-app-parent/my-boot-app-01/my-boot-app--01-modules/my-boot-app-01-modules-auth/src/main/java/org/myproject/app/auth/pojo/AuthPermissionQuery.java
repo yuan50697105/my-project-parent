@@ -16,9 +16,10 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-auth-pojo-AuthPermission")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
+@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
+@With
 public class AuthPermissionQuery extends BaseQuery implements Serializable, MybatisExample<AuthPermissionExample> {
     private static final long serialVersionUID = 1L;
     /**

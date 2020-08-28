@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>my-boot-app-01</artifactId>
@@ -9,15 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>my-boot-app--01-modules</artifactId>
+    <artifactId>my-boot-app-01-modules</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-app-01-modules-auth</module>
         <module>my-boot-app-01-modules-commons</module>
         <module>my-boot-app-01-modules-customer</module>
         <module>my-boot-app-01-modules-area</module>
-        <module>my-boot-app--01-modules-db</module>
+        <module>my-boot-app-01-modules-db</module>
+        <module>my-boot-app-01-modules-device</module>
+        <module>my-boot-app-01-modules-price</module>
     </modules>
-
-
 </project>

@@ -17,6 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootConfiguration
 @EnableSwagger2
 @EnableKnife4j
+//@EnableApiBootSwagger
 @Import(BeanValidatorPluginsConfiguration.class)
 @ComponentScan(basePackageClasses = MvcConfiguration.class)
 public class MvcConfiguration {

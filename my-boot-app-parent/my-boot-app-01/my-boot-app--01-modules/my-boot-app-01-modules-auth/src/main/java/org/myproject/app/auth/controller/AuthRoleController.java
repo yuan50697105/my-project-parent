@@ -21,7 +21,7 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-08-23 15:23
  */
-@Api(value = "认证角色",produces = MediaType.APPLICATION_JSON_VALUE)
+@Api(value = "认证角色", produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
 @RequestMapping("auth/roles")
 @AllArgsConstructor

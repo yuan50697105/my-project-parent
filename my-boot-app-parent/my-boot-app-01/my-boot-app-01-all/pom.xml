@@ -31,49 +31,15 @@
             <artifactId>my-boot-app-01-modules-area</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-app-01-modules-device</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.myproject</groupId>
+            <artifactId>my-boot-app-01-modules-price</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
-    <build>
-        <plugins>
-
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-shade-plugin</artifactId>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>shade</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <createSourcesJar>false</createSourcesJar>-->
-<!--                            <promoteTransitiveDependencies>true</promoteTransitiveDependencies>-->
-<!--                            &lt;!&ndash; 包含要合并的模块 &ndash;&gt;-->
-<!--                            <artifactSet>-->
-<!--                                <includes>-->
-<!--                                    <include>${project.groupId}:*:*</include>-->
-
-<!--                                </includes>-->
-<!--                            </artifactSet>-->
-<!--                            &lt;!&ndash; 包含号合并的资源文件 &ndash;&gt;-->
-<!--                            <transformers>-->
-<!--                                <transformer-->
-<!--                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">-->
-<!--                                    <resource>META-INF/*-->
-<!--                                    </resource>-->
-<!--                                </transformer>-->
-<!--                            </transformers>-->
-
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>org.myproject.app.Application</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

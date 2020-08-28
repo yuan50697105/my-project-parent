@@ -17,23 +17,20 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AreaInfoVo extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * code
      */
     @ApiModelProperty(value = "code")
     private String code;
-
     /**
      * pid
      */
     @ApiModelProperty(value = "pid")
     private String pid;
-
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
-    private static final long serialVersionUID = 1L;
 }

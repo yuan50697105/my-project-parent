@@ -14,6 +14,24 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.minbox.framework</groupId>
+            <artifactId>api-boot-starter-http-converter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -24,17 +42,8 @@
             <artifactId>knife4j-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.minbox.framework</groupId>
-            <artifactId>api-boot-starter-swagger</artifactId>
-        </dependency>
-        <dependency>
             <groupId>ai.ylyue</groupId>
             <artifactId>yue-library-base</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.myproject</groupId>
-            <artifactId>my-boot-commons-utils</artifactId>
-            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>wiki.xsx</groupId>

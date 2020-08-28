@@ -18,23 +18,20 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerTypeQuery extends BaseQuery implements Serializable, MybatisExample<CustomerTypeExample> {
+    private static final long serialVersionUID = 1L;
     /**
      * name
      */
     @ApiModelProperty(value = "name")
     private String name;
-
     /**
      * description
      */
     @ApiModelProperty(value = "description")
     private String description;
-
     /**
      * enabled
      */
     @ApiModelProperty(value = "enabled")
     private Integer enabled;
-
-    private static final long serialVersionUID = 1L;
 }
