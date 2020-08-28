@@ -6,7 +6,7 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
-import org.myproject.boot.mybatis.pojo.BaseEntity;
+import org.myproject.app.commons.pojo.BaseQuery;
 
 import java.io.Serializable;
 
@@ -19,7 +19,7 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BillInfoQuery extends BaseEntity implements Serializable, MybatisExample<BillInfoExample> {
+public class BillInfoQuery extends BaseQuery implements Serializable, MybatisExample<BillInfoExample> {
     private static final long serialVersionUID = 1L;
     /**
      * 订单号
