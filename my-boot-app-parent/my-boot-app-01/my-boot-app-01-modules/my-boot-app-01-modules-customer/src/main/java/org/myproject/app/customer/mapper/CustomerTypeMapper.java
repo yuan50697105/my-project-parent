@@ -2,6 +2,8 @@ package org.myproject.app.customer.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.myproject.app.customer.pojo.CustomerType;
+import org.myproject.app.customer.pojo.CustomerTypeExample;
 
 import java.util.Collection;
 import java.util.List;
