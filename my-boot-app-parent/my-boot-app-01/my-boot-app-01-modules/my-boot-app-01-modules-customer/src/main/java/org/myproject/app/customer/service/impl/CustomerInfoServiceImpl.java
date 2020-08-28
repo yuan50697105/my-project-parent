@@ -3,10 +3,9 @@ package org.myproject.app.customer.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.myproject.app.commons.pojo.IPage;
-import org.myproject.app.customer.mapper.CustomerInfoMapper;
-import org.myproject.app.customer.pojo.*;
-import org.myproject.app.customer.service.CustomerInfoService;
-import org.myproject.app.customer.service.CustomerPojoConverter;
+import org.myproject.app.member.mapper.CustomerInfoMapper;
+import org.myproject.app.member.service.CustomerInfoService;
+import org.myproject.app.member.service.CustomerPojoConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,12 +23,12 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     private CustomerPojoConverter converter;
 
     @Override
-    public long countByExample(CustomerInfoExample example) {
+    public long countByExample(org.myproject.app.member.pojo.CustomerInfoExample example) {
         return customerInfoMapper.countByExample(example);
     }
 
     @Override
-    public int deleteByExample(CustomerInfoExample example) {
+    public int deleteByExample(org.myproject.app.member.pojo.CustomerInfoExample example) {
         return customerInfoMapper.deleteByExample(example);
     }
 
@@ -39,73 +38,73 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     }
 
     @Override
-    public int insert(CustomerInfo record) {
+    public int insert(org.myproject.app.member.pojo.CustomerInfo record) {
         return customerInfoMapper.insert(record);
     }
 
     @Override
-    public int insertOrUpdate(CustomerInfo record) {
+    public int insertOrUpdate(org.myproject.app.member.pojo.CustomerInfo record) {
         return customerInfoMapper.insertOrUpdate(record);
     }
 
     @Override
-    public int insertOrUpdateSelective(CustomerInfo record) {
+    public int insertOrUpdateSelective(org.myproject.app.member.pojo.CustomerInfo record) {
         return customerInfoMapper.insertOrUpdateSelective(record);
     }
 
     @Override
-    public int insertSelective(CustomerInfo record) {
+    public int insertSelective(org.myproject.app.member.pojo.CustomerInfo record) {
         return customerInfoMapper.insertSelective(record);
     }
 
     @Override
-    public List<CustomerInfo> selectByExample(CustomerInfoExample example) {
+    public List<org.myproject.app.member.pojo.CustomerInfo> selectByExample(org.myproject.app.member.pojo.CustomerInfoExample example) {
         return customerInfoMapper.selectByExample(example);
     }
 
     @Override
-    public CustomerInfo selectByPrimaryKey(Long id) {
+    public org.myproject.app.member.pojo.CustomerInfo selectByPrimaryKey(Long id) {
         return customerInfoMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public int updateByExampleSelective(CustomerInfo record, CustomerInfoExample example) {
+    public int updateByExampleSelective(org.myproject.app.member.pojo.CustomerInfo record, org.myproject.app.member.pojo.CustomerInfoExample example) {
         return customerInfoMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(CustomerInfo record, CustomerInfoExample example) {
+    public int updateByExample(org.myproject.app.member.pojo.CustomerInfo record, CustomerInfoExample example) {
         return customerInfoMapper.updateByExample(record, example);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(CustomerInfo record) {
+    public int updateByPrimaryKeySelective(org.myproject.app.member.pojo.CustomerInfo record) {
         return customerInfoMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
-    public int updateByPrimaryKey(CustomerInfo record) {
+    public int updateByPrimaryKey(org.myproject.app.member.pojo.CustomerInfo record) {
         return customerInfoMapper.updateByPrimaryKey(record);
     }
 
     @Override
-    public int updateBatch(List<CustomerInfo> list) {
+    public int updateBatch(List<org.myproject.app.member.pojo.CustomerInfo> list) {
         return customerInfoMapper.updateBatch(list);
     }
 
     @Override
-    public int batchInsert(List<CustomerInfo> list) {
+    public int batchInsert(List<org.myproject.app.member.pojo.CustomerInfo> list) {
         return customerInfoMapper.batchInsert(list);
     }
 
     @Override
-    public IPage<CustomerInfo> selectPageByQuery(CustomerInfoQuery query) {
+    public IPage<org.myproject.app.member.pojo.CustomerInfo> selectPageByQuery(org.myproject.app.member.pojo.CustomerInfoQuery query) {
         PageHelper.startPage(query.getPage(), query.getLimit());
-        return new IPageInfo<>(new PageInfo<>(selectByExample(query.toExample())));
+        return new org.myproject.app.member.pojo.IPageInfo<>(new PageInfo<>(selectByExample(query.toExample())));
     }
 
     @Override
-    public int updateByPrimaryKeySelective(CustomerInfoVo customerInfoVo) {
+    public int updateByPrimaryKeySelective(org.myproject.app.member.pojo.CustomerInfoVo customerInfoVo) {
         return updateByPrimaryKeySelective(converter.convert(customerInfoVo));
     }
 
@@ -115,13 +114,13 @@ public class CustomerInfoServiceImpl implements CustomerInfoService {
     }
 
     @Override
-    public int insert(CustomerInfoVo customerInfoVo) {
+    public int insert(org.myproject.app.member.pojo.CustomerInfoVo customerInfoVo) {
         return insert(converter.convert(customerInfoVo));
     }
 
 
     @Override
-    public List<CustomerInfo> selectAllByIdIn(Collection<Long> idCollection) {
+    public List<org.myproject.app.member.pojo.CustomerInfo> selectAllByIdIn(Collection<Long> idCollection) {
         return customerInfoMapper.selectAllByIdIn(idCollection);
     }
 }
