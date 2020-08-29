@@ -17,7 +17,6 @@ import java.math.BigDecimal;
 @ApiModel(value = "org-myproject-app-bill-pojo-BillInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
-
 @AllArgsConstructor
 @NoArgsConstructor
 public class BillInfo extends BaseEntity implements Serializable {

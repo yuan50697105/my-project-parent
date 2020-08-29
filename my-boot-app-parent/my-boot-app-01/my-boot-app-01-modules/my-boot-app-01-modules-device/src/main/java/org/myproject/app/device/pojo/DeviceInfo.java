@@ -53,31 +53,4 @@ public class DeviceInfo extends BaseEntity implements Serializable {
     @ApiModelProperty(value = "停用时间")
     private Date endTime;
 
-    public org.myproject.app.device.pojo.DeviceInfo withCode(String code) {
-        return this.code == code ? this : new org.myproject.app.device.pojo.DeviceInfo(code, this.name, this.typeId, this.status, this.startTime, this.endTime);
-    }
-
-    public org.myproject.app.device.pojo.DeviceInfo withName(String name) {
-        return this.name == name ? this : new org.myproject.app.device.pojo.DeviceInfo(this.code, name, this.typeId, this.status, this.startTime, this.endTime);
-    }
-
-    public org.myproject.app.device.pojo.DeviceInfo withTypeId(Long typeId) {
-        return this.typeId == typeId ? this : new org.myproject.app.device.pojo.DeviceInfo(this.code, this.name, typeId, this.status, this.startTime, this.endTime);
-    }
-
-    public org.myproject.app.device.pojo.DeviceInfo withStatus(String status) {
-        return this.status == status ? this : new org.myproject.app.device.pojo.DeviceInfo(this.code, this.name, this.typeId, status, this.startTime, this.endTime);
-    }
-
-    public org.myproject.app.device.pojo.DeviceInfo withStartTime(Date startTime) {
-        return this.startTime == startTime ? this : new org.myproject.app.device.pojo.DeviceInfo(this.code, this.name, this.typeId, this.status, startTime, this.endTime);
-    }
-
-    public org.myproject.app.device.pojo.DeviceInfo withEndTime(Date endTime) {
-        return this.endTime == endTime ? this : new org.myproject.app.device.pojo.DeviceInfo(this.code, this.name, this.typeId, this.status, this.startTime, endTime);
-    }
-
-    public DeviceInfoBuilder toBuilder() {
-        return new DeviceInfoBuilder().code(this.code).name(this.name).typeId(this.typeId).status(this.status).startTime(this.startTime).endTime(this.endTime);
-    }
 }
