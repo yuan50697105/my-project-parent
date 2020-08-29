@@ -2,7 +2,10 @@ package org.myproject.app.customer.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
@@ -13,7 +16,7 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-customer-pojo-CustomerType")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerTypeVo extends BaseEntity implements Serializable {

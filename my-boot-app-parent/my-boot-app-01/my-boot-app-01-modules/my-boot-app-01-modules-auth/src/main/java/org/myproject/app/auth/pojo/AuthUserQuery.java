@@ -16,7 +16,6 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-auth-pojo-AuthUser")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @With

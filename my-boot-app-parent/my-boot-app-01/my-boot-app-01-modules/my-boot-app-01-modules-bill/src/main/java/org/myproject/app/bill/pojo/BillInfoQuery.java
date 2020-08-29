@@ -5,7 +5,10 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import com.gitee.denger.mybatis.example.ext.annotation.AndLike;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.myproject.app.commons.pojo.BaseQuery;
 
 import java.io.Serializable;
@@ -16,7 +19,7 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-bill-pojo-BillInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class BillInfoQuery extends BaseQuery implements Serializable, MybatisExample<BillInfoExample> {

@@ -67,6 +67,16 @@ create table if not exists auth_user_role
 )
     comment '用户角色';
 
+create table if not exists bill_device_info
+(
+    id          bigint auto_increment
+        primary key,
+    bill_id     bigint      not null comment '订单ID',
+    device_id   bigint      null comment '设备ID',
+    device_code varchar(50) null comment '设备编号'
+)
+    comment '订单设备信息';
+
 create table if not exists bill_info
 (
     id               bigint(15) auto_increment comment 'id'
@@ -94,6 +104,14 @@ create table if not exists bill_item
     total_price decimal(13, 4) default -1.0000 not null comment 'totalPrice'
 )
     comment 'bill_item';
+
+create table if not exists customer_address
+(
+    id          bigint auto_increment
+        primary key,
+    customer_id bigint       null,
+    address     varchar(200) null
+);
 
 create table if not exists customer_info
 (

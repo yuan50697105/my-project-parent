@@ -14,9 +14,9 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-customer-pojo-CustomerType")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@With
 public class CustomerTypeQuery extends BaseQuery implements Serializable, MybatisExample<CustomerTypeExample> {
     private static final long serialVersionUID = 1L;
     /**

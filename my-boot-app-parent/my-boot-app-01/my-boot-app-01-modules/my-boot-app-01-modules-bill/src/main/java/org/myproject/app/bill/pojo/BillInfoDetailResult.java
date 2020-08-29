@@ -15,4 +15,5 @@ import java.util.List;
 @Data
 public class BillInfoDetailResult extends BillInfo {
     private List<BillItem> items;
+    private BillDeviceInfo device;
 }

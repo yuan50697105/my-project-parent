@@ -103,6 +103,11 @@ public class BillInfoServiceImpl implements BillInfoService {
     public int updateByPrimaryKeySelective(BillInfoVo vo) {
         return billInfoMapper.updateByPrimaryKeySelective(converter.convert(vo));
     }
+
+    @Override
+    public BillInfoDetailResult selectDetailById(Long id) {
+        return billInfoMapper.selectDetailById(id);
+    }
 }
 
 

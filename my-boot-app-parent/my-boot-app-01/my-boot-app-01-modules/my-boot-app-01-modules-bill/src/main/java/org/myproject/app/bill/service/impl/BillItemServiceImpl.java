@@ -3,6 +3,7 @@ package org.myproject.app.bill.service.impl;
 import org.myproject.app.bill.mapper.BillItemMapper;
 import org.myproject.app.bill.pojo.BillItem;
 import org.myproject.app.bill.pojo.BillItemExample;
+import org.myproject.app.bill.service.BillItemService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
