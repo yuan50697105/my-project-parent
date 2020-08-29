@@ -2,7 +2,10 @@ package org.myproject.app.auth.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
@@ -13,10 +16,8 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-auth-pojo-AuthRole")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@With
 public class AuthRole extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
