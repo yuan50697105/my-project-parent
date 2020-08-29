@@ -301,5 +301,7 @@
                extends="BaseResultMap">
         <collection property="items" ofType="org.myproject.app.bill.pojo.BillItem" column="id"
                     select="org.myproject.app.bill.mapper.BillItemMapper.selectAllByBillId"/>
+        <association property="device" javaType="org.myproject.app.bill.pojo.BillDeviceInfo" column="id"
+                     select="org.myproject.app.bill.mapper.BillDeviceInfoMapper.selectOneByBillId"/>
     </resultMap>
 </mapper>

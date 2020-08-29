@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.myproject.app.bill.pojo.*;
 import org.myproject.app.bill.service.BillInfoService;
+import org.myproject.app.bill.service.impl.BillDeviceInfoService;
 import org.myproject.app.bill.service.impl.BillItemService;
 import org.myproject.app.commons.pojo.IPage;
 import org.springframework.http.MediaType;
@@ -34,8 +35,10 @@ public class BillInfoController {
     public static final String API_REMOVE = "删除订单";
     private static final String API_ID_GET_DETAIL = "ID获取订单详情";
     private static final String API_ID_GET_ITEMS = "ID获取订单项目";
+    private static final String API_ID_GET_DEVICE = "ID获取订单设备";
     private final BillInfoService billInfoService;
     private final BillItemService billItemService;
+    private final BillDeviceInfoService billDeviceInfoService;
 
     @GetMapping
     @ApiOperation(API_QUERY)
@@ -64,9 +67,17 @@ public class BillInfoController {
     @GetMapping("/{billId}/items")
     @ApiOperation(API_ID_GET_ITEMS)
     @Log(API_ID_GET_ITEMS)
-    public Result<List<BillItem>> listItemsById(Long billId) {
+    public Result<List<BillItem>> listItemsById(@PathVariable("billId") Long billId) {
         List<BillItem> items = billItemService.selectAllByBillId(billId);
         return ResultInfo.success(items);
+    }
+
+    @GetMapping("/{billId}/device")
+    @ApiOperation(API_ID_GET_DEVICE)
+    @Log(API_ID_GET_DEVICE)
+    public Result<BillDeviceInfo> getDeviceInfo(@PathVariable("billId") Long billId) {
+        BillDeviceInfo deviceInfo = billDeviceInfoService.selectOneByBillId(billId);
+        return ResultInfo.success(deviceInfo);
     }
 
     @PostMapping
@@ -92,4 +103,5 @@ public class BillInfoController {
         billInfoService.deleteByIdIn(Arrays.asList(id));
         return ResultInfo.success();
     }
+
 }

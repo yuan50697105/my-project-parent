@@ -67,6 +67,15 @@ create table if not exists auth_user_role
 )
     comment '用户角色';
 
+create table if not exists bill_device_info
+(
+    id          bigint      not null primary key auto_increment,
+    bill_id     bigint      not null comment '订单ID',
+    device_id   bigint      null comment '设备ID',
+    device_code varchar(50) null comment '设备编号'
+)
+    comment '订单设备信息';
+
 create table if not exists bill_info
 (
     id               bigint(15) auto_increment comment 'id'
