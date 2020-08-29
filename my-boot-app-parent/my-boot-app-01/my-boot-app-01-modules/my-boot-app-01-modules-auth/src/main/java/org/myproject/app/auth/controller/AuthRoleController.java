@@ -24,17 +24,17 @@ import java.util.List;
  * @author: yuane
  * @create: 2020-08-23 15:23
  */
-@Api(value = "认证角色", produces = MediaType.APPLICATION_JSON_VALUE)
+@Api(value = "认证用户", produces = MediaType.APPLICATION_JSON_VALUE)
 @RestController
 @RequestMapping("auth/roles")
 @AllArgsConstructor
 public class AuthRoleController {
-    public static final String API_QUERY = "查询角色";
-    public static final String API_ID_GET = "ID获取角色";
-    public static final String API_INSERT = "增加角色";
-    public static final String API_UPDATE = "更新角色";
-    public static final String API_REMOVE = "删除角色";
-    private static final String API_ID_GET_DETAIL = "ID获取角色详情";
+    public static final String API_QUERY = "查询用户";
+    public static final String API_ID_GET = "ID获取用户";
+    public static final String API_INSERT = "增加用户";
+    public static final String API_UPDATE = "更新用户";
+    public static final String API_REMOVE = "删除用户";
+    private static final String API_ID_GET_DETAIL = "ID获取用户详情";
     private final AuthRoleService roleService;
 
     @GetMapping
