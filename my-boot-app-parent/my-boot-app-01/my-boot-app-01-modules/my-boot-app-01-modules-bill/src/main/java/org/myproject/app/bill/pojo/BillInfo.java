@@ -2,7 +2,10 @@ package org.myproject.app.bill.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
@@ -14,7 +17,7 @@ import java.math.BigDecimal;
 @ApiModel(value = "org-myproject-app-bill-pojo-BillInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class BillInfo extends BaseEntity implements Serializable {

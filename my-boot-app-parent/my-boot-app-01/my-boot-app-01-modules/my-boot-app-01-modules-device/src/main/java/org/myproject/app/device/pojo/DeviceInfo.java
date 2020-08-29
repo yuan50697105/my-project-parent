@@ -2,7 +2,10 @@ package org.myproject.app.device.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
@@ -14,7 +17,7 @@ import java.util.Date;
 @ApiModel(value = "org-myproject-app-device-pojo-DeviceInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class DeviceInfo extends BaseEntity implements Serializable {

@@ -14,7 +14,7 @@ import java.util.Date;
 @ApiModel(value = "org-myproject-app-device-pojo-DeviceInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder(toBuilder = true)
+(toBuilder=true)
 @AllArgsConstructor
 @NoArgsConstructor
 @With

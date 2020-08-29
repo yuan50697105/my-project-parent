@@ -16,7 +16,7 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-device-pojo-DeviceInfo")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
 @With
