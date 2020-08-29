@@ -28,48 +28,48 @@ import java.util.List;
 @RequestMapping("auth/roles")
 @AllArgsConstructor
 public class AuthRoleController {
-    public static final String QUERY_ROLE = "查询角色";
-    public static final String ID_GET_ROLE = "ID获取角色";
-    public static final String ADD_ROLE = "增加角色";
-    public static final String UPDATE_ROLE = "更新角色";
-    public static final String DELETE_ROLE = "删除角色";
+    public static final String API_QUERY = "查询角色";
+    public static final String API_ID_GET = "ID获取角色";
+    public static final String API_INSERT = "增加角色";
+    public static final String API_UPDATE = "更新角色";
+    public static final String API_REMOVE = "删除角色";
     private final AuthRoleService roleService;
 
     @GetMapping
-    @ApiOperation(QUERY_ROLE)
-    @Log(QUERY_ROLE)
+    @ApiOperation(API_QUERY)
+    @Log(API_QUERY)
     public Result<List<AuthRole>> list(AuthRoleQuery query) {
         IPage<AuthRole> pageInfo = roleService.selectPageByQuery(query);
         return ResultInfo.success(pageInfo.getTotal(), pageInfo.getList());
     }
 
     @GetMapping("/{id}")
-    @ApiOperation(ID_GET_ROLE)
-    @Log(ID_GET_ROLE)
+    @ApiOperation(API_ID_GET)
+    @Log(API_ID_GET)
     public Result<AuthRole> get(@PathVariable Long id) {
         AuthRole authRole = roleService.selectByPrimaryKey(id);
         return ResultInfo.success(authRole);
     }
 
     @PostMapping
-    @ApiOperation(ADD_ROLE)
-    @Log(ADD_ROLE)
+    @ApiOperation(API_INSERT)
+    @Log(API_INSERT)
     public Result<?> insert(@RequestBody AuthRoleVo authRoleVo) {
         roleService.insert(authRoleVo);
         return ResultInfo.success();
     }
 
     @PutMapping
-    @ApiOperation(UPDATE_ROLE)
-    @Log(UPDATE_ROLE)
+    @ApiOperation(API_UPDATE)
+    @Log(API_UPDATE)
     public Result<?> update(@RequestBody AuthRoleVo authRoleVo) {
         roleService.updateByPrimaryKeySelective(authRoleVo);
         return ResultInfo.success();
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation(DELETE_ROLE)
-    @Log(DELETE_ROLE)
+    @ApiOperation(API_REMOVE)
+    @Log(API_REMOVE)
     public Result<?> delete(@PathVariable Long[] id) {
         roleService.deleteByIdIn(Arrays.asList(id));
         return ResultInfo.success();

@@ -29,32 +29,32 @@ import java.util.List;
 @AllArgsConstructor
 @Slf4j
 public class AuthUserController {
-    public static final String QUERY_ROLE = "查询角色";
-    public static final String ID_GET = "ID获取用户";
-    public static final String INCREASE_USER = "增加用户";
-    public static final String UPDATE_USER = "更新用户";
-    public static final String DELETE_USERS = "删除用户";
+    public static final String API_QUERY = "查询角色";
+    public static final String API_ID_GET = "ID获取用户";
+    public static final String API_INSERT = "增加用户";
+    public static final String API_UPDATE = "更新用户";
+    public static final String API_REMOVE = "删除用户";
     private final AuthUserService userService;
 
     @GetMapping
-    @ApiOperation(QUERY_ROLE)
-    @Log(QUERY_ROLE)
+    @ApiOperation(API_QUERY)
+    @Log(API_QUERY)
     public Result<List<AuthUser>> list(AuthUserQuery query) {
         IPage<AuthUser> iPage = userService.selectPageByQuery(query);
         return ResultInfo.success(iPage.getTotal(), iPage.getList());
     }
 
     @PostMapping
-    @ApiOperation(INCREASE_USER)
-    @Log(INCREASE_USER)
+    @ApiOperation(API_INSERT)
+    @Log(API_INSERT)
     public Result<?> insert(@RequestBody AuthUserVo authUserVo) {
         userService.insert(authUserVo);
         return ResultInfo.success();
     }
 
     @GetMapping("/{id}")
-    @ApiOperation(ID_GET)
-    @Log(ID_GET)
+    @ApiOperation(API_ID_GET)
+    @Log(API_ID_GET)
     public Result<AuthUser>
     get(@PathVariable Long id) {
         AuthUser authUser = userService.selectByPrimaryKey(id);
@@ -62,16 +62,16 @@ public class AuthUserController {
     }
 
     @PutMapping
-    @ApiOperation(UPDATE_USER)
-    @Log(UPDATE_USER)
+    @ApiOperation(API_UPDATE)
+    @Log(API_UPDATE)
     public Result<?> update(@RequestBody AuthUserVo authUserVo) {
         userService.updateByPrimaryKeySelective(authUserVo);
         return ResultInfo.success();
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation(DELETE_USERS)
-    @Log(DELETE_USERS)
+    @ApiOperation(API_REMOVE)
+    @Log(API_REMOVE)
     public Result<?> delete(@PathVariable Long[] id) {
         userService.deleteByIdIn(Arrays.asList(id));
         return ResultInfo.success();

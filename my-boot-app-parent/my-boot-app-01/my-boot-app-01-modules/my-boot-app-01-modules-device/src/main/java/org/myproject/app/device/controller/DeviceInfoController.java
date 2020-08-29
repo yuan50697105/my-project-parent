@@ -9,8 +9,10 @@ import org.myproject.app.commons.pojo.IPage;
 import org.myproject.app.device.pojo.DeviceInfo;
 import org.myproject.app.device.pojo.DeviceInfoQuery;
 import org.myproject.app.device.pojo.DeviceInfoVo;
+import org.myproject.app.device.service.DeviceInfoService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import wiki.xsx.core.log.Log;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,38 +28,48 @@ import java.util.List;
 @RequestMapping("device/infos")
 @AllArgsConstructor
 public class DeviceInfoController {
-    private final org.myproject.app.device.service.DeviceInfoService deviceInfoService;
+    public static final String API_QUERY = "查询设备信息";
+    public static final String API_ID_GET = "ID获取设备信息";
+    public static final String API_INSERT = "增加设备信息";
+    public static final String API_UPDATE = "更新设备信息";
+    public static final String API_REMOVE = "删除设备信息";
+    private final DeviceInfoService deviceInfoService;
 
     @GetMapping
-    @ApiOperation("查询")
+    @ApiOperation(API_QUERY)
+    @Log(API_QUERY)
     public Result<List<DeviceInfo>> list(DeviceInfoQuery query) {
         IPage<DeviceInfo> pageInfo = deviceInfoService.selectPageByQuery(query);
         return ResultInfo.success(pageInfo.getTotal(), pageInfo.getList());
     }
 
     @GetMapping("/{id}")
-    @ApiOperation("ID获取")
+    @ApiOperation(API_ID_GET)
+    @Log(API_ID_GET)
     public Result<DeviceInfo> get(@PathVariable Long id) {
         DeviceInfo DeviceInfo = deviceInfoService.selectByPrimaryKey(id);
         return ResultInfo.success(DeviceInfo);
     }
 
     @PostMapping
-    @ApiOperation("增加")
+    @ApiOperation(API_INSERT)
+    @Log(API_INSERT)
     public Result<?> insert(@RequestBody DeviceInfoVo DeviceInfoVo) {
         deviceInfoService.insert(DeviceInfoVo);
         return ResultInfo.success();
     }
 
     @PutMapping
-    @ApiOperation("更新")
+    @ApiOperation(API_UPDATE)
+    @Log(API_UPDATE)
     public Result<?> update(@RequestBody DeviceInfoVo DeviceInfoVo) {
         deviceInfoService.updateByPrimaryKeySelective(DeviceInfoVo);
         return ResultInfo.success();
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation("删除")
+    @ApiOperation(API_REMOVE)
+    @Log(API_REMOVE)
     public Result<?> delete(@PathVariable Long[] id) {
         deviceInfoService.deleteByIdIn(Arrays.asList(id));
         return ResultInfo.success();

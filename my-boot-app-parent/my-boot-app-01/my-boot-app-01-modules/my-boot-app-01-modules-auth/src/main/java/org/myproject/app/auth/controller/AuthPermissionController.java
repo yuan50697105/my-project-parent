@@ -28,48 +28,48 @@ import java.util.List;
 @RequestMapping("auth/permission")
 @AllArgsConstructor
 public class AuthPermissionController {
-    public static final String QUERY_PERMISSIONS = "查询权限";
-    public static final String ID_GET_PERMISSION = "ID获取权限";
-    public static final String INCREASE_PERMISSIONS = "增加权限";
-    public static final String UPDATE_PERMISSIONS = "更新权限";
-    public static final String REMOVE_PERMISSION = "删除权限";
+    public static final String API_QUERY = "查询权限";
+    public static final String API_ID_GET = "ID获取权限";
+    public static final String API_INSERT = "增加权限";
+    public static final String API_UPDATE = "更新权限";
+    public static final String API_REMOVE = "删除权限";
     private final AuthPermissionService permissionService;
 
     @GetMapping
-    @ApiOperation(QUERY_PERMISSIONS)
-    @Log(QUERY_PERMISSIONS)
+    @ApiOperation(API_QUERY)
+    @Log(API_QUERY)
     public Result<List<AuthPermission>> list(AuthPermissionQuery query) {
         IPage<AuthPermission> pageInfo = permissionService.selectPageByQuery(query);
         return ResultInfo.success(pageInfo.getTotal(), pageInfo.getList());
     }
 
     @GetMapping("/{id}")
-    @ApiOperation(ID_GET_PERMISSION)
-    @Log(ID_GET_PERMISSION)
+    @ApiOperation(API_ID_GET)
+    @Log(API_ID_GET)
     public Result<AuthPermission> get(@PathVariable Long id) {
         AuthPermission authPermission = permissionService.selectByPrimaryKey(id);
         return ResultInfo.success(authPermission);
     }
 
     @PostMapping
-    @ApiOperation(INCREASE_PERMISSIONS)
-    @Log(INCREASE_PERMISSIONS)
+    @ApiOperation(API_INSERT)
+    @Log(API_INSERT)
     public Result<?> insert(@RequestBody AuthPermissionVo authPermissionVo) {
         permissionService.insert(authPermissionVo);
         return ResultInfo.success();
     }
 
     @PutMapping
-    @ApiOperation(UPDATE_PERMISSIONS)
-    @Log(UPDATE_PERMISSIONS)
+    @ApiOperation(API_UPDATE)
+    @Log(API_UPDATE)
     public Result<?> update(@RequestBody AuthPermissionVo authPermissionVo) {
         permissionService.updateByPrimaryKeySelective(authPermissionVo);
         return ResultInfo.success();
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation(REMOVE_PERMISSION)
-    @Log(REMOVE_PERMISSION)
+    @ApiOperation(API_REMOVE)
+    @Log(API_REMOVE)
     public Result<?> delete(@PathVariable Long[] id) {
         permissionService.deleteByIdIn(Arrays.asList(id));
         return ResultInfo.success();
