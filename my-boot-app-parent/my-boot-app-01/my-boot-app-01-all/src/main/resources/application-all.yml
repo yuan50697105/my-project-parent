@@ -1,3 +1,6 @@
 spring:
   profiles:
     include: commons,db,auth,customer,area,device
+logging:
+  level:
+    org.myproject.app: debug

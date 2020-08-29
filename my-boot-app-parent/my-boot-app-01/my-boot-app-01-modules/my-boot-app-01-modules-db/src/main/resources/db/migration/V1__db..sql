@@ -38,18 +38,44 @@ create table if not exists auth_role
 )
     comment 'auth_role';
 
+create table if not exists auth_role_permission
+(
+    role_id       bigint not null,
+    permission_id bigint not null,
+    primary key (role_id, permission_id)
+)
+    comment '角色权限';
+
 create table if not exists auth_user
 (
     id              bigint(15) auto_increment comment 'id'
         primary key,
     username        varchar(50) default ''                    not null comment 'username',
     password        varchar(50) default ''                    not null comment 'password',
-    name            varchar(50) default ''                    not null comment 'name',
+    name            varchar(50) default ''                    null comment 'name',
     enabled         int         default -1                    not null comment 'enabled',
-    last_login_time datetime    default '1000-01-01 00:00:00' not null comment 'lastLoginTime',
-    create_time     datetime    default '1000-01-01 00:00:00' not null comment 'createTime'
+    last_login_time datetime    default '1000-01-01 00:00:00' null comment 'lastLoginTime',
+    create_time     datetime    default '1000-01-01 00:00:00' null comment 'createTime'
 )
     comment 'auth_user';
+
+create table if not exists auth_user_role
+(
+    user_id bigint not null comment '用户ID',
+    role_id bigint not null comment '角色ID',
+    primary key (user_id, role_id)
+)
+    comment '用户角色';
+
+create table if not exists bill_device_info
+(
+    id          bigint auto_increment
+        primary key,
+    bill_id     bigint      not null comment '订单ID',
+    device_id   bigint      null comment '设备ID',
+    device_code varchar(50) null comment '设备编号'
+)
+    comment '订单设备信息';
 
 create table if not exists bill_info
 (
@@ -64,6 +90,28 @@ create table if not exists bill_info
     total_price      decimal(13, 4) default -1.0000 not null comment '总价'
 )
     comment 'bill_info';
+
+create table if not exists bill_item
+(
+    id          bigint(15) auto_increment comment 'id'
+        primary key,
+    bill_id     bigint(15)     default -1      not null comment 'billId',
+    content     varchar(50)    default ''      not null comment 'content',
+    name        varchar(50)    default ''      not null comment 'name',
+    quantity    int            default -1      not null comment 'quantity',
+    unit        int            default -1      not null comment 'unit',
+    unit_price  decimal(13, 4) default -1.0000 not null comment 'unitPrice',
+    total_price decimal(13, 4) default -1.0000 not null comment 'totalPrice'
+)
+    comment 'bill_item';
+
+create table if not exists customer_address
+(
+    id          bigint auto_increment
+        primary key,
+    customer_id bigint       null,
+    address     varchar(200) null
+);
 
 create table if not exists customer_info
 (

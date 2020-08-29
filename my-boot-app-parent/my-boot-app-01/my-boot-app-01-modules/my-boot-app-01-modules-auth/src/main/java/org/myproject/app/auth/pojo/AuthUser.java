@@ -2,7 +2,10 @@ package org.myproject.app.auth.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.myproject.boot.mybatis.pojo.BaseEntity;
 
 import java.io.Serializable;
@@ -14,10 +17,8 @@ import java.util.Date;
 @ApiModel(value = "org-myproject-app-auth-pojo-AuthUser")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@With
 public class AuthUser extends BaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
@@ -40,10 +41,15 @@ public class AuthUser extends BaseEntity implements Serializable {
      */
     @ApiModelProperty(value = "enabled")
     private Integer enabled;
-    @ApiModelProperty(value = "")
+    /**
+     * lastLoginTime
+     */
+    @ApiModelProperty(value = "lastLoginTime")
     private Date lastLoginTime;
-    @ApiModelProperty(value = "")
+    /**
+     * createTime
+     */
+    @ApiModelProperty(value = "createTime")
     private Date createTime;
-
 
 }

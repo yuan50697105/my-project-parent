@@ -1,9 +1,6 @@
 package org.myproject.app.auth.service;
 
-import org.myproject.app.auth.pojo.AuthUser;
-import org.myproject.app.auth.pojo.AuthUserExample;
-import org.myproject.app.auth.pojo.AuthUserQuery;
-import org.myproject.app.auth.pojo.AuthUserVo;
+import org.myproject.app.auth.pojo.*;
 import org.myproject.app.commons.pojo.IPage;
 
 import java.util.Collection;
@@ -65,7 +62,11 @@ public interface AuthUserService {
     IPage<AuthUser> selectPageByQuery(AuthUserQuery query);
 
     int deleteByIdIn(Collection<Long> idCollection);
+
+    AuthUserDetailResult selectDetailById(Long id);
 }
+
+
 
 
 

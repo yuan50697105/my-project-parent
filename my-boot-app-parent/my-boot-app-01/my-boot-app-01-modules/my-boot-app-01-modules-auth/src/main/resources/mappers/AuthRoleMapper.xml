@@ -99,12 +99,14 @@
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         <!--@mbg.generated-->
-        delete from auth_role
+        delete
+        from auth_role
         where id = #{id,jdbcType=BIGINT}
     </delete>
     <delete id="deleteByExample" parameterType="org.myproject.app.auth.pojo.AuthRoleExample">
         <!--@mbg.generated-->
-        delete from auth_role
+        delete
+        from auth_role
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
@@ -112,10 +114,8 @@
     <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthRole"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into auth_role (`name`, description, enabled
-        )
-        values (#{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{enabled,jdbcType=INTEGER}
-        )
+        insert into auth_role (`name`, description, enabled)
+        values (#{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{enabled,jdbcType=INTEGER})
     </insert>
     <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthRole"
             useGeneratedKeys="true">
@@ -146,7 +146,8 @@
     </insert>
     <select id="countByExample" parameterType="org.myproject.app.auth.pojo.AuthRoleExample" resultType="java.lang.Long">
         <!--@mbg.generated-->
-        select count(*) from auth_role
+        select count(*)
+        from auth_role
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
@@ -223,11 +224,12 @@
         select
         <include refid="Base_Column_List"/>
         from auth_role
-        where `name`=#{name,jdbcType=VARCHAR}
+        where `name` = #{name,jdbcType=VARCHAR}
     </select>
     <delete id="deleteByIdIn">
         <!--@mbg.generated-->
-        delete from auth_role
+        delete
+        from auth_role
         where id in
         <foreach item="item" index="index" collection="idCollection"
                  open="(" separator="," close=")">
@@ -238,7 +240,7 @@
         <!--@mbg.generated-->
         update auth_role
         set enabled=#{updatedEnabled,jdbcType=INTEGER}
-        where id=#{id,jdbcType=BIGINT}
+        where id = #{id,jdbcType=BIGINT}
     </update>
     <update id="updateEnabledByIdIn">
         <!--@mbg.generated-->
@@ -281,8 +283,7 @@
         (`name`, description, enabled)
         values
         <foreach collection="list" item="item" separator=",">
-            (#{item.name,jdbcType=VARCHAR}, #{item.description,jdbcType=VARCHAR}, #{item.enabled,jdbcType=INTEGER}
-            )
+            (#{item.name,jdbcType=VARCHAR}, #{item.description,jdbcType=VARCHAR}, #{item.enabled,jdbcType=INTEGER})
         </foreach>
     </insert>
     <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthRole"
@@ -365,4 +366,16 @@
             </if>
         </trim>
     </insert>
+
+    <select id="selectDetailById" resultMap="SelectDetailByIdResult">
+        select
+        <include refid="Base_Column_List"/>
+        from auth_role
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <resultMap id="SelectDetailByIdResult" type="org.myproject.app.auth.pojo.AuthRoleDetailResult"
+               extends="BaseResultMap">
+        <collection property="permissions" ofType="org.myproject.app.auth.pojo.PermissionByRoleResult" column="id"
+                    select="org.myproject.app.auth.mapper.AuthRolePermissionMapper.selectAllPermissionByRoleId"/>
+    </resultMap>
 </mapper>

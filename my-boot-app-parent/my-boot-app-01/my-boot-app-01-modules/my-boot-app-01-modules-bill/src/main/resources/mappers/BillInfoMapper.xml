@@ -1,285 +1,308 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.myproject.app.bill.mapper.BillInfoMapper">
-  <resultMap id="BaseResultMap" type="org.myproject.app.bill.pojo.BillInfo">
-    <!--@mbg.generated-->
-    <!--@Table bill_info-->
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="bill_no" jdbcType="VARCHAR" property="billNo" />
-    <result column="transaction_no" jdbcType="VARCHAR" property="transactionNo" />
-    <result column="trading_platform" jdbcType="VARCHAR" property="tradingPlatform" />
-    <result column="customer_id" jdbcType="BIGINT" property="customerId" />
-    <result column="customer_no" jdbcType="VARCHAR" property="customerNo" />
-    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
-    <result column="total_price" jdbcType="DECIMAL" property="totalPrice" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <!--@mbg.generated-->
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+    <resultMap id="BaseResultMap" type="org.myproject.app.bill.pojo.BillInfo">
+        <!--@mbg.generated-->
+        <!--@Table bill_info-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="bill_no" jdbcType="VARCHAR" property="billNo"/>
+        <result column="transaction_no" jdbcType="VARCHAR" property="transactionNo"/>
+        <result column="trading_platform" jdbcType="VARCHAR" property="tradingPlatform"/>
+        <result column="customer_id" jdbcType="BIGINT" property="customerId"/>
+        <result column="customer_no" jdbcType="VARCHAR" property="customerNo"/>
+        <result column="customer_name" jdbcType="VARCHAR" property="customerName"/>
+        <result column="total_price" jdbcType="DECIMAL" property="totalPrice"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <!--@mbg.generated-->
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <!--@mbg.generated-->
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <!--@mbg.generated-->
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
             </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    id, bill_no, transaction_no, trading_platform, customer_id, customer_no, customer_name, 
-    total_price
-  </sql>
-  <select id="selectByExample" parameterType="org.myproject.app.bill.pojo.BillInfoExample" resultMap="BaseResultMap">
-    <!--@mbg.generated-->
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from bill_info
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    <!--@mbg.generated-->
-    select 
-    <include refid="Base_Column_List" />
-    from bill_info
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    <!--@mbg.generated-->
-    delete from bill_info
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <delete id="deleteByExample" parameterType="org.myproject.app.bill.pojo.BillInfoExample">
-    <!--@mbg.generated-->
-    delete from bill_info
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.bill.pojo.BillInfo" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into bill_info (bill_no, transaction_no, trading_platform, 
-      customer_id, customer_no, customer_name, 
-      total_price)
-    values (#{billNo,jdbcType=VARCHAR}, #{transactionNo,jdbcType=VARCHAR}, #{tradingPlatform,jdbcType=VARCHAR}, 
-      #{customerId,jdbcType=BIGINT}, #{customerNo,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR}, 
-      #{totalPrice,jdbcType=DECIMAL})
-  </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.bill.pojo.BillInfo" useGeneratedKeys="true">
-    <!--@mbg.generated-->
-    insert into bill_info
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="billNo != null">
-        bill_no,
-      </if>
-      <if test="transactionNo != null">
-        transaction_no,
-      </if>
-      <if test="tradingPlatform != null">
-        trading_platform,
-      </if>
-      <if test="customerId != null">
-        customer_id,
-      </if>
-      <if test="customerNo != null">
-        customer_no,
-      </if>
-      <if test="customerName != null">
-        customer_name,
-      </if>
-      <if test="totalPrice != null">
-        total_price,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="billNo != null">
-        #{billNo,jdbcType=VARCHAR},
-      </if>
-      <if test="transactionNo != null">
-        #{transactionNo,jdbcType=VARCHAR},
-      </if>
-      <if test="tradingPlatform != null">
-        #{tradingPlatform,jdbcType=VARCHAR},
-      </if>
-      <if test="customerId != null">
-        #{customerId,jdbcType=BIGINT},
-      </if>
-      <if test="customerNo != null">
-        #{customerNo,jdbcType=VARCHAR},
-      </if>
-      <if test="customerName != null">
-        #{customerName,jdbcType=VARCHAR},
-      </if>
-      <if test="totalPrice != null">
-        #{totalPrice,jdbcType=DECIMAL},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="org.myproject.app.bill.pojo.BillInfoExample" resultType="java.lang.Long">
-    <!--@mbg.generated-->
-    select count(*) from bill_info
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    <!--@mbg.generated-->
-    update bill_info
-    <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=BIGINT},
-      </if>
-      <if test="record.billNo != null">
-        bill_no = #{record.billNo,jdbcType=VARCHAR},
-      </if>
-      <if test="record.transactionNo != null">
-        transaction_no = #{record.transactionNo,jdbcType=VARCHAR},
-      </if>
-      <if test="record.tradingPlatform != null">
-        trading_platform = #{record.tradingPlatform,jdbcType=VARCHAR},
-      </if>
-      <if test="record.customerId != null">
-        customer_id = #{record.customerId,jdbcType=BIGINT},
-      </if>
-      <if test="record.customerNo != null">
-        customer_no = #{record.customerNo,jdbcType=VARCHAR},
-      </if>
-      <if test="record.customerName != null">
-        customer_name = #{record.customerName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.totalPrice != null">
-        total_price = #{record.totalPrice,jdbcType=DECIMAL},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    <!--@mbg.generated-->
-    update bill_info
-    set id = #{record.id,jdbcType=BIGINT},
-      bill_no = #{record.billNo,jdbcType=VARCHAR},
-      transaction_no = #{record.transactionNo,jdbcType=VARCHAR},
-      trading_platform = #{record.tradingPlatform,jdbcType=VARCHAR},
-      customer_id = #{record.customerId,jdbcType=BIGINT},
-      customer_no = #{record.customerNo,jdbcType=VARCHAR},
-      customer_name = #{record.customerName,jdbcType=VARCHAR},
-      total_price = #{record.totalPrice,jdbcType=DECIMAL}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.bill.pojo.BillInfo">
-    <!--@mbg.generated-->
-    update bill_info
-    <set>
-      <if test="billNo != null">
-        bill_no = #{billNo,jdbcType=VARCHAR},
-      </if>
-      <if test="transactionNo != null">
-        transaction_no = #{transactionNo,jdbcType=VARCHAR},
-      </if>
-      <if test="tradingPlatform != null">
-        trading_platform = #{tradingPlatform,jdbcType=VARCHAR},
-      </if>
-      <if test="customerId != null">
-        customer_id = #{customerId,jdbcType=BIGINT},
-      </if>
-      <if test="customerNo != null">
-        customer_no = #{customerNo,jdbcType=VARCHAR},
-      </if>
-      <if test="customerName != null">
-        customer_name = #{customerName,jdbcType=VARCHAR},
-      </if>
-      <if test="totalPrice != null">
-        total_price = #{totalPrice,jdbcType=DECIMAL},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="org.myproject.app.bill.pojo.BillInfo">
-    <!--@mbg.generated-->
-    update bill_info
-    set bill_no = #{billNo,jdbcType=VARCHAR},
-      transaction_no = #{transactionNo,jdbcType=VARCHAR},
-      trading_platform = #{tradingPlatform,jdbcType=VARCHAR},
-      customer_id = #{customerId,jdbcType=BIGINT},
-      customer_no = #{customerNo,jdbcType=VARCHAR},
-      customer_name = #{customerName,jdbcType=VARCHAR},
-      total_price = #{totalPrice,jdbcType=DECIMAL}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <select id="selectAllByIdOrBillNoOrTransactionNo" resultMap="BaseResultMap">
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, bill_no, transaction_no, trading_platform, customer_id, customer_no, customer_name,
+        total_price
+    </sql>
+    <select id="selectByExample" parameterType="org.myproject.app.bill.pojo.BillInfoExample" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
-        <include refid="Base_Column_List" />
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
         from bill_info
-        where id=#{id,jdbcType=BIGINT} or bill_no=#{billNo,jdbcType=VARCHAR} or
-        transaction_no=#{transactionNo,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
     </select>
-  <delete id="deleteByIdIn">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         <!--@mbg.generated-->
-        delete from bill_info
-        where id in
+        select
+        <include refid="Base_Column_List"/>
+        from bill_info
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--@mbg.generated-->
+        delete
+        from bill_info
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <delete id="deleteByExample" parameterType="org.myproject.app.bill.pojo.BillInfoExample">
+        <!--@mbg.generated-->
+        delete
+        from bill_info
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.bill.pojo.BillInfo"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into bill_info (bill_no, transaction_no, trading_platform,
+                               customer_id, customer_no, customer_name,
+                               total_price)
+        values (#{billNo,jdbcType=VARCHAR}, #{transactionNo,jdbcType=VARCHAR}, #{tradingPlatform,jdbcType=VARCHAR},
+                #{customerId,jdbcType=BIGINT}, #{customerNo,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR},
+                #{totalPrice,jdbcType=DECIMAL})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.bill.pojo.BillInfo"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into bill_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="billNo != null">
+                bill_no,
+            </if>
+            <if test="transactionNo != null">
+                transaction_no,
+            </if>
+            <if test="tradingPlatform != null">
+                trading_platform,
+            </if>
+            <if test="customerId != null">
+                customer_id,
+            </if>
+            <if test="customerNo != null">
+                customer_no,
+            </if>
+            <if test="customerName != null">
+                customer_name,
+            </if>
+            <if test="totalPrice != null">
+                total_price,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="billNo != null">
+                #{billNo,jdbcType=VARCHAR},
+            </if>
+            <if test="transactionNo != null">
+                #{transactionNo,jdbcType=VARCHAR},
+            </if>
+            <if test="tradingPlatform != null">
+                #{tradingPlatform,jdbcType=VARCHAR},
+            </if>
+            <if test="customerId != null">
+                #{customerId,jdbcType=BIGINT},
+            </if>
+            <if test="customerNo != null">
+                #{customerNo,jdbcType=VARCHAR},
+            </if>
+            <if test="customerName != null">
+                #{customerName,jdbcType=VARCHAR},
+            </if>
+            <if test="totalPrice != null">
+                #{totalPrice,jdbcType=DECIMAL},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="org.myproject.app.bill.pojo.BillInfoExample" resultType="java.lang.Long">
+        <!--@mbg.generated-->
+        select count(*)
+        from bill_info
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        <!--@mbg.generated-->
+        update bill_info
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=BIGINT},
+            </if>
+            <if test="record.billNo != null">
+                bill_no = #{record.billNo,jdbcType=VARCHAR},
+            </if>
+            <if test="record.transactionNo != null">
+                transaction_no = #{record.transactionNo,jdbcType=VARCHAR},
+            </if>
+            <if test="record.tradingPlatform != null">
+                trading_platform = #{record.tradingPlatform,jdbcType=VARCHAR},
+            </if>
+            <if test="record.customerId != null">
+                customer_id = #{record.customerId,jdbcType=BIGINT},
+            </if>
+            <if test="record.customerNo != null">
+                customer_no = #{record.customerNo,jdbcType=VARCHAR},
+            </if>
+            <if test="record.customerName != null">
+                customer_name = #{record.customerName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.totalPrice != null">
+                total_price = #{record.totalPrice,jdbcType=DECIMAL},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        <!--@mbg.generated-->
+        update bill_info
+        set id               = #{record.id,jdbcType=BIGINT},
+            bill_no          = #{record.billNo,jdbcType=VARCHAR},
+            transaction_no   = #{record.transactionNo,jdbcType=VARCHAR},
+            trading_platform = #{record.tradingPlatform,jdbcType=VARCHAR},
+            customer_id      = #{record.customerId,jdbcType=BIGINT},
+            customer_no      = #{record.customerNo,jdbcType=VARCHAR},
+            customer_name    = #{record.customerName,jdbcType=VARCHAR},
+            total_price      = #{record.totalPrice,jdbcType=DECIMAL}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.bill.pojo.BillInfo">
+        <!--@mbg.generated-->
+        update bill_info
+        <set>
+            <if test="billNo != null">
+                bill_no = #{billNo,jdbcType=VARCHAR},
+            </if>
+            <if test="transactionNo != null">
+                transaction_no = #{transactionNo,jdbcType=VARCHAR},
+            </if>
+            <if test="tradingPlatform != null">
+                trading_platform = #{tradingPlatform,jdbcType=VARCHAR},
+            </if>
+            <if test="customerId != null">
+                customer_id = #{customerId,jdbcType=BIGINT},
+            </if>
+            <if test="customerNo != null">
+                customer_no = #{customerNo,jdbcType=VARCHAR},
+            </if>
+            <if test="customerName != null">
+                customer_name = #{customerName,jdbcType=VARCHAR},
+            </if>
+            <if test="totalPrice != null">
+                total_price = #{totalPrice,jdbcType=DECIMAL},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="org.myproject.app.bill.pojo.BillInfo">
+        <!--@mbg.generated-->
+        update bill_info
+        set bill_no          = #{billNo,jdbcType=VARCHAR},
+            transaction_no   = #{transactionNo,jdbcType=VARCHAR},
+            trading_platform = #{tradingPlatform,jdbcType=VARCHAR},
+            customer_id      = #{customerId,jdbcType=BIGINT},
+            customer_no      = #{customerNo,jdbcType=VARCHAR},
+            customer_name    = #{customerName,jdbcType=VARCHAR},
+            total_price      = #{totalPrice,jdbcType=DECIMAL}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <select id="selectAllByIdOrBillNoOrTransactionNo" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from bill_info
+        where id = #{id,jdbcType=BIGINT}
+           or bill_no = #{billNo,jdbcType=VARCHAR}
+           or transaction_no = #{transactionNo,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByIdIn">
+        <!--@mbg.generated-->
+        delete
+        from bill_info
+                where id in
         <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
             #{item,jdbcType=BIGINT}
         </foreach>
     </delete>
+
+    <select id="selectDetailById" resultMap="BillInfoDetailResult">
+        select
+        <include refid="Base_Column_List"/>
+        from bill_info
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <resultMap id="BillInfoDetailResult" type="org.myproject.app.bill.pojo.BillInfoDetailResult"
+               extends="BaseResultMap">
+        <association property="device" javaType="org.myproject.app.bill.pojo.BillDeviceInfo" column="id"
+                     select="org.myproject.app.bill.mapper.BillDeviceInfoMapper.selectOneByBillId"/>
+        <collection property="items" ofType="org.myproject.app.bill.pojo.BillItem"
+                    select="org.myproject.app.bill.mapper.BillItemMapper.selectAllByBillId" column="id"/>
+    </resultMap>
 </mapper>

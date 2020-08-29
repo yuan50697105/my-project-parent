@@ -139,4 +139,8 @@ public class AuthRoleServiceImpl implements AuthRoleService {
         return new IPageInfo<>(new PageInfo<>(selectByExample(query.toExample())));
     }
 
+    @Override
+    public AuthRoleDetailResult selectDetailById(Long id) {
+        return authRoleMapper.selectDetailById(id);
+    }
 }

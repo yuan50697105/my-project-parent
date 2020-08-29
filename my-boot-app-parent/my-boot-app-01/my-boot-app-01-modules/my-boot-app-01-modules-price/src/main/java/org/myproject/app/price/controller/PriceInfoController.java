@@ -10,9 +10,9 @@ import org.myproject.app.price.pojo.PriceInfo;
 import org.myproject.app.price.pojo.PriceInfoQuery;
 import org.myproject.app.price.pojo.PriceInfoVo;
 import org.myproject.app.price.service.PriceInfoService;
-import org.myproject.app.price.service.PricePojoConverter;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import wiki.xsx.core.log.Log;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,45 +28,57 @@ import java.util.List;
 @RequestMapping("price/infos")
 @AllArgsConstructor
 public class PriceInfoController {
+    public static final String API_QUERY = "查询定价信息";
+    public static final String API_ID_GET = "ID获取定价信息";
+    public static final String API_INSERT = "增加定价信息";
+    public static final String API_UPDATE = "更新定价信息";
+    public static final String API_REMOVE = "删除定价信息";
+    private static final String API_LIST_BY_CODE = "编码获取定价信息";
     private final PriceInfoService priceInfoService;
-    private final PricePojoConverter converter;
 
     @GetMapping
-    @ApiOperation("查询")
+    @ApiOperation(API_QUERY)
+    @Log(API_QUERY)
     public Result<List<PriceInfo>> list(PriceInfoQuery query) {
         IPage<PriceInfo> pageInfo = priceInfoService.selectPageByQuery(query);
         return ResultInfo.success(pageInfo.getTotal(), pageInfo.getList());
     }
 
     @GetMapping("/{id}")
-    @ApiOperation("ID获取")
+    @ApiOperation(API_ID_GET)
+    @Log(API_ID_GET)
     public Result<PriceInfo> get(@PathVariable Long id) {
         PriceInfo priceInfo = priceInfoService.selectByPrimaryKey(id);
         return ResultInfo.success(priceInfo);
     }
 
-    @GetMapping("/list/code/{code}")
+    @GetMapping("/code/{code}")
+    @ApiOperation(API_LIST_BY_CODE)
+    @Log(API_LIST_BY_CODE)
     public Result<List<PriceInfo>> listByCode(@PathVariable String code) {
         List<PriceInfo> priceInfos = priceInfoService.selectAllByCode(code);
         return ResultInfo.success(priceInfos);
     }
 
     @PostMapping
-    @ApiOperation("增加")
+    @ApiOperation(API_INSERT)
+    @Log(API_INSERT)
     public Result<?> insert(@RequestBody PriceInfoVo priceInfoVo) {
         priceInfoService.insert(priceInfoVo);
         return ResultInfo.success();
     }
 
     @PutMapping
-    @ApiOperation("更新")
+    @ApiOperation(API_UPDATE)
+    @Log(API_UPDATE)
     public Result<?> update(@RequestBody PriceInfoVo PriceInfoVo) {
         priceInfoService.updateByPrimaryKeySelective(PriceInfoVo);
         return ResultInfo.success();
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation("删除")
+    @ApiOperation(API_REMOVE)
+    @Log(API_REMOVE)
     public Result<?> delete(@PathVariable Long[] id) {
         priceInfoService.deleteByIdIn(Arrays.asList(id));
         return ResultInfo.success();
