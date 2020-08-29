@@ -2,8 +2,6 @@ package org.myproject.app.customer.pojo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 /**
  * @program: my-project-parent
@@ -13,7 +11,5 @@ import lombok.experimental.SuperBuilder;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
-@SuperBuilder(toBuilder = true)
 public class CustomerAddressVo extends CustomerAddress {
 }

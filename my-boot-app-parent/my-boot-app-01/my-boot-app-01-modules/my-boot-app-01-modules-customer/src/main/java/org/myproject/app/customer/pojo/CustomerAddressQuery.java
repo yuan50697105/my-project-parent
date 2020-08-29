@@ -12,7 +12,6 @@ import java.io.Serializable;
 @ApiModel(value = "org-myproject-app-customer-pojo-CustomerAddress")
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @With
