@@ -1,4 +1,4 @@
-package org.myproject.app.bill.service.impl;
+package org.myproject.app.bill.service;
 
 import org.myproject.app.bill.pojo.BillDeviceInfo;
 import org.myproject.app.bill.pojo.BillDeviceInfoExample;

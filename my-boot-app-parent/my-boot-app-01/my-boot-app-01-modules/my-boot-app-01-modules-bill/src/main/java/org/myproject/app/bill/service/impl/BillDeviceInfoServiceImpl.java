@@ -3,6 +3,7 @@ package org.myproject.app.bill.service.impl;
 import org.myproject.app.bill.mapper.BillDeviceInfoMapper;
 import org.myproject.app.bill.pojo.BillDeviceInfo;
 import org.myproject.app.bill.pojo.BillDeviceInfoExample;
+import org.myproject.app.bill.service.BillDeviceInfoService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
