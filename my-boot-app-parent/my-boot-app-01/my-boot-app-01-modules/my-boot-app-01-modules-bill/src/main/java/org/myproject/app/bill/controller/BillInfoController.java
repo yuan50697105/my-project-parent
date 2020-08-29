@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.myproject.app.bill.pojo.BillInfo;
+import org.myproject.app.bill.pojo.BillInfoDetailResult;
 import org.myproject.app.bill.pojo.BillInfoQuery;
 import org.myproject.app.bill.pojo.BillInfoVo;
 import org.myproject.app.bill.service.BillInfoService;
@@ -33,6 +34,7 @@ public class BillInfoController {
     public static final String API_INSERT = "增加订单";
     public static final String API_UPDATE = "更新订单";
     public static final String API_REMOVE = "删除订单";
+    private static final String API_ID_GET_DETAIL = "ID获取订单详情";
     private final BillInfoService service;
 
     @GetMapping
@@ -49,6 +51,14 @@ public class BillInfoController {
     public Result<BillInfo> get(@PathVariable Long id) {
         BillInfo authUser = service.selectByPrimaryKey(id);
         return ResultInfo.success(authUser);
+    }
+
+    @GetMapping({"/{id}/detail"})
+    @ApiOperation(API_ID_GET_DETAIL)
+    @Log(API_ID_GET_DETAIL)
+    public Result<BillInfoDetailResult> getDetail(@PathVariable Long id) {
+        BillInfoDetailResult billInfo = service.selectDetailById(id);
+        return ResultInfo.success(billInfo);
     }
 
     @PostMapping
