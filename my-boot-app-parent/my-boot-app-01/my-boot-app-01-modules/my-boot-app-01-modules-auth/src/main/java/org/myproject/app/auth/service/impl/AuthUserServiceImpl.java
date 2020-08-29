@@ -3,10 +3,12 @@ package org.myproject.app.auth.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.myproject.app.auth.mapper.AuthUserMapper;
+import org.myproject.app.auth.mapper.AuthUserRoleMapper;
 import org.myproject.app.auth.pojo.*;
 import org.myproject.app.auth.service.AuthPojoConverter;
 import org.myproject.app.auth.service.AuthUserService;
 import org.myproject.app.commons.pojo.IPage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +24,8 @@ public class AuthUserServiceImpl implements AuthUserService {
     private AuthUserMapper authUserMapper;
     @Resource
     private AuthPojoConverter converter;
+    @Autowired
+    private AuthUserRoleMapper authUserRoleMapper;
 
     @Override
     public long countByExample(AuthUserExample example) {
@@ -158,7 +162,15 @@ public class AuthUserServiceImpl implements AuthUserService {
     public int deleteByIdIn(Collection<Long> idCollection) {
         return authUserMapper.deleteByIdIn(idCollection);
     }
+
+
+    @Override
+    public AuthUserDetail selectDetailById(Long id) {
+        return authUserMapper.selectDetailById(id);
+    }
 }
+
+
 
 
 

@@ -3,6 +3,7 @@ package org.myproject.app.auth.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.app.auth.pojo.AuthUser;
+import org.myproject.app.auth.pojo.AuthUserDetail;
 import org.myproject.app.auth.pojo.AuthUserExample;
 
 import java.util.Collection;
@@ -36,6 +37,12 @@ public interface AuthUserMapper {
 
     int updateByPrimaryKey(AuthUser record);
 
+    int updateBatch(List<AuthUser> list);
+
+    int updateBatchSelective(List<AuthUser> list);
+
+    int batchInsert(@Param("list") List<AuthUser> list);
+
     AuthUser selectOneByUsername(@Param("username") String username);
 
     List<AuthUser> selectAllByUsername(@Param("username") String username);
@@ -52,9 +59,5 @@ public interface AuthUserMapper {
 
     int deleteByIdIn(@Param("idCollection") Collection<Long> idCollection);
 
-    int updateBatch(List<AuthUser> list);
-
-    int batchInsert(@Param("list") List<AuthUser> list);
-
-    int updateBatchSelective(List<AuthUser> list);
+    AuthUserDetail selectDetailById(Long id);
 }

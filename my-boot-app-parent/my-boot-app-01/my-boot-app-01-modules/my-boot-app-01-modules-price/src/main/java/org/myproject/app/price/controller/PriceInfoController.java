@@ -52,7 +52,7 @@ public class PriceInfoController {
         return ResultInfo.success(priceInfo);
     }
 
-    @GetMapping("/list/code/{code}")
+    @GetMapping("/code/{code}")
     @ApiOperation(API_LIST_BY_CODE)
     @Log(API_LIST_BY_CODE)
     public Result<List<PriceInfo>> listByCode(@PathVariable String code) {
