@@ -3,6 +3,7 @@ package org.myproject.app.auth.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.app.auth.pojo.AuthRole;
+import org.myproject.app.auth.pojo.AuthRoleDetailResult;
 import org.myproject.app.auth.pojo.AuthRoleExample;
 
 import java.util.Collection;
@@ -49,4 +50,6 @@ public interface AuthRoleMapper {
     int updateBatch(List<AuthRole> list);
 
     int batchInsert(@Param("list") List<AuthRole> list);
+
+    AuthRoleDetailResult selectDetailById(Long id);
 }
