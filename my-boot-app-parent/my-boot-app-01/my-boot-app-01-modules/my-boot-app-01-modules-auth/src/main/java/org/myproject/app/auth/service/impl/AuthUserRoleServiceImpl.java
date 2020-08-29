@@ -4,11 +4,12 @@ import org.myproject.app.auth.mapper.AuthUserRoleMapper;
 import org.myproject.app.auth.pojo.AuthUserRole;
 import org.myproject.app.auth.pojo.AuthUserRoleExample;
 import org.myproject.app.auth.pojo.RoleByUserResult;
-import org.myproject.app.auth.pojo.UserByRoleResult;
+import org.myproject.app.auth.pojo.UserRoleResult;
 import org.myproject.app.auth.service.AuthUserRoleService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -53,7 +54,7 @@ public class AuthUserRoleServiceImpl implements AuthUserRoleService {
     }
 
     @Override
-    public List<UserByRoleResult> selectAllUserByRoleId(Long roleId) {
+    public List<UserRoleResult> selectAllUserByRoleId(Long roleId) {
         return authUserRoleMapper.selectAllUserByRoleId(roleId);
     }
 
@@ -61,4 +62,31 @@ public class AuthUserRoleServiceImpl implements AuthUserRoleService {
     public List<RoleByUserResult> selectAllRoleByUserId(Long userId) {
         return authUserRoleMapper.selectAllRoleByUserId(userId);
     }
+
+    @Override
+    public int deleteByPrimaryKey(Long userId, Long roleId) {
+        return authUserRoleMapper.deleteByPrimaryKey(userId, roleId);
+    }
+
+    @Override
+    public int deleteByUserId(Long userId) {
+        return authUserRoleMapper.deleteByUserId(userId);
+    }
+
+    @Override
+    public int deleteByUserIdIn(Collection<Long> userIdCollection) {
+        return authUserRoleMapper.deleteByUserIdIn(userIdCollection);
+    }
+
+    @Override
+    public int deleteByRoleId(Long roleId) {
+        return authUserRoleMapper.deleteByRoleId(roleId);
+    }
+
+    @Override
+    public int deleteByRoleIdIn(Collection<Long> roleIdCollection) {
+        return authUserRoleMapper.deleteByRoleIdIn(roleIdCollection);
+    }
 }
+
+

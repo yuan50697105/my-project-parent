@@ -7,9 +7,9 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
-@ApiModel(value = "org-myproject-app-auth-pojo-UserByRoleResult")
+@ApiModel(value = "org-myproject-app-auth-pojo-UserRoleResult")
 @Data
-public class UserByRoleResult implements Serializable {
+public class UserRoleResult implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      *

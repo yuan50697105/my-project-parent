@@ -164,7 +164,13 @@ public class AuthUserServiceImpl implements AuthUserService {
     }
 
 
+    @Override
+    public AuthUserDetail selectDetailById(Long id) {
+        return authUserMapper.selectDetailById(id);
+    }
 }
+
+
 
 
 

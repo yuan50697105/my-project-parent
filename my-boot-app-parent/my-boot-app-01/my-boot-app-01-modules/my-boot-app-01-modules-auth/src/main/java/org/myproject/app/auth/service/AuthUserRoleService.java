@@ -3,8 +3,9 @@ package org.myproject.app.auth.service;
 import org.myproject.app.auth.pojo.AuthUserRole;
 import org.myproject.app.auth.pojo.AuthUserRoleExample;
 import org.myproject.app.auth.pojo.RoleByUserResult;
-import org.myproject.app.auth.pojo.UserByRoleResult;
+import org.myproject.app.auth.pojo.UserRoleResult;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface AuthUserRoleService {
@@ -24,7 +25,19 @@ public interface AuthUserRoleService {
 
     int updateByExample(AuthUserRole record, AuthUserRoleExample example);
 
-    List<UserByRoleResult> selectAllUserByRoleId(Long roleId);
+    List<UserRoleResult> selectAllUserByRoleId(Long roleId);
 
     List<RoleByUserResult> selectAllRoleByUserId(Long userId);
+
+    int deleteByPrimaryKey(Long userId, Long roleId);
+
+    int deleteByUserId(Long userId);
+
+    int deleteByUserIdIn(Collection<Long> userIdCollection);
+
+    int deleteByRoleId(Long roleId);
+
+    int deleteByRoleIdIn(Collection<Long> roleIdCollection);
 }
+
+
