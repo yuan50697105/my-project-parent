@@ -120,11 +120,11 @@
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into bill_info (bill_no, transaction_no, trading_platform,
-        customer_id, customer_no, customer_name,
-        total_price)
+                               customer_id, customer_no, customer_name,
+                               total_price)
         values (#{billNo,jdbcType=VARCHAR}, #{transactionNo,jdbcType=VARCHAR}, #{tradingPlatform,jdbcType=VARCHAR},
-        #{customerId,jdbcType=BIGINT}, #{customerNo,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR},
-        #{totalPrice,jdbcType=DECIMAL})
+                #{customerId,jdbcType=BIGINT}, #{customerNo,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR},
+                #{totalPrice,jdbcType=DECIMAL})
     </insert>
     <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.bill.pojo.BillInfo"
             useGeneratedKeys="true">
@@ -221,14 +221,14 @@
     <update id="updateByExample" parameterType="map">
         <!--@mbg.generated-->
         update bill_info
-        set id = #{record.id,jdbcType=BIGINT},
-        bill_no = #{record.billNo,jdbcType=VARCHAR},
-        transaction_no = #{record.transactionNo,jdbcType=VARCHAR},
-        trading_platform = #{record.tradingPlatform,jdbcType=VARCHAR},
-        customer_id = #{record.customerId,jdbcType=BIGINT},
-        customer_no = #{record.customerNo,jdbcType=VARCHAR},
-        customer_name = #{record.customerName,jdbcType=VARCHAR},
-        total_price = #{record.totalPrice,jdbcType=DECIMAL}
+        set id               = #{record.id,jdbcType=BIGINT},
+            bill_no          = #{record.billNo,jdbcType=VARCHAR},
+            transaction_no   = #{record.transactionNo,jdbcType=VARCHAR},
+            trading_platform = #{record.tradingPlatform,jdbcType=VARCHAR},
+            customer_id      = #{record.customerId,jdbcType=BIGINT},
+            customer_no      = #{record.customerNo,jdbcType=VARCHAR},
+            customer_name    = #{record.customerName,jdbcType=VARCHAR},
+            total_price      = #{record.totalPrice,jdbcType=DECIMAL}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
@@ -264,13 +264,13 @@
     <update id="updateByPrimaryKey" parameterType="org.myproject.app.bill.pojo.BillInfo">
         <!--@mbg.generated-->
         update bill_info
-        set bill_no = #{billNo,jdbcType=VARCHAR},
-        transaction_no = #{transactionNo,jdbcType=VARCHAR},
-        trading_platform = #{tradingPlatform,jdbcType=VARCHAR},
-        customer_id = #{customerId,jdbcType=BIGINT},
-        customer_no = #{customerNo,jdbcType=VARCHAR},
-        customer_name = #{customerName,jdbcType=VARCHAR},
-        total_price = #{totalPrice,jdbcType=DECIMAL}
+        set bill_no          = #{billNo,jdbcType=VARCHAR},
+            transaction_no   = #{transactionNo,jdbcType=VARCHAR},
+            trading_platform = #{tradingPlatform,jdbcType=VARCHAR},
+            customer_id      = #{customerId,jdbcType=BIGINT},
+            customer_no      = #{customerNo,jdbcType=VARCHAR},
+            customer_name    = #{customerName,jdbcType=VARCHAR},
+            total_price      = #{totalPrice,jdbcType=DECIMAL}
         where id = #{id,jdbcType=BIGINT}
     </update>
     <select id="selectAllByIdOrBillNoOrTransactionNo" resultMap="BaseResultMap">
@@ -279,14 +279,14 @@
         <include refid="Base_Column_List"/>
         from bill_info
         where id = #{id,jdbcType=BIGINT}
-        or bill_no = #{billNo,jdbcType=VARCHAR}
-        or transaction_no = #{transactionNo,jdbcType=VARCHAR}
+           or bill_no = #{billNo,jdbcType=VARCHAR}
+           or transaction_no = #{transactionNo,jdbcType=VARCHAR}
     </select>
     <delete id="deleteByIdIn">
         <!--@mbg.generated-->
         delete
         from bill_info
-        where id in
+                where id in
         <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
             #{item,jdbcType=BIGINT}
         </foreach>
@@ -295,13 +295,14 @@
     <select id="selectDetailById" resultMap="BillInfoDetailResult">
         select
         <include refid="Base_Column_List"/>
-        from bill_info where id = #{id,jdbcType=BIGINT}
+        from bill_info
+        where id = #{id,jdbcType=BIGINT}
     </select>
     <resultMap id="BillInfoDetailResult" type="org.myproject.app.bill.pojo.BillInfoDetailResult"
                extends="BaseResultMap">
-        <collection property="items" ofType="org.myproject.app.bill.pojo.BillItem" column="id"
-                    select="org.myproject.app.bill.mapper.BillItemMapper.selectAllByBillId"/>
         <association property="device" javaType="org.myproject.app.bill.pojo.BillDeviceInfo" column="id"
                      select="org.myproject.app.bill.mapper.BillDeviceInfoMapper.selectOneByBillId"/>
+        <collection property="items" ofType="org.myproject.app.bill.pojo.BillItem"
+                    select="org.myproject.app.bill.mapper.BillItemMapper.selectAllByBillId" column="id"/>
     </resultMap>
 </mapper>
