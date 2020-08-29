@@ -51,6 +51,20 @@ create table if not exists auth_user
 )
     comment 'auth_user';
 
+create table if not exists bill_info
+(
+    id               bigint(15) auto_increment comment 'id'
+        primary key,
+    bill_no          varchar(50)    default ''      not null comment '订单号',
+    transaction_no   varchar(50)    default ''      not null comment '交易号',
+    trading_platform varchar(50)    default ''      not null comment '交易平台',
+    customer_id      bigint(15)     default -1      not null comment '客户ID',
+    customer_no      varchar(50)    default ''      not null comment '客户编号',
+    customer_name    varchar(50)    default ''      not null comment '客户姓名',
+    total_price      decimal(13, 4) default -1.0000 not null comment '总价'
+)
+    comment 'bill_info';
+
 create table if not exists customer_info
 (
     id        bigint(15) auto_increment comment 'id'
@@ -85,6 +99,36 @@ create table if not exists device_info
     end_time   datetime               null comment '停用时间'
 )
     comment 'device_info';
+
+create table if not exists flyway_schema_history
+(
+    installed_rank int                                 not null
+        primary key,
+    version        varchar(50)                         null,
+    description    varchar(200)                        not null,
+    type           varchar(20)                         not null,
+    script         varchar(1000)                       not null,
+    checksum       int                                 null,
+    installed_by   varchar(100)                        not null,
+    installed_on   timestamp default CURRENT_TIMESTAMP not null,
+    execution_time int                                 not null,
+    success        tinyint(1)                          not null
+);
+
+create index flyway_schema_history_s_idx
+    on flyway_schema_history (success);
+
+create table if not exists member_info
+(
+    id            bigint(15) auto_increment comment 'id'
+        primary key,
+    member_no     varchar(50) default '' not null comment '会员编号',
+    member_name   varchar(50) default '' not null comment '会员姓名',
+    customer_id   bigint(15)  default -1 not null comment '客户ID',
+    customer_code varchar(50) default '' not null comment '客户编号',
+    customer_name varchar(50) default '' not null comment '客户类型'
+)
+    comment 'member_info';
 
 create table if not exists price_info
 (
