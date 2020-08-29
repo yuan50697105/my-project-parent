@@ -44,10 +44,10 @@ create table if not exists auth_user
         primary key,
     username        varchar(50) default ''                    not null comment 'username',
     password        varchar(50) default ''                    not null comment 'password',
-    name            varchar(50) default ''                    not null comment 'name',
+    name            varchar(50) default ''                    null comment 'name',
     enabled         int         default -1                    not null comment 'enabled',
-    last_login_time datetime    default '1000-01-01 00:00:00' not null comment 'lastLoginTime',
-    create_time     datetime    default '1000-01-01 00:00:00' not null comment 'createTime'
+    last_login_time datetime    default '1000-01-01 00:00:00' null comment 'lastLoginTime',
+    create_time     datetime    default '1000-01-01 00:00:00' null comment 'createTime'
 )
     comment 'auth_user';
 
