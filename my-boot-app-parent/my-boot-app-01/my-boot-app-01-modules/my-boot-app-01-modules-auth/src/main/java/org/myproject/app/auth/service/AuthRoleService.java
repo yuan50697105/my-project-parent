@@ -1,9 +1,6 @@
 package org.myproject.app.auth.service;
 
-import org.myproject.app.auth.pojo.AuthRole;
-import org.myproject.app.auth.pojo.AuthRoleExample;
-import org.myproject.app.auth.pojo.AuthRoleQuery;
-import org.myproject.app.auth.pojo.AuthRoleVo;
+import org.myproject.app.auth.pojo.*;
 import org.myproject.app.commons.pojo.IPage;
 
 import java.util.Collection;
@@ -57,4 +54,6 @@ public interface AuthRoleService {
     int batchInsert(List<AuthRole> list);
 
     IPage<AuthRole> selectPageByQuery(AuthRoleQuery query);
+
+    AuthRoleDetailResult selectDetailById(Long id);
 }

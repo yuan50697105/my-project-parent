@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.myproject.app.auth.pojo.AuthRole;
+import org.myproject.app.auth.pojo.AuthRoleDetailResult;
 import org.myproject.app.auth.pojo.AuthRoleQuery;
 import org.myproject.app.auth.pojo.AuthRoleVo;
 import org.myproject.app.auth.service.AuthRoleService;
@@ -33,6 +34,7 @@ public class AuthRoleController {
     public static final String API_INSERT = "增加角色";
     public static final String API_UPDATE = "更新角色";
     public static final String API_REMOVE = "删除角色";
+    private static final String API_ID_GET_DETAIL = "ID获取角色详情";
     private final AuthRoleService roleService;
 
     @GetMapping
@@ -43,12 +45,20 @@ public class AuthRoleController {
         return ResultInfo.success(pageInfo.getTotal(), pageInfo.getList());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping({"/{id}", "/{id}/basic"})
     @ApiOperation(API_ID_GET)
     @Log(API_ID_GET)
     public Result<AuthRole> get(@PathVariable Long id) {
         AuthRole authRole = roleService.selectByPrimaryKey(id);
         return ResultInfo.success(authRole);
+    }
+
+    @GetMapping("/{id}/detail")
+    @ApiOperation(API_ID_GET_DETAIL)
+    @Log(API_ID_GET_DETAIL)
+    public Result<AuthRoleDetailResult> getDetail(@PathVariable Long id) {
+        AuthRoleDetailResult authRoleDetailResult = roleService.selectDetailById(id);
+        return ResultInfo.success(authRoleDetailResult);
     }
 
     @PostMapping
