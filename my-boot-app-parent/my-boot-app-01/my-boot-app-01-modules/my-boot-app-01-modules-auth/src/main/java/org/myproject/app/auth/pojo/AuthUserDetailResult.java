@@ -20,9 +20,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ApiModel
-public class AuthUserDetail extends AuthUser {
+public class AuthUserDetailResult extends AuthUser {
     @ApiModelProperty
     private List<RoleByUserResult> roles;
+    @ApiModelProperty
+    private List<PermissionByUserIdResult> permissions;
 
 
 }

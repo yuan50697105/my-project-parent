@@ -3,7 +3,7 @@ package org.myproject.app.auth.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.app.auth.pojo.AuthUser;
-import org.myproject.app.auth.pojo.AuthUserDetail;
+import org.myproject.app.auth.pojo.AuthUserDetailResult;
 import org.myproject.app.auth.pojo.AuthUserExample;
 
 import java.util.Collection;
@@ -59,5 +59,5 @@ public interface AuthUserMapper {
 
     int deleteByIdIn(@Param("idCollection") Collection<Long> idCollection);
 
-    AuthUserDetail selectDetailById(Long id);
+    AuthUserDetailResult selectDetailById(Long id);
 }

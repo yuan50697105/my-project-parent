@@ -118,9 +118,9 @@
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_user (username, `password`, `name`,
-                               enabled, last_login_time, create_time)
+        enabled, last_login_time, create_time)
         values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
-                #{enabled,jdbcType=INTEGER}, #{lastLoginTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
+        #{enabled,jdbcType=INTEGER}, #{lastLoginTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
     </insert>
     <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthUser"
             useGeneratedKeys="true">
@@ -208,13 +208,13 @@
     <update id="updateByExample" parameterType="map">
         <!--@mbg.generated-->
         update auth_user
-        set id              = #{record.id,jdbcType=BIGINT},
-            username        = #{record.username,jdbcType=VARCHAR},
-            `password`      = #{record.password,jdbcType=VARCHAR},
-            `name`          = #{record.name,jdbcType=VARCHAR},
-            enabled         = #{record.enabled,jdbcType=INTEGER},
-            last_login_time = #{record.lastLoginTime,jdbcType=TIMESTAMP},
-            create_time     = #{record.createTime,jdbcType=TIMESTAMP}
+        set id = #{record.id,jdbcType=BIGINT},
+        username = #{record.username,jdbcType=VARCHAR},
+        `password` = #{record.password,jdbcType=VARCHAR},
+        `name` = #{record.name,jdbcType=VARCHAR},
+        enabled = #{record.enabled,jdbcType=INTEGER},
+        last_login_time = #{record.lastLoginTime,jdbcType=TIMESTAMP},
+        create_time = #{record.createTime,jdbcType=TIMESTAMP}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
@@ -247,12 +247,12 @@
     <update id="updateByPrimaryKey" parameterType="org.myproject.app.auth.pojo.AuthUser">
         <!--@mbg.generated-->
         update auth_user
-        set username        = #{username,jdbcType=VARCHAR},
-            `password`      = #{password,jdbcType=VARCHAR},
-            `name`          = #{name,jdbcType=VARCHAR},
-            enabled         = #{enabled,jdbcType=INTEGER},
-            last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
-            create_time     = #{createTime,jdbcType=TIMESTAMP}
+        set username = #{username,jdbcType=VARCHAR},
+        `password` = #{password,jdbcType=VARCHAR},
+        `name` = #{name,jdbcType=VARCHAR},
+        enabled = #{enabled,jdbcType=INTEGER},
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=TIMESTAMP}
         where id = #{id,jdbcType=BIGINT}
     </update>
     <update id="updateBatch" parameterType="java.util.List">
@@ -350,12 +350,12 @@
     <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_user
-                (username, `password`, `name`, enabled, last_login_time, create_time)
-                values
+        (username, `password`, `name`, enabled, last_login_time, create_time)
+        values
         <foreach collection="list" item="item" separator=",">
             (#{item.username,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR}, #{item.name,jdbcType=VARCHAR},
-             #{item.enabled,jdbcType=INTEGER}, #{item.lastLoginTime,jdbcType=TIMESTAMP},
-             #{item.createTime,jdbcType=TIMESTAMP})
+            #{item.enabled,jdbcType=INTEGER}, #{item.lastLoginTime,jdbcType=TIMESTAMP},
+            #{item.createTime,jdbcType=TIMESTAMP})
         </foreach>
     </insert>
     <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthUser"
@@ -390,12 +390,12 @@
             <if test="id != null">
                 id = #{id,jdbcType=BIGINT},
             </if>
-            username        = #{username,jdbcType=VARCHAR},
-            `password`      = #{password,jdbcType=VARCHAR},
-            `name`          = #{name,jdbcType=VARCHAR},
-            enabled         = #{enabled,jdbcType=INTEGER},
+            username = #{username,jdbcType=VARCHAR},
+            `password` = #{password,jdbcType=VARCHAR},
+            `name` = #{name,jdbcType=VARCHAR},
+            enabled = #{enabled,jdbcType=INTEGER},
             last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
-            create_time     = #{createTime,jdbcType=TIMESTAMP},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
         </trim>
     </insert>
     <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
@@ -474,9 +474,11 @@
             </if>
         </trim>
     </insert>
-    <resultMap extends="BaseResultMap" id="AuthUserImplDetail" type="org.myproject.app.auth.pojo.AuthUserDetail">
+    <resultMap extends="BaseResultMap" id="AuthUserImplDetail" type="org.myproject.app.auth.pojo.AuthUserDetailResult">
         <collection column="id" ofType="org.myproject.app.auth.pojo.RoleByUserResult" property="roles"
                     select="org.myproject.app.auth.mapper.AuthUserRoleMapper.selectAllRoleByUserId"/>
+        <collection property="permissions" ofType="org.myproject.app.auth.pojo.PermissionByUserIdResult" column="id"
+                    select="org.myproject.app.auth.mapper.AuthRolePermissionMapper.selectAllPermissionByUserId"/>
     </resultMap>
     <select id="selectOneByUsername" resultMap="BaseResultMap">
         select
@@ -508,7 +510,7 @@
     <update id="updateEnabledByIdIn">
         update auth_user
         set enabled=#{updatedEnabled,jdbcType=INTEGER}
-                where id in
+        where id in
         <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
             #{item,jdbcType=BIGINT}
         </foreach>
@@ -517,7 +519,7 @@
         select
         <include refid="Base_Column_List"/>
         from auth_user
-                where id in
+        where id in
         <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
             #{item,jdbcType=BIGINT}
         </foreach>
@@ -525,7 +527,7 @@
     <delete id="deleteByIdIn">
         delete
         from auth_user
-                where id in
+        where id in
         <foreach close=")" collection="idCollection" index="index" item="item" open="(" separator=",">
             #{item,jdbcType=BIGINT}
         </foreach>

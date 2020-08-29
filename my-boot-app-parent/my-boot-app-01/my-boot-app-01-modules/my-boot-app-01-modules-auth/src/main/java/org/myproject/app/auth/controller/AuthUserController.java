@@ -9,7 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.myproject.app.auth.pojo.AuthUser;
-import org.myproject.app.auth.pojo.AuthUserDetail;
+import org.myproject.app.auth.pojo.AuthUserDetailResult;
 import org.myproject.app.auth.pojo.AuthUserQuery;
 import org.myproject.app.auth.pojo.AuthUserVo;
 import org.myproject.app.auth.service.AuthUserService;
@@ -70,10 +70,10 @@ public class AuthUserController {
     @GetMapping("/{id}/detail")
     @ApiOperation(API_ID_GET_DETAIL)
     @Log(API_ID_GET_DETAIL)
-    @FastJsonView(exclude = @FastJsonFilter(clazz = AuthUser.class, props = "password"))
-    public Result<AuthUserDetail> getDetail(@PathVariable Long id) {
-        AuthUserDetail authUserDetail = userService.selectDetailById(id);
-        return ResultInfo.success(authUserDetail);
+    @FastJsonView(exclude = @FastJsonFilter(clazz = AuthUserDetailResult.class, props = "password"))
+    public Result<AuthUserDetailResult> getDetail(@PathVariable Long id) {
+        AuthUserDetailResult authUserDetailResult = userService.selectDetailById(id);
+        return ResultInfo.success(authUserDetailResult);
     }
 
     @GetMapping("/username/{username}")

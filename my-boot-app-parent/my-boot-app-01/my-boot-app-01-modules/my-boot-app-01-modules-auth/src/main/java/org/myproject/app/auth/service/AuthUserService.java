@@ -63,7 +63,7 @@ public interface AuthUserService {
 
     int deleteByIdIn(Collection<Long> idCollection);
 
-    AuthUserDetail selectDetailById(Long id);
+    AuthUserDetailResult selectDetailById(Long id);
 }
 
 
