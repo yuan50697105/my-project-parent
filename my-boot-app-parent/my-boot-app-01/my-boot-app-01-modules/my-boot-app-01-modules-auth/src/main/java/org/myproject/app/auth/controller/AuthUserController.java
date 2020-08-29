@@ -32,7 +32,7 @@ import java.util.List;
 @AllArgsConstructor
 @Slf4j
 public class AuthUserController {
-    public static final String API_QUERY = "查询角色";
+    public static final String API_QUERY = "查询用户";
     public static final String API_ID_GET = "ID获取用户";
     public static final String API_INSERT = "增加用户";
     public static final String API_UPDATE = "更新用户";
