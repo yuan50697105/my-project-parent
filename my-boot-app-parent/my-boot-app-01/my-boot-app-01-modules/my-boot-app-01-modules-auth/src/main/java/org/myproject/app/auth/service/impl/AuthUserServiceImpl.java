@@ -9,6 +9,10 @@ import org.myproject.app.auth.service.AuthPojoConverter;
 import org.myproject.app.auth.service.AuthUserService;
 import org.myproject.app.commons.pojo.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,6 +22,7 @@ import java.util.List;
 
 @Service
 @Transactional
+@CacheConfig(cacheNames = "users")
 public class AuthUserServiceImpl implements AuthUserService {
 
     @Resource
@@ -43,26 +48,31 @@ public class AuthUserServiceImpl implements AuthUserService {
     }
 
     @Override
+    @CachePut
     public int insert(AuthUser record) {
         return authUserMapper.insert(record);
     }
 
     @Override
+    @CachePut
     public int insert(AuthUserVo record) {
         return authUserMapper.insert(converter.convert(record));
     }
 
     @Override
+    @CachePut
     public int insertOrUpdate(AuthUser record) {
         return authUserMapper.insertOrUpdate(record);
     }
 
     @Override
+    @CachePut
     public int insertOrUpdateSelective(AuthUser record) {
         return authUserMapper.insertOrUpdateSelective(record);
     }
 
     @Override
+    @CachePut
     public int insertSelective(AuthUser record) {
         return authUserMapper.insertSelective(record);
     }
@@ -73,36 +83,43 @@ public class AuthUserServiceImpl implements AuthUserService {
     }
 
     @Override
+    @Cacheable
     public AuthUser selectByPrimaryKey(Long id) {
         return authUserMapper.selectByPrimaryKey(id);
     }
 
     @Override
+    @CachePut
     public int updateByExampleSelective(AuthUser record, AuthUserExample example) {
         return authUserMapper.updateByExampleSelective(record, example);
     }
 
     @Override
+    @CachePut
     public int updateByExample(AuthUser record, AuthUserExample example) {
         return authUserMapper.updateByExample(record, example);
     }
 
     @Override
+    @CachePut
     public int updateByPrimaryKeySelective(AuthUser record) {
         return authUserMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
+    @CachePut
     public int updateByPrimaryKeySelective(AuthUserVo record) {
         return authUserMapper.updateByPrimaryKeySelective(converter.convert(record));
     }
 
     @Override
+    @CachePut
     public int updateByPrimaryKey(AuthUser record) {
         return authUserMapper.updateByPrimaryKey(record);
     }
 
     @Override
+    @Cacheable
     public AuthUser selectOneByUsername(String username) {
         return authUserMapper.selectOneByUsername(username);
     }
@@ -143,11 +160,13 @@ public class AuthUserServiceImpl implements AuthUserService {
     }
 
     @Override
+    @CachePut
     public int updateBatchSelective(List<AuthUser> list) {
         return authUserMapper.updateBatchSelective(list);
     }
 
     @Override
+    @CachePut
     public int batchInsert(List<AuthUser> list) {
         return authUserMapper.batchInsert(list);
     }
@@ -159,12 +178,14 @@ public class AuthUserServiceImpl implements AuthUserService {
     }
 
     @Override
+    @CacheEvict
     public int deleteByIdIn(Collection<Long> idCollection) {
         return authUserMapper.deleteByIdIn(idCollection);
     }
 
 
     @Override
+    @Cacheable
     public AuthUserDetailResult selectDetailById(Long id) {
         return authUserMapper.selectDetailById(id);
     }
