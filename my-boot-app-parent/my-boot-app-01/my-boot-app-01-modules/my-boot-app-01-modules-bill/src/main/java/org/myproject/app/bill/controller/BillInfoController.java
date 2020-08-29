@@ -5,11 +5,9 @@ import ai.yue.library.base.view.ResultInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.myproject.app.bill.pojo.BillInfo;
-import org.myproject.app.bill.pojo.BillInfoDetailResult;
-import org.myproject.app.bill.pojo.BillInfoQuery;
-import org.myproject.app.bill.pojo.BillInfoVo;
+import org.myproject.app.bill.pojo.*;
 import org.myproject.app.bill.service.BillInfoService;
+import org.myproject.app.bill.service.impl.BillItemService;
 import org.myproject.app.commons.pojo.IPage;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -35,13 +33,15 @@ public class BillInfoController {
     public static final String API_UPDATE = "更新订单";
     public static final String API_REMOVE = "删除订单";
     private static final String API_ID_GET_DETAIL = "ID获取订单详情";
-    private final BillInfoService service;
+    private static final String API_ID_GET_ITEMS = "ID获取订单项目";
+    private final BillInfoService billInfoService;
+    private final BillItemService billItemService;
 
     @GetMapping
     @ApiOperation(API_QUERY)
     @Log(API_QUERY)
     public Result<List<BillInfo>> list(BillInfoQuery query) {
-        IPage<BillInfo> pageInfo = service.selectPageByQuery(query);
+        IPage<BillInfo> pageInfo = billInfoService.selectPageByQuery(query);
         return ResultInfo.success(pageInfo.getTotal(), pageInfo.getList());
     }
 
@@ -49,7 +49,7 @@ public class BillInfoController {
     @ApiOperation(API_ID_GET)
     @Log(API_ID_GET)
     public Result<BillInfo> get(@PathVariable Long id) {
-        BillInfo authUser = service.selectByPrimaryKey(id);
+        BillInfo authUser = billInfoService.selectByPrimaryKey(id);
         return ResultInfo.success(authUser);
     }
 
@@ -57,15 +57,23 @@ public class BillInfoController {
     @ApiOperation(API_ID_GET_DETAIL)
     @Log(API_ID_GET_DETAIL)
     public Result<BillInfoDetailResult> getDetail(@PathVariable Long id) {
-        BillInfoDetailResult billInfo = service.selectDetailById(id);
+        BillInfoDetailResult billInfo = billInfoService.selectDetailById(id);
         return ResultInfo.success(billInfo);
+    }
+
+    @GetMapping("/{billId}/items")
+    @ApiOperation(API_ID_GET_ITEMS)
+    @Log(API_ID_GET_ITEMS)
+    public Result<List<BillItem>> listItemsById(Long billId) {
+        List<BillItem> items = billItemService.selectAllByBillId(billId);
+        return ResultInfo.success(items);
     }
 
     @PostMapping
     @ApiOperation(API_INSERT)
     @Log(API_INSERT)
     public Result<?> insert(@RequestBody BillInfoVo vo) {
-        service.insert(vo);
+        billInfoService.insert(vo);
         return ResultInfo.success();
     }
 
@@ -73,7 +81,7 @@ public class BillInfoController {
     @ApiOperation(API_UPDATE)
     @Log(API_UPDATE)
     public Result<?> update(@RequestBody BillInfoVo vo) {
-        service.updateByPrimaryKeySelective(vo);
+        billInfoService.updateByPrimaryKeySelective(vo);
         return ResultInfo.success();
     }
 
@@ -81,7 +89,7 @@ public class BillInfoController {
     @ApiOperation(API_REMOVE)
     @Log(API_REMOVE)
     public Result<?> delete(@PathVariable Long[] id) {
-        service.deleteByIdIn(Arrays.asList(id));
+        billInfoService.deleteByIdIn(Arrays.asList(id));
         return ResultInfo.success();
     }
 }
