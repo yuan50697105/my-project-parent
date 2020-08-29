@@ -2,6 +2,8 @@ package org.myproject.app.auth.controller;
 
 import ai.yue.library.base.view.Result;
 import ai.yue.library.base.view.ResultInfo;
+import com.alibaba.fastjson.support.spring.annotation.FastJsonFilter;
+import com.alibaba.fastjson.support.spring.annotation.FastJsonView;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
@@ -42,6 +44,7 @@ public class AuthUserController {
     @GetMapping
     @ApiOperation(API_QUERY)
     @Log(API_QUERY)
+    @FastJsonView(exclude = @FastJsonFilter(clazz = AuthUser.class, props = "password"))
     public Result<List<AuthUser>> list(AuthUserQuery query) {
         IPage<AuthUser> iPage = userService.selectPageByQuery(query);
         return ResultInfo.success(iPage.getTotal(), iPage.getList());
@@ -58,6 +61,7 @@ public class AuthUserController {
     @GetMapping({"/{id}", "/{id}/basic"})
     @ApiOperation(API_ID_GET)
     @Log(API_ID_GET)
+    @FastJsonView(exclude = @FastJsonFilter(clazz = AuthUser.class, props = "password"))
     public Result<AuthUser> get(@PathVariable Long id) {
         AuthUser authUser = userService.selectByPrimaryKey(id);
         return ResultInfo.success(authUser);
@@ -66,6 +70,7 @@ public class AuthUserController {
     @GetMapping("/{id}/detail")
     @ApiOperation(API_ID_GET_DETAIL)
     @Log(API_ID_GET_DETAIL)
+    @FastJsonView(exclude = @FastJsonFilter(clazz = AuthUser.class, props = "password"))
     public Result<AuthUserDetail> getDetail(@PathVariable Long id) {
         AuthUserDetail authUserDetail = userService.selectDetailById(id);
         return ResultInfo.success(authUserDetail);
@@ -74,6 +79,7 @@ public class AuthUserController {
     @GetMapping("/username/{username}")
     @ApiOperation(API_USERNAME_GET)
     @Log(API_USERNAME_GET)
+    @FastJsonView(exclude = @FastJsonFilter(clazz = AuthUser.class, props = "password"))
     public Result<AuthUser> getByUsername(@PathVariable String username) {
         AuthUser authUser = userService.selectOneByUsername(username);
         return ResultInfo.success(authUser);
