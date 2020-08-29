@@ -3,6 +3,7 @@ package org.myproject.app.bill.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.myproject.app.bill.pojo.BillInfo;
+import org.myproject.app.bill.pojo.BillInfoDetailResult;
 import org.myproject.app.bill.pojo.BillInfoExample;
 
 import java.util.Collection;
@@ -35,4 +36,6 @@ public interface BillInfoMapper {
     BillInfo selectAllByIdOrBillNoOrTransactionNo(@Param("id") Long id, @Param("billNo") String billNo, @Param("transactionNo") String transactionNo);
 
     int deleteByIdIn(@Param("idCollection") Collection<Long> idCollection);
+
+    BillInfoDetailResult selectDetailById(Long id);
 }
