@@ -5,7 +5,7 @@
     <parent>
         <artifactId>my-boot-app-01-modules</artifactId>
         <groupId>org.myproject</groupId>
-        <version>1.1.1</version>
+        <version>1.1.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-app-01-modules-commons</artifactId>
-            <version>1.1.1</version>
+            <version>1.1.2</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
