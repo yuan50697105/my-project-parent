@@ -20,5 +20,6 @@
         <module>my-boot-app-01-modules-device</module>
         <module>my-boot-app-01-modules-price</module>
         <module>my-boot-app-01-modules-bill</module>
+        <module>my-boot-app-01-modules-member</module>
     </modules>
 </project>
