@@ -51,6 +51,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <skip>true</skip>
                     <!--                    jdbc:mysql://localhost:3306/my_project?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai-->
                     <url>
                         <![CDATA[jdbc:mysql://localhost:3306/my_project?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai]]></url>
