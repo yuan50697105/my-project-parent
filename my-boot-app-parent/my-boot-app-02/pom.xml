@@ -11,9 +11,6 @@
 
     <artifactId>my-boot-app-02</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>my-boot-app-02-modules-db</module>
-        <module>my-boot-app-02-modules-service</module>
-    </modules>
+
 
 </project>
