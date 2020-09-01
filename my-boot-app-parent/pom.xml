@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-app-01</module>
-        <module>my-boot-app-02</module>
     </modules>
 
 </project>

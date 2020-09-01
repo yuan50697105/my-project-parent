@@ -13,7 +13,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>my-boot-app-01-all</module>
-        <module>my-boot-app-01-modules</module>
+        <module>my-boot-app-01-service</module>
+        <module>my-boot-app-01-cloud</module>
+        <module>my-boot-app-01-db</module>
     </modules>
     <!--    <build>-->
     <!--        <plugins>-->

@@ -13,37 +13,37 @@
     <dependencies>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app-01-modules-commons</artifactId>
+            <artifactId>my-boot-app-01-service-commons</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app-01-modules-auth</artifactId>
+            <artifactId>my-boot-app-01-service-auth</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app-01-modules-customer</artifactId>
+            <artifactId>my-boot-app-01-service-customer</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app-01-modules-area</artifactId>
+            <artifactId>my-boot-app-01-service-area</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app-01-modules-device</artifactId>
+            <artifactId>my-boot-app-01-service-device</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app-01-modules-price</artifactId>
+            <artifactId>my-boot-app-01-service-price</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-app-01-modules-bill</artifactId>
+            <artifactId>my-boot-app-01-service-bill</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>

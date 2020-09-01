@@ -1,5 +1,0 @@
-<<<<<<< HEAD:my-boot-app-parent/my-boot-app-01/my-boot-app--01-modules/my-boot-app-01-modules-customer/src/main/resources/META-INF/spring.factories
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.app.customer.CustomerAutoConfiguration
-=======
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.app.auth.AuthAutoConfiguration
->>>>>>> 7747f1b661a912adfa7dcb39b9a1707c67e9f1ff:my-boot-app-parent/my-boot-app-01/my-boot-app--01-modules/my-boot-app-01-modules-auth/src/main/resources/META-INF/spring.factories
