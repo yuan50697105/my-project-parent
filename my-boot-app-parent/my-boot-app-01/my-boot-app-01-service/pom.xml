@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>my-boot-app-01</artifactId>
+        <groupId>org.myproject</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>my-boot-app-01-service</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>my-boot-app-01-service-auth</module>
+        <module>my-boot-app-01-service-commons</module>
+        <module>my-boot-app-01-service-customer</module>
+        <module>my-boot-app-01-service-area</module>
+        <module>my-boot-app-01-service-db</module>
+        <module>my-boot-app-01-service-device</module>
+        <module>my-boot-app-01-service-price</module>
+        <module>my-boot-app-01-service-bill</module>
+        <module>my-boot-app-01-service-member</module>
+    </modules>
+</project>
