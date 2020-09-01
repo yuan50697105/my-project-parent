@@ -12,6 +12,10 @@
     <artifactId>my-boot-app-01-db-commons</artifactId>
     <dependencies>
         <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-commons-utils</artifactId>
             <version>1.0.0</version>
@@ -20,6 +24,10 @@
             <groupId>org.myproject</groupId>
             <artifactId>my-boot-mybatis-base-pagehelper</artifactId>
             <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
         </dependency>
     </dependencies>
 

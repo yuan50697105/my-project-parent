@@ -16,7 +16,6 @@
         <module>my-boot-app-01-service-commons</module>
         <module>my-boot-app-01-service-customer</module>
         <module>my-boot-app-01-service-area</module>
-        <module>my-boot-app-01-service-db</module>
         <module>my-boot-app-01-service-device</module>
         <module>my-boot-app-01-service-price</module>
         <module>my-boot-app-01-service-bill</module>
