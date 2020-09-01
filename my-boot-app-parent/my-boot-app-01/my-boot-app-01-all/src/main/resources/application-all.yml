@@ -1,6 +1,6 @@
 spring:
   profiles:
-    include: commons,db,auth,customer,area,device
+    include: commons,db,auth,area,bill,customer,area,device,member,price
 logging:
   level:
     org.myproject.app: debug

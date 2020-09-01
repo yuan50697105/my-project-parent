@@ -39,7 +39,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR7</version>
+                <version>Hoxton.SR8</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -98,7 +98,7 @@
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
-                <version>5.4.0</version>
+                <version>5.4.1</version>
             </dependency>
             <dependency>
                 <groupId>joda-time</groupId>
@@ -163,12 +163,12 @@
             <dependency>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
-                <version>3.3.7</version>
+                <version>3.4.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
-                <version>3.3.7</version>
+                <version>3.4.0</version>
             </dependency>
             <dependency>
                 <groupId>com.ibeetl</groupId>
@@ -243,7 +243,7 @@
             <dependency>
                 <groupId>com.github.fangjinuo.easyjson</groupId>
                 <artifactId>easyjson-jackson</artifactId>
-                <version>3.0.2</version>
+                <version>3.0.3</version>
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
@@ -305,6 +305,11 @@
                 <artifactId>spring-boot-starter-beecp</artifactId>
                 <version>1.3.5.RELEASE</version>
             </dependency>
+            <dependency>
+                <groupId>com.github.lianjiatech</groupId>
+                <artifactId>retrofit-spring-boot-starter</artifactId>
+                <version>2.0.3</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -319,13 +324,13 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>1.4.0.Beta2</version>
+            <version>1.4.0.CR1</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-processor</artifactId>
-            <version>1.4.0.Beta2</version>
+            <version>1.4.0.CR1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -383,6 +388,14 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
