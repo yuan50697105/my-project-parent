@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.app.area.AreaAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.app.service.area.AreaAutoConfiguration

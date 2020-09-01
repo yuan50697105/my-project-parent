@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.app.price.PriceAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=org.myproject.app.service.price.PriceAutoConfiguration
