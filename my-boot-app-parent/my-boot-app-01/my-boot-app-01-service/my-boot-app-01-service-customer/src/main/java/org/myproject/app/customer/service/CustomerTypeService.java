@@ -1,10 +1,10 @@
 package org.myproject.app.customer.service;
 
-import org.myproject.app.commons.pojo.IPage;
 import org.myproject.app.customer.pojo.CustomerType;
 import org.myproject.app.customer.pojo.CustomerTypeExample;
 import org.myproject.app.customer.pojo.CustomerTypeQuery;
 import org.myproject.app.customer.pojo.CustomerTypeVo;
+import org.myproject.app.db.commons.pojo.IPage;
 
 import java.util.Collection;
 import java.util.List;

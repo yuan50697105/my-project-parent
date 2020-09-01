@@ -1,10 +1,10 @@
 package org.myproject.app.customer.service;
 
-import org.myproject.app.commons.pojo.IPage;
 import org.myproject.app.customer.pojo.CustomerAddress;
 import org.myproject.app.customer.pojo.CustomerAddressExample;
 import org.myproject.app.customer.pojo.CustomerAddressQuery;
 import org.myproject.app.customer.pojo.CustomerAddressVo;
+import org.myproject.app.db.commons.pojo.IPage;
 
 import java.util.Collection;
 import java.util.List;

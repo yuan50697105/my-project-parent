@@ -15,6 +15,11 @@
         <module>my-boot-app-01-db-area</module>
         <module>my-boot-app-01-db-commons</module>
         <module>my-boot-app-01-db-auth</module>
+        <module>my-boot-app-01-db-customer</module>
+        <module>my-boot-app-01-db-bill</module>
+        <module>my-boot-app-01-db-device</module>
+        <module>my-boot-app-01-db-member</module>
+        <module>my-boot-app-01-db-price</module>
     </modules>
     <dependencies>
         <dependency>

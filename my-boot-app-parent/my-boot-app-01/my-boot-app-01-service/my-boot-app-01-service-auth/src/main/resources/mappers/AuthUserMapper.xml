@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.app.auth.mapper.AuthUserMapper">
-    <resultMap id="BaseResultMap" type="org.myproject.app.auth.pojo.AuthUser">
+<mapper namespace="org.myproject.app.db.auth.mapper.AuthUserMapper">
+    <resultMap id="BaseResultMap" type="org.myproject.app.db.auth.pojo.AuthUser">
         <!--@mbg.generated-->
         <!--@Table auth_user-->
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -78,7 +78,7 @@
         <!--@mbg.generated-->
         id, username, `password`, `name`, enabled, last_login_time, create_time
     </sql>
-    <select id="selectByExample" parameterType="org.myproject.app.auth.pojo.AuthUserExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="org.myproject.app.db.auth.pojo.AuthUserExample" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
         <if test="distinct">
@@ -106,7 +106,7 @@
         from auth_user
         where id = #{id,jdbcType=BIGINT}
     </delete>
-    <delete id="deleteByExample" parameterType="org.myproject.app.auth.pojo.AuthUserExample">
+    <delete id="deleteByExample" parameterType="org.myproject.app.db.auth.pojo.AuthUserExample">
         <!--@mbg.generated-->
         delete
         from auth_user
@@ -114,7 +114,7 @@
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthUser"
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.db.auth.pojo.AuthUser"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_user (username, `password`, `name`,
@@ -122,7 +122,7 @@
         values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
         #{enabled,jdbcType=INTEGER}, #{lastLoginTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthUser"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.db.auth.pojo.AuthUser"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_user
@@ -167,7 +167,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="org.myproject.app.auth.pojo.AuthUserExample" resultType="java.lang.Long">
+    <select id="countByExample" parameterType="org.myproject.app.db.auth.pojo.AuthUserExample" resultType="java.lang.Long">
         <!--@mbg.generated-->
         select count(*)
         from auth_user
@@ -219,7 +219,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.auth.pojo.AuthUser">
+    <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.db.auth.pojo.AuthUser">
         <!--@mbg.generated-->
         update auth_user
         <set>
@@ -244,7 +244,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="org.myproject.app.auth.pojo.AuthUser">
+    <update id="updateByPrimaryKey" parameterType="org.myproject.app.db.auth.pojo.AuthUser">
         <!--@mbg.generated-->
         update auth_user
         set username = #{username,jdbcType=VARCHAR},
@@ -358,7 +358,7 @@
             #{item.createTime,jdbcType=TIMESTAMP})
         </foreach>
     </insert>
-    <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthUser"
+    <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.db.auth.pojo.AuthUser"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_user
@@ -399,7 +399,7 @@
         </trim>
     </insert>
     <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
-            parameterType="org.myproject.app.auth.pojo.AuthUser" useGeneratedKeys="true">
+            parameterType="org.myproject.app.db.auth.pojo.AuthUser" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -474,11 +474,11 @@
             </if>
         </trim>
     </insert>
-    <resultMap extends="BaseResultMap" id="AuthUserImplDetail" type="org.myproject.app.auth.pojo.AuthUserDetailResult">
-        <collection column="id" ofType="org.myproject.app.auth.pojo.RoleByUserResult" property="roles"
-                    select="org.myproject.app.auth.mapper.AuthUserRoleMapper.selectAllRoleByUserId"/>
-        <collection property="permissions" ofType="org.myproject.app.auth.pojo.PermissionByUserIdResult" column="id"
-                    select="org.myproject.app.auth.mapper.AuthRolePermissionMapper.selectAllPermissionByUserId"/>
+    <resultMap extends="BaseResultMap" id="AuthUserImplDetail" type="org.myproject.app.db.auth.pojo.AuthUserDetailResult">
+        <collection column="id" ofType="org.myproject.app.db.auth.pojo.RoleByUserResult" property="roles"
+                    select="org.myproject.app.db.auth.mapper.AuthUserRoleMapper.selectAllRoleByUserId"/>
+        <collection property="permissions" ofType="org.myproject.app.db.auth.pojo.PermissionByUserIdResult" column="id"
+                    select="org.myproject.app.db.auth.mapper.AuthRolePermissionMapper.selectAllPermissionByUserId"/>
     </resultMap>
     <select id="selectOneByUsername" resultMap="BaseResultMap">
         select

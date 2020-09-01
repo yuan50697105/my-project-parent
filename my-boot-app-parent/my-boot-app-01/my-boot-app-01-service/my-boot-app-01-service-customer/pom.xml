@@ -28,12 +28,8 @@
         </dependency>
         <dependency>
             <groupId>org.myproject</groupId>
-            <artifactId>my-boot-mybatis-base-pagehelper</artifactId>
+            <artifactId>my-boot-app-01-db-customer</artifactId>
             <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
     </dependencies>
 

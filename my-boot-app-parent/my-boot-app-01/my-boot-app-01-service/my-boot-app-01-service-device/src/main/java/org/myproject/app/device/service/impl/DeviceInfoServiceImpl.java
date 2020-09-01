@@ -2,7 +2,7 @@ package org.myproject.app.device.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.myproject.app.device.mapper.DeviceInfoMapper;
 import org.myproject.app.device.pojo.*;
 import org.myproject.app.device.service.DeviceInfoService;

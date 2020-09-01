@@ -1,6 +1,6 @@
 package org.myproject.app.member.service;
 
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.myproject.app.member.pojo.MemberInfo;
 import org.myproject.app.member.pojo.MemberInfoExample;
 import org.myproject.app.member.pojo.MemberInfoQuery;

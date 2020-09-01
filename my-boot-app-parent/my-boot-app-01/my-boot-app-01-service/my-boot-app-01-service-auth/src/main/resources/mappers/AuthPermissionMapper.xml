@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.app.auth.mapper.AuthPermissionMapper">
-    <resultMap id="BaseResultMap" type="org.myproject.app.auth.pojo.AuthPermission">
+<mapper namespace="org.myproject.app.db.auth.mapper.AuthPermissionMapper">
+    <resultMap id="BaseResultMap" type="org.myproject.app.db.auth.pojo.AuthPermission">
         <!--@mbg.generated-->
         <!--@Table auth_permission-->
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -76,7 +76,7 @@
         <!--@mbg.generated-->
         id, `name`, code, description, enabled
     </sql>
-    <select id="selectByExample" parameterType="org.myproject.app.auth.pojo.AuthPermissionExample"
+    <select id="selectByExample" parameterType="org.myproject.app.db.auth.pojo.AuthPermissionExample"
             resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
@@ -104,14 +104,14 @@
         delete from auth_permission
         where id = #{id,jdbcType=BIGINT}
     </delete>
-    <delete id="deleteByExample" parameterType="org.myproject.app.auth.pojo.AuthPermissionExample">
+    <delete id="deleteByExample" parameterType="org.myproject.app.db.auth.pojo.AuthPermissionExample">
         <!--@mbg.generated-->
         delete from auth_permission
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthPermission"
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.db.auth.pojo.AuthPermission"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_permission (`name`, code, description,
@@ -120,7 +120,7 @@
         #{enabled,jdbcType=INTEGER})
     </insert>
     <insert id="insertSelective" keyColumn="id" keyProperty="id"
-            parameterType="org.myproject.app.auth.pojo.AuthPermission" useGeneratedKeys="true">
+            parameterType="org.myproject.app.db.auth.pojo.AuthPermission" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_permission
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -152,7 +152,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="org.myproject.app.auth.pojo.AuthPermissionExample"
+    <select id="countByExample" parameterType="org.myproject.app.db.auth.pojo.AuthPermissionExample"
             resultType="java.lang.Long">
         <!--@mbg.generated-->
         select count(*) from auth_permission
@@ -196,7 +196,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.auth.pojo.AuthPermission">
+    <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.db.auth.pojo.AuthPermission">
         <!--@mbg.generated-->
         update auth_permission
         <set>
@@ -215,7 +215,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="org.myproject.app.auth.pojo.AuthPermission">
+    <update id="updateByPrimaryKey" parameterType="org.myproject.app.db.auth.pojo.AuthPermission">
         <!--@mbg.generated-->
         update auth_permission
         set `name` = #{name,jdbcType=VARCHAR},
@@ -304,7 +304,7 @@
         </foreach>
     </insert>
     <insert id="insertOrUpdate" keyColumn="id" keyProperty="id"
-            parameterType="org.myproject.app.auth.pojo.AuthPermission" useGeneratedKeys="true">
+            parameterType="org.myproject.app.db.auth.pojo.AuthPermission" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_permission
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -338,7 +338,7 @@
         </trim>
     </insert>
     <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
-            parameterType="org.myproject.app.auth.pojo.AuthPermission" useGeneratedKeys="true">
+            parameterType="org.myproject.app.db.auth.pojo.AuthPermission" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_permission
         <trim prefix="(" suffix=")" suffixOverrides=",">

@@ -1,7 +1,7 @@
 package org.myproject.app.bill.service;
 
 import org.myproject.app.bill.pojo.*;
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 
 import java.util.Collection;
 import java.util.List;

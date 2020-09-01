@@ -5,7 +5,7 @@ import ai.yue.library.base.view.ResultInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.myproject.app.device.pojo.DeviceInfo;
 import org.myproject.app.device.pojo.DeviceInfoQuery;
 import org.myproject.app.device.pojo.DeviceInfoVo;

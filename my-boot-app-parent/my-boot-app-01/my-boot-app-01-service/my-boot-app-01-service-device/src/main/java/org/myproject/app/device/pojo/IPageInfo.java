@@ -3,7 +3,7 @@ package org.myproject.app.device.pojo;
 import com.github.pagehelper.PageInfo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 
 import java.util.List;
 

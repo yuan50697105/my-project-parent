@@ -1,6 +1,6 @@
 package org.myproject.app.device.service;
 
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.myproject.app.device.pojo.DeviceInfo;
 import org.myproject.app.device.pojo.DeviceInfoExample;
 import org.myproject.app.device.pojo.DeviceInfoQuery;

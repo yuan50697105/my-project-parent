@@ -9,7 +9,7 @@ import org.myproject.app.bill.pojo.*;
 import org.myproject.app.bill.service.BillDeviceInfoService;
 import org.myproject.app.bill.service.BillInfoService;
 import org.myproject.app.bill.service.BillItemService;
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import wiki.xsx.core.log.Log;

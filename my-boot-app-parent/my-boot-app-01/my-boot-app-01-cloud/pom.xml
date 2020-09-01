@@ -12,7 +12,6 @@
     <artifactId>my-boot-app-01-cloud</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>my-boot-app-01-cloud-area</module>
     </modules>
 
 </project>

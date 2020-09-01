@@ -5,7 +5,7 @@ import com.gitee.denger.mybatis.example.ext.annotation.AndEqualTo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
-import org.myproject.app.commons.pojo.BaseQuery;
+import org.myproject.app.db.commons.pojo.BaseQuery;
 
 import java.io.Serializable;
 

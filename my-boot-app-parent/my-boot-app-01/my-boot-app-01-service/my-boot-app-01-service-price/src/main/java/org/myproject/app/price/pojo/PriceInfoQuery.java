@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.myproject.app.commons.pojo.BaseQuery;
+import org.myproject.app.db.commons.pojo.BaseQuery;
 
 import java.io.Serializable;
 

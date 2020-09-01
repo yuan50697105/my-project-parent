@@ -8,12 +8,12 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.myproject.app.auth.pojo.AuthUser;
-import org.myproject.app.auth.pojo.AuthUserDetailResult;
-import org.myproject.app.auth.pojo.AuthUserQuery;
-import org.myproject.app.auth.pojo.AuthUserVo;
-import org.myproject.app.auth.service.AuthUserService;
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.auth.pojo.AuthUser;
+import org.myproject.app.db.auth.pojo.AuthUserDetailResult;
+import org.myproject.app.db.auth.pojo.AuthUserQuery;
+import org.myproject.app.db.auth.pojo.AuthUserVo;
+import org.myproject.app.db.auth.service.AuthUserService;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.springframework.web.bind.annotation.*;
 import wiki.xsx.core.log.Log;
 

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.app.auth.mapper.AuthRolePermissionMapper">
-    <resultMap id="selectAllPermissionByUserIdResultMap" type="org.myproject.app.auth.pojo.PermissionByUserIdResult">
+<mapper namespace="org.myproject.app.db.auth.mapper.AuthRolePermissionMapper">
+    <resultMap id="selectAllPermissionByUserIdResultMap" type="org.myproject.app.db.auth.pojo.PermissionByUserIdResult">
         <result column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="code" property="code"/>
         <result column="description" property="description"/>
         <result column="enabled" property="enabled"/>
     </resultMap>
-    <resultMap id="selectAllPermissionByRoleIdResultMap" type="org.myproject.app.auth.pojo.PermissionByRoleResult">
+    <resultMap id="selectAllPermissionByRoleIdResultMap" type="org.myproject.app.db.auth.pojo.PermissionByRoleResult">
         <result column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="code" property="code"/>
         <result column="description" property="description"/>
         <result column="enabled" property="enabled"/>
     </resultMap>
-    <resultMap id="BaseResultMap" type="org.myproject.app.auth.pojo.AuthRolePermission">
+    <resultMap id="BaseResultMap" type="org.myproject.app.db.auth.pojo.AuthRolePermission">
         <!--@mbg.generated-->
         <!--@Table auth_role_permission-->
         <id column="role_id" jdbcType="BIGINT" property="roleId"/>
@@ -87,7 +87,7 @@
         <!--@mbg.generated-->
         role_id, permission_id
     </sql>
-    <select id="selectByExample" parameterType="org.myproject.app.auth.pojo.AuthRolePermissionExample"
+    <select id="selectByExample" parameterType="org.myproject.app.db.auth.pojo.AuthRolePermissionExample"
             resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
@@ -109,19 +109,19 @@
         where role_id = #{roleId,jdbcType=BIGINT}
         and permission_id = #{permissionId,jdbcType=BIGINT}
     </delete>
-    <delete id="deleteByExample" parameterType="org.myproject.app.auth.pojo.AuthRolePermissionExample">
+    <delete id="deleteByExample" parameterType="org.myproject.app.db.auth.pojo.AuthRolePermissionExample">
         <!--@mbg.generated-->
         delete from auth_role_permission
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="org.myproject.app.auth.pojo.AuthRolePermission">
+    <insert id="insert" parameterType="org.myproject.app.db.auth.pojo.AuthRolePermission">
         <!--@mbg.generated-->
         insert into auth_role_permission (role_id, permission_id)
         values (#{roleId,jdbcType=BIGINT}, #{permissionId,jdbcType=BIGINT})
     </insert>
-    <insert id="insertSelective" parameterType="org.myproject.app.auth.pojo.AuthRolePermission">
+    <insert id="insertSelective" parameterType="org.myproject.app.db.auth.pojo.AuthRolePermission">
         <!--@mbg.generated-->
         insert into auth_role_permission
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -141,7 +141,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="org.myproject.app.auth.pojo.AuthRolePermissionExample"
+    <select id="countByExample" parameterType="org.myproject.app.db.auth.pojo.AuthRolePermissionExample"
             resultType="java.lang.Long">
         <!--@mbg.generated-->
         select count(*) from auth_role_permission
@@ -226,7 +226,7 @@
             (#{item.roleId,jdbcType=BIGINT}, #{item.permissionId,jdbcType=BIGINT})
         </foreach>
     </insert>
-    <insert id="insertOrUpdate" parameterType="org.myproject.app.auth.pojo.AuthRolePermission">
+    <insert id="insertOrUpdate" parameterType="org.myproject.app.db.auth.pojo.AuthRolePermission">
         <!--@mbg.generated-->
         insert into auth_role_permission
         (role_id, permission_id)
@@ -236,7 +236,7 @@
         role_id = #{roleId,jdbcType=BIGINT},
         permission_id = #{permissionId,jdbcType=BIGINT}
     </insert>
-    <insert id="insertOrUpdateSelective" parameterType="org.myproject.app.auth.pojo.AuthRolePermission">
+    <insert id="insertOrUpdateSelective" parameterType="org.myproject.app.db.auth.pojo.AuthRolePermission">
         <!--@mbg.generated-->
         insert into auth_role_permission
         <trim prefix="(" suffix=")" suffixOverrides=",">

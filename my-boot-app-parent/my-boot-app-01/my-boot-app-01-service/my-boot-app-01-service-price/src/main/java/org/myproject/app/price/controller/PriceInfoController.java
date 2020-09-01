@@ -5,7 +5,7 @@ import ai.yue.library.base.view.ResultInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.myproject.app.price.pojo.PriceInfo;
 import org.myproject.app.price.pojo.PriceInfoQuery;
 import org.myproject.app.price.pojo.PriceInfoVo;

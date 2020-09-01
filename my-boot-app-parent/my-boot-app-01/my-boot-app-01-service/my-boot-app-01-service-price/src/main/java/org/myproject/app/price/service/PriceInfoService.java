@@ -1,6 +1,6 @@
 package org.myproject.app.price.service;
 
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.myproject.app.price.pojo.PriceInfo;
 import org.myproject.app.price.pojo.PriceInfoExample;
 import org.myproject.app.price.pojo.PriceInfoQuery;

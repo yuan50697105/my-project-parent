@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.app.auth.mapper.AuthUserRoleMapper">
-  <resultMap id="BaseResultMap" type="org.myproject.app.auth.pojo.AuthUserRole">
+<mapper namespace="org.myproject.app.db.auth.mapper.AuthUserRoleMapper">
+  <resultMap id="BaseResultMap" type="org.myproject.app.db.auth.pojo.AuthUserRole">
     <!--@mbg.generated-->
     <!--@Table auth_user_role-->
     <id column="user_id" jdbcType="BIGINT" property="userId" />
@@ -71,7 +71,7 @@
     <!--@mbg.generated-->
     user_id, role_id
   </sql>
-  <select id="selectByExample" parameterType="org.myproject.app.auth.pojo.AuthUserRoleExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="org.myproject.app.db.auth.pojo.AuthUserRoleExample" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select
     <if test="distinct">
@@ -92,19 +92,19 @@
     where user_id = #{userId,jdbcType=BIGINT}
       and role_id = #{roleId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="org.myproject.app.auth.pojo.AuthUserRoleExample">
+  <delete id="deleteByExample" parameterType="org.myproject.app.db.auth.pojo.AuthUserRoleExample">
     <!--@mbg.generated-->
     delete from auth_user_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="org.myproject.app.auth.pojo.AuthUserRole">
+  <insert id="insert" parameterType="org.myproject.app.db.auth.pojo.AuthUserRole">
     <!--@mbg.generated-->
     insert into auth_user_role (user_id, role_id)
     values (#{userId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" parameterType="org.myproject.app.auth.pojo.AuthUserRole">
+  <insert id="insertSelective" parameterType="org.myproject.app.db.auth.pojo.AuthUserRole">
     <!--@mbg.generated-->
     insert into auth_user_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -124,7 +124,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="org.myproject.app.auth.pojo.AuthUserRoleExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="org.myproject.app.db.auth.pojo.AuthUserRoleExample" resultType="java.lang.Long">
     <!--@mbg.generated-->
     select count(*) from auth_user_role
     <if test="_parameter != null">
@@ -181,13 +181,13 @@
         delete from auth_user_role
         where user_id=#{userId,jdbcType=BIGINT}
     </delete>
-    <resultMap id="selectAllRoleByUserIdResultMap" type="org.myproject.app.auth.pojo.RoleByUserResult">
+    <resultMap id="selectAllRoleByUserIdResultMap" type="org.myproject.app.db.auth.pojo.RoleByUserResult">
         <result column="id" property="id" />
         <result column="name" property="name" />
         <result column="description" property="description" />
         <result column="enabled" property="enabled" />
     </resultMap>
-    <resultMap id="selectAllUserByRoleIdResultMap" type="org.myproject.app.auth.pojo.UserRoleResult">
+    <resultMap id="selectAllUserByRoleIdResultMap" type="org.myproject.app.db.auth.pojo.UserRoleResult">
         <result column="id" property="id" />
         <result column="username" property="username" />
         <result column="password" property="password" />

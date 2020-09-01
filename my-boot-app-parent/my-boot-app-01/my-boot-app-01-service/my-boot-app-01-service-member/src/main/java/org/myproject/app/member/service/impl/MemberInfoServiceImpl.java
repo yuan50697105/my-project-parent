@@ -2,7 +2,7 @@ package org.myproject.app.member.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.myproject.app.member.mapper.MemberInfoMapper;
 import org.myproject.app.member.pojo.IPageInfo;
 import org.myproject.app.member.pojo.MemberInfo;

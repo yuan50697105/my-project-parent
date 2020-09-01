@@ -15,7 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootConfiguration
 @EnableCaching
 @ComponentScan
-@MapperScan(basePackages = "org.myproject.app.*.mapper")
+@MapperScan(basePackages = "org.myproject.app.db.area.mapper")
 public class AreaAutoConfiguration {
     public static void main(String[] args) {
         SpringApplication.run(AreaAutoConfiguration.class, args);

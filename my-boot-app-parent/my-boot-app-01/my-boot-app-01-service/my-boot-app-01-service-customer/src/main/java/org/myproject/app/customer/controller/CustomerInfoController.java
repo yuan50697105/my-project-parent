@@ -5,10 +5,10 @@ import ai.yue.library.base.view.ResultInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.myproject.app.commons.pojo.IPage;
 import org.myproject.app.customer.pojo.*;
 import org.myproject.app.customer.service.CustomerAddressService;
 import org.myproject.app.customer.service.CustomerInfoService;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.springframework.web.bind.annotation.*;
 import wiki.xsx.core.log.Log;
 

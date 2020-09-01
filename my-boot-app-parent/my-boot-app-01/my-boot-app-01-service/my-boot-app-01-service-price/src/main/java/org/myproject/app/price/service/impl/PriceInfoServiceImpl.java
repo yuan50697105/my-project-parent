@@ -2,7 +2,7 @@ package org.myproject.app.price.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.app.commons.pojo.IPage;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.myproject.app.price.mapper.PriceInfoMapper;
 import org.myproject.app.price.pojo.*;
 import org.myproject.app.price.service.PriceInfoService;

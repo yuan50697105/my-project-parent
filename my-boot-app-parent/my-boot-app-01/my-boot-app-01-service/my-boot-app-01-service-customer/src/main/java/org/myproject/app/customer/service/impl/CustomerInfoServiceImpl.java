@@ -2,11 +2,11 @@ package org.myproject.app.customer.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.myproject.app.commons.pojo.IPage;
 import org.myproject.app.customer.mapper.CustomerInfoMapper;
 import org.myproject.app.customer.pojo.*;
 import org.myproject.app.customer.service.CustomerInfoService;
 import org.myproject.app.customer.service.CustomerPojoConverter;
+import org.myproject.app.db.commons.pojo.IPage;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.myproject.app.auth.mapper.AuthRoleMapper">
-    <resultMap id="BaseResultMap" type="org.myproject.app.auth.pojo.AuthRole">
+<mapper namespace="org.myproject.app.db.auth.mapper.AuthRoleMapper">
+    <resultMap id="BaseResultMap" type="org.myproject.app.db.auth.pojo.AuthRole">
         <!--@mbg.generated-->
         <!--@Table auth_role-->
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -75,7 +75,7 @@
         <!--@mbg.generated-->
         id, `name`, description, enabled
     </sql>
-    <select id="selectByExample" parameterType="org.myproject.app.auth.pojo.AuthRoleExample" resultMap="BaseResultMap">
+    <select id="selectByExample" parameterType="org.myproject.app.db.auth.pojo.AuthRoleExample" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
         <if test="distinct">
@@ -103,7 +103,7 @@
         from auth_role
         where id = #{id,jdbcType=BIGINT}
     </delete>
-    <delete id="deleteByExample" parameterType="org.myproject.app.auth.pojo.AuthRoleExample">
+    <delete id="deleteByExample" parameterType="org.myproject.app.db.auth.pojo.AuthRoleExample">
         <!--@mbg.generated-->
         delete
         from auth_role
@@ -111,13 +111,13 @@
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthRole"
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.db.auth.pojo.AuthRole"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_role (`name`, description, enabled)
         values (#{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{enabled,jdbcType=INTEGER})
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthRole"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.db.auth.pojo.AuthRole"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_role
@@ -144,7 +144,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="org.myproject.app.auth.pojo.AuthRoleExample" resultType="java.lang.Long">
+    <select id="countByExample" parameterType="org.myproject.app.db.auth.pojo.AuthRoleExample" resultType="java.lang.Long">
         <!--@mbg.generated-->
         select count(*)
         from auth_role
@@ -184,7 +184,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.auth.pojo.AuthRole">
+    <update id="updateByPrimaryKeySelective" parameterType="org.myproject.app.db.auth.pojo.AuthRole">
         <!--@mbg.generated-->
         update auth_role
         <set>
@@ -200,7 +200,7 @@
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="org.myproject.app.auth.pojo.AuthRole">
+    <update id="updateByPrimaryKey" parameterType="org.myproject.app.db.auth.pojo.AuthRole">
         <!--@mbg.generated-->
         update auth_role
         set `name` = #{name,jdbcType=VARCHAR},
@@ -286,7 +286,7 @@
             (#{item.name,jdbcType=VARCHAR}, #{item.description,jdbcType=VARCHAR}, #{item.enabled,jdbcType=INTEGER})
         </foreach>
     </insert>
-    <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.auth.pojo.AuthRole"
+    <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="org.myproject.app.db.auth.pojo.AuthRole"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_role
@@ -318,7 +318,7 @@
         </trim>
     </insert>
     <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id"
-            parameterType="org.myproject.app.auth.pojo.AuthRole" useGeneratedKeys="true">
+            parameterType="org.myproject.app.db.auth.pojo.AuthRole" useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into auth_role
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -373,9 +373,9 @@
         from auth_role
         where id = #{id,jdbcType=BIGINT}
     </select>
-    <resultMap id="SelectDetailByIdResult" type="org.myproject.app.auth.pojo.AuthRoleDetailResult"
+    <resultMap id="SelectDetailByIdResult" type="org.myproject.app.db.auth.pojo.AuthRoleDetailResult"
                extends="BaseResultMap">
-        <collection property="permissions" ofType="org.myproject.app.auth.pojo.PermissionByRoleResult" column="id"
-                    select="org.myproject.app.auth.mapper.AuthRolePermissionMapper.selectAllPermissionByRoleId"/>
+        <collection property="permissions" ofType="org.myproject.app.db.auth.pojo.PermissionByRoleResult" column="id"
+                    select="org.myproject.app.db.auth.mapper.AuthRolePermissionMapper.selectAllPermissionByRoleId"/>
     </resultMap>
 </mapper>
